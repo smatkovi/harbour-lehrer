@@ -1,5 +1,5 @@
 Name:       harbour-segelflug
-Version:    1.2.0
+Version:    1.3.0
 Release:    1
 Summary:    Gliding theory with a focus on reading clouds
 License:    GPLv3+
