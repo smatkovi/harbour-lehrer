@@ -13,6 +13,11 @@ function reich(quelle) {
     if (!quelle)
         return ""
     var aus = schuetzen(quelle)
+    // Ueberschriften. Die Herleitungen sind lang genug, dass sie
+    // Zwischenstufen brauchen -- ohne diese Zeile stand "## Herleitung"
+    // woertlich im Text.
+    aus = aus.replace(/^##\s*(.+)$/gm,
+                      "<b>" + "$1" + "</b>")
     aus = aus.replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>")
     aus = aus.replace(/\*([^*\n]+)\*/g, "<i>$1</i>")
     // Programmtext in fester Breite. Die Farbe kommt aus dem Thema und wird

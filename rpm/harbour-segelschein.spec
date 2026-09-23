@@ -1,5 +1,5 @@
 Name:       harbour-segelschein
-Version:    1.1.0
+Version:    1.2.0
 Release:    1
 Summary:    Theory course for the German Segelschein A
 License:    GPLv3+
