@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=harbour-segelflug
+Exec=harbour-segelflug
+Name=Segelflug
+Comment=Wolken lesen und Theorie für den Segelflug
+Categories=Education;
+
+[X-Sailjail]
+# Genau diese Kennung gibt die Sandbox frei -- main.cpp setzt dieselben
+# beiden Namen. Weicht eines davon ab, merkt sich die App beim Start über
+# das Symbol nichts: kein Fortschritt, keine Einstufung, keine Karteikarten.
+OrganizationName=harbour-segelflug
+ApplicationName=harbour-segelflug

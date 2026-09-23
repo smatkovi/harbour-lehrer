@@ -1,0 +1,4577 @@
+{
+ "ausfuehrbar": false,
+ "einstufung": {
+  "fragen": [
+   {
+    "antwort": 3,
+    "bild": "bootsteile",
+    "code": "",
+    "frage": "Was bedeutet „Luv\"?",
+    "id": "e-luv",
+    "optionen": [
+     "Die linke Seite.",
+     "Die Seite, zu der der Wind weht.",
+     "Die Vorderseite.",
+     "Die Seite, von der der Wind kommt."
+    ],
+    "stufe": 1,
+    "thema": "boot",
+    "warum": "Luv ist windzugewandt, Lee windabgewandt."
+   },
+   {
+    "antwort": 2,
+    "bild": "",
+    "code": "",
+    "frage": "Backbord ist …",
+    "id": "e-backbord",
+    "optionen": [
+     "hinten.",
+     "die Luvseite.",
+     "links, rot.",
+     "rechts, grün."
+    ],
+    "stufe": 1,
+    "thema": "boot",
+    "warum": "Links und rot, wie die Backbordlaterne und die Backbordtonne."
+   },
+   {
+    "antwort": 2,
+    "bild": "kurse-zum-wind",
+    "code": "",
+    "frage": "Wie heißt der Kurs mit dem Wind genau von der Seite?",
+    "id": "e-halber",
+    "optionen": [
+     "Am Wind",
+     "Vor dem Wind",
+     "Halber Wind",
+     "Raumschots"
+    ],
+    "stufe": 2,
+    "thema": "kurse",
+    "warum": "Neunzig Grad zum Wind, für die meisten Boote der schnellste Kurs."
+   },
+   {
+    "antwort": 0,
+    "bild": "kurse-zum-wind",
+    "code": "",
+    "frage": "Das Ziel liegt genau in Luv. Wie kommst du hin?",
+    "id": "e-kreuzen",
+    "optionen": [
+     "Kreuzen, also im Zickzack am Wind.",
+     "Gar nicht.",
+     "Direkt darauf zu.",
+     "Vor dem Wind mit Bogen."
+    ],
+    "stufe": 2,
+    "thema": "kurse",
+    "warum": "Direkt gegen den Wind liegt die Sperrzone."
+   },
+   {
+    "antwort": 1,
+    "bild": "wende-halse",
+    "code": "",
+    "frage": "Bei welchem Manöver geht das Heck durch den Wind?",
+    "id": "e-halse",
+    "optionen": [
+     "Beide",
+     "Halse",
+     "Wende",
+     "Keines"
+    ],
+    "stufe": 3,
+    "thema": "manoever",
+    "warum": "Wende: Bug. Halse: Heck."
+   },
+   {
+    "antwort": 0,
+    "bild": "",
+    "code": "",
+    "frage": "Erster Handgriff bei Mann über Bord?",
+    "id": "e-mob",
+    "optionen": [
+     "Rufen und Rettungsmittel werfen.",
+     "Segel bergen.",
+     "Position speichern.",
+     "Motor starten."
+    ],
+    "stufe": 3,
+    "thema": "manoever",
+    "warum": "Rufen, werfen, schauen — in Sekunden."
+   },
+   {
+    "antwort": 1,
+    "bild": "ausweichen",
+    "code": "",
+    "frage": "Zwei Segelboote auf verschiedenen Bugen. Wer weicht aus?",
+    "id": "e-bug",
+    "optionen": [
+     "Der Größere.",
+     "Der mit Wind von Backbord.",
+     "Der Langsamere.",
+     "Der mit Wind von Steuerbord."
+    ],
+    "stufe": 4,
+    "thema": "regeln",
+    "warum": "Backbordbug weicht Steuerbordbug aus."
+   },
+   {
+    "antwort": 0,
+    "bild": "ausweichen",
+    "code": "",
+    "frage": "Gleicher Bug, eines in Luv, eines in Lee. Wer weicht aus?",
+    "id": "e-luvlee",
+    "optionen": [
+     "Luv",
+     "Beide nach Steuerbord",
+     "Der Schnellere",
+     "Lee"
+    ],
+    "stufe": 4,
+    "thema": "regeln",
+    "warum": "Luv weicht Lee aus."
+   },
+   {
+    "antwort": 0,
+    "bild": "",
+    "code": "",
+    "frage": "Ein Frachtschiff kommt im Fahrwasser entgegen. Wer weicht aus?",
+    "id": "e-fracht",
+    "optionen": [
+     "Das Segelboot.",
+     "Beide.",
+     "Das Frachtschiff.",
+     "Das Schiff stoppt."
+    ],
+    "stufe": 5,
+    "thema": "regeln",
+    "warum": "Im Fahrwasser weicht das Kleinfahrzeug aus, auch unter Segeln."
+   },
+   {
+    "antwort": 3,
+    "bild": "betonnung",
+    "code": "",
+    "frage": "Von See kommend: Farbe und Form der Backbordtonne?",
+    "id": "e-tonne",
+    "optionen": [
+     "Grün und spitz.",
+     "Schwarz mit rotem Band.",
+     "Gelb und rund.",
+     "Rot und stumpf."
+    ],
+    "stufe": 5,
+    "thema": "zeichen",
+    "warum": "Rot, stumpf, gerade Nummern."
+   },
+   {
+    "antwort": 0,
+    "bild": "lichter",
+    "code": "",
+    "frage": "Nachts rot und grün zugleich, kein weißes darüber. Was ist das?",
+    "id": "e-lichter",
+    "optionen": [
+     "Ein Segelboot, genau entgegenkommend.",
+     "Ein Maschinenfahrzeug von der Seite.",
+     "Ein Fahrzeug, das sich entfernt.",
+     "Eine Tonne."
+    ],
+    "stufe": 6,
+    "thema": "zeichen",
+    "warum": "Beide Seitenlichter heißt Kurs auf dich zu; ohne Topplicht unter Segeln."
+   },
+   {
+    "antwort": 3,
+    "bild": "",
+    "code": "",
+    "frage": "Was bedeuten fünf kurze Töne?",
+    "id": "e-signal",
+    "optionen": [
+     "„Ich gehe nach Steuerbord.\"",
+     "Achtungssignal.",
+     "„Ich gehe rückwärts.\"",
+     "Warnsignal."
+    ],
+    "stufe": 6,
+    "thema": "zeichen",
+    "warum": "Fünf oder mehr kurze Töne sind das Warnsignal."
+   },
+   {
+    "antwort": 1,
+    "bild": "",
+    "code": "",
+    "frage": "Wie viele Blitze je Minute zeigt die Sturmwarnung am Ufer?",
+    "id": "e-sturm",
+    "optionen": [
+     "20",
+     "90",
+     "40",
+     "60"
+    ],
+    "stufe": 7,
+    "thema": "wetter",
+    "warum": "40 je Minute ist Starkwind, 90 ist Sturm."
+   },
+   {
+    "antwort": 0,
+    "bild": "",
+    "code": "",
+    "frage": "Ein Gewitter zieht auf. Wohin fährst du?",
+    "id": "e-gewitter",
+    "optionen": [
+     "Zum nächsten Schutz.",
+     "An eine Boje.",
+     "Zum Heimathafen.",
+     "In die Seemitte."
+    ],
+    "stufe": 7,
+    "thema": "wetter",
+    "warum": "Die Böenwalze läuft weit voraus; es zählt die Zeit bis zum Schutz."
+   },
+   {
+    "antwort": 0,
+    "bild": "",
+    "code": "",
+    "frage": "Ein Gast am Ruder macht einen Fehler. Wer haftet?",
+    "id": "e-verantwortung",
+    "optionen": [
+     "Der Schiffsführer.",
+     "Beide.",
+     "Der Eigner.",
+     "Der Gast."
+    ],
+    "stufe": 8,
+    "thema": "recht",
+    "warum": "Die Verantwortung des Schiffsführers ist nicht übertragbar."
+   },
+   {
+    "antwort": 2,
+    "bild": "",
+    "code": "",
+    "frage": "Warum Abstand vom Schilfgürtel?",
+    "id": "e-schilf",
+    "optionen": [
+     "Zu tief.",
+     "Strömung.",
+     "Laich- und Brutgebiet.",
+     "Der Wind reißt ab."
+    ],
+    "stufe": 8,
+    "thema": "recht",
+    "warum": "Die produktivste Zone des Sees, und leicht zu zerstören."
+   }
+  ],
+  "themen": {
+   "boot": "Das Boot",
+   "kurse": "Kurse und Trimm",
+   "manoever": "Manöver",
+   "recht": "Recht und Umwelt",
+   "regeln": "Ausweichregeln",
+   "wetter": "Wetter und Sicherheit",
+   "zeichen": "Betonnung und Lichter"
+  }
+ },
+ "kapitel": [
+  {
+   "id": "boot",
+   "lektionen": [
+    {
+     "aufgaben": [
+      {
+       "answer": 1,
+       "bild": "bootsteile",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Die linke Seite des Bootes.",
+        "Die Seite, von der der Wind kommt.",
+        "Die Seite, zu der der Wind weht.",
+        "Die Vorderseite des Bootes."
+       ],
+       "q": "Was bedeutet „Luv\"?",
+       "warum": "Luv ist windzugewandt, Lee windabgewandt. Fast alle Vorfahrtsregeln und Manöverbeschreibungen bauen darauf auf, deshalb steht es am Anfang."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "die Rückseite des Bootes.",
+        "in Fahrtrichtung rechts, Kennfarbe grün.",
+        "immer die Luvseite.",
+        "in Fahrtrichtung links, Kennfarbe rot."
+       ],
+       "q": "Backbord ist …",
+       "warum": "Backbord links und rot, Steuerbord rechts und grün — dieselbe Zuordnung wie bei den Positionslaternen und bei der Betonnung."
+      },
+      {
+       "answer": 2,
+       "bild": "bootsteile",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Es steuert das Boot.",
+        "Es stabilisiert gegen Krängung.",
+        "Es wirkt der seitlichen Abdrift entgegen.",
+        "Es bremst beim Anlegen."
+       ],
+       "q": "Wozu dient das Schwert?",
+       "warum": "Ohne Schwert oder Kiel würde das Boot vom Wind einfach seitwärts geschoben. Gesteuert wird mit dem Ruder — und auch das nur, solange Wasser daran vorbeiströmt."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Mit dem Baum.",
+        "Mit dem Niederholer.",
+        "Mit dem Fall.",
+        "Mit der Schot."
+       ],
+       "q": "Womit wird ein Segel gesetzt, also nach oben gezogen?",
+       "warum": "Fallen ziehen nach oben, Schoten nach hinten oder zur Seite. Der Niederholer zieht den Baum nach unten und gehört zur Trimmerei, nicht zum Setzen."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Die dem Wind zugewandte Seite.",
+        "Die dem Wind abgewandte Seite.",
+        "Die rechte Seite des Bootes.",
+        "Der hintere Teil des Bootes."
+       ],
+       "q": "Was bedeutet „Lee\"?",
+       "warum": "Lee wie leer — dorthin bläst der Wind alles hin. Das Segel steht in Lee, die Mannschaft sitzt in Luv."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "immer die Leeseite.",
+        "in Fahrtrichtung rechts, Kennfarbe grün.",
+        "in Fahrtrichtung links, Kennfarbe rot.",
+        "der Bereich um das Ruder."
+       ],
+       "q": "Steuerbord ist …",
+       "warum": "Rechts und grün — dieselbe Zuordnung wie bei der Positionslaterne und der Steuerbordtonne."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Kiel",
+        "Bug",
+        "Süll",
+        "Heck"
+       ],
+       "q": "Wie heißt der vordere Teil des Bootes?",
+       "warum": "Vorne Bug, hinten Heck. Die Wörter gelten unabhängig davon, wie man gerade sitzt."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Der offene Sitzbereich, in dem die Mannschaft sitzt.",
+        "Die Leine zum Festmachen.",
+        "Die Pflicht zur Rettungsweste.",
+        "Der Raum unter Deck."
+       ],
+       "q": "Was ist die Plicht?",
+       "warum": "Von „Pflicht\" kommt das Wort nicht, sondern aus dem Niederdeutschen. Gemeint ist der Arbeitsplatz der Mannschaft."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Er stabilisiert den Mast nach vorn.",
+        "Er trägt das Vorsegel.",
+        "Er hält das Unterliek des Großsegels.",
+        "Er dient zum Anlegen."
+       ],
+       "q": "Wozu dient der Baum?",
+       "warum": "Der Baum spannt das Großsegel unten aus. Was den Mast nach vorn hält, ist das Vorstag."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Ein Draht, der den Mast in Längsrichtung hält.",
+        "Ein Beschlag am Baum.",
+        "Der Abstand zwischen zwei Booten.",
+        "Eine Leine zum Segelsetzen."
+       ],
+       "q": "Was ist ein Stag?",
+       "warum": "Vorstag und Achterstag halten den Mast längs, die Wanten quer. Alles zusammen ist das stehende Gut."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Eine Leine zum Reffen.",
+        "Ein Draht, der den Mast seitlich hält.",
+        "Ein Teil des Ruders.",
+        "Die Wand des Kajütaufbaus."
+       ],
+       "q": "Was ist ein Want?",
+       "warum": "Wanten halten den Mast quer, Stagen längs. Beides gehört zum stehenden Gut, das im Betrieb nicht bewegt wird."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Wanten und Stagen.",
+        "Mast und Baum.",
+        "Ruder und Schwert.",
+        "Fallen und Schoten."
+       ],
+       "q": "Was gehört zum laufenden Gut?",
+       "warum": "Laufendes Gut wird im Betrieb bewegt: Fallen ziehen Segel hoch, Schoten stellen sie. Stehendes Gut steht."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Mit dem Niederholer.",
+        "Mit der Schot.",
+        "Mit dem Stag.",
+        "Mit dem Fall."
+       ],
+       "q": "Womit wird ein Segel dichtgeholt?",
+       "warum": "Schoten stellen den Winkel des Segels zum Wind ein. Fallen ziehen es nach oben."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Die untere Kante.",
+        "Die hintere Kante.",
+        "Die vordere Kante.",
+        "Die Ecke am Baum."
+       ],
+       "q": "Was ist das Vorliek eines Segels?",
+       "warum": "Vorliek vorne, Achterliek hinten, Unterliek unten. Das Killen beginnt immer am Vorliek — daran erkennt man zu offene Schot."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Hals",
+        "Schothorn",
+        "Kopf",
+        "Nock"
+       ],
+       "q": "Wie heißt die untere vordere Ecke des Großsegels?",
+       "warum": "Kopf oben, Hals unten vorn, Schothorn unten hinten. Die drei Ecken eines Dreiecksegels haben eigene Namen, weil dort jeweils etwas anderes befestigt wird."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Er zieht das Vorsegel dicht.",
+        "Er zieht den Baum nach unten und verhindert, dass er aufsteigt.",
+        "Er holt das Segel nieder, also herunter.",
+        "Er senkt das Schwert ab."
+       ],
+       "q": "Was bewirkt der Niederholer?",
+       "warum": "Ohne Niederholer steigt der Baum bei offener Schot auf, das Segel verdreht sich (twistet) und verliert Kraft im oberen Bereich."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Zum Steuern, solange Wasser daran vorbeiströmt.",
+        "Zum Bremsen.",
+        "Gegen die seitliche Abdrift.",
+        "Zur Stabilisierung gegen Krängung."
+       ],
+       "q": "Wozu dient das Ruder?",
+       "warum": "Das Ruder wirkt nur bei Fahrt durchs Wasser. Ein stehendes Boot lässt sich nicht steuern — deshalb wird beim Anlegen nie die ganze Fahrt weggenommen, bevor man liegt."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Die seitliche Neigung des Bootes.",
+        "Das Schlingern bei Welle.",
+        "Das Eintauchen des Bugs.",
+        "Die Abdrift nach Lee."
+       ],
+       "q": "Was ist Krängung?",
+       "warum": "Krängung entsteht aus dem seitlichen Anteil der Segelkraft. Ein wenig ist normal, zu viel kostet Geschwindigkeit und Ruderwirkung."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Sie geht nach Luv, um mit dem Gewicht gegenzuhalten.",
+        "Sie setzt sich in die Mitte.",
+        "Sie geht nach vorn.",
+        "Sie geht nach Lee."
+       ],
+       "q": "Was tut die Mannschaft bei zunehmender Krängung?",
+       "warum": "Ausreiten in Luv ist das einfachste Trimmmittel. Reicht das nicht, wird die Schot gefiert oder gerefft."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Die Segel bergen.",
+        "Die Segelfläche verkleinern.",
+        "Den Mast legen.",
+        "Die Schot dichtholen."
+       ],
+       "q": "Was heißt „reffen\"?",
+       "warum": "Gerefft wird, bevor es nötig ist — im Sturm auf dem Vorschiff zu arbeiten ist genau das, was man vermeiden wollte."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Die Geschwindigkeit über Grund.",
+        "Das Versetzen durch die Strömung.",
+        "Der Vorhaltewinkel.",
+        "Das seitliche Versetzen durch den Winddruck."
+       ],
+       "q": "Was ist die Abdrift?",
+       "warum": "Abdrift kommt vom Wind, Versatz von der Strömung. Gegen die Abdrift wirkt das Schwert oder der Kiel."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Ein Boot ohne Schwert.",
+        "Eine Jolle mit Kajüte und meist Ballast im Schwert.",
+        "Ein Katamaran.",
+        "Ein reines Motorboot."
+       ],
+       "q": "Was ist ein Jollenkreuzer im Unterschied zur Jolle?",
+       "warum": "Die Jolle hat ein aufholbares Schwert ohne nennenswerten Ballast und kann kentern; der Kielkreuzer richtet sich durch seinen Ballastkiel wieder auf."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Das Kielboot ist schwerer.",
+        "Der Ballastkiel richtet das Kielboot wieder auf.",
+        "Das Kielboot liegt tiefer im Wasser.",
+        "Die Jolle hat mehr Segelfläche."
+       ],
+       "q": "Warum kann eine Jolle kentern, ein Kielboot aber kaum?",
+       "warum": "Entscheidend ist das Gewicht **unten**. Ein Ballastkiel erzeugt mit zunehmender Krängung ein wachsendes Aufrichtmoment."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Die Segel abschlagen.",
+        "Am Boot bleiben und über das Schwert aufrichten.",
+        "Das Schwert einholen.",
+        "Zum Ufer schwimmen."
+       ],
+       "q": "Was ist zu tun, wenn eine Jolle gekentert ist?",
+       "warum": "Das Boot schwimmt, der Mensch wird müde. Es ist außerdem von weitem sichtbar — am Boot bleiben ist die erste Regel nach dem Kentern."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Der unbelegte Teil des Decks.",
+        "Der Abstand von der Wasserlinie zum Deck.",
+        "Der Abstand zum Nachbarboot.",
+        "Die freie Segelfläche."
+       ],
+       "q": "Was ist der Freibord?",
+       "warum": "Je kleiner der Freibord, desto eher kommt Wasser über. Bei Krängung und Welle ist das die Größe, die über Nässe im Boot entscheidet."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Die Segelfläche.",
+        "Der Tiefgang.",
+        "Die Masse des verdrängten Wassers, also das Gewicht des Bootes.",
+        "Die Länge über alles."
+       ],
+       "q": "Was ist die Verdrängung eines Bootes?",
+       "warum": "Nach Archimedes verdrängt ein schwimmender Körper genau sein eigenes Gewicht an Wasser."
+      },
+      {
+       "antwort": 2.4,
+       "bild": "",
+       "einheit": "m³",
+       "kind": "zahl",
+       "q": "Ein Boot hat 2,4 t Verdrängung. Wie viele Kubikmeter Wasser verdrängt es in Süßwasser (1 t je m³)?",
+       "toleranz": 0.05,
+       "warum": "Verdrängung in Tonnen ist in Süßwasser zahlenmäßig gleich dem Volumen in Kubikmetern. In Salzwasser wäre es etwas weniger, weil Salzwasser dichter ist."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Der Abstand Deck zu Kiel.",
+        "Der tiefste Punkt des Bootes unter der Wasserlinie.",
+        "Die Höhe des Mastes.",
+        "Die Wassertiefe unter dem Kiel."
+       ],
+       "q": "Was ist der Tiefgang?",
+       "warum": "Was unter dem Kiel bleibt, ist der Kielfreiraum. Der Tiefgang ist eine Eigenschaft des Bootes, nicht des Gewässers."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Wanten und Stagen.",
+        "Fall und Schot.",
+        "Der Niederholer.",
+        "Die Vor- und Achterleine sowie die Springs."
+       ],
+       "q": "Welche Leine gehört zum Festmachen?",
+       "warum": "Vorleine und Achterleine halten längs, die Springs verhindern das Vor- und Zurückrutschen am Steg."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Ein federnder Beschlag am Mast.",
+        "Die Leine zum Ankerwerfen.",
+        "Ein Sprung im Rumpf.",
+        "Eine Festmacherleine schräg nach vorn oder achtern."
+       ],
+       "q": "Was ist eine Spring?",
+       "warum": "Ohne Springs wandert das Boot am Steg hin und her, sobald Welle oder Wind längs stehen."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Mit dem Anker.",
+        "Mit Springs.",
+        "Mit dem Schwert.",
+        "Mit Fendern."
+       ],
+       "q": "Womit wird das Boot am Steg vor Scheuern geschützt?",
+       "warum": "Fender gehören auf die richtige Höhe — zu hoch hängende Fender sind die häufigste Ursache für Schrammen am Rumpf."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Als Ballast.",
+        "Zum Abschleppen.",
+        "Zum Halten auf Grund, mit ausreichend Kette und Leine.",
+        "Zum Bremsen in Fahrt."
+       ],
+       "q": "Wofür ist der Anker ausgelegt?",
+       "warum": "Entscheidend ist die **Kettenlänge**: Der Anker hält nur, wenn der Zug waagrecht ankommt. Faustregel ist das Drei- bis Fünffache der Wassertiefe."
+      },
+      {
+       "antwort": 20,
+       "bild": "",
+       "einheit": "m",
+       "kind": "zahl",
+       "q": "Wassertiefe 4 m, Faustregel: fünffache Länge. Wie viel Kette und Leine steckst du?",
+       "toleranz": 0.05,
+       "warum": "4 × 5 = 20 m. Bei Wind und Welle eher mehr; bei zu kurzer Länge zieht der Anker nach oben statt waagrecht und bricht aus."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Die Segel bleiben gesetzt.",
+        "Der Anker muss senkrecht fallen.",
+        "Das Schwert bleibt unten.",
+        "Der Schwojkreis muss frei sein."
+       ],
+       "q": "Was ist beim Ankern zu beachten?",
+       "warum": "Das Boot dreht sich um den Anker mit dem Wind. Der Kreis mit dem Radius der gesteckten Länge muss frei von Booten und Untiefen sein."
+      }
+     ],
+     "ausgabe": "",
+     "begriffe": [
+      "bootsteile",
+      "luv-lee"
+     ],
+     "beispiel": "",
+     "bild": "bootsteile",
+     "id": "b-teile",
+     "text": "**Vorne ist der Bug, hinten das Heck.** In Fahrtrichtung gesehen ist links **Backbord** (rot) und rechts **Steuerbord** (grün). Diese beiden Wörter gelten immer vom Boot aus, nie vom Ufer — deshalb gibt es sie überhaupt.\n\nDie beiden wichtigsten Wörter im Segelsport sind aber **Luv** und **Lee**:\n\n**Luv** ist die Seite, von der der Wind kommt.\n**Lee** ist die Seite, zu der er weht.\n\nMerkhilfe: *Lee* wie *leer* — dorthin bläst der Wind alles hin. Das Segel steht immer in Lee, die Mannschaft sitzt beim Krängen in Luv.\n\nAm Rumpf: Das **Schwert** (oder der Kiel) wirkt gegen die seitliche Abdrift, das **Ruder** steuert. Ohne Fahrt durchs Wasser wirkt keines von beiden — ein stehendes Boot lässt sich nicht steuern.\n\nOben: Der **Mast** trägt die Segel, der **Baum** hält das Großsegel unten, die **Schot** ist die Leine, mit der man ein Segel dichtholt oder fiert. **Fallen** ziehen Segel nach oben, **Schoten** nach hinten — wer das verwechselt, sagt es in der Prüfung einmal und nie wieder.",
+     "titel": "Teile und Richtungen"
+    }
+   ],
+   "sprache": "-",
+   "stufe": 1,
+   "text": "Die Begriffe, ohne die kein anderes Kapitel verständlich ist. Wer Luv und Lee sicher hat, versteht die halbe Prüfung von allein.",
+   "titel": "Das Boot"
+  },
+  {
+   "id": "kurse",
+   "lektionen": [
+    {
+     "aufgaben": [
+      {
+       "answer": 3,
+       "bild": "kurse-zum-wind",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Vor dem Wind",
+        "Am Wind",
+        "Raumschots",
+        "Halber Wind"
+       ],
+       "q": "Wie heißt der Kurs, bei dem der Wind genau von der Seite kommt?",
+       "warum": "Neunzig Grad zum Wind. Für die meisten Boote der schnellste Kurs überhaupt — die Kraft am Segel ist groß und treibt fast vollständig nach vorn statt zur Seite."
+      },
+      {
+       "answer": 1,
+       "bild": "kurse-zum-wind",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Das Ziel ist unter Segeln nicht erreichbar.",
+        "Kreuzen: abwechselnd am Wind auf beiden Bugen.",
+        "Direkt darauf zuhalten.",
+        "Vor dem Wind fahren und einen Bogen schlagen."
+       ],
+       "q": "Dein Ziel liegt genau in Luv. Was tust du?",
+       "warum": "Direkt gegen den Wind geht nicht, aber am Wind mit abwechselnden Wenden schon. Der Umweg kostet etwa die Hälfte mehr Strecke."
+      },
+      {
+       "antwort": 45,
+       "bild": "kurse-zum-wind",
+       "einheit": "Grad",
+       "kind": "zahl",
+       "q": "Wie groß ist die Sperrzone ungefähr, also der Winkel zu *einer* Seite der Windrichtung, in den man nicht segeln kann?",
+       "toleranz": 0.2,
+       "warum": "Etwa 45 Grad zu jeder Seite, zusammen also rund 90 Grad. Moderne Regatta-Yachten kommen auf 35 bis 40 Grad heran, ein Jollenkreuzer eher auf 50."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Das Segel killt am Vorliek, also vorne am Mast.",
+        "Das Boot krängt stärker.",
+        "Der Baum liegt auf dem Wasser.",
+        "Das Segel ist ganz flach."
+       ],
+       "q": "Woran erkennst du, dass die Schot zu weit offen ist?",
+       "warum": "Killen heißt flattern, und es beginnt immer vorne. Die Trimmregel lautet deshalb: aufmachen bis es killt, dann so weit dichtnehmen, dass es gerade aufhört."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Am Wind",
+        "Halber Wind",
+        "Vor dem Wind",
+        "Raumschots"
+       ],
+       "q": "Wie heißt der Kurs, bei dem der Wind schräg von achtern kommt?",
+       "warum": "Raumschots liegt zwischen halbem Wind und vor dem Wind, also bei etwa 135 Grad. Das Segel ist weit aufgefiert."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Die Krängung hängt nicht vom Kurs ab.",
+        "Am Wind.",
+        "Raumschots.",
+        "Vor dem Wind."
+       ],
+       "q": "Auf welchem Kurs krängt ein Boot am stärksten?",
+       "warum": "Am Wind wirkt der größte Anteil der Segelkraft quer zum Boot. Vor dem Wind drückt sie fast nur nach vorn."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Das Segel steht ungünstig.",
+        "Der scheinbare Wind wird durch die eigene Fahrt kleiner.",
+        "Das Ruder wirkt schlechter.",
+        "Die Abdrift ist am größten."
+       ],
+       "q": "Warum ist „vor dem Wind\" nicht der schnellste Kurs?",
+       "warum": "Fährt man mit dem Wind, zieht man ihm davon: Von 6 m/s wahrem Wind bleiben bei 3 m/s Fahrt nur 3 m/s scheinbarer Wind übrig. Quer zum Wind addiert sich die Fahrt dagegen vektoriell."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Der Wind am Ufer.",
+        "Der Wind in Böen.",
+        "Die Summe aus wahrem Wind und Fahrtwind.",
+        "Der Wind in Masthöhe."
+       ],
+       "q": "Was ist der scheinbare Wind?",
+       "warum": "Der scheinbare Wind ist das, was das Segel und der Verklicker spüren. Er dreht mit zunehmender Fahrt weiter nach vorn."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "den Kurs über Grund.",
+        "den wahren Wind.",
+        "die Richtung des scheinbaren Windes.",
+        "die Windgeschwindigkeit."
+       ],
+       "q": "Der Verklicker zeigt an …",
+       "warum": "Er hängt im Wind an Bord, also zeigt er den scheinbaren. Für den Trimm ist genau der maßgeblich."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Vom Wind wegdrehen.",
+        "Den Bug näher an den Wind drehen.",
+        "In Lee ausweichen.",
+        "Die Schot fieren."
+       ],
+       "q": "Was heißt „anluven\"?",
+       "warum": "Anluven geht zum Wind hin, abfallen vom Wind weg. Beim Anluven muss die Schot dichter genommen werden, sonst killt das Segel."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Zum Wind hin drehen.",
+        "Die Fahrt verlieren.",
+        "Den Bug vom Wind wegdrehen.",
+        "Aus dem Boot fallen."
+       ],
+       "q": "Was heißt „abfallen\"?",
+       "warum": "Abfallen ist das Gegenteil von Anluven; dabei wird die Schot gefiert, sonst krängt das Boot unnötig."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Schot dichtnehmen.",
+        "Schwert aufholen.",
+        "Weiter anluven.",
+        "Schot fieren."
+       ],
+       "q": "Beim Anluven killt das Segel. Was tust du?",
+       "warum": "Je näher am Wind, desto dichter das Segel. Wer anluvt ohne dichtzunehmen, verliert Vortrieb und Fahrt."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Das Segel killt.",
+        "Das Boot krängt stärker und wird langsamer.",
+        "Das Boot luvt von allein an.",
+        "Nichts Nennenswertes."
+       ],
+       "q": "Was bewirkt zu dicht geholte Schot am Wind?",
+       "warum": "Übertrimmt man, wächst der Querdruck ohne Gewinn an Vortrieb. Die Regel bleibt: aufmachen bis es killt, dann gerade dichtnehmen."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Der Luvfaden soll flattern.",
+        "Beide Seiten sollen waagrecht nach achtern strömen.",
+        "Beide sollen nach oben zeigen.",
+        "Der Leefaden soll flattern."
+       ],
+       "q": "Wie prüft man den Trimm mit Wollfäden?",
+       "warum": "Strömen beide glatt, liegt die Strömung an beiden Seiten an. Flattert der Luvfaden, ist die Schot zu offen oder man ist zu hoch am Wind."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Eine Halse einleiten.",
+        "Den Bug in den Wind drehen, bis die Segel killen und das Boot aufstoppt.",
+        "Vor dem Wind beschleunigen.",
+        "Den Anker werfen."
+       ],
+       "q": "Was bedeutet „in den Wind schießen\"?",
+       "warum": "Das ist die Bremse eines Segelbootes und die Grundlage jedes Anlegemanövers unter Segeln: Es gibt keine andere Möglichkeit, kontrolliert stehenzubleiben."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Man wirft den Anker.",
+        "Man fiert die Schoten und wartet.",
+        "Man schießt in den Wind.",
+        "Man dreht vor den Wind."
+       ],
+       "q": "Ein Segelboot hat keine Bremse. Wie hält man an?",
+       "warum": "Nur im Wind steht das Boot ohne Vortrieb. Schoten fieren allein genügt nicht — das Boot treibt weiter."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "etwa 30 Grad",
+        "etwa 180 Grad",
+        "etwa 45 Grad",
+        "etwa 90 Grad"
+       ],
+       "q": "Was ist der Wendewinkel eines typischen Tourenbootes?",
+       "warum": "Von 45 Grad auf dem einen Bug zu 45 Grad auf dem anderen sind es rund 90 Grad Kursänderung."
+      },
+      {
+       "antwort": 1.4,
+       "bild": "",
+       "einheit": "mal",
+       "kind": "zahl",
+       "q": "Du segelst am Wind und musst 6 km gegen den Wind zurücklegen. Um welchen Faktor wird der tatsächliche Weg beim Kreuzen ungefähr länger?",
+       "toleranz": 0.12,
+       "warum": "Bei 45 Grad Kurs zum Wind ist der Weg etwa 1/cos(45°) ≈ 1,41 mal so lang. Aus 6 km werden also gut 8,5 km — und entsprechend mehr Zeit."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Zur Stabilisierung gegen Wellen.",
+        "Sonst würde der Winddruck es seitwärts abtreiben.",
+        "Für die Steuerung.",
+        "Um den Tiefgang zu erhöhen."
+       ],
+       "q": "Warum braucht ein Segelboot ein Schwert oder einen Kiel?",
+       "warum": "Die Segelkraft wirkt großenteils quer. Erst der Widerstand des Schwerts gegen die Querbewegung macht daraus Vortrieb."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Immer am Wind.",
+        "Nie.",
+        "Bei starkem Wind.",
+        "Auf Raumschots- und Vorwindkursen sowie im Flachwasser."
+       ],
+       "q": "Wann wird das Schwert aufgeholt?",
+       "warum": "Vor dem Wind gibt es kaum Querkraft, also braucht es kein Schwert — und es kostet Widerstand. Im Flachwasser ist es ohnehin oben."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Durch Druckunterschied zwischen Luv- und Leeseite, wie an einem Flügel.",
+        "Nur durch den Staudruck von hinten.",
+        "Durch Reibung der Luft am Tuch.",
+        "Durch die Krängung."
+       ],
+       "q": "Wie entsteht der Vortrieb am Segel physikalisch?",
+       "warum": "Am Wind wirkt das Segel als Profil: Auf der Leeseite entsteht Unterdruck. Nur vor dem Wind arbeitet es tatsächlich als Widerstand."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Der Schwerpunkt des Bootes.",
+        "Die Mitte des Rumpfes.",
+        "Der Angriffspunkt der seitlichen Kräfte am Unterwasserschiff.",
+        "Der Angriffspunkt der Segelkräfte."
+       ],
+       "q": "Was ist das Lateralzentrum?",
+       "warum": "Liegt der Segeldruckpunkt hinter dem Lateralzentrum, luvt das Boot von allein an — die Luvgierigkeit."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Schwert aufholen.",
+        "Großsegel dichter nehmen.",
+        "Großsegel fieren oder reffen, Vorsegel dichter.",
+        "Vorsegel bergen."
+       ],
+       "q": "Ein Boot ist stark luvgierig. Was hilft?",
+       "warum": "Das Großsegel wirkt achtern und luvt an, das Vorsegel wirkt vorn und fällt ab. Wer Krängung abbaut, verringert die Luvgierigkeit ebenfalls."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Der Wind dreht.",
+        "Das Schwert greift tiefer.",
+        "Das Ruder wirkt stärker.",
+        "Die Rumpfform wird asymmetrisch und drückt den Bug in den Wind."
+       ],
+       "q": "Warum luvt ein Boot bei starker Krängung von allein an?",
+       "warum": "Das gekrängte Unterwasserschiff ist nicht mehr symmetrisch. Deshalb ist aufrecht segeln nicht nur bequemer, sondern auch schneller."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Ein Wind vom Ufer.",
+        "Eine kurzzeitige Verstärkung des Windes, oft mit Richtungsänderung.",
+        "Ein Wirbel hinter dem Segel.",
+        "Ein stetiger Wind über 6 Beaufort."
+       ],
+       "q": "Was ist eine Bö?",
+       "warum": "Böen kommen meist etwas raumer herein. Man erkennt sie auf dem Wasser an der dunklen, gekräuselten Fläche — rechtzeitig sichtbar, wenn man hinsieht."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Kurs halten.",
+        "Schwert aufholen.",
+        "Abfallen und dichtnehmen.",
+        "Anluven und Großschot fieren."
+       ],
+       "q": "Wie reagiert man in einer Bö am Wind?",
+       "warum": "Anluven verringert den Anstellwinkel, Fieren die Kraft. Abfallen würde die Krängung noch vergrößern."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Näher am Wind.",
+        "Genau gegen den Wind.",
+        "Dasselbe.",
+        "Weiter vom Wind weg, das Segel ist weiter aufgefiert."
+       ],
+       "q": "Was ist ein Raumschotskurs im Vergleich zu halbem Wind?",
+       "warum": "Halber Wind 90 Grad, raumschots etwa 135 Grad."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Beim Aufschießer.",
+        "Am Wind.",
+        "Halber Wind.",
+        "Vor dem Wind."
+       ],
+       "q": "Auf welchem Kurs ist die Patenthalse am ehesten zu befürchten?",
+       "warum": "Vor dem Wind genügt ein kleines Abfallen oder eine Welle, und der Wind kommt auf die andere Seite des Segels."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Durch mehr Fahrt.",
+        "Durch Aufholen des Schwerts.",
+        "Mit einem Bullenstander, der den Baum nach vorn hält.",
+        "Durch dichtere Schot."
+       ],
+       "q": "Wie verhindert man eine Patenthalse wirksam?",
+       "warum": "Der Bullenstander läuft vom Baum nach vorn an Deck und hält ihn fest — auf längeren Vorwindstrecken gehört er gesetzt."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Die Persenning.",
+        "Ein zweites Großsegel.",
+        "Ein großes, bauchiges Vorsegel für raume Kurse.",
+        "Ein Sturmsegel."
+       ],
+       "q": "Was ist ein Spinnaker?",
+       "warum": "Er zieht nur mit dem Wind von achtern und verlangt Übung — bei viel Wind ist er das Segel, das Anfängern die Kontrolle nimmt."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Es flattert, weil die Strömung abreißt.",
+        "Es steht zu dicht.",
+        "Es reißt ein.",
+        "Es wird geborgen."
+       ],
+       "q": "Was bedeutet „killen\" eines Segels?",
+       "warum": "Killen beginnt am Vorliek und ist das Zeichen, dass die Schot zu offen oder der Kurs zu hoch ist."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Am Wind.",
+        "Halber Wind.",
+        "Vor dem Wind.",
+        "In der Sperrzone."
+       ],
+       "q": "Bei welchem Kurs steht das Segel etwa 45 Grad zur Mittschiffslinie?",
+       "warum": "Grobe Regel: Der Segelwinkel ist etwa halb so groß wie der Kurswinkel zum Wind. Bei 90 Grad Kurs also etwa 45 Grad Segel."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Weil die Schot sich lockert.",
+        "Weil das Segel ausleiert.",
+        "Weil sich mit dem Kurs auch der scheinbare Wind ändert.",
+        "Das ist nicht nötig."
+       ],
+       "q": "Warum ist es sinnvoll, den Trimm nach dem Kurswechsel neu zu prüfen?",
+       "warum": "Jede Kursänderung ändert Richtung und Stärke des scheinbaren Windes — und damit den richtigen Segelstand."
+      }
+     ],
+     "ausgabe": "",
+     "begriffe": [
+      "kurse",
+      "sperrzone"
+     ],
+     "beispiel": "",
+     "bild": "kurse-zum-wind",
+     "id": "k-kurse",
+     "text": "Ein Boot kann in fast jede Richtung segeln — nur nicht direkt gegen den Wind. Der Bereich von etwa **45 Grad zu beiden Seiten** der Windrichtung ist die **Sperrzone**; darin steht das Segel nur noch und killt.\n\nDie Kurse, von der Sperrzone weg gezählt:\n\n**Am Wind** — so dicht am Wind wie möglich, rund 45 Grad. Das Segel ist dichtgeholt, das Boot krängt am stärksten.\n\n**Halber Wind** — der Wind kommt quer von der Seite, 90 Grad. Der schnellste Kurs der meisten Boote.\n\n**Raumschots** — der Wind kommt schräg von hinten, rund 135 Grad. Das Segel ist weit aufgefiert.\n\n**Vor dem Wind** — der Wind genau von achtern. Ruhig, aber langsamer als es sich anfühlt, und wegen der drohenden **Patenthalse** der unangenehmste Kurs.\n\nWer ein Ziel in Luv erreichen will, muss **kreuzen**: abwechselnd auf beiden Seiten am Wind, im Zickzack. Der Weg wird dadurch etwa um die Hälfte länger als die Luftlinie.\n\nDie Grundregel fürs Trimmen gilt auf jedem Kurs: **Schot so weit aufmachen, bis das Segel vorne zu killen beginnt, dann wieder dichtnehmen, bis es gerade steht.**",
+     "titel": "Die Kurse"
+    }
+   ],
+   "sprache": "-",
+   "stufe": 2,
+   "text": "Wie ein Segel überhaupt zieht, welche Kurse es gibt und warum man gegen den Wind nicht geradeaus fahren kann.",
+   "titel": "Kurse zum Wind"
+  },
+  {
+   "id": "manoever",
+   "lektionen": [
+    {
+     "aufgaben": [
+      {
+       "answer": 3,
+       "bild": "wende-halse",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Bei keinem von beiden.",
+        "Bei der Wende.",
+        "Bei beiden.",
+        "Bei der Halse."
+       ],
+       "q": "Bei welchem Manöver geht das Heck durch den Wind?",
+       "warum": "Wende: Bug durch den Wind. Halse: Heck durch den Wind. Die Eselsbrücke: bei der **W**ende zeigt der Bug kurz **w**ohin der Wind kommt."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Eine Wende, die nicht durchkommt.",
+        "Eine ungewollte Halse, bei der der Baum unkontrolliert herüberschlägt.",
+        "Eine besonders schnell gefahrene Halse.",
+        "Eine Halse mit gesetztem Spinnaker."
+       ],
+       "q": "Was ist eine Patenthalse?",
+       "warum": "Sie passiert, wenn man vor dem Wind unaufmerksam ein wenig zu weit abfällt. Der Baum kommt mit voller Wucht — die häufigste Kopfverletzung im Segelsport und ein klassischer Grund für Mann über Bord."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Schwert aufholen.",
+        "Großschot ganz dichtholen.",
+        "Warten, bis der Wind das Boot dreht.",
+        "Vorsegel back halten und Ruder entsprechend legen."
+       ],
+       "q": "Das Boot hängt nach einer missglückten Wende im Wind und treibt rückwärts. Was hilft?",
+       "warum": "Back halten heißt: das Vorsegel auf die falsche Seite ziehen, sodass der Wind von vorn hineindrückt und den Bug abdreht. Rückwärts wirkt das Ruder umgekehrt — daran denken."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "„Rund achtern!\"",
+        "„Ree!\"",
+        "„Klar zur Wende?\"",
+        "„Klar zur Halse?\""
+       ],
+       "q": "Wie lautet das Ankündigungskommando zur Wende?",
+       "warum": "Erst die Frage, dann auf die Antwort „ist klar\" das Ausführungskommando „Ree!\"."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "„Klar zur Wende?\"",
+        "„Ree!\"",
+        "„Rund achtern!\"",
+        "„Fall weg!\""
+       ],
+       "q": "Wie lautet das Ausführungskommando zur Wende?",
+       "warum": "„Ree\" kommt von Ruder in Lee — historisch die Bewegung, mit der die Wende eingeleitet wurde."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "„Ree!\"",
+        "„Baum über!\"",
+        "„Klar zur Halse?\"",
+        "„Rund achtern!\""
+       ],
+       "q": "Wie lautet das Ausführungskommando zur Halse?",
+       "warum": "Die Halse geht rund achtern — das Heck durch den Wind."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Mit dem Bergen des Vorsegels.",
+        "Mit dem Fieren der Großschot.",
+        "Mit etwas Fahrt aufnehmen, dann zügig anluven.",
+        "Mit dem Aufholen des Schwerts."
+       ],
+       "q": "Womit beginnt eine Wende aus dem Am-Wind-Kurs?",
+       "warum": "Ohne Fahrt bleibt das Boot im Wind hängen. Deshalb vor der Wende eher etwas abfallen und Fahrt machen."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Es wird immer zuerst umgeholt.",
+        "Damit es nicht back steht und den Bug zurückdrückt.",
+        "Damit die Fahrt erhalten bleibt.",
+        "Damit es nicht reißt."
+       ],
+       "q": "Warum wird bei der Wende das Vorsegel erst spät umgeholt?",
+       "warum": "Zu früh umgeholt fehlt dem Bug der Schwung; zu spät steht es back und bremst. Es geht über, sobald der Bug durch den Wind ist."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Großschot dichtholen.",
+        "Vorsegel back halten und Ruder entsprechend legen.",
+        "Schwert aufholen.",
+        "Warten."
+       ],
+       "q": "Das Boot bleibt in der Wende im Wind stehen. Wie kommt man heraus?",
+       "warum": "Back gehaltenes Vorsegel drückt den Bug auf die gewünschte Seite. Bei Rückwärtsfahrt wirkt das Ruder umgekehrt."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Das Boot verliert Fahrt.",
+        "Der Baum schlägt mit voller Kraft auf die andere Seite.",
+        "Das Vorsegel kann reißen.",
+        "Das Schwert schlägt an."
+       ],
+       "q": "Warum ist die Halse bei starkem Wind gefährlich?",
+       "warum": "Bei der Halse steht das Segel bis zuletzt voll im Wind. Kommt es herüber, kommt die ganze gespeicherte Energie mit."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Großschot dichtholen, herüberlassen, wieder auffieren.",
+        "Schnell durchsteuern.",
+        "Schot ganz offen lassen.",
+        "Vorher das Schwert aufholen."
+       ],
+       "q": "Wie führt man eine Halse bei viel Wind kontrolliert durch?",
+       "warum": "Dichtholen verkürzt den Weg des Baums und damit seine Geschwindigkeit. Danach sofort wieder fieren, sonst krängt das Boot stark."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "„Ree!\"",
+        "Eine Warnung, damit alle den Kopf einziehen.",
+        "„Klar bei Fall!\"",
+        "Nichts."
+       ],
+       "q": "Was ruft der Steuermann unmittelbar vor dem Überkommen des Baums?",
+       "warum": "Der Baum kommt auf Kopfhöhe. Das Ausführungskommando ist zugleich die Warnung — und es wird laut gegeben."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Ein plötzlicher Fahrtgewinn.",
+        "Das Anluven in den Wind bis zum Stillstand.",
+        "Das Aufrichten nach einer Kenterung.",
+        "Eine missglückte Halse."
+       ],
+       "q": "Was ist ein Aufschießer?",
+       "warum": "Der Aufschießer ist das Grundmanöver zum Anlegen, Bojenfangen und Personenaufnehmen: kontrolliert bis zum Stillstand."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur von der Segelfläche.",
+        "Nur vom Tiefgang.",
+        "Von Fahrt, Gewicht des Bootes und von Wind und Welle.",
+        "Er ist immer gleich lang."
+       ],
+       "q": "Wovon hängt die Länge des Aufschießers ab?",
+       "warum": "Ein schweres Boot bei wenig Wind schießt weit, ein leichtes gegen Welle kaum. Deshalb probiert man den Aufschießer im freien Wasser, bevor man ihn am Steg braucht."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Mit dem Wind von achtern.",
+        "Im Aufschießer gegen den Wind, mit killenden Segeln.",
+        "Rückwärts.",
+        "Quer zum Wind mit Fahrt."
+       ],
+       "q": "Wie legt man unter Segeln am besten an?",
+       "warum": "Nur gegen den Wind lässt sich die Fahrt kontrolliert wegnehmen. Vor dem Wind anzulegen heißt, ungebremst anzukommen."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Ganz aufholen und oben lassen.",
+        "Das ist gleichgültig.",
+        "Immer ganz absenken.",
+        "Im Flachwasser oben lassen und erst im tiefen Wasser absenken."
+       ],
+       "q": "Was tut man vor dem Ablegen mit dem Schwert?",
+       "warum": "Ein abgesenktes Schwert im Flachwasser schlägt an und kann brechen oder das Boot stoppen."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Man legt vor dem Wind ab.",
+        "Das Ablegen ist besonders einfach.",
+        "Das Boot wird an den Steg gedrückt; man muss sich frei arbeiten.",
+        "Man setzt zuerst das Großsegel."
+       ],
+       "q": "Beim Ablegen weht der Wind auf den Steg. Was ist zu beachten?",
+       "warum": "Auflandiger Wind am Steg ist die schwierige Richtung. Oft hilft nur, das Boot an einer Leine nach vorn oder achtern zu verholen, bis der Bug frei ist."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Erst das Großsegel, dann das Vorsegel.",
+        "Beide gleichzeitig.",
+        "Das ist gleichgültig.",
+        "Erst das Vorsegel, dann das Groß."
+       ],
+       "q": "In welcher Reihenfolge setzt man üblicherweise die Segel?",
+       "warum": "Mit gesetztem Groß liegt das Boot von selbst im Wind. Das Vorsegel zuerst würde den Bug abdrehen lassen."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Gleichzeitig.",
+        "Nach Windrichtung.",
+        "Erst das Großsegel.",
+        "Erst das Vorsegel, dann das Großsegel."
+       ],
+       "q": "In welcher Reihenfolge birgt man die Segel?",
+       "warum": "Umgekehrt zum Setzen: Solange das Groß steht, bleibt das Boot steuerbar und liegt ruhig im Wind."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Eine Wende einleiten.",
+        "Das Boot mit back stehendem Vorsegel und gelegtem Ruder ruhig stellen.",
+        "Den Motor starten.",
+        "Vor Anker gehen."
+       ],
+       "q": "Was bedeutet „beidrehen\"?",
+       "warum": "Beigedreht treibt das Boot langsam nach Lee und liegt ruhig — die Pause auf See, etwa zum Reffen oder Essen."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Um schneller zu werden.",
+        "Um die Segel zu trocknen.",
+        "Um in Ruhe zu reffen, zu essen oder auf jemanden zu warten.",
+        "Um zu ankern."
+       ],
+       "q": "Wozu dient das Beidrehen praktisch?",
+       "warum": "Es nimmt dem Boot die Fahrt, ohne die Segel bergen zu müssen — und es ist auch ein Weg, bei Starkwind Ruhe ins Boot zu bekommen."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nach dem Setzen der Segel nie mehr.",
+        "Früh genug reffen, möglichst beigedreht oder im Hafen.",
+        "Nur vor dem Wind.",
+        "Erst wenn es nicht mehr anders geht."
+       ],
+       "q": "Was ist beim Reffen zu beachten?",
+       "warum": "Der oft zitierte Satz stimmt: Wenn man ans Reffen denkt, ist es schon Zeit dafür."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Es wird immer zuerst das Vorsegel verkleinert.",
+        "Weil es achtern wirkt und die Luvgierigkeit verstärkt.",
+        "Weil es leichter erreichbar ist.",
+        "Weil es das größere Segel ist."
+       ],
+       "q": "Warum wird bei zunehmendem Wind zuerst das Großsegel gerefft?",
+       "warum": "Ein zu großes Groß bei viel Wind macht das Boot luvgierig und schwer steuerbar. Die Balance bleibt eher erhalten, wenn man achtern verkleinert."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Das unkontrollierte Anluven mit starker Krängung.",
+        "Ein Sonnenbrand an Bord.",
+        "Ein Manöver vor dem Wind.",
+        "Eine besonders schnelle Halse."
+       ],
+       "q": "Was ist ein Sonnenschuss?",
+       "warum": "Meist aus einer Bö am Wind: Das Boot krängt, luvt trotz Gegenruder an und stellt sich quer. Abhilfe ist rechtzeitiges Fieren."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Ruder hart legen und halten.",
+        "Schwert aufholen.",
+        "Vorsegel dichtnehmen.",
+        "Großschot sofort fieren."
+       ],
+       "q": "Was tut man bei einem drohenden Sonnenschuss?",
+       "warum": "Erst die Kraft aus dem Segel nehmen, dann steuern. Gegen die Krängung ansteuern gelingt nicht."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Mit voller Fahrt.",
+        "Im Aufschießer gegen den Wind darauf zuhalten.",
+        "Mit dem Wind von achtern.",
+        "Quer anlaufen."
+       ],
+       "q": "Wie verhält man sich beim Anlegen an einer Boje?",
+       "warum": "Wie beim Steg: Nur gegen den Wind lässt sich die Fahrt so wegnehmen, dass man genau an der Boje steht."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur im Hafen etwas.",
+        "Was geschehen soll, damit die Mannschaft vorbereitet ist.",
+        "Nichts, der Steuermann handelt.",
+        "Nur bei der Halse etwas."
+       ],
+       "q": "Was gehört vor jedem Manöver gesagt?",
+       "warum": "Manöverkommandos sind kein Ritual: Wer weiß, was kommt, hält die richtige Leine in der Hand und den Kopf unten."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Den Motor starten.",
+        "Mit mehr Kraft durchziehen.",
+        "Abbrechen, Fahrt aufnehmen und neu ansetzen.",
+        "Auf Wind warten."
+       ],
+       "q": "Ein Manöver misslingt. Was ist die bessere Reaktion?",
+       "warum": "Ein zweiter Anlauf kostet Minuten, ein erzwungenes Manöver kostet Lack oder mehr."
+      }
+     ],
+     "ausgabe": "",
+     "begriffe": [
+      "wende",
+      "halse",
+      "patenthalse"
+     ],
+     "beispiel": "",
+     "bild": "wende-halse",
+     "id": "m-wende",
+     "text": "Beide Manöver bringen das Boot von einem Bug auf den anderen — aber auf entgegengesetzten Wegen.\n\n**Wende**: Der **Bug** geht durch den Wind. Man kommt vom Am-Wind-Kurs über die Sperrzone auf die andere Seite. Das Boot wird dabei langsamer, das Segel schlägt kurz und geht dann kontrolliert herüber. Kommando: *„Klar zur Wende?\" — „Ree!\"*\n\n**Halse**: Das **Heck** geht durch den Wind. Man kommt von raumschots über Vor-dem-Wind auf die andere Seite. Dabei steht das Segel voll im Wind, bis es schlagartig auf die andere Seite durchschlägt. Kommando: *„Klar zur Halse?\" — „Rund achtern!\"*\n\nDie Halse ist das gefährlichere Manöver. Bei starkem Wind kann der Baum mit voller Wucht herüberschlagen — die **Patenthalse**, wenn es ungewollt passiert. Deshalb bei viel Wind: Baum mit der Schot kontrolliert einholen, herüberlassen, wieder auffieren. Und Köpfe einziehen.\n\nWenn eine Wende nicht durchkommt, hängt das Boot **im Wind** und treibt rückwärts. Dann Ruder umlegen und das Vorsegel back halten — also gegen den Wind stellen —, damit sich der Bug abdreht.",
+     "titel": "Wende und Halse"
+    },
+    {
+     "aufgaben": [
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Rufen und sofort ein Rettungsmittel werfen.",
+        "Die Segel bergen.",
+        "Eine Position im Gerät speichern.",
+        "Den Motor starten."
+       ],
+       "q": "Was ist der erste Handgriff bei Mann über Bord?",
+       "warum": "Rufen, werfen, schauen — in dieser Reihenfolge, und alles innerhalb weniger Sekunden. Das geworfene Rettungsmittel markiert die Stelle, selbst wenn es den Verunglückten nicht erreicht."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Damit sie die Zeit stoppt.",
+        "Weil ein Kopf im Wellengang binnen Sekunden nicht mehr zu finden ist.",
+        "Weil es vorgeschrieben ist.",
+        "Weil sie die Rettung koordiniert."
+       ],
+       "q": "Warum wird eine Person ausschließlich zum Beobachten abgestellt?",
+       "warum": "Sie zeigt ununterbrochen mit dem Arm hin und tut sonst nichts. Wer den Blick einmal abwendet, findet die Stelle im Zweifel nicht wieder."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Egal, Hauptsache schnell.",
+        "Quer zum Wind, damit die Segel voll stehen.",
+        "So, dass der Verunglückte in Lee ist und das Boot nicht auf ihn zutreibt.",
+        "Mit Fahrt voraus, um schnell heranzukommen."
+       ],
+       "q": "Wie liegt das Boot beim Aufnehmen zum Verunglückten?",
+       "warum": "Ein abtreibendes Boot, das auf einen Menschen im Wasser zuläuft, ist eine Gefahr. Aufgenommen wird ohne Fahrt, mit killenden Segeln, und der Motor steht dabei im Leerlauf."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Eine Person, die ununterbrochen hinzeigt.",
+        "Das Navigationsgerät.",
+        "Der Anker.",
+        "Der Motor."
+       ],
+       "q": "Was ist beim Mann-über-Bord-Manöver das wichtigste Hilfsmittel?",
+       "warum": "Ohne ständigen Blickkontakt ist ein Kopf im Wellengang in Sekunden verloren."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Aus Vorschrift.",
+        "Damit sich der Verunglückte festhalten kann.",
+        "Es markiert die Stelle.",
+        "Um die Drift zu messen."
+       ],
+       "q": "Warum wird sofort ein Rettungsmittel geworfen, auch wenn es danebengeht?",
+       "warum": "Beides zählt, aber die Markierung ist der Hauptgrund: Ein Kissen auf dem Wasser ist von weitem sichtbar, ein Kopf nicht."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Von der Leeseite, ohne Fahrt.",
+        "Über den Bug.",
+        "Über das Heck in Fahrt.",
+        "Von der Luvseite."
+       ],
+       "q": "Von welcher Seite nimmt man den Verunglückten auf?",
+       "warum": "In Luv würde das abtreibende Boot auf den Menschen zulaufen. In Lee treibt es von ihm weg."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Vollgas zum Halten.",
+        "Standgas beibehalten.",
+        "Getriebe in Leerlauf oder Motor aus.",
+        "Rückwärts einlegen."
+       ],
+       "q": "Was tut man mit dem Motor, sobald jemand längsseits ist?",
+       "warum": "Die Schraube ist die größte Gefahr beim Bergen. Der Motor darf laufen, aber nichts darf sich drehen."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Weil die Segel stören.",
+        "Nasse Kleidung und Auskühlung machen den Verunglückten schwer und hilflos.",
+        "Weil das Boot zu hoch liegt.",
+        "Weil die Leinen fehlen."
+       ],
+       "q": "Warum ist das Bergen aus dem Wasser körperlich schwierig?",
+       "warum": "Nach wenigen Minuten im kalten Wasser kann jemand sich nicht mehr selbst hochziehen. Eine Badeleiter oder ein Talje gehört vorbereitet."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Vorsichtig bewegen, waagrecht lagern, warm einpacken.",
+        "In heißes Wasser setzen.",
+        "Sofort aufstehen lassen.",
+        "Kräftig abreiben und Alkohol geben."
+       ],
+       "q": "Was ist bei Kälte nach dem Bergen zu beachten?",
+       "warum": "Bei Unterkühlung kann kaltes Blut aus den Gliedern zum Herzen strömen (Bergungstod). Deshalb waagrecht und ruhig."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Kräftig schwimmen, um warm zu bleiben.",
+        "Auf dem Rücken treiben mit ausgestreckten Armen.",
+        "Ruhig bleiben, Knie anziehen, Wärme sparen.",
+        "Kleidung ausziehen."
+       ],
+       "q": "Wie hält man im kalten Wasser am längsten durch?",
+       "warum": "Bewegung kostet Wärme. Die HELP-Haltung mit angezogenen Knien schützt die wärmeempfindlichen Körperbereiche."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Sie hält eine wärmende Wasserschicht am Körper.",
+        "Sie macht schwimmfähig.",
+        "Man soll sie ausziehen.",
+        "Sie schützt vor Sonne."
+       ],
+       "q": "Warum soll man Kleidung im Wasser anbehalten?",
+       "warum": "Luft in der Kleidung trägt zusätzlich. Ausziehen kostet Kraft und Wärme, und beides ist knapp."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Eine Sicherheitsleine, die den Träger am Boot hält.",
+        "Der Gurt der Rettungsweste.",
+        "Die Leine des Rettungsrings.",
+        "Ein Teil des Ankergeschirrs."
+       ],
+       "q": "Was ist eine Lifebelt-Leine?",
+       "warum": "Bei Nacht, Starkwind und Arbeiten auf dem Vorschiff wird sie eingepickt. Wer nicht über Bord geht, muss nicht geborgen werden."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Am Want.",
+        "Am Baum.",
+        "An einem dafür vorgesehenen, festen Punkt oder Strecktau.",
+        "An der Reling."
+       ],
+       "q": "Wo wird die Sicherheitsleine eingepickt?",
+       "warum": "Die Reling ist dafür nicht ausgelegt. Strecktauen und Augbolzen sind es."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Man ruft nichts, um keine Panik auszulösen.",
+        "„Mann über Bord!\"",
+        "„Rettungsring werfen!\"",
+        "„Klar zur Wende?\""
+       ],
+       "q": "Was ist der erste Satz, den man bei Mann über Bord ruft?",
+       "warum": "Alle an Bord müssen es sofort wissen; erst dann kann sich jeder seine Aufgabe nehmen."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Er führt das Boot und verteilt die Aufgaben.",
+        "Er springt hinterher.",
+        "Er beobachtet.",
+        "Er funkt."
+       ],
+       "q": "Welche Rolle hat der Steuermann beim MOB-Manöver?",
+       "warum": "Beobachten ist eine eigene Aufgabe für eine eigene Person. Der Steuermann muss steuern."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Sobald klar ist, dass fremde Hilfe nötig oder hilfreich sein kann.",
+        "Nur bei Nacht.",
+        "Nie.",
+        "Immer erst nach erfolgloser Bergung."
+       ],
+       "q": "Wann wird bei MOB ein Notruf abgesetzt?",
+       "warum": "Lieber früh und später entwarnen als spät und ohne Hilfe. Bei Lebensgefahr ist es MAYDAY."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Schlechter, weil die Leine sich verheddert.",
+        "Gleichwertig.",
+        "Besser, weil der Verunglückte zum Boot gezogen werden kann.",
+        "Nur für Binnengewässer erlaubt."
+       ],
+       "q": "Was ist ein Rettungsring mit Leine gegenüber einem ohne?",
+       "warum": "Eine schwimmfähige Wurfleine ist auf Binnengewässern oft das wirksamste Rettungsmittel überhaupt."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Weil es Pflicht ist.",
+        "Weil die Prüfung es verlangt.",
+        "Weil im Ernstfall keine Zeit zum Überlegen bleibt.",
+        "Weil es Spaß macht."
+       ],
+       "q": "Warum wird das MOB-Manöver regelmäßig geübt?",
+       "warum": "Geübt wird mit einem Fender. Wer es zweimal gemacht hat, verliert im Ernstfall keine Minute mit der Frage, wer was tut."
+      }
+     ],
+     "ausgabe": "",
+     "begriffe": [
+      "mob",
+      "rettung"
+     ],
+     "beispiel": "",
+     "bild": "",
+     "id": "m-mob",
+     "text": "Das wichtigste Manöver überhaupt, und das einzige, bei dem Sekunden zählen.\n\n**Die Reihenfolge:**\n\n**1. Rufen** — „Mann über Bord!\", damit alle es wissen.\n\n**2. Werfen** — sofort Rettungsmittel hinterher, auch wenn es daneben geht. Es markiert die Stelle.\n\n**3. Schauen** — eine Person tut nichts anderes mehr, als den Verunglückten anzusehen und zu zeigen. Im Wellengang ist ein Kopf nach zwanzig Sekunden nicht mehr zu finden.\n\n**4. Fahren** — zurückkommen und so aufstoppen, dass das Boot **in Luv** des Verunglückten liegt? Nein: **in Lee** halten, sodass das Boot nicht auf ihn zutreibt. Aufgenommen wird auf der Leeseite, mit killenden Segeln und ohne Fahrt.\n\nFür die Rückkehr gibt es mehrere Wege; für die Prüfung genügt der Grundsatz: **Man nähert sich immer so, dass man am Ende langsam und steuerbar ist.** Ein Boot, das mit Fahrt ankommt, verletzt den Menschen im Wasser.\n\nAuf Binnengewässern kommt hinzu: Motor an, wenn vorhanden — aber **Getriebe auf Leerlauf**, sobald jemand längsseits ist. Die Schraube ist die größte Gefahr beim Bergen.",
+     "titel": "Mann über Bord"
+    }
+   ],
+   "sprache": "-",
+   "stufe": 3,
+   "text": "Wende, Halse, Mann über Bord, An- und Ablegen. Was in der Prüfung gefragt und auf dem Wasser gebraucht wird.",
+   "titel": "Manöver"
+  },
+  {
+   "id": "regeln",
+   "lektionen": [
+    {
+     "aufgaben": [
+      {
+       "answer": 0,
+       "bild": "ausweichen",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Das Boot mit dem Wind von Backbord.",
+        "Das größere Boot.",
+        "Das Boot mit dem Wind von Steuerbord.",
+        "Das langsamere Boot."
+       ],
+       "q": "Zwei Segelboote auf verschiedenen Bugseiten kreuzen sich. Wer weicht aus?",
+       "warum": "Backbordbug weicht Steuerbordbug aus. Rot wie Backbord, rot wie anhalten."
+      },
+      {
+       "answer": 1,
+       "bild": "ausweichen",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Das Boot in Lee.",
+        "Das Boot in Luv.",
+        "Beide nach Steuerbord.",
+        "Das schnellere."
+       ],
+       "q": "Zwei Segelboote auf gleichem Bug, eines in Luv, eines in Lee. Wer weicht aus?",
+       "warum": "Luv weicht Lee aus. Das Leeboot steckt im Windschatten und hat weniger Möglichkeiten; außerdem könnte es nur in den Wind schießen, also anhalten."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Der Eingeholte weicht aus.",
+        "Es gilt die Bugregel.",
+        "Es gilt die Luv-Lee-Regel.",
+        "Du weichst aus, egal auf welcher Seite du vorbeifährst."
+       ],
+       "q": "Du holst ein anderes Segelboot ein. Was gilt?",
+       "warum": "Die Überholregel schlägt die anderen beiden. Der Eingeholte hält Kurs und Geschwindigkeit — er kann den Überholer unter Umständen gar nicht sehen."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Auf beiden.",
+        "Steuerbordbug.",
+        "Backbordbug.",
+        "Das hängt vom Kurs ab."
+       ],
+       "q": "Auf welchem Bug segelt ein Boot, wenn der Wind von Steuerbord einfällt?",
+       "warum": "Der Bug ist nach der Seite benannt, von der der Wind kommt — nicht nach der Seite, auf der das Segel steht."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "An der Flagge am Heck.",
+        "Am Verklicker.",
+        "Das Großsegel steht auf der Leeseite, der Wind kommt von der anderen.",
+        "An der Fahrtrichtung."
+       ],
+       "q": "Woran erkennst du von außen, auf welchem Bug ein Segelboot liegt?",
+       "warum": "Steht das Segel nach Backbord, kommt der Wind von Steuerbord — also Steuerbordbug, und das Boot hat Vorrang."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Das Boot in Lee.",
+        "Das schnellere.",
+        "Das Boot in Luv.",
+        "Beide nach Steuerbord."
+       ],
+       "q": "Zwei Segelboote laufen auf Kollisionskurs, beide auf Backbordbug. Wer weicht aus?",
+       "warum": "Gleicher Bug heißt: Luv weicht Lee aus."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Es steht im Windschatten und könnte nur in den Wind schießen.",
+        "Historische Konvention.",
+        "Es ist meist schneller.",
+        "Es hat besseren Ausguck."
+       ],
+       "q": "Warum hat das Leeboot Vorrang?",
+       "warum": "Das Luvboot kann abfallen oder anluven, das Leeboot praktisch nicht — die Regel folgt der Manövrierfähigkeit."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Der Überholte.",
+        "Das Luvboot.",
+        "Das Leeboot.",
+        "Der Überholende."
+       ],
+       "q": "Ein Segelboot überholt ein anderes auf dessen Luvseite. Wer weicht aus?",
+       "warum": "Die Überholregel geht den Bug- und Luv-Lee-Regeln vor."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Wenn es sich von mehr als 22,5 Grad achterlicher als querab nähert.",
+        "Sobald es schneller ist.",
+        "Wenn beide denselben Kurs haben.",
+        "Wenn es in Lee vorbeizieht."
+       ],
+       "q": "Wann gilt ein Boot als überholend?",
+       "warum": "Das ist der Sektor, in dem man nachts nur das Hecklicht sieht — genau deshalb ist er so definiert."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Beschleunigen.",
+        "Ausweichen, wenn es kann.",
+        "Kurs und Geschwindigkeit halten.",
+        "Nichts Bestimmtes."
+       ],
+       "q": "Was muss das vorfahrtberechtigte Boot tun?",
+       "warum": "Nur wenn der Berechtigte vorhersehbar handelt, kann der andere sinnvoll ausweichen."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur mit Schallsignal.",
+        "Nie.",
+        "Immer, wenn es knapp wird.",
+        "Wenn nur noch eigenes Handeln den Zusammenstoß verhindert."
+       ],
+       "q": "Wann darf das vorfahrtberechtigte Boot von dieser Pflicht abweichen?",
+       "warum": "Diese Ausnahme steht ausdrücklich in den Vorschriften — und sie ist der Grund, warum Rechthaben auf dem Wasser keine Strategie ist."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Möglichst spät, um Weg zu sparen.",
+        "Nur mit dem Schallsignal angekündigt.",
+        "Mit kleinen Korrekturen.",
+        "Früh, deutlich und so, dass es der andere erkennt."
+       ],
+       "q": "Wie soll ausgewichen werden?",
+       "warum": "Eine Kursänderung, die der andere nicht erkennt, ist kein Ausweichen. Große, frühe Manöver sind sicher und höflich."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Das langsamere.",
+        "Das Boot mit dem Ufer an Steuerbord.",
+        "Das Boot, das das Ufer an Backbord hat.",
+        "Es gilt nur die Bugregel."
+       ],
+       "q": "Zwei Segelboote begegnen sich am Hang eines Ufers. Wer weicht aus?",
+       "warum": "Wer das Ufer rechts hat, kann nicht nach rechts ausweichen. Die Regel folgt wieder der Geometrie, nicht der Höflichkeit."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Es darf nicht gekreuzt werden.",
+        "Segelboote dürfen die Durchfahrt größerer Fahrzeuge nicht behindern.",
+        "Segelboote haben stets Vorrang.",
+        "Nur bei Tag erlaubt."
+       ],
+       "q": "Was gilt beim Kreuzen in einem engen Fahrwasser?",
+       "warum": "Ein Schiff, das das Fahrwasser braucht, kann nicht ausweichen — deshalb geht der Segelvorrang dort nicht."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nach den Bugregeln; hilfsweise beide nach Steuerbord.",
+        "Kurs halten.",
+        "Der Schnellere weicht aus.",
+        "Beide nach Backbord."
+       ],
+       "q": "Zwei Segelboote auf Gegenkurs, beide genau vor dem Wind. Wie verhält man sich?",
+       "warum": "Auch vor dem Wind hat jedes Boot einen Bug — die Seite, auf der das Großsegel steht, bestimmt ihn. Im Zweifel weicht man nach Steuerbord aus."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Das langsamere.",
+        "Immer das Segelboot.",
+        "Immer das Ruderboot.",
+        "Es gilt die allgemeine Rücksichtnahme; auf Binnengewässern haben Kleinfahrzeuge ohne Antrieb meist Vorrang."
+       ],
+       "q": "Ein Segelboot nähert sich einem Ruderboot. Wer weicht aus?",
+       "warum": "Die Rangfolge geht nach Manövrierfähigkeit. Auf vielen Binnengewässern sind Fahrzeuge ohne Maschinen- und Segelantrieb ausdrücklich geschützt."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Es gilt die Bugregel.",
+        "Schwimmer müssen ausweichen.",
+        "Nur nachts ausweichen.",
+        "Weiträumig ausweichen; Taucherflaggen kennzeichnen Tauchstellen."
+       ],
+       "q": "Was gilt gegenüber Schwimmern und Tauchern?",
+       "warum": "Die Taucherflagge (rot mit weißem Diagonalstreifen oder die blau-weiße Flagge A) heißt: Abstand halten und langsam fahren."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Es ist manövrierunfähig.",
+        "Es fährt unter Maschine, obwohl die Segel gesetzt sind.",
+        "Es fischt.",
+        "Es ankert."
+       ],
+       "q": "Ein Boot zeigt einen schwarzen Kegel mit der Spitze nach unten. Was bedeutet das?",
+       "warum": "Damit ist es rechtlich ein Maschinenfahrzeug und hat keinen Segelvorrang."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Weil es dann manövrierfähig ist wie ein Motorboot.",
+        "Wegen der Abgase.",
+        "Das gilt nur mit geborgenen Segeln.",
+        "Weil der Motor lauter ist."
+       ],
+       "q": "Warum gilt ein Segelboot unter Motor als Maschinenfahrzeug?",
+       "warum": "Die ganze Rangfolge richtet sich nach Manövrierfähigkeit. Wer eine Maschine hat und nutzt, kann ausweichen."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Beide nach Backbord.",
+        "Das kleinere weicht aus.",
+        "Das schnellere weicht aus.",
+        "Beide weichen nach Steuerbord aus."
+       ],
+       "q": "Zwei Maschinenfahrzeuge begegnen sich auf Gegenkurs. Was gilt?",
+       "warum": "Die Rechtsregel — dieselbe wie im Straßenverkehr, und auf dem Wasser ebenso einfach zu merken."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Das Fahrzeug, das das andere an Backbord hat.",
+        "Das langsamere.",
+        "Das Fahrzeug, das das andere an Steuerbord hat.",
+        "Das kleinere."
+       ],
+       "q": "Zwei Maschinenfahrzeuge kreuzen sich. Wer weicht aus?",
+       "warum": "Wer den anderen rechts sieht, weicht aus — nachts sieht man dann dessen rotes Backbordlicht: rot heißt anhalten."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Es fährt von dir weg.",
+        "Du siehst seine Backbordseite; in der Regel musst du ausweichen.",
+        "Es ankert.",
+        "Es hat Vorrang und du kannst weiterfahren."
+       ],
+       "q": "Du siehst nachts das rote Licht eines Fahrzeugs. Was heißt das für dich?",
+       "warum": "Das rote Licht des anderen ist die Farbe, bei der man anhält. Sieht man grün, ist man meist der Berechtigte."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Es ist langsamer.",
+        "Kollisionskurs.",
+        "Alles in Ordnung.",
+        "Es entfernt sich."
+       ],
+       "q": "Ändert sich die Peilung zu einem anderen Fahrzeug nicht, bedeutet das …",
+       "warum": "Gleichbleibende Peilung bei abnehmendem Abstand heißt Treffpunkt. Das ist die verlässlichste Prüfung überhaupt — und sie kostet nur einen Blick über den Daumen."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Der Größere hat Vorrang.",
+        "Ein Zusammenstoß ist mit allen Mitteln zu vermeiden.",
+        "Segel vor Motor gilt immer.",
+        "Der Schnellere weicht aus."
+       ],
+       "q": "Was ist die Grundregel über allen Ausweichregeln?",
+       "warum": "Alle Einzelregeln dienen diesem Zweck; keine erlaubt es, in einen Zusammenstoß hineinzufahren."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur bei Nacht.",
+        "Nur in Fahrwassern.",
+        "Nur zur Navigation.",
+        "Ständige Beobachtung mit Augen und Ohren."
+       ],
+       "q": "Wozu dient ein Ausguck?",
+       "warum": "Der Ausguck ist Pflicht, jederzeit. Auch Hören zählt — Schallsignale kommen um Ecken, die man nicht sieht."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Fahrt vermindern und notfalls stoppen.",
+        "Beschleunigen, um vorbeizukommen.",
+        "Ein Schallsignal geben und weiterfahren.",
+        "Kurs halten und abwarten."
+       ],
+       "q": "Wie verhält man sich bei unklarer Lage gegenüber einem anderen Fahrzeug?",
+       "warum": "Wer nicht sicher ist, ob er ausweichpflichtig ist, verhält sich so, als wäre er es."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Jedes Segelboot.",
+        "Ein Boot unter 5 m.",
+        "Jedes Boot ohne Motor.",
+        "Ein Fahrzeug unter 20 m Länge, mit Ausnahmen."
+       ],
+       "q": "Was bedeutet der Begriff „Kleinfahrzeug\" auf Binnengewässern?",
+       "warum": "Die Grenze von 20 m entscheidet über viele Pflichten — und Kleinfahrzeuge weichen den großen grundsätzlich aus."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Dicht vorbeifahren ist erlaubt.",
+        "Ausweichen und nicht behindern.",
+        "Es gelten nur die Bugregeln.",
+        "Vorrang beanspruchen, wenn man segelt."
+       ],
+       "q": "Wie verhält man sich gegenüber einem Fahrgastschiff im Linienbetrieb?",
+       "warum": "Fahrgastschiffe fahren nach Plan, oft in engen Fahrwassern und mit vielen Menschen an Bord. Sie werden nicht behindert."
+      }
+     ],
+     "ausgabe": "",
+     "begriffe": [
+      "ausweichen",
+      "bug"
+     ],
+     "beispiel": "",
+     "bild": "ausweichen",
+     "id": "r-segel",
+     "text": "Drei Regeln, in dieser Reihenfolge anzuwenden:\n\n**1. Verschiedene Bugseiten:** Das Boot mit dem Wind von **Backbord** weicht aus. Als Bug gilt die Seite, auf der der Wind einfällt — kommt er von Backbord, ist man auf Backbordbug.\n\nEselsbrücke: *Backbord ist rot, rot heißt anhalten.*\n\n**2. Gleiche Bugseite:** Das Boot in **Luv** weicht aus. Es hat den freien Wind und kann leichter reagieren; das Boot in Lee sitzt in seinem Windschatten und kann kaum.\n\n**3. Überholen:** Der **Überholende** weicht immer aus, auf welcher Seite auch immer. Wer überholt wird, hält Kurs und Geschwindigkeit.\n\nFür alle Regeln gilt der Grundsatz: **Wer ausweicht, tut es früh und deutlich.** Eine kleine Kursänderung in letzter Sekunde ist kein Ausweichen — der andere muss erkennen können, dass ausgewichen wird. Und: Das vorfahrtberechtigte Boot hält Kurs und Geschwindigkeit, damit man sich darauf verlassen kann.",
+     "titel": "Segelboote untereinander"
+    },
+    {
+     "aufgaben": [
+      {
+       "answer": 2,
+       "bild": "ausweichen",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Das langsamere.",
+        "Beide nach Steuerbord.",
+        "Das Motorboot.",
+        "Das Segelboot."
+       ],
+       "q": "Ein Segelboot und ein Motorboot kreuzen sich auf einem See. Wer weicht aus?",
+       "warum": "Maschinenfahrzeuge weichen Segelfahrzeugen aus — der Grundsatz. Die Ausnahmen betreffen Berufsschifffahrt und enge Fahrwasser."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Das Segelboot.",
+        "Beide gleichermaßen.",
+        "Das Schiff muss stoppen.",
+        "Das Frachtschiff."
+       ],
+       "q": "Ein Frachtschiff kommt im Fahrwasser entgegen. Wer weicht aus?",
+       "warum": "Im Fahrwasser weicht das Kleinfahrzeug aus, auch unter Segeln. Ein Frachtschiff kann dort nicht heraus und hat einen Bremsweg von mehreren hundert Metern."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Ein manövrierbehindertes Fahrzeug.",
+        "Ein Segelfahrzeug.",
+        "Beides, je nach Bedarf.",
+        "Ein Maschinenfahrzeug."
+       ],
+       "q": "Ein Segelboot fährt mit gesetzten Segeln **und** laufendem Motor. Was ist es rechtlich?",
+       "warum": "Sobald die Maschine zum Antrieb läuft, ist es ein Maschinenfahrzeug — mit allen Pflichten. Tagsüber wird das durch einen schwarzen Kegel, Spitze nach unten, angezeigt."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Kurs und Geschwindigkeit halten, du hast Recht.",
+        "Schallsignal geben und weiterfahren.",
+        "Sofort ankern.",
+        "Selbst ausweichen — ein Zusammenstoß geht immer vor."
+       ],
+       "q": "Du hast Vorfahrt, aber der andere weicht erkennbar nicht aus. Was tust du?",
+       "warum": "Kurs halten ist die Regel, aber sie endet dort, wo nur noch eigenes Handeln den Zusammenstoß verhindert. Diese Ausnahme steht ausdrücklich in den Vorschriften."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "In der Seemitte.",
+        "In Ufernähe generell.",
+        "Bei Nacht.",
+        "In gekennzeichneten Bade- und Schutzzonen."
+       ],
+       "q": "Wo darf auf Binnenseen in der Regel nicht gesegelt werden?",
+       "warum": "Bade- und Naturschutzzonen sind meist durch Bojenketten abgegrenzt. Dort ist das Befahren untersagt."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Geschwindigkeitsbeschränkungen und teils Motorverbot.",
+        "Keine Beschränkung.",
+        "Nur für Berufsschifffahrt.",
+        "Nur nachts beschränkt."
+       ],
+       "q": "Was gilt für Motorbetrieb in Ufernähe auf vielen Seen?",
+       "warum": "Wellenschlag schadet Ufer und Badenden. Die örtlichen Verordnungen regeln das, oft ab 100 oder 200 m Uferabstand."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Einen Hinweis.",
+        "Eine Empfehlung.",
+        "Ein Gebot.",
+        "Ein Verbot."
+       ],
+       "q": "Ein Schifffahrtszeichen zeigt ein rotes Quadrat mit weißem Querbalken. Was bedeutet es in der Regel?",
+       "warum": "Rot umrandete oder rote Tafeln verbieten, blaue gebieten oder weisen hin — dieselbe Logik wie im Straßenverkehr."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Grün.",
+        "Blau.",
+        "Rot.",
+        "Gelb."
+       ],
+       "q": "Welche Farbe kennzeichnet Hinweiszeichen in der Binnenschifffahrt?",
+       "warum": "Blau mit weißem Symbol weist hin oder gebietet, etwa Liegestellen oder Verkehrsrichtungen."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Anweisungen des Schleusenpersonals haben Vorrang.",
+        "Segelboote haben Vorrang.",
+        "Kleinfahrzeuge dürfen nicht schleusen.",
+        "Es gilt die Bugregel."
+       ],
+       "q": "Was ist unter „Schleuse\" zu beachten?",
+       "warum": "In der Schleuse gilt, was die Aufsicht sagt und was die Lichter zeigen — Ausweichregeln spielen keine Rolle."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Rot und grün zugleich.",
+        "Rot.",
+        "Grün.",
+        "Gelb."
+       ],
+       "q": "Welche Lichter an einer Schleuse bedeuten „Einfahrt frei\"?",
+       "warum": "Zwei rote Lichter heißen gesperrt, rot-grün heißt Vorbereitung, grün heißt Einfahrt frei."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Es gibt keine besonderen Regeln.",
+        "Es gelten nur die Ausweichregeln.",
+        "Langsam fahren, kein Wellenschlag, Vorrang für ein- und auslaufende Berufsschifffahrt.",
+        "Segeln ist immer erlaubt."
+       ],
+       "q": "Was gilt beim Befahren eines Hafens?",
+       "warum": "In vielen Häfen ist Segeln ohnehin untersagt — dort wird unter Motor oder Paddel manövriert."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Ein Fahrgastschiff.",
+        "Ein Taucherfahrzeug.",
+        "Ein Fahrzeug der Behörden im Einsatz, dem Platz zu machen ist.",
+        "Ein manövrierunfähiges Fahrzeug."
+       ],
+       "q": "Was bedeutet ein Fahrzeug mit einem blauen Blinklicht?",
+       "warum": "Polizei, Feuerwehr und Wasserrettung im Einsatz: Weg frei machen und Wellenschlag vermeiden."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Es will Steuerbord an Steuerbord begegnen, entgegen der Regel.",
+        "Es ankert.",
+        "Es hat Vorrang.",
+        "Es ist manövrierunfähig."
+       ],
+       "q": "Was zeigt die blaue Tafel eines Frachtschiffes an?",
+       "warum": "Die blaue Tafel mit weißem Funkellicht bedeutet: Begegnung auf der „falschen\" Seite. Man weicht dann nach Backbord aus und beantwortet das Zeichen, wenn möglich."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Das Zeichen ignorieren.",
+        "Stoppen und warten.",
+        "Wie gewohnt rechts ausweichen.",
+        "Auf seiner Steuerbordseite vorbeifahren, also selbst nach Backbord ausweichen."
+       ],
+       "q": "Ein Frachtschiff zeigt die blaue Tafel. Was tust du?",
+       "warum": "Das Schiff fährt aus guten Gründen auf der anderen Seite — meist wegen der Strömung oder der Fahrrinne."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Wer eine entsprechende Befähigung besitzt.",
+        "Nur Berufsschiffer.",
+        "Jeder ab 18.",
+        "Jeder mit Segelschein A."
+       ],
+       "q": "Wer darf ein Segelboot mit mehr als 10 m Länge auf Binnengewässern führen?",
+       "warum": "Die Längen- und Leistungsgrenzen entscheiden, welche Befähigung nötig ist; sie sind je nach Gewässer und Land geregelt."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur der Ausweis.",
+        "Befähigungsausweis, gegebenenfalls Zulassung und Versicherung.",
+        "Nur die Versicherung.",
+        "Gar keine."
+       ],
+       "q": "Welche Papiere gehören üblicherweise an Bord?",
+       "warum": "Was genau verlangt wird, steht in den Vorschriften des jeweiligen Gewässers — dabei zu haben ist der sichere Weg."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nie nötig.",
+        "Auf vielen Gewässern vorgeschrieben, sonst dringend zu empfehlen.",
+        "Nur für Charterboote.",
+        "Nur für Motorboote."
+       ],
+       "q": "Wann ist eine Haftpflichtversicherung sinnvoll oder vorgeschrieben?",
+       "warum": "Ein Schaden an einem fremden Boot oder einer Steganlage übersteigt schnell den Wert des eigenen Bootes."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur der Tank.",
+        "Zustand, Ausrüstung und vorhandene Schäden vor dem Ablegen.",
+        "Nichts, der Vermieter haftet.",
+        "Nur die Segel."
+       ],
+       "q": "Was ist bei gecharterten Booten zusätzlich zu prüfen?",
+       "warum": "Eine Übernahme mit Protokoll schützt beide Seiten — und wer die Sicherheitsausrüstung erst auf dem See sucht, sucht zu spät."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Das Ausrüstungsverzeichnis.",
+        "Die Wetteraufzeichnung.",
+        "Eine Aufzeichnung von Fahrten, Zeiten und Besonderheiten.",
+        "Die Betriebsanleitung."
+       ],
+       "q": "Was ist ein „Fahrtenbuch\" oder Logbuch?",
+       "warum": "Auf Binnengewässern selten vorgeschrieben, aber für den Nachweis von Praxiszeiten — etwa für weitere Scheine — die Grundlage."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Den Schaden selbst reparieren.",
+        "Nur die Versicherung informieren.",
+        "Weiterfahren, wenn niemand verletzt ist.",
+        "Hilfe leisten, Daten austauschen, gegebenenfalls Behörde verständigen."
+       ],
+       "q": "Wie verhält man sich bei einem Unfall mit Sachschaden?",
+       "warum": "Die Pflichten entsprechen denen im Straßenverkehr: Hilfe geht vor, dann Feststellung, dann Meldung."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur bei eigener Beteiligung helfen.",
+        "Nichts, dafür gibt es die Wasserrettung.",
+        "Hilfe leisten, soweit es ohne eigene Gefährdung möglich ist.",
+        "Die Polizei rufen und weiterfahren."
+       ],
+       "q": "Was ist die erste Pflicht bei einem Seenotfall in der Nähe?",
+       "warum": "Die Hilfeleistungspflicht ist auf dem Wasser noch strenger als an Land — Hilfe ist oft nur vom nächsten Boot zu erwarten."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur bei Nacht.",
+        "Es gibt keine Grenze.",
+        "Nur für Motorboote.",
+        "Es gelten Promillegrenzen wie im Straßenverkehr."
+       ],
+       "q": "Was gilt für Alkohol am Ruder in Österreich?",
+       "warum": "Unabhängig von der Zahl: Sonne, Wind und Bewegung verstärken die Wirkung deutlich gegenüber dem Land."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur für Nichtschwimmer.",
+        "Zwei je Boot.",
+        "Eine je Boot.",
+        "Mindestens eine je Person."
+       ],
+       "q": "Wie viele Rettungswesten gehören an Bord?",
+       "warum": "Und sie gehören in Reichweite, nicht in die Backskiste unter dem Proviant."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur für Nichtschwimmer.",
+        "An Bord grundsätzlich, auch bei ruhigem Wetter.",
+        "Nur bei Nacht.",
+        "Nur bei Wind."
+       ],
+       "q": "Wann ist eine Rettungsweste für Kinder zu tragen?",
+       "warum": "Kinder kühlen schneller aus und geraten leichter in Panik. Die Weste ist bei ihnen Dauerzustand."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Eine Schwimmweste ohne Kragen.",
+        "Jede Schwimmhilfe.",
+        "Eine Feststoff- oder Automatikweste mit Ohnmachtssicherheit.",
+        "Ein Schwimmgürtel."
+       ],
+       "q": "Welche Rettungsweste hilft einem Bewusstlosen?",
+       "warum": "Schwimmhilfen (50 N) tragen nur, wer selbst schwimmt. Ohnmachtssicher wird es erst ab etwa 100 N mit Kragen."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Den Auftrieb; ab 100 N gilt sie als ohnmachtssicher.",
+        "Die Reißfestigkeit.",
+        "Das zulässige Körpergewicht.",
+        "Die Wassertemperatur."
+       ],
+       "q": "Was bedeutet die Angabe „150 N\" auf einer Rettungsweste?",
+       "warum": "50 N ist eine Schwimmhilfe, 100 N eine Rettungsweste, 150 N für See und schwere Kleidung, 275 N für extreme Bedingungen."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur eine Rettungsweste.",
+        "Rettungsmittel, Paddel, Festmacher, Lenzmittel, Anker.",
+        "Funkgerät und Radar.",
+        "Nur die Segel."
+       ],
+       "q": "Was gehört zur Mindestausrüstung eines kleinen Segelbootes?",
+       "warum": "Was genau, regelt die Verordnung des Gewässers. Der Kern ist überall ähnlich: schwimmen, bewegen, festmachen, lenzen, ankern."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Bei Flaute oder Motorausfall ist es das letzte Antriebsmittel.",
+        "Zum Abstoßen am Steg.",
+        "Es gehört nicht dazu.",
+        "Als Ersatzruder."
+       ],
+       "q": "Warum gehört ein Paddel auch auf ein Segelboot?",
+       "warum": "Auf einem Binnensee reicht es meist bis ans Ufer — und das ist genau der Zweck."
+      }
+     ],
+     "ausgabe": "",
+     "begriffe": [
+      "vorfahrt",
+      "berufsschifffahrt"
+     ],
+     "beispiel": "",
+     "bild": "ausweichen",
+     "id": "r-verkehr",
+     "text": "Die Rangfolge richtet sich nach der **Manövrierfähigkeit**: Wer weniger ausweichen kann, hat Vorrang.\n\n**Grundsatz:** Maschinenfahrzeuge weichen Segelfahrzeugen aus.\n\n**Aber**, und das ist die Frage, die gern gestellt wird: Auf Binnengewässern und in engen Fahrwassern gilt das **nicht** gegenüber der **Berufsschifffahrt**. Ein Frachtschiff im Fahrwasser kann weder ausweichen noch anhalten — die Kleinfahrzeuge weichen aus, Segelboote eingeschlossen. Dasselbe gilt für Fahrgastschiffe und Fähren im Einsatz.\n\n**Nie behindert werden** dürfen außerdem Fahrzeuge, die erkennbar manövrierbehindert sind, und alles, was in einem engen Fahrwasser nur dort fahren kann.\n\n**Ein Segelboot unter Motor ist ein Maschinenfahrzeug** — auch wenn die Segel oben bleiben. Wer den Motor mitlaufen lässt und trotzdem Segelvorrang beansprucht, hat unrecht; tagsüber ist dafür ein schwarzer Kegel mit der Spitze nach unten zu führen.\n\nFür alle gilt zuletzt die wichtigste Regel überhaupt: **Von jeder Vorfahrt darf abgewichen werden, wenn nur so ein Zusammenstoß zu vermeiden ist.** Recht haben und Recht behalten sind auf dem Wasser zwei verschiedene Dinge.",
+     "titel": "Segel, Motor und Berufsschifffahrt"
+    }
+   ],
+   "sprache": "-",
+   "stufe": 4,
+   "text": "Wer weicht wem aus. Das Kapitel mit den meisten Prüfungsfragen — und die Regeln bauen sauber aufeinander auf.",
+   "titel": "Ausweichregeln"
+  },
+  {
+   "id": "zeichen",
+   "lektionen": [
+    {
+     "aufgaben": [
+      {
+       "answer": 2,
+       "bild": "betonnung",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Grün und spitz.",
+        "Gelb und rund.",
+        "Rot und stumpf.",
+        "Schwarz mit rotem Band."
+       ],
+       "q": "Von See kommend: Welche Farbe und Form hat die Backbordtonne?",
+       "warum": "Rot, stumpf, gerade Nummern. Gegenstück ist grün und spitz auf der Steuerbordseite."
+      },
+      {
+       "answer": 1,
+       "bild": "betonnung",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Weiterhin an Backbord.",
+        "An Steuerbord — die Betonnung gilt von See kommend.",
+        "Rote Tonnen gibt es hinaus nicht.",
+        "In der Mitte."
+       ],
+       "q": "Du verlässt den Hafen und fährst hinaus. Wo liegen jetzt die roten Tonnen?",
+       "warum": "Die Richtungsangabe ist fest und gilt hinein. Wer hinaus fährt, hat alles spiegelverkehrt — genau das wird gerne gefragt."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Sperrgebiet.",
+        "Einzelgefahr, weiträumig umfahren.",
+        "Mittefahrwasser, beidseitig passierbar.",
+        "Ankerplatz."
+       ],
+       "q": "Eine Tonne ist rot-weiß längsgestreift mit einer Kugel als Toppzeichen. Was bedeutet sie?",
+       "warum": "Die Längsstreifung steht für „sicheres Wasser ringsum\". Eine Einzelgefahr wäre schwarz mit rotem **Querband** und zwei Kugeln."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Gerade.",
+        "Keine.",
+        "Ungerade.",
+        "Römische."
+       ],
+       "q": "Welche Kennziffern tragen Steuerbordtonnen?",
+       "warum": "Steuerbord ungerade und grün, Backbord gerade und rot — von See kommend."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Kugelförmig.",
+        "Rechteckig.",
+        "Spitz, also Kegel.",
+        "Stumpf, also Zylinder."
+       ],
+       "q": "Welche Form hat eine Steuerbordtonne?",
+       "warum": "Spitz und grün auf der einen, stumpf und rot auf der anderen Seite — Form und Farbe sagen dasselbe, damit es auch bei schlechtem Licht erkennbar bleibt."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Eine Einzelgefahr.",
+        "Ein Kardinalzeichen.",
+        "Mittefahrwasser.",
+        "Ein Sperrgebiet."
+       ],
+       "q": "Was bedeutet eine Tonne mit schwarz-gelber Färbung?",
+       "warum": "Kardinalzeichen sind schwarz-gelb und tragen zwei schwarze Kegel als Toppzeichen."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nördlich.",
+        "Östlich.",
+        "Westlich.",
+        "Südlich."
+       ],
+       "q": "Ein Kardinalzeichen trägt zwei Kegel mit den Spitzen nach oben. Wo passiert man sicher?",
+       "warum": "Spitzen nach oben zeigen nach Norden — die Kegel zeigen die Richtung, in der das sichere Wasser liegt."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Südlich.",
+        "Nördlich.",
+        "Östlich.",
+        "Westlich."
+       ],
+       "q": "Zwei Kegel mit den Spitzen nach unten. Wo passiert man?",
+       "warum": "Nach unten heißt Süden. Die Merkhilfe ist die Himmelsrichtung, in die die Spitzen weisen."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nördlich.",
+        "Westlich.",
+        "Östlich.",
+        "Südlich."
+       ],
+       "q": "Zwei Kegel mit den Grundflächen zusammen (Spitzen nach außen). Wo passiert man?",
+       "warum": "Zusammen wie eine Sanduhr oder ein „W\" auf der Seite: West. Auseinander heißt Ost."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Östlich.",
+        "Südlich.",
+        "Westlich.",
+        "Nördlich."
+       ],
+       "q": "Zwei Kegel mit den Spitzen gegeneinander. Wo passiert man?",
+       "warum": "Spitzen gegeneinander — wie ein liegendes „E\" für Ost."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Schwarz mit rotem Band, zwei schwarze Kugeln obenauf.",
+        "Gelb mit Kreuz.",
+        "Rot-weiß gestreift mit einer Kugel.",
+        "Grün mit Kegel."
+       ],
+       "q": "Was kennzeichnet eine Einzelgefahrenstelle?",
+       "warum": "Sie steht **auf** der Gefahr, nicht daneben — also weiträumig umfahren."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Mittefahrwasser.",
+        "Ein Sonderzeichen, etwa für ein Sperrgebiet oder eine Messstelle.",
+        "Ein Kardinalzeichen.",
+        "Eine Backbordtonne."
+       ],
+       "q": "Eine Tonne ist gelb mit einem liegenden Kreuz als Toppzeichen. Was ist das?",
+       "warum": "Gelbe Zeichen markieren Besonderes: Badezonen, Kabel, Messstellen oder Sperrgebiete."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Sperrgebiet.",
+        "Einzelgefahr.",
+        "Backbordseite.",
+        "Sicheres Wasser ringsum, etwa die Ansteuerungstonne."
+       ],
+       "q": "Was bedeutet eine rot-weiß längsgestreifte Tonne mit roter Kugel?",
+       "warum": "Sie markiert die Mitte des Fahrwassers oder dessen Anfang — man darf beidseitig vorbei."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Von See kommend, also flussaufwärts.",
+        "Es gibt keine feste Richtung.",
+        "Nach der Strömung.",
+        "Immer von Nord nach Süd."
+       ],
+       "q": "Woran erkennt man die Fahrtrichtung der Betonnung auf einem Fluss?",
+       "warum": "Auf Binnenwasserstraßen gilt die Richtung von der Mündung zur Quelle."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Eine Einzelgefahr.",
+        "Mittefahrwasser.",
+        "Ein Sperrgebiet.",
+        "Eine Abzweigung, Hauptfahrwasser rechts."
+       ],
+       "q": "Was zeigt eine Tonne mit grün-rot-grüner Querstreifung an?",
+       "warum": "Die Farbe oben bestimmt, auf welcher Seite die Tonne liegt; die Streifung sagt, dass sich das Fahrwasser teilt."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Um Fische anzulocken.",
+        "Damit sie nachts erkennbar bleiben; die Kennung identifiziert sie.",
+        "Nur zur Zierde.",
+        "Zur Stromversorgung von Messgeräten."
+       ],
+       "q": "Warum sind Fahrwassertonnen oft beleuchtet?",
+       "warum": "Die Feuerkennung — Takt und Farbe — steht in der Karte und macht aus einem Licht eine bestimmte Tonne."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Dauerlicht mit zwei Farben.",
+        "Zwei Blitze alle zehn Sekunden.",
+        "Zwei Sekunden Licht, zehn Sekunden Dunkelheit.",
+        "Zehn Blitze alle zwei Sekunden."
+       ],
+       "q": "Was bedeutet die Kennung „Fl(2) 10s\"?",
+       "warum": "Fl steht für Funkelfeuer (flashing), die Zahl in Klammern für die Zahl der Blitze je Periode, danach die Periodendauer."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Eine Ankerboje.",
+        "Die tiefste Stelle des Fahrwassers.",
+        "Eine Tonne mit Tiefenmessgerät.",
+        "Ein Zeichen, das flaches Wasser markiert."
+       ],
+       "q": "Was ist eine Untiefentonne?",
+       "warum": "Häufig als Kardinalzeichen ausgeführt: Es sagt dann gleich mit, auf welcher Seite man vorbeikommt."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Aus den Tiefenangaben und Tiefenlinien, bezogen auf ein Kartennull.",
+        "Aus der Farbe des Wassers.",
+        "Aus den Tonnennummern.",
+        "Aus dem Maßstab."
+       ],
+       "q": "Wie liest man die Wassertiefe aus einer Seekarte?",
+       "warum": "Das Kartennull ist ein festgelegter Bezugswasserstand. Bei Niedrigwasser steht real weniger Wasser als in der Karte."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Eine Landesgrenze.",
+        "Ein Sperrgebiet.",
+        "Eine Fährverbindung.",
+        "Eine Tiefenlinie."
+       ],
+       "q": "Was bedeutet eine gestrichelte blaue Linie in einer Binnenkarte meist?",
+       "warum": "Tiefenlinien verbinden Punkte gleicher Tiefe — wie Höhenlinien, nur nach unten."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Mittig fahren.",
+        "Möglichst schnell durchfahren.",
+        "Links halten.",
+        "Rechts halten und größeren Fahrzeugen nicht in den Weg geraten."
+       ],
+       "q": "Was ist beim Befahren einer engen Fahrrinne zu beachten?",
+       "warum": "Rechts halten ist die Grundregel, und Kleinfahrzeuge halten sich möglichst ganz außerhalb der Rinne."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Ein Verbot oder eine Einschränkung, je nach Symbol.",
+        "Immer ein Hinweis.",
+        "Immer ein Gebot.",
+        "Eine Ankerstelle."
+       ],
+       "q": "Was zeigt ein Schifffahrtszeichen mit einem weißen Dreieck auf rotem Grund an?",
+       "warum": "Die genaue Bedeutung steht im Symbol; die rote Umrandung sagt schon, dass etwas untersagt oder eingeschränkt ist."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Umkehren.",
+        "Anhalten und warten.",
+        "Der Karte vertrauen.",
+        "Der Natur vertrauen und vorsichtig fahren; Karten veralten."
+       ],
+       "q": "Was tut man, wenn die Betonnung nicht zur Karte passt?",
+       "warum": "Tonnen werden versetzt, Fahrwasser wandern. Was draußen steht, gilt — und wer unsicher ist, fährt langsam und lotet."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Es ist ein besonderes Fahrzeug, etwa ein Arbeitsschiff.",
+        "Es ist manövrierunfähig.",
+        "Es ankert.",
+        "Es hat Vorrang."
+       ],
+       "q": "Was bedeutet ein gelbes Blinklicht an einem Fahrzeug?",
+       "warum": "Arbeits- und Messfahrzeuge kennzeichnen sich so; ihnen gebührt Abstand, weil oft Geräte im Wasser sind."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Zufall.",
+        "Damit sich Seite und Position auch ohne Sicht auf die Farbe bestimmen lassen.",
+        "Wegen der Herstellung.",
+        "Aus historischen Gründen."
+       ],
+       "q": "Warum tragen Backbordtonnen gerade Nummern?",
+       "warum": "Bei Dunst oder Gegenlicht ist die Zahl oft eher lesbar als die Farbe — die doppelte Kennzeichnung ist Absicht."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Es dient der Befestigung.",
+        "Es wiederholt die Aussage der Form und Farbe und ist von weitem sichtbar.",
+        "Es ist reine Zierde.",
+        "Es zeigt die Wassertiefe."
+       ],
+       "q": "Welche Bedeutung hat das Toppzeichen einer Tonne?",
+       "warum": "Ein Zylinder oben gehört zu Backbord, ein Kegel zu Steuerbord — dieselbe Aussage, nur größer und höher."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Den Badebereich, der nicht befahren werden darf.",
+        "Eine Ankerstelle.",
+        "Eine Untiefe.",
+        "Eine Regattabahn."
+       ],
+       "q": "Was kennzeichnen Bojenketten an Badestränden?",
+       "warum": "Meist gelbe Bojen. Hineinzufahren ist untersagt und gefährlich — Schwimmer sind von einem Boot aus kaum zu sehen."
+      }
+     ],
+     "ausgabe": "",
+     "begriffe": [
+      "betonnung",
+      "fahrwasser"
+     ],
+     "beispiel": "",
+     "bild": "betonnung",
+     "id": "z-tonnen",
+     "text": "Die seitliche Betonnung kennzeichnet ein Fahrwasser. Entscheidend ist die **Blickrichtung**: Alle Angaben gelten **von See kommend**, also flussaufwärts beziehungsweise in Richtung Hafen.\n\n**Backbord** (links von See kommend): **rot**, Form **stumpf** (Zylinder oder Spitze oben flach), gerade Kennziffern.\n\n**Steuerbord** (rechts): **grün**, Form **spitz** (Kegel), ungerade Kennziffern.\n\nMerkhilfe für die Fahrt hinein: *rot backbord, grün steuerbord* — dieselbe Zuordnung wie bei den Positionslaternen. Wer heraus fährt, hat sie genau andersherum an der Seite, und dieser Wechsel ist die häufigste Prüfungsfalle.\n\nWeitere Zeichen, die man kennen muss:\n\n**Mittefahrwasser**: rot-weiß längsgestreift, Kugel oben — darf beidseitig passiert werden.\n\n**Einzelgefahr**: schwarz mit rotem Band, zwei schwarze Kugeln — weiträumig umfahren.\n\n**Kardinalzeichen** zeigen mit zwei schwarzen Kegeln, auf welcher Seite man sicher vorbeikommt: Spitzen nach oben heißt nördlich passieren, nach unten südlich, auseinander östlich, zusammen westlich.",
+     "titel": "Betonnung"
+    },
+    {
+     "aufgaben": [
+      {
+       "answer": 0,
+       "bild": "lichter",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Ein Segelboot unter Segel, genau entgegenkommend.",
+        "Ein Maschinenfahrzeug von der Seite.",
+        "Eine Tonne.",
+        "Ein Fahrzeug, das sich entfernt."
+       ],
+       "q": "Du siehst nachts gleichzeitig ein rotes und ein grünes Licht ohne weißes darüber. Was ist das?",
+       "warum": "Beide Seitenlichter zugleich heißt Kurs genau auf dich zu. Fehlt das weiße Topplicht, fährt es unter Segeln."
+      },
+      {
+       "answer": 1,
+       "bild": "lichter",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Das Fahrzeug kommt entgegen.",
+        "Du siehst ein Heck und fährst hinterher.",
+        "Es ist manövrierunfähig.",
+        "Es ankert quer zu dir."
+       ],
+       "q": "Du siehst nur ein weißes Licht. Was ist am wahrscheinlichsten?",
+       "warum": "Das Hecklicht ist weiß und leuchtet nach achtern. Wer nur weiß sieht, ist hinter dem anderen — und ist damit meist auch der Überholende, also ausweichpflichtig."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "„Ich gehe rückwärts.\"",
+        "Warnsignal: Gefahr oder „Absicht unklar\".",
+        "„Ich gehe nach Steuerbord.\"",
+        "Achtungssignal beim Ablegen."
+       ],
+       "q": "Was bedeuten fünf kurze Töne?",
+       "warum": "Fünf oder mehr kurze Töne sind das Warnsignal. Ein kurzer Ton steht für Steuerbord, zwei für Backbord, drei für Rückwärtsfahrt."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "360 Grad.",
+        "225 Grad.",
+        "135 Grad.",
+        "112,5 Grad."
+       ],
+       "q": "Welchen Horizontbogen deckt ein Seitenlicht ab?",
+       "warum": "Zwei Seitenlichter zu 112,5 Grad plus das Hecklicht mit 135 Grad ergeben genau den Vollkreis von 360 Grad."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "180 Grad.",
+        "225 Grad.",
+        "135 Grad.",
+        "112,5 Grad."
+       ],
+       "q": "Welchen Bogen deckt das Hecklicht ab?",
+       "warum": "Diese 135 Grad sind zugleich der Sektor, aus dem ein Fahrzeug als überholend gilt."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Gelb.",
+        "Weiß.",
+        "Grün.",
+        "Rot."
+       ],
+       "q": "Welche Farbe hat das Topplicht?",
+       "warum": "Es leuchtet 225 Grad nach vorn und kennzeichnet ein Maschinenfahrzeug in Fahrt."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Ein ankerndes Fahrzeug.",
+        "Ein Maschinenfahrzeug, das du an Steuerbord siehst.",
+        "Ein Fahrzeug, das sich entfernt.",
+        "Ein Segelboot von vorn."
+       ],
+       "q": "Du siehst nachts grün und darüber weiß. Was ist das?",
+       "warum": "Grün heißt: Du siehst seine Steuerbordseite. Das weiße Topplicht sagt, dass es unter Maschine fährt."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Ein weißes Rundumlicht.",
+        "Gar keines.",
+        "Zwei rote Lichter.",
+        "Rot über Weiß."
+       ],
+       "q": "Welches Licht zeigt ein ankerndes Fahrzeug?",
+       "warum": "Rundum weiß, möglichst weit vorn gesetzt. Tagsüber entspricht dem ein schwarzer Ball."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Rot über Grün.",
+        "Zwei grüne Lichter.",
+        "Ein weißes Blinklicht.",
+        "Zwei rote Rundumlichter übereinander."
+       ],
+       "q": "Was zeigt ein manövrierunfähiges Fahrzeug bei Nacht?",
+       "warum": "Merkhilfe: „rot über rot — der Kapitän ist tot\", also außer Gefecht. Tagsüber zwei schwarze Bälle."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "durch ein weißes Rundumlicht ersetzen.",
+        "in einer Dreifarbenlaterne im Masttopp führen.",
+        "durch eine Taschenlampe ersetzen.",
+        "weglassen."
+       ],
+       "q": "Ein Segelboot unter 20 m darf die Seitenlichter und das Hecklicht auch …",
+       "warum": "Die Dreifarbenlaterne ist weit sichtbar, darf aber nicht gleichzeitig mit den Seitenlichtern brennen."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nein, unter Maschine gelten die normalen Lichter samt Topplicht.",
+        "Nur bei Nacht.",
+        "Nur auf Binnengewässern.",
+        "Ja, immer."
+       ],
+       "q": "Darf die Dreifarbenlaterne unter Motor geführt werden?",
+       "warum": "Sonst wäre für andere nicht erkennbar, dass man ein Maschinenfahrzeug ist — und damit ausweichpflichtig."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Ein Topplicht.",
+        "Seitenlichter.",
+        "Gar nichts.",
+        "Ein weißes Rundumlicht, rechtzeitig gezeigt."
+       ],
+       "q": "Was führt ein Fahrzeug unter 7 m ohne Maschine mindestens?",
+       "warum": "Eine rechtzeitig gezeigte weiße Handlampe genügt — sie muss allerdings griffbereit sein und nicht in der Backskiste liegen."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur bei völliger Dunkelheit.",
+        "Von Sonnenuntergang bis Sonnenaufgang und bei verminderter Sicht.",
+        "Nur bei Motorbetrieb.",
+        "Nur im Fahrwasser."
+       ],
+       "q": "Wann sind die Lichter zu führen?",
+       "warum": "Nebel, Regen und Schneefall zählen als verminderte Sicht — auch mittags."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Ein Licht mit sehr schneller Folge von Blitzen.",
+        "Ein Blinklicht mit langer Periode.",
+        "Ein Dauerlicht.",
+        "Ein Licht in zwei Farben."
+       ],
+       "q": "Was ist ein Funkellicht?",
+       "warum": "Es hebt sich von normalen Blinkfeuern ab und kennzeichnet Besonderes — etwa die blaue Tafel oder Kardinalzeichen."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Achtung.",
+        "„Ich gehe nach Backbord.\"",
+        "„Ich gehe nach Steuerbord.\"",
+        "Gefahr."
+       ],
+       "q": "Ein Schallsignal von einem langen Ton bedeutet …",
+       "warum": "Ein langer Ton ist das Achtungssignal, etwa beim Verlassen einer unübersichtlichen Hafenausfahrt."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "„Meine Maschine geht rückwärts.\"",
+        "„Ich richte meinen Kurs nach Backbord.\"",
+        "Warnsignal.",
+        "„… nach Steuerbord.\""
+       ],
+       "q": "Zwei kurze Töne bedeuten …",
+       "warum": "Einer heißt Steuerbord, zwei Backbord, drei rückwärts — die Zahl steigt mit der Ungewöhnlichkeit."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "„Meine Maschine geht rückwärts.\"",
+        "Warnsignal.",
+        "„Ich gehe nach Backbord.\"",
+        "Achtung."
+       ],
+       "q": "Drei kurze Töne bedeuten …",
+       "warum": "Wichtig zu wissen, wenn ein großes Schiff vor einem im Hafen rangiert."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Etwa eine Sekunde.",
+        "Etwa vier Sekunden.",
+        "Etwa zehn Sekunden.",
+        "Eine halbe Sekunde."
+       ],
+       "q": "Wie lange dauert ein „kurzer Ton\" etwa?",
+       "warum": "Ein langer Ton dauert etwa vier bis sechs Sekunden — der Unterschied ist deutlich hörbar."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Gar keines.",
+        "Fünf kurze Töne.",
+        "In Abständen einen langen Ton.",
+        "Zwei lange Töne."
+       ],
+       "q": "Welches Schallsignal gibt ein Fahrzeug bei Nebel in Fahrt?",
+       "warum": "Auf Binnengewässern regeln die Vorschriften die genauen Folgen; der lange Ton in Abständen ist die Grundform."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nichts Besonderes.",
+        "Nur Lichter setzen.",
+        "Mehr Fahrt, um schneller heraus zu sein.",
+        "Fahrt vermindern, Ausguck verstärken, notfalls anhalten."
+       ],
+       "q": "Was ist bei Nebel außerdem geboten?",
+       "warum": "Auf einem Binnensee ist Anhalten oder Ankern oft die vernünftigste Entscheidung, bis die Sicht zurückkommt."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Zwei schwarze Bälle.",
+        "Ein schwarzer Ball im Vorschiff.",
+        "Ein schwarzer Kegel.",
+        "Ein Zylinder."
+       ],
+       "q": "Welches Tageszeichen entspricht dem Ankerlicht?",
+       "warum": "Ein Ball heißt ankernd, zwei Bälle manövrierunfähig, ein Kegel Spitze nach unten: Segelboot unter Maschine."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Es fischt.",
+        "Es fährt unter Maschine.",
+        "Es ist manövrierunfähig.",
+        "Es ankert."
+       ],
+       "q": "Ein Fahrzeug zeigt tagsüber zwei schwarze Bälle. Was heißt das?",
+       "warum": "Das Tagespendant zu „rot über rot\": Es kann nicht ausweichen, also weicht man selbst aus."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur für die Berufsschifffahrt.",
+        "Damit andere die Art und Absicht eines Fahrzeugs erkennen.",
+        "Für die Statistik.",
+        "Zur Dekoration."
+       ],
+       "q": "Wozu dienen Signalzeichen überhaupt?",
+       "warum": "Auf dem Wasser kann man nicht blinken oder hupen wie im Auto — Lichter und Formen übernehmen das."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Näher heranfahren, um es zu erkennen.",
+        "Ignorieren.",
+        "Abstand halten, Fahrt vermindern, beobachten.",
+        "Ein Warnsignal geben und weiterfahren."
+       ],
+       "q": "Was ist zu tun, wenn man ein Signal nicht deutet?",
+       "warum": "Ein unverstandenes Signal ist ein Grund, vorsichtiger zu werden — nicht neugieriger."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Um Strom zu sparen.",
+        "Wegen der Bauweise der Laternen.",
+        "Historischer Zufall.",
+        "Damit man aus dem gesehenen Licht auf die Lage schließen kann."
+       ],
+       "q": "Warum sind die Sektoren der Lichter so festgelegt?",
+       "warum": "Welches Licht man sieht, sagt, aus welcher Richtung man auf das andere Fahrzeug schaut — und daraus folgt die Ausweichpflicht."
+      }
+     ],
+     "ausgabe": "",
+     "begriffe": [
+      "lichter",
+      "signale"
+     ],
+     "beispiel": "",
+     "bild": "lichter",
+     "id": "z-lichter",
+     "text": "**Nachts** zeigt jedes Fahrzeug, was es ist und wohin es fährt.\n\n**Seitenlichter**: rot nach Backbord, grün nach Steuerbord, je 112,5 Grad. **Hecklicht**: weiß nach achtern, 135 Grad. Zusammen ergeben sie den Vollkreis.\n\n**Segelboot unter Segel**: nur Seitenlichter und Hecklicht — kein weißes Licht nach vorn.\n\n**Maschinenfahrzeug**: zusätzlich ein weißes **Topplicht** nach vorn. Wer also von vorn ein weißes Licht über den farbigen sieht, hat ein Fahrzeug unter Maschine vor sich.\n\n**Boote unter 7 m** ohne Maschine dürfen sich auf ein weißes Rundumlicht beschränken, das rechtzeitig gezeigt wird.\n\nWas man daraus liest: **Rot und grün zugleich** heißt, das Fahrzeug kommt genau entgegen. **Nur rot** heißt, es zieht von rechts nach links — man sieht seine Backbordseite. **Nur weiß** heißt meist, man sieht ein Heck und fährt hinterher.\n\n**Schallsignale** auf Binnengewässern, kurz und lang:\n\n**Ein kurzer Ton**: „Ich richte meinen Kurs nach Steuerbord.\"\n**Zwei kurze**: „… nach Backbord.\"\n**Drei kurze**: „Meine Maschine geht rückwärts.\"\n**Fünf kurze oder mehr**: Warnsignal — „Ich verstehe Ihre Absicht nicht\" beziehungsweise Gefahr.\n**Ein langer Ton**: Achtungssignal, etwa beim Verlassen einer Hafenausfahrt.",
+     "titel": "Lichter und Schallsignale"
+    }
+   ],
+   "sprache": "-",
+   "stufe": 5,
+   "text": "Wie das Wasser beschildert ist und was man nachts sieht. Reine Merksache — und genau deshalb Karteikartenstoff.",
+   "titel": "Betonnung und Lichter"
+  },
+  {
+   "id": "wetter",
+   "lektionen": [
+    {
+     "aufgaben": [
+      {
+       "antwort": 40,
+       "bild": "",
+       "einheit": "Blitze/Minute",
+       "kind": "zahl",
+       "q": "Bei wie vielen Blitzen je Minute zeigt eine Uferwarnleuchte Starkwind an?",
+       "toleranz": 0.05,
+       "warum": "40 je Minute heißt Starkwind ab etwa 6 Beaufort, 90 je Minute heißt Sturm ab 8. Der Unterschied ist an der Blinkfrequenz gut zu erkennen — eins ist ein ruhiges Takten, das andere ein Flackern."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Er vervierfacht sich.",
+        "Er verdoppelt sich.",
+        "Er bleibt gleich.",
+        "Er verachtfacht sich."
+       ],
+       "q": "Der Wind verdoppelt sich von 10 auf 20 Knoten. Wie ändert sich der Druck im Segel?",
+       "warum": "Der Staudruck wächst mit dem Quadrat der Geschwindigkeit. Deshalb ist der Sprung von 4 auf 5 Beaufort für ein kleines Boot viel größer, als die Zahlen vermuten lassen."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Am Talwind, der mit der Erwärmung hangaufwärts einsetzt.",
+        "An der zunehmenden Luftfeuchte.",
+        "An der Gezeitenströmung.",
+        "Am Bergwind."
+       ],
+       "q": "Auf einem Alpensee ist es vormittags flau und wird mittags kräftig. Woran liegt das?",
+       "warum": "Die Sonne heizt die Hänge, die Luft steigt daran auf und zieht Luft aus dem Tal nach. Nachts kehrt sich das um: Die abgekühlte Luft fällt als Bergwind herunter."
+      },
+      {
+       "antwort": 6,
+       "bild": "",
+       "einheit": "Beaufort",
+       "kind": "zahl",
+       "q": "Bei welcher Windstärke in Beaufort bleiben Jollen üblicherweise im Hafen?",
+       "toleranz": 0.2,
+       "warum": "Ab 6 Beaufort, also knapp 40 km/h, gilt auf Binnenseen Starkwindwarnung. Für eine Jolle ist das die Grenze."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Viele kleine Schaumköpfe.",
+        "Gischtstreifen.",
+        "Nur Kräuselwellen.",
+        "Spiegelglatte See."
+       ],
+       "q": "Wie erkennt man 4 Beaufort auf dem Wasser?",
+       "warum": "Ab 3 Beaufort einzelne Schaumköpfe, ab 4 viele, ab 5 überall und etwas Gischt."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "An einer dunklen, gekräuselten Fläche.",
+        "Gar nicht.",
+        "An heller werdendem Wasser.",
+        "An zunehmender Welle."
+       ],
+       "q": "Woran erkennt man eine herannahende Bö auf dem Wasser?",
+       "warum": "Die stärkere Kräuselung streut das Licht anders. Wer den Wasserspiegel im Blick hat, sieht Böen kommen."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Etwas raumer, also weiter achterlich.",
+        "Genau entgegengesetzt.",
+        "Genau aus derselben Richtung.",
+        "Immer von Backbord."
+       ],
+       "q": "Aus welcher Richtung kommen Böen meist relativ zum Grundwind?",
+       "warum": "Der Wind aus der Höhe wird heruntergemischt und hat dort eine andere Richtung — deshalb der Dreher."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Ein Wirbel im Lee einer Insel.",
+        "Kalte Luft, die von einem Hang herunterfällt.",
+        "Ein Wind, der abends einschläft.",
+        "Der Wind hinter einem Segel."
+       ],
+       "q": "Was ist ein Fallwind?",
+       "warum": "An Alpenseen kann er ohne Vorwarnung mit großer Stärke einfallen — eine der Ursachen für plötzliche Kenterungen."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Ein Bereich mit stärkerem Wind.",
+        "Ein Bereich mit weniger und unstetigerem Wind im Lee des Ufers.",
+        "Eine Zone mit Strömung.",
+        "Eine Untiefe."
+       ],
+       "q": "Was ist die Windabdeckung durch ein Ufer?",
+       "warum": "Im Lee einer Baumreihe oder eines Hügels wechselt der Wind Stärke und Richtung — dort ist Segeln mühsam und lehrreich."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Ein Fallwind.",
+        "Ein Wirbel hinter dem Segel.",
+        "Wind, der zwischen Hindernissen beschleunigt wird.",
+        "Die Beschleunigung durch den Fahrtwind."
+       ],
+       "q": "Was ist eine Düsenwirkung?",
+       "warum": "Zwischen zwei Uferhügeln oder in einer Bucht kann der Wind deutlich stärker sein als auf dem freien See."
+      },
+      {
+       "antwort": 18,
+       "bild": "",
+       "einheit": "km/h",
+       "kind": "zahl",
+       "q": "Wie viele km/h sind ungefähr 5 m/s?",
+       "toleranz": 0.08,
+       "warum": "Mal 3,6: 5 × 3,6 = 18 km/h. Umgekehrt teilt man km/h durch 3,6, um m/s zu bekommen."
+      },
+      {
+       "antwort": 10.3,
+       "bild": "",
+       "einheit": "m/s",
+       "kind": "zahl",
+       "q": "Wie viele m/s sind etwa 20 Knoten?",
+       "toleranz": 0.1,
+       "warum": "Ein Knoten ist 1,852 km/h, also rund 0,514 m/s. 20 × 0,514 ≈ 10,3 m/s — grob gerechnet: Knoten halbieren."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Ein Sturmwind.",
+        "Ein Wind vom Wasser zum Land, tagsüber durch Erwärmung des Landes.",
+        "Der Wind bei Sonnenuntergang.",
+        "Ein Wind vom Land zum Wasser."
+       ],
+       "q": "Was ist die Seebrise?",
+       "warum": "Tagsüber erwärmt sich das Land schneller, die Luft steigt auf und zieht kühlere Luft vom Wasser nach. Nachts kehrt sich das um."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Am Nachmittag.",
+        "Bei Sturm.",
+        "Nachts und am frühen Morgen.",
+        "Mittags."
+       ],
+       "q": "Wann weht der Landwind?",
+       "warum": "Nachts kühlt das Land schneller aus als das Wasser, und die Luft fließt zum See hin."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "In der Nordhalbkugel dreht der Wind mit zunehmender Höhe im Uhrzeigersinn.",
+        "Sie gilt nur am Meer.",
+        "Böen kommen von rechts.",
+        "Der Wind dreht am Nachmittag nach rechts."
+       ],
+       "q": "Was besagt die Faustregel „Wind dreht rechts mit der Höhe\"?",
+       "warum": "Die Reibung am Boden bremst und dreht den Wind; mit der Höhe nimmt beides ab. Deshalb kommen heruntergemischte Böen raumer."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Aus dem Sonnenuntergang.",
+        "Aus hohen, dünnen Eiswolken, die sich verdichten.",
+        "Aus Bodennebel.",
+        "Aus Quellwolken am Nachmittag."
+       ],
+       "q": "Woraus liest man kommendes Schlechtwetter am Himmel zuerst ab?",
+       "warum": "Cirrus, der zu Cirrostratus mit Halo wird, kündigt eine Warmfront einen Tag im Voraus an."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nebelbildung.",
+        "Beständiges Wetter.",
+        "Windzunahme und Wetterverschlechterung.",
+        "Nichts Bestimmtes."
+       ],
+       "q": "Was bedeutet rasch fallender Luftdruck?",
+       "warum": "Je schneller der Druck fällt, desto kräftiger wird es. Ein Barometer an Bord ist deshalb mehr wert als sein Preis."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Sturm.",
+        "Schwachen Wind, etwa 1 bis 2 Beaufort.",
+        "Windstille.",
+        "4 Beaufort."
+       ],
+       "q": "Was sind Kräuselwellen ohne Schaumköpfe ein Zeichen für?",
+       "warum": "Bei Windstille ist der Spiegel glatt; Kräuselwellen ohne Schaum bedeuten 1 bis 2, einzelne Schaumköpfe 3."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Weil der Wind schwächer ist.",
+        "Weil der Windweg (Fetch) kürzer ist.",
+        "Weil der See flacher ist.",
+        "Weil Süßwasser leichter ist."
+       ],
+       "q": "Warum ist die Wellenhöhe auf einem See kleiner als am Meer?",
+       "warum": "Wellen brauchen Strecke, um aufzulaufen. Auf einem See sind sie dafür kürzer und steiler — unangenehmer als die Höhe vermuten lässt."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Schneller zu durchfahren.",
+        "Unangenehmer als lange hohe Wellen.",
+        "Gleichwertig.",
+        "Harmloser."
+       ],
+       "q": "Was sind kurze, steile Wellen für ein kleines Boot?",
+       "warum": "Das Boot kommt nicht darüber hinweg, sondern hinein. Genau das macht Binnenseen bei Wind anspruchsvoll."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Wind von Süden.",
+        "Ablandiger Wind — er treibt Boote und Schwimmer vom Ufer weg.",
+        "Die Richtung ist gleichgültig.",
+        "Auflandiger Wind."
+       ],
+       "q": "Welche Windrichtung ist auf einem See besonders zu beachten?",
+       "warum": "Bei ablandigem Wind sieht es am Ufer harmlos aus, und draußen steht die volle Stärke. Die Rückkehr geht dann gegenan."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Abdeckung, Drehungen und plötzliche Böen.",
+        "Gleichmäßig stärkeren Wind.",
+        "Stets ablandigen Wind.",
+        "Gar keinen Wind."
+       ],
+       "q": "Was ist beim Segeln in Ufernähe mit Bäumen zu erwarten?",
+       "warum": "Hindernisse machen den Wind unstet. Wer dort segelt, hält die Schot in der Hand und nicht in der Klemme."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "In der Seemitte, weit von Hindernissen.",
+        "In Buchten.",
+        "Direkt am Ufer.",
+        "Hinter Inseln."
+       ],
+       "q": "Wo findet man auf einem See meist den beständigsten Wind?",
+       "warum": "Je weiter vom Ufer, desto gleichmäßiger — dafür ist der Rückweg länger, wenn etwas passiert."
+      }
+     ],
+     "ausgabe": "",
+     "begriffe": [
+      "beaufort",
+      "wind"
+     ],
+     "beispiel": "",
+     "bild": "",
+     "id": "w-wind",
+     "text": "Windstärken werden in **Beaufort** angegeben, und die Skala ist nicht linear — jede Stufe bringt erheblich mehr Kraft, denn der Winddruck wächst mit dem **Quadrat** der Geschwindigkeit. Doppelte Windgeschwindigkeit heißt vierfache Kraft im Segel.\n\nDie Stufen, an denen für ein Segelboot etwas kippt:\n\n**3 Bft** (12–19 km/h): angenehmes Segeln, kleine Schaumköpfe.\n\n**4 Bft** (20–28 km/h): reffen wird bei kleinen Booten ein Thema, viele Schaumköpfe.\n\n**5 Bft** (29–38 km/h): für Jollen die Grenze, überall Schaumköpfe, etwas Gischt.\n\n**6 Bft** (39–49 km/h): Sturmwarnung auf Binnenseen, Jollen bleiben am Steg.\n\nAuf Binnengewässern gibt es **Windwarnungen** über Blinklichter am Ufer: **40 Blitze je Minute** heißt Starkwind (ab 6 Bft), **90 Blitze je Minute** heißt Sturm (ab 8 Bft). Bei Starkwindwarnung gehört ein kleines Boot in den Hafen, bei Sturmwarnung jedes.\n\nZwei örtliche Winde, die man kennen muss: Am Berg zieht tagsüber der **Talwind** hangaufwärts, nachts fällt der **Bergwind** herunter — auf Alpenseen der Grund, warum es vormittags flau ist und mittags kräftig weht.",
+     "titel": "Wind und Beaufort"
+    },
+    {
+     "aufgaben": [
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Die Oberseite wird faserig statt knollig.",
+        "Erst am Donner.",
+        "Die Wolke wird breiter als hoch.",
+        "Der Wind schläft ein."
+       ],
+       "q": "Woran erkennst du, dass aus einer Quellwolke ein Gewitter wird?",
+       "warum": "Faserig heißt vereist — ab da ist es ein Gewitter im Bau. Das sieht man lange, bevor es donnert, und genau dann ist die Entscheidung zu treffen."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "In die Seemitte, dort ist es sicherer.",
+        "Zum Heimathafen, egal wie weit.",
+        "An eine Boje im Freien.",
+        "Zum nächstgelegenen Schutz, nicht zum Heimathafen."
+       ],
+       "q": "Ein Gewitter zieht auf. Wohin fährst du?",
+       "warum": "Die Böenwalze läuft dem Regen weit voraus. Was zählt, ist die Zeit bis zum Schutz — welcher Hafen das ist, ist zweitrangig."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Arme waagrecht ausstrecken und halten.",
+        "Schnelles Winken mit einem Arm.",
+        "Langsames Heben und Senken der seitlich ausgestreckten Arme.",
+        "Beide Arme über dem Kopf kreuzen."
+       ],
+       "q": "Wie lautet das Notzeichen mit den Armen?",
+       "warum": "Langsam und wiederholt, beide Arme seitlich. Schnelles Winken mit einem Arm ist ein Gruß und wird auch so verstanden — ein Unterschied, der zählt."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur bei Nachtfahrt.",
+        "Erst wenn jemand ins Wasser fällt.",
+        "Nur für Nichtschwimmer.",
+        "Bevor es kritisch wird — spätestens bei aufziehendem Schlechtwetter."
+       ],
+       "q": "Wann gehört die Rettungsweste angelegt?",
+       "warum": "Eine Weste im Stauraum hat noch niemanden gerettet. Bei aufziehendem Gewitter, bei Nacht, bei Kälte und im Vorschiff wird sie getragen."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Bis etwa 20 km.",
+        "Etwa 1 km.",
+        "Etwa 100 m.",
+        "Sie läuft hinterher."
+       ],
+       "q": "Wie weit kann die Böenfront einem Gewitter vorauslaufen?",
+       "warum": "Deshalb kann es bei blauem Himmel über dem eigenen Kopf schon gefährlich werden."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Auf das Zwei- bis Dreifache.",
+        "Er nimmt ab.",
+        "Er bleibt gleich.",
+        "Um etwa zehn Prozent."
+       ],
+       "q": "Um welchen Faktor kann der Wind in einer Gewitterbö zunehmen?",
+       "warum": "Aus 4 Beaufort werden binnen Minuten 8 — und der Winddruck wächst mit dem Quadrat, also auf das Vier- bis Neunfache."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Abwarten.",
+        "Den nächsten Schutz ansteuern und Segel verkleinern.",
+        "Alle Segel setzen, um schneller zu sein.",
+        "Ankern."
+       ],
+       "q": "Was tut man bei aufziehendem Gewitter zuerst?",
+       "warum": "Die Entscheidung früh treffen: Später ist Segelbergen im Starkwind ein eigenes Problem."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Wegen des Blitzschlags im Mast.",
+        "Damit man besser sieht.",
+        "Damit niemand über Bord geht und alle Westen tragen.",
+        "Damit das Boot besser trimmt."
+       ],
+       "q": "Warum soll die Mannschaft bei Gewitter in die Plicht?",
+       "warum": "Auf dem Vorschiff zu arbeiten ist genau das, was man in der Bö vermeiden will."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Ankern und Segel setzen lassen.",
+        "Quer zum Wind liegen bleiben.",
+        "Unter Motor mit dem Bug gegen die Böen halten.",
+        "Vor dem Wind laufen."
+       ],
+       "q": "Wie verhält man sich, wenn das Gewitter da ist?",
+       "warum": "Gegen die Böen ist die Angriffsfläche am kleinsten und das Boot am besten steuerbar."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Das Wasser ist leitend, also ungefährlich.",
+        "Die Segel ziehen Blitze an.",
+        "Es gibt keines.",
+        "Der Mast ist oft der höchste Punkt weit und breit."
+       ],
+       "q": "Was ist ein Blitzschlagrisiko an Bord?",
+       "warum": "Deshalb: Metallteile und Wanten nicht berühren, möglichst in die Mitte der Plicht, nichts über Bord hängen lassen."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Sekunden zwischen Blitz und Donner durch drei ergibt Kilometer.",
+        "Es gibt keine.",
+        "Sekunden gleich Kilometer.",
+        "Sekunden mal drei."
+       ],
+       "q": "Welche Faustregel gibt es für die Entfernung eines Gewitters?",
+       "warum": "Der Schall braucht rund drei Sekunden je Kilometer. Neun Sekunden heißen also etwa drei Kilometer."
+      },
+      {
+       "antwort": 4,
+       "bild": "",
+       "einheit": "km",
+       "kind": "zahl",
+       "q": "Zwischen Blitz und Donner vergehen 12 Sekunden. Wie weit ist das Gewitter?",
+       "toleranz": 0.15,
+       "warum": "12 geteilt durch 3 ergibt 4 km. Bei weniger als 10 Sekunden ist es Zeit, nicht mehr über die Rückkehr nachzudenken, sondern sie auszuführen."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Eine dunkle, waagrecht liegende Wolkenrolle an der Unterkante.",
+        "Eine Nebelbank.",
+        "Ein Regenschleier.",
+        "Der Amboss oben."
+       ],
+       "q": "Was ist die Böenwalze?",
+       "warum": "Sie markiert die Vorderkante der ausfließenden Kaltluft — ihr Erscheinen heißt: jetzt kommt der Wind."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Das Gewitter zieht ab.",
+        "Die ausfließende Kaltluft ist da; der Wind kommt sofort.",
+        "Es wird nur regnen.",
+        "Nichts Besonderes."
+       ],
+       "q": "Was zeigt ein plötzlicher Temperatursturz vor einem Gewitter an?",
+       "warum": "Temperatursturz und Windsprung gehören zusammen und sind die letzte Vorwarnung."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Rettungswesten, Lenzmittel und ein Messer.",
+        "Der Spinnaker.",
+        "Die Badeleiter.",
+        "Der Kocher."
+       ],
+       "q": "Welche Ausrüstung ist bei Gewitter griffbereit?",
+       "warum": "Ein Messer, weil eine klemmende Schot bei einer Bö der Unterschied sein kann."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Weil es länger dauert als am Meer.",
+        "Weil es dort mehr Blitze gibt.",
+        "Es entsteht und trifft schnell, und das Ufer ist trügerisch nah.",
+        "Weil die Wellen höher sind."
+       ],
+       "q": "Warum ist ein Gewitter auf einem Binnensee besonders tückisch?",
+       "warum": "Auf 3 km zum Ufer bleibt bei 6 Beaufort gegenan keine halbe Stunde — und genau die fehlt dann."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nachts.",
+        "Zu jeder Zeit gleich.",
+        "Sie entstehen meist am Nachmittag und Abend.",
+        "Am Vormittag."
+       ],
+       "q": "Was ist bei Hitzegewittern typisch für die Tageszeit?",
+       "warum": "Der Boden braucht Zeit, um genug Energie zu sammeln. Frühstarter sind deshalb im Vorteil."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Sie löst Gewitter auf.",
+        "Sie hat keinen Einfluss.",
+        "Sie bringt nur Regen.",
+        "Sie kann eine ganze Linie von Gewittern bringen."
+       ],
+       "q": "Was ist eine Kaltfront in Bezug auf Gewitter?",
+       "warum": "Frontgewitter ziehen als Linie durch und sind oft heftiger als einzelne Hitzegewitter — dafür sind sie besser vorhersagbar."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Wetterbericht, Warnungen und ein Plan für die Rückkehr.",
+        "Nur der Blick zum Himmel.",
+        "Nichts Besonderes.",
+        "Nur die Ausrüstung prüfen."
+       ],
+       "q": "Was gehört zur Vorbereitung eines Segeltages?",
+       "warum": "Die meisten Wetterunfälle auf Binnenseen wären durch einen Blick auf die Vorhersage vermeidbar gewesen."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur vom Segelverein.",
+        "Nur über Funk.",
+        "Es gibt keine.",
+        "Von den Uferwarnleuchten und aus dem Wetterbericht."
+       ],
+       "q": "Woher bekommt man Warnungen auf einem österreichischen See?",
+       "warum": "Die Leuchten sind weithin sichtbar, und 40 gegen 90 Blitze je Minute lassen sich gut unterscheiden."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Segel bergen und treiben lassen.",
+        "Sofort den nächsten Schutz ansteuern.",
+        "Weiterfahren wie geplant.",
+        "Ankern und abwarten."
+       ],
+       "q": "Was tut man, wenn die Sturmwarnung erst auf dem Wasser beginnt?",
+       "warum": "90 Blitze je Minute heißen: Es wird für jedes Boot ungemütlich. Die Warnung kommt so früh, dass der nächste Hafen erreichbar ist."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur lenzen.",
+        "Sofort das Boot verlassen.",
+        "Lenzen und die Ursache suchen, Besatzung in Westen.",
+        "Nur die Ursache suchen."
+       ],
+       "q": "Was ist zu tun, wenn Wasser ins Boot kommt?",
+       "warum": "Beides zugleich: Wer nur lenzt, verliert gegen ein Leck; wer nur sucht, wird überholt."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Bei Gewitter.",
+        "Sobald Wasser eindringt.",
+        "Bei Mastbruch.",
+        "Erst, wenn es sicher sinkt — es schwimmt meist länger als man denkt."
+       ],
+       "q": "Wann verlässt man ein Boot?",
+       "warum": "Ein havariertes Boot ist eine große, sichtbare Plattform. Im Wasser ist man klein, kalt und unsichtbar."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Den Motor starten.",
+        "Funken.",
+        "Personen sichern, dann das Rigg sichern oder kappen.",
+        "Sofort den Mast bergen."
+       ],
+       "q": "Was tut man nach einem Mastbruch zuerst?",
+       "warum": "Ein treibender Mast an Wanten schlägt gegen den Rumpf und kann ihn aufschlagen. Deshalb gehört ein Bolzenschneider oder Messer an Bord."
+      }
+     ],
+     "ausgabe": "",
+     "begriffe": [
+      "gewitter",
+      "rettung"
+     ],
+     "beispiel": "",
+     "bild": "",
+     "id": "w-gewitter",
+     "text": "**Gewitter** sind auf Binnenseen die größte Gefahr. Vor der Regenwand läuft eine **Böenwalze** mit Windgeschwindigkeiten, die das Dreifache des vorherigen Windes erreichen können — und sie kommt bei noch blauem Himmel.\n\n**Anzeichen**, in dieser Reihenfolge:\n\nAufquellende Haufenwolken mit dunkler, breiter Basis; eine **faserige** Oberseite, die verrät, dass die Wolke oben vereist ist; eine dunkle Wolkenwalze an der Unterkante; plötzliche Stille und Temperatursturz.\n\n**Was zu tun ist:** Früh entscheiden und **sofort** den nächsten Hafen ansteuern — nicht den Heimathafen. Segel bergen oder stark reffen, Rettungswesten anlegen, Mannschaft in die Plicht, Luken schließen. Ist das Gewitter da, unter Motor mit dem Bug gegen die Böen halten.\n\n**Ausrüstung**, nach der gefragt wird: Rettungswesten für alle an Bord (und getragen, nicht verstaut), Rettungsring oder -hufeisen, Paddel oder Riemen, Festmacher und Anker mit ausreichender Kette, Lenzeinrichtung, Feuerlöscher bei Motor, Signalmittel, Verbandszeug.\n\nDas **Notsignal** auf Binnengewässern: wiederholtes langsames Heben und Senken der seitlich ausgestreckten Arme. Dazu zählen auch rote Sterne, Rauch, ein Dauerschallsignal und die Nationalflagge mit einem Knoten darüber.",
+     "titel": "Gewitter und Ausrüstung"
+    }
+   ],
+   "sprache": "-",
+   "stufe": 6,
+   "text": "Wind einschätzen, Gewitter erkennen, Ausrüstung kennen. Auf Binnenseen ist das Wetter die häufigste Unfallursache — weil es dort schnell umschlägt und das Ufer trügerisch nah aussieht.",
+   "titel": "Wetter und Sicherheit"
+  },
+  {
+   "id": "recht",
+   "lektionen": [
+    {
+     "aufgaben": [
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Der Eigner.",
+        "Beide zu gleichen Teilen.",
+        "Der Gast am Ruder.",
+        "Der Schiffsführer."
+       ],
+       "q": "Wer trägt die Verantwortung, wenn ein Gast am Ruder einen Fehler macht?",
+       "warum": "Die Verantwortung des Schiffsführers ist nicht übertragbar. Wer jemanden ans Ruder lässt, bleibt dafür zuständig, dass es gutgeht."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Mehr Proviant mitnehmen.",
+        "Nichts Besonderes.",
+        "Den Anker klarmachen.",
+        "Den Wetterbericht einholen und die Rückkehr danach planen."
+       ],
+       "q": "Was gehört bei einem Gewitterrisiko zur Vorbereitung vor dem Ablegen?",
+       "warum": "Die meisten Wetterunfälle auf Binnenseen wären durch einen Blick auf die Vorhersage und eine früher geplante Rückkehr vermeidbar gewesen."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Weil er Laichplatz und Brutgebiet ist und leicht Schaden nimmt.",
+        "Wegen der Strömung.",
+        "Weil es dort zu tief ist.",
+        "Weil dort der Wind abreißt."
+       ],
+       "q": "Warum hält man Abstand vom Schilfgürtel?",
+       "warum": "Der Schilfgürtel ist die produktivste Zone eines Sees. Durchfahren zerstört Laich und vertreibt Brutvögel — deshalb ist er vielerorts ausdrücklich gesperrt."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Wer die nötige Befähigung und Eignung hat.",
+        "Der Eigner, immer.",
+        "Wer zuerst am Steg ist.",
+        "Der Älteste."
+       ],
+       "q": "Wer darf das Kommando an Bord führen?",
+       "warum": "Und wer es führt, trägt die Verantwortung — unabhängig davon, wer gerade das Ruder hält."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur den Tank prüfen.",
+        "Nichts, wenn man den Platz kennt.",
+        "Boot, Ausrüstung, Wetter und Besatzung prüfen.",
+        "Nur die Segel prüfen."
+       ],
+       "q": "Was gehört zur Sorgfaltspflicht vor dem Ablegen?",
+       "warum": "Diese Prüfung ist keine Formsache: Fast jede Kette, die zum Unfall führt, beginnt mit einem übersehenen Punkt am Steg."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur Papier.",
+        "Nein, nichts davon.",
+        "Nur in der Seemitte.",
+        "Nur Biologisches."
+       ],
+       "q": "Darf man Abfall über Bord geben?",
+       "warum": "Auch Speisereste verändern das Gleichgewicht eines Sees. Alles kommt zurück an Land."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "In einen Sammeltank und an der Station entsorgen.",
+        "Mit Chemie behandeln und über Bord.",
+        "Über Bord in der Seemitte.",
+        "Nachts über Bord."
+       ],
+       "q": "Was ist mit Abwasser aus einer Bordtoilette zu tun?",
+       "warum": "Auf Binnengewässern gilt praktisch überall Einleitverbot."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Abwarten.",
+        "Mit Spülmittel auflösen.",
+        "Aufnehmen, melden und nicht verteilen.",
+        "Nichts, es verdunstet."
+       ],
+       "q": "Was tut man bei einem Ölaustritt aus dem Motor?",
+       "warum": "Spülmittel verteilt das Öl nur feiner und macht es schwerer aufzunehmen. Ölbindemittel gehört an Bord."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur nachts meiden.",
+        "Wie überall.",
+        "Nur mit Motor meiden.",
+        "Langsam, leise, Abstand halten und gekennzeichnete Zonen meiden."
+       ],
+       "q": "Wie verhält man sich in Naturschutzgebieten?",
+       "warum": "Brutvögel reagieren auf Annäherung lange bevor man sie überhaupt bemerkt."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur Süßwasser verwenden.",
+        "Nur biologische Mittel über Bord.",
+        "Es gibt keine Auflagen.",
+        "Keine Reinigungsmittel ins Wasser; an Land mit Abscheider arbeiten."
+       ],
+       "q": "Was ist beim Waschen des Bootes zu beachten?",
+       "warum": "Auch als biologisch abbaubar verkaufte Mittel belasten das Gewässer unmittelbar."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Die Ankerkette.",
+        "Der Wendekreis des Bootes.",
+        "Der Kreis, den das Boot um seinen Anker beschreiben kann.",
+        "Der Sicherheitsabstand zum Ufer."
+       ],
+       "q": "Was ist der Schwojkreis beim Ankern?",
+       "warum": "Er muss frei bleiben — auch dann, wenn der Wind dreht und Nachbarboote anders schwojen."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur nachts.",
+        "Nein, Ankerverbote und Schutzzonen sind zu beachten.",
+        "Ja, überall.",
+        "Nur in Buchten."
+       ],
+       "q": "Darf man überall ankern?",
+       "warum": "Kabel, Leitungen, Schutzgebiete und Fahrwasser sind typische Ankerverbotszonen."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur im Hafen.",
+        "Nur nach 22 Uhr.",
+        "Rücksicht, besonders in Ufernähe und nachts.",
+        "Keine Einschränkung."
+       ],
+       "q": "Was gilt für Lärm an Bord?",
+       "warum": "Schall trägt über Wasser weit — deutlich weiter, als es an Bord wirkt."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Es gelten keine Regeln.",
+        "Dicht vorbeifahren ist erlaubt.",
+        "Angler müssen ausweichen.",
+        "Abstand halten, nicht über die Schnur fahren."
+       ],
+       "q": "Wie verhält man sich gegenüber Anglern?",
+       "warum": "Verankerte Boote und ausgelegte Schnüre sind schlecht sichtbar; eine gekappte Schnur ist leicht passiert."
+      },
+      {
+       "answer": 2,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Man darf mitsegeln.",
+        "Regattafelder weichen aus.",
+        "Abstand halten und die Bahn nicht queren.",
+        "Man hat Vorrang."
+       ],
+       "q": "Was ist bei Regatten als Nichtteilnehmer zu beachten?",
+       "warum": "Regattaboote segeln nach eigenen Regeln und konzentriert; Durchfahren stört und ist gefährlich."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Nur bei eigener Beteiligung.",
+        "Hilfe zu leisten, soweit ohne eigene Gefährdung möglich.",
+        "Nur die Behörde zu verständigen.",
+        "Keine."
+       ],
+       "q": "Welche Pflicht besteht gegenüber in Not geratenen Personen?",
+       "warum": "Auf dem Wasser ist das nächste Boot oft die einzige erreichbare Hilfe."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Personen prüfen, Hilfe leisten, Daten austauschen, melden.",
+        "Nur bei Verletzten melden.",
+        "Weiterfahren bei geringem Schaden.",
+        "Nur die Versicherung informieren."
+       ],
+       "q": "Was ist nach einer Kollision zu tun?",
+       "warum": "Die Reihenfolge ist dieselbe wie an Land: Menschen, dann Sachen, dann Formalitäten."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Der Geschädigte.",
+        "Die Hafenverwaltung.",
+        "Niemand.",
+        "Der Verursacher."
+       ],
+       "q": "Wer haftet für Schäden durch Wellenschlag?",
+       "warum": "Wellenschlag ist ein häufiger Schadensgrund an Stegen und liegenden Booten — und er ist zurechenbar."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Niemand darf andere gefährden, schädigen oder mehr als nötig behindern.",
+        "Nur Berufsschiffer müssen Rücksicht nehmen.",
+        "Es gilt nur im Hafen.",
+        "Es ist eine Empfehlung."
+       ],
+       "q": "Was besagt das Rücksichtnahmegebot?",
+       "warum": "Es steht über den Einzelregeln und füllt jede Lücke, die sie lassen."
+      },
+      {
+       "answer": 1,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Immer 18.",
+        "Das hängt von Gewässer und Bootsgröße ab.",
+        "Es gibt keine Grenze.",
+        "Immer 16."
+       ],
+       "q": "Wie alt muss man mindestens sein, um ein Boot selbständig zu führen?",
+       "warum": "Die Altersgrenzen stehen in den jeweiligen Verordnungen und unterscheiden sich nach Antrieb und Länge."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Der amtliche Nachweis, ein bestimmtes Fahrzeug führen zu dürfen.",
+        "Die Zulassung des Bootes.",
+        "Die Versicherungsbestätigung.",
+        "Die Vereinsmitgliedschaft."
+       ],
+       "q": "Was ist ein Befähigungsausweis?",
+       "warum": "Er gilt für bestimmte Fahrzeugarten und Fahrtbereiche — und nur dafür."
+      },
+      {
+       "answer": 0,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Ersatz bei der ausstellenden Stelle beantragen.",
+        "Nichts.",
+        "Eine Kopie genügt dauerhaft.",
+        "Ohne weiterfahren."
+       ],
+       "q": "Was ist zu tun, wenn der Ausweis verloren geht?",
+       "warum": "Bis zum Ersatz kann eine Bestätigung helfen; das Mitführen bleibt Pflicht."
+      },
+      {
+       "answer": 3,
+       "bild": "",
+       "code": "",
+       "kind": "mc",
+       "options": [
+        "Ein großes Boot.",
+        "Kenntnis aller Paragraphen.",
+        "Eine gute Versicherung.",
+        "Vorausschauend und rücksichtsvoll fahren."
+       ],
+       "q": "Was ist der beste Schutz vor rechtlichen Problemen auf dem Wasser?",
+       "warum": "Die Regeln sind Werkzeuge zur Vermeidung von Zusammenstößen. Wer so fährt, braucht sie selten."
+      }
+     ],
+     "ausgabe": "",
+     "begriffe": [
+      "papiere",
+      "sorgfalt"
+     ],
+     "beispiel": "",
+     "bild": "",
+     "id": "u-recht",
+     "text": "Der **Schiffsführer** ist für Boot und Besatzung verantwortlich — auch dann, wenn ein anderer am Ruder sitzt. Diese Verantwortung lässt sich nicht delegieren.\n\nVor jeder Fahrt gehört geprüft: Zustand von Rumpf, Rigg und Beschlägen, Vollständigkeit der Sicherheitsausrüstung, Wetterbericht, und ob die Besatzung der Lage gewachsen ist.\n\n**Alkohol**: Für Schiffsführer gelten Grenzen wie im Straßenverkehr; in Österreich 0,8 Promille, für Berufsschiffer weniger. Unabhängig davon macht schon wenig Alkohol zusammen mit Sonne, Wind und Schaukeln deutlich mehr als an Land.\n\n**Umwelt**: Kein Abfall und kein Öl ins Wasser, kein Waschen mit Spülmittel über Bord, Toiletten nur über Sammeltank. **Schilfgürtel und Flachwasserzonen** sind Kinderstube für Fische und Vögel — Abstand halten, nicht hineinfahren, nicht ankern. Viele Seen haben dafür ausgewiesene Schutzzonen mit Bojenketten.\n\n**Rücksicht** gehört dazu: Keine Welle in Badebereiche, Abstand zu Schwimmern, Motor aus in Ufernähe, und in Naturschutzgebieten langsam und leise.",
+     "titel": "Pflichten an Bord"
+    }
+   ],
+   "sprache": "-",
+   "stufe": 7,
+   "text": "Was man an Bord haben muss, wo man fahren darf und was man dem See schuldet.",
+   "titel": "Recht und Umwelt"
+  }
+ ],
+ "plan": [
+  {
+   "fertig": true,
+   "id": "boot",
+   "sprache": "-",
+   "stufe": 1,
+   "titel": "Das Boot"
+  },
+  {
+   "fertig": true,
+   "id": "kurse",
+   "sprache": "-",
+   "stufe": 2,
+   "titel": "Kurse zum Wind"
+  },
+  {
+   "fertig": true,
+   "id": "manoever",
+   "sprache": "-",
+   "stufe": 3,
+   "titel": "Manöver"
+  },
+  {
+   "fertig": true,
+   "id": "regeln",
+   "sprache": "-",
+   "stufe": 4,
+   "titel": "Ausweichregeln"
+  },
+  {
+   "fertig": true,
+   "id": "zeichen",
+   "sprache": "-",
+   "stufe": 5,
+   "titel": "Betonnung und Lichter"
+  },
+  {
+   "fertig": true,
+   "id": "wetter",
+   "sprache": "-",
+   "stufe": 6,
+   "titel": "Wetter und Sicherheit"
+  },
+  {
+   "fertig": true,
+   "id": "recht",
+   "sprache": "-",
+   "stufe": 7,
+   "titel": "Recht und Umwelt"
+  }
+ ],
+ "sprachen": [
+  "de"
+ ],
+ "titel": "Segelschein",
+ "untertitel": "Theorie für den Segelschein A (Binnen). Eigene Fragen zum Lehrplan, mit Karteikarten und Wiederholung nach Abstand."
+}
