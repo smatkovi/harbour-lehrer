@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "../worte.js" as W
 
 // Die Lektionen eines Kapitels. Was erledigt ist, steht blass da -- und
 // anfangen kann man trotzdem ueberall: Wer schon C kann, soll nicht durch
@@ -33,7 +34,7 @@ Page {
 
             PageHeader {
                 title: seite.kapitel ? seite.kapitel.titel : ""
-                description: seite.kapitel ? "Stufe " + seite.kapitel.stufe : ""
+                description: seite.kapitel ? W.w("Stufe ", course.language) + seite.kapitel.stufe : ""
             }
 
             Label {
@@ -69,7 +70,7 @@ Page {
                     width: parent.width
                     visible: modelData.stand !== ""
                     text: modelData.stand === "fertig" ? "erledigt"
-                          : (modelData.stand === "faellig" ? "zur Wiederholung fällig"
+                          : (modelData.stand === "faellig" ? W.w("zur Wiederholung fällig", course.language)
                                                            : modelData.stand)
                     font.pixelSize: Theme.fontSizeExtraSmall
                     color: modelData.stand === "faellig" ? Theme.highlightColor

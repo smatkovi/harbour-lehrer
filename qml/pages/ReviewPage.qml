@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../components"
 import "../stil.js" as Stil
+import "../worte.js" as W
 
 // Die Durchsicht nach der Einstufung. Eine Einstufung, die nur eine Zahl
 // nennt, lehrt nichts -- hier steht zu jeder Frage, was richtig war und
@@ -13,7 +14,7 @@ Page {
         anchors.fill: parent
         model: course.placementReview()
 
-        header: PageHeader { title: "Durchsicht" }
+        header: PageHeader { title: W.w("Durchsicht", course.language) }
 
         delegate: Column {
             width: parent.width
@@ -48,7 +49,7 @@ Page {
             Label {
                 x: Theme.horizontalPageMargin
                 width: parent.width - 2 * Theme.horizontalPageMargin
-                text: "Richtig: " + modelData.optionen[modelData.richtig]
+                text: W.w("Richtig: ", course.language) + modelData.optionen[modelData.richtig]
                       + (modelData.korrekt ? ""
                          : "\nDeine Wahl: " + modelData.optionen[modelData.gewaehlt])
                 wrapMode: Text.WordWrap

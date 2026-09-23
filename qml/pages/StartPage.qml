@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "../worte.js" as W
 
 // Die erste Seite: wo man steht, und der eine Knopf, der weitermacht.
 Page {
@@ -21,19 +22,27 @@ Page {
         contentHeight: spalte.height + Theme.paddingLarge
 
         PullDownMenu {
+            // Nur bei einem zweisprachigen Kurs. Ein Schalter, der nichts
+            // zu schalten hat, ist schlimmer als keiner.
             MenuItem {
-                text: "Spielwiese"
+                visible: course.languages.length > 1
+                text: course.language === "de" ? "English" : "Deutsch"
+                onClicked: course.language =
+                    (course.language === "de" ? "en" : "de")
+            }
+            MenuItem {
+                text: W.w("Spielwiese", course.language)
                 onClicked: pageStack.push(Qt.resolvedUrl("PlaygroundPage.qml"))
             }
             MenuItem {
-                text: "Einstufung"
+                text: W.w("Einstufung", course.language)
                 onClicked: {
                     course.startPlacement()
                     pageStack.push(Qt.resolvedUrl("PlacementPage.qml"))
                 }
             }
             MenuItem {
-                text: "Karteikarten"
+                text: W.w("Karteikarten", course.language)
                 onClicked: {
                     course.startCards()
                     pageStack.push(Qt.resolvedUrl("CardPage.qml"))
@@ -79,7 +88,7 @@ Page {
                         color: Theme.highlightColor
                     }
                     Label {
-                        text: "Stufe"
+                        text: W.w("Stufe", course.language)
                         font.pixelSize: Theme.fontSizeExtraSmall
                         color: Theme.secondaryColor
                     }
@@ -92,7 +101,7 @@ Page {
                         color: Theme.highlightColor
                     }
                     Label {
-                        text: "Lektionen"
+                        text: W.w("Lektionen", course.language)
                         font.pixelSize: Theme.fontSizeExtraSmall
                         color: Theme.secondaryColor
                     }
@@ -106,7 +115,7 @@ Page {
                                                        : Theme.secondaryColor
                     }
                     Label {
-                        text: "fällig"
+                        text: W.w("fällig", course.language)
                         font.pixelSize: Theme.fontSizeExtraSmall
                         color: Theme.secondaryColor
                     }
@@ -120,7 +129,7 @@ Page {
             Button {
                 anchors.horizontalCenter: parent.horizontalCenter
                 width: parent.width - 2 * Theme.horizontalPageMargin
-                text: course.needsPlacement ? "Einstufung beginnen" : "Weiterlernen"
+                text: course.needsPlacement ? W.w("Einstufung beginnen", course.language) : W.w("Weiterlernen", course.language)
                 onClicked: {
                     if (course.needsPlacement) {
                         course.startPlacement()
@@ -144,7 +153,7 @@ Page {
                 horizontalAlignment: Text.AlignHCenter
             }
 
-            SectionHeader { text: "Kurs" }
+            SectionHeader { text: W.w("Kurs", course.language) }
 
             Repeater {
                 model: course.chapters()
@@ -167,7 +176,7 @@ Page {
                         }
                         Label {
                             width: parent.width
-                            text: "Stufe " + modelData.stufe + " · "
+                            text: W.w("Stufe ", course.language) + modelData.stufe + " · "
                                   + modelData.lektionen.length + " Lektionen"
                                   + (modelData.stand === "fertig" ? " · fertig" : "")
                             font.pixelSize: Theme.fontSizeExtraSmall

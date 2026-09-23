@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../components"
 import "../stil.js" as Stil
+import "../worte.js" as W
 
 // Die Einstufung: in etwa zwanzig Fragen herausfinden, wo man anfaengt.
 // Angepasst statt fest -- wer die ersten drei Fragen richtig hat, wird nicht
@@ -27,7 +28,7 @@ Page {
             spacing: Theme.paddingMedium
 
             PageHeader {
-                title: course.placementDone ? "Einstufung" : "Frage " + (seite.frage.leer ? "" : seite.frage.nummer)
+                title: course.placementDone ? W.w("Einstufung", course.language) : W.w("Frage ", course.language) + (seite.frage.leer ? "" : seite.frage.nummer)
             }
 
             // --- Ergebnis -----------------------------------------------
@@ -39,7 +40,7 @@ Page {
 
                 Label {
                     width: parent.width
-                    text: "Stufe " + (course.placementResult.leer ? ""
+                    text: W.w("Stufe ", course.language) + (course.placementResult.leer ? ""
                                       : course.placementResult.stufe)
                     font.pixelSize: Theme.fontSizeExtraLarge
                     color: Theme.highlightColor
@@ -53,7 +54,7 @@ Page {
                     text: course.placementResult.leer ? ""
                           : course.placementResult.richtig + " von "
                             + course.placementResult.gesamt + " richtig. Weiter geht es "
-                            + "mit: " + course.placementResult.weiterKapitel + " — "
+                            + W.w("mit: ", course.language) + course.placementResult.weiterKapitel + " — "
                             + course.placementResult.weiterLektion
                 }
 
@@ -66,16 +67,16 @@ Page {
                     font.pixelSize: Theme.fontSizeSmall
                     color: Theme.secondaryColor
                     text: course.placementResult.leer ? ""
-                          : "Wackelig: " + course.placementResult.schwach.join(", ")
+                          : W.w("Wackelig: ", course.language) + course.placementResult.schwach.join(", ")
                 }
 
                 Button {
-                    text: "Antworten durchsehen"
+                    text: W.w("Antworten durchsehen", course.language)
                     onClicked: pageStack.push(Qt.resolvedUrl("ReviewPage.qml"))
                 }
 
                 Button {
-                    text: "Dort anfangen"
+                    text: W.w("Dort anfangen", course.language)
                     onClicked: {
                         if (!course.placementResult.leer) {
                             course.startLesson(course.placementResult.weiterId)

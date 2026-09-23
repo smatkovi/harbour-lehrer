@@ -1,5 +1,5 @@
 Name:       harbour-clehrer
-Version:    1.0.0
+Version:    1.1.0
 Release:    1
 Summary:    Learn C, C++, Rust and Python with an eye on simulation
 License:    GPLv3+

@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../components"
 import "../stil.js" as Stil
+import "../worte.js" as W
 
 // Die Aufgaben einer Lektion. Sechs Arten, eine Seite: lesen und vorhersagen,
 // auswaehlen, Luecke fuellen, Zeilen ordnen, eine Zahl schaetzen, selbst
@@ -38,11 +39,11 @@ Page {
         if (a.leer)
             return ""
         if (a.art === "mc")
-            return "Richtig: " + a.optionen[a.antwort]
+            return W.w("Richtig: ", course.language) + a.optionen[a.antwort]
         if (a.art === "predict")
             return "Richtig wäre:\n" + (a.antwort === undefined ? "" : a.antwort)
         if (a.art === "blank")
-            return "Richtig: " + (a.antworten === undefined ? "" : a.antworten.join("   "))
+            return W.w("Richtig: ", course.language) + (a.antworten === undefined ? "" : a.antworten.join("   "))
         if (a.art === "parsons")
             return "Richtige Reihenfolge:\n"
                    + (a.zeilen === undefined ? "" : a.zeilen.join("\n"))
@@ -84,8 +85,8 @@ Page {
             spacing: Theme.paddingMedium
 
             PageHeader {
-                title: seite.aufgabe.leer ? "Geschafft"
-                       : "Aufgabe " + seite.aufgabe.nummer + " von " + seite.aufgabe.gesamt
+                title: seite.aufgabe.leer ? W.w("Geschafft", course.language)
+                       : W.w("Aufgabe ", course.language) + seite.aufgabe.nummer + " von " + seite.aufgabe.gesamt
             }
 
             // --- Fertig -------------------------------------------------
@@ -98,15 +99,15 @@ Page {
                 text: seite.aufgabe.leer && seite.aufgabe.beantwortet > 0
                       ? seite.aufgabe.richtigGesamt + " von " + seite.aufgabe.beantwortet
                         + " Aufgaben auf Anhieb richtig. Die Lektion kommt zur "
-                        + "Wiederholung wieder — in ein paar Tagen, je nachdem, "
-                        + "wie es lief."
-                      : "Diese Lektion ist durch."
+                        + W.w("Wiederholung wieder — in ein paar Tagen, je nachdem, ", course.language)
+                        + W.w("wie es lief.", course.language)
+                      : W.w("Diese Lektion ist durch.", course.language)
             }
 
             Button {
                 anchors.horizontalCenter: parent.horizontalCenter
                 visible: seite.aufgabe.leer
-                text: "Zurück zum Kurs"
+                text: W.w("Zurück zum Kurs", course.language)
                 onClicked: pageStack.pop(pageStack.find(function (p) {
                     return p.objectName === "startPage"
                 }) || null)
@@ -209,8 +210,8 @@ Page {
                     id: vorhersage
                     width: parent.width
                     height: Math.max(Theme.itemSizeLarge, implicitHeight)
-                    label: "Was schreibt das Programm?"
-                    placeholderText: "Ausgabe"
+                    label: W.w("Was schreibt das Programm?", course.language)
+                    placeholderText: W.w("Ausgabe", course.language)
                     font.family: "monospace"
                     font.pixelSize: Theme.fontSizeSmall
                     enabled: !seite.aufgabe.geprueft
@@ -223,13 +224,13 @@ Page {
 
                     Button {
                         width: (parent.width - Theme.paddingMedium) / 2
-                        text: "Prüfen"
+                        text: W.w("Prüfen", course.language)
                         enabled: !seite.aufgabe.geprueft
                         onClicked: course.answerText(vorhersage.text)
                     }
                     Button {
                         width: (parent.width - Theme.paddingMedium) / 2
-                        text: course.running ? "läuft …" : "Laufen lassen"
+                        text: course.running ? W.w("läuft …", course.language) : W.w("Laufen lassen", course.language)
                         enabled: seite.aufgabe.geprueft && !course.running
                                  && seite.aufgabe.zeichnet !== undefined
                         onClicked: course.runCode(seite.aufgabe.code, 30)
@@ -251,7 +252,7 @@ Page {
                     TextField {
                         id: zahlenfeld
                         width: parent.width * 0.6
-                        placeholderText: "Zahl"
+                        placeholderText: W.w("Zahl", course.language)
                         inputMethodHints: Qt.ImhFormattedNumbersOnly
                         enabled: !seite.aufgabe.geprueft
                     }
@@ -263,7 +264,7 @@ Page {
                 }
 
                 Button {
-                    text: "Prüfen"
+                    text: W.w("Prüfen", course.language)
                     enabled: !seite.aufgabe.geprueft && zahlenfeld.text !== ""
                     onClicked: course.answerNumber(parseFloat(zahlenfeld.text.replace(",", ".")))
                 }
@@ -272,7 +273,7 @@ Page {
                     width: parent.width
                     visible: seite.aufgabe.geprueft && !seite.aufgabe.richtig
                              && seite.aufgabe.loesungZeigen === true
-                    text: "Richtig wäre etwa " + seite.aufgabe.antwort + " "
+                    text: W.w("Richtig wäre etwa ", course.language) + seite.aufgabe.antwort + " "
                           + (seite.aufgabe.einheit === undefined ? "" : seite.aufgabe.einheit)
                     color: Theme.highlightColor
                     font.pixelSize: Theme.fontSizeSmall
@@ -296,7 +297,7 @@ Page {
 
                     TextField {
                         width: luecken.width
-                        placeholderText: "fehlendes Stück " + (index + 1)
+                        placeholderText: W.w("fehlendes Stück ", course.language) + (index + 1)
                         font.family: "monospace"
                         inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhNoPredictiveText
                         enabled: !seite.aufgabe.geprueft
@@ -304,7 +305,7 @@ Page {
                 }
 
                 Button {
-                    text: "Prüfen"
+                    text: W.w("Prüfen", course.language)
                     enabled: !seite.aufgabe.geprueft
                     onClicked: {
                         var werte = []
@@ -323,7 +324,7 @@ Page {
                 visible: !seite.aufgabe.leer && seite.aufgabe.art === "parsons"
 
                 Label {
-                    text: "Deine Lösung — antippen legt eine Zeile zurück"
+                    text: W.w("Deine Lösung — antippen legt eine Zeile zurück", course.language)
                     font.pixelSize: Theme.fontSizeExtraSmall
                     color: Theme.secondaryColor
                 }
@@ -359,7 +360,7 @@ Page {
                 }
 
                 Label {
-                    text: "Bausteine"
+                    text: W.w("Bausteine", course.language)
                     font.pixelSize: Theme.fontSizeExtraSmall
                     color: Theme.secondaryColor
                 }
@@ -397,7 +398,7 @@ Page {
                 }
 
                 Button {
-                    text: "Prüfen"
+                    text: W.w("Prüfen", course.language)
                     enabled: !seite.aufgabe.geprueft && seite.loesungsZeilen.length > 0
                     onClicked: course.answerParsons(seite.loesungsZeilen)
                 }
@@ -464,7 +465,7 @@ Page {
 
                     Button {
                         width: (parent.width - Theme.paddingMedium) * 0.62
-                        text: course.running ? "läuft …" : "Ausführen"
+                        text: course.running ? W.w("läuft …", course.language) : W.w("Ausführen", course.language)
                         enabled: !course.running && course.canRun
                         onClicked: {
                             course.keepCode(editor.text)
@@ -475,7 +476,7 @@ Page {
                     }
                     Button {
                         width: (parent.width - Theme.paddingMedium) * 0.38
-                        text: "Stopp"
+                        text: W.w("Stopp", course.language)
                         enabled: course.running
                         onClicked: course.stopRun()
                     }
@@ -483,7 +484,7 @@ Page {
 
                 Button {
                     width: parent.width
-                    text: "Als Antwort prüfen"
+                    text: W.w("Als Antwort prüfen", course.language)
                     enabled: !course.running && course.output !== ""
                     onClicked: course.checkRun()
                 }
@@ -492,7 +493,7 @@ Page {
                     width: parent.width
                     visible: seite.aufgabe.erwartet !== undefined
                              && seite.aufgabe.erwartet !== ""
-                    text: "Erwartet: " + (seite.aufgabe.erwartet === undefined
+                    text: W.w("Erwartet: ", course.language) + (seite.aufgabe.erwartet === undefined
                                           ? "" : seite.aufgabe.erwartet)
                     font.family: "monospace"
                     font.pixelSize: Theme.fontSizeExtraSmall
@@ -514,7 +515,7 @@ Page {
                 visible: !seite.aufgabe.leer && seite.aufgabe.geprueft
 
                 Label {
-                    text: seite.aufgabe.richtig ? "Richtig" : "Noch nicht"
+                    text: seite.aufgabe.richtig ? W.w("Richtig", course.language) : W.w("Noch nicht", course.language)
                     color: seite.aufgabe.richtig ? "#7ee787" : Theme.errorColor
                     font.pixelSize: Theme.fontSizeLarge
                 }
@@ -536,7 +537,7 @@ Page {
                 // richtige Antwort liest und nickt, behaelt deutlich weniger
                 // als wer sie nach einem Fehlschlag noch einmal selbst sucht.
                 Button {
-                    text: "Nochmal versuchen"
+                    text: W.w("Nochmal versuchen", course.language)
                     visible: !seite.aufgabe.richtig && seite.aufgabe.versuche < 2
                     onClicked: {
                         seite.zuruecksetzen()
@@ -545,7 +546,7 @@ Page {
                 }
 
                 Button {
-                    text: "Lösung anzeigen"
+                    text: W.w("Lösung anzeigen", course.language)
                     visible: !seite.aufgabe.richtig && !seite.aufgabe.loesungZeigen
                     onClicked: course.showSolution()
                 }
@@ -578,7 +579,7 @@ Page {
                 width: parent.width - 2 * Theme.horizontalPageMargin
                 visible: !seite.aufgabe.leer && seite.aufgabe.geprueft
                 text: seite.aufgabe.nummer === seite.aufgabe.gesamt
-                      ? "Lektion abschließen" : "Nächste Aufgabe"
+                      ? W.w("Lektion abschließen", course.language) : W.w("Nächste Aufgabe", course.language)
                 onClicked: seite.weiter()
             }
 
@@ -586,7 +587,7 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 width: parent.width - 2 * Theme.horizontalPageMargin
                 visible: !seite.aufgabe.leer && !seite.aufgabe.geprueft
-                text: "Überspringen"
+                text: W.w("Überspringen", course.language)
                 onClicked: seite.weiter()
             }
 

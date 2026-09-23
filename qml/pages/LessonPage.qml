@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../components"
 import "../stil.js" as Stil
+import "../worte.js" as W
 
 // Die Lektion: ein Gedanke, ein Beispiel, das wirklich laeuft, dann die
 // Aufgaben. Das Beispiel laufen zu lassen, bevor irgendetwas gefragt wird,
@@ -50,7 +51,7 @@ Page {
             }
 
             SectionHeader {
-                text: "Beispiel"
+                text: W.w("Beispiel", course.language)
                 visible: !seite.lektion.leer && seite.lektion.beispiel !== ""
             }
 
@@ -74,13 +75,13 @@ Page {
 
                 Button {
                     width: (parent.width - Theme.paddingMedium) * 0.62
-                    text: course.running ? "läuft …" : "Ausführen"
+                    text: course.running ? W.w("läuft …", course.language) : W.w("Ausführen", course.language)
                     enabled: !course.running
                     onClicked: course.runCode(seite.lektion.beispiel, 30)
                 }
                 Button {
                     width: (parent.width - Theme.paddingMedium) * 0.38
-                    text: "Stopp"
+                    text: W.w("Stopp", course.language)
                     enabled: course.running
                     onClicked: course.stopRun()
                 }
@@ -92,10 +93,10 @@ Page {
                 visible: !seite.lektion.leer && seite.lektion.beispiel !== ""
                          && !seite.lektion.laeuft
                 text: seite.lektion.sprache === "cpp"
-                      ? "C++ hat auf diesem Gerät keinen Übersetzer — diese Lektion wird gelesen und vorhergesagt."
+                      ? W.w("C++ hat auf diesem Gerät keinen Übersetzer — diese Lektion wird gelesen und vorhergesagt.", course.language)
                       : (seite.lektion.sprache === "python"
-                         ? "Für dieses Kapitel fehlt NumPy auf dem Gerät — die Lektion bleibt lesbar."
-                         : "Diese Sprache lässt sich hier nicht ausführen.")
+                         ? W.w("Für dieses Kapitel fehlt NumPy auf dem Gerät — die Lektion bleibt lesbar.", course.language)
+                         : W.w("Diese Sprache lässt sich hier nicht ausführen.", course.language))
                 wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeExtraSmall
                 color: Theme.secondaryColor
@@ -124,7 +125,7 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 width: parent.width - 2 * Theme.horizontalPageMargin
                 visible: !seite.lektion.leer && seite.lektion.aufgaben > 0
-                text: "Zu den Aufgaben (" + (seite.lektion.leer ? 0 : seite.lektion.aufgaben) + ")"
+                text: W.w("Zu den Aufgaben (", course.language) + (seite.lektion.leer ? 0 : seite.lektion.aufgaben) + ")"
                 onClicked: {
                     course.toExercises()
                     pageStack.push(Qt.resolvedUrl("ExercisePage.qml"))

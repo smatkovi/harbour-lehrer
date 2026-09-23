@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../components"
+import "../worte.js" as W
 
 // Eine leere Seite mit einem Deuter dahinter. Die Haelfte des Lernens ist,
 // etwas Kleines auszuprobieren, nur um zu sehen, was passiert -- dafuer
@@ -56,7 +57,7 @@ Page {
             width: parent.width
             spacing: Theme.paddingMedium
 
-            PageHeader { title: "Spielwiese" }
+            PageHeader { title: W.w("Spielwiese", course.language) }
 
             Label {
                 x: Theme.horizontalPageMargin
@@ -65,7 +66,7 @@ Page {
                 font.pixelSize: Theme.fontSizeExtraSmall
                 color: Theme.secondaryColor
                 text: seite.sprache === "python"
-                      ? "Zeilen, die mit plot beginnen, werden gezeichnet: print('plot %f %f' % (t, x))."
+                      ? W.w("Zeilen, die mit plot beginnen, werden gezeichnet: print('plot %f %f' % (t, x)).", course.language)
                       : (seite.sprache === "rust"
                          ? "Zeilen, die mit plot beginnen, werden gezeichnet: println!(\"plot {} {}\", t, x);"
                          : "Zeilen, die mit plot beginnen, werden gezeichnet: printf(\"plot %f %f\\n\", t, x);")
@@ -149,13 +150,13 @@ Page {
 
                 Button {
                     width: (parent.width - Theme.paddingMedium) * 0.62
-                    text: course.running ? "läuft …" : "Ausführen"
+                    text: course.running ? W.w("läuft …", course.language) : W.w("Ausführen", course.language)
                     enabled: !course.running
                     onClicked: course.runCode(editor.text, 30, seite.sprache)
                 }
                 Button {
                     width: (parent.width - Theme.paddingMedium) * 0.38
-                    text: "Stopp"
+                    text: W.w("Stopp", course.language)
                     enabled: course.running
                     onClicked: course.stopRun()
                 }

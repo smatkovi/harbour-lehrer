@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../components"
 import "../stil.js" as Stil
+import "../worte.js" as W
 
 // Karteikarten: die Begriffe aus erledigten Lektionen, in wachsenden
 // Abstaenden wiederholt. Eine Karte zeigt erst die Frage, dann -- auf
@@ -32,7 +33,7 @@ Page {
             spacing: Theme.paddingMedium
 
             PageHeader {
-                title: "Karteikarten"
+                title: W.w("Karteikarten", course.language)
                 description: course.cardStats.offen + " offen · "
                              + course.cardStats.erledigt + " heute"
             }
@@ -43,9 +44,9 @@ Page {
                 visible: course.cardsDone
                 wrapMode: Text.WordWrap
                 color: Theme.primaryColor
-                text: "Für heute ist nichts mehr fällig. Die nächsten Karten "
-                      + "kommen von selbst wieder — in ein paar Tagen, je nachdem, "
-                      + "wie sicher sie saßen."
+                text: W.w("Für heute ist nichts mehr fällig. Die nächsten Karten ", course.language)
+                      + W.w("kommen von selbst wieder — in ein paar Tagen, je nachdem, ", course.language)
+                      + W.w("wie sicher sie saßen.", course.language)
             }
 
             Label {
@@ -77,7 +78,7 @@ Page {
             Button {
                 anchors.horizontalCenter: parent.horizontalCenter
                 visible: !seite.karte.leer && !seite.aufgedeckt
-                text: "Umdrehen"
+                text: W.w("Umdrehen", course.language)
                 onClicked: seite.aufgedeckt = true
             }
 
@@ -112,7 +113,7 @@ Page {
 
                     Button {
                         width: (parent.width - Theme.paddingMedium) / 2
-                        text: "Wusste ich nicht"
+                        text: W.w("Wusste ich nicht", course.language)
                         onClicked: {
                             course.answerCard(false)
                             seite.aufgedeckt = false
@@ -120,7 +121,7 @@ Page {
                     }
                     Button {
                         width: (parent.width - Theme.paddingMedium) / 2
-                        text: "Gewusst"
+                        text: W.w("Gewusst", course.language)
                         onClicked: {
                             course.answerCard(true)
                             seite.aufgedeckt = false
