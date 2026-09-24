@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import QtGraphicalEffects 1.0
 import Sailfish.Silica 1.0
+import "../stil.js" as Stil
 
 // Eine Formel, zweimal: oben die Zeile so, wie sie im Beispielprogramm
 // steht, darunter dieselbe Sache gesetzt.
@@ -82,6 +83,19 @@ Rectangle {
             wrapMode: Text.WordWrap
             font.pixelSize: Theme.fontSizeExtraSmall
             color: Theme.secondaryHighlightColor
+        }
+
+        // Warum das dasteht -- woher der Faktor kommt und wo er aufhoert zu
+        // gelten. Die Zeile darueber sagt nur, was es ist.
+        Label {
+            width: parent.width
+            visible: text !== ""
+            text: rahmen.formel === undefined
+                  ? "" : Stil.reich(rahmen.formel.erklaerung || "")
+            textFormat: Text.RichText
+            wrapMode: Text.WordWrap
+            font.pixelSize: Theme.fontSizeExtraSmall
+            color: Theme.secondaryColor
         }
     }
 }

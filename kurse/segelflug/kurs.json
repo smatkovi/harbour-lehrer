@@ -764,6 +764,7 @@
      ],
      "beispiel": "",
      "bild": "cu-humilis",
+     "formeln": [],
      "id": "w-namen",
      "text": {
       "de": "Die Namen wirken willkürlich, bis man merkt: sie **beschreiben** die Wolke. Luke Howard hat das System 1802 aufgestellt, mit lateinischen Wörtern, die man zusammensetzt wie Bausteine.\n\n**Die vier Grundwörter:**\n\n**cumulus** – der Haufen. Alles, was sich aufquellend nach oben türmt.\n\n**stratus** – die Schicht, von *sternere*, ausbreiten. Alles, was flach liegt.\n\n**cirrus** – die Haarlocke. Die dünnen, gefaserten Eiswolken ganz oben.\n\n**nimbus** – die Regenwolke. Steckt als Vor- oder Nachsilbe drin, wo es niederschlägt.\n\n**Dazu die Stockwerke:** *alto-* heißt hoch (von *altus*) und meint das **mittlere** Stockwerk, etwa 2 bis 7 km — das verwirrt anfangs jeden. Ohne Vorsilbe liegt die Wolke tief, mit *cirro-* ganz oben.\n\n**Und die Beinamen**, die sagen, wie die Wolke aussieht:\n\n*humilis* – niedrig, bescheiden\n*mediocris* – mittelmäßig, also mittelhoch\n*congestus* – aufgehäuft, angeschwollen\n*castellanus* – wie eine Burg, mit Zinnen\n*lenticularis* – linsenförmig\n*fractus* – zerbrochen, zerfetzt\n\nDamit liest sich jeder Name von selbst: **Cumulonimbus** ist die Haufen-Regen-Wolke. **Altocumulus castellanus** ist die mittelhohe Haufenwolke mit Zinnen. **Stratocumulus** ist der breitgelaufene Haufen, der zur Schicht geworden ist.",
@@ -835,6 +836,23 @@
      ],
      "beispiel": "",
      "bild": "cu-humilis",
+     "formeln": [
+      {
+       "bild": "formel-b05c3a09",
+       "breite": 249,
+       "code": "Höhe = Spreizung × 125 m/°C",
+       "erklaerung": {
+        "de": "Trockene Luft kühlt beim Steigen um rund 1 °C je 100 m, der Taupunkt sinkt dabei nur um etwa 0,2 °C je 100 m. Die Spreizung schließt sich also mit 0,8 °C je 100 m, und 100 ÷ 0,8 sind die 125 m je Grad. **Wo sie bricht:** Sie unterstellt, dass das Luftpaket vom Boden aufsteigt und unterwegs nichts dazumischt. Unter einer Inversion, bei Advektion feuchter Luft oder über Wasser stimmt sie nicht.",
+        "en": "Dry air cools by about 1 °C per 100 m as it rises, while the dew point falls by only some 0.2 °C per 100 m. The spread therefore closes at 0.8 °C per 100 m, and 100 ÷ 0.8 gives the 125 m per degree. **Where it breaks:** it assumes a parcel rising from the ground with nothing mixing in on the way. Under an inversion, with moist air advected in, or over water, it does not hold."
+       },
+       "hoehe": 39,
+       "tex": "$h \\approx (T - T_d)\\cdot 125\\,\\frac{\\mathrm{m}}{\\mathrm{K}}$",
+       "untertitel": {
+        "de": "Die Basis aus Temperatur und Taupunkt",
+        "en": "Cloud base from temperature and dew point"
+       }
+      }
+     ],
      "id": "w-basis",
      "text": {
       "de": "**Cumulus humilis** – wörtlich der *bescheidene Haufen*, und genau so sieht er aus: breiter als hoch, scharf umrissen, und vor allem **unten schnurgerade**.\n\nDiese gerade Linie ist kein Zufall und kein Zeichenfehler. Ein Thermikschlauch steigt auf, kühlt sich dabei um rund 1 °C je 100 m ab, und in genau der Höhe, in der er seinen Taupunkt erreicht, kondensiert der Wasserdampf. Darunter ist die Luft nicht gesättigt, also ist dort nichts zu sehen. Deshalb der Schnitt.\n\nFür dich heißt das dreierlei:\n\n**Erstens:** Die Basis ist die Obergrenze des nutzbaren Steigens. In die Wolke darfst du nicht, und über ihr ist ohnehin Schluss.\n\n**Zweitens:** Alle Wolken derselben Luftmasse haben dieselbe Basishöhe. Sieht eine tiefer aus, ist sie weiter weg.\n\n**Drittens:** Du kannst die Basishöhe vorher ausrechnen. Die **Spreizung** ist die Differenz zwischen Temperatur und Taupunkt am Boden. Pro Grad Spreizung liegt die Basis etwa **125 m** höher:\n\n    Basis über Grund [m] ≈ 125 × (T − Taupunkt) [°C]\n\n22 °C bei 8 °C Taupunkt sind 14 Grad Spreizung, also rund 1750 m über Grund.\n\n## Formelzeichen\n\n`T` Lufttemperatur, °C. `T_d` Taupunkt, °C. Die **Spreizung** ist `T − T_d`, in Grad. `Γ_d` trockenadiabatischer Temperaturgradient, °C je 100 m. `g` Fallbeschleunigung, 9,81 m/s². `c_p` spezifische Waermekapazitaet der Luft bei festem Druck, 1005 J/(kg·K).\n\n## Vorab: woher die 1 °C je 100 m kommen\n\nEin aufsteigendes Luftpaket tauscht mit seiner Umgebung so gut wie keine Waerme aus — Luft leitet schlecht, und es geht schnell. Es dehnt sich aber aus, weil der Aussendruck faellt, und diese Ausdehnung kostet Arbeit. Die Arbeit kommt aus der inneren Energie, also kuehlt es ab.\n\nIn Zahlen: Der erste Hauptsatz ohne Waermezufuhr sagt `c_p·dT = (1/ρ)·dp`, und die hydrostatische Grundgleichung sagt `dp = −ρ·g·dh` (hergeleitet in der Lektion zum Hoehenmesser). Zusammengesetzt kuerzt sich ρ weg:\n\n    c_p·dT = −g·dh      →      dT/dh = −g/c_p\n\nEingesetzt:\n\n    Γ_d = 9,81 / 1005 = 0,00976 K/m ≈ 0,98 °C je 100 m\n\nDaher die Eins. Sie ist keine Erfahrung, sondern steht in zwei Naturkonstanten.\n\n## Und warum der Taupunkt nur um 0,2 °C je 100 m faellt\n\nDas Wasser bleibt im Paket; es wird nur auf ein groesseres Volumen verteilt. Der Partialdruck des Wasserdampfs sinkt deshalb im selben Verhaeltnis wie der Gesamtdruck. Der Taupunkt ist die Temperatur, bei der dieser Partialdruck gerade Saettigungsdruck waere — und weil der Saettigungsdruck sehr steil mit der Temperatur waechst (Clausius-Clapeyron), aendert ein maessiger Druckabfall den Taupunkt nur wenig. Gemessen sind es rund **0,2 °C je 100 m**.\n\n## Herleitung: woher die 125 kommen\n\nZwei Temperaturen laufen beim Aufsteigen aufeinander zu: die Lufttemperatur mit 1,0, der Taupunkt mit 0,2 °C je 100 m. Die Spreizung schliesst sich also mit der Differenz:\n\n    1,0 − 0,2 = 0,8 °C je 100 m\n\nKondensiert wird, wenn die Spreizung aufgebraucht ist. Also:\n\n    Hoehe = Spreizung ÷ 0,8 °C/100 m = Spreizung × 125 m/°C\n\n**Wo die Formel bricht.** Sie unterstellt, dass das Paket vom Boden bis zur Basis trocken aufsteigt und unterwegs keine Luft mit anderer Feuchte einmischt. Nach Regen, ueber Wasser oder in einer Luftmassengrenze stimmt beides nicht, und die Basis liegt tiefer als gerechnet.",
@@ -919,6 +937,7 @@
      ],
      "beispiel": "",
      "bild": "cu-zyklus",
+     "formeln": [],
      "id": "w-zyklus",
      "text": {
       "de": "Eine Quellwolke lebt etwa **15 bis 20 Minuten**. Das ist die wichtigste Zahl des Streckenflugs, denn sie entscheidet, welche Wolke du anfliegst.\n\n**Wachsend** (links im Bild): klein, scharf umrissen, die Ränder wirken fest, die Oberseite quillt sichtbar nach oben. Unter ihr steigt es.\n\n**Reif** (Mitte): am größten, Basis am dunkelsten und am flächigsten, oben Blumenkohl. Hier ist das stärkste Steigen – aber es ist schon fast vorbei.\n\n**Zerfallend** (rechts): die Ränder franst aus, die Wolke wird durchsichtig, die flache Basis löst sich in Fetzen auf. Darunter sinkt es, oft kräftig.\n\nDie Regel lautet deshalb: **Flieg nicht die größte Wolke an, sondern die, die gerade wächst.** Bis du dort bist, ist sie reif. Fliegst du die reife an, ist sie bei deiner Ankunft tot und du stehst im Abwind.\n\nDazu passt die zweite Regel: Der Aufwind steht **nicht unter der Wolke**, sondern schräg davor, denn der Wind versetzt die Wolke gegenüber ihrer Quelle. Such den Schlauch auf der Luvseite.",
@@ -1004,6 +1023,7 @@
      ],
      "beispiel": "",
      "bild": "cu-congestus",
+     "formeln": [],
      "id": "w-ueberentwicklung",
      "text": {
       "de": "**Cumulus congestus** – der *aufgehäufte* Haufen: höher als breit, oben quellend wie Blumenkohl, Basis dunkel und breit. Darunter steigt es stark – 3 bis 5 m/s sind keine Seltenheit. Es ist die beste und die letzte gute Wolke des Tages.\n\nDenn was danach kommt, ist der **Cumulonimbus**. Das Erkennungszeichen ist nicht die Größe, sondern die **Oberseite**: sobald der Blumenkohl oben weich, faserig, verwaschen wird, ist die Wolke oben vereist. Von da an ist sie kein Aufwind mehr, sondern ein Gewitter im Bau. Der Amboss breitet sich mit dem Höhenwind aus und zeigt, wohin es zieht.\n\n**Die Gefahren, der Reihe nach:**\n\nUnter der Basis kann der Aufwind so stark werden, dass er auch mit gezogenen Bremsen nicht mehr zu verlassen ist – Wolkeneinflug gegen den eigenen Willen.\n\nDie **Böenfront** läuft dem Gewitter bis 20 km voraus, oft bei noch blauem Himmel: plötzlicher Windsprung, Scherung, Turbulenz – gefährlich vor allem im Landeanflug.\n\nDer **Abwind** im Niederschlagsbereich erreicht Werte, die kein Segelflugzeug wegsteigt.\n\nDie praktische Regel: Sobald ein Cu oben faserig wird, hältst du Abstand und planst die Landung. Nicht, wenn es blitzt – dann ist es zu spät.",
@@ -1089,6 +1109,7 @@
      ],
      "beispiel": "",
      "bild": "stratocumulus",
+     "formeln": [],
      "id": "w-zumachen",
      "text": {
       "de": "Thermik braucht Sonne am Boden. Zwei Wolkenarten nehmen sie weg, auf ganz verschiedene Weise – und beide sind früh zu sehen.\n\n**Stratocumulus** – wörtlich die *Schicht aus Haufen*, und der Name beschreibt genau, was passiert ist: die Quellwolken sind breitgelaufen und zusammengewachsen. Keine Lücken mehr, keine scharfe Basis, kein Blumenkohl. Das passiert typisch dann, wenn eine Inversion den Wolken den Weg nach oben versperrt: sie können nur noch in die Breite. Der Boden liegt im Schatten, die Thermik erstickt sich selbst. Manchmal reißt es nachmittags wieder auf, oft nicht.\n\n**Cirrus** – die *Haarlocke*: dünne Eisfedern in 8 bis 12 km Höhe, mit Haken am Kopf. Für sich harmlos – aber Cirrus, der von Westen aufzieht und dichter wird, ist die Ankündigung einer **Warmfront**, meist 12 bis 24 Stunden im Voraus. Erst wird er zu Cirrostratus, dann erscheint der Halo um die Sonne, dann ist der Tag gelaufen: Die hohe Schicht nimmt der Einstrahlung so viel weg, dass die Thermik einschläft, lange bevor der Regen kommt.\n\nWichtig ist die **Richtung der Entwicklung**. Aufreißender Cirrus am Abend ist bedeutungslos. Cirrus, der morgens dünn beginnt und mittags den halben Himmel deckt, beendet den Streckenflug.",
@@ -1174,6 +1195,7 @@
      ],
      "beispiel": "",
      "bild": "wolkenstrasse",
+     "formeln": [],
      "id": "w-strassen",
      "text": {
       "de": "**Wolkenstraßen** entstehen, wenn die Thermik in einem Wind von etwa 20 bis 40 km/h aufsteigt, der mit der Höhe wenig dreht. Die Thermik ordnet sich dann in lange Walzen parallel zum Wind. Über den aufsteigenden Ästen stehen die Wolken, dazwischen liegt Abwind.\n\nFür dich ist das die freie Autobahn: Unter einer Straße kannst du **geradeaus im Steigen fliegen**, ohne zu kreisen – schneller geht Streckenflug nicht. Der Preis: quer zu den Straßen zu fliegen kostet doppelt, weil jeder Übergang durch das Sinken zwischen den Walzen führt.\n\n**Lenticularis** – *linsenförmig* – ist etwas völlig anderes. Glatt, oft mehrfach übereinander gestapelt – und vor allem: **sie steht still**, während der Wind mit 60 km/h hindurchbläst. Das ist keine Thermik, sondern eine **Leewelle**: Luft, die über einen Bergrücken gedrückt wurde und dahinter schwingt. Die Wolke markiert den Wellenberg.\n\nWellenflug ist ruhig, gleichmäßig und geht sehr hoch – die Höhenrekorde des Segelflugs stammen alle daher.\n\n**Aber:** unter der Welle, im Lee des Bergs, liegt der **Rotor** – die zerrissene, dunkle Walze im Bild unten. Dort herrscht Turbulenz, die Segelflugzeuge strukturell überfordert hat. Der Rotor ist zu durchfliegen, um in die Welle zu kommen, und er ist der gefährlichste Teil des Wellenflugs.",
@@ -1226,6 +1248,7 @@
      ],
      "beispiel": "",
      "bild": "ac-castellanus",
+     "formeln": [],
      "id": "w-castellanus",
      "text": {
       "de": "**Altocumulus castellanus** – der mittelhohe Haufen *mit Zinnen*, und mehr steht nicht im Namen: kleine Türmchen, die auf einer gemeinsamen Basis in mittlerer Höhe stehen – wie Zinnen auf einer Mauer. Sie sehen harmlos aus und sind die wichtigste Frühwarnung, die der Morgenhimmel hergibt.\n\nTürmchen bedeuten: **auch in der Höhe ist die Luft labil.** Da oben fängt es schon an zu quellen, ohne dass die Bodenthermik überhaupt eingesetzt hat.\n\nWas daraus folgt, ist zweischneidig:\n\n**Gut:** Die Thermik setzt früher ein und wird kräftig, weil nichts sie deckelt.\n\n**Schlecht:** Genau deshalb entwickelt der Tag auch früh über – Gewitter am frühen Nachmittag statt am Abend. Castellanus am Morgen heißt in der Praxis: früh starten, früh zurück sein, und die Rückkehr nicht auf den späten Nachmittag legen.\n\nDer Unterschied zum harmlosen Altocumulus ist die Höhe der einzelnen Elemente. Flache Schäfchen: stabil. Türmchen, die höher als breit sind: labil.",
@@ -1326,6 +1349,7 @@
      ],
      "beispiel": "",
      "bild": "cu-humilis",
+     "formeln": [],
      "id": "t-entstehung",
      "text": {
       "de": "Die Sonne heizt nicht die Luft, sondern den **Boden**. Der Boden heizt die Luft darüber. Und weil Böden verschieden schnell warm werden, entsteht ein Flickenteppich aus wärmeren und kühleren Luftpaketen.\n\nEin warmes Paket steigt nicht sofort. Es klebt am Boden, wächst, und löst sich erst ab, wenn es genug Auftrieb hat oder etwas es anstößt: eine Geländekante, ein Waldrand, ein Windstoß, ein vorbeifahrender Zug. Das ist die **Auslösung** — und deshalb kommt Thermik in Schüben und nicht als gleichmäßiger Strom.\n\n**Gute Auslöser** sind Grenzen: Feld an Wald, Ort an Wiese, Sonnenhang an Schatten. Besonders zuverlässig sind trockene, dunkle, der Sonne zugeneigte Flächen — abgeerntete Felder, Industrieanlagen, Fels. **Schlecht** sind Wasser, Wald im Vollbestand und frisch gepflügte nasse Erde.\n\nNach oben steigt das Paket, bis seine Temperatur der Umgebung gleicht. Liegt darüber eine **Inversion** — eine Schicht, in der es nach oben wärmer statt kälter wird — ist Schluss, auch wenn es unten noch so gut geht. Die Inversion ist der Deckel des Tages.",
@@ -1396,6 +1420,7 @@
      ],
      "beispiel": "",
      "bild": "wolkenstrasse",
+     "formeln": [],
      "id": "t-tagesgang",
      "text": {
       "de": "Thermik folgt der Sonne mit Verzögerung. Ein mitteleuropäischer Sommertag läuft ungefähr so:\n\n**Morgens** steht eine Bodeninversion von der Nacht. Erst wenn die Sonne sie weggeheizt hat, beginnt überhaupt etwas — typischerweise zwei bis vier Stunden nach Sonnenaufgang.\n\n**Vormittags** setzt die Thermik ein, schwach und mit tiefer Basis. Die Basis steigt im Lauf des Tages, weil sich die Bodenluft erwärmt und die Spreizung zunimmt.\n\n**Mittags bis Nachmittag** ist das Optimum: stärkstes Steigen, höchste Basis. Das stärkste Steigen liegt oft nicht zur Sonnenhöchststand, sondern ein bis zwei Stunden danach — der Boden braucht Zeit.\n\n**Spätnachmittag** wird es schwächer und weicher, die Abstände zwischen den Aufwinden werden größer. Die letzte Stunde ist trügerisch: Die Basis steht noch hoch, aber es steigt kaum noch.\n\nFür die Planung heißt das: Die **Rückkehr** wird nicht nach der Basishöhe berechnet, sondern nach dem, was in einer Stunde noch trägt. Wer den Wendepunkt auf die letzte gute Stunde legt, landet auswärts.",
@@ -1481,6 +1506,7 @@
      ],
      "beispiel": "",
      "bild": "cirrus",
+     "formeln": [],
      "id": "t-fronten",
      "text": {
       "de": "**Kaltfront**: Kalte Luft schiebt sich unter warme und hebt sie an. Das geht schnell und steil — Schauer, Gewitter, Böen, manchmal eine Böenlinie weit voraus. **Dahinter** aber kommt oft der beste Segelflugtag des Monats: labile, klare Rückseitenluft mit hoher Basis und kräftigem Steigen.\n\n**Warmfront**: Warme Luft gleitet flach auf kalte auf. Das geht langsam und über hunderte Kilometer: erst Cirrus, dann Cirrostratus mit Halo, dann Altostratus, dann Regen. Für den Segelflug ist die Warmfront schon einen Tag vorher erledigt — die hohe Schicht nimmt der Sonne die Kraft.\n\n**Hochdruck** ist nicht automatisch gut. Absinkende Luft erwärmt sich und baut eine **Absinkinversion** — der Deckel liegt dann tief, die Basis bleibt niedrig, und bei anhaltendem Hoch wird die Luft unter der Inversion diesig. Ein frisches Hoch nach einer Kaltfront ist gut; ein altes Hoch nach fünf Tagen ist es nicht.\n\nDie brauchbarste Faustregel: Es geht nicht um Sonne, sondern um **Labilität**. Ein Tag mit Sonne und stabiler Luft bringt nichts; ein Tag mit Quellwolken und labiler Luft trägt auch bei mäßiger Einstrahlung.",
@@ -1599,6 +1625,23 @@
      ],
      "beispiel": "",
      "bild": "",
+     "formeln": [
+      {
+       "bild": "formel-4cd70bf0",
+       "breite": 131,
+       "code": "Strecke / Höhe = L / D = E",
+       "erklaerung": {
+        "de": "Im stationären Gleitflug halten sich die Kräfte das Gleichgewicht: längs der Bahn `G·sin γ = D`, quer dazu `G·cos γ = L`. Geteilt ergibt das `tan γ = D/L`, und Strecke durch Höhe ist `1/tan γ`, also `L/D`. Weil das Dreieck aus Vorwärts- und Sinkgeschwindigkeit denselben Winkel hat, ist dieselbe Zahl auch `v/w` -- deshalb liest man die Gleitzahl aus der Polare ab und muss keine Kräfte messen. **Gilt für ruhige Luft:** Im Steigen oder Sinken der Luftmasse zählt die Bewegung über Grund, nicht die durch die Luft.",
+        "en": "In steady gliding flight the forces balance: along the path `G·sin γ = D`, across it `G·cos γ = L`. Dividing gives `tan γ = D/L`, and distance over height is `1/tan γ`, that is `L/D`. Because the triangle of forward and sinking speed has the same angle, the same number is also `v/w` -- which is why the glide ratio is read off the polar and no force has to be measured. **Holds for still air:** in rising or sinking air what counts is the movement over the ground, not through the air."
+       },
+       "hoehe": 43,
+       "tex": "$E = \\frac{L}{D} = \\frac{v}{w}$",
+       "untertitel": {
+        "de": "Gleitzahl: dieselbe Zahl aus Kräften und aus Geschwindigkeiten",
+        "en": "Glide ratio: the same number from forces and from speeds"
+       }
+      }
+     ],
      "id": "a-polare",
      "text": {
       "de": "Die **Geschwindigkeitspolare** zeigt das Sinken über der Fluggeschwindigkeit. Aus ihr liest man zwei ganz verschiedene Punkte ab:\n\n**Geringstes Sinken** – die Geschwindigkeit, bei der man am längsten oben bleibt. Das ist die Kurbelgeschwindigkeit: im Aufwind zählt Zeit, nicht Strecke.\n\n**Bestes Gleiten** – die Geschwindigkeit, bei der man am weitesten kommt. Sie liegt **schneller** als das geringste Sinken. Grafisch: die Tangente vom Ursprung an die Polare.\n\nZwei Dinge verschieben das:\n\n**Wasserballast** macht schwerer, also schneller — die ganze Polare verschiebt sich nach rechts. Die Gleitzahl bleibt fast gleich, aber man erreicht sie schneller. Deshalb Ballast bei starker Thermik und keiner bei schwacher.\n\n**Gegenwind** verschiebt den Tangentenpunkt zu höherer Geschwindigkeit: Gegen den Wind fliegt man schneller, mit dem Wind langsamer. Wer im Gegenwind auf bestem Gleiten bleibt, verliert Strecke.\n\n## Formelzeichen\n\n`L` Auftrieb, N. `D` Widerstand, N. `G` Gewicht, N. `E` Gleitzahl, dimensionslos. `γ` Gleitwinkel gegen die Waagrechte. `v` Fluggeschwindigkeit, m/s. `w` Sinkgeschwindigkeit, m/s.\n\n## Herleitung: warum Strecke = Hoehe × Gleitzahl\n\nIm stationaeren Gleitflug aendert sich nichts mehr: Die Summe aller Kraefte ist null. Auftrieb steht senkrecht zur Flugbahn, Widerstand entgegen der Flugbahn, das Gewicht senkrecht nach unten. Zerlegt man das Gewicht entlang und quer zur Bahn, ergeben sich zwei Gleichungen:\n\n    entlang der Bahn:  G·sin γ = D\n    quer zur Bahn:     G·cos γ = L\n\nDie erste durch die zweite geteilt — `G` kuerzt sich weg:\n\n    tan γ = D / L\n\nDer Tangens eines Winkels ist Gegenkathete durch Ankathete, hier also **Hoehenverlust durch Strecke**. Damit ist\n\n    Strecke / Hoehe = L / D = Gleitzahl E\n\nDie Gleitzahl ist also nichts anderes als das Verhaeltnis von Auftrieb zu Widerstand. E = 38 heisst: 38 Meter Strecke je Meter Hoehe. Aus 900 m werden 34,2 km.\n\n**Bemerkenswert:** Das Gewicht faellt heraus. Ein voll mit Wasser beladener Segler gleitet genauso weit wie ein leerer — nur schneller, und schneller wieder unten. Genau deshalb nimmt man Ballast bei starker Thermik und laesst ihn bei schwacher.\n\n## Und warum die Tangente vom Ursprung\n\nDie Polare traegt Sinken `w` ueber Fahrt `v` auf. Fuer jeden Punkt darauf ist\n\n    E = v / w\n\ndenn in einer Sekunde kommt man `v` weit und faellt `w` tief. Das ist die Steigung des Strahls vom Ursprung zu diesem Punkt. Am weitesten kommt man, wo dieser Strahl am flachsten ist — und flacher als die Beruehrende geht nicht, ohne die Polare zu verlassen. Deshalb die Tangente.\n\nBei Gegenwind `v_w` gilt ueber Grund `E = (v − v_w)/w`. Das ist derselbe Ausdruck, nur mit dem Ursprung um `v_w` nach links verschoben: gleiche Konstruktion, neuer Beruehrpunkt, hoehere Fahrt.",
@@ -1716,6 +1759,53 @@
      ],
      "beispiel": "",
      "bild": "",
+     "formeln": [
+      {
+       "bild": "formel-2d7b771f",
+       "breite": 108,
+       "code": "q = ½·ρ·v²",
+       "erklaerung": {
+        "de": "Je Sekunde trifft die Masse `ρ·A·v` auf die Fläche `A`, und jedes Kilogramm davon bringt `½v²` an Bewegungsenergie mit. Leistung durch Geschwindigkeit ist Kraft, Kraft durch Fläche ist Druck -- übrig bleibt `½ρv²`. Die Einheitenprobe: kg/m³ · m²/s² = N/m² = Pa. Entscheidend ist das Quadrat: doppelte Fahrt, vierfache Kraft.",
+        "en": "Each second the mass `ρ·A·v` arrives at the area `A`, and every kilogram of it brings `½v²` of kinetic energy. Power divided by speed is force, force divided by area is pressure -- what remains is `½ρv²`. The unit check: kg/m³ · m²/s² = N/m² = Pa. The square is what matters: twice the speed, four times the force."
+       },
+       "hoehe": 42,
+       "tex": "$q = \\frac{1}{2}\\rho v^{2}$",
+       "untertitel": {
+        "de": "Der Staudruck steckt in jeder Luftkraft",
+        "en": "Dynamic pressure is in every aerodynamic force"
+       }
+      },
+      {
+       "bild": "formel-873288ed",
+       "breite": 102,
+       "code": "n = 1 / cos φ",
+       "erklaerung": {
+        "de": "In der stationären Kurve muss die senkrechte Komponente des Auftriebs weiter das ganze Gewicht tragen: `L·cos φ = G`, also `L = G / cos φ`. Bei 45° Querlage sind das 1,41 G, bei 60° schon 2 G. Das Lastvielfache hängt **nur** von der Querlage ab -- nicht vom Radius, nicht von der Geschwindigkeit und nicht vom Gewicht.",
+        "en": "In a steady turn the vertical component of the lift must still carry the whole weight: `L·cos φ = G`, so `L = G / cos φ`. At 45° of bank that is 1.41 G, at 60° already 2 G. The load factor depends **only** on the bank angle -- not on the radius, not on the speed and not on the weight."
+       },
+       "hoehe": 42,
+       "tex": "$n = \\frac{1}{\\cos\\varphi}$",
+       "untertitel": {
+        "de": "Lastvielfaches in der Kurve",
+        "en": "Load factor in a turn"
+       }
+      },
+      {
+       "bild": "formel-edb52b6c",
+       "breite": 270,
+       "code": "v_kurve = v_s · √n",
+       "erklaerung": {
+        "de": "Der Auftrieb wächst mit `v²`, also verlangt das n-fache Gewicht die √n-fache Geschwindigkeit. Bei 60° Querlage ist n = 2, die Überziehgeschwindigkeit damit 1,41-mal so hoch. Deshalb ist eng und langsam die gefährliche Kombination, und deshalb steht der Fahrtmesser in der Platzrunde nie am unteren Anschlag.",
+        "en": "Lift grows with `v²`, so n times the weight needs √n times the speed. At 60° of bank n = 2 and the stalling speed is 1.41 times as high. That is why tight and slow is the dangerous combination, and why the airspeed indicator never sits at its lower limit in the circuit."
+       },
+       "hoehe": 49,
+       "tex": "$v_{S,\\varphi} = v_S\\sqrt{n} = \\frac{v_S}{\\sqrt{\\cos\\varphi}}$",
+       "untertitel": {
+        "de": "Überziehgeschwindigkeit in der Kurve",
+        "en": "Stalling speed in a turn"
+       }
+      }
+     ],
      "id": "a-ueberziehen",
      "text": {
       "de": "Ein Flügel trägt, solange die Strömung anliegt. Sie reißt ab, wenn der **Anstellwinkel** zu groß wird — nicht, wenn die Geschwindigkeit zu klein wird. Das ist derselbe Satz aus zwei Richtungen, aber der Unterschied rettet Leben: **man kann bei jeder Geschwindigkeit überziehen.**\n\nIn der Kurve wird es kritisch. Mit der Schräglage steigt das **Lastvielfache** n, und die Überziehgeschwindigkeit steigt mit der Wurzel daraus:\n\n    30° Schräglage: n = 1,15 → + 7 %\n    45° Schräglage: n = 1,41 → + 19 %\n    60° Schräglage: n = 2,00 → + 41 %\n\nWer eng kurbelt und dabei „ein bisschen zieht\", ist der Überziehgrenze näher, als der Fahrtmesser vermuten lässt.\n\n**Trudeln** entsteht, wenn beim Überziehen ein Flügel früher abreißt als der andere — typisch beim Ziehen im Schiebeflug, also in der überzogenen, schiebenden Kurve. Das klassische Szenario ist die **Platzrunde**: zu langsam, zu eng in den Endanflug gezogen, mit dem Seitenruder nachgeholfen. Genau daraus entsteht der Trudelunfall, aus dem in Platzrundenhöhe kein Ausleiten mehr hilft.\n\n**Ausleiten** in dieser Reihenfolge: Querruder neutral, Seitenruder **gegen** die Drehung, Knüppel nach vorn, und wenn die Drehung steht, Seitenruder neutral und sanft abfangen.\n\n## Formelzeichen\n\n`L` Auftrieb, N. `G` Gewicht, N. `n` Lastvielfaches `L/G`, dimensionslos. `φ` Schraeglage (Querneigung). `v_s` Ueberziehgeschwindigkeit im Geradeausflug, m/s. Weitere Zeichen im Abschnitt zur Auftriebsgleichung.\n\n## Vorab: woher die Auftriebsgleichung kommt\n\n**Formelzeichen:** `ρ` Luftdichte, kg/m³. `v` Anstroemgeschwindigkeit, m/s. `A` Flaeche, m². `q` Staudruck, Pa. `L` Auftrieb, N. `S` Fluegelflaeche, m². `c_A` Auftriebsbeiwert, dimensionslos.\n\nZuerst der **Staudruck**. Luft, die auf eine Flaeche trifft und dort zur Ruhe kommt, gibt ihre Bewegungsenergie ab. Je Sekunde trifft die Masse `ρ·A·v` auf die Flaeche `A`, und jedes Kilogramm davon bringt `½v²` an Energie mit. Leistung ist Energie je Zeit, Kraft ist Leistung durch Geschwindigkeit:\n\n    Leistung = (ρ·A·v) · ½v²\n    Kraft    = Leistung / v = ½·ρ·v²·A\n\nDer Druck ist Kraft durch Flaeche, also\n\n    q = ½·ρ·v²\n\nDas ist der Staudruck, und er steckt in jeder aerodynamischen Kraft. Die Probe auf die Einheiten: kg/m³ · m²/s² = kg/(m·s²) = N/m² = Pa.\n\nDer **Auftrieb** ist dann dieser Druck, mal der Fluegelflaeche, mal einer Zahl, die beschreibt, wie gut dieser Fluegel bei diesem Anstellwinkel den Druck in Auftrieb umsetzt:\n\n    L = q · S · c_A = ½·ρ·v²·S·c_A\n\n`c_A` ist keine Naturkonstante, sondern eine gemessene Eigenschaft von Profil und Anstellwinkel. Entscheidend fuer alles Folgende ist nur: **Bei festem Anstellwinkel ist L proportional zu v².**\n\n## Herleitung: woher n = 1/cos φ kommt\n\nIm sauberen Kurvenflug hat der Auftrieb zwei Aufgaben zugleich. Kippt man ihn um die Schraeglage φ, zerfaellt er in zwei Anteile:\n\n* senkrecht: **L · cos φ** — der traegt das Gewicht,\n* waagrecht: **L · sin φ** — der zieht in die Kurve.\n\nDamit die Hoehe gehalten wird, muss der senkrechte Anteil genau das Gewicht tragen:\n\n    L · cos φ = G      →      L = G / cos φ\n\nDas Lastvielfache ist definiert als `n = L/G`, also\n\n    n = 1 / cos φ\n\n45°: cos 45° = 0,707, also n = 1,41. 60°: cos 60° = 0,5, also n = 2. Bei 90° waere cos φ = 0 und n unendlich — ein Messerflug traegt kein Gewicht, und genau deshalb geht er nicht stationaer.\n\n## Und die Wurzel bei der Ueberziehgeschwindigkeit\n\nAus der Auftriebsgleichung oben: `L = ½·ρ·v²·S·c_A`. Ueberzogen wird immer beim **selben** groessten `c_A` — das ist eine Eigenschaft des Fluegels, nicht der Lage. Beim Ueberziehen ist also alles fest ausser `v` und `L`, damit ist `L ∝ v²`.\n\nIm Geradeausflug muss L = G sein, in der Kurve L = n·G. Verhaeltnis bilden, alles Feste kuerzt sich weg:\n\n    v_kurve² / v_s² = (n·G) / G = n\n    v_kurve = v_s · √n\n\nDaher die Zahlen: √1,15 = 1,07 (+7 %), √1,41 = 1,19 (+19 %), √2,00 = 1,41 (+41 %).\n\n**Das Gefaehrliche daran** ist der Unterschied der beiden Reihen. Die Last waechst schneller als die Geschwindigkeit: Bei 60° traegt man das doppelte Gewicht, muss aber nur 41 % schneller fliegen. Wer nach Gefuehl fliegt, unterschaetzt darum immer die Last.\n\n**Wo es nicht gilt:** Die Rechnung setzt einen stationaeren, koordinierten Kurvenflug voraus. Im Schiebeflug, beim Abfangen oder in einer Boe ist `n` groesser, ohne dass die Schraeglage es verraet.",
@@ -1801,6 +1891,23 @@
      ],
      "beispiel": "",
      "bild": "",
+     "formeln": [
+      {
+       "bild": "formel-49db849e",
+       "breite": 145,
+       "code": "x_s = Σ (m_i · x_i) / Σ m_i",
+       "erklaerung": {
+        "de": "Ein Moment ist Kraft mal Hebelarm. Der Schwerpunkt ist der Punkt, an dem alle Massen zusammengefasst dasselbe Moment erzeugen wie einzeln: `(Σm)·x_S = Σ(m·x)`. Ein schwerer Pilot zieht ihn weit nach vorn, Wasserballast im Flügel kaum -- der sitzt nahe am Schwerpunkt. **Warum es beide Grenzen gibt:** zu weit vorn heißt schwer abfangbar, zu weit hinten heißt nicht mehr abfangbar.",
+        "en": "A moment is force times lever arm. The centre of gravity is the point at which all masses taken together produce the same moment as they do separately: `(Σm)·x_S = Σ(m·x)`. A heavy pilot pulls it far forward, water ballast in the wing hardly at all -- it sits close to the centre of gravity. **Why there are two limits:** too far forward means hard to flare, too far aft means impossible to recover."
+       },
+       "hoehe": 73,
+       "tex": "$x_S = \\frac{\\sum m_i x_i}{\\sum m_i}$",
+       "untertitel": {
+        "de": "Der Schwerpunkt ist ein gewogener Mittelwert",
+        "en": "The centre of gravity is a weighted mean"
+       }
+      }
+     ],
      "id": "l-schwerpunkt",
      "text": {
       "de": "Jedes Segelflugzeug hat einen zugelassenen **Schwerpunktbereich**. Er steht im Flughandbuch, und er ist keine Empfehlung.\n\n**Zu weit vorn** (schwerer Pilot, kein Heckballast): Das Flugzeug ist stabil, aber schwerfällig. Es überzieht bei höherer Geschwindigkeit, das Höhenruder reicht beim Ausschweben womöglich nicht, und im Landeanflug fehlt die Wirkung.\n\n**Zu weit hinten** (leichter Pilot ohne Bugballast): Das ist die gefährliche Seite. Das Flugzeug wird instabil, reagiert überempfindlich, und beim Überziehen geht es leicht ins Trudeln — aus dem es sich unter Umständen **nicht mehr ausleiten lässt**.\n\nDeshalb steht im Cockpit die **Mindestzuladung**: Wiegt der Pilot weniger, muss Blei zugeladen werden, und zwar dort, wo es das Handbuch vorschreibt.\n\nDie Rechnung selbst ist eine Momentenbilanz: Jede Masse wird mit ihrem Hebelarm zum Bezugspunkt multipliziert, alles addiert und durch die Gesamtmasse geteilt. Das Ergebnis muss zwischen vorderer und hinterer Grenze liegen.\n\n## Formelzeichen\n\n`m_i` Einzelmasse, kg. `x_i` ihr Hebelarm von der Bezugsebene, mm — mit Vorzeichen. `x_s` Lage des Schwerpunkts, mm. `M` Moment, kg·mm. `F` Kraft, N. `Σ` Summenzeichen: addiere ueber alle i.\n\n## Vorab: was ein Moment ist\n\nEin Moment ist Kraft mal Hebelarm:\n\n    M = F · x\n\nEs misst die Drehwirkung um einen Punkt. Deshalb kippt 10 kg weit vorn mehr als 50 kg nahe am Drehpunkt — die Masse allein sagt nichts. Weil bei allen Beitraegen dieselbe Fallbeschleunigung steckt, kuerzt sie sich in der ganzen Rechnung weg; man darf statt mit Kraeften gleich mit Massen rechnen.\n\n## Herleitung: warum man Momente addiert und nicht Massen\n\nDer Schwerpunkt ist definiert als der eine Punkt, an dem die Gesamtmasse dasselbe Moment erzeugt wie alle Einzelmassen zusammen. Das ist die ganze Definition, und als Gleichung um die Bezugsebene:\n\n    (Σ m_i) · x_s = Σ (m_i · x_i)\n\nNach `x_s` aufgeloest:\n\n    x_s = Σ (m_i · x_i) / Σ m_i = Gesamtmoment / Gesamtmasse\n\nIm Beispiel: (75 000 + 70 × 100) / (250 + 70) = 82 000 / 320 = 256,25 mm.\n\n**Worauf zu achten ist:** Alle Hebelarme muessen von **derselben** Bezugsebene aus gemessen sein, und zwar mit Vorzeichen. Etwas hinter der Bezugsebene hat einen negativen Hebelarm; wer das Vorzeichen vergisst, rechnet sich den Schwerpunkt in den gruenen Bereich, in dem er nicht liegt.",
@@ -1886,6 +1993,23 @@
      ],
      "beispiel": "",
      "bild": "",
+     "formeln": [
+      {
+       "bild": "formel-d336ac9a",
+       "breite": 147,
+       "code": "v = √( 2G / (ρ · S · c_A) )",
+       "erklaerung": {
+        "de": "Abgehoben wird, wenn der Auftrieb das Gewicht erreicht: `½ρv²·S·c_A = G`. Nach `v` aufgelöst steht dort `v ∝ 1/√ρ`. An einem heißen Tag auf 1000 m ist die Dichte rund 10 % kleiner, die **wahre** Geschwindigkeit also etwa 5 % höher -- und weil die Strecke mit `v²` geht, wird der Start gut 10 % länger. Der Fahrtmesser zeigt davon nichts: Er misst denselben Staudruck und damit dieselbe angezeigte Zahl.",
+        "en": "You lift off when the lift reaches the weight: `½ρv²·S·c_A = G`. Solved for `v` this says `v ∝ 1/√ρ`. On a hot day at 1000 m the density is some 10 % lower, so the **true** speed is about 5 % higher -- and because the distance goes with `v²`, the take-off run grows by a good 10 %. The airspeed indicator shows none of this: it measures the same dynamic pressure and thus the same indicated number."
+       },
+       "hoehe": 61,
+       "tex": "$v = \\sqrt{\\frac{2G}{\\rho\\,S\\,c_A}}$",
+       "untertitel": {
+        "de": "Abhebegeschwindigkeit, und warum sie mit der Höhe steigt",
+        "en": "Lift-off speed, and why it rises with altitude"
+       }
+      }
+     ],
      "id": "l-startstrecke",
      "text": {
       "de": "Die **Dichtehöhe** ist die Höhe, die das Flugzeug *spürt*. Heiße Luft, hoher Platz und tiefer Luftdruck lassen die Dichte sinken — der Flügel trägt weniger, der Schlepp zieht schwächer, die Startstrecke wächst. Faustregel: **je 10 °C über Standard etwa 10 Prozent mehr Startstrecke**, dazu rund 10 Prozent je 1000 ft Platzhöhe.\n\nIm Gebirge an einem heißen Nachmittag summiert sich das schnell auf das Doppelte der Handbuchzahl bei Standardbedingungen.\n\nDie **Sicherheitshöhe** ist die Höhe, unter der nur noch gelandet und nicht mehr gesucht wird. Ihre Zahl ist weniger wichtig als ihre Verbindlichkeit: Wer sie auf 300 m über Grund festlegt und dann doch „nur noch den einen Aufwind\" probiert, hat sie nicht.\n\nBeim Windenstart gibt es zusätzlich die **Entscheidungshöhe** für den Seilriss. Darunter wird geradeaus gelandet, darüber eine verkürzte Platzrunde geflogen — und welche Höhe das ist, gehört **vor** dem Start durchgesprochen, nicht währenddessen ausgerechnet.\n\n## Formelzeichen\n\n`ρ` Luftdichte, kg/m³. `p` Luftdruck, Pa. `T` absolute Temperatur, K. `R` spezifische Gaskonstante trockener Luft, 287 J/(kg·K). Weitere Zeichen im Abschnitt zur Auftriebsgleichung.\n\n## Vorab: woher die Auftriebsgleichung kommt\n\n**Formelzeichen:** `ρ` Luftdichte, kg/m³. `v` Anstroemgeschwindigkeit, m/s. `A` Flaeche, m². `q` Staudruck, Pa. `L` Auftrieb, N. `S` Fluegelflaeche, m². `c_A` Auftriebsbeiwert, dimensionslos.\n\nZuerst der **Staudruck**. Luft, die auf eine Flaeche trifft und dort zur Ruhe kommt, gibt ihre Bewegungsenergie ab. Je Sekunde trifft die Masse `ρ·A·v` auf die Flaeche `A`, und jedes Kilogramm davon bringt `½v²` an Energie mit. Leistung ist Energie je Zeit, Kraft ist Leistung durch Geschwindigkeit:\n\n    Leistung = (ρ·A·v) · ½v²\n    Kraft    = Leistung / v = ½·ρ·v²·A\n\nDer Druck ist Kraft durch Flaeche, also\n\n    q = ½·ρ·v²\n\nDas ist der Staudruck, und er steckt in jeder aerodynamischen Kraft. Die Probe auf die Einheiten: kg/m³ · m²/s² = kg/(m·s²) = N/m² = Pa.\n\nDer **Auftrieb** ist dann dieser Druck, mal der Fluegelflaeche, mal einer Zahl, die beschreibt, wie gut dieser Fluegel bei diesem Anstellwinkel den Druck in Auftrieb umsetzt:\n\n    L = q · S · c_A = ½·ρ·v²·S·c_A\n\n`c_A` ist keine Naturkonstante, sondern eine gemessene Eigenschaft von Profil und Anstellwinkel. Entscheidend fuer alles Folgende ist nur: **Bei festem Anstellwinkel ist L proportional zu v².**\n\n## Vorab: woher ρ = p/(R·T) kommt\n\nDie allgemeine Gasgleichung lautet `p·V = m·R·T` — Druck mal Volumen ist Masse mal Gaskonstante mal absoluter Temperatur. Teilt man beide Seiten durch `V` und erkennt `m/V` als die Dichte:\n\n    p = ρ·R·T      →      ρ = p / (R·T)\n\nBeachte: **absolute** Temperatur in Kelvin. Mit °C gerechnet kommt Unsinn heraus, denn 0 °C ist kein Nullpunkt der Bewegung.\n\n## Herleitung: warum duenne Luft die Startstrecke verlaengert\n\nAbheben heisst: Der Auftrieb traegt das Gewicht.\n\n    ½ · ρ · v² · S · c_A = G\n\nGewicht, Flaeche und der groesste brauchbare `c_A` aendern sich nicht, wenn es heiss wird. `ρ` schon. Nach `v` aufgeloest:\n\n    v = √( 2G / (ρ · S · c_A) )      also      v ∝ 1/√ρ\n\nBei 10 % weniger Dichte braucht man also 1/√0,9 = 1,054, gut 5 % mehr **Fahrt ueber Grund** zum Abheben. Und weil die Rollstrecke etwa mit dem Quadrat der Abhebegeschwindigkeit waechst und der Motor in duenner Luft zugleich weniger leistet, ist der Zuschlag auf die Strecke deutlich groesser als die 5 % auf die Fahrt.\n\n**Woher die Dichte faellt.** Aus `ρ = p/(R·T)`: Hoher Platz heisst kleines `p`, heisser Tag grosses `T` — beides verkleinert ρ. Feuchte Luft ist uebrigens **leichter** als trockene, weil ein Wassermolekuel (18 u) weniger wiegt als das Stickstoff- (28 u) oder Sauerstoffmolekuel (32 u), das es verdraengt.\n\nDie **Dichtehoehe** fasst all das in eine Zahl: die Hoehe, in der die Normatmosphaere genau diese Dichte haette.",
@@ -1985,6 +2109,7 @@
      ],
      "beispiel": "",
      "bild": "cu-humilis",
+     "formeln": [],
      "id": "r-lufträume",
      "text": {
       "de": "Europa kennt die Klassen A bis G. Für den Segelflug zählen praktisch:\n\n**C** – kontrolliert, Freigabe **nötig**, auch für Sichtflug. Liegt meist als Deckel über großen Flughäfen.\n\n**D** – kontrolliert, Freigabe nötig; die klassische Kontrollzone um einen Verkehrsflughafen.\n\n**E** – kontrolliert, aber Sichtflug **ohne** Freigabe erlaubt und ohne Funkpflicht. Der Zusammenstoßschutz liegt beim Piloten. In Mitteleuropa beginnt E meist bei 2500 ft GND oder FL100.\n\n**G** – unkontrolliert. Hier spielt sich der meiste Segelflug ab.\n\nDazu kommen **Gebiete mit Beschränkungen**: D (Gefahrengebiet), R (Beschränkungsgebiet), P (Sperrgebiet), TMZ (Transponderpflicht) und RMZ (Funkpflicht).\n\nDie Sichtflugmindestbedingungen sind das andere Bein: unterhalb FL100 in G mindestens **5 km Sicht**, frei von Wolken und mit Erdsicht; in E zusätzlich **1,5 km horizontal und 300 m vertikal** Abstand zu Wolken. Genau deshalb darf man nicht in die Wolkenbasis einsteigen, auch wenn es dort am besten steigt.",
@@ -2070,6 +2195,23 @@
      ],
      "beispiel": "",
      "bild": "",
+     "formeln": [
+      {
+       "bild": "formel-6b47cc74",
+       "breite": 289,
+       "code": "dh = dp / (ρ·g) ≈ 8,3 m je hPa",
+       "erklaerung": {
+        "de": "Eine Luftsäule drückt mit `ρ·g·h`. Ein Hektopascal sind 100 Pa; geteilt durch 1,225 kg/m³ × 9,81 m/s² ergibt 8,3 m. Das gilt **in Bodennähe**: Oben ist die Luft dünner, und dasselbe Hektopascal entspricht dort einer größeren Höhe. Ein um 10 hPa falsch gestellter Höhenmesser zeigt unten 83 m falsch -- in der Höhe mehr, und immer in die unangenehme Richtung, wenn der Druck unterwegs gefallen ist.",
+        "en": "A column of air presses with `ρ·g·h`. One hectopascal is 100 Pa; divided by 1.225 kg/m³ × 9.81 m/s² that gives 8.3 m. This holds **near the ground**: higher up the air is thinner and the same hectopascal corresponds to a greater height. An altimeter set 10 hPa wrong reads 83 m wrong down low -- more up high, and always in the unpleasant direction if the pressure has fallen on the way."
+       },
+       "hoehe": 47,
+       "tex": "$\\Delta h = \\frac{\\Delta p}{\\rho\\,g} \\approx 8{,}3\\ \\mathrm{m/hPa}$",
+       "untertitel": {
+        "de": "Warum ein Hektopascal acht Meter sind",
+        "en": "Why one hectopascal is eight metres"
+       }
+      }
+     ],
      "id": "r-hoehenmesser",
      "text": {
       "de": "**Höhenmessereinstellung** — drei Werte, drei Zwecke:\n\n**QNH**: Der Höhenmesser zeigt die Höhe über dem Meer. Das ist die Einstellung für den Streckenflug, weil Luftraumgrenzen und Geländehöhen in MSL angegeben sind.\n\n**QFE**: Null über dem Platz. Praktisch für die Platzrunde, aber unbrauchbar, sobald man den Platz verlässt.\n\n**Standard 1013,25 hPa**: Oberhalb der Übergangshöhe. Angezeigt werden dann **Flugflächen** (FL), keine Höhen. FL100 ist nicht 10 000 ft über dem Meer, sondern 10 000 ft in der Standard­atmosphäre.\n\nDie Falle: Bei tiefem Luftdruck liegt die wahre Höhe **unter** der angezeigten. „From high to low, look out below.\"\n\n**Ausweichregeln**, nach Manövrierfähigkeit geordnet — wer weniger ausweichen kann, hat Vorrang:\n\n    Ballon → Segelflugzeug → Luftschiff → Motorflugzeug\n\nDazu: Bei **Gegenkurs** weichen beide nach rechts aus. Beim **Überholen** wird rechts überholt. Am **Hang** weicht der aus, der den Hang zur Linken hat — der andere kann nicht ausweichen, ohne in den Berg zu fliegen. Beim **Kurbeln** im selben Aufwind wird in derselben Richtung gekreist wie der, der zuerst da war.\n\n## Formelzeichen\n\n`p` Luftdruck, Pa (1 hPa = 100 Pa). `ρ` Luftdichte, kg/m³; in Meereshoehe 1,225. `g` Fallbeschleunigung, 9,81 m/s². `h` Hoehe, m. `dp`, `dh` kleine Aenderungen von Druck und Hoehe.\n\n## Herleitung: die hydrostatische Grundgleichung\n\nDer Luftdruck an einer Stelle ist das Gewicht der Luftsaeule darueber, verteilt auf die Flaeche. Steigt man um `dh`, faellt genau die Schicht `dh` aus dieser Saeule heraus.\n\nDiese Schicht hat ueber der Flaeche `A` das Volumen `A·dh`, also die Masse `ρ·A·dh` und das Gewicht `ρ·A·dh·g`. Ihr Beitrag zum Druck ist Gewicht durch Flaeche — `A` kuerzt sich weg:\n\n    dp = − ρ · g · dh\n\nDas Minus, weil der Druck nach oben abnimmt. Das ist die hydrostatische Grundgleichung, und sie gilt in jeder ruhenden Fluessigkeit und jedem ruhenden Gas.\n\n## Und warum ein Hektopascal rund acht Meter ist\n\nNach `dh` aufgeloest und in Meereshoehe eingesetzt:\n\n    dh = dp / (ρ·g) = 100 / (1,225 × 9,81) ≈ 8,3 m je hPa\n\n**Deshalb** verschiebt jedes falsch gestellte Hektopascal die Anzeige um gut acht Meter. Ein um 18 hPa zu hoch eingestellter Hoehenmesser (1013 statt 995) zeigt rund 150 m zu viel an.\n\nWeiter oben wird die Zahl groesser, weil ρ abnimmt: in 5000 m sind es schon rund 15 m je hPa. Fuer die Platzrunde reicht die 8.\n\n**„From high to low, look out below“** ist genau das: Fliegt man in tieferen Druck, ohne nachzustellen, misst die Dose weniger Druck und haelt das faelschlich fuer Hoehe. Man ist tiefer als angezeigt — um acht Meter je Hektopascal.",
@@ -2141,6 +2283,23 @@
      ],
      "beispiel": "",
      "bild": "",
+     "formeln": [
+      {
+       "bild": "formel-9ac445f8",
+       "breite": 164,
+       "code": "α [°] ≈ (v_q / v) × 57,3",
+       "erklaerung": {
+        "de": "Für kleine Winkel ist `sin α ≈ α` im Bogenmaß, und ein Bogenmaß sind 57,3°. Also Querwindanteil durch Eigengeschwindigkeit, mal 57,3 -- in der Praxis mal 60, das rechnet sich im Kopf und liegt nur 5 % daneben. Gut bis etwa 20°; darüber wird der Sinus merklich kleiner als der Winkel und die Faustformel hält zuwenig vor.",
+        "en": "For small angles `sin α ≈ α` in radians, and one radian is 57.3°. So crosswind component divided by airspeed, times 57.3 -- in practice times 60, which can be done in the head and is only 5 % off. Good up to about 20°; beyond that the sine becomes noticeably smaller than the angle and the rule of thumb under-corrects."
+       },
+       "hoehe": 40,
+       "tex": "$\\alpha \\approx \\frac{v_q}{v}\\cdot 57{,}3^{\\circ}$",
+       "untertitel": {
+        "de": "Vorhaltewinkel gegen den Querwind",
+        "en": "Drift correction angle for a crosswind"
+       }
+      }
+     ],
      "id": "n-kurse",
      "text": {
       "de": "Drei Kurse, die sich um zwei Korrekturen unterscheiden:\n\n**Rechtweisend (true)** – gegenüber dem geografischen Nordpol, so wie die Karte gezeichnet ist.\n\n**Missweisend (magnetic)** – gegenüber dem magnetischen Nordpol. Der Unterschied ist die **Missweisung** (Variation), auf der Karte eingetragen. Ost wird abgezogen, West addiert: „Ost ist Mist, West ist best.\"\n\n**Steuerkurs (compass)** – was der Kompass im Flugzeug zeigt. Der Unterschied ist die **Deviation**, verursacht vom Eisen und vom Strom an Bord; sie steht auf einem Schildchen am Kompass.\n\nDazu kommt der **Vorhaltewinkel**: Der Wind versetzt. Um über Grund die gewünschte Linie zu fliegen, muss man in den Wind hinein vorhalten. Faustformel für kleine Winkel:\n\n    Vorhaltewinkel ≈ (Querwindanteil / Eigengeschwindigkeit) × 60\n\nBei 20 kt Querwind und 60 kt Eigengeschwindigkeit sind das rund 20 Grad — kein kleiner Wert, und er ist der Grund, warum ein Segelflug bei Wind ohne Vorhalten schnell zehn Kilometer neben dem Ziel herauskommt.\n\n## Formelzeichen\n\n`α` Vorhaltewinkel, Grad. `v_q` Querwindanteil, km/h. `v` Eigengeschwindigkeit, km/h. `rw` rechtweisender Kurs (gegen geografisch Nord), Grad. `mw` missweisender Kurs (gegen magnetisch Nord), Grad. **rad** — das Bogenmass: der Winkel, gemessen als Bogenlaenge auf dem Einheitskreis.\n\n## Vorab: warum 1 rad = 57,3° ist\n\nDer volle Kreis hat den Umfang 2π und zugleich 360°. Ein Bogenmass ist also\n\n    1 rad = 360° / (2π) = 180°/π = 57,296°\n\n## Und warum sin α ≈ α gilt\n\nAus der Taylorreihe des Sinus:\n\n    sin α = α − α³/6 + α⁵/120 − ...      (α in rad)\n\nFuer kleine α ist `α³/6` winzig gegen α. Bei 10° (0,175 rad) betraegt der Fehler 0,5 %, bei 20° (0,35 rad) 2 %, bei 30° 4,5 %. **Nur im Bogenmass** — in Grad gilt die Reihe nicht.\n\n## Herleitung: woher die 60 im Vorhaltewinkel kommt\n\nDer Wind schiebt quer. Aus Eigengeschwindigkeit und Querwind wird ein rechtwinkliges Dreieck, und exakt gilt\n\n    sin α = v_q / v\n\nDamit koennte man im Cockpit wenig anfangen. Mit `sin α ≈ α` in rad und `1 rad = 57,3°`:\n\n    α [°] ≈ (v_q / v) × 57,3\n\nAufgerundet auf **60**, weil sich damit im Kopf rechnen laesst und der Fehler zur sicheren Seite geht: Man haelt etwas mehr vor als noetig. Daher der Name **1-in-60-Regel** — 1 Einheit Versatz auf 60 Einheiten Strecke ist ein Grad.\n\n**Wie weit sie traegt:** bis etwa 20 Grad gut, darueber rechnet man besser richtig.\n\n## Und die Missweisung\n\nSie ist kein Rechentrick, sondern eine Ortsangabe: der Winkel zwischen geografischem und magnetischem Nordpol an dieser Stelle der Erde. Die Karte ist rechtweisend, der Kompass missweisend. Zeigt der magnetische Pol vom Standort aus **westlich** des geografischen, dann zeigt der Kompass fuer dieselbe Richtung eine groessere Zahl:\n\n    mw = rw + Missweisung        (West positiv, Ost negativ)\n\nMerksatz: *Missweisung West, Kompass zeigt mehr.*",
@@ -2225,6 +2384,7 @@
      ],
      "beispiel": "",
      "bild": "",
+     "formeln": [],
      "id": "n-karte",
      "text": {
       "de": "Die ICAO-Karte 1:500 000 ist das Handwerkszeug: 1 cm entspricht 5 km. Wichtiger als die Rechnerei ist das **Kartenlesen im Flug** — man orientiert sich an Linien, nicht an Punkten.\n\n**Gute Marken** sind lang und eindeutig: Autobahnen, Flüsse, Bahnlinien, Seeufer, Waldkanten, Hochspannungstrassen. **Schlechte Marken** sind Dörfer — aus 1000 m sehen sie alle gleich aus.\n\nDie verlässlichste Technik ist das **Auffanglinien-Verfahren**: Man peilt nicht das Ziel an, sondern eine lange Linie dahinter (Fluss, Autobahn), und zwar bewusst schief. Trifft man die Linie, weiß man sicher, **auf welcher Seite** des Ziels man ist, und fliegt daran entlang. Wer genau anpeilt, weiß bei Abweichung nicht, ob links oder rechts.\n\nFür den Segelflug kommt die **Außenlandeplanung** dazu: Beim Kartenlesen achtet man mit auf die Felder, nicht nur auf den Kurs. Ein Feld beurteilt man nach den vier S: **Size** (groß genug), **Shape** (Anflug möglich), **Slope** (möglichst eben, notfalls bergauf landen), **Surface** (abgeerntet, kurz, keine Hochkulturen) — und Stromleitungen an den Rändern.",
@@ -2325,6 +2485,7 @@
      ],
      "beispiel": "",
      "bild": "",
+     "formeln": [],
      "id": "m-koerper",
      "text": {
       "de": "**Hypoxie** – Sauerstoffmangel. Ab etwa 3000 m spürbar, ab 4000 m gefährlich. Das Tückische ist, dass sie sich **gut** anfühlt: Euphorie, Sorglosigkeit, dann Sehstörungen und langsamere Entscheidungen — und der Betroffene hält sich die ganze Zeit für voll leistungsfähig. Deshalb gibt es feste Grenzen statt Selbsteinschätzung: über 4000 m Sauerstoff.\n\n**Hyperventilation** – zu schnelles Atmen aus Angst oder Stress. Es fehlt nicht Sauerstoff, sondern **Kohlendioxid**. Symptome: Kribbeln in Fingern und um den Mund, Schwindel, Krämpfe. Abhilfe: bewusst langsam atmen, sprechen. Die Symptome ähneln der Hypoxie — im Zweifel **zuerst Sauerstoff geben**, denn Hypoxie tötet schneller.\n\n**Druckausgleich**: Beim Sinken muss die Luft im Mittelohr nachströmen. Bei Erkältung geht das nicht, und es wird sehr schmerzhaft bis zum Trommelfellriss. Mit Schnupfen fliegt man nicht.\n\n**Räumliche Desorientierung**: Das Gleichgewichtsorgan meldet Beschleunigungen, nicht Lagen. Eine langsame, gleichmäßige Kurve fühlt sich nach kurzer Zeit wie Geradeausflug an; beim Ausleiten meint man, in die Gegenrichtung zu kurven. In Wolken oder über Wasser ohne Horizont ist das tödlich — und nach etwa 30 Sekunden unvermeidlich.",
@@ -2409,6 +2570,7 @@
      ],
      "beispiel": "",
      "bild": "",
+     "formeln": [],
      "id": "m-entscheiden",
      "text": {
       "de": "Die meisten Segelflugunfälle haben keine technische Ursache. Sie entstehen aus einer Kette kleiner Entscheidungen, von denen jede für sich vertretbar aussah.\n\nDie bekannteste Falle heißt **get-home-itis**: Der Wunsch anzukommen verdrängt die Einsicht, dass es nicht mehr reicht. Sie wirkt am stärksten, wenn jemand wartet, wenn der Anhänger weit weg ist, oder wenn man schon einmal knapp durchgekommen ist.\n\nZwei Gegenmittel, beide unspektakulär:\n\n**Grenzen vorher festlegen.** Die Sicherheitshöhe, die Umkehrzeit, die Mindestankunftshöhe gehören vor dem Start bestimmt — in der Luft ist man nicht mehr derselbe Entscheider.\n\n**Die Entscheidung früh treffen.** Eine Außenlandung aus 500 m ist Routine, aus 150 m ein Notfall. Der Unterschied liegt nicht im Feld, sondern in der Zeit, die man hatte.\n\nDazu die Merkhilfe **IMSAFE** für die Selbstprüfung vor dem Flug: Illness, Medication, Stress, Alcohol, Fatigue, Emotion. Jeder Punkt allein macht nicht flugunfähig; zwei oder drei zusammen schon.",
@@ -2509,6 +2671,7 @@
      ],
      "beispiel": "",
      "bild": "",
+     "formeln": [],
      "id": "k-instrumente",
      "text": {
       "de": "Alle drei hängen an denselben zwei Drücken.\n\n**Statischer Druck** – der Umgebungsdruck, abgenommen an Öffnungen seitlich am Rumpf. **Staudruck** – der Druck, den die anströmende Luft im Pitotrohr aufbaut.\n\n**Höhenmesser**: nur statisch. Je höher, desto weniger Druck.\n\n**Fahrtmesser**: die **Differenz** von Staudruck und statischem Druck. Er zeigt die **angezeigte** Geschwindigkeit (IAS), nicht die wahre. In großer Höhe ist die wahre Geschwindigkeit höher als die angezeigte — was für die Strukturgrenzen zählt, ist aber meist die angezeigte.\n\n**Variometer**: die zeitliche Änderung des statischen Drucks. Es misst also Steigen, und zwar mit Verzögerung.\n\n**Die Verstopfungsfälle** sind beliebter Prüfungsstoff:\n\n*Pitot verstopft, Statik frei*: Der Fahrtmesser wird zum Höhenmesser verkehrt herum — im Steigflug zeigt er zu viel, im Sinkflug zu wenig.\n\n*Statik verstopft*: Der Höhenmesser bleibt stehen, das Variometer zeigt null, und der Fahrtmesser zeigt im Sinkflug zu viel, im Steigflug zu wenig.\n\nDas **TE-Variometer** (total energy) rechnet die Geschwindigkeitsänderung heraus: Ohne sie würde jedes Ziehen als Steigen erscheinen. Die TE-Düse sitzt meist am Seitenleitwerk. Ist sie verstopft, zeigt das Vario jedes Abfangen als kräftigen Aufwind — der „Knüppelthermik\" heißt.",
@@ -2608,6 +2771,7 @@
      ],
      "beispiel": "",
      "bild": "",
+     "formeln": [],
      "id": "b-seilriss",
      "text": {
       "de": "Der Seilriss ist der am häufigsten geübte Notfall, weil die richtige Reaktion nicht naheliegt.\n\n**Erstens und immer: nachdrücken.** Beim Windenstart steht die Nase steil; reißt das Seil, fällt die Fahrt binnen zwei bis drei Sekunden unter die Überziehgeschwindigkeit. Der Reflex, die Nase oben zu halten, tötet.\n\n**Zweitens: Fahrt prüfen, Seil ausklinken.**\n\n**Drittens: entscheiden**, und zwar nach der Höhe:\n\n*Unter der Entscheidungshöhe* (oft 50–100 m, platzabhängig): geradeaus landen, notfalls mit kleinen Richtungsänderungen. Die Umkehrkurve aus dieser Höhe ist der klassische tödliche Fehler.\n\n*Darüber*: verkürzte Platzrunde, auf die verbleibende Höhe angepasst.\n\nBeim **Flugzeugschlepp** kommt der Fall „Schleppflugzeug hat Motorschaden\" dazu: Dann klinkt der Segelflieger **sofort** aus, damit beide handlungsfähig werden — und beide weichen voneinander weg, der Segler nach rechts.\n\nDas Abbruchzeichen des Schleppiloten (Seitenruder wedeln) heißt **sofort ausklinken**. Das Zeichen des Seglers (Schlängeln) heißt „ich kann nicht ausklinken\".",
@@ -2725,6 +2889,7 @@
      ],
      "beispiel": "",
      "bild": "",
+     "formeln": [],
      "id": "f-grundlagen",
      "text": {
       "de": "Der Aufbau jeder Meldung ist immer gleich: **wen rufe ich, wer bin ich, was will ich.**\n\n    „Innsbruck Information, OE-1234, Position …\"\n\nZahlen werden einzeln gesprochen, die Buchstabiertafel gilt (Alfa, Bravo, Charlie …). **Ja/Nein** heißt affirm und negativ, **verstanden** heißt roger, **wiederholen Sie** heißt say again. „Roger\" bestätigt nur den Empfang, nicht die Befolgung — dafür steht **wilco**.\n\n**Die drei Dringlichkeitsstufen:**\n\n**MAYDAY** (dreimal) – Lebensgefahr. Höchste Priorität, alle anderen schweigen.\n\n**PAN PAN** (dreimal) – dringlich, aber keine unmittelbare Lebensgefahr. Zum Beispiel eine Außenlandung, die sicher durchführbar ist, über die aber jemand Bescheid wissen soll.\n\nDazu die Frequenzen, die man auswendig kann: **121,5 MHz** ist die internationale Notfrequenz, **7700** der Transpondercode für Notlage, **7600** für Funkausfall, **7500** für unrechtmäßige Einmischung.\n\nDer Notruf selbst folgt einem Muster, das man einmal auswendig lernt und dann hat: **wer, wo, was, wie viele, was ich vorhabe.** Wer im Ernstfall nachdenken muss, funkt gar nicht.",

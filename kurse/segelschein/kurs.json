@@ -1631,6 +1631,23 @@
      ],
      "beispiel": "",
      "bild": "bootsteile",
+     "formeln": [
+      {
+       "bild": "formel-650c30b7",
+       "breite": 101,
+       "code": "L = T / sin α",
+       "erklaerung": {
+        "de": "Ein Anker hält nicht durch sein Gewicht, sondern weil sich die Flunke eingräbt -- und das tut sie nur, wenn der Zug am Schaft möglichst waagrecht ankommt. Damit ist es reine Geometrie: Die gesteckte Länge ist die Hypotenuse, die Tiefe die Gegenkathete des Zugwinkels. Bei gerade noch tragbaren 20° kommt `2,9 × T` heraus, auf der sicheren Seite bei 12° `4,8 × T` -- daher die Spanne **drei bis fünf**. Sie ist keine Konvention, sondern zwei Winkel in einer Sinusfunktion.",
+        "en": "An anchor does not hold by its weight but because the fluke digs in -- and it only does that if the pull on the shank arrives as horizontal as possible. So it is pure geometry: the scope is the hypotenuse, the depth the opposite side of the pull angle. At a just about tolerable 20° that gives `2.9 × T`, on the safe side at 12° `4.8 × T` -- hence the range **three to five**. It is not a convention but two angles in a sine."
+       },
+       "hoehe": 43,
+       "tex": "$L = \\frac{T}{\\sin\\alpha}$",
+       "untertitel": {
+        "de": "Wie viel Kette der Anker braucht",
+        "en": "How much chain the anchor needs"
+       }
+      }
+     ],
      "id": "b-teile",
      "text": {
       "de": "**Vorne ist der Bug, hinten das Heck.** In Fahrtrichtung gesehen ist links **Backbord** (rot) und rechts **Steuerbord** (grün). Diese beiden Wörter gelten immer vom Boot aus, nie vom Ufer — deshalb gibt es sie überhaupt.\n\nDie beiden wichtigsten Wörter im Segelsport sind aber **Luv** und **Lee**:\n\n**Luv** ist die Seite, von der der Wind kommt.\n**Lee** ist die Seite, zu der er weht.\n\nMerkhilfe: *Lee* wie *leer* — dorthin bläst der Wind alles hin. Das Segel steht immer in Lee, die Mannschaft sitzt beim Krängen in Luv.\n\nAm Rumpf: Das **Schwert** (oder der Kiel) wirkt gegen die seitliche Abdrift, das **Ruder** steuert. Ohne Fahrt durchs Wasser wirkt keines von beiden — ein stehendes Boot lässt sich nicht steuern.\n\nOben: Der **Mast** trägt die Segel, der **Baum** hält das Großsegel unten, die **Schot** ist die Leine, mit der man ein Segel dichtholt oder fiert. **Fallen** ziehen Segel nach oben, **Schoten** nach hinten — wer das verwechselt, sagt es in der Prüfung einmal und nie wieder.\n\n## Formelzeichen\n\n`T` Wassertiefe unter dem Bug, m — genauer: Tiefe plus Freibord, also der Hoehenunterschied zwischen Klampe und Grund. `L` gesteckte Laenge von Kette und Leine, m. `α` Zugwinkel am Ankerschaft gegen den Grund, Grad.\n\n## Herleitung: warum das Drei- bis Fuenffache der Wassertiefe\n\nEin Anker haelt nicht durch sein Gewicht, sondern weil sich seine Flunke in den Grund graebt. Eingraben tut sie sich nur, wenn der Zug am Schaft moeglichst **waagrecht** ankommt. Zieht die Kette schraeg nach oben, kippt der Anker aus und rutscht.\n\nDamit ist es reine Geometrie. Die gesteckte Laenge `L` ist die Hypotenuse des Dreiecks aus Klampe, Anker und dem Punkt senkrecht unter der Klampe; die Hoehe `T` ist die Gegenkathete des Zugwinkels `α`:\n\n    sin α = T / L      →      L = T / sin α\n\nJetzt setzt man ein, was der Anker noch vertraegt. Ein gerade noch tragbarer Zugwinkel von 20°:\n\n    L = T / sin 20° = T / 0,342 ≈ 2,9 × T\n\nund fuer die sichere Seite, rund 12°:\n\n    L = T / sin 12° = T / 0,208 ≈ 4,8 × T\n\nDaher die Spanne **drei bis fuenf**. Sie ist keine Konvention, sondern zwei Winkel in einer Sinusfunktion.\n\n**Warum Kette besser haelt als Leine.** Eine schwere Kette haengt in der Mitte durch. Dieser Bauch liegt tiefer als die gerade Verbindung, und dadurch kommt der Zug am Anker noch flacher an als die Rechnung oben annimmt — die wirksame Kettenlaenge ist also groesser als die geometrische. Leine hat dieses Gewicht nicht; deshalb steckt man bei Leine eher das Siebenfache.\n\n**Und warum mehr bei Wind.** Der Zug waechst mit dem Quadrat der Windgeschwindigkeit (siehe das Kapitel Wetter). Doppelter Wind heisst vierfacher Zug, der die Kette strafft, den Bauch herauszieht und den Winkel vergroessert. Genau dann braucht man die Laenge.",
@@ -2694,6 +2711,23 @@
      ],
      "beispiel": "",
      "bild": "kurse-zum-wind",
+     "formeln": [
+      {
+       "bild": "formel-97690cdc",
+       "breite": 96,
+       "code": "s = d / cos β",
+       "erklaerung": {
+        "de": "Von jedem gesegelten Meter kommt nur die Komponente in Windrichtung an, und das ist die Ankathete: `d = s · cos β`. Umgekehrt gelesen kostet ein Kurs von 45° zum Wind den Faktor `1/cos 45° = 1,41`. Der Faktor hängt **nur** am Kurs zum Wind, nicht an der Zahl der Schläge: Zwei lange Schläge sind genauso weit wie zwanzig kurze. Wer 40° fährt, zahlt 1,31, wer nur 50° schafft, 1,56 -- fünf Grad höher am Wind sparen mehr Weg, als die meisten glauben.",
+        "en": "Of every metre sailed only the component in the wind direction counts, and that is the adjacent side: `d = s · cos β`. Read the other way round, a course of 45° to the wind costs the factor `1/cos 45° = 1.41`. The factor depends **only** on the course to the wind, not on the number of tacks: two long legs are exactly as far as twenty short ones. Point 40° and you pay 1.31, manage only 50° and you pay 1.56 -- five degrees higher saves more distance than most people think."
+       },
+       "hoehe": 48,
+       "tex": "$s = \\frac{d}{\\cos\\beta}$",
+       "untertitel": {
+        "de": "Der Umweg beim Kreuzen",
+        "en": "The detour when beating to windward"
+       }
+      }
+     ],
      "id": "k-kurse",
      "text": {
       "de": "Ein Boot kann in fast jede Richtung segeln — nur nicht direkt gegen den Wind. Der Bereich von etwa **45 Grad zu beiden Seiten** der Windrichtung ist die **Sperrzone**; darin steht das Segel nur noch und killt.\n\nDie Kurse, von der Sperrzone weg gezählt:\n\n**Am Wind** — so dicht am Wind wie möglich, rund 45 Grad. Das Segel ist dichtgeholt, das Boot krängt am stärksten.\n\n**Halber Wind** — der Wind kommt quer von der Seite, 90 Grad. Der schnellste Kurs der meisten Boote.\n\n**Raumschots** — der Wind kommt schräg von hinten, rund 135 Grad. Das Segel ist weit aufgefiert.\n\n**Vor dem Wind** — der Wind genau von achtern. Ruhig, aber langsamer als es sich anfühlt, und wegen der drohenden **Patenthalse** der unangenehmste Kurs.\n\nWer ein Ziel in Luv erreichen will, muss **kreuzen**: abwechselnd auf beiden Seiten am Wind, im Zickzack. Der Weg wird dadurch etwa um die Hälfte länger als die Luftlinie.\n\nDie Grundregel fürs Trimmen gilt auf jedem Kurs: **Schot so weit aufmachen, bis das Segel vorne zu killen beginnt, dann wieder dichtnehmen, bis es gerade steht.**\n\n## Formelzeichen\n\n`s` tatsaechlich gesegelter Weg, km. `d` Weg in Windrichtung, den man gutmacht (Luftlinie), km. `β` Kurs zum Wind, Grad — wie hoch das Boot an den Wind geht.\n\n## Herleitung: woher der Faktor 1,4 beim Kreuzen kommt\n\nGegen den Wind geht nicht geradeaus. Ein Boot am Wind faehrt etwa `β = 45°` zur Windrichtung, also schraeg zu der Linie, die es eigentlich zuruecklegen will.\n\nVon jedem gesegelten Meter kommt nur die Komponente in Windrichtung an. Das ist die Ankathete im rechtwinkligen Dreieck:\n\n    d = s · cos β\n\nUmgekehrt gelesen — fuer einen gewuenschten Fortschritt `d` muss man segeln:\n\n    s = d / cos β = d / cos 45° = d / 0,707 = 1,41 · d\n\nAus 6 km Luftlinie werden also gut 8,5 km — **unabhaengig davon, wie oft man wendet.** Der Faktor haengt nur an β, nicht an der Zahl der Schlaege: Zwei lange Schlaege sind genauso weit wie zwanzig kurze. Die Wenden kosten nur zusaetzlich Fahrt, nicht Weg.\n\n**Wer hoeher kann, gewinnt doppelt.** Bei 40° Kurs zum Wind ist der Faktor 1/cos 40° = 1,31, bei 50° schon 1,56. Fuenf Grad hoeher am Wind sparen mehr Weg, als fuenf Grad mehr Fahrt einbringen.\n\n**Wo die Rechnung endet:** Sie unterstellt stillstehendes Wasser. Mit Strom kommt ein Vektor dazu, und dann ist der guenstigste Schlag nicht mehr der symmetrische.",
@@ -3626,6 +3660,7 @@
      ],
      "beispiel": "",
      "bild": "wende-halse",
+     "formeln": [],
      "id": "m-wende",
      "text": {
       "de": "Beide Manöver bringen das Boot von einem Bug auf den anderen — aber auf entgegengesetzten Wegen.\n\n**Wende**: Der **Bug** geht durch den Wind. Man kommt vom Am-Wind-Kurs über die Sperrzone auf die andere Seite. Das Boot wird dabei langsamer, das Segel schlägt kurz und geht dann kontrolliert herüber. Kommando: *„Klar zur Wende?\" — „Ree!\"*\n\n**Halse**: Das **Heck** geht durch den Wind. Man kommt von raumschots über Vor-dem-Wind auf die andere Seite. Dabei steht das Segel voll im Wind, bis es schlagartig auf die andere Seite durchschlägt. Kommando: *„Klar zur Halse?\" — „Rund achtern!\"*\n\nDie Halse ist das gefährlichere Manöver. Bei starkem Wind kann der Baum mit voller Wucht herüberschlagen — die **Patenthalse**, wenn es ungewollt passiert. Deshalb bei viel Wind: Baum mit der Schot kontrolliert einholen, herüberlassen, wieder auffieren. Und Köpfe einziehen.\n\nWenn eine Wende nicht durchkommt, hängt das Boot **im Wind** und treibt rückwärts. Dann Ruder umlegen und das Vorsegel back halten — also gegen den Wind stellen —, damit sich der Bug abdreht.",
@@ -4222,6 +4257,7 @@
      ],
      "beispiel": "",
      "bild": "",
+     "formeln": [],
      "id": "m-mob",
      "text": {
       "de": "Das wichtigste Manöver überhaupt, und das einzige, bei dem Sekunden zählen.\n\n**Die Reihenfolge:**\n\n**1. Rufen** — „Mann über Bord!\", damit alle es wissen.\n\n**2. Werfen** — sofort Rettungsmittel hinterher, auch wenn es daneben geht. Es markiert die Stelle.\n\n**3. Schauen** — eine Person tut nichts anderes mehr, als den Verunglückten anzusehen und zu zeigen. Im Wellengang ist ein Kopf nach zwanzig Sekunden nicht mehr zu finden.\n\n**4. Fahren** — zurückkommen und so aufstoppen, dass das Boot **in Luv** des Verunglückten liegt? Nein: **in Lee** halten, sodass das Boot nicht auf ihn zutreibt. Aufgenommen wird auf der Leeseite, mit killenden Segeln und ohne Fahrt.\n\nFür die Rückkehr gibt es mehrere Wege; für die Prüfung genügt der Grundsatz: **Man nähert sich immer so, dass man am Ende langsam und steuerbar ist.** Ein Boot, das mit Fahrt ankommt, verletzt den Menschen im Wasser.\n\nAuf Binnengewässern kommt hinzu: Motor an, wenn vorhanden — aber **Getriebe auf Leerlauf**, sobald jemand längsseits ist. Die Schraube ist die größte Gefahr beim Bergen.",
@@ -5153,6 +5189,7 @@
      ],
      "beispiel": "",
      "bild": "ausweichen",
+     "formeln": [],
      "id": "r-segel",
      "text": {
       "de": "Drei Regeln, in dieser Reihenfolge anzuwenden:\n\n**1. Verschiedene Bugseiten:** Das Boot mit dem Wind von **Backbord** weicht aus. Als Bug gilt die Seite, auf der der Wind einfällt — kommt er von Backbord, ist man auf Backbordbug.\n\nEselsbrücke: *Backbord ist rot, rot heißt anhalten.*\n\n**2. Gleiche Bugseite:** Das Boot in **Luv** weicht aus. Es hat den freien Wind und kann leichter reagieren; das Boot in Lee sitzt in seinem Windschatten und kann kaum.\n\n**3. Überholen:** Der **Überholende** weicht immer aus, auf welcher Seite auch immer. Wer überholt wird, hält Kurs und Geschwindigkeit.\n\nFür alle Regeln gilt der Grundsatz: **Wer ausweicht, tut es früh und deutlich.** Eine kleine Kursänderung in letzter Sekunde ist kein Ausweichen — der andere muss erkennen können, dass ausgewichen wird. Und: Das vorfahrtberechtigte Boot hält Kurs und Geschwindigkeit, damit man sich darauf verlassen kann.",
@@ -6069,6 +6106,7 @@
      ],
      "beispiel": "",
      "bild": "ausweichen",
+     "formeln": [],
      "id": "r-verkehr",
      "text": {
       "de": "Die Rangfolge richtet sich nach der **Manövrierfähigkeit**: Wer weniger ausweichen kann, hat Vorrang.\n\n**Grundsatz:** Maschinenfahrzeuge weichen Segelfahrzeugen aus.\n\n**Aber**, und das ist die Frage, die gern gestellt wird: Auf Binnengewässern und in engen Fahrwassern gilt das **nicht** gegenüber der **Berufsschifffahrt**. Ein Frachtschiff im Fahrwasser kann weder ausweichen noch anhalten — die Kleinfahrzeuge weichen aus, Segelboote eingeschlossen. Dasselbe gilt für Fahrgastschiffe und Fähren im Einsatz.\n\n**Nie behindert werden** dürfen außerdem Fahrzeuge, die erkennbar manövrierbehindert sind, und alles, was in einem engen Fahrwasser nur dort fahren kann.\n\n**Ein Segelboot unter Motor ist ein Maschinenfahrzeug** — auch wenn die Segel oben bleiben. Wer den Motor mitlaufen lässt und trotzdem Segelvorrang beansprucht, hat unrecht; tagsüber ist dafür ein schwarzer Kegel mit der Spitze nach unten zu führen.\n\nFür alle gilt zuletzt die wichtigste Regel überhaupt: **Von jeder Vorfahrt darf abgewichen werden, wenn nur so ein Zusammenstoß zu vermeiden ist.** Recht haben und Recht behalten sind auf dem Wasser zwei verschiedene Dinge.",
@@ -6968,6 +7006,7 @@
      ],
      "beispiel": "",
      "bild": "betonnung",
+     "formeln": [],
      "id": "z-tonnen",
      "text": {
       "de": "Die seitliche Betonnung kennzeichnet ein Fahrwasser. Entscheidend ist die **Blickrichtung**: Alle Angaben gelten **von See kommend**, also flussaufwärts beziehungsweise in Richtung Hafen.\n\n**Backbord** (links von See kommend): **rot**, Form **stumpf** (Zylinder oder Spitze oben flach), gerade Kennziffern.\n\n**Steuerbord** (rechts): **grün**, Form **spitz** (Kegel), ungerade Kennziffern.\n\nMerkhilfe für die Fahrt hinein: *rot backbord, grün steuerbord* — dieselbe Zuordnung wie bei den Positionslaternen. Wer heraus fährt, hat sie genau andersherum an der Seite, und dieser Wechsel ist die häufigste Prüfungsfalle.\n\nWeitere Zeichen, die man kennen muss:\n\n**Mittefahrwasser**: rot-weiß längsgestreift, Kugel oben — darf beidseitig passiert werden.\n\n**Einzelgefahr**: schwarz mit rotem Band, zwei schwarze Kugeln — weiträumig umfahren.\n\n**Kardinalzeichen** zeigen mit zwei schwarzen Kegeln, auf welcher Seite man sicher vorbeikommt: Spitzen nach oben heißt nördlich passieren, nach unten südlich, auseinander östlich, zusammen westlich.",
@@ -7788,6 +7827,7 @@
      ],
      "beispiel": "",
      "bild": "lichter",
+     "formeln": [],
      "id": "z-lichter",
      "text": {
       "de": "**Nachts** zeigt jedes Fahrzeug, was es ist und wohin es fährt.\n\n**Seitenlichter**: rot nach Backbord, grün nach Steuerbord, je 112,5 Grad. **Hecklicht**: weiß nach achtern, 135 Grad. Zusammen ergeben sie den Vollkreis.\n\n**Segelboot unter Segel**: nur Seitenlichter und Hecklicht — kein weißes Licht nach vorn.\n\n**Maschinenfahrzeug**: zusätzlich ein weißes **Topplicht** nach vorn. Wer also von vorn ein weißes Licht über den farbigen sieht, hat ein Fahrzeug unter Maschine vor sich.\n\n**Boote unter 7 m** ohne Maschine dürfen sich auf ein weißes Rundumlicht beschränken, das rechtzeitig gezeigt wird.\n\nWas man daraus liest: **Rot und grün zugleich** heißt, das Fahrzeug kommt genau entgegen. **Nur rot** heißt, es zieht von rechts nach links — man sieht seine Backbordseite. **Nur weiß** heißt meist, man sieht ein Heck und fährt hinterher.\n\n**Schallsignale** auf Binnengewässern, kurz und lang:\n\n**Ein kurzer Ton**: „Ich richte meinen Kurs nach Steuerbord.\"\n**Zwei kurze**: „… nach Backbord.\"\n**Drei kurze**: „Meine Maschine geht rückwärts.\"\n**Fünf kurze oder mehr**: Warnsignal — „Ich verstehe Ihre Absicht nicht\" beziehungsweise Gefahr.\n**Ein langer Ton**: Achtungssignal, etwa beim Verlassen einer Hafenausfahrt.",
@@ -8503,6 +8543,38 @@
      ],
      "beispiel": "",
      "bild": "",
+     "formeln": [
+      {
+       "bild": "formel-1f62854f",
+       "breite": 158,
+       "code": "F = q · A · c = ½ · ρ · v² · A · c",
+       "erklaerung": {
+        "de": "Je Sekunde trifft die Masse `ρ·A·v` auf die Fläche, jedes Kilogramm bringt `½v²` an Bewegungsenergie mit; Leistung durch Geschwindigkeit ist Kraft. Übrig bleibt der Staudruck `½ρv²`, mal Fläche, mal einer Formzahl. Entscheidend ist das Quadrat: **Doppelte Windgeschwindigkeit heißt vierfache Kraft.** Deshalb ist der Sprung von 4 auf 6 Beaufort keine Steigerung um die Hälfte, sondern gut das Vierfache an Druck im Tuch -- und deshalb reffen erfahrene Segler früher, als es sich anfühlt.",
+        "en": "Each second the mass `ρ·A·v` meets the area, and every kilogram brings `½v²` of kinetic energy; power divided by speed is force. What remains is the dynamic pressure `½ρv²`, times area, times a shape number. The square is what matters: **twice the wind speed means four times the force.** That is why the step from 4 to 6 Beaufort is not half as much again but a good four times the pressure in the cloth -- and why experienced sailors reef earlier than it feels necessary."
+       },
+       "hoehe": 42,
+       "tex": "$F = \\frac{1}{2}\\rho v^{2} A\\,c$",
+       "untertitel": {
+        "de": "Winddruck wächst mit dem Quadrat",
+        "en": "Wind force grows with the square"
+       }
+      },
+      {
+       "bild": "formel-9e585780",
+       "breite": 383,
+       "code": "1 kn = 1,852 km/h = 0,514 m/s",
+       "erklaerung": {
+        "de": "Die Seemeile ist keine willkürliche Länge, sondern eine **Bogenminute** auf dem Erdumfang: 40 007 km geteilt durch 360 × 60 Minuten ergibt 1,852 km. Deshalb entspricht auf der Seekarte ein Breitengradstrich von einer Minute genau einer Seemeile -- man misst Entfernungen am seitlichen Kartenrand, nie am oberen. Ein Knoten ist eine Seemeile je Stunde, also 1,852 / 3,6 = 0,514 m/s.",
+        "en": "The nautical mile is not an arbitrary length but a **minute of arc** on the circumference of the earth: 40,007 km divided by 360 × 60 minutes gives 1.852 km. That is why one minute of latitude on the chart is exactly one nautical mile -- distances are measured on the side margin of the chart, never on the top one. A knot is one nautical mile per hour, that is 1.852 / 3.6 = 0.514 m/s."
+       },
+       "hoehe": 35,
+       "tex": "$1\\,\\mathrm{kn} = 1{,}852\\,\\mathrm{km/h} \\approx 0{,}51\\,\\mathrm{m/s}$",
+       "untertitel": {
+        "de": "Warum eine Seemeile ausgerechnet 1852 m hat",
+        "en": "Why a nautical mile is 1852 m of all things"
+       }
+      }
+     ],
      "id": "w-wind",
      "text": {
       "de": "Windstärken werden in **Beaufort** angegeben, und die Skala ist nicht linear — jede Stufe bringt erheblich mehr Kraft, denn der Winddruck wächst mit dem **Quadrat** der Geschwindigkeit. Doppelte Windgeschwindigkeit heißt vierfache Kraft im Segel.\n\nDie Stufen, an denen für ein Segelboot etwas kippt:\n\n**3 Bft** (12–19 km/h): angenehmes Segeln, kleine Schaumköpfe.\n\n**4 Bft** (20–28 km/h): reffen wird bei kleinen Booten ein Thema, viele Schaumköpfe.\n\n**5 Bft** (29–38 km/h): für Jollen die Grenze, überall Schaumköpfe, etwas Gischt.\n\n**6 Bft** (39–49 km/h): Sturmwarnung auf Binnenseen, Jollen bleiben am Steg.\n\nAuf Binnengewässern gibt es **Windwarnungen** über Blinklichter am Ufer: **40 Blitze je Minute** heißt Starkwind (ab 6 Bft), **90 Blitze je Minute** heißt Sturm (ab 8 Bft). Bei Starkwindwarnung gehört ein kleines Boot in den Hafen, bei Sturmwarnung jedes.\n\nZwei örtliche Winde, die man kennen muss: Am Berg zieht tagsüber der **Talwind** hangaufwärts, nachts fällt der **Bergwind** herunter — auf Alpenseen der Grund, warum es vormittags flau ist und mittags kräftig weht.\n\n## Formelzeichen\n\n`ρ` Luftdichte, kg/m³; rund 1,225 in Meereshoehe. `v` Windgeschwindigkeit, m/s. `A` angestroemte Flaeche, m². `q` Staudruck, Pa. `F` Kraft auf das Segel, N. `c` Beiwert des Segels, dimensionslos.\n\n## Herleitung: der Staudruck\n\nLuft, die auf das Segel trifft und dort abgebremst wird, gibt ihre Bewegungsenergie ab. Je Sekunde trifft die Masse `ρ·A·v` auf die Flaeche `A`, und jedes Kilogramm bringt `½v²` an Energie mit. Leistung ist Energie je Zeit, Kraft ist Leistung durch Geschwindigkeit:\n\n    Leistung = (ρ·A·v) · ½v²\n    Kraft    = Leistung / v = ½·ρ·v²·A\n\nDruck ist Kraft durch Flaeche:\n\n    q = ½·ρ·v²\n\nDie Probe auf die Einheiten: kg/m³ · m²/s² = kg/(m·s²) = N/m² = Pa.\n\n## Und daraus: warum doppelter Wind vierfache Kraft bedeutet\n\nDie Kraft auf das Segel ist dieser Druck mal Flaeche mal einem Beiwert, der beschreibt, wie das Segel steht:\n\n    F = q · A · c = ½ · ρ · v² · A · c\n\nAlles darin ist fest ausser `v`. Also gilt schlicht\n\n    F ∝ v²\n\nVerdoppelt sich der Wind von 10 auf 20 Knoten, vervierfacht sich die Kraft. Verdreifacht er sich, ist es das Neunfache.\n\n**Deshalb ist die Beaufort-Skala nicht linear.** Sie zaehlt nicht Geschwindigkeit, sondern Wirkung. Der Sprung von 4 auf 5 Beaufort sind rund 5 auf 8 m/s — also Faktor 1,6 in der Geschwindigkeit, aber **2,6 in der Kraft**. Fuer eine Jolle ist das der Unterschied zwischen einem schoenen Tag und einem, der reffen verlangt.\n\n## Die Umrechnungen, und woher sie kommen\n\n**m/s in km/h:** Eine Stunde hat 3600 Sekunden, ein Kilometer 1000 Meter. Also\n\n    km/h = m/s × 3600/1000 = m/s × 3,6\n\n**Knoten:** Ein Knoten ist eine Seemeile je Stunde, und die Seemeile ist eine Bogenminute auf einem Grosskreis der Erde. Der Erdumfang betraegt rund 40 007 km, ein Grosskreis hat 360 Grad zu je 60 Minuten:\n\n    1 sm = 40 007 / (360 × 60) = 1,852 km\n    1 kn = 1,852 km/h = 1,852 / 3,6 = 0,514 m/s\n\nIm Kopf: **Knoten halbieren gibt ungefaehr m/s** (0,5 statt 0,514, also 3 % zu wenig).",
@@ -9277,6 +9349,23 @@
      ],
      "beispiel": "",
      "bild": "",
+     "formeln": [
+      {
+       "bild": "formel-798d4fb7",
+       "breite": 199,
+       "code": "d [km] ≈ t [s] / 3",
+       "erklaerung": {
+        "de": "Das Licht ist praktisch sofort da, der Schall braucht 343 m/s -- für einen Kilometer also rund 2,9 Sekunden. Zählt man die Sekunden zwischen Blitz und Donner und teilt durch drei, steht die Entfernung in Kilometern da. **Wo es eng wird:** unter 15 Sekunden ist die Zelle keine fünf Kilometer entfernt, und ein Blitz kann aus dem Amboss auch weit vor der Regenwand einschlagen. Dann gehört das Boot an Land, nicht auf den See.",
+        "en": "The light is there practically at once, the sound needs 343 m/s -- about 2.9 seconds for a kilometre. Count the seconds between flash and thunder and divide by three and the distance stands there in kilometres. **Where it gets tight:** under 15 seconds the cell is less than five kilometres away, and lightning can strike from the anvil well ahead of the rain. Then the boat belongs ashore, not on the lake."
+       },
+       "hoehe": 35,
+       "tex": "$d\\,[\\mathrm{km}] \\approx t\\,[\\mathrm{s}]\\,/\\,3$",
+       "untertitel": {
+        "de": "Wie weit das Gewitter weg ist",
+        "en": "How far away the thunderstorm is"
+       }
+      }
+     ],
      "id": "w-gewitter",
      "text": {
       "de": "**Gewitter** sind auf Binnenseen die größte Gefahr. Vor der Regenwand läuft eine **Böenwalze** mit Windgeschwindigkeiten, die das Dreifache des vorherigen Windes erreichen können — und sie kommt bei noch blauem Himmel.\n\n**Anzeichen**, in dieser Reihenfolge:\n\nAufquellende Haufenwolken mit dunkler, breiter Basis; eine **faserige** Oberseite, die verrät, dass die Wolke oben vereist ist; eine dunkle Wolkenwalze an der Unterkante; plötzliche Stille und Temperatursturz.\n\n**Was zu tun ist:** Früh entscheiden und **sofort** den nächsten Hafen ansteuern — nicht den Heimathafen. Segel bergen oder stark reffen, Rettungswesten anlegen, Mannschaft in die Plicht, Luken schließen. Ist das Gewitter da, unter Motor mit dem Bug gegen die Böen halten.\n\n**Ausrüstung**, nach der gefragt wird: Rettungswesten für alle an Bord (und getragen, nicht verstaut), Rettungsring oder -hufeisen, Paddel oder Riemen, Festmacher und Anker mit ausreichender Kette, Lenzeinrichtung, Feuerlöscher bei Motor, Signalmittel, Verbandszeug.\n\nDas **Notsignal** auf Binnengewässern: wiederholtes langsames Heben und Senken der seitlich ausgestreckten Arme. Dazu zählen auch rote Sterne, Rauch, ein Dauerschallsignal und die Nationalflagge mit einem Knoten darüber.\n\n## Formelzeichen\n\n`c` Schallgeschwindigkeit, m/s; rund 343 bei 20 °C. `t` gezaehlte Zeit zwischen Blitz und Donner, s. `d` Entfernung, km.\n\n## Herleitung: warum Sekunden durch drei\n\nDas Licht des Blitzes ist praktisch sofort da — 300 000 km in der Sekunde, also fuer jede denkbare Entfernung unter einer Millisekunde. Der Donner ist Schall und braucht seine Zeit. Weg ist Geschwindigkeit mal Zeit:\n\n    d = c · t\n\nFuer einen Kilometer braucht der Schall also\n\n    t = 1000 m ÷ 343 m/s ≈ 2,9 s\n\naufgerundet **drei Sekunden je Kilometer**. Umgestellt:\n\n    d [km] ≈ t [s] / 3\n\nNeun Sekunden sind drei Kilometer.\n\n**Warum 343 und nicht etwas anderes.** Die Schallgeschwindigkeit in Luft haengt nur von der Temperatur ab, nicht vom Druck: rund 331 + 0,6 · T[°C] m/s. Bei 0 °C sind es 331, bei 20 °C 343, bei 30 °C 349. Fuer die Faustregel ist der Unterschied belanglos.\n\n**Was die Zahl wert ist.** Sie sagt, wo der Blitz war, nicht wo der naechste sein wird. Eine Gewitterzelle zieht mit 30 bis 60 km/h; in den drei Minuten, die man zum Nachdenken braucht, kommt sie zwei Kilometer naeher. Und der Winddruck der Boe waechst mit dem Quadrat der Geschwindigkeit: Aus 4 Beaufort werden binnen Minuten 8, das ist **viermal** so viel Kraft im Segel.\n\nDeshalb ist die praktische Regel nicht „ab drei Kilometern wird es eng“, sondern: Wer das Gewitter zaehlen kann, haette schon am Ufer sein sollen.",
@@ -10048,6 +10137,7 @@
      ],
      "beispiel": "",
      "bild": "",
+     "formeln": [],
      "id": "u-recht",
      "text": {
       "de": "Der **Schiffsführer** ist für Boot und Besatzung verantwortlich — auch dann, wenn ein anderer am Ruder sitzt. Diese Verantwortung lässt sich nicht delegieren.\n\nVor jeder Fahrt gehört geprüft: Zustand von Rumpf, Rigg und Beschlägen, Vollständigkeit der Sicherheitsausrüstung, Wetterbericht, und ob die Besatzung der Lage gewachsen ist.\n\n**Alkohol**: Für Schiffsführer gelten Grenzen wie im Straßenverkehr; in Österreich 0,8 Promille, für Berufsschiffer weniger. Unabhängig davon macht schon wenig Alkohol zusammen mit Sonne, Wind und Schaukeln deutlich mehr als an Land.\n\n**Umwelt**: Kein Abfall und kein Öl ins Wasser, kein Waschen mit Spülmittel über Bord, Toiletten nur über Sammeltank. **Schilfgürtel und Flachwasserzonen** sind Kinderstube für Fische und Vögel — Abstand halten, nicht hineinfahren, nicht ankern. Viele Seen haben dafür ausgewiesene Schutzzonen mit Bojenketten.\n\n**Rücksicht** gehört dazu: Keine Welle in Badebereiche, Abstand zu Schwimmern, Motor aus in Ufernähe, und in Naturschutzgebieten langsam und leise.",

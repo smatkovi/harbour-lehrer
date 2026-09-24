@@ -303,6 +303,8 @@ QVariantMap Course::lesson() const
         QVariantMap eintrag = value.toMap();
         eintrag.insert(QLatin1String("untertitel"),
                        m_course->text(eintrag.value(QLatin1String("untertitel"))));
+        eintrag.insert(QLatin1String("erklaerung"),
+                       m_course->text(eintrag.value(QLatin1String("erklaerung"))));
         formeln.append(eintrag);
     }
     out.insert(QLatin1String("formeln"), formeln);
