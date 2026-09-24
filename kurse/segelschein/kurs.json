@@ -1644,6 +1644,7 @@
         "en": "An anchor does not hold by its weight but because the fluke digs in -- and it only does that if the pull on the shank arrives as horizontal as possible. So it is pure geometry: the scope is the hypotenuse, the depth the opposite side of the pull angle. At a just about tolerable 20° that gives `2.9 × T`, on the safe side at 12° `4.8 × T` -- hence the range **three to five**. It is not a convention but two angles in a sine."
        },
        "hoehe": 43,
+       "skizze": "skizze-anker",
        "tex": "$L = \\frac{T}{\\sin\\alpha}$",
        "untertitel": {
         "de": "Wie viel Kette der Anker braucht",
@@ -2728,6 +2729,7 @@
         "en": "Of every metre sailed only the component in the wind direction counts, and that is the adjacent side: `d = s · cos β`. Read the other way round, a course of 45° to the wind costs the factor `1/cos 45° = 1.41`. The factor depends **only** on the course to the wind, not on the number of tacks: two long legs are exactly as far as twenty short ones. Point 40° and you pay 1.31, manage only 50° and you pay 1.56 -- five degrees higher saves more distance than most people think."
        },
        "hoehe": 48,
+       "skizze": "skizze-kreuzen",
        "tex": "$s = \\frac{d}{\\cos\\beta}$",
        "untertitel": {
         "de": "Der Umweg beim Kreuzen",
@@ -8564,6 +8566,7 @@
         "en": "Each second the mass `ρ·A·v` meets the area, and every kilogram brings `½v²` of kinetic energy; power divided by speed is force. What remains is the dynamic pressure `½ρv²`, times area, times a shape number. The square is what matters: **twice the wind speed means four times the force.** That is why the step from 4 to 6 Beaufort is not half as much again but a good four times the pressure in the cloth -- and why experienced sailors reef earlier than it feels necessary."
        },
        "hoehe": 42,
+       "skizze": "skizze-staudruck",
        "tex": "$F = \\frac{1}{2}\\rho v^{2} A\\,c$",
        "untertitel": {
         "de": "Winddruck wächst mit dem Quadrat",
@@ -8583,6 +8586,7 @@
         "en": "The nautical mile is not an arbitrary length but a **minute of arc** on the circumference of the earth: 40,007 km divided by 360 × 60 minutes gives 1.852 km. That is why one minute of latitude on the chart is exactly one nautical mile -- distances are measured on the side margin of the chart, never on the top one. A knot is one nautical mile per hour, that is 1.852 / 3.6 = 0.514 m/s."
        },
        "hoehe": 35,
+       "skizze": "",
        "tex": "$1\\,\\mathrm{kn} = 1{,}852\\,\\mathrm{km/h} \\approx 0{,}51\\,\\mathrm{m/s}$",
        "untertitel": {
         "de": "Warum eine Seemeile ausgerechnet 1852 m hat",
@@ -9378,6 +9382,7 @@
         "en": "The light is there practically at once, the sound needs 343 m/s -- about 2.9 seconds for a kilometre. Count the seconds between flash and thunder and divide by three and the distance stands there in kilometres. **Where it gets tight:** under 15 seconds the cell is less than five kilometres away, and lightning can strike from the anvil well ahead of the rain. Then the boat belongs ashore, not on the lake."
        },
        "hoehe": 35,
+       "skizze": "skizze-donner",
        "tex": "$d\\,[\\mathrm{km}] \\approx t\\,[\\mathrm{s}]\\,/\\,3$",
        "untertitel": {
         "de": "Wie weit das Gewitter weg ist",

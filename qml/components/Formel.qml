@@ -85,6 +85,13 @@ Rectangle {
             color: Theme.secondaryHighlightColor
         }
 
+        // Die Skizze zur Herleitung, wenn es eine gibt.
+        Bild {
+            width: parent.width
+            name: rahmen.formel === undefined || rahmen.formel.skizze === undefined
+                  ? "" : rahmen.formel.skizze
+        }
+
         // Was die Zeichen bedeuten -- der Kasten steht fuer sich.
         Label {
             width: parent.width

@@ -846,6 +846,7 @@
         "en": "Dry air cools by about 1 °C per 100 m as it rises, while the dew point falls by only some 0.2 °C per 100 m. The spread therefore closes at 0.8 °C per 100 m, and 100 ÷ 0.8 gives the 125 m per degree. **Where it breaks:** it assumes a parcel rising from the ground with nothing mixing in on the way. Under an inversion, with moist air advected in, or over water, it does not hold."
        },
        "hoehe": 39,
+       "skizze": "skizze-wolkenbasis",
        "tex": "$h \\approx (T - T_d)\\cdot 125\\,\\frac{\\mathrm{m}}{\\mathrm{K}}$",
        "untertitel": {
         "de": "Die Basis aus Temperatur und Taupunkt",
@@ -1639,6 +1640,7 @@
         "en": "In steady gliding flight the forces balance: along the path `G·sin γ = D`, across it `G·cos γ = L`. Dividing gives `tan γ = D/L`, and distance over height is `1/tan γ`, that is `L/D`. Because the triangle of forward and sinking speed has the same angle, the same number is also `v/w` -- which is why the glide ratio is read off the polar and no force has to be measured. **Holds for still air:** in rising or sinking air what counts is the movement over the ground, not through the air."
        },
        "hoehe": 43,
+       "skizze": "skizze-gleitflug",
        "tex": "$E = \\frac{L}{D} = \\frac{v}{w}$",
        "untertitel": {
         "de": "Gleitzahl: dieselbe Zahl aus Kräften und aus Geschwindigkeiten",
@@ -1777,6 +1779,7 @@
         "en": "Each second the mass `ρ·A·v` arrives at the area `A`, and every kilogram of it brings `½v²` of kinetic energy. Power divided by speed is force, force divided by area is pressure -- what remains is `½ρv²`. The unit check: kg/m³ · m²/s² = N/m² = Pa. The square is what matters: twice the speed, four times the force."
        },
        "hoehe": 42,
+       "skizze": "",
        "tex": "$q = \\frac{1}{2}\\rho v^{2}$",
        "untertitel": {
         "de": "Der Staudruck steckt in jeder Luftkraft",
@@ -1796,6 +1799,7 @@
         "en": "In a steady turn the vertical component of the lift must still carry the whole weight: `L·cos φ = G`, so `L = G / cos φ`. At 45° of bank that is 1.41 G, at 60° already 2 G. The load factor depends **only** on the bank angle -- not on the radius, not on the speed and not on the weight."
        },
        "hoehe": 42,
+       "skizze": "skizze-kurvenlast",
        "tex": "$n = \\frac{1}{\\cos\\varphi}$",
        "untertitel": {
         "de": "Lastvielfaches in der Kurve",
@@ -1815,6 +1819,7 @@
         "en": "Lift grows with `v²`, so n times the weight needs √n times the speed. At 60° of bank n = 2 and the stalling speed is 1.41 times as high. That is why tight and slow is the dangerous combination, and why the airspeed indicator never sits at its lower limit in the circuit."
        },
        "hoehe": 49,
+       "skizze": "",
        "tex": "$v_{S,\\varphi} = v_S\\sqrt{n} = \\frac{v_S}{\\sqrt{\\cos\\varphi}}$",
        "untertitel": {
         "de": "Überziehgeschwindigkeit in der Kurve",
@@ -1921,6 +1926,7 @@
         "en": "A moment is force times lever arm. The centre of gravity is the point at which all masses taken together produce the same moment as they do separately: `(Σm)·x_S = Σ(m·x)`. A heavy pilot pulls it far forward, water ballast in the wing hardly at all -- it sits close to the centre of gravity. **Why there are two limits:** too far forward means hard to flare, too far aft means impossible to recover."
        },
        "hoehe": 73,
+       "skizze": "skizze-schwerpunkt",
        "tex": "$x_S = \\frac{\\sum m_i x_i}{\\sum m_i}$",
        "untertitel": {
         "de": "Der Schwerpunkt ist ein gewogener Mittelwert",
@@ -2027,6 +2033,7 @@
         "en": "You lift off when the lift reaches the weight: `½ρv²·S·c_A = G`. Solved for `v` this says `v ∝ 1/√ρ`. On a hot day at 1000 m the density is some 10 % lower, so the **true** speed is about 5 % higher -- and because the distance goes with `v²`, the take-off run grows by a good 10 %. The airspeed indicator shows none of this: it measures the same dynamic pressure and thus the same indicated number."
        },
        "hoehe": 61,
+       "skizze": "",
        "tex": "$v = \\sqrt{\\frac{2G}{\\rho\\,S\\,c_A}}$",
        "untertitel": {
         "de": "Abhebegeschwindigkeit, und warum sie mit der Höhe steigt",
@@ -2233,6 +2240,7 @@
         "en": "A column of air presses with `ρ·g·h`. One hectopascal is 100 Pa; divided by 1.225 kg/m³ × 9.81 m/s² that gives 8.3 m. This holds **near the ground**: higher up the air is thinner and the same hectopascal corresponds to a greater height. An altimeter set 10 hPa wrong reads 83 m wrong down low -- more up high, and always in the unpleasant direction if the pressure has fallen on the way."
        },
        "hoehe": 47,
+       "skizze": "skizze-luftsaeule",
        "tex": "$\\Delta h = \\frac{\\Delta p}{\\rho\\,g} \\approx 8{,}3\\ \\mathrm{m/hPa}$",
        "untertitel": {
         "de": "Warum ein Hektopascal acht Meter sind",
@@ -2325,6 +2333,7 @@
         "en": "For small angles `sin α ≈ α` in radians, and one radian is 57.3°. So crosswind component divided by airspeed, times 57.3 -- in practice times 60, which can be done in the head and is only 5 % off. Good up to about 20°; beyond that the sine becomes noticeably smaller than the angle and the rule of thumb under-corrects."
        },
        "hoehe": 40,
+       "skizze": "skizze-vorhalt",
        "tex": "$\\alpha \\approx \\frac{v_q}{v}\\cdot 57{,}3^{\\circ}$",
        "untertitel": {
         "de": "Vorhaltewinkel gegen den Querwind",

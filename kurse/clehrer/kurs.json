@@ -1304,6 +1304,7 @@
         "en": "On the right stands the old `v`, not the new one. That is what **explicit** means: everything on the right-hand side is the state from the start of the step. Put the new `v` in here and you have programmed a different method -- a better one, in fact, but not Euler."
        },
        "hoehe": 33,
+       "skizze": "skizze-eulerschritt",
        "tex": "$x_{n+1} = x_n + v_n\\,\\Delta t$",
        "untertitel": {
         "de": "Ort, aus dem alten Zustand",
@@ -1323,6 +1324,7 @@
         "en": "The whole step is computed with the acceleration from the **start**. With a spring it points towards the rest position and is too small for the arc the point actually travels. Every step sets it down a little too far out, and that accumulates instead of averaging out."
        },
        "hoehe": 33,
+       "skizze": "",
        "tex": "$v_{n+1} = v_n + a_n\\,\\Delta t$",
        "untertitel": {
         "de": "Geschwindigkeit, ebenfalls aus dem alten",
@@ -1342,6 +1344,7 @@
         "en": "`½v²` is the kinetic energy (with m = 1). `½x²` is the strain energy of the spring: the spring force grows linearly with the displacement, `F = k·x`, so it is zero at the start and only `k·x` at the end -- on average `½k·x`. Work is average force times distance, hence `½k·x²`, the area of the triangle under the line `F(x)`. With k = 1, `½x²` remains. The check that it is the right quantity: `dE/dt = v·v̇ + x·ẋ = v·(−x) + x·v = 0`."
        },
        "hoehe": 42,
+       "skizze": "skizze-feder",
        "tex": "$E = \\frac{1}{2}v^{2} + \\frac{1}{2}x^{2}$",
        "untertitel": {
         "de": "Die Energie, die gleich bleiben sollte",
@@ -1423,6 +1426,7 @@
         "en": "That is one term more of the Taylor series than Euler takes, and it is exactly the distance a constant acceleration covers in the time `dt`: `s = ½a·t²`. That is why the position is second-order accurate here, and why Verlet needs no `xn` as an intermediate -- `x` is finished before `a` changes."
        },
        "hoehe": 42,
+       "skizze": "",
        "tex": "$x_{n+1} = x_n + v_n\\,\\Delta t + \\frac{1}{2}a_n\\,\\Delta t^{2}$",
        "untertitel": {
         "de": "Der Ort bekommt das halbe Beschleunigungsglied",
@@ -1442,6 +1446,7 @@
         "en": "Instead of the acceleration at the start (Euler) the mean of start and end is taken -- the trapezoid rule instead of the rectangle. That is the whole difference, and it suffices: the energy error no longer grows, it only swings about a fixed value."
        },
        "hoehe": 45,
+       "skizze": "",
        "tex": "$v_{n+1} = v_n + \\frac{a_n + a_{n+1}}{2}\\,\\Delta t$",
        "untertitel": {
         "de": "Die Geschwindigkeit mittelt alte und neue Beschleunigung",
@@ -1604,6 +1609,7 @@
         "en": "`double` has 53 bits of mantissa, that is barely 16 decimal digits. At the order of 10¹⁶ the distance between two neighbouring representable numbers is already 2 -- adding 1 reaches no new number at all. The result is not rounded, it is unchanged. That is why long series are summed starting from the smallest term."
        },
        "hoehe": 33,
+       "skizze": "",
        "tex": "$10^{16} + 1 = 10^{16}$",
        "untertitel": {
         "de": "Was double hier wirklich rechnet",
@@ -1859,6 +1865,7 @@
         "en": "The bracket is the **second derivative** in difference form: add the Taylor series of the left and the right neighbour and the first derivatives cancel, leaving `u₋ − 2u₀ + u₊ ≈ h²·u''`. So it measures the curvature: if a point lies below the mean of its neighbours, it rises. That is exactly what heat does."
        },
        "hoehe": 40,
+       "skizze": "skizze-stern",
        "tex": "$u_i^{\\,n+1} = u_i^{\\,n} + r\\,\\left(u_{i-1}^{\\,n} - 2u_i^{\\,n} + u_{i+1}^{\\,n}\\right)$",
        "untertitel": {
         "de": "Ein Zeitschritt der Diffusion",
@@ -1940,6 +1947,7 @@
         "en": "Put a single wave into the stencil and it is multiplied by `g = 1 − 4r·sin²(kh/2)` at every step. The worst case is the shortest wave, jumping from cell to cell: there `g = 1 − 4r`, and `|g| ≤ 1` demands `r ≤ ½`. Above that the zigzag doubles with every step. Halving `h` therefore means quartering `dt`."
        },
        "hoehe": 48,
+       "skizze": "",
        "tex": "$r = \\frac{D\\,\\Delta t}{\\Delta x^{2}} \\leq \\frac{1}{2}$",
        "untertitel": {
         "de": "Was r bedeutet, und wo es aufhört zu gehen",
@@ -2430,6 +2438,7 @@
         "en": "The information arrives with the flow, so from the left when `v > 0` -- and that is exactly where the step takes its value from. The method looks to where the physics comes from. It is only first order and smears the edge, but it never invents values that were never there."
        },
        "hoehe": 39,
+       "skizze": "",
        "tex": "$a_i^{\\,n+1} = a_i^{\\,n} - C\\,\\left(a_i^{\\,n} - a_{i-1}^{\\,n}\\right)$",
        "untertitel": {
         "de": "Stromaufwärts: die Zelle, aus der es kommt",
@@ -2449,6 +2458,7 @@
         "en": "The central difference quotient is more accurate (second order), but the cell's own value `z_i` does not appear in the derivative at all -- there is nothing holding it. The zigzag wave is amplified instead of damped, and the result swings before it explodes. Accuracy and stability are two different things."
        },
        "hoehe": 43,
+       "skizze": "",
        "tex": "$z_i^{\\,n+1} = z_i^{\\,n} - \\frac{C}{2}\\left(z_{i+1}^{\\,n} - z_{i-1}^{\\,n}\\right)$",
        "untertitel": {
         "de": "Zentral: beide Nachbarn, und deshalb instabil",
