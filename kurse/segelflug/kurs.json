@@ -850,6 +850,10 @@
        "untertitel": {
         "de": "Die Basis aus Temperatur und Taupunkt",
         "en": "Cloud base from temperature and dew point"
+       },
+       "zeichen": {
+        "de": "`T` Lufttemperatur am Boden, °C. `T_d` Taupunkt, °C. Die **Spreizung** ist `T − T_d`, in Grad. `h` Basis über Grund, m.",
+        "en": "`T` air temperature at the ground, °C. `T_d` dew point, °C. The **spread** is `T − T_d`, in degrees. `h` cloud base above ground, m."
        }
       }
      ],
@@ -1639,6 +1643,10 @@
        "untertitel": {
         "de": "Gleitzahl: dieselbe Zahl aus Kräften und aus Geschwindigkeiten",
         "en": "Glide ratio: the same number from forces and from speeds"
+       },
+       "zeichen": {
+        "de": "`E` Gleitzahl, dimensionslos. `L` Auftrieb, N. `D` Widerstand, N. `v` Fahrt durch die Luft, m/s. `w` Sinkgeschwindigkeit, m/s. `γ` Gleitwinkel, Grad. `G` Gewicht, N.",
+        "en": "`E` glide ratio, dimensionless. `L` lift, N. `D` drag, N. `v` airspeed, m/s. `w` sink rate, m/s. `γ` glide angle, degrees. `G` weight, N."
        }
       }
      ],
@@ -1773,6 +1781,10 @@
        "untertitel": {
         "de": "Der Staudruck steckt in jeder Luftkraft",
         "en": "Dynamic pressure is in every aerodynamic force"
+       },
+       "zeichen": {
+        "de": "`q` Staudruck, Pa. `ρ` Luftdichte, kg/m³ (1,225 in Meereshöhe). `v` Anströmgeschwindigkeit, m/s. `A` angeströmte Fläche, m².",
+        "en": "`q` dynamic pressure, Pa. `ρ` air density, kg/m³ (1.225 at sea level). `v` airspeed, m/s. `A` frontal area, m²."
        }
       },
       {
@@ -1788,6 +1800,10 @@
        "untertitel": {
         "de": "Lastvielfaches in der Kurve",
         "en": "Load factor in a turn"
+       },
+       "zeichen": {
+        "de": "`n` Lastvielfaches, dimensionslos. `φ` Querlage, Grad. `L` Auftrieb, N. `G` Gewicht, N.",
+        "en": "`n` load factor, dimensionless. `φ` bank angle, degrees. `L` lift, N. `G` weight, N."
        }
       },
       {
@@ -1803,6 +1819,10 @@
        "untertitel": {
         "de": "Überziehgeschwindigkeit in der Kurve",
         "en": "Stalling speed in a turn"
+       },
+       "zeichen": {
+        "de": "`v_S` Überziehgeschwindigkeit im Geradeausflug, `v_(S,φ)` dieselbe bei der Querlage `φ`, beide km/h. `n` Lastvielfaches, dimensionslos.",
+        "en": "`v_S` stalling speed in straight flight, `v_(S,φ)` the same at bank angle `φ`, both km/h. `n` load factor, dimensionless."
        }
       }
      ],
@@ -1905,6 +1925,10 @@
        "untertitel": {
         "de": "Der Schwerpunkt ist ein gewogener Mittelwert",
         "en": "The centre of gravity is a weighted mean"
+       },
+       "zeichen": {
+        "de": "`x_S` Lage des Schwerpunkts ab Bezugspunkt, m. `m_i` Einzelmassen, kg. `x_i` ihre Hebelarme ab demselben Bezugspunkt, m.",
+        "en": "`x_S` position of the centre of gravity from the datum, m. `m_i` the individual masses, kg. `x_i` their lever arms from the same datum, m."
        }
       }
      ],
@@ -2007,6 +2031,10 @@
        "untertitel": {
         "de": "Abhebegeschwindigkeit, und warum sie mit der Höhe steigt",
         "en": "Lift-off speed, and why it rises with altitude"
+       },
+       "zeichen": {
+        "de": "`v` wahre Geschwindigkeit, m/s. `G` Gewicht, N. `ρ` Luftdichte, kg/m³. `S` Flügelfläche, m². `c_A` Auftriebsbeiwert beim Abheben, dimensionslos.",
+        "en": "`v` true airspeed, m/s. `G` weight, N. `ρ` air density, kg/m³. `S` wing area, m². `c_A` lift coefficient at lift-off, dimensionless."
        }
       }
      ],
@@ -2209,6 +2237,10 @@
        "untertitel": {
         "de": "Warum ein Hektopascal acht Meter sind",
         "en": "Why one hectopascal is eight metres"
+       },
+       "zeichen": {
+        "de": "`Δh` Höhenunterschied, m. `Δp` Druckunterschied, Pa; 1 hPa = 100 Pa. `ρ` Luftdichte, kg/m³. `g` Fallbeschleunigung, 9,81 m/s².",
+        "en": "`Δh` difference in height, m. `Δp` difference in pressure, Pa; 1 hPa = 100 Pa. `ρ` air density, kg/m³. `g` gravitational acceleration, 9.81 m/s²."
        }
       }
      ],
@@ -2297,6 +2329,10 @@
        "untertitel": {
         "de": "Vorhaltewinkel gegen den Querwind",
         "en": "Drift correction angle for a crosswind"
+       },
+       "zeichen": {
+        "de": "`α` Vorhaltewinkel, Grad. `v_q` Querwindanteil, km/h. `v` Eigengeschwindigkeit, km/h.",
+        "en": "`α` drift correction angle, degrees. `v_q` crosswind component, km/h. `v` airspeed, km/h."
        }
       }
      ],

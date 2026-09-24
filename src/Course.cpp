@@ -305,6 +305,8 @@ QVariantMap Course::lesson() const
                        m_course->text(eintrag.value(QLatin1String("untertitel"))));
         eintrag.insert(QLatin1String("erklaerung"),
                        m_course->text(eintrag.value(QLatin1String("erklaerung"))));
+        eintrag.insert(QLatin1String("zeichen"),
+                       m_course->text(eintrag.value(QLatin1String("zeichen"))));
         formeln.append(eintrag);
     }
     out.insert(QLatin1String("formeln"), formeln);

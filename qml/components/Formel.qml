@@ -85,6 +85,18 @@ Rectangle {
             color: Theme.secondaryHighlightColor
         }
 
+        // Was die Zeichen bedeuten -- der Kasten steht fuer sich.
+        Label {
+            width: parent.width
+            visible: text !== ""
+            text: rahmen.formel === undefined
+                  ? "" : Stil.reich(rahmen.formel.zeichen || "")
+            textFormat: Text.RichText
+            wrapMode: Text.WordWrap
+            font.pixelSize: Theme.fontSizeExtraSmall
+            color: Theme.secondaryHighlightColor
+        }
+
         // Warum das dasteht -- woher der Faktor kommt und wo er aufhoert zu
         // gelten. Die Zeile darueber sagt nur, was es ist.
         Label {
