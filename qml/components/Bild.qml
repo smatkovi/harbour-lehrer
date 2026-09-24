@@ -26,10 +26,20 @@ Rectangle {
     radius: Theme.paddingSmall
     clip: true
 
+    // Zeichnungen tragen ihre Beschriftung im Bild -- in der englischen
+    // Fassung muss also ein anderes Bild her.  Es heisst <name>.en.png und
+    // liegt neben dem deutschen; gibt es keines, bleibt das deutsche stehen.
     Image {
         anchors.fill: parent
         anchors.margins: 1
-        source: rahmen.name === "" ? "" : bilderPfad + rahmen.name + ".png"
+        property bool zurueckgefallen: false
+        source: rahmen.name === "" ? ""
+                : bilderPfad + rahmen.name
+                  + (course.language !== "de" && !zurueckgefallen
+                     ? "." + course.language : "") + ".png"
+        onStatusChanged: if (status === Image.Error && !zurueckgefallen)
+                             zurueckgefallen = true
+        onSourceChanged: if (course.language === "de") zurueckgefallen = false
         fillMode: Image.PreserveAspectFit
         smooth: true
         asynchronous: true

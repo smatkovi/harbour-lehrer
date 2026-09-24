@@ -29,6 +29,13 @@ public:
     void load();
     void save() const;
 
+    // Die gewaehlte Sprache gehoert zum Fortschritt: wer auf Englisch
+    // umstellt, will beim naechsten Start nicht wieder Deutsch sehen.
+    QString savedLanguage() const
+    { return m_data.value(QLatin1String("sprache")).toString(); }
+    void rememberLanguage(const QString &code)
+    { m_data.insert(QLatin1String("sprache"), code); save(); }
+
     int level() const;
     bool needsPlacement() const { return level() <= 0; }
 

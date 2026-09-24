@@ -41,6 +41,7 @@ void Course::setLanguage(const QString &code)
     if (code == m_course->language())
         return;
     m_course->setLanguage(code);
+    m_engine.rememberLanguage(code);
     emit changed();
     emit lessonChanged();
     emit placementChanged();
@@ -54,6 +55,11 @@ Course::Course(Curriculum *course, Plotter *plotter, QObject *parent)
     , m_engine(course)
 {
     m_engine.load();
+    // Die Sprache aus dem Fortschritt zurueckholen - sonst faengt jeder Start
+    // wieder auf Deutsch an, auch wenn der Leser umgestellt hat.
+    const QString gemerkt = m_engine.savedLanguage();
+    if (!gemerkt.isEmpty() && m_course->languages().contains(gemerkt))
+        m_course->setLanguage(gemerkt);
 
     // Beside the app binary, both in <root>/bin.
     const QString binDir = QFileInfo(QCoreApplication::applicationFilePath())
