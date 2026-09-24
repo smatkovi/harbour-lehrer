@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../components"
 import "../worte.js" as W
+import "../stil.js" as Stil
 
 // Eine leere Seite mit einem Deuter dahinter. Die Haelfte des Lernens ist,
 // etwas Kleines auszuprobieren, nur um zu sehen, was passiert -- dafuer
@@ -53,6 +54,26 @@ Page {
                 da.push(alle[i])
         return da
     }
+
+    // Gedeutet oder übersetzt? Das erklärt die Wartezeit, die man hier
+    // tatsächlich sieht: C und Rust laufen sofort los, Python braucht einen
+    // Augenblick zum Hochkommen, C++ fast eine Sekunde zum Übersetzen. Ohne
+    // einen Satz dazu sieht das wie eine Aussage über die Sprachen aus — und
+    // das wäre falsch.
+    property var artZeile: {
+        "c": "C läuft hier gedeutet: picoc liest deinen Text und tut, was dort steht. Kein Übersetzen, also geht es sofort los.",
+        "cpp": "C++ wird übersetzt: g++ macht erst Maschinencode daraus und bindet ihn, dann läuft er. Das kostet die Sekunden vor der Ausgabe.",
+        "rust": "Rust läuft hier gedeutet: rrun liest deinen Text und tut, was dort steht. Kein Übersetzen, also geht es sofort los.",
+        "python": "Python wird gedeutet: CPython liest deinen Text. Der Deuter selbst muss aber erst hochkommen, und das sind die paar Zehntel vor der Ausgabe."
+    }
+
+    property string artErklaerung:
+        "**Gedeutet** heißt: ein Programm liest deinen Text und tut Zeile für Zeile, was dort steht. Es gibt nichts zu übersetzen, also fängt es sofort an — dafür ist der Deuter beim Laufen die ganze Zeit dabei und kostet Zeit an jeder Zeile.\n\n"
+      + "**Übersetzt** heißt: ein Übersetzer macht aus deinem Text einmal Maschinencode, den der Prozessor unmittelbar ausführt. Die Arbeit fällt **vorher** an, dafür läuft das Ergebnis danach schnell.\n\n"
+      + "Bei kurzen Programmen sieht man deshalb fast nur das Übersetzen und kaum das Laufen. Bei C++ kommt dazu, dass eine einzige Zeile wie `#include <iostream>` rund 37 000 Zeilen Schablonen hereinholt, die der Übersetzer jedes Mal neu liest — das ist der größte Teil der Wartezeit, nicht dein Programm.\n\n"
+      + "Und das sagt nichts darüber, welche Sprache schnell ist: C ist hier nur deshalb sofort da, weil diese App einen kleinen C-Deuter mitbringt. Richtig übersetztes C läuft schneller als alles andere hier — man wartet nur vorher."
+
+    property bool artOffen: false
 
     property var zeichen: {
         "c": ["{", "}", "(", ")", ";", "*", "[", "]"],
@@ -123,6 +144,44 @@ Page {
                         }
                         onClicked: seite.sprachwechsel(modelData[0])
                     }
+                }
+            }
+
+            // ---- Gedeutet oder übersetzt? -------------------------------
+            Column {
+                x: Theme.horizontalPageMargin
+                width: parent.width - 2 * Theme.horizontalPageMargin
+                spacing: Theme.paddingSmall
+
+                Label {
+                    width: parent.width
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeExtraSmall
+                    color: Theme.highlightColor
+                    text: W.w(seite.artZeile[seite.sprache], course.language)
+                }
+
+                BackgroundItem {
+                    width: parent.width
+                    height: Theme.itemSizeExtraSmall * 0.7
+                    Label {
+                        anchors.verticalCenter: parent.verticalCenter
+                        font.pixelSize: Theme.fontSizeExtraSmall
+                        color: Theme.secondaryColor
+                        text: (seite.artOffen ? "▾ " : "▸ ")
+                              + W.w("Was heißt gedeutet und übersetzt?", course.language)
+                    }
+                    onClicked: seite.artOffen = !seite.artOffen
+                }
+
+                Label {
+                    width: parent.width
+                    visible: seite.artOffen
+                    wrapMode: Text.WordWrap
+                    textFormat: Text.RichText
+                    font.pixelSize: Theme.fontSizeExtraSmall
+                    color: Theme.secondaryColor
+                    text: Stil.reich(W.w(seite.artErklaerung, course.language))
                 }
             }
 

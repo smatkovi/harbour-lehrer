@@ -1,5 +1,5 @@
 Name:       harbour-clehrer
-Version:    1.11.1
+Version:    1.12.0
 Release:    1
 Summary:    Learn C, C++, Rust and Python with an eye on simulation
 License:    GPLv3+
@@ -59,6 +59,12 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Thu Sep 25 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.12.0-1
+- Die Spielwiese sagt jetzt, welche Sprache gedeutet und welche übersetzt
+  wird, und warum das die Wartezeit erklärt, die man tatsächlich sieht: C und
+  Rust laufen sofort los (eigene Deuter), Python muss erst hochkommen, C++
+  wird wirklich übersetzt. Aufgeklappt steht dazu, was der Unterschied ist —
+  und dass er nichts darüber sagt, welche Sprache schnell ist.
 * Thu Sep 25 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.11.1-1
 - C-Lehrer startet wieder aus dem App-Raster. Seit die App ohne Sandkasten
   läuft (1.10.0, damit Python und C++ überhaupt da sind), ging ihr Start über

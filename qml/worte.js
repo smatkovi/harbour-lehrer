@@ -175,7 +175,20 @@ var EN = {
         "). The higher chapters are still to come – ",
     "findest du hier das, was es schon gibt.":
         "here is what there is already.",
-    "unten steht der Plan.": "the plan is below."
+    "unten steht der Plan.": "the plan is below.",
+    // -- Spielwiese: gedeutet oder uebersetzt
+    "C läuft hier gedeutet: picoc liest deinen Text und tut, was dort steht. Kein Übersetzen, also geht es sofort los.":
+        "C runs interpreted here: picoc reads your text and does what it says. Nothing is compiled, so it starts at once.",
+    "C++ wird übersetzt: g++ macht erst Maschinencode daraus und bindet ihn, dann läuft er. Das kostet die Sekunden vor der Ausgabe.":
+        "C++ is compiled: g++ first turns it into machine code and links it, then that runs. Those are the seconds before the output.",
+    "Rust läuft hier gedeutet: rrun liest deinen Text und tut, was dort steht. Kein Übersetzen, also geht es sofort los.":
+        "Rust runs interpreted here: rrun reads your text and does what it says. Nothing is compiled, so it starts at once.",
+    "Python wird gedeutet: CPython liest deinen Text. Der Deuter selbst muss aber erst hochkommen, und das sind die paar Zehntel vor der Ausgabe.":
+        "Python is interpreted: CPython reads your text. But the interpreter itself has to start up first, and that is the fraction of a second before the output.",
+    "Was heißt gedeutet und übersetzt?":
+        "What do interpreted and compiled mean?",
+    "**Gedeutet** heißt: ein Programm liest deinen Text und tut Zeile für Zeile, was dort steht. Es gibt nichts zu übersetzen, also fängt es sofort an — dafür ist der Deuter beim Laufen die ganze Zeit dabei und kostet Zeit an jeder Zeile.\n\n**Übersetzt** heißt: ein Übersetzer macht aus deinem Text einmal Maschinencode, den der Prozessor unmittelbar ausführt. Die Arbeit fällt **vorher** an, dafür läuft das Ergebnis danach schnell.\n\nBei kurzen Programmen sieht man deshalb fast nur das Übersetzen und kaum das Laufen. Bei C++ kommt dazu, dass eine einzige Zeile wie `#include <iostream>` rund 37 000 Zeilen Schablonen hereinholt, die der Übersetzer jedes Mal neu liest — das ist der größte Teil der Wartezeit, nicht dein Programm.\n\nUnd das sagt nichts darüber, welche Sprache schnell ist: C ist hier nur deshalb sofort da, weil diese App einen kleinen C-Deuter mitbringt. Richtig übersetztes C läuft schneller als alles andere hier — man wartet nur vorher.":
+        "**Interpreted** means: a program reads your text and does, line by line, what it says. There is nothing to compile, so it starts at once — but the interpreter stays there while it runs and costs time on every line.\n\n**Compiled** means: a compiler turns your text into machine code once, and the processor runs that directly. The work is done **beforehand**; afterwards the result runs fast.\n\nWith short programs you therefore see almost nothing but the compiling and hardly any of the running. With C++ there is more to it: a single line such as `#include <iostream>` pulls in about 37,000 lines of templates that the compiler reads afresh every time — that is the greater part of the wait, not your program.\n\nAnd none of this says which language is fast: C is instant here only because this app carries a small C interpreter. Properly compiled C runs faster than anything else here — you just wait for it first.",
 };
 
 function w(text, sprache) {
