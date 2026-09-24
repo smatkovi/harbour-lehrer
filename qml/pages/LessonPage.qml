@@ -50,6 +50,19 @@ Page {
                       ? "" : seite.lektion.bild
             }
 
+            // Die Formeln der Lektion, jede zweimal: als Codezeile und
+            // gesetzt. Sie stehen vor dem Beispiel, damit man die Zeilen
+            // gleich darunter wiederfindet.
+            Repeater {
+                model: seite.lektion.leer || seite.lektion.formeln === undefined
+                       ? [] : seite.lektion.formeln
+                Formel {
+                    x: Theme.horizontalPageMargin
+                    width: spalte.width - 2 * Theme.horizontalPageMargin
+                    formel: modelData
+                }
+            }
+
             SectionHeader {
                 text: W.w("Beispiel", course.language)
                 visible: !seite.lektion.leer && seite.lektion.beispiel !== ""

@@ -292,6 +292,20 @@ QVariantMap Course::lesson() const
     out.insert(QLatin1String("text"),
                m_course->text(source.value(QLatin1String("text"))));
     out.insert(QLatin1String("bild"), source.value(QLatin1String("bild")));
+
+    /* Die Formeln einer Lektion: die Codezeile, wie sie im Beispiel steht,
+       und daneben dieselbe Sache gesetzt.  Code, TeX und Bildname sind in
+       jeder Sprache gleich; nur der Untertitel steht zweisprachig im Kurs
+       und muss hier uebersetzt werden, sonst liest der englische Leser
+       Deutsch (oder QML zeigt "[object Object]"). */
+    QVariantList formeln;
+    for (const QVariant &value : source.value(QLatin1String("formeln")).toList()) {
+        QVariantMap eintrag = value.toMap();
+        eintrag.insert(QLatin1String("untertitel"),
+                       m_course->text(eintrag.value(QLatin1String("untertitel"))));
+        formeln.append(eintrag);
+    }
+    out.insert(QLatin1String("formeln"), formeln);
     out.insert(QLatin1String("beispiel"), source.value(QLatin1String("beispiel")));
     out.insert(QLatin1String("ausgabe"), source.value(QLatin1String("ausgabe")));
     out.insert(QLatin1String("aufgaben"),
