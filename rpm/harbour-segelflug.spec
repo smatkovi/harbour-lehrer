@@ -1,5 +1,5 @@
 Name:       harbour-segelflug
-Version:    1.10.0
+Version:    1.11.0
 Release:    1
 Summary:    Gliding theory with a focus on reading clouds
 License:    GPLv3+
@@ -50,5 +50,11 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Wed Sep 24 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.11.0-1
+- Die Formeln auf den Karteikarten sind hergeleitet: Wolkenbasis (woher die
+  125 m je Grad kommen), Gleitzahl, Lastvielfaches und Überziehgeschwindigkeit
+  in der Kurve, Schwerpunktrechnung, 1-in-60-Regel und die Missweisung. Jede
+  mit der Skizze, die dazugehört, und jede in der Lösung — vor der Antwort
+  wäre sie die Antwort.
 * Tue Sep 23 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.0.0-1
 - Erste Sailfish-Fassung, portiert von der Harmattan-Ausgabe
