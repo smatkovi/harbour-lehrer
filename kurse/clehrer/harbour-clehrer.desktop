@@ -13,3 +13,21 @@ Categories=Education;
 # das Symbol nichts: kein Fortschritt, keine Einstufung, keine Karteikarten.
 OrganizationName=harbour-clehrer
 ApplicationName=harbour-clehrer
+# Ohne Sandkasten, und zwar aus dem Grund, aus dem es diese App gibt.
+#
+# Sailjail baut /usr/bin im Sandkasten neu auf: sichtbar ist nur, was eine
+# Berechtigung ausdruecklich freigibt (firejail private-bin). Freigegeben
+# ist im ganzen System weder python3 noch g++ -- kein einziges
+# Berechtigungsprofil in /etc/sailjail/permissions nennt sie. Drinnen gibt
+# es sie also nicht, und die Spielwiese bot folgerichtig nur C und Rust an:
+# deren Deuter liegen in /usr/libexec/harbour-clehrer und gehoeren der App
+# selbst.
+#
+# Ein Sandkasten, der das Ausfuehren fremden Programmtextes verhindert,
+# verhindert hier genau die Aufgabe: Der Kurs lebt davon, dass der Code,
+# den der Lernende schreibt, wirklich laeuft. Die Kennung oben bleibt
+# stehen, damit der Fortschritt weiter unter
+# ~/.local/share/harbour-clehrer liegt.
+#
+# Segelschein und Segelflug fuehren nichts aus und bleiben im Sandkasten.
+Sandboxing=Disabled
