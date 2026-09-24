@@ -1,0 +1,34 @@
+#!/bin/sh
+# Uebersetzt eine C++-Datei und fuehrt sie aus.
+#
+# Der Laeufer der App startet Ausfuehrer schlicht als "<pfad> <datei>". Fuer
+# C ist das picoc, ein echter Interpreter; C++ laesst sich nicht
+# interpretieren, also verbirgt sich hinter diesem Skript Uebersetzen und
+# Starten in einem.
+#
+# Anders als auf Harmattan, wo ein ausgepackter GCC-4.4-Baum mitgeliefert
+# wird, gibt es auf Sailfish einen richtigen Compiler aus den Jolla-Quellen:
+# gcc-c++. Er wird nicht mitgeliefert -- ein Uebersetzer ist groesser als
+# der ganze Kurs --, sondern gesucht; fehlt er, sagt das Skript, wie er
+# hereinkommt.
+QUELLE=$1
+[ -n "$QUELLE" ] || { echo "Keine Quelldatei angegeben."; exit 2; }
+
+UEBERSETZER=$(command -v g++ 2>/dev/null)
+if [ -z "$UEBERSETZER" ]; then
+    echo "Der C++-Uebersetzer fehlt."
+    echo "Er kommt aus den Jolla-Quellen:  pkcon install gcc-c++"
+    exit 3
+fi
+
+ZIEL=${XDG_CACHE_HOME:-$HOME/.cache}/harbour-clehrer
+mkdir -p "$ZIEL" 2>/dev/null
+ZIEL=$ZIEL/lauf-$$
+trap 'rm -f "$ZIEL"' EXIT INT TERM
+
+# 2>&1: Der Laeufer liest nur einen Kanal, Fehlermeldungen muessen also mit.
+# -w, weil der Kurs Warnungen selbst bespricht und eine Wand davon beim
+# ersten Programm nur abschreckt.
+"$UEBERSETZER" -std=gnu++17 -O1 -w -o "$ZIEL" "$QUELLE" 2>&1 || exit 1
+
+"$ZIEL"

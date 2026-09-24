@@ -106,7 +106,7 @@ Page {
                 visible: !seite.lektion.leer && seite.lektion.beispiel !== ""
                          && !seite.lektion.laeuft
                 text: seite.lektion.sprache === "cpp"
-                      ? W.w("C++ hat auf diesem Gerät keinen Übersetzer — diese Lektion wird gelesen und vorhergesagt.", course.language)
+                      ? W.w("C++ braucht einen Übersetzer. Er steht in den Jolla-Quellen: pkcon install gcc-c++ — danach laufen auch diese Lektionen.", course.language)
                       : (seite.lektion.sprache === "python"
                          ? W.w("Für dieses Kapitel fehlt NumPy auf dem Gerät — die Lektion bleibt lesbar.", course.language)
                          : W.w("Diese Sprache lässt sich hier nicht ausführen.", course.language))

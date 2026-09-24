@@ -6,6 +6,7 @@
 #include <QCoreApplication>
 #include <QDir>
 #include <QFileInfo>
+#include <QStandardPaths>
 
 namespace {
 
@@ -61,17 +62,28 @@ Course::Course(Curriculum *course, Plotter *plotter, QObject *parent)
     if (!gemerkt.isEmpty() && m_course->languages().contains(gemerkt))
         m_course->setLanguage(gemerkt);
 
-    // Beside the app binary, both in <root>/bin.
+    /* Wo die Deuter liegen.  Auf Harmattan stehen sie neben der App in
+       <root>/bin; auf Sailfish installiert das Paket sie nach
+       /usr/libexec/<app>, waehrend die App selbst in /usr/bin steht.  Wer
+       hier nur den Ordner der Binaerdatei nimmt, findet crun nie -- und dann
+       sagt jeder Codeblock "Diese Sprache laesst sich hier nicht
+       ausfuehren", obwohl der Deuter im selben Paket mitgeliefert wurde. */
+#ifdef APP_LIBEXEC_DIR
+    const QString binDir = QLatin1String(APP_LIBEXEC_DIR);
+#else
     const QString binDir = QFileInfo(QCoreApplication::applicationFilePath())
             .absolutePath();
+#endif
     m_runner->setInterpreter(QLatin1String("c"), binDir + QLatin1String("/crun"),
                              QLatin1String(".c"));
-    // C++ cannot be interpreted, so crunxx compiles and runs in one step. It
-    // needs the g++ 4.4 tree from the c-lehrer-cpp package; without it the
-    // C++ lessons stay readable but do not offer to run.
+    /* C++ laesst sich nicht deuten, also uebersetzt und startet crunxx in
+       einem Schritt.  Der Uebersetzer kommt aus den Jolla-Quellen (gcc-c++)
+       und wird nicht mitgeliefert -- er ist groesser als der ganze Kurs.
+       Ist er nicht da, bleiben die C++-Lektionen lesbar und die Oberflaeche
+       sagt, wie er hereinkommt. */
     const QString crunxx = binDir + QLatin1String("/crunxx");
     if (QFile::exists(crunxx)
-            && QFile::exists(binDir + QLatin1String("/../toolchain/usr/bin/g++-4.4"))) {
+            && !QStandardPaths::findExecutable(QLatin1String("g++")).isEmpty()) {
         m_runner->setInterpreter(QLatin1String("cpp"), crunxx, QLatin1String(".cpp"));
     }
     // Rust: ein eigener Deuter fuer den Ausschnitt, den der Kurs lehrt.

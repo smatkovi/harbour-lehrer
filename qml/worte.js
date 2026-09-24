@@ -73,6 +73,8 @@ var EN = {
         "This language cannot be run here.",
     "C++ hat auf diesem Gerät keinen Übersetzer — diese Lektion wird gelesen und vorhergesagt.":
         "There is no C++ compiler on this device — this lesson is read and predicted.",
+    "C++ braucht einen Übersetzer. Er steht in den Jolla-Quellen: pkcon install gcc-c++ — danach laufen auch diese Lektionen.":
+        "C++ needs a compiler. It is in the Jolla repositories: pkcon install gcc-c++ — after that these lessons run too.",
     "Für dieses Kapitel fehlt NumPy auf dem Gerät — die Lektion bleibt lesbar.":
         "NumPy is missing on this device — the chapter stays readable.",
     "Zeilen, die mit plot beginnen, werden gezeichnet: ":

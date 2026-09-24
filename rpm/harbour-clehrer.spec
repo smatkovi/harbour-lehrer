@@ -1,5 +1,5 @@
 Name:       harbour-clehrer
-Version:    1.7.0
+Version:    1.8.0
 Release:    1
 Summary:    Learn C, C++, Rust and Python with an eye on simulation
 License:    GPLv3+
@@ -7,6 +7,11 @@ URL:        https://github.com/smatkovi/harbour-lehrer
 Source0:    %{name}-%{version}.tar.gz
 
 Requires:       sailfishsilica-qt5
+# Die C- und Rust-Lektionen laufen mit eigenen Deutern, die im Paket
+# stecken. C++ laesst sich nicht deuten, dafuer braucht es einen
+# Uebersetzer -- er ist groesser als der ganze Kurs und deshalb nur
+# empfohlen, nicht verlangt: Ohne ihn bleiben die C++-Lektionen lesbar.
+Recommends:     gcc-c++
 BuildRequires:  cmake
 BuildRequires:  pkgconfig(sailfishapp)
 BuildRequires:  pkgconfig(Qt5Core)
@@ -37,7 +42,9 @@ cd build
 make DESTDIR=%{buildroot} install
 # Ohne Symboltabellen: das spart auf einem Telefon ein paar hundert Kilobyte
 # je Paket, und zum Suchen nach Fehlern wird ohnehin neu gebaut.
-strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/*
+# Nur die Programme strippen -- crunxx ist ein Skript.
+strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
+      %{buildroot}%{_libexecdir}/%{name}/rrun
 
 %files
 %defattr(-,root,root,-)

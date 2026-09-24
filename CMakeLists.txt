@@ -80,6 +80,8 @@ target_link_libraries(rrun m)
 
 install(TARGETS ${APP} RUNTIME DESTINATION bin)
 install(TARGETS crun rrun RUNTIME DESTINATION libexec/${APP})
+# crunxx ist ein Skript, kein Programm: Es sucht den System-Uebersetzer.
+install(PROGRAMS interp/crunxx DESTINATION libexec/${APP})
 install(DIRECTORY qml/ DESTINATION share/${APP}/qml)
 install(FILES kurse/${KURS}/kurs.json DESTINATION share/${APP}/data)
 install(FILES kurse/${KURS}/${APP}.desktop DESTINATION share/applications)

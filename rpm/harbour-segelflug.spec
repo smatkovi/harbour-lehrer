@@ -1,5 +1,5 @@
 Name:       harbour-segelflug
-Version:    1.7.0
+Version:    1.8.0
 Release:    1
 Summary:    Gliding theory with a focus on reading clouds
 License:    GPLv3+
@@ -37,7 +37,9 @@ cd build
 make DESTDIR=%{buildroot} install
 # Ohne Symboltabellen: das spart auf einem Telefon ein paar hundert Kilobyte
 # je Paket, und zum Suchen nach Fehlern wird ohnehin neu gebaut.
-strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/*
+# Nur die Programme strippen -- crunxx ist ein Skript.
+strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
+      %{buildroot}%{_libexecdir}/%{name}/rrun
 
 %files
 %defattr(-,root,root,-)
