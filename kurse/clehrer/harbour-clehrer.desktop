@@ -1,6 +1,17 @@
 [Desktop Entry]
 Type=Application
-X-Nemo-Application-Type=silica-qt5
+X-Nemo-Application-Type=no-invoker
+# Kein Booster. Der Booster von mapplauncherd laedt die Anwendung mit dlopen
+# in einen vorgewaermten Prozess; das setzt eine Binaerdatei voraus, die sich
+# laden laesst (-pie -rdynamic). Diese hier ist eine gewoehnliche ausfuehrbare
+# Datei, und solange die App im Sandkasten lief, fiel das nicht auf: Sailjail
+# startet sie selbst und fuehrt sie einfach aus. Ohne Sandkasten (unten) geht
+# der Start wieder ueber den Booster -- und der scheitert mit
+# "Kann das Programm nicht dynamisch Laden", sichtbar nur im Journal, waehrend
+# im App-Raster gar nichts passiert.
+#
+# Deshalb hier ausdruecklich kein Invoker, so wie beim 0-A.-D.-Port, der aus
+# demselben Grund ohne Sandkasten laeuft.
 Icon=harbour-clehrer
 Exec=harbour-clehrer
 Name=C-Lehrer

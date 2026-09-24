@@ -1,5 +1,5 @@
 Name:       harbour-clehrer
-Version:    1.11.0
+Version:    1.11.1
 Release:    1
 Summary:    Learn C, C++, Rust and Python with an eye on simulation
 License:    GPLv3+
@@ -59,6 +59,12 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Thu Sep 25 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.11.1-1
+- C-Lehrer startet wieder aus dem App-Raster. Seit die App ohne Sandkasten
+  läuft (1.10.0, damit Python und C++ überhaupt da sind), ging ihr Start über
+  den Booster von mapplauncherd — und der lädt die Anwendung mit dlopen, was
+  diese Binärdatei nicht kann. Im Raster passierte daraufhin gar nichts; der
+  Grund stand nur im Journal. Die Startdatei sagt jetzt "no-invoker".
 * Wed Sep 24 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.11.0-1
 - Gleicher Stand wie Segelschein und Segelflug: der Deuter kann einer Aufgabe
   eine Herleitung und eine Skizze mitgeben und zeigt beide in der Lösung. Der
