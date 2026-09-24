@@ -78,9 +78,9 @@ public:
     double seconds() const { return m_seconds; }
 
     Q_INVOKABLE QVariantList chapters() const;
-    Q_INVOKABLE QVariantList plan() const { return m_course->plan(); }
+    Q_INVOKABLE QVariantList plan() const;
     Q_INVOKABLE QVariantMap nextLesson() const;
-    Q_INVOKABLE QVariantList placementReview() const { return m_engine.placementReview(); }
+    Q_INVOKABLE QVariantList placementReview() const;
 
     Q_INVOKABLE void startPlacement();
     Q_INVOKABLE void answerPlacement(int chosen);

@@ -24,7 +24,8 @@ Page {
             Label {
                 x: Theme.horizontalPageMargin
                 width: parent.width - 2 * Theme.horizontalPageMargin
-                text: modelData.thema + " · Stufe " + modelData.stufe
+                text: modelData.thema + " "
+                      + W.w("· Stufe ", course.language) + modelData.stufe
                 font.pixelSize: Theme.fontSizeExtraSmall
                 color: modelData.korrekt ? "#7ee787" : Theme.errorColor
             }

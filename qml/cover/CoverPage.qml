@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "../worte.js" as W
 
 // Die Abdeckung zeigt, was als Naechstes ansteht -- mehr braucht sie nicht.
 // Die Zahl der faelligen Wiederholungen ist der eine Wert, der jemanden
@@ -28,7 +29,8 @@ CoverBackground {
         Label {
             width: parent.width
             horizontalAlignment: Text.AlignHCenter
-            text: deckel.werte.fertig + " von " + deckel.werte.gesamt + " Lektionen"
+            text: deckel.werte.fertig + " " + W.w("von", course.language) + " "
+                  + deckel.werte.gesamt + " " + W.w("Lektionen", course.language)
             font.pixelSize: Theme.fontSizeSmall
             color: Theme.secondaryColor
         }
@@ -37,7 +39,7 @@ CoverBackground {
             width: parent.width
             horizontalAlignment: Text.AlignHCenter
             visible: deckel.werte.faellig > 0
-            text: deckel.werte.faellig + " fällig"
+            text: deckel.werte.faellig + " " + W.w("fällig", course.language)
             font.pixelSize: Theme.fontSizeMedium
             color: Theme.primaryColor
         }

@@ -177,6 +177,40 @@ QVariantMap Course::placementQuestion() const
     return out;
 }
 
+/* Plan und Einstufungsrueckblick stehen zweisprachig im Kurs.  Wer sie roh an
+   die Oberflaeche gibt, zeigt dem englischen Leser Deutsch - uebersetzt wird
+   erst beim Anzeigen, dann stimmt es auch nach einem Sprachwechsel. */
+QVariantList Course::plan() const
+{
+    QVariantList out;
+    for (const QVariant &value : m_course->plan()) {
+        QVariantMap entry = value.toMap();
+        entry.insert(QLatin1String("titel"),
+                     m_course->text(entry.value(QLatin1String("titel"))));
+        out.append(entry);
+    }
+    return out;
+}
+
+QVariantList Course::placementReview() const
+{
+    QVariantList out;
+    for (const QVariant &value : m_engine.placementReview()) {
+        QVariantMap entry = value.toMap();
+        static const char *const texte[] = { "frage", "warum", "thema", "code" };
+        for (size_t i = 0; i < sizeof(texte) / sizeof(texte[0]); ++i) {
+            const QString key = QLatin1String(texte[i]);
+            if (entry.contains(key))
+                entry.insert(key, m_course->text(entry.value(key)));
+        }
+        if (entry.contains(QLatin1String("optionen")))
+            entry.insert(QLatin1String("optionen"),
+                         m_course->textList(entry.value(QLatin1String("optionen"))));
+        out.append(entry);
+    }
+    return out;
+}
+
 void Course::answerPlacement(int chosen)
 {
     if (!m_placement.isRunning())

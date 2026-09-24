@@ -112,7 +112,8 @@ Page {
                 width: parent.width - 2 * Theme.horizontalPageMargin
                 visible: course.output === "" && course.error === "" && !course.running
                          && !seite.lektion.leer && seite.lektion.ausgabe !== ""
-                text: "Erwartet:\n" + (seite.lektion.leer ? "" : seite.lektion.ausgabe)
+                text: W.w("Erwartet:", course.language) + "\n"
+                      + (seite.lektion.leer ? "" : seite.lektion.ausgabe)
                 font.family: "monospace"
                 font.pixelSize: Theme.fontSizeExtraSmall
                 color: Theme.secondaryColor

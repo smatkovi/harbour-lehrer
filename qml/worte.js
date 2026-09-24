@@ -18,6 +18,9 @@
 .pragma library
 
 var EN = {
+    "von": "of",
+    "erledigt": "done",
+    "Erwartet:": "Expected:",
     // -- Start und Übersicht
     "Kurs": "Course",
     "Kapitel": "Chapters",

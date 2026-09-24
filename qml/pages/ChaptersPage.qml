@@ -69,7 +69,7 @@ Page {
                 Label {
                     width: parent.width
                     visible: modelData.stand !== ""
-                    text: modelData.stand === "fertig" ? "erledigt"
+                    text: modelData.stand === "fertig" ? W.w("erledigt", course.language)
                           : (modelData.stand === "faellig" ? W.w("zur Wiederholung fällig", course.language)
                                                            : modelData.stand)
                     font.pixelSize: Theme.fontSizeExtraSmall
