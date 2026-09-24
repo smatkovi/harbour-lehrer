@@ -61,6 +61,9 @@ public:
                         const QString &suffix);
     void setWorkingDirectory(const QString &path) { m_workDir = path; }
     bool canRun(const QString &language) const;
+    // Der Pfad des Deuters, oder leer -- damit sich fragen laesst,
+    // was dieser Deuter ausserdem mitbringt (siehe NumPy).
+    QString interpreterPath(const QString &language) const;
 
     void start(const QString &code, int seconds,
                const QString &language = QLatin1String("c"));

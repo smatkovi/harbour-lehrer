@@ -108,7 +108,7 @@ Page {
                 text: seite.lektion.sprache === "cpp"
                       ? W.w("C++ braucht einen Übersetzer. Er steht in den Jolla-Quellen: pkcon install gcc-c++ — danach laufen auch diese Lektionen.", course.language)
                       : (seite.lektion.sprache === "python"
-                         ? W.w("Für dieses Kapitel fehlt NumPy auf dem Gerät — die Lektion bleibt lesbar.", course.language)
+                         ? W.w("Für dieses Kapitel fehlt NumPy. Es liegt im Chum-Repo: pkcon install python3-numpy — danach läuft auch dieses Beispiel.", course.language)
                          : W.w("Diese Sprache lässt sich hier nicht ausführen.", course.language))
                 wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeExtraSmall

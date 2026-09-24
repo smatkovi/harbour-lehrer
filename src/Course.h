@@ -110,6 +110,7 @@ public:
     Q_INVOKABLE bool canRunLanguage(const QString &language) const;
     QString lessonLanguage() const;
     bool lessonRunnable() const;
+    bool numpyDa() const;
     Q_INVOKABLE void stopRun();
     Q_INVOKABLE bool checkRun();
     Q_INVOKABLE void keepCode(const QString &text);
@@ -146,6 +147,7 @@ private:
     Curriculum *m_course;
     Plotter *m_plotter;
     Runner *m_runner;
+    mutable int m_numpy = -1;      // -1 = noch nicht gefragt
     Engine m_engine;
     Placement m_placement;
 

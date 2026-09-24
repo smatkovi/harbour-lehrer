@@ -77,6 +77,8 @@ var EN = {
         "C++ needs a compiler. It is in the Jolla repositories: pkcon install gcc-c++ — after that these lessons run too.",
     "Für dieses Kapitel fehlt NumPy auf dem Gerät — die Lektion bleibt lesbar.":
         "NumPy is missing on this device — the chapter stays readable.",
+    "Für dieses Kapitel fehlt NumPy. Es liegt im Chum-Repo: pkcon install python3-numpy — danach läuft auch dieses Beispiel.":
+        "NumPy is missing for this chapter. It is in the Chum repository: pkcon install python3-numpy — after that this example runs too.",
     "Zeilen, die mit plot beginnen, werden gezeichnet: ":
         "Lines starting with plot are drawn: ",
     "Zeilen, die mit plot beginnen, werden gezeichnet: print('plot %f %f' % (t, x)).":

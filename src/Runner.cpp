@@ -48,6 +48,11 @@ bool Runner::canRun(const QString &language) const
             && QFile::exists(m_tools.value(language).path);
 }
 
+QString Runner::interpreterPath(const QString &language) const
+{
+    return m_tools.value(language).path;
+}
+
 bool Runner::isRunning() const
 {
     return m_process->state() != QProcess::NotRunning;

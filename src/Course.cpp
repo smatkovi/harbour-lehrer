@@ -6,6 +6,7 @@
 #include <QCoreApplication>
 #include <QDir>
 #include <QFileInfo>
+#include <QProcess>
 #include <QStandardPaths>
 
 namespace {
@@ -552,9 +553,42 @@ QString Course::lessonLanguage() const
     return lang.isEmpty() ? QLatin1String("c") : lang;
 }
 
+/* Ob NumPy da ist. Der Kurs braucht es genau in einem Kapitel, und ohne
+   es liefe das Beispiel in einen Importfehler statt in eine Ausgabe -- eine
+   Fehlermeldung, die nichts lehrt. Gefragt wird der Deuter selbst, einmal
+   und dann gemerkt: Nach dem Ordner zu suchen hiesse raten, wo diese
+   Python-Fassung ihre Pakete hat. */
+bool Course::numpyDa() const
+{
+    if (m_numpy != -1)
+        return m_numpy == 1;
+    m_numpy = 0;
+    const QString python = m_runner->interpreterPath(QLatin1String("python"));
+    if (!python.isEmpty()) {
+        QProcess probe;
+        probe.start(python, QStringList() << QLatin1String("-c")
+                                          << QLatin1String("import numpy"));
+        if (probe.waitForFinished(4000) && probe.exitStatus() == QProcess::NormalExit
+                && probe.exitCode() == 0)
+            m_numpy = 1;
+    }
+    return m_numpy == 1;
+}
+
 bool Course::lessonRunnable() const
 {
-    return m_runner->canRun(lessonLanguage());
+    if (!m_runner->canRun(lessonLanguage()))
+        return false;
+    /* Ein Python-Beispiel, das NumPy einliest, laeuft ohne NumPy nicht --
+       der Deuter ist da, das Paket nicht. Dann lieber sagen, was fehlt,
+       als einen Stapelabzug zeigen. */
+    if (lessonLanguage() == QLatin1String("python")) {
+        const QString beispiel = m_course->lesson(m_lessonId)
+                .value(QLatin1String("beispiel")).toString();
+        if (beispiel.contains(QLatin1String("numpy")) && !numpyDa())
+            return false;
+    }
+    return true;
 }
 
 bool Course::canRunLanguage(const QString &language) const

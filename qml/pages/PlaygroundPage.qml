@@ -23,6 +23,12 @@ Page {
              + "        double t = i * 0.1;\n"
              + "        printf(\"plot %.3f %.5f\\n\", t, sin(t) / (1 + t));\n"
              + "    }\n    return 0;\n}\n",
+        "cpp": "#include <cstdio>\n#include <cmath>\n\n"
+               + "int main()\n{\n"
+               + "    for (int i = 0; i < 100; i++) {\n"
+               + "        double t = i * 0.1;\n"
+               + "        std::printf(\"plot %.3f %.5f\\n\", t, std::sin(t) / (1 + t));\n"
+               + "    }\n    return 0;\n}\n",
         "rust": "fn main() {\n"
                 + "    for i in 0..100 {\n"
                 + "        let t = i as f64 * 0.1;\n"
@@ -34,8 +40,23 @@ Page {
                   + "    print('plot %.3f %.5f' % (t, math.sin(t) / (1 + t)))\n"
     }
 
+    // Angeboten wird nur, was auf diesem Geraet auch laufen kann: C und Rust
+    // bringen eigene Deuter mit, C++ braucht einen Uebersetzer aus den
+    // Jolla-Quellen, Python den Systemdeuter. Die Liste wird einmal
+    // ausgerechnet, damit die Knoepfe die Breite gleichmaessig teilen.
+    property var ausfuehrbareSprachen: {
+        var alle = [["c", "C"], ["cpp", "C++"], ["rust", "Rust"],
+                    ["python", "Python"]]
+        var da = []
+        for (var i = 0; i < alle.length; i++)
+            if (course.canRunLanguage(alle[i][0]))
+                da.push(alle[i])
+        return da
+    }
+
     property var zeichen: {
         "c": ["{", "}", "(", ")", ";", "*", "[", "]"],
+        "cpp": ["{", "}", "(", ")", ";", "*", "[", "]"],
         "rust": ["{", "}", "(", ")", ";", "&", "!", "    "],
         "python": [":", "(", ")", "[", "]", "=", "%", "    "]
     }
@@ -67,9 +88,11 @@ Page {
                 color: Theme.secondaryColor
                 text: seite.sprache === "python"
                       ? W.w("Zeilen, die mit plot beginnen, werden gezeichnet: print('plot %f %f' % (t, x)).", course.language)
-                      : (seite.sprache === "rust"
+                      : (seite.sprache === "cpp"
+                         ? "Zeilen, die mit plot beginnen, werden gezeichnet: std::printf(\"plot %f %f\\n\", t, x);"
+                         : (seite.sprache === "rust"
                          ? "Zeilen, die mit plot beginnen, werden gezeichnet: println!(\"plot {} {}\", t, x);"
-                         : "Zeilen, die mit plot beginnen, werden gezeichnet: printf(\"plot %f %f\\n\", t, x);")
+                            : "Zeilen, die mit plot beginnen, werden gezeichnet: printf(\"plot %f %f\\n\", t, x);"))
             }
 
             // Angeboten wird nur, was auf diesem Geraet auch laufen kann.
@@ -79,10 +102,12 @@ Page {
                 spacing: Theme.paddingSmall
 
                 Repeater {
-                    model: [["c", "C"], ["rust", "Rust"], ["python", "Python"]]
+                    model: seite.ausfuehrbareSprachen
                     BackgroundItem {
-                        visible: course.canRunLanguage(modelData[0])
-                        width: (parent.width - 2 * Theme.paddingSmall) / 3
+                        width: (parent.width
+                                - (seite.ausfuehrbareSprachen.length - 1)
+                                  * Theme.paddingSmall)
+                               / Math.max(1, seite.ausfuehrbareSprachen.length)
                         height: Theme.itemSizeSmall * 0.8
                         Rectangle {
                             anchors.fill: parent

@@ -1,5 +1,5 @@
 Name:       harbour-clehrer
-Version:    1.8.0
+Version:    1.9.0
 Release:    1
 Summary:    Learn C, C++, Rust and Python with an eye on simulation
 License:    GPLv3+
@@ -12,6 +12,10 @@ Requires:       sailfishsilica-qt5
 # Uebersetzer -- er ist groesser als der ganze Kurs und deshalb nur
 # empfohlen, nicht verlangt: Ohne ihn bleiben die C++-Lektionen lesbar.
 Recommends:     gcc-c++
+# Ein einziges Kapitel rechnet mit ganzen Feldern statt mit Schleifen. NumPy
+# liegt nicht bei Jolla, sondern in Chum -- ist es nicht da, bleibt das
+# Kapitel lesbar, und die Lektion sagt, woher es kommt.
+Recommends:     python3-numpy
 BuildRequires:  cmake
 BuildRequires:  pkgconfig(sailfishapp)
 BuildRequires:  pkgconfig(Qt5Core)
