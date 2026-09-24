@@ -1,5 +1,5 @@
 Name:       harbour-clehrer
-Version:    1.10.0
+Version:    1.11.0
 Release:    1
 Summary:    Learn C, C++, Rust and Python with an eye on simulation
 License:    GPLv3+
@@ -59,5 +59,10 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Wed Sep 24 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.11.0-1
+- Gleicher Stand wie Segelschein und Segelflug: der Deuter kann einer Aufgabe
+  eine Herleitung und eine Skizze mitgeben und zeigt beide in der Lösung. Der
+  C-Kurs nutzt das noch nicht — keine seiner Karten nennt eine Formel —, aber
+  alle drei Pakete tragen damit denselben Deuter.
 * Tue Sep 23 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.0.0-1
 - Erste Sailfish-Fassung, portiert von der Harmattan-Ausgabe
