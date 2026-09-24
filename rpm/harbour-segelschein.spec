@@ -1,5 +1,5 @@
 Name:       harbour-segelschein
-Version:    1.10.0
+Version:    1.11.0
 Release:    1
 Summary:    Theory course for the German Segelschein A
 License:    GPLv3+
@@ -50,5 +50,14 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Wed Sep 24 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.11.0-1
+- Die Formeln auf den Karteikarten sind hergeleitet. Wo eine Karte eine Zahl
+  nennt, die nach Formel aussieht -- das Drei- bis Fünffache der Wassertiefe,
+  der Faktor 1,41 beim Kreuzen, drei Sekunden je Kilometer, 112,5 Grad
+  Seitenlicht --, steht in der Lösung, woher sie kommt, unter welcher Annahme
+  sie gilt und was passiert, wenn die Annahme nicht stimmt. Mit Skizze, wo
+  eine hilft; für die Lichtsektoren ist eine dazugekommen.
+- Die Herleitung steht in der Lösung und nicht über der Frage: eine Skizze
+  vor der Antwort wäre die Antwort.
 * Tue Sep 23 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.0.0-1
 - Erste Sailfish-Fassung, portiert von der Harmattan-Ausgabe

@@ -107,6 +107,26 @@ Page {
                     color: Theme.secondaryColor
                 }
 
+                // Die Herleitung gehört auf die Rückseite der Karte.
+                Label {
+                    width: parent.width
+                    visible: seite.karte.herleitung !== undefined
+                             && seite.karte.herleitung !== ""
+                    text: (seite.karte.leer
+                           || seite.karte.herleitung === undefined)
+                          ? "" : Stil.reich(seite.karte.herleitung)
+                    textFormat: Text.RichText
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeExtraSmall
+                    color: Theme.secondaryColor
+                }
+
+                Bild {
+                    width: parent.width
+                    name: seite.karte.skizze === undefined
+                          ? "" : seite.karte.skizze
+                }
+
                 Row {
                     width: parent.width
                     spacing: Theme.paddingMedium

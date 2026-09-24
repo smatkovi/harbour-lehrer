@@ -1405,11 +1405,16 @@
         "de": "m³",
         "en": "m³"
        },
+       "herleitung": {
+        "de": "## Archimedes, in zwei Zeilen\n\n`m` Masse des Bootes, kg. `V` verdrängtes Wasservolumen, m³. `ρ` Dichte des Wassers, kg/m³ — Süßwasser 1000, Salzwasser rund 1025. `g` Fallbeschleunigung, 9,81 m/s².\n\nEin schwimmendes Boot steht still, also heben sich die Kräfte auf: das Gewicht `m · g` nach unten, der Auftrieb nach oben. Der Auftrieb ist das Gewicht des verdrängten Wassers, und das ist `ρ · V · g` (Archimedes). Gleichsetzen:\n\n`m · g = ρ · V · g`\n\nDas `g` steht auf beiden Seiten und kürzt sich weg — deshalb gilt der Satz auch auf dem Mond. Übrig bleibt `V = m / ρ`.\n\nMit `ρ = 1000 kg/m³`: `V = 2400 / 1000 = 2,4 m³`. In Süßwasser ist die Zahl in Tonnen also dieselbe wie die in Kubikmetern — nicht durch Zufall, sondern weil das Kilogramm einmal über einen Liter Wasser festgelegt wurde.\n\nIn Salzwasser: `V = 2400 / 1025 ≈ 2,34 m³`. Dasselbe Boot taucht dort weniger tief ein, und beim Schleusen von See in den Fluss sackt es ein paar Zentimeter tiefer.",
+        "en": "## Archimedes, in two lines\n\n`m` mass of the boat, kg. `V` volume of water displaced, m³. `ρ` density of the water, kg/m³ — fresh water 1000, salt water about 1025. `g` acceleration of gravity, 9.81 m/s².\n\nA floating boat sits still, so the forces cancel: the weight `m · g` downwards, the buoyancy upwards. The buoyancy is the weight of the displaced water, and that is `ρ · V · g` (Archimedes). Set them equal:\n\n`m · g = ρ · V · g`\n\nThe `g` stands on both sides and cancels — which is why the principle also holds on the moon. What is left is `V = m / ρ`.\n\nWith `ρ = 1000 kg/m³`: `V = 2400 / 1000 = 2.4 m³`. In fresh water the number in tonnes is therefore the same as the number in cubic metres — not by accident, but because the kilogram was once defined over a litre of water.\n\nIn salt water: `V = 2400 / 1025 ≈ 2.34 m³`. The same boat floats higher there, and locking in from the sea into a river it settles a few centimetres deeper."
+       },
        "kind": "zahl",
        "q": {
         "de": "Ein Boot hat 2,4 t Verdrängung. Wie viele Kubikmeter Wasser verdrängt es in Süßwasser (1 t je m³)?",
         "en": "A boat displaces 2.4 t. How many cubic metres of fresh water does it displace (1 t per m³)?"
        },
+       "skizze": "",
        "toleranz": 0.05,
        "warum": {
         "de": "Verdrängung in Tonnen ist in Süßwasser zahlenmäßig gleich dem Volumen in Kubikmetern. In Salzwasser wäre es etwas weniger, weil Salzwasser dichter ist.",
@@ -1548,6 +1553,10 @@
        "answer": 2,
        "bild": "",
        "code": "",
+       "herleitung": {
+        "de": "## Woher die drei bis fünf kommen\n\n`T` Wassertiefe plus Freibord, also von der Klampe bis zum Grund, m. `L` gesteckte Länge von Kette und Leine, m. `α` Winkel, unter dem der Zug am Ankerschaft ankommt, Grad.\n\nDie gesteckte Leine spannt sich von der Klampe zum Anker. Denkt man sie gerade, ist sie die Schräge eines rechtwinkligen Dreiecks: die senkrechte Kathete ist `T`, die Schräge ist `L`, und `α` ist der Winkel unten am Grund. Im rechtwinkligen Dreieck ist der Sinus eines Winkels die Gegenkathete durch die Hypotenuse, also `sin α = T / L` und damit\n\n`L = T / sin α`\n\nDer Anker gräbt sich nur ein, wenn der Zug flach ankommt; die Flunke braucht dafür etwa 12° bis 20°. Einsetzen: `1 / sin 12° ≈ 4,8` und `1 / sin 20° ≈ 2,9`. Das **sind** die drei bis fünf — die Faustregel ist nichts anderes als der Kehrwert des Sinus dieses Winkels.\n\nIn Wirklichkeit hängt die Kette durch, und das hilft: der Bogen kommt noch flacher am Grund an als die gedachte Gerade. Deshalb hält Kette besser als Leine, und deshalb steckt man bei Wind und Welle mehr — die Ruckbelastung richtet den Zug sonst auf.",
+        "en": "## Where the three to five comes from\n\n`T` depth of water plus freeboard (Freibord), that is from the cleat (Klampe) down to the bottom, m. `L` scope of chain and rope let out, m. `α` angle at which the pull arrives at the anker shank, degrees.\n\nThe scope that is let out spans from the cleat to the anchor. Thought of as straight, it is the hypotenuse of a right-angled triangle: the vertical side is `T`, the hypotenuse is `L`, and `α` is the angle down at the bottom. In a right-angled triangle the sine of an angle is the opposite side over the hypotenuse, so `sin α = T / L` and therefore\n\n`L = T / sin α`\n\nThe anchor only digs in if the pull arrives flat; the fluke needs about 12° to 20° for that. Putting the numbers in: `1 / sin 12° ≈ 4.8` and `1 / sin 20° ≈ 2.9`. Those **are** the three to five — the rule of thumb is nothing other than the reciprocal of the sine of this angle.\n\nIn reality the chain sags, and that helps: the curve arrives at the bottom flatter still than the imagined straight line. That is why chain holds better than rope, and why you let out more in wind and waves — snatch loading otherwise lifts the pull."
+       },
        "kind": "mc",
        "options": [
         {
@@ -1571,6 +1580,7 @@
         "de": "Wofür ist der Anker ausgelegt?",
         "en": "What is the anchor designed for?"
        },
+       "skizze": "skizze-anker",
        "warum": {
         "de": "Entscheidend ist die **Kettenlänge**: Der Anker hält nur, wenn der Zug waagrecht ankommt. Faustregel ist das Drei- bis Fünffache der Wassertiefe.",
         "en": "What matters is the **scope**: the anchor only holds if the pull arrives horizontally. The rule of thumb is three to five times the depth."
@@ -1583,11 +1593,16 @@
         "de": "m",
         "en": "m"
        },
+       "herleitung": {
+        "de": "## Woher die drei bis fünf kommen\n\n`T` Wassertiefe plus Freibord, also von der Klampe bis zum Grund, m. `L` gesteckte Länge von Kette und Leine, m. `α` Winkel, unter dem der Zug am Ankerschaft ankommt, Grad.\n\nDie gesteckte Leine spannt sich von der Klampe zum Anker. Denkt man sie gerade, ist sie die Schräge eines rechtwinkligen Dreiecks: die senkrechte Kathete ist `T`, die Schräge ist `L`, und `α` ist der Winkel unten am Grund. Im rechtwinkligen Dreieck ist der Sinus eines Winkels die Gegenkathete durch die Hypotenuse, also `sin α = T / L` und damit\n\n`L = T / sin α`\n\nDer Anker gräbt sich nur ein, wenn der Zug flach ankommt; die Flunke braucht dafür etwa 12° bis 20°. Einsetzen: `1 / sin 12° ≈ 4,8` und `1 / sin 20° ≈ 2,9`. Das **sind** die drei bis fünf — die Faustregel ist nichts anderes als der Kehrwert des Sinus dieses Winkels.\n\nIn Wirklichkeit hängt die Kette durch, und das hilft: der Bogen kommt noch flacher am Grund an als die gedachte Gerade. Deshalb hält Kette besser als Leine, und deshalb steckt man bei Wind und Welle mehr — die Ruckbelastung richtet den Zug sonst auf.",
+        "en": "## Where the three to five comes from\n\n`T` depth of water plus freeboard (Freibord), that is from the cleat (Klampe) down to the bottom, m. `L` scope of chain and rope let out, m. `α` angle at which the pull arrives at the anker shank, degrees.\n\nThe scope that is let out spans from the cleat to the anchor. Thought of as straight, it is the hypotenuse of a right-angled triangle: the vertical side is `T`, the hypotenuse is `L`, and `α` is the angle down at the bottom. In a right-angled triangle the sine of an angle is the opposite side over the hypotenuse, so `sin α = T / L` and therefore\n\n`L = T / sin α`\n\nThe anchor only digs in if the pull arrives flat; the fluke needs about 12° to 20° for that. Putting the numbers in: `1 / sin 12° ≈ 4.8` and `1 / sin 20° ≈ 2.9`. Those **are** the three to five — the rule of thumb is nothing other than the reciprocal of the sine of this angle.\n\nIn reality the chain sags, and that helps: the curve arrives at the bottom flatter still than the imagined straight line. That is why chain holds better than rope, and why you let out more in wind and waves — snatch loading otherwise lifts the pull."
+       },
        "kind": "zahl",
        "q": {
         "de": "Wassertiefe 4 m, Faustregel: fünffache Länge. Wie viel Kette und Leine steckst du?",
         "en": "Depth 4 m, rule of thumb: five times the length. How much chain and rope do you pay out?"
        },
+       "skizze": "skizze-anker",
        "toleranz": 0.05,
        "warum": {
         "de": "4 × 5 = 20 m. Bei Wind und Welle eher mehr; bei zu kurzer Länge zieht der Anker nach oben statt waagrecht und bricht aus.",
@@ -2185,6 +2200,10 @@
        "answer": 3,
        "bild": "",
        "code": "",
+       "herleitung": {
+        "de": "## Warum rund 90 Grad\n\n`β` Kurs zum Wind, Grad. Der Wendewinkel ist die Kursänderung von einem Bug auf den anderen.\n\nAm Wind liegt ein Tourenboot bei `β ≈ 45°` zur wahren Windrichtung — näher heran killt das Segel. Nach der Wende liegt es spiegelbildlich zur selben Windachse, also wieder bei 45°, nur auf der anderen Seite. Die Kursänderung ist die Summe beider Winkel:\n\n`Wendewinkel = 2 · β = 90°`\n\nDaraus folgt der Rest von selbst: Je höher ein Boot an den Wind geht, also je kleiner `β`, desto kleiner sein Wendewinkel **und** desto kleiner sein Umweg `1 / cos β`. Eine Yacht mit `β = 35°` wendet über 70° und segelt nur das `1 / cos 35° ≈ 1,22`-fache; eine Jolle, die nur 50° schafft, wendet über 100° und segelt das 1,56-fache. Höhe am Wind ist deshalb bares Geld.",
+        "en": "## Why roughly 90 degrees\n\n`β` course to the wind, degrees. The tacking angle (Wendewinkel) is the change of course from one tack to the other.\n\nClose-hauled (am Wind) a cruising boat lies at `β ≈ 45°` to the true wind — any closer and the sail begins to shake. After the tack it lies mirrored about the same wind axis, so at 45° again, only on the other side. The change of course is the sum of both angles:\n\n`tacking angle = 2 · β = 90°`\n\nThe rest follows by itself: the closer a boat points to the wind, that is the smaller `β`, the smaller its tacking angle **and** the smaller its detour `1 / cos β`. A yacht with `β = 35°` tacks through 70° and sails only `1 / cos 35° ≈ 1.22` times the distance; a dinghy (Jolle) that manages no better than 50° tacks through 100° and sails 1.56 times. Pointing high is therefore money in the bank."
+       },
        "kind": "mc",
        "options": [
         {
@@ -2208,6 +2227,7 @@
         "de": "Was ist der Wendewinkel eines typischen Tourenbootes?",
         "en": "What is the tacking angle of a typical cruising boat?"
        },
+       "skizze": "skizze-kreuzen",
        "warum": {
         "de": "Von 45 Grad auf dem einen Bug zu 45 Grad auf dem anderen sind es rund 90 Grad Kursänderung.",
         "en": "From 45 degrees on one tack to 45 on the other is about 90 degrees of course change."
@@ -2220,11 +2240,16 @@
         "de": "mal",
         "en": "mal"
        },
+       "herleitung": {
+        "de": "## Warum der Umweg genau `1 / cos β` ist\n\n`d` Weg in Windrichtung, den man gutmachen will (Luftlinie), km. `s` tatsächlich gesegelter Weg, km. `β` Kurs zum Wind, Grad.\n\nGegen den Wind führt kein gerader Weg, also segelt man Schläge unter dem Winkel `β` zur Windrichtung. Von einem Schlag der Länge `sᵢ` zählt nur der Anteil in Windrichtung, und das ist die Ankathete im rechtwinkligen Dreieck: `sᵢ · cos β`. Summiert man über alle Schläge, steht links der gutgemachte Weg und rechts der gesegelte:\n\n`d = s · cos β`  →  `s = d / cos β`\n\nBemerkenswert daran ist, dass die Aufteilung herausfällt: ob man zwei lange oder zwanzig kurze Schläge segelt, ändert am Umweg nichts. Nur der Winkel zählt.\n\nBei `β = 45°` ist `cos 45° = √2 / 2 ≈ 0,707`, also `s = d · √2 ≈ 1,41 · d`. Aus 6 km werden gut 8,5 km — und die Zeit wächst mit demselben Faktor. Was hier nicht drinsteckt, kommt noch dazu: jede Wende kostet Fahrt, und Strom und Welle rechnen für sich.",
+        "en": "## Why the detour is exactly `1 / cos β`\n\n`d` distance to be made good in the wind's direction (straight line), km. `s` distance actually sailed, km. `β` course to the wind, degrees.\n\nThere is no straight way against the wind, so you sail legs at the angle `β` to the wind's direction. Of a leg of length `sᵢ` only the part in the wind's direction counts, and that is the adjacent side in the right-angled triangle: `sᵢ · cos β`. Summed over all legs, on the left stands the distance made good and on the right the distance sailed:\n\n`d = s · cos β`  →  `s = d / cos β`\n\nWhat is remarkable about this is that the division into legs drops out: whether you sail two long legs or twenty short ones changes nothing about the detour. Only the angle counts.\n\nAt `β = 45°`, `cos 45° = √2 / 2 ≈ 0.707`, so `s = d · √2 ≈ 1.41 · d`. Six kilometres become a good 8.5 — and the time grows by the same factor. What is not in the formula comes on top: every tack costs speed, and current and waves count for themselves."
+       },
        "kind": "zahl",
        "q": {
         "de": "Du segelst am Wind und musst 6 km gegen den Wind zurücklegen. Um welchen Faktor wird der tatsächliche Weg beim Kreuzen ungefähr länger?",
         "en": "You are close-hauled and have 6 km to make to windward. By roughly what factor does beating lengthen the actual distance?"
        },
+       "skizze": "skizze-kreuzen",
        "toleranz": 0.12,
        "warum": {
         "de": "Bei 45 Grad Kurs zum Wind ist der Weg etwa 1/cos(45°) ≈ 1,41 mal so lang. Aus 6 km werden also gut 8,5 km — und entsprechend mehr Zeit.",
@@ -2651,6 +2676,10 @@
        "answer": 1,
        "bild": "",
        "code": "",
+       "herleitung": {
+        "de": "## Warum das eine Merkregel ist und keine Formel\n\n`β` Kurs zum Wind, Grad. `δ` Winkel des Segels zur Mittschiffslinie, Grad. `ε` Anstellwinkel, also der Winkel zwischen Segel und anliegendem Wind, Grad.\n\nEin Segel zieht wie ein Flügel, und ein Flügel hat sein Bestes bei einem Anstellwinkel von etwa 15° bis 20°: darüber reißt die Strömung ab, darunter killt das Tuch. Der Wind kommt unter `β` zur Mittschiffslinie, das Segel steht unter `δ` dazu, also ist `ε = β − δ`. Setzt man `δ = β / 2`, bleibt `ε = β / 2` — und das trifft den guten Bereich genau dann, wenn `β` zwischen etwa 30° und 40° liegt.\n\nDamit ist gesagt, was die Regel ist und wo sie herkommt: eine Winkelhalbierende, die auf **am Wind** gerechnet ist. Zwei Dinge verschieben sie. Der scheinbare Wind kommt weiter von vorn als der wahre, also ist `β` in Wahrheit kleiner als der Kurs zum wahren Wind. Und auf raumen Kursen zieht das Segel nicht mehr wie ein Flügel, sondern wie ein Bremsschirm; dort zählt nur noch die Fläche quer zum Wind, und `δ ≈ β / 2` wird falsch.\n\nEine Formel, die man ausrechnet, ist das also nicht — eine Ansage für den ersten Griff schon. Genauer sagt es das Segel selbst: **aufmachen, bis es killt, dann gerade dicht nehmen.**",
+        "en": "## Why this is a rule of thumb and not a formula\n\n`β` course to the wind, degrees. `δ` angle of the sail to the centreline, degrees. `ε` angle of attack, that is the angle between the sail and the wind it meets, degrees.\n\nA sail pulls like a wing, and a wing is at its best at an angle of attack of about 15° to 20°: above that the flow separates, below it the cloth shakes. The wind comes in at `β` to the centreline, the sail stands at `δ` to it, so `ε = β − δ`. Put `δ = β / 2` and what is left is `ε = β / 2` — and that hits the good range exactly when `β` lies between about 30° and 40°.\n\nThat says what the rule is and where it comes from: a bisected angle, worked out for sailing close-hauled (am Wind). Two things shift it. The apparent wind (scheinbarer Wind) comes from further forward than the true wind, so `β` is in truth smaller than the course to the true wind. And on free courses the sail no longer pulls like a wing but like a parachute; there only the area across the wind counts, and `δ ≈ β / 2` becomes wrong.\n\nSo it is not a formula you work out — but it is a good first setting. The sail itself says it more precisely: **ease until it shakes, then take in just enough.**"
+       },
        "kind": "mc",
        "options": [
         {
@@ -2674,6 +2703,7 @@
         "de": "Bei welchem Kurs steht das Segel etwa 45 Grad zur Mittschiffslinie?",
         "en": "On which course does the sail stand at about 45 degrees to the centreline?"
        },
+       "skizze": "",
        "warum": {
         "de": "Grobe Regel: Der Segelwinkel ist etwa halb so groß wie der Kurswinkel zum Wind. Bei 90 Grad Kurs also etwa 45 Grad Segel.",
         "en": "Rough rule: the sail angle is about half the course angle to the wind. At 90 degrees of course, about 45 of sail."
@@ -7132,6 +7162,10 @@
        "answer": 3,
        "bild": "",
        "code": "",
+       "herleitung": {
+        "de": "## Woher 112,5 und 135 kommen\n\nAlle Winkel vom Boot aus gemessen, 0° ist genau voraus.\n\nEin Seitenlicht soll von vorn bis „ein Stück hinter querab“ zu sehen sein. Von voraus bis querab sind es 90°, und dazu kommen die klassischen **zwei Kompassstriche**. Ein Strich ist der zweiunddreißigste Teil des Vollkreises, also `360° / 32 = 11,25°`; zwei Striche sind `22,5°`. Zusammen:\n\n`90° + 22,5° = 112,5°` je Seite\n\nDas Hecklicht füllt genau den Rest auf, damit rundum kein Loch bleibt:\n\n`360° − 2 · 112,5° = 135°`\n\nDas sind 67,5° nach jeder Seite. Und das Topplicht deckt beide Seitenlichter zusammen ab: `2 · 112,5° = 225°`.\n\nDamit ist auch die Überholregel erklärt: Überholer ist, wer aus mehr als 22,5° achterlicher als querab aufkommt — also genau aus dem Sektor, in dem man nachts nur das weiße Hecklicht sieht und kein farbiges Licht. Die Regel ist nicht zusätzlich definiert, sie ist dieselbe Geometrie.",
+        "en": "## Where 112.5 and 135 come from\n\nAll angles measured from the boat, 0° is dead ahead.\n\nA sidelight (Seitenlicht) is meant to be visible from ahead to \"a little abaft the beam\". From ahead to abeam (querab) is 90°, and to that come the classic **two points of the compass**. One point is the thirty-second part of the full circle, that is `360° / 32 = 11.25°`; two points are `22.5°`. Together:\n\n`90° + 22.5° = 112.5°` per side\n\nThe sternlight (Hecklicht) fills in exactly the rest, so that no gap is left all round:\n\n`360° − 2 · 112.5° = 135°`\n\nThat is 67.5° to either side. And the masthead light (Topplicht) covers both sidelights together: `2 · 112.5° = 225°`.\n\nThis also explains the overtaking rule: you are overtaking if you come up from more than 22.5° abaft the beam — that is, from exactly the sector in which you see only the white sternlight at night and no coloured light. The rule is not defined separately, it is the same geometry."
+       },
        "kind": "mc",
        "options": [
         {
@@ -7155,6 +7189,7 @@
         "de": "Welchen Horizontbogen deckt ein Seitenlicht ab?",
         "en": "What arc of the horizon does a sidelight cover?"
        },
+       "skizze": "skizze-sektoren",
        "warum": {
         "de": "Zwei Seitenlichter zu 112,5 Grad plus das Hecklicht mit 135 Grad ergeben genau den Vollkreis von 360 Grad.",
         "en": "Two sidelights of 112.5 degrees plus the sternlight of 135 make exactly the full circle of 360."
@@ -7164,6 +7199,10 @@
        "answer": 2,
        "bild": "",
        "code": "",
+       "herleitung": {
+        "de": "## Woher 112,5 und 135 kommen\n\nAlle Winkel vom Boot aus gemessen, 0° ist genau voraus.\n\nEin Seitenlicht soll von vorn bis „ein Stück hinter querab“ zu sehen sein. Von voraus bis querab sind es 90°, und dazu kommen die klassischen **zwei Kompassstriche**. Ein Strich ist der zweiunddreißigste Teil des Vollkreises, also `360° / 32 = 11,25°`; zwei Striche sind `22,5°`. Zusammen:\n\n`90° + 22,5° = 112,5°` je Seite\n\nDas Hecklicht füllt genau den Rest auf, damit rundum kein Loch bleibt:\n\n`360° − 2 · 112,5° = 135°`\n\nDas sind 67,5° nach jeder Seite. Und das Topplicht deckt beide Seitenlichter zusammen ab: `2 · 112,5° = 225°`.\n\nDamit ist auch die Überholregel erklärt: Überholer ist, wer aus mehr als 22,5° achterlicher als querab aufkommt — also genau aus dem Sektor, in dem man nachts nur das weiße Hecklicht sieht und kein farbiges Licht. Die Regel ist nicht zusätzlich definiert, sie ist dieselbe Geometrie.",
+        "en": "## Where 112.5 and 135 come from\n\nAll angles measured from the boat, 0° is dead ahead.\n\nA sidelight (Seitenlicht) is meant to be visible from ahead to \"a little abaft the beam\". From ahead to abeam (querab) is 90°, and to that come the classic **two points of the compass**. One point is the thirty-second part of the full circle, that is `360° / 32 = 11.25°`; two points are `22.5°`. Together:\n\n`90° + 22.5° = 112.5°` per side\n\nThe sternlight (Hecklicht) fills in exactly the rest, so that no gap is left all round:\n\n`360° − 2 · 112.5° = 135°`\n\nThat is 67.5° to either side. And the masthead light (Topplicht) covers both sidelights together: `2 · 112.5° = 225°`.\n\nThis also explains the overtaking rule: you are overtaking if you come up from more than 22.5° abaft the beam — that is, from exactly the sector in which you see only the white sternlight at night and no coloured light. The rule is not defined separately, it is the same geometry."
+       },
        "kind": "mc",
        "options": [
         {
@@ -7187,6 +7226,7 @@
         "de": "Welchen Bogen deckt das Hecklicht ab?",
         "en": "What arc does the sternlight cover?"
        },
+       "skizze": "skizze-sektoren",
        "warum": {
         "de": "Diese 135 Grad sind zugleich der Sektor, aus dem ein Fahrzeug als überholend gilt.",
         "en": "Those 135 degrees are also the sector from which a vessel counts as overtaking."
@@ -7196,6 +7236,10 @@
        "answer": 1,
        "bild": "",
        "code": "",
+       "herleitung": {
+        "de": "## Woher 112,5 und 135 kommen\n\nAlle Winkel vom Boot aus gemessen, 0° ist genau voraus.\n\nEin Seitenlicht soll von vorn bis „ein Stück hinter querab“ zu sehen sein. Von voraus bis querab sind es 90°, und dazu kommen die klassischen **zwei Kompassstriche**. Ein Strich ist der zweiunddreißigste Teil des Vollkreises, also `360° / 32 = 11,25°`; zwei Striche sind `22,5°`. Zusammen:\n\n`90° + 22,5° = 112,5°` je Seite\n\nDas Hecklicht füllt genau den Rest auf, damit rundum kein Loch bleibt:\n\n`360° − 2 · 112,5° = 135°`\n\nDas sind 67,5° nach jeder Seite. Und das Topplicht deckt beide Seitenlichter zusammen ab: `2 · 112,5° = 225°`.\n\nDamit ist auch die Überholregel erklärt: Überholer ist, wer aus mehr als 22,5° achterlicher als querab aufkommt — also genau aus dem Sektor, in dem man nachts nur das weiße Hecklicht sieht und kein farbiges Licht. Die Regel ist nicht zusätzlich definiert, sie ist dieselbe Geometrie.",
+        "en": "## Where 112.5 and 135 come from\n\nAll angles measured from the boat, 0° is dead ahead.\n\nA sidelight (Seitenlicht) is meant to be visible from ahead to \"a little abaft the beam\". From ahead to abeam (querab) is 90°, and to that come the classic **two points of the compass**. One point is the thirty-second part of the full circle, that is `360° / 32 = 11.25°`; two points are `22.5°`. Together:\n\n`90° + 22.5° = 112.5°` per side\n\nThe sternlight (Hecklicht) fills in exactly the rest, so that no gap is left all round:\n\n`360° − 2 · 112.5° = 135°`\n\nThat is 67.5° to either side. And the masthead light (Topplicht) covers both sidelights together: `2 · 112.5° = 225°`.\n\nThis also explains the overtaking rule: you are overtaking if you come up from more than 22.5° abaft the beam — that is, from exactly the sector in which you see only the white sternlight at night and no coloured light. The rule is not defined separately, it is the same geometry."
+       },
        "kind": "mc",
        "options": [
         {
@@ -7219,6 +7263,7 @@
         "de": "Welche Farbe hat das Topplicht?",
         "en": "What colour is the masthead light?"
        },
+       "skizze": "skizze-sektoren",
        "warum": {
         "de": "Es leuchtet 225 Grad nach vorn und kennzeichnet ein Maschinenfahrzeug in Fahrt.",
         "en": "It shines 225 degrees forward and marks a power-driven vessel under way."
@@ -7957,11 +8002,16 @@
         "de": "Beaufort",
         "en": "Beaufort"
        },
+       "herleitung": {
+        "de": "## Was Beaufort ist und was es nicht ist\n\n`B` Windstärke in Beaufort. `v` Windgeschwindigkeit in 10 m Höhe über freiem Gelände, m/s.\n\nBeaufort ist **keine gemessene Größe**, sondern eine Skala mit festgelegten Grenzen: Stufe 6 beginnt bei 10,8 m/s und endet bei 13,8 m/s. Die Stufen wurden ursprünglich über das beschrieben, was man sieht — wie viel Segel ein Schiff noch tragen kann, wie die See aussieht — und erst später in Geschwindigkeiten übersetzt. An diese Übersetzung legt man die Näherung\n\n`v ≈ 0,836 · B^1,5 m/s`\n\nSie ist an die Tabelle **angepasst** und nicht aus der Strömungslehre hergeleitet; der Exponent 1,5 ist der Wert, der die Stufengrenzen am besten trifft. Für `B = 6`: `6^1,5 = 6 · √6 ≈ 14,7`, also `v ≈ 12,3 m/s`, mal 3,6 rund 44 km/h. Mit der Untergrenze 10,8 m/s gerechnet sind es 39 km/h — daher „knapp 40“.\n\nWarum eine Jolle ausgerechnet hier im Hafen bleibt, sagt die Formel nicht. Das ist Erfahrung über Rumpflänge, Verdränger und Mannschaftsgewicht, keine Physik — der Winddruck wächst aber mit dem Quadrat, und das ist der Grund, warum die Grenze so scharf ist.",
+        "en": "## What Beaufort is and what it is not\n\n`B` wind force in Beaufort. `v` wind speed at 10 m above open ground, m/s.\n\nBeaufort is **not a measured quantity** but a scale with fixed boundaries: force 6 begins at 10.8 m/s and ends at 13.8 m/s. The steps were originally described by what you can see — how much sail a ship could still carry, what the sea looks like — and only later translated into speeds. To that translation one fits the approximation\n\n`v ≈ 0.836 · B^1.5 m/s`\n\nIt is **fitted** to the table and not derived from fluid dynamics; the exponent 1.5 is the value that hits the step boundaries best. For `B = 6`: `6^1.5 = 6 · √6 ≈ 14.7`, so `v ≈ 12.3 m/s`, times 3.6 about 44 km/h. Reckoned with the lower boundary of 10.8 m/s it is 39 km/h — hence \"just under 40\".\n\nWhy a dinghy (Jolle) stays in harbour at exactly this point the formula does not say. That is experience about hull length, displacement and crew weight, not physics — but wind pressure grows with the square, and that is why the boundary is so sharp."
+       },
        "kind": "zahl",
        "q": {
         "de": "Bei welcher Windstärke in Beaufort bleiben Jollen üblicherweise im Hafen?",
         "en": "At what wind force in Beaufort do dinghies usually stay in harbour?"
        },
+       "skizze": "",
        "toleranz": 0.2,
        "warum": {
         "de": "Ab 6 Beaufort, also knapp 40 km/h, gilt auf Binnenseen Starkwindwarnung. Für eine Jolle ist das die Grenze.",
@@ -8167,11 +8217,16 @@
         "de": "km/h",
         "en": "km/h"
        },
+       "herleitung": {
+        "de": "## Woher die 3,6 kommt\n\nHier ist nichts zu messen, das ist reine Buchhaltung mit Einheiten. Wer in einer Sekunde einen Meter macht, macht in einer Stunde 3600 Meter, denn eine Stunde hat 3600 Sekunden. Und 3600 Meter sind 3,6 Kilometer, denn ein Kilometer hat 1000 Meter:\n\n`1 m/s = 3600 m/h = 3600 / 1000 km/h = 3,6 km/h`\n\nAlso `5 m/s = 5 · 3,6 = 18 km/h`, und rückwärts teilt man durch 3,6. Wem das im Kopf zu krumm ist: mal 3 und noch ein Viertel dazu — `5 · 3 = 15`, ein Viertel davon ist 3,75, zusammen 18,75. Das ist nicht exakt, aber es reicht, um zu wissen, ob man noch segeln will.",
+        "en": "## Where the 3.6 comes from\n\nThere is nothing to measure here, this is plain bookkeeping with units. Whoever covers one metre in a second covers 3600 metres in an hour, because an hour has 3600 seconds. And 3600 metres are 3.6 kilometres, because a kilometre has 1000 metres:\n\n`1 m/s = 3600 m/h = 3600 / 1000 km/h = 3.6 km/h`\n\nSo `5 m/s = 5 · 3.6 = 18 km/h`, and the other way round you divide by 3.6. If that is too awkward in your head: times 3 and add a quarter — `5 · 3 = 15`, a quarter of that is 3.75, together 18.75. Not exact, but enough to know whether you still want to go sailing."
+       },
        "kind": "zahl",
        "q": {
         "de": "Wie viele km/h sind ungefähr 5 m/s?",
         "en": "How many km/h is roughly 5 m/s?"
        },
+       "skizze": "",
        "toleranz": 0.08,
        "warum": {
         "de": "Mal 3,6: 5 × 3,6 = 18 km/h. Umgekehrt teilt man km/h durch 3,6, um m/s zu bekommen.",
@@ -8185,11 +8240,16 @@
         "de": "m/s",
         "en": "m/s"
        },
+       "herleitung": {
+        "de": "## Woher 0,514 kommt\n\n`sm` Seemeile, m. `kn` Knoten, also eine Seemeile je Stunde.\n\nDie Seemeile ist keine willkürliche Länge, sondern ein Stück Erde: eine Bogenminute auf einem Großkreis. Der Erdumfang misst rund 40 007 km, ein Vollkreis hat 360 Grad und ein Grad 60 Minuten:\n\n`1 sm = 40 007 km / (360 · 60) ≈ 1,852 km`\n\nGenau deshalb ist sie heute auf 1852 m **festgelegt** — die Zahl ist gerundete Erdvermessung und keine Definition aus dem Nichts. Ihr Nutzen ist die Seekarte: eine Bogenminute Breite am Kartenrand ist eine Seemeile, man sticht sie einfach ab.\n\nEin Knoten ist eine Seemeile je Stunde, eine Stunde hat 3600 Sekunden:\n\n`1 kn = 1852 m / 3600 s ≈ 0,514 m/s`\n\nDamit ist `20 kn ≈ 20 · 0,514 ≈ 10,3 m/s`. Die Faustregel „Knoten halbieren“ ist derselbe Faktor, auf 0,5 abgerundet: sie liegt rund 3 % zu niedrig, und das ist an Bord die harmlose Richtung.",
+        "en": "## Where 0.514 comes from\n\n`sm` nautical mile (Seemeile), m. `kn` knot, that is one nautical mile per hour.\n\nThe nautical mile is not an arbitrary length but a piece of the earth: one minute of arc on a great circle. The circumference of the earth measures about 40,007 km, a full circle has 360 degrees and a degree has 60 minutes:\n\n`1 sm = 40,007 km / (360 · 60) ≈ 1.852 km`\n\nThat is exactly why it is **defined** as 1852 m today — the number is rounded surveying of the earth and not a definition out of thin air. Its use is the chart: one minute of latitude at the edge of the chart is one nautical mile, you simply pick it off with the dividers.\n\nA knot is one nautical mile per hour, and an hour has 3600 seconds:\n\n`1 kn = 1852 m / 3600 s ≈ 0.514 m/s`\n\nSo `20 kn ≈ 20 · 0.514 ≈ 10.3 m/s`. The rule of thumb \"halve the knots\" is the same factor rounded down to 0.5: it comes out about 3 % low, and on board that is the harmless direction."
+       },
        "kind": "zahl",
        "q": {
         "de": "Wie viele m/s sind etwa 20 Knoten?",
         "en": "How many m/s is about 20 knots?"
        },
+       "skizze": "",
        "toleranz": 0.1,
        "warum": {
         "de": "Ein Knoten ist 1,852 km/h, also rund 0,514 m/s. 20 × 0,514 ≈ 10,3 m/s — grob gerechnet: Knoten halbieren.",
@@ -8774,6 +8834,10 @@
        "answer": 0,
        "bild": "",
        "code": "",
+       "herleitung": {
+        "de": "## Warum der Winddruck mit dem Quadrat wächst\n\n`F` Kraft auf die Fläche, N. `q` Staudruck, Pa. `ρ` Luftdichte, 1,225 kg/m³. `v` Windgeschwindigkeit, m/s. `A` angeströmte Fläche, m². `c` Formzahl, dimensionslos. `t` Zeit, s. `m` Luftmasse, kg.\n\nIn der Zeit `t` trifft die Luft aus einem Schlauch der Länge `v · t` und des Querschnitts `A` auf die Fläche, also die Masse\n\n`m = ρ · A · v · t`\n\nWird sie an der Fläche abgebremst, gibt sie ihren Impuls `m · v` ab. Kraft ist Impuls je Zeit (das zweite Newtonsche Gesetz in seiner ursprünglichen Form):\n\n`F = m · v / t = ρ · A · v²`\n\nDie beiden `v` haben verschiedene Aufgaben, und genau darin steckt das Quadrat: das eine sagt, **wie viel** Luft ankommt, das andere, **wie schnell** sie ist. Doppelter Wind bringt doppelt so viel Luft mit doppelter Geschwindigkeit — also die vierfache Kraft.\n\nGenauer gerechnet wird die Luft nicht vollständig gestoppt, sondern umgelenkt; aus der Energiebilanz fällt die Hälfte heraus, und die Form der Fläche steckt in `c`:\n\n`q = ½ ρ v²`  und  `F = c · q · A`\n\nAus 4 Bft (rund 6,7 m/s) werden in der Bö 8 Bft (rund 18,9 m/s): `(18,9 / 6,7)² ≈ 8`. Das ist das Vier- bis Neunfache der Regel — und der Grund, warum eine Bö ein Boot legt, das bei stetigem Wind derselben Stärke ruhig segelt.",
+        "en": "## Why wind pressure grows with the square\n\n`F` force on the area, N. `q` dynamic pressure, Pa. `ρ` density of air, 1.225 kg/m³. `v` wind speed, m/s. `A` area met by the flow, m². `c` shape factor, dimensionless. `t` time, s. `m` mass of air, kg.\n\nIn the time `t` the air out of a tube of length `v · t` and cross-section `A` meets the area, that is the mass\n\n`m = ρ · A · v · t`\n\nIf it is stopped at the area, it gives up its momentum `m · v`. Force is momentum per time (Newton's second law in its original form):\n\n`F = m · v / t = ρ · A · v²`\n\nThe two `v` have different jobs, and that is exactly where the square comes from: one says **how much** air arrives, the other **how fast** it is. Twice the wind brings twice as much air at twice the speed — so four times the force.\n\nWorked out more carefully the air is not stopped completely but deflected; the energy balance gives a factor of one half, and the shape of the area sits in `c`:\n\n`q = ½ ρ v²`  and  `F = c · q · A`\n\nForce 4 (about 6.7 m/s) becomes force 8 in the gust (about 18.9 m/s): `(18.9 / 6.7)² ≈ 8`. That is the four to nine times of the rule — and the reason a gust lays a boat over that sails upright in a steady wind of the same strength."
+       },
        "kind": "mc",
        "options": [
         {
@@ -8797,6 +8861,7 @@
         "de": "Um welchen Faktor kann der Wind in einer Gewitterbö zunehmen?",
         "en": "By what factor can the wind rise in a thunderstorm gust?"
        },
+       "skizze": "skizze-staudruck",
        "warum": {
         "de": "Aus 4 Beaufort werden binnen Minuten 8 — und der Winddruck wächst mit dem Quadrat, also auf das Vier- bis Neunfache.",
         "en": "4 Beaufort becomes 8 within minutes — and the pressure grows with the square, so four to ninefold."
@@ -8934,6 +8999,10 @@
        "answer": 0,
        "bild": "",
        "code": "",
+       "herleitung": {
+        "de": "## Woher „durch drei“ kommt\n\n`d` Entfernung des Blitzes, km. `t` Zeit zwischen Blitz und Donner, s. `c` Schallgeschwindigkeit, rund 343 m/s bei 20 °C.\n\nLicht braucht für zehn Kilometer 33 Millionstel Sekunden. Gegen eine Zählzeit von Sekunden ist das nichts — der Blitz ist da, sobald er passiert. Was man misst, ist also allein die Laufzeit des Schalls:\n\n`d = c · t`\n\nWie lange braucht der Schall für einen Kilometer? `t = 1000 m / 343 m/s ≈ 2,9 s`. Auf drei gerundet:\n\n`d [km] ≈ t [s] / 3`\n\nAlso `12 s / 3 = 4 km`. Genau gerechnet sind es `12 · 0,343 = 4,1 km` — die Regel schätzt das Gewitter also eher etwas näher, als es ist, und das ist die richtige Richtung.\n\nDie Schallgeschwindigkeit hängt an der Temperatur (`c ≈ 331 + 0,6 · ϑ` m/s mit `ϑ` in °C), aber zwischen 0 °C und 30 °C ändert sich das nur um ein paar Prozent — weniger, als man beim Zählen ohnehin danebenliegt. Wichtiger: gezählt wird bis zum **ersten** Donner, nicht bis zum lautesten.",
+        "en": "## Where \"divide by three\" comes from\n\n`d` distance of the lightning, km. `t` time between flash and thunder, s. `c` speed of sound, about 343 m/s at 20 °C.\n\nLight takes 33 millionths of a second for ten kilometres. Against a counting time in seconds that is nothing — the flash is there the moment it happens. What you measure is therefore only the travel time of the sound:\n\n`d = c · t`\n\nHow long does sound take for one kilometre? `t = 1000 m / 343 m/s ≈ 2.9 s`. Rounded to three:\n\n`d [km] ≈ t [s] / 3`\n\nSo `12 s / 3 = 4 km`. Worked out exactly it is `12 · 0.343 = 4.1 km` — the rule therefore puts the storm slightly nearer than it is, and that is the right direction.\n\nThe speed of sound depends on temperature (`c ≈ 331 + 0.6 · ϑ` m/s with `ϑ` in °C), but between 0 °C and 30 °C that changes it by only a few per cent — less than you are out by when counting anyway. More important: you count to the **first** thunder, not to the loudest."
+       },
        "kind": "mc",
        "options": [
         {
@@ -8957,6 +9026,7 @@
         "de": "Welche Faustregel gibt es für die Entfernung eines Gewitters?",
         "en": "What rule of thumb is there for the distance of a thunderstorm?"
        },
+       "skizze": "skizze-donner",
        "warum": {
         "de": "Der Schall braucht rund drei Sekunden je Kilometer. Neun Sekunden heißen also etwa drei Kilometer.",
         "en": "Sound takes about three seconds per kilometre. So nine seconds means about three kilometres."
@@ -8969,11 +9039,16 @@
         "de": "km",
         "en": "km"
        },
+       "herleitung": {
+        "de": "## Woher „durch drei“ kommt\n\n`d` Entfernung des Blitzes, km. `t` Zeit zwischen Blitz und Donner, s. `c` Schallgeschwindigkeit, rund 343 m/s bei 20 °C.\n\nLicht braucht für zehn Kilometer 33 Millionstel Sekunden. Gegen eine Zählzeit von Sekunden ist das nichts — der Blitz ist da, sobald er passiert. Was man misst, ist also allein die Laufzeit des Schalls:\n\n`d = c · t`\n\nWie lange braucht der Schall für einen Kilometer? `t = 1000 m / 343 m/s ≈ 2,9 s`. Auf drei gerundet:\n\n`d [km] ≈ t [s] / 3`\n\nAlso `12 s / 3 = 4 km`. Genau gerechnet sind es `12 · 0,343 = 4,1 km` — die Regel schätzt das Gewitter also eher etwas näher, als es ist, und das ist die richtige Richtung.\n\nDie Schallgeschwindigkeit hängt an der Temperatur (`c ≈ 331 + 0,6 · ϑ` m/s mit `ϑ` in °C), aber zwischen 0 °C und 30 °C ändert sich das nur um ein paar Prozent — weniger, als man beim Zählen ohnehin danebenliegt. Wichtiger: gezählt wird bis zum **ersten** Donner, nicht bis zum lautesten.",
+        "en": "## Where \"divide by three\" comes from\n\n`d` distance of the lightning, km. `t` time between flash and thunder, s. `c` speed of sound, about 343 m/s at 20 °C.\n\nLight takes 33 millionths of a second for ten kilometres. Against a counting time in seconds that is nothing — the flash is there the moment it happens. What you measure is therefore only the travel time of the sound:\n\n`d = c · t`\n\nHow long does sound take for one kilometre? `t = 1000 m / 343 m/s ≈ 2.9 s`. Rounded to three:\n\n`d [km] ≈ t [s] / 3`\n\nSo `12 s / 3 = 4 km`. Worked out exactly it is `12 · 0.343 = 4.1 km` — the rule therefore puts the storm slightly nearer than it is, and that is the right direction.\n\nThe speed of sound depends on temperature (`c ≈ 331 + 0.6 · ϑ` m/s with `ϑ` in °C), but between 0 °C and 30 °C that changes it by only a few per cent — less than you are out by when counting anyway. More important: you count to the **first** thunder, not to the loudest."
+       },
        "kind": "zahl",
        "q": {
         "de": "Zwischen Blitz und Donner vergehen 12 Sekunden. Wie weit ist das Gewitter?",
         "en": "Twelve seconds pass between flash and thunder. How far is the storm?"
        },
+       "skizze": "skizze-donner",
        "toleranz": 0.15,
        "warum": {
         "de": "12 geteilt durch 3 ergibt 4 km. Bei weniger als 10 Sekunden ist es Zeit, nicht mehr über die Rückkehr nachzudenken, sondern sie auszuführen.",

@@ -370,6 +370,13 @@ QVariantMap Course::exercise() const
                m_course->text(task.value(QLatin1String("warum")).isValid()
                               ? task.value(QLatin1String("warum"))
                               : task.value(QLatin1String("why"))));
+    // Die Herleitung zur Loesung, und die Skizze, die dazugehoert. Beide
+    // gehoeren in die Rueckmeldung und nicht neben die Frage: eine Skizze
+    // ueber der Frage verraet die Antwort. Der Bildname wird nicht durch
+    // text() gereicht -- er ist eine Kennung und keine Sprache.
+    out.insert(QLatin1String("herleitung"),
+               m_course->text(task.value(QLatin1String("herleitung"))));
+    out.insert(QLatin1String("skizze"), task.value(QLatin1String("skizze")));
     out.insert(QLatin1String("bild"), task.value(QLatin1String("bild")));
     out.insert(QLatin1String("nummer"), m_index + 1);
     out.insert(QLatin1String("gesamt"), tasks.size());
@@ -744,6 +751,11 @@ QVariantMap Course::card() const
                m_course->text(task.value(QLatin1String("warum")).isValid()
                               ? task.value(QLatin1String("warum"))
                               : task.value(QLatin1String("why"))));
+    // Auch auf der Karteikarte: die Rueckseite ist der Ort, an dem eine
+    // Formel hergeleitet gehoert.
+    out.insert(QLatin1String("herleitung"),
+               m_course->text(task.value(QLatin1String("herleitung"))));
+    out.insert(QLatin1String("skizze"), task.value(QLatin1String("skizze")));
     out.insert(QLatin1String("kapitel"),
                m_course->text(chapter.value(QLatin1String("titel"))));
     out.insert(QLatin1String("geprueft"), m_cardChecked);

@@ -529,6 +529,31 @@ Page {
                     color: Theme.primaryColor
                 }
 
+                // ---- Die Herleitung ----------------------------------------
+                // Steht in der Lösung und nur dort. Eine Formel, die man nur
+                // auswendig kann, hält genau so lange, wie die Lage zum
+                // Lehrbuch passt; vor der Antwort wäre sie die Antwort.
+                Label {
+                    width: parent.width
+                    visible: !seite.aufgabe.leer
+                             && seite.aufgabe.herleitung !== undefined
+                             && seite.aufgabe.herleitung !== ""
+                    text: (seite.aufgabe.leer
+                           || seite.aufgabe.herleitung === undefined)
+                          ? "" : Stil.reich(seite.aufgabe.herleitung)
+                    textFormat: Text.RichText
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.primaryColor
+                }
+
+                Bild {
+                    width: parent.width
+                    name: (seite.aufgabe.leer
+                           || seite.aufgabe.skizze === undefined)
+                          ? "" : seite.aufgabe.skizze
+                }
+
                 // Die richtige Loesung steht nicht von selbst da: Wer sie
                 // sofort liest, denkt nicht mehr nach. Auf Anfrage aber
                 // gehoert sie hin -- eine falsche Antwort ohne Aufloesung
