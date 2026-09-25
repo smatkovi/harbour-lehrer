@@ -89,6 +89,10 @@ var EN = {
         "print('plot name %f %f' % ...) several.",
 
     // -- Aufgaben
+    "Mathematisch": "Mathematically",
+    "Physikalisch": "Physically",
+    "Annahmen": "Assumptions",
+    "Ziel": "Goal",
     "Aufgabe ": "Exercise ",
     "Frage ": "Question ",
     "Prüfen": "Check",

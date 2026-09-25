@@ -370,6 +370,18 @@ QVariantMap Course::exercise() const
                m_course->text(task.value(QLatin1String("warum")).isValid()
                               ? task.value(QLatin1String("warum"))
                               : task.value(QLatin1String("why"))));
+    // Annahmen und Ziel stehen ueber der Frage, nicht in der Rueckmeldung:
+    // Sie verraten die Loesung nicht, sondern sagen, unter welchen Zahlen
+    // und Naeherungen gerechnet wird und woran man merkt, dass man fertig
+    // ist. Wer sie erst hinterher liest, hat die Aufgabe geraten.
+    out.insert(QLatin1String("mathematisch"),
+               m_course->text(task.value(QLatin1String("mathematisch"))));
+    out.insert(QLatin1String("physikalisch"),
+               m_course->text(task.value(QLatin1String("physikalisch"))));
+    out.insert(QLatin1String("annahmen"),
+               m_course->text(task.value(QLatin1String("annahmen"))));
+    out.insert(QLatin1String("ziel"),
+               m_course->text(task.value(QLatin1String("ziel"))));
     // Die Herleitung zur Loesung, und die Skizze, die dazugehoert. Beide
     // gehoeren in die Rueckmeldung und nicht neben die Frage: eine Skizze
     // ueber der Frage verraet die Antwort. Der Bildname wird nicht durch
@@ -751,6 +763,14 @@ QVariantMap Course::card() const
                m_course->text(task.value(QLatin1String("warum")).isValid()
                               ? task.value(QLatin1String("warum"))
                               : task.value(QLatin1String("why"))));
+    out.insert(QLatin1String("mathematisch"),
+               m_course->text(task.value(QLatin1String("mathematisch"))));
+    out.insert(QLatin1String("physikalisch"),
+               m_course->text(task.value(QLatin1String("physikalisch"))));
+    out.insert(QLatin1String("annahmen"),
+               m_course->text(task.value(QLatin1String("annahmen"))));
+    out.insert(QLatin1String("ziel"),
+               m_course->text(task.value(QLatin1String("ziel"))));
     // Auch auf der Karteikarte: die Rueckseite ist der Ort, an dem eine
     // Formel hergeleitet gehoert.
     out.insert(QLatin1String("herleitung"),

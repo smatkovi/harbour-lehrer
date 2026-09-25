@@ -59,6 +59,22 @@ Page {
                 color: Theme.primaryColor
             }
 
+            // Auch auf der Karteikarte: Die Karte kommt Tage spaeter wieder,
+            // und dann ist die Lektion nicht mehr im Kopf. Die Zahlen, unter
+            // denen gerechnet wird, muessen bei der Frage stehen.
+            Rahmen {
+                x: Theme.horizontalPageMargin
+                width: parent.width - 2 * Theme.horizontalPageMargin
+                mathematisch: seite.karte.leer || seite.karte.mathematisch === undefined
+                            ? "" : seite.karte.mathematisch
+                physikalisch: seite.karte.leer || seite.karte.physikalisch === undefined
+                            ? "" : seite.karte.physikalisch
+                annahmen: seite.karte.leer || seite.karte.annahmen === undefined
+                        ? "" : seite.karte.annahmen
+                ziel: seite.karte.leer || seite.karte.ziel === undefined
+                    ? "" : seite.karte.ziel
+            }
+
             Bild {
                 x: Theme.horizontalPageMargin
                 width: parent.width - 2 * Theme.horizontalPageMargin

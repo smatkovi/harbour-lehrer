@@ -124,6 +124,19 @@ Page {
                 color: Theme.primaryColor
             }
 
+            Rahmen {
+                x: Theme.horizontalPageMargin
+                width: parent.width - 2 * Theme.horizontalPageMargin
+                mathematisch: seite.aufgabe.leer || seite.aufgabe.mathematisch === undefined
+                            ? "" : seite.aufgabe.mathematisch
+                physikalisch: seite.aufgabe.leer || seite.aufgabe.physikalisch === undefined
+                            ? "" : seite.aufgabe.physikalisch
+                annahmen: seite.aufgabe.leer || seite.aufgabe.annahmen === undefined
+                        ? "" : seite.aufgabe.annahmen
+                ziel: seite.aufgabe.leer || seite.aufgabe.ziel === undefined
+                    ? "" : seite.aufgabe.ziel
+            }
+
             Bild {
                 x: Theme.horizontalPageMargin
                 width: parent.width - 2 * Theme.horizontalPageMargin

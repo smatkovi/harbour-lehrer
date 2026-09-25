@@ -880,6 +880,10 @@
     {
      "aufgaben": [
       {
+       "annahmen": {
+        "de": "`printf` schreibt genau die Zeichen, die dastehen, und bricht die Zeile nur um, wo `\\n` im Text steht.",
+        "en": "`printf` writes exactly the characters that are there, and breaks the line only where `\\n` appears in the text."
+       },
        "answer": "ab",
        "code": "#include <stdio.h>\n\nint main()\n{\n    printf(\"a\");\n    printf(\"b\\n\");\n    return 0;\n}\n",
        "kind": "predict",
@@ -892,6 +896,10 @@
       },
       {
        "alts": [],
+       "annahmen": {
+        "de": "Die Zahl soll als Text erscheinen, gefolgt von einem Zeilenumbruch. Verglichen wird Zeichen fuer Zeichen, der Umbruch gehoert dazu.",
+        "en": "The number is to appear as text, followed by a line break. The comparison is character by character, and the break counts."
+       },
        "answers": [
         "42\\n"
        ],
@@ -901,9 +909,17 @@
         "de": "Ergänze, damit das Programm `42` und einen Zeilenumbruch schreibt.",
         "en": "Fill in so the program prints `42` and a line break."
        },
-       "why": "Der Text in den Anführungszeichen geht unverändert hinaus, `\\n` ist der Umbruch.\n\nDer Rückstrich leitet eine Ersatzdarstellung ein: `\\n` Umbruch, `\\t` Tabulator, `\\\\` der Rückstrich selbst, `\\\"` das Anführungszeichen mitten im Text. Man braucht sie, weil Umbruch und Anführungszeichen sonst gar nicht in eine Zeichenkette hineinpassen."
+       "why": "Der Text in den Anführungszeichen geht unverändert hinaus, `\\n` ist der Umbruch.\n\nDer Rückstrich leitet eine Ersatzdarstellung ein: `\\n` Umbruch, `\\t` Tabulator, `\\\\` der Rückstrich selbst, `\\\"` das Anführungszeichen mitten im Text. Man braucht sie, weil Umbruch und Anführungszeichen sonst gar nicht in eine Zeichenkette hineinpassen.",
+       "ziel": {
+        "de": "Die eine fehlende Zeile so ergaenzen, dass `42` und ein Umbruch herauskommen.",
+        "en": "Fill in the one missing line so that `42` and a break come out."
+       }
       },
       {
+       "annahmen": {
+        "de": "Ein Programm ohne Eingabe. Verglichen wird Zeichen fuer Zeichen, der Zeilenumbruch gehoert dazu.",
+        "en": "A program without input. The comparison is character by character, and the line break counts."
+       },
        "expect": "Hallo Simulation",
        "kind": "code",
        "plot": false,
@@ -914,7 +930,11 @@
        "seconds": 10,
        "solution": "#include <stdio.h>\n\nint main()\n{\n    printf(\"Hallo Simulation\\n\");\n    return 0;\n}\n",
        "starter": "#include <stdio.h>\n\nint main()\n{\n    \n    return 0;\n}\n",
-       "why": "Genau ein `printf` mit dem Text und `\\n` am Ende.\n\nDer Text steht hier unmittelbar im Aufruf. Sobald Zahlen dazukommen, wird daraus eine Vorlage mit Platzhaltern -- das ist die nächste Lektion."
+       "why": "Genau ein `printf` mit dem Text und `\\n` am Ende.\n\nDer Text steht hier unmittelbar im Aufruf. Sobald Zahlen dazukommen, wird daraus eine Vorlage mit Platzhaltern -- das ist die nächste Lektion.",
+       "ziel": {
+        "de": "Den kleinsten vollstaendigen C-Rumpf schreiben, der eine Zeile ausgibt.",
+        "en": "Write the smallest complete C skeleton that prints one line."
+       }
       }
      ],
      "ausgabe": "Stroemung\n",
@@ -937,9 +957,17 @@
     {
      "aufgaben": [
       {
+       "annahmen": {
+        "de": "`printf` erfaehrt die Deutung **nur** aus dem Platzhalter. Ein falscher liest dieselben Bits nach der falschen Vorschrift; das ist kein Rundungsfehler, sondern eine andere Zahl.",
+        "en": "`printf` learns the interpretation **only** from the placeholder. A wrong one reads the same bits by the wrong rule; that is not a rounding error, it is a different number."
+       },
        "answer": 1,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "Eine Zahl im Speicher ist ein Bitmuster; erst die Deutung macht einen Wert daraus. `double` deutet 64 Bit als `(-1)^s · m · 2^e` mit 53 Bit Mantisse, `int` deutet 32 Bit als Zweierkomplement-Ganzzahl. Es sind zwei verschiedene Abbildungen von Bitmuster auf Zahl -- keine ist eine Naeherung der anderen.",
+        "en": "A number in memory is a bit pattern; only the interpretation turns it into a value. `double` reads 64 bits as `(-1)^s · m · 2^e` with 53 bits of mantissa, `int` reads 32 bits as a two's-complement integer. These are two different mappings from bit pattern to number -- neither is an approximation of the other."
+       },
        "options": [
         {
          "de": "%s",
@@ -962,22 +990,42 @@
         "de": "Welcher Platzhalter gehört zu einer `double`-Variablen?",
         "en": "Which placeholder belongs to a `double` variable?"
        },
-       "why": "`%d` ist für ganze Zahlen, `%s` für Text. Ein `double` mit `%d` auszugeben ist ein klassischer Fehler -- es kommt Unsinn heraus, und der Übersetzer sagt oft nichts.\n\nDer Grund: `printf` bekommt beliebig viele Werte und erfährt erst aus der Vorlage, wie es sie lesen soll. Steht dort `%d`, liest es vier Bytes als Ganzzahl -- auch wenn acht Bytes Fließkomma übergeben wurden. Danach ist es beim nächsten Platzhalter verrutscht, und der Rest der Zeile wird vollends unsinnig."
+       "why": "`%d` ist für ganze Zahlen, `%s` für Text. Ein `double` mit `%d` auszugeben ist ein klassischer Fehler -- es kommt Unsinn heraus, und der Übersetzer sagt oft nichts.\n\nDer Grund: `printf` bekommt beliebig viele Werte und erfährt erst aus der Vorlage, wie es sie lesen soll. Steht dort `%d`, liest es vier Bytes als Ganzzahl -- auch wenn acht Bytes Fließkomma übergeben wurden. Danach ist es beim nächsten Platzhalter verrutscht, und der Rest der Zeile wird vollends unsinnig.",
+       "ziel": {
+        "de": "Den Platzhalter nennen, der zu einer Kommazahl doppelter Genauigkeit gehoert.",
+        "en": "Name the placeholder that belongs to a double-precision floating-point number."
+       }
       },
       {
        "answer": "6.0",
        "code": "#include <stdio.h>\n\nint main()\n{\n    double x = 2.0;\n    double y = 3.0;\n    printf(\"%.1f\\n\", x * y);\n    return 0;\n}\n",
        "kind": "predict",
+       "mathematisch": {
+        "de": "Zwei Zahlmengen und zwei verschiedene Divisionen. `int` ist der Ausschnitt `-2^31 ... 2^31-1` der ganzen Zahlen, und `a/b` heisst dort `trunc(a/b)`, also Abschneiden zur Null hin. `double` ist die endliche Menge `F` der darstellbaren Kommazahlen, und `a/b` ist dort die gerundete reelle Division. **Welche der beiden gilt, entscheidet der Typ der Operanden** -- nicht der Typ, in den das Ergebnis gelegt wird.",
+        "en": "Two sets of numbers and two different divisions. `int` is the range `-2^31 ... 2^31-1` of the integers, and there `a/b` means `trunc(a/b)`, truncation towards zero. `double` is the finite set `F` of representable floating-point numbers, and there `a/b` is the rounded real division. **Which of the two applies is decided by the type of the operands** -- not by the type the result is put into."
+       },
        "q": {
         "de": "Was kommt heraus?",
         "en": "What comes out?"
        },
        "run": true,
-       "why": "`%.1f` schneidet auf eine Nachkommastelle.\n\nGenauer: es rundet, es schneidet nicht ab -- aus 2.47 wird `2.5`. Und es rundet nur die **Anzeige**. Im Speicher steht die Zahl unverändert weiter; wer mit der angezeigten Zahl weiterrechnet statt mit der gespeicherten, bekommt andere Ergebnisse als das Programm."
+       "why": "`%.1f` schneidet auf eine Nachkommastelle.\n\nGenauer: es rundet, es schneidet nicht ab -- aus 2.47 wird `2.5`. Und es rundet nur die **Anzeige**. Im Speicher steht die Zahl unverändert weiter; wer mit der angezeigten Zahl weiterrechnet statt mit der gespeicherten, bekommt andere Ergebnisse als das Programm.",
+       "ziel": {
+        "de": "Vorhersagen, was herauskommt, wenn Ganzzahlen und Kommazahlen aufeinandertreffen.",
+        "en": "Predict what comes out when integers and floating-point numbers meet."
+       }
       },
       {
        "expect": "20.00",
        "kind": "code",
+       "mathematisch": {
+        "de": "Die kinetische Energie ist die Abbildung `E(m, v) = ½·m·v²`. Zwei Eingaben, eine Ausgabe, keine Naeherung -- die ganze Aufgabe ist, sie in zwei Zeilen C zu uebersetzen.",
+        "en": "The kinetic energy is the map `E(m, v) = ½ · m · v²`. Two inputs, one output, no approximation -- the whole exercise is to put it into two lines of C."
+       },
+       "physikalisch": {
+        "de": "Punktmasse `m = 2,5 kg` mit `v = 4,0 m/s`, geradlinig; keine Rotation, kein Wechsel des Bezugssystems. `E` in Joule, `1 J = 1 kg·m²/s²`, also `½·2,5·4,0² = 20,00 J`.",
+        "en": "A point mass `m = 2.5 kg` moving at `v = 4.0 m/s` in a straight line; no rotation, no change of reference frame. `E` in joules, `1 J = 1 kg·m²/s²`, so `½·2.5·4.0² = 20.00 J`."
+       },
        "plot": false,
        "q": {
         "de": "Lege `double masse = 2.5;` und `double v = 4.0;` an und gib die kinetische Energie `0.5*m*v*v` mit zwei Nachkommastellen aus.",
@@ -986,7 +1034,11 @@
        "seconds": 10,
        "solution": "#include <stdio.h>\n\nint main()\n{\n    double masse = 2.5;\n    double v = 4.0;\n\n    printf(\"%.2f\\n\", 0.5 * masse * v * v);\n    return 0;\n}\n",
        "starter": "#include <stdio.h>\n\nint main()\n{\n    double masse = 2.5;\n    double v = 4.0;\n\n    \n    return 0;\n}\n",
-       "why": "0.5 * 2.5 * 16 = 20. Mit `%.2f` also `20.00`.\n\n`v * v` statt einer Potenzfunktion ist Absicht: eine Multiplikation kostet so gut wie nichts, `pow(v, 2)` ruft dagegen eine Bibliotheksfunktion auf, die den allgemeinen Fall mit Logarithmus und Exponent rechnet. In einer Zeitschleife über Millionen Schritte ist das der Unterschied zwischen Sekunden und Minuten."
+       "why": "0.5 * 2.5 * 16 = 20. Mit `%.2f` also `20.00`.\n\n`v * v` statt einer Potenzfunktion ist Absicht: eine Multiplikation kostet so gut wie nichts, `pow(v, 2)` ruft dagegen eine Bibliotheksfunktion auf, die den allgemeinen Fall mit Logarithmus und Exponent rechnet. In einer Zeitschleife über Millionen Schritte ist das der Unterschied zwischen Sekunden und Minuten.",
+       "ziel": {
+        "de": "Zwei Groessen anlegen, die Formel hinschreiben und das Ergebnis mit zwei Nachkommastellen ausgeben.",
+        "en": "Declare two quantities, write down the formula and print the result with two decimals."
+       }
       }
      ],
      "ausgabe": "100 Schritte zu je 0.010 s\nGesamtzeit: 1.00 s\n",
@@ -1012,17 +1064,29 @@
        "answer": "3\n3.500",
        "code": "#include <stdio.h>\n\nint main()\n{\n    int a = 7;\n    int b = 2;\n    printf(\"%d\\n\", a / b);\n    printf(\"%.3f\\n\", (double)a / b);\n    return 0;\n}\n",
        "kind": "predict",
+       "mathematisch": {
+        "de": "Ganzzahldivision bildet zwei ganze Zahlen wieder auf eine ganze ab: `a/b = trunc(a/b)`, Abschneiden **zur Null hin** und nicht Abrunden -- `-7/2` ist `-3` und nicht `-4`. Der Nachkommaanteil existiert im Ergebnis gar nicht, er geht nicht verloren.",
+        "en": "Integer division maps two integers back to an integer: `a/b = trunc(a/b)`, truncation **towards zero** and not rounding down -- `-7/2` is `-3` and not `-4`. The fractional part does not exist in the result; it is not lost, it was never there."
+       },
        "q": {
         "de": "Was schreibt das Programm? Überlege genau.",
         "en": "What does the program print? Think it through."
        },
        "run": true,
-       "why": "`a / b` sind zwei `int`, also Ganzzahldivision: 3. Erst `(double)a` zwingt die Rechnung ins Fließkomma.\n\nBeide Zeilen benutzen dieselben Variablen: es liegt nicht an den Werten, sondern allein an den Typen im Ausdruck. Wer `7 / 2` im Kopf rechnet, kommt auf 3.5 -- C rechnet hier nicht in Mathematik, sondern in Maschinenwerten."
+       "why": "`a / b` sind zwei `int`, also Ganzzahldivision: 3. Erst `(double)a` zwingt die Rechnung ins Fließkomma.\n\nBeide Zeilen benutzen dieselben Variablen: es liegt nicht an den Werten, sondern allein an den Typen im Ausdruck. Wer `7 / 2` im Kopf rechnet, kommt auf 3.5 -- C rechnet hier nicht in Mathematik, sondern in Maschinenwerten.",
+       "ziel": {
+        "de": "Erkennen, dass abgeschnitten wird, bevor der Wert irgendwo ankommt.",
+        "en": "See that truncation happens before the value arrives anywhere."
+       }
       },
       {
        "answer": 1,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "Das Gebiet `[0, 1]` wird in `n = 10` gleich breite Zellen geteilt, die Zellweite ist `h = 1/n`. In den reellen Zahlen ist `1/10 = 0,1`, in den ganzen ist `1/10 = 0`. `1.0/n` rechnet in `F` -- dort ist `h ≈ 0,1` --, `1/n` rechnet in den ganzen Zahlen.",
+        "en": "The domain `[0, 1]` is split into `n = 10` equally wide cells, the cell width being `h = 1/n`. In the reals `1/10 = 0.1`, in the integers `1/10 = 0`. `1.0/n` computes in `F` -- there `h ≈ 0.1` -- while `1/n` computes in the integers."
+       },
        "options": [
         {
          "de": "double h = 1 / n;",
@@ -1041,15 +1105,31 @@
          "en": "int h = 1 / n;"
         }
        ],
+       "physikalisch": {
+        "de": "`h` ist die Zellweite eines eindimensionalen Gitters, in Metern, wenn das Gebiet ein Meter lang ist. Ein `h = 0` macht jede spaetere Ableitung `(u[i+1]-u[i])/h` unbrauchbar -- deshalb ist diese Zeile die erste, die in jedem Loeser stimmen muss.",
+        "en": "`h` is the cell width of a one-dimensional grid, in metres if the domain is one metre long. An `h = 0` makes every later derivative `(u[i+1]-u[i])/h` useless -- which is why this line is the first one that has to be right in any solver."
+       },
        "q": {
         "de": "Ein Gitter der Länge 1 hat `int n = 10;` Zellen. Welche Zeile berechnet den Zellabstand `h` richtig?",
         "en": "A grid of length 1 has `int n = 10;` cells. Which line computes the cell spacing `h` correctly?"
        },
-       "why": "Nur `1.0 / n` rechnet von Anfang an im Fließkomma. Die vierte Zeile ist besonders tückisch: `1 / n` ist schon `0`, bevor irgendetwas mit `1.0` multipliziert wird.\n\nDie Zuweisung an ein `double` kommt immer zu spät: sie wandelt um, was der Ausdruck ergeben hat, und der ist da schon fertig gerechnet. Merksatz: **der Typ des Ergebnisses entsteht im Ausdruck, nicht bei der Zuweisung.**"
+       "why": "Nur `1.0 / n` rechnet von Anfang an im Fließkomma. Die vierte Zeile ist besonders tückisch: `1 / n` ist schon `0`, bevor irgendetwas mit `1.0` multipliziert wird.\n\nDie Zuweisung an ein `double` kommt immer zu spät: sie wandelt um, was der Ausdruck ergeben hat, und der ist da schon fertig gerechnet. Merksatz: **der Typ des Ergebnisses entsteht im Ausdruck, nicht bei der Zuweisung.**",
+       "ziel": {
+        "de": "Die Zeile finden, die wirklich 0,1 ergibt -- und nicht 0.",
+        "en": "Find the line that really gives 0.1 -- and not 0."
+       }
       },
       {
+       "annahmen": {
+        "de": "Drei Nachkommastellen heisst `%.3f`.",
+        "en": "Three decimals means `%.3f`."
+       },
        "expect": "3.500",
        "kind": "code",
+       "mathematisch": {
+        "de": "Der Mittelwert `m = s/n` zweier ganzer Zahlen liegt im Allgemeinen **nicht** in den ganzen Zahlen. Damit die Division in `F` stattfindet, muss mindestens ein Operand dort liegen; die Umwandlung danach kommt zu spaet, weil abgeschnitten schon ist.",
+        "en": "The mean `m = s/n` of two integers generally is **not** an integer. For the division to happen in `F`, at least one operand has to live there; converting afterwards comes too late, because the truncation has already happened."
+       },
        "plot": false,
        "q": {
         "de": "Das Programm soll den Mittelwert von `summe` und `anzahl` als Fließkommazahl mit drei Stellen ausgeben. Repariere es.",
@@ -1058,7 +1138,11 @@
        "seconds": 10,
        "solution": "#include <stdio.h>\n\nint main()\n{\n    int summe = 7;\n    int anzahl = 2;\n\n    printf(\"%.3f\\n\", (double)summe / anzahl);\n    return 0;\n}\n",
        "starter": "#include <stdio.h>\n\nint main()\n{\n    int summe = 7;\n    int anzahl = 2;\n\n    printf(\"%.3f\\n\", summe / anzahl);\n    return 0;\n}\n",
-       "why": "Eine Umwandlung genügt: sobald ein Operand `double` ist, rechnet C die ganze Division im Fließkomma.\n\nGenauso gut geht `summe * 1.0 / anzahl` oder gleich `double`-Variablen. Was **nicht** genügt: den Platzhalter auf `%.3f` zu setzen. Er beschreibt nur die Ausgabe -- gerechnet wurde da längst falsch, und `%.3f` auf einer Ganzzahl gibt obendrein Unsinn aus."
+       "why": "Eine Umwandlung genügt: sobald ein Operand `double` ist, rechnet C die ganze Division im Fließkomma.\n\nGenauso gut geht `summe * 1.0 / anzahl` oder gleich `double`-Variablen. Was **nicht** genügt: den Platzhalter auf `%.3f` zu setzen. Er beschreibt nur die Ausgabe -- gerechnet wurde da längst falsch, und `%.3f` auf einer Ganzzahl gibt obendrein Unsinn aus.",
+       "ziel": {
+        "de": "Den Mittelwert so rechnen, dass der Nachkommaanteil ueberlebt.",
+        "en": "Compute the mean so that the fractional part survives."
+       }
       }
      ],
      "ausgabe": "falsch: 0.000000\nrichtig: 0.250000\n",
@@ -1099,17 +1183,29 @@
        "answer": "gross",
        "code": "#include <stdio.h>\n\nint main()\n{\n    int n = 5;\n    if (n > 3) printf(\"gross\\n\");\n    if (n > 10) printf(\"riesig\\n\");\n    return 0;\n}\n",
        "kind": "predict",
+       "mathematisch": {
+        "de": "In C ist die Zuweisung ein **Ausdruck mit Wert**: `(x = 2)` hat den Wert 2. Die Bedingung prueft danach nur `Wert ≠ 0`. Also ist `if (x = 2)` immer wahr und `if (x = 0)` immer falsch, unabhaengig von `x`. `==` dagegen ist die Gleichheitsrelation und liefert 0 oder 1.",
+        "en": "In C an assignment is an **expression with a value**: `(x = 2)` has the value 2. The condition then only tests `value ≠ 0`. So `if (x = 2)` is always true and `if (x = 0)` always false, whatever `x` is. `==`, by contrast, is the equality relation and yields 0 or 1."
+       },
        "q": {
         "de": "Was kommt heraus?",
         "en": "What comes out?"
        },
        "run": true,
-       "why": "Die zweite Bedingung trifft nicht zu, also passiert dort nichts. Ohne `else` sind das zwei unabhängige Prüfungen.\n\nMit `else if` wäre es eine Kette, in der nach dem ersten Treffer nichts mehr geprüft wird. Beides ist richtig -- nur eben verschieden. Bei sich überschneidenden Bereichen (`n > 3`, `n > 10`) trifft ohne `else` mehr als ein Zweig zu."
+       "why": "Die zweite Bedingung trifft nicht zu, also passiert dort nichts. Ohne `else` sind das zwei unabhängige Prüfungen.\n\nMit `else if` wäre es eine Kette, in der nach dem ersten Treffer nichts mehr geprüft wird. Beides ist richtig -- nur eben verschieden. Bei sich überschneidenden Bereichen (`n > 3`, `n > 10`) trifft ohne `else` mehr als ein Zweig zu.",
+       "ziel": {
+        "de": "Vorhersagen, welcher Zweig genommen wird.",
+        "en": "Predict which branch is taken."
+       }
       },
       {
        "answer": 2,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "Verglichen wird auf Gleichheit zweier ganzer Zahlen -- eine Relation ohne Toleranz, und hier ist das richtig. Bei gerechneten Kommazahlen waere dieselbe Zeile die falsche Frage (siehe das Kapitel ueber Fliesskomma).",
+        "en": "What is tested is the equality of two integers -- a relation without tolerance, and here that is right. For computed floating-point numbers the same line would be the wrong question (see the chapter on floating point)."
+       },
        "options": [
         {
          "de": "if (x = 2)",
@@ -1132,7 +1228,11 @@
         "de": "Welche Zeile prüft, ob `x` gleich 2 ist?",
         "en": "Which line tests whether `x` equals 2?"
        },
-       "why": "`=` weist zu und liefert den zugewiesenen Wert -- `if (x = 2)` ist deshalb immer wahr und verändert obendrein `x`.\n\n`:=` gibt es in C nicht, `eq` auch nicht -- das sind Schreibweisen aus Pascal beziehungsweise aus Shell-Skripten. Übersetzer melden die Verwechslung von `=` und `==` heute oft als Warnung; sie einzuschalten (`-Wall`) und ernst zu nehmen, ist die eigentliche Lehre aus dieser Aufgabe."
+       "why": "`=` weist zu und liefert den zugewiesenen Wert -- `if (x = 2)` ist deshalb immer wahr und verändert obendrein `x`.\n\n`:=` gibt es in C nicht, `eq` auch nicht -- das sind Schreibweisen aus Pascal beziehungsweise aus Shell-Skripten. Übersetzer melden die Verwechslung von `=` und `==` heute oft als Warnung; sie einzuschalten (`-Wall`) und ernst zu nehmen, ist die eigentliche Lehre aus dieser Aufgabe.",
+       "ziel": {
+        "de": "Die Zeile nennen, die vergleicht statt zuzuweisen.",
+        "en": "Name the line that compares instead of assigning."
+       }
       }
      ],
      "ausgabe": "zu grosser Zeitschritt\n",
@@ -1158,12 +1258,20 @@
        "answer": "0\n1\n4",
        "code": "#include <stdio.h>\n\nint main()\n{\n    int i;\n    for (i = 0; i < 3; i++) printf(\"%d\\n\", i * i);\n    return 0;\n}\n",
        "kind": "predict",
+       "mathematisch": {
+        "de": "`for (i = a; i < b; i++)` durchlaeuft die Menge `{a, a+1, ..., b-1}`, also das halboffene Intervall `[a, b)`: `b - a` Werte, der letzte ist `b-1`. Dieselbe Konvention gilt bei Feldindizes -- deshalb passt `for (i = 0; i < n; i++)` genau auf ein Feld mit `n` Elementen.",
+        "en": "`for (i = a; i < b; i++)` runs through the set `{a, a+1, ..., b-1}`, that is the half-open interval `[a, b)`: `b - a` values, the last one `b-1`. The same convention holds for array indices -- which is why `for (i = 0; i < n; i++)` fits an array of `n` elements exactly."
+       },
        "q": {
         "de": "Wie viele Zeilen schreibt diese Schleife, und was steht in der letzten?",
         "en": "How many lines does this loop print, and what is in the last one?"
        },
        "run": true,
-       "why": "Drei Durchläufe mit `i` = 0, 1, 2 -- nicht 3. Der Abbruch `i < 3` wird geprüft, **bevor** der Rumpf läuft.\n\nDie Quadratzahlen sind 0, 1, 4 -- nicht 1, 4, 9. Wer die Grenze als „bis 3“ liest, verschiebt die ganze Reihe. Das ist derselbe Denkfehler, der bei Feldern zum Zugriff hinter das Ende führt."
+       "why": "Drei Durchläufe mit `i` = 0, 1, 2 -- nicht 3. Der Abbruch `i < 3` wird geprüft, **bevor** der Rumpf läuft.\n\nDie Quadratzahlen sind 0, 1, 4 -- nicht 1, 4, 9. Wer die Grenze als „bis 3“ liest, verschiebt die ganze Reihe. Das ist derselbe Denkfehler, der bei Feldern zum Zugriff hinter das Ende führt.",
+       "ziel": {
+        "de": "Zaehlen, wie viele Zeilen herauskommen, und den letzten Wert nennen.",
+        "en": "Count how many lines come out, and name the last value."
+       }
       },
       {
        "distractors": [
@@ -1179,15 +1287,27 @@
         "}",
         "printf(\"%d\\n\", summe);"
        ],
+       "mathematisch": {
+        "de": "Die Summe `S = 1 + 2 + 3 + 4 + 5 = 15` als Rekursion: `S_0 = 0`, `S_k = S_(k-1) + k`. Der Startwert 0 gehoert zur Rekursion; eine Variable ohne Zuweisung enthaelt in C **keinen** definierten Wert, also summiert man sonst zu etwas Beliebigem dazu.",
+        "en": "The sum `S = 1 + 2 + 3 + 4 + 5 = 15` as a recursion: `S_0 = 0`, `S_k = S_(k-1) + k`. The starting value 0 is part of the recursion; a variable without an assignment holds **no** defined value in C, so otherwise you are adding to something arbitrary."
+       },
        "q": {
         "de": "Setze eine Schleife zusammen, die die Zahlen 1 bis 5 aufsummiert und die Summe ausgibt.",
         "en": "Assemble a loop that adds up the numbers 1 to 5 and prints the sum."
        },
-       "why": "Erst den Akkumulator auf 0 setzen, dann in jedem Durchlauf dazuzählen, und **nach** der Schleife ausgeben. Steht die Ausgabe im Rumpf, kommen fünf Zeilen statt einer.\n\nDer Ablauf, den die Zeilen abbilden, ist immer derselbe: vorbereiten, in der Schleife fortschreiben, danach auswerten. In einer Simulation stehen an denselben drei Stellen das Anfangsfeld, der Zeitschritt und die Auswertung -- diese Aufgabe ist das Gerüst, in das später Physik kommt."
+       "why": "Erst den Akkumulator auf 0 setzen, dann in jedem Durchlauf dazuzählen, und **nach** der Schleife ausgeben. Steht die Ausgabe im Rumpf, kommen fünf Zeilen statt einer.\n\nDer Ablauf, den die Zeilen abbilden, ist immer derselbe: vorbereiten, in der Schleife fortschreiben, danach auswerten. In einer Simulation stehen an denselben drei Stellen das Anfangsfeld, der Zeitschritt und die Auswertung -- diese Aufgabe ist das Gerüst, in das später Physik kommt.",
+       "ziel": {
+        "de": "Die Zeilen so ordnen, dass die Summe 1+2+3+4+5 herauskommt.",
+        "en": "Order the lines so that the sum 1+2+3+4+5 comes out."
+       }
       },
       {
        "expect": "2.9290",
        "kind": "code",
+       "mathematisch": {
+        "de": "Die harmonische Teilsumme `H_10 = Σ_(i=1..10) 1/i = 2,9289682...`, auf vier Stellen `2,9290`. Jeder Summand `1/i` muss in `F` gerechnet werden -- in den ganzen Zahlen waere `1/i = 0` fuer jedes `i ≥ 2` und die Summe 1. `H_n` waechst wie `ln n + γ` und ist unbeschraenkt: Die Reihe hat keinen Grenzwert, nur diese Teilsumme hat einen Wert.",
+        "en": "The harmonic partial sum `H_10 = Σ_(i=1..10) 1/i = 2.9289682...`, to four decimals `2.9290`. Every term `1/i` has to be computed in `F` -- in the integers `1/i = 0` for every `i ≥ 2` and the sum would be 1. `H_n` grows like `ln n + γ` and is unbounded: the series has no limit, only this partial sum has a value."
+       },
        "plot": false,
        "q": {
         "de": "Berechne mit einer Schleife die Summe 1/1 + 1/2 + ... + 1/10 und gib sie mit vier Nachkommastellen aus.",
@@ -1196,7 +1316,11 @@
        "seconds": 10,
        "solution": "#include <stdio.h>\n\nint main()\n{\n    double summe = 0.0;\n    int i;\n\n    for (i = 1; i <= 10; i++) summe = summe + 1.0 / i;\n    printf(\"%.4f\\n\", summe);\n    return 0;\n}\n",
        "starter": "#include <stdio.h>\n\nint main()\n{\n    double summe = 0.0;\n    int i;\n\n    \n    printf(\"%.4f\\n\", summe);\n    return 0;\n}\n",
-       "why": "Wichtig ist `1.0 / i` statt `1 / i` -- sonst schlägt die Ganzzahlfalle zu und die Summe bleibt 1.\n\nGenauer: `1 / i` ist für jedes `i > 1` null, nur der erste Term trägt bei. Nebenbei ist das die harmonische Reihe -- sie wächst immer weiter, aber unerträglich langsam (für 100 braucht man etwa 10^43 Glieder). Wer Summen in Fließkomma bildet, addiert übrigens am besten von klein nach groß: sonst verschluckt der große Zwischenwert die kleinen Beiträge."
+       "why": "Wichtig ist `1.0 / i` statt `1 / i` -- sonst schlägt die Ganzzahlfalle zu und die Summe bleibt 1.\n\nGenauer: `1 / i` ist für jedes `i > 1` null, nur der erste Term trägt bei. Nebenbei ist das die harmonische Reihe -- sie wächst immer weiter, aber unerträglich langsam (für 100 braucht man etwa 10^43 Glieder). Wer Summen in Fließkomma bildet, addiert übrigens am besten von klein nach groß: sonst verschluckt der große Zwischenwert die kleinen Beiträge.",
+       "ziel": {
+        "de": "Die Summe mit vier Nachkommastellen ausgeben (2,9290).",
+        "en": "Print the sum with four decimals (2.9290)."
+       }
       }
      ],
      "ausgabe": "Schritt 0, t = 0.25\nSchritt 1, t = 0.50\nSchritt 2, t = 0.75\nSchritt 3, t = 1.00\n",
@@ -1234,9 +1358,17 @@
     {
      "aufgaben": [
       {
+       "annahmen": {
+        "de": "Zeitschritt `dt = 0,05 s`, 400 Schritte, also 20 s.",
+        "en": "Time step `dt = 0.05 s`, 400 steps, so 20 s."
+       },
        "answer": 1,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "Anfangswertproblem `x'' = -(k/m)·x` mit `x(0) = 1`, `x'(0) = 0`, geschrieben als System erster Ordnung: `x' = v`, `v' = -(k/m)·x`. Die Loesung ist `x(t) = cos(ω·t)` mit `ω = √(k/m)`.\n\nErhalten ist `E = ½mv² + ½kx²`, denn `dE/dt = m·v·v' + k·x·x' = -k·x·v + k·x·v = 0`.\n\nDiskretisiert wird explizit (beide Seiten aus dem **alten** Schritt): `x_(n+1) = x_n + v_n·dt`, `v_(n+1) = v_n - x_n·dt`. Einsetzen ergibt `E_(n+1) = (1 + dt²)·E_n` -- das Verfahren erhaelt die Energie nicht, es multipliziert sie in jedem Schritt mit einem Faktor groesser als 1.",
+        "en": "Initial value problem `x'' = -(k/m)·x` with `x(0) = 1`, `x'(0) = 0`, written as a first-order system: `x' = v`, `v' = -(k/m)·x`. The solution is `x(t) = cos(ω·t)` with `ω = √(k/m)`.\n\nThe conserved quantity is `E = ½mv² + ½kx²`, because `dE/dt = m·v·v' + k·x·x' = -k·x·v + k·x·v = 0`.\n\nThe discretisation is explicit (both sides from the **old** step): `x_(n+1) = x_n + v_n·dt`, `v_(n+1) = v_n - x_n·dt`. Substituting gives `E_(n+1) = (1 + dt²)·E_n` -- the scheme does not conserve the energy, it multiplies it by a factor greater than 1 at every step."
+       },
        "options": [
         {
          "de": "Im Programm steht ein Tippfehler.",
@@ -1255,15 +1387,35 @@
          "en": "The energy merely wanders about at random."
         }
        ],
+       "physikalisch": {
+        "de": "Punktmasse `m = 1 kg` an einer Feder mit `k = 1 N/m`, deshalb `a = -x`. Keine Reibung, keine Luft, keine Schwerkraft -- ein abgeschlossenes System, in dem die Energie sich nicht aendern **darf**. Start bei `x = 1 m`, `v = 0`, also `E = 0,5 J`.",
+        "en": "A point mass `m = 1 kg` on a spring with `k = 1 N/m`, hence `a = -x`. No friction, no air, no gravity -- a closed system in which the energy **must not** change. Starting at `x = 1 m`, `v = 0`, so `E = 0.5 J`."
+       },
        "q": {
         "de": "Die Energie startet bei 0.5 und steht am Ende bei 1.3574. Was bedeutet das?",
         "en": "The energy starts at 0.5 and ends at 1.3574. What does that mean?"
        },
-       "why": "Eine reibungsfreie Feder erhält ihre Energie exakt. Was hier wächst, ist kein Effekt der Physik, sondern der Fehler des Verfahrens: explizites Euler pumpt bei jeder Schwingung Energie hinein. Über lange Zeiten fliegt so eine Simulation auseinander.\n\nEin Prüfstein, der in jede Simulation gehört: eine Größe mitrechnen, die sich physikalisch nicht ändern darf -- Energie, Masse, Impuls, Teilchenzahl. Läuft sie weg, ist das Verfahren schuld, nicht die Natur. Diese eine Zeile hätte schon manchem Ergebnis widersprochen, bevor es in einem Bericht stand."
+       "why": "Eine reibungsfreie Feder erhält ihre Energie exakt. Was hier wächst, ist kein Effekt der Physik, sondern der Fehler des Verfahrens: explizites Euler pumpt bei jeder Schwingung Energie hinein. Über lange Zeiten fliegt so eine Simulation auseinander.\n\nEin Prüfstein, der in jede Simulation gehört: eine Größe mitrechnen, die sich physikalisch nicht ändern darf -- Energie, Masse, Impuls, Teilchenzahl. Läuft sie weg, ist das Verfahren schuld, nicht die Natur. Diese eine Zeile hätte schon manchem Ergebnis widersprochen, bevor es in einem Bericht stand.",
+       "ziel": {
+        "de": "Erkennen, dass eine wachsende Energie kein Rundungsfehler ist, sondern das Verfahren selbst.",
+        "en": "Recognise that a growing energy is not a rounding error but the method itself."
+       }
       },
       {
+       "annahmen": {
+        "de": "`dt = 0,005 s` und dafuer 4000 Schritte.",
+        "en": "`dt = 0.005 s` and 4000 steps instead."
+       },
        "expect": "0.5526",
        "kind": "code",
+       "mathematisch": {
+        "de": "Derselbe Wachstumsfaktor, jetzt ueber die ganze Rechnung: `E_N = (1 + dt²)^N · E_0` mit `N = T/dt`, also `E(T) ≈ E_0 · e^(T·dt)`. Der Fehler faellt **linear** mit `dt` und verschwindet nicht.\n\n`dt = 0,05`: `0,5 · 1,0025^400 = 1,3574`. `dt = 0,005`: `0,5 · e^0,1 = 0,5526`. Beides sind genau die Zahlen, die das Programm ausgibt -- die App laesst sich hier von Hand nachrechnen.",
+        "en": "The same growth factor, now over the whole computation: `E_N = (1 + dt²)^N · E_0` with `N = T/dt`, so `E(T) ≈ E_0 · e^(T·dt)`. The error falls **linearly** with `dt` and does not vanish.\n\n`dt = 0.05`: `0.5 · 1.0025^400 = 1.3574`. `dt = 0.005`: `0.5 · e^0.1 = 0.5526`. Both are exactly the numbers the program prints -- here the app can be checked by hand."
+       },
+       "physikalisch": {
+        "de": "Dieselbe Feder, dieselbe Zeitspanne von 20 s.",
+        "en": "The same spring, the same span of 20 s."
+       },
        "plot": false,
        "q": {
         "de": "Der übliche erste Reflex: Zeitschritt verkleinern. Nimm `dt = 0.005` und dafür 4000 Schritte, damit dieselbe Zeit simuliert wird. Gib die Energie mit vier Stellen aus.",
@@ -1272,11 +1424,23 @@
        "seconds": 25,
        "solution": "#include <stdio.h>\n\nint main()\n{\n    double x = 1.0;\n    double v = 0.0;\n    double dt = 0.005;\n    double a, xn;\n    int i;\n\n    for (i = 0; i < 4000; i++) {\n        a = -x;\n        xn = x + v * dt;\n        v  = v + a * dt;\n        x  = xn;\n    }\n    printf(\"%.4f\\n\", 0.5*v*v + 0.5*x*x);\n    return 0;\n}\n",
        "starter": "#include <stdio.h>\n\nint main()\n{\n    double x = 1.0;\n    double v = 0.0;\n    double dt = 0.05;\n    double a, xn;\n    int i;\n\n    for (i = 0; i < 400; i++) {\n        a = -x;\n        xn = x + v * dt;\n        v  = v + a * dt;\n        x  = xn;\n    }\n    printf(\"%.4f\\n\", 0.5*v*v + 0.5*x*x);\n    return 0;\n}\n",
-       "why": "Von 1.3574 auf 0.5526 -- besser, aber immer noch falsch, und für zehnmal so viel Rechenzeit. Der Fehler wird nur langsamer, er verschwindet nicht. Die nächste Aufgabe kostet dagegen gar nichts.\n\nZehnmal kleiner ist auch zehnmal mehr Rundung: irgendwann macht ein noch kleinerer Schritt das Ergebnis wieder schlechter, weil die vielen winzigen Additionen ihre eigene Ungenauigkeit mitbringen. Ein schlechtes Verfahren lässt sich nicht mit Rechenzeit reparieren -- man wechselt das Verfahren."
+       "why": "Von 1.3574 auf 0.5526 -- besser, aber immer noch falsch, und für zehnmal so viel Rechenzeit. Der Fehler wird nur langsamer, er verschwindet nicht. Die nächste Aufgabe kostet dagegen gar nichts.\n\nZehnmal kleiner ist auch zehnmal mehr Rundung: irgendwann macht ein noch kleinerer Schritt das Ergebnis wieder schlechter, weil die vielen winzigen Additionen ihre eigene Ungenauigkeit mitbringen. Ein schlechtes Verfahren lässt sich nicht mit Rechenzeit reparieren -- man wechselt das Verfahren.",
+       "ziel": {
+        "de": "Nachmessen, um welchen Faktor der Energiefehler faellt, wenn der Zeitschritt auf ein Zehntel geht -- und sehen, dass er faellt und nicht verschwindet.",
+        "en": "Measure by what factor the energy error falls when the time step goes down to a tenth -- and see that it falls without vanishing."
+       }
       },
       {
        "expect": "0.4912",
        "kind": "code",
+       "mathematisch": {
+        "de": "Symplektisches (halbimplizites) Euler-Verfahren: erst `v_(n+1) = v_n - x_n·dt`, dann `x_(n+1) = x_n + v_(n+1)·dt` mit dem **neuen** `v`. Nur die Reihenfolge aendert sich.\n\nEs erhaelt `E` nicht exakt, aber es erhaelt exakt eine benachbarte Groesse: `H = ½v² + ½x² - (dt/2)·x·v` bleibt bei dieser Feder bis auf Rundung konstant. Weil `H` und `E` sich nur um `O(dt)` unterscheiden, schwankt `E` in einem **festen Band** (hier 0,4878 bis 0,5128) und waechst nicht.",
+        "en": "Symplectic (semi-implicit) Euler: first `v_(n+1) = v_n - x_n·dt`, then `x_(n+1) = x_n + v_(n+1)·dt` with the **new** `v`. Only the order changes.\n\nIt does not conserve `E` exactly, but it does conserve a neighbouring quantity exactly: `H = ½v² + ½x² - (dt/2)·x·v` stays constant for this spring up to rounding. Since `H` and `E` differ only by `O(dt)`, the energy oscillates within a **fixed band** (here 0.4878 to 0.5128) instead of growing."
+       },
+       "physikalisch": {
+        "de": "Dieselbe Feder, derselbe Zeitschritt wie im Beispiel.",
+        "en": "The same spring, the same time step as in the example."
+       },
        "plot": false,
        "q": {
         "de": "Jetzt der Trick: rechne `v` **zuerst** aus und benutze für `x` schon das neue `v`. Also `v = v + a*dt;` und in der Zeile darunter `x = x + v*dt;`. Sonst alles wie im Beispiel, `dt = 0.05`, 400 Schritte.",
@@ -1285,7 +1449,11 @@
        "seconds": 25,
        "solution": "#include <stdio.h>\n\nint main()\n{\n    double x = 1.0;\n    double v = 0.0;\n    double dt = 0.05;\n    double a;\n    int i;\n\n    for (i = 0; i < 400; i++) {\n        a = -x;\n        v = v + a * dt;\n        x = x + v * dt;\n    }\n    printf(\"%.4f\\n\", 0.5*v*v + 0.5*x*x);\n    return 0;\n}\n",
        "starter": "#include <stdio.h>\n\nint main()\n{\n    double x = 1.0;\n    double v = 0.0;\n    double dt = 0.05;\n    double a;\n    int i;\n\n    for (i = 0; i < 400; i++) {\n        a = -x;\n        \n        \n    }\n    printf(\"%.4f\\n\", 0.5*v*v + 0.5*x*x);\n    return 0;\n}\n",
-       "why": "0.4912 statt 1.3574 -- bei gleicher Schrittweite und gleicher Rechenzeit. Zwei vertauschte Zeilen. Das ist das **symplektische Euler-Verfahren**, und der Unterschied ist kein Zufall: es erhält eine Größe, die nahe an der Energie liegt, deshalb kann die Energie nicht davonlaufen. Wer diese Verwechslung kennt, hat den häufigsten Anfängerfehler der Simulationsprogrammierung schon hinter sich.\n\nSymplektisch heißt: das Verfahren erhält das Phasenraumvolumen. Für die Praxis genügt die Folge davon -- die Energie schwankt um einen festen Wert, statt fortzulaufen. Molekulardynamik und Himmelsmechanik rechnen deshalb grundsätzlich mit solchen Verfahren; ein genaueres, aber nicht symplektisches Runge-Kutta wäre über Millionen Umläufe schlechter."
+       "why": "0.4912 statt 1.3574 -- bei gleicher Schrittweite und gleicher Rechenzeit. Zwei vertauschte Zeilen. Das ist das **symplektische Euler-Verfahren**, und der Unterschied ist kein Zufall: es erhält eine Größe, die nahe an der Energie liegt, deshalb kann die Energie nicht davonlaufen. Wer diese Verwechslung kennt, hat den häufigsten Anfängerfehler der Simulationsprogrammierung schon hinter sich.\n\nSymplektisch heißt: das Verfahren erhält das Phasenraumvolumen. Für die Praxis genügt die Folge davon -- die Energie schwankt um einen festen Wert, statt fortzulaufen. Molekulardynamik und Himmelsmechanik rechnen deshalb grundsätzlich mit solchen Verfahren; ein genaueres, aber nicht symplektisches Runge-Kutta wäre über Millionen Umläufe schlechter.",
+       "ziel": {
+        "de": "Zeigen, dass eine vertauschte Zeile aus einem Verfahren, das Energie erzeugt, eines macht, das sie haelt.",
+        "en": "Show that swapping one line turns a scheme that creates energy into one that keeps it."
+       }
       }
      ],
      "ausgabe": "Energie am Ende: 1.3574\n",
@@ -1369,15 +1537,31 @@
     {
      "aufgaben": [
       {
+       "annahmen": {
+        "de": "`dt = 0,05 s`, 400 Schritte.",
+        "en": "`dt = 0.05 s`, 400 steps."
+       },
        "answer": "0.4997",
        "code": "#include <stdio.h>\n\nint main()\n{\n    double x = 1.0;\n    double v = 0.0;\n    double dt = 0.05;\n    double a = -1.0;\n    double an;\n    int i;\n\n    for (i = 0; i < 400; i++) {\n        x = x + v * dt + 0.5 * a * dt * dt;\n        an = -x;\n        v = v + 0.5 * (a + an) * dt;\n        a = an;\n    }\n    printf(\"%.4f\\n\", 0.5*v*v + 0.5*x*x);\n    return 0;\n}\n",
        "kind": "predict",
+       "mathematisch": {
+        "de": "Velocity-Verlet: `x_(n+1) = x_n + v_n·dt + ½·a_n·dt²`, dann `a_(n+1) = -x_(n+1)`, dann `v_(n+1) = v_n + ½·(a_n + a_(n+1))·dt`. Das Verfahren ist von zweiter Ordnung, symplektisch und zeitumkehrbar.\n\nDaraus folgt: `E` schwankt mit `O(dt²)` um den wahren Wert, ohne Drift. Bei `dt = 0,05` ist das Band `dt²/8 = 3,1·10^-4` breit -- die Energie bleibt zwischen 0,4997 und 0,5000.",
+        "en": "Velocity Verlet: `x_(n+1) = x_n + v_n·dt + ½·a_n·dt²`, then `a_(n+1) = -x_(n+1)`, then `v_(n+1) = v_n + ½·(a_n + a_(n+1))·dt`. The scheme is second order, symplectic and time-reversible.\n\nIt follows that `E` oscillates with `O(dt²)` around the true value, without drift. At `dt = 0.05` the band is `dt²/8 = 3.1·10^-4` wide -- the energy stays between 0.4997 and 0.5000."
+       },
+       "physikalisch": {
+        "de": "Dieselbe Feder `m = 1 kg`, `k = 1 N/m`, derselbe Start `x = 1 m`, `v = 0`, also `E = 0,5 J`.",
+        "en": "The same spring `m = 1 kg`, `k = 1 N/m`, the same start `x = 1 m`, `v = 0`, so `E = 0.5 J`."
+       },
        "q": {
         "de": "Die Energie startet bei 0.5000. Was steht nach 400 Verlet-Schritten da? Vier Nachkommastellen.",
         "en": "The energy starts at 0.5000. What is there after 400 Verlet steps? Four decimal places."
        },
        "run": true,
-       "why": "Praktisch unverändert -- und näher an 0.5 als die 0.4912 des symplektischen Euler. Gleiche Schrittweite, gleiche Rechenzeit wie der explizite Lauf, der die Energie fast verdreifacht hat.\n\nDass es nicht exakt 0.5000 ist, gehört dazu: die Energie schwankt bei Verlet um den richtigen Wert, mit einer Schwankung von der Größe `dt²`. Entscheidend ist, dass sie nicht **wandert**. Über eine Million Schritte sieht man denselben schmalen Streifen wie nach zehn."
+       "why": "Praktisch unverändert -- und näher an 0.5 als die 0.4912 des symplektischen Euler. Gleiche Schrittweite, gleiche Rechenzeit wie der explizite Lauf, der die Energie fast verdreifacht hat.\n\nDass es nicht exakt 0.5000 ist, gehört dazu: die Energie schwankt bei Verlet um den richtigen Wert, mit einer Schwankung von der Größe `dt²`. Entscheidend ist, dass sie nicht **wandert**. Über eine Million Schritte sieht man denselben schmalen Streifen wie nach zehn.",
+       "ziel": {
+        "de": "Vorhersagen, dass die Energie weder waechst noch faellt, sondern in einem schmalen Band bleibt.",
+        "en": "Predict that the energy neither grows nor decays but stays in a narrow band."
+       }
       },
       {
        "distractors": [
@@ -1390,15 +1574,31 @@
         "v = v + 0.5 * (a + an) * dt;",
         "a = an;"
        ],
+       "mathematisch": {
+        "de": "Ein Schritt in vier Teilen, und die Reihenfolge ist das Verfahren: `a_n` aus dem alten Ort, dann der Ort mit `v_n·dt + ½a_n·dt²`, dann `a_(n+1)` aus dem **neuen** Ort, dann die Geschwindigkeit mit dem Mittel `½(a_n + a_(n+1))`. Wer die Beschleunigung nur einmal auswertet, hat wieder ein Verfahren erster Ordnung.",
+        "en": "One step in four parts, and the order is the method: `a_n` from the old position, then the position with `v_n·dt + ½a_n·dt²`, then `a_(n+1)` from the **new** position, then the velocity with the average `½(a_n + a_(n+1))`. Evaluate the acceleration only once and you are back to a first-order scheme."
+       },
        "q": {
         "de": "Setze den Rumpf eines Velocity-Verlet-Schritts in die richtige Reihenfolge.",
         "en": "Put the body of a velocity Verlet step into the right order."
        },
-       "why": "Erst der Ort mit der **alten** Beschleunigung, dann die neue Beschleunigung am neuen Ort, dann die Geschwindigkeit aus dem Mittel beider. Wer `a = an;` zu früh setzt, mittelt zweimal dieselbe Zahl und rechnet wieder Euler.\n\nWer das Programm später umbaut, stolpert genau hier: die vier Zeilen sehen austauschbar aus. Eine Zeile Kommentar über dem Block -- „alte Beschleunigung für den Ort, neue für die halbe Geschwindigkeit“ -- ist an dieser Stelle mehr wert als anderswo zehn."
+       "why": "Erst der Ort mit der **alten** Beschleunigung, dann die neue Beschleunigung am neuen Ort, dann die Geschwindigkeit aus dem Mittel beider. Wer `a = an;` zu früh setzt, mittelt zweimal dieselbe Zahl und rechnet wieder Euler.\n\nWer das Programm später umbaut, stolpert genau hier: die vier Zeilen sehen austauschbar aus. Eine Zeile Kommentar über dem Block -- „alte Beschleunigung für den Ort, neue für die halbe Geschwindigkeit“ -- ist an dieser Stelle mehr wert als anderswo zehn.",
+       "ziel": {
+        "de": "Den Schritt so zusammensetzen, dass jede halbe Geschwindigkeitsstufe die Beschleunigung ihres eigenen Zeitpunkts benutzt.",
+        "en": "Assemble the step so that each half velocity stage uses the acceleration belonging to its own point in time."
+       }
       },
       {
        "expect": "1.3574 0.4997",
        "kind": "code",
+       "mathematisch": {
+        "de": "Beide Verfahren auf derselben Gleichung `x'' = -x`, mit demselben `dt = 0,05` und denselben 400 Schritten -- der einzige Unterschied ist das Verfahren. Erwartet werden `1,3574` (Euler, `0,5·(1+dt²)^400`) und `0,4997` (Verlet, im Band `dt²/8`).",
+        "en": "Both schemes on the same equation `x'' = -x`, with the same `dt = 0.05` and the same 400 steps -- the only difference is the method. Expected are `1.3574` (Euler, `0.5·(1+dt²)^400`) and `0.4997` (Verlet, inside the band `dt²/8`)."
+       },
+       "physikalisch": {
+        "de": "Dieselbe Feder, derselbe Start `x = 1 m`, `v = 0`.",
+        "en": "The same spring, the same start `x = 1 m`, `v = 0`."
+       },
        "plot": true,
        "q": {
         "de": "Lass beide Verfahren im selben Programm laufen -- explizites Euler und Verlet -- und zeichne beide mit `plot euler t xe` und `plot verlet t xv`. Gib am Ende beide Energien in einer Zeile aus, Euler zuerst, vier Stellen.",
@@ -1407,7 +1607,11 @@
        "seconds": 30,
        "solution": "#include <stdio.h>\n\nint main()\n{\n    double xe = 1.0;\n    double ve = 0.0;\n    double xv = 1.0;\n    double vv = 0.0;\n    double dt = 0.05;\n    double t = 0.0;\n    double av = -1.0;\n    double ae, an, xn;\n    int i;\n\n    for (i = 0; i < 400; i++) {\n        ae = -xe;\n        xn = xe + ve * dt;\n        ve = ve + ae * dt;\n        xe = xn;\n        xv = xv + vv * dt + 0.5 * av * dt * dt;\n        an = -xv;\n        vv = vv + 0.5 * (av + an) * dt;\n        av = an;\n        t = t + dt;\n        printf(\"plot euler %.3f %.5f\\n\", t, xe);\n        printf(\"plot verlet %.3f %.5f\\n\", t, xv);\n    }\n    printf(\"%.4f %.4f\\n\", 0.5*ve*ve + 0.5*xe*xe,\n                             0.5*vv*vv + 0.5*xv*xv);\n    return 0;\n}\n",
        "starter": "#include <stdio.h>\n\nint main()\n{\n    double xe = 1.0;\n    double ve = 0.0;\n    double xv = 1.0;\n    double vv = 0.0;\n    double dt = 0.05;\n    double t = 0.0;\n    double av = -1.0;\n    double ae, an, xn;\n    int i;\n\n    for (i = 0; i < 400; i++) {\n        /* explizites Euler auf xe, ve */\n        \n        /* Verlet auf xv, vv, av */\n        \n        t = t + dt;\n    }\n    printf(\"%.4f %.4f\\n\", 0.5*ve*ve + 0.5*xe*xe,\n                             0.5*vv*vv + 0.5*xv*xv);\n    return 0;\n}\n",
-       "why": "Im Bild wächst die Euler-Kurve sichtbar über ihre Anfangsamplitude hinaus, während Verlet auf seiner Bahn bleibt. Das ist der Unterschied zwischen einer Simulation, der man über lange Zeiten glauben darf, und einer, der man nicht glauben darf.\n\nZwei Verfahren nebeneinander laufen zu lassen ist ein Werkzeug, kein Schulbeispiel: Wenn zwei unabhängige Verfahren dasselbe sagen, ist das Ergebnis vermutlich in Ordnung; laufen sie auseinander, weiß man wenigstens, dass etwas nicht stimmt. In der Praxis vergleicht man außerdem dieselbe Rechnung mit halber Schrittweite -- ändert sich das Ergebnis, war die Schrittweite zu groß."
+       "why": "Im Bild wächst die Euler-Kurve sichtbar über ihre Anfangsamplitude hinaus, während Verlet auf seiner Bahn bleibt. Das ist der Unterschied zwischen einer Simulation, der man über lange Zeiten glauben darf, und einer, der man nicht glauben darf.\n\nZwei Verfahren nebeneinander laufen zu lassen ist ein Werkzeug, kein Schulbeispiel: Wenn zwei unabhängige Verfahren dasselbe sagen, ist das Ergebnis vermutlich in Ordnung; laufen sie auseinander, weiß man wenigstens, dass etwas nicht stimmt. In der Praxis vergleicht man außerdem dieselbe Rechnung mit halber Schrittweite -- ändert sich das Ergebnis, war die Schrittweite zu groß.",
+       "ziel": {
+        "de": "Die beiden Energiekurven nebeneinander sehen: die eine laeuft davon, die andere bleibt.",
+        "en": "See the two energy curves side by side: one runs away, the other stays."
+       }
       }
      ],
      "ausgabe": "Energie am Ende: 0.4997\n",
@@ -1489,16 +1693,28 @@
        "answer": "5.0",
        "code": "#include <stdio.h>\n\nvoid verdoppeln(double x)\n{\n    x = 2 * x;\n}\n\nint main()\n{\n    double a = 5.0;\n    verdoppeln(a);\n    printf(\"%.1f\\n\", a);\n    return 0;\n}\n",
        "kind": "predict",
+       "mathematisch": {
+        "de": "Uebergabe als Wert: die Funktion bekommt eine **Kopie** und ist damit eine Abbildung `Wert -> Wert` ohne Nebenwirkung auf den Aufrufer. Was sie an ihrem Parameter aendert, endet mit ihr.",
+        "en": "Passing by value: the function gets a **copy** and is therefore a map `value -> value` with no effect on the caller. Whatever it changes about its parameter ends with it."
+       },
        "q": {
         "de": "Was schreibt dieses Programm?",
         "en": "What does this program print?"
        },
        "run": true,
-       "why": "Die Funktion bekommt eine **Kopie**. Sie verdoppelt ihre eigene Kopie, und die ist beim `return` weg. Wer das Original ändern will, braucht einen Zeiger — das kommt im nächsten Kapitel.\n\nDass die Funktion etwas zurückgibt, ist der saubere Weg: `x = verdoppeln(x);`. Eine Funktion, die nur über ihre Parameter wirkt, verbirgt ihre Wirkung vor dem Leser der Aufrufstelle -- in C erkennt man das wenigstens am `&` beim Aufruf."
+       "why": "Die Funktion bekommt eine **Kopie**. Sie verdoppelt ihre eigene Kopie, und die ist beim `return` weg. Wer das Original ändern will, braucht einen Zeiger — das kommt im nächsten Kapitel.\n\nDass die Funktion etwas zurückgibt, ist der saubere Weg: `x = verdoppeln(x);`. Eine Funktion, die nur über ihre Parameter wirkt, verbirgt ihre Wirkung vor dem Leser der Aufrufstelle -- in C erkennt man das wenigstens am `&` beim Aufruf.",
+       "ziel": {
+        "de": "Vorhersagen, welchen Wert der Aufrufer nach dem Aufruf sieht.",
+        "en": "Predict the value the caller sees after the call."
+       }
       },
       {
        "expect": "1.983524",
        "kind": "code",
+       "mathematisch": {
+        "de": "Gesucht ist `I = ∫_0^π sin(x) dx = 2`.\n\nTrapezregel auf `n` gleich breiten Streifen der Breite `h = π/n`: `T_n = h·(f(x_0)/2 + Σ_(i=1..n-1) f(x_i) + f(x_n)/2)` mit `x_i = i·h`.\n\nDer Fehler ist `I - T_n = -(b-a)·h²/12 · f''(ξ)` fuer ein `ξ` im Intervall, also `O(h²) = O(1/n²)`: **verdoppeltes `n` viertelt den Fehler**. Bei `n = 1000` sind das rund `10^-6`.",
+        "en": "Wanted is `I = ∫_0^π sin(x) dx = 2`.\n\nThe trapezoidal rule on `n` equally wide strips of width `h = π/n`: `T_n = h·(f(x_0)/2 + Σ_(i=1..n-1) f(x_i) + f(x_n)/2)` with `x_i = i·h`.\n\nThe error is `I - T_n = -(b-a)·h²/12 · f''(ξ)` for some `ξ` in the interval, so `O(h²) = O(1/n²)`: **doubling `n` quarters the error**. At `n = 1000` that is about `10^-6`."
+       },
        "plot": false,
        "q": {
         "de": "Schreibe eine Funktion `double trapez(int n)`, die das Integral von sin(x) zwischen 0 und pi nach der Trapezregel berechnet, und gib das Ergebnis für n = 10 mit sechs Stellen aus. Die Trapezregel: halbe Randwerte, volle Zwischenwerte, mal Schrittweite.",
@@ -1507,7 +1723,11 @@
        "seconds": 10,
        "solution": "#include <stdio.h>\n#include <math.h>\n\ndouble trapez(int n)\n{\n    double h = M_PI / n;\n    double summe;\n    int i;\n\n    summe = 0.5 * (sin(0.0) + sin(M_PI));\n    for (i = 1; i < n; i++) summe += sin(i * h);\n    return summe * h;\n}\n\nint main()\n{\n    printf(\"%.6f\\n\", trapez(10));\n    return 0;\n}\n",
        "starter": "#include <stdio.h>\n#include <math.h>\n\ndouble trapez(int n)\n{\n    double h = M_PI / n;\n    double summe;\n    int i;\n\n    \n    return 0.0;\n}\n\nint main()\n{\n    printf(\"%.6f\\n\", trapez(10));\n    return 0;\n}\n",
-       "why": "Der wahre Wert ist 2. Mit zehn Trapezen fehlt rund ein Prozent; der Fehler der Trapezregel fällt mit h², also bringt die Verzehnfachung der Stützstellen hundertmal weniger Fehler.\n\nDie halben Randwerte sind kein Schönheitsfehler, sondern die Regel selbst: jedes Trapez trägt seine beiden Ecken zur Hälfte bei, und alle inneren Punkte sind Ecke von zwei Trapezen. Wer alle Werte voll nimmt, rechnet die Rechteckregel und hat einen Fehler erster Ordnung. Die nächste Stufe wäre Simpson: Gewichte 1, 4, 2, 4, ..., 1 und ein Fehler von der Ordnung h⁴."
+       "why": "Der wahre Wert ist 2. Mit zehn Trapezen fehlt rund ein Prozent; der Fehler der Trapezregel fällt mit h², also bringt die Verzehnfachung der Stützstellen hundertmal weniger Fehler.\n\nDie halben Randwerte sind kein Schönheitsfehler, sondern die Regel selbst: jedes Trapez trägt seine beiden Ecken zur Hälfte bei, und alle inneren Punkte sind Ecke von zwei Trapezen. Wer alle Werte voll nimmt, rechnet die Rechteckregel und hat einen Fehler erster Ordnung. Die nächste Stufe wäre Simpson: Gewichte 1, 4, 2, 4, ..., 1 und ein Fehler von der Ordnung h⁴.",
+       "ziel": {
+        "de": "Die Funktion schreiben und sehen, wie nah sie bei 2 landet -- und um welchen Faktor der Fehler faellt, wenn `n` verdoppelt wird.",
+        "en": "Write the function and see how close it lands to 2 -- and by what factor the error falls when `n` is doubled."
+       }
       }
      ],
      "ausgabe": "F = -4.00\nE = 2.00\n",
@@ -1530,20 +1750,36 @@
     {
      "aufgaben": [
       {
+       "annahmen": {
+        "de": "Die Lektion wird gelesen und vorhergesagt, nicht ausgefuehrt: Der kleine C-Deuter dieser App kennt `float` und `double` nicht getrennt.",
+        "en": "This lesson is read and predicted, not run: the small C interpreter in this app does not distinguish `float` from `double`."
+       },
        "answer": "0.30000000000000004441\n0",
        "code": "#include <stdio.h>\n\nint main()\n{\n    double a = 0.1 + 0.2;\n\n    printf(\"%.20f\\n\", a);\n    printf(\"%d\\n\", a == 0.3);\n    return 0;\n}\n",
        "kind": "predict",
+       "mathematisch": {
+        "de": "`double` ist die **endliche** Menge `F` der Zahlen `±m·2^e` mit 53 Bit Mantisse. Die Rundung `fl` bildet jede reelle Zahl auf die naechste davon ab und erfuellt `|fl(x) - x| ≤ eps·|x|` mit `eps = 2^-53 ≈ 1,11·10^-16`.\n\n`0,1` und `0,2` sind im Zweiersystem periodisch, liegen also nicht in `F`. Gerechnet wird `fl(fl(0,1) + fl(0,2))`, und das ist nicht `fl(0,3)`.",
+        "en": "`double` is the **finite** set `F` of numbers `±m·2^e` with 53 bits of mantissa. Rounding `fl` maps every real number to the nearest of them and satisfies `|fl(x) - x| ≤ eps·|x|` with `eps = 2^-53 ≈ 1.11·10^-16`.\n\n`0.1` and `0.2` are periodic in binary, so they are not in `F`. What is computed is `fl(fl(0.1) + fl(0.2))`, and that is not `fl(0.3)`."
+       },
        "q": {
         "de": "Ein echter C-Übersetzer schreibt für dieses Programm zwei Zeilen. Welche? (Die erste ist eine Zahl mit 20 Nachkommastellen, die zweite 0 oder 1.)",
         "en": "A real C compiler prints two lines for this program. Which? (The first is a number with 20 decimal places, the second 0 or 1.)"
        },
        "run": false,
-       "why": "0,1 und 0,2 sind im Zweiersystem beide ungenau, und ihre Summe landet knapp **neben** dem, was `0.3` ergibt. Der Vergleich ist deshalb falsch.\n\nDiese Aufgabe läuft hier bewusst nicht: Der C-Interpreter dieser App liest Dezimalzahlen zu grob ein und liefert für `a == 0.3` eine 1. Das ist nebenbei die beste Lehre des Kapitels — auch das Werkzeug rechnet nicht immer so, wie man annimmt, und man sollte wissen, wem man was glaubt.\n\nAuf einem gewöhnlichen Rechner lässt sich das mit einer Zeile nachprüfen: ein `printf` mit zwanzig Nachkommastellen für `0.1 + 0.2`. Die zwanzig Stellen sind der Trick -- mit `%f` zeigt C nur sechs und rundet die Abweichung weg, weshalb die meisten Programmierer jahrelang nichts davon merken."
+       "why": "0,1 und 0,2 sind im Zweiersystem beide ungenau, und ihre Summe landet knapp **neben** dem, was `0.3` ergibt. Der Vergleich ist deshalb falsch.\n\nDiese Aufgabe läuft hier bewusst nicht: Der C-Interpreter dieser App liest Dezimalzahlen zu grob ein und liefert für `a == 0.3` eine 1. Das ist nebenbei die beste Lehre des Kapitels — auch das Werkzeug rechnet nicht immer so, wie man annimmt, und man sollte wissen, wem man was glaubt.\n\nAuf einem gewöhnlichen Rechner lässt sich das mit einer Zeile nachprüfen: ein `printf` mit zwanzig Nachkommastellen für `0.1 + 0.2`. Die zwanzig Stellen sind der Trick -- mit `%f` zeigt C nur sechs und rundet die Abweichung weg, weshalb die meisten Programmierer jahrelang nichts davon merken.",
+       "ziel": {
+        "de": "Vorhersagen, was ein echter Uebersetzer schreibt -- und warum die zweite Zeile nicht die erwartete ist.",
+        "en": "Predict what a real compiler prints -- and why the second line is not the expected one."
+       }
       },
       {
        "answer": 1,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "Jede Grundrechenart liefert `fl(a ∘ b)` und nicht `a ∘ b`. Zwei Rechenwege zum selben reellen Wert enden deshalb bei zwei verschiedenen Elementen von `F`. Die Gleichheit ist auf `F` sauber definiert -- sie beantwortet nur nicht die Frage, die gemeint war.",
+        "en": "Every elementary operation yields `fl(a ∘ b)` and not `a ∘ b`. Two computational routes to the same real value therefore end at two different elements of `F`. Equality is perfectly well defined on `F` -- it just does not answer the question that was meant."
+       },
        "options": [
         {
          "de": "Weil `==` bei double gar nicht erlaubt ist.",
@@ -1566,22 +1802,38 @@
         "de": "Warum ist `if (x == 0.3)` bei einer gerechneten Größe `x` eine schlechte Idee?",
         "en": "Why is `if (x == 0.3)` a bad idea for a computed quantity `x`?"
        },
-       "why": "Der Vergleich ist syntaktisch erlaubt und schnell — er ist nur fast immer falsch. Verglichen wird ein Abstand, und zwar mit einer Toleranz, die zur Größenordnung der Zahlen passt.\n\nEs gibt Ausnahmen: Werte, die nur zugewiesen und nie gerechnet wurden, sind exakt vergleichbar -- etwa ein Kennwert wie -1.0, der „nicht gesetzt“ bedeutet. Sobald eine Rechnung dazwischen liegt, gilt wieder die Toleranz."
+       "why": "Der Vergleich ist syntaktisch erlaubt und schnell — er ist nur fast immer falsch. Verglichen wird ein Abstand, und zwar mit einer Toleranz, die zur Größenordnung der Zahlen passt.\n\nEs gibt Ausnahmen: Werte, die nur zugewiesen und nie gerechnet wurden, sind exakt vergleichbar -- etwa ein Kennwert wie -1.0, der „nicht gesetzt“ bedeutet. Sobald eine Rechnung dazwischen liegt, gilt wieder die Toleranz.",
+       "ziel": {
+        "de": "Begruenden, warum auf Gleichheit zu pruefen hier die falsche Frage ist -- und welche die richtige waere.",
+        "en": "Give the reason why testing for equality is the wrong question here -- and what the right one would be."
+       }
       },
       {
        "answer": "0.0",
        "code": "#include <stdio.h>\n\nint main()\n{\n    double gross = 1e16;\n    double summe = gross + 1.0;\n\n    printf(\"%.1f\\n\", summe - gross);\n    return 0;\n}\n",
        "kind": "predict",
+       "mathematisch": {
+        "de": "Der Abstand zweier benachbarter Elemente von `F` bei `x` ist `ulp(x) = 2^(e-52)`, wenn `2^e ≤ |x| < 2^(e+1)`. Fuer `x = 10^16` ist `e = 53`, also `ulp = 2`. Damit ist `fl(10^16 + 1) = 10^16`: Die Addition ist dort nicht mehr injektiv -- der Summand verschwindet vollstaendig.",
+        "en": "The distance between neighbouring elements of `F` at `x` is `ulp(x) = 2^(e-52)` when `2^e ≤ |x| < 2^(e+1)`. For `x = 10^16` we have `e = 53`, so `ulp = 2`. Hence `fl(10^16 + 1) = 10^16`: addition is no longer injective there -- the summand disappears completely."
+       },
        "q": {
         "de": "Was schreibt das Programm?",
         "en": "What does the program print?"
        },
        "run": true,
-       "why": "Die 1 verschwindet: `double` hat rund sechzehn Dezimalstellen, und bei 1e16 liegt die letzte davon schon über der Einerstelle. In einer Zeitschleife, die t immer wieder um dt erhöht, ist das der Grund, warum man t lieber als `i * dt` berechnet.\n\n`t = i * dt` hat einen einzigen Rundungsfehler statt einer Million aufsummierter. Bei 10⁶ Schritten mit dt = 10⁻⁶ liegt das aufsummierte t am Ende sichtbar neben 1,0 -- und wer die Schleife mit `while (t < 1.0)` abbricht, bekommt je nach Rundung einen Schritt mehr oder weniger."
+       "why": "Die 1 verschwindet: `double` hat rund sechzehn Dezimalstellen, und bei 1e16 liegt die letzte davon schon über der Einerstelle. In einer Zeitschleife, die t immer wieder um dt erhöht, ist das der Grund, warum man t lieber als `i * dt` berechnet.\n\n`t = i * dt` hat einen einzigen Rundungsfehler statt einer Million aufsummierter. Bei 10⁶ Schritten mit dt = 10⁻⁶ liegt das aufsummierte t am Ende sichtbar neben 1,0 -- und wer die Schleife mit `while (t < 1.0)` abbricht, bekommt je nach Rundung einen Schritt mehr oder weniger.",
+       "ziel": {
+        "de": "Vorhersagen, was `1e16 + 1` ergibt, und erklaeren, warum das nicht Rundung heisst, sondern Unveraendertheit.",
+        "en": "Predict what `1e16 + 1` gives, and explain why that is not called rounding but being unchanged."
+       }
       },
       {
        "expect": "1 0",
        "kind": "code",
+       "mathematisch": {
+        "de": "Gefragt ist nicht `a = b`, sondern `|a - b| ≤ tol`.\n\nAbsolut mit festem `tol` taugt nur in einem Groessenbereich: `10^-9` ist fuer Millionen zu streng und fuer Millionstel zu grosszuegig. Relativ `|a - b| ≤ rtol·max(|a|, |b|)` waechst mit den Zahlen mit, versagt aber bei `a = b = 0`. Ueblich ist deshalb die Mischung `|a - b| ≤ atol + rtol·max(|a|, |b|)`.",
+        "en": "What is asked is not `a = b` but `|a - b| ≤ tol`.\n\nAn absolute `tol` only works within one range of magnitudes: `10^-9` is too strict for millions and too generous for millionths. A relative test `|a - b| ≤ rtol·max(|a|, |b|)` grows with the numbers but fails at `a = b = 0`. The usual answer is the mixture `|a - b| ≤ atol + rtol·max(|a|, |b|)`."
+       },
        "plot": false,
        "q": {
         "de": "Schreibe eine Funktion `int nahe(double a, double b)`, die 1 zurückgibt, wenn sich a und b um weniger als 1e-9 unterscheiden, sonst 0. Gib damit die beiden Vergleiche aus: erst `0.1+0.2` gegen `0.3`, dann `1.0` gegen `1.1`, durch Leerzeichen getrennt.",
@@ -1590,7 +1842,11 @@
        "seconds": 10,
        "solution": "#include <stdio.h>\n#include <math.h>\n\nint nahe(double a, double b)\n{\n    if (fabs(a - b) < 1e-9) return 1;\n    return 0;\n}\n\nint main()\n{\n    printf(\"%d %d\\n\", nahe(0.1 + 0.2, 0.3), nahe(1.0, 1.1));\n    return 0;\n}\n",
        "starter": "#include <stdio.h>\n#include <math.h>\n\nint nahe(double a, double b)\n{\n    \n    return 0;\n}\n\nint main()\n{\n    printf(\"%d %d\\n\", nahe(0.1 + 0.2, 0.3), nahe(1.0, 1.1));\n    return 0;\n}\n",
-       "why": "Eine feste Toleranz wie 1e-9 taugt für Zahlen in der Größenordnung eins. Bei sehr großen oder sehr kleinen Werten nimmt man eine **relative** Toleranz: `fabs(a-b) <= 1e-9 * fabs(b)`.\n\nIn der Praxis nimmt man beides zusammen: `fabs(a-b) <= atol + rtol * fabs(b)`. Der absolute Anteil fängt den Fall ab, dass `b` null ist -- sonst wäre die Toleranz dort ebenfalls null. Genau diese Form steht in jeder ernsthaften Prüfbibliothek."
+       "why": "Eine feste Toleranz wie 1e-9 taugt für Zahlen in der Größenordnung eins. Bei sehr großen oder sehr kleinen Werten nimmt man eine **relative** Toleranz: `fabs(a-b) <= 1e-9 * fabs(b)`.\n\nIn der Praxis nimmt man beides zusammen: `fabs(a-b) <= atol + rtol * fabs(b)`. Der absolute Anteil fängt den Fall ab, dass `b` null ist -- sonst wäre die Toleranz dort ebenfalls null. Genau diese Form steht in jeder ernsthaften Prüfbibliothek.",
+       "ziel": {
+        "de": "Eine Pruefung schreiben, die mit der Groesse der Zahlen mitwaechst.",
+        "en": "Write a test that grows with the magnitude of the numbers."
+       }
       }
      ],
      "ausgabe": "verschwunden: 0.0\nausgeloescht: 1.0\nnah genug?    1\n",
@@ -1649,9 +1905,17 @@
     {
      "aufgaben": [
       {
+       "annahmen": {
+        "de": "C prueft beim Zugriff **nichts**: `u[10]` wird uebersetzt und laeuft, es liest nur, was zufaellig dahinter liegt.",
+        "en": "C checks **nothing** on access: `u[10]` compiles and runs, it merely reads whatever happens to lie beyond."
+       },
        "answer": 0,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "`double u[10];` legt die Plaetze `u[0] ... u[9]` an -- die Indizes durchlaufen `[0, n)`, nicht `[1, n]`. Zwei Zaehlweisen sind im Umlauf, „n Elemente“ und „Index bis n-1“; `for (i = 0; i < n; i++)` hat beide in einer Zeile richtig.",
+        "en": "`double u[10];` allocates the slots `u[0] ... u[9]` -- the indices run over `[0, n)`, not `[1, n]`. Two ways of counting are in circulation, “n elements” and “index up to n-1”; `for (i = 0; i < n; i++)` gets both right in one line."
+       },
        "options": [
         {
          "de": "u[9]",
@@ -1674,22 +1938,42 @@
         "de": "`double u[10];` — welcher ist der letzte gültige Index?",
         "en": "`double u[10];` — which is the last valid index?"
        },
-       "why": "Zehn Plätze, von 0 bis 9. `u[10]` liegt schon daneben und wird trotzdem übersetzt — in der Numerik meist genau an der Randzelle, die man beim Stencil vergessen hat.\n\nDie Grenzen sind deshalb so leicht zu verfehlen, weil zwei Zählweisen im Umlauf sind: „n Elemente“ und „Index bis n-1“. Wer die Schleife als `for (i = 0; i < n; i++)` schreibt, hat beide in einer Zeile richtig -- deshalb ist das die Standardform, und jede Abweichung davon verdient einen zweiten Blick."
+       "why": "Zehn Plätze, von 0 bis 9. `u[10]` liegt schon daneben und wird trotzdem übersetzt — in der Numerik meist genau an der Randzelle, die man beim Stencil vergessen hat.\n\nDie Grenzen sind deshalb so leicht zu verfehlen, weil zwei Zählweisen im Umlauf sind: „n Elemente“ und „Index bis n-1“. Wer die Schleife als `for (i = 0; i < n; i++)` schreibt, hat beide in einer Zeile richtig -- deshalb ist das die Standardform, und jede Abweichung davon verdient einen zweiten Blick.",
+       "ziel": {
+        "de": "Den letzten Index nennen, der noch zum Feld gehoert.",
+        "en": "Name the last index that still belongs to the array."
+       }
       },
       {
        "answer": "99.0",
        "code": "#include <stdio.h>\n\nvoid aendern(double *v, int n)\n{\n    v[0] = 99.0;\n}\n\nint main()\n{\n    double a[3];\n    a[0] = 1.0; a[1] = 2.0; a[2] = 3.0;\n    aendern(a, 3);\n    printf(\"%.1f\\n\", a[0]);\n    return 0;\n}\n",
        "kind": "predict",
+       "mathematisch": {
+        "de": "Ein einzelner `double` wird beim Aufruf kopiert, ein Feld nicht: Der Feldname **zerfaellt zur Adresse** seines ersten Elements. Uebergeben wird also ein Zeiger; der ist zwar selbst eine Kopie, aber die Kopie einer Adresse zeigt auf dasselbe. Die Funktion arbeitet am Original.",
+        "en": "A single `double` is copied on the call, an array is not: the array name **decays to the address** of its first element. So what is passed is a pointer; it is itself a copy, but the copy of an address points to the same thing. The function works on the original."
+       },
        "q": {
         "de": "Was schreibt das Programm? Beachte, dass `aendern` ein Feld bekommt.",
         "en": "What does the program print? Note that `aendern` receives an array."
        },
        "run": true,
-       "why": "Anders als bei einem einzelnen `double` wird ein Feld nicht kopiert: Die Funktion arbeitet am Original. Genau deshalb kann ein Stencil-Schritt das Gitter direkt fortschreiben.\n\nDas ist kein Sonderfall für Felder, sondern die Folge davon, dass der Feldname zur Adresse zerfällt: übergeben wird ein Zeiger, und der ist zwar eine Kopie -- die Kopie einer Adresse zeigt aber auf dasselbe. Wer wirklich kopieren will, legt ein zweites Feld an und kopiert Zelle für Zelle (oder mit `memcpy`)."
+       "why": "Anders als bei einem einzelnen `double` wird ein Feld nicht kopiert: Die Funktion arbeitet am Original. Genau deshalb kann ein Stencil-Schritt das Gitter direkt fortschreiben.\n\nDas ist kein Sonderfall für Felder, sondern die Folge davon, dass der Feldname zur Adresse zerfällt: übergeben wird ein Zeiger, und der ist zwar eine Kopie -- die Kopie einer Adresse zeigt aber auf dasselbe. Wer wirklich kopieren will, legt ein zweites Feld an und kopiert Zelle für Zelle (oder mit `memcpy`).",
+       "ziel": {
+        "de": "Vorhersagen, ob die Aenderung in `aendern` beim Aufrufer ankommt.",
+        "en": "Predict whether the change made in `aendern` arrives at the caller."
+       }
       },
       {
+       "annahmen": {
+        "de": "Acht Werte, das Maximum ist 9,0.",
+        "en": "Eight values, the maximum is 9.0."
+       },
        "expect": "9.0",
        "kind": "code",
+       "mathematisch": {
+        "de": "Gesucht ist `max{v_0, ..., v_(n-1)}`. Als Rekursion: `M_0 = v_0`, `M_k = max(M_(k-1), v_k)`. Der Startwert **muss** `v_0` sein und nicht 0 -- mit 0 rechnet man das Maximum von `{0, v_0, ..., v_(n-1)}`, und fuer lauter negative Werte ist das eine Zahl, die im Feld gar nicht vorkommt. Fuer `n = 0` ist das Maximum nicht definiert; dieser Fall kommt hier nicht vor.",
+        "en": "Wanted is `max{v_0, ..., v_(n-1)}`. As a recursion: `M_0 = v_0`, `M_k = max(M_(k-1), v_k)`. The starting value **must** be `v_0` and not 0 -- with 0 you compute the maximum of `{0, v_0, ..., v_(n-1)}`, and for all-negative values that is a number which does not occur in the array at all. For `n = 0` the maximum is undefined; that case does not occur here."
+       },
        "plot": false,
        "q": {
         "de": "Schreibe `double groesster(double *v, int n)`, die den größten Wert zurückgibt, und gib ihn für das gegebene Feld mit einer Nachkommastelle aus.",
@@ -1698,7 +1982,11 @@
        "seconds": 10,
        "solution": "#include <stdio.h>\n\ndouble groesster(double *v, int n)\n{\n    double m = v[0];\n    int i;\n\n    for (i = 1; i < n; i++)\n        if (v[i] > m) m = v[i];\n    return m;\n}\n\nint main()\n{\n    double w[8];\n    w[0] = 3.0; w[1] = 1.0; w[2] = 4.0; w[3] = 1.0;\n    w[4] = 5.0; w[5] = 9.0; w[6] = 2.0; w[7] = 6.0;\n\n    printf(\"%.1f\\n\", groesster(w, 8));\n    return 0;\n}\n",
        "starter": "#include <stdio.h>\n\ndouble groesster(double *v, int n)\n{\n    \n    return 0.0;\n}\n\nint main()\n{\n    double w[8];\n    w[0] = 3.0; w[1] = 1.0; w[2] = 4.0; w[3] = 1.0;\n    w[4] = 5.0; w[5] = 9.0; w[6] = 2.0; w[7] = 6.0;\n\n    printf(\"%.1f\\n\", groesster(w, 8));\n    return 0;\n}\n",
-       "why": "Wichtig ist der Start bei `v[0]` und nicht bei 0: Ein Feld aus lauter negativen Werten hätte sonst das Maximum 0, das gar nicht darin vorkommt. Derselbe Fehler steckt in vielen selbstgebauten Normberechnungen.\n\nFür n = 0 hat die Funktion keine sinnvolle Antwort -- `v[0]` wäre dann schon der Zugriff hinter das Ende. In einer Bibliothek würde man das abfangen; in einem Löser schreibt man die Bedingung an die Stelle, an der das Feld entsteht, und verlässt sich darauf."
+       "why": "Wichtig ist der Start bei `v[0]` und nicht bei 0: Ein Feld aus lauter negativen Werten hätte sonst das Maximum 0, das gar nicht darin vorkommt. Derselbe Fehler steckt in vielen selbstgebauten Normberechnungen.\n\nFür n = 0 hat die Funktion keine sinnvolle Antwort -- `v[0]` wäre dann schon der Zugriff hinter das Ende. In einer Bibliothek würde man das abfangen; in einem Löser schreibt man die Bedingung an die Stelle, an der das Feld entsteht, und verlässt sich darauf.",
+       "ziel": {
+        "de": "Das Maximum mit dem ersten Element als Startwert suchen und sehen, warum die naheliegende 0 falsch ist.",
+        "en": "Search for the maximum with the first element as the starting value and see why the obvious 0 is wrong."
+       }
       }
      ],
      "ausgabe": "10.0\n20.0\n",
@@ -1724,17 +2012,29 @@
        "answer": "5.0",
        "code": "#include <stdio.h>\n\nint main()\n{\n    double a = 1.0;\n    double *p = &a;\n\n    *p = 5.0;\n    printf(\"%.1f\\n\", a);\n    return 0;\n}\n",
        "kind": "predict",
+       "mathematisch": {
+        "de": "Ein Zeiger ist eine Adresse. `&a` liefert die Adresse von `a`, `*p` den Wert an der Adresse `p` -- die beiden Abbildungen sind zueinander invers: `*(&a)` ist `a`. Der Stern hat dabei zwei Rollen: in der Deklaration „Zeiger auf“, im Ausdruck „der Wert dort“.",
+        "en": "A pointer is an address. `&a` gives the address of `a`, `*p` the value at the address `p` -- the two maps are inverse to each other: `*(&a)` is `a`. The star has two roles in this: in a declaration “pointer to”, in an expression “the value there”."
+       },
        "q": {
         "de": "Was schreibt das Programm?",
         "en": "What does the program print?"
        },
        "run": true,
-       "why": "`p` zeigt auf `a`; `*p = 5.0` schreibt also in `a`. Der Stern hat zwei ganz verschiedene Bedeutungen: in der Deklaration „ist ein Zeiger auf\", im Ausdruck „der Wert an dieser Adresse\".\n\n`&` hat dieselbe Doppelrolle: vor einer Variablen liefert es deren Adresse, in einer C++-Deklaration macht es eine Referenz daraus. Wer die beiden Rollen beim Lesen sauber trennt, verliert die Hälfte der Verwirrung um Zeiger."
+       "why": "`p` zeigt auf `a`; `*p = 5.0` schreibt also in `a`. Der Stern hat zwei ganz verschiedene Bedeutungen: in der Deklaration „ist ein Zeiger auf\", im Ausdruck „der Wert an dieser Adresse\".\n\n`&` hat dieselbe Doppelrolle: vor einer Variablen liefert es deren Adresse, in einer C++-Deklaration macht es eine Referenz daraus. Wer die beiden Rollen beim Lesen sauber trennt, verliert die Hälfte der Verwirrung um Zeiger.",
+       "ziel": {
+        "de": "Vorhersagen, was ein Schreiben ueber den Zeiger an der Variablen aendert.",
+        "en": "Predict what writing through the pointer changes about the variable."
+       }
       },
       {
        "answer": 1,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "`u[i]` ist in C **definiert** als `*(u + i)`. Die Zeigerrechnung zaehlt in Elementen und nicht in Bytes: `u + i` ist die Adresse `u + i·sizeof(*u)`. Aus der Definition folgt nebenbei, dass auch `3[u]` gueltiges C ist -- gebraeuchlich ist das nicht, es zeigt nur, wie woertlich die Regel gemeint ist.",
+        "en": "`u[i]` is **defined** in C as `*(u + i)`. Pointer arithmetic counts in elements, not in bytes: `u + i` is the address `u + i·sizeof(*u)`. From the definition it follows incidentally that `3[u]` is valid C as well -- not that anyone writes it, but it shows how literally the rule is meant."
+       },
        "options": [
         {
          "de": "u + 3",
@@ -1757,11 +2057,19 @@
         "de": "Was ist gleichbedeutend mit `u[3]`?",
         "en": "What is the same as `u[3]`?"
        },
-       "why": "Der Feldname ist die Adresse des ersten Elements; drei weiter und dann dereferenziert ist genau das vierte Element. `*u + 3` wäre dagegen der erste Wert plus drei.\n\nDass beide Schreibweisen gleichbedeutend sind, ist keine Spitzfindigkeit: `u[i]` ist in C **definiert** als `*(u + i)`. Daraus folgt die Kuriosität, dass auch `3[u]` gültiges C ist -- gebräuchlich ist das nicht, aber es zeigt, wie wörtlich die Regel gemeint ist."
+       "why": "Der Feldname ist die Adresse des ersten Elements; drei weiter und dann dereferenziert ist genau das vierte Element. `*u + 3` wäre dagegen der erste Wert plus drei.\n\nDass beide Schreibweisen gleichbedeutend sind, ist keine Spitzfindigkeit: `u[i]` ist in C **definiert** als `*(u + i)`. Daraus folgt die Kuriosität, dass auch `3[u]` gültiges C ist -- gebräuchlich ist das nicht, aber es zeigt, wie wörtlich die Regel gemeint ist.",
+       "ziel": {
+        "de": "Die Schreibweise nennen, die dasselbe bedeutet wie `u[3]`.",
+        "en": "Name the spelling that means the same as `u[3]`."
+       }
       },
       {
        "expect": "25.0",
        "kind": "code",
+       "mathematisch": {
+        "de": "Gesucht ist `v_i := f·v_i` fuer alle `i`, eine Skalierung an Ort und Stelle. Die Summe danach ist `f·Σ v_i = 2,5·(1+2+3+4) = 25`. `*(v + i)` und `v[i]` erzeugen denselben Maschinencode -- die Wahl ist eine des Lesens.",
+        "en": "Wanted is `v_i := f·v_i` for every `i`, a scaling in place. The sum afterwards is `f·Σ v_i = 2.5·(1+2+3+4) = 25`. `*(v + i)` and `v[i]` produce the same machine code -- the choice is one of reading."
+       },
        "plot": false,
        "q": {
         "de": "Schreibe `void skalieren(double *v, int n, double f)`, die jedes Element mit f multipliziert — mit Zeigersyntax, also `*(v + i)` statt `v[i]`. Gib danach die Summe mit einer Nachkommastelle aus.",
@@ -1770,7 +2078,11 @@
        "seconds": 10,
        "solution": "#include <stdio.h>\n\nvoid skalieren(double *v, int n, double f)\n{\n    int i;\n\n    for (i = 0; i < n; i++) *(v + i) = *(v + i) * f;\n}\n\nint main()\n{\n    double w[4];\n    double s = 0.0;\n    int i;\n\n    w[0] = 1.0; w[1] = 2.0; w[2] = 3.0; w[3] = 4.0;\n    skalieren(w, 4, 2.5);\n    for (i = 0; i < 4; i++) s += w[i];\n    printf(\"%.1f\\n\", s);\n    return 0;\n}\n",
        "starter": "#include <stdio.h>\n\nvoid skalieren(double *v, int n, double f)\n{\n    \n}\n\nint main()\n{\n    double w[4];\n    double s = 0.0;\n    int i;\n\n    w[0] = 1.0; w[1] = 2.0; w[2] = 3.0; w[3] = 4.0;\n    skalieren(w, 4, 2.5);\n    for (i = 0; i < 4; i++) s += w[i];\n    printf(\"%.1f\\n\", s);\n    return 0;\n}\n",
-       "why": "1+2+3+4 = 10, mal 2,5 ergibt 25. Dass die Änderung beim Aufrufer ankommt, ist kein Zufall: `w` **ist** die Adresse.\n\n`*(v + i)` und `v[i]` erzeugen denselben Maschinencode; die Wahl ist eine des Lesens. In Schleifen über Gitter liest sich die Indexform besser, in Bibliotheksfunktionen, die über Puffer laufen, oft die Zeigerform."
+       "why": "1+2+3+4 = 10, mal 2,5 ergibt 25. Dass die Änderung beim Aufrufer ankommt, ist kein Zufall: `w` **ist** die Adresse.\n\n`*(v + i)` und `v[i]` erzeugen denselben Maschinencode; die Wahl ist eine des Lesens. In Schleifen über Gitter liest sich die Indexform besser, in Bibliotheksfunktionen, die über Puffer laufen, oft die Zeigerform.",
+       "ziel": {
+        "de": "Ein Feld an Ort und Stelle veraendern und sehen, dass die Aenderung beim Aufrufer ankommt, weil `w` die Adresse **ist**.",
+        "en": "Change an array in place and see that the change arrives at the caller, because `w` **is** the address."
+       }
       }
      ],
      "ausgabe": "2.0 1.0\n20.0 20.0\n",
@@ -1811,6 +2123,10 @@
        "answer": 3,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "Waermeleitungsgleichung `∂u/∂t = D·∂²u/∂x²`.\n\nZweite Ableitung als Drei-Punkt-Stern: `∂²u/∂x² ≈ (u_(i-1) - 2u_i + u_(i+1))/h²`, Fehler `O(h²)`. Zeit explizit: `u_i^(n+1) = u_i^n + r·(u_(i-1)^n - 2u_i^n + u_(i+1)^n)` mit `r = D·dt/h²`.\n\nDie hochgestellte `n` steht in **jedem** Term rechts: Alle drei Nachbarn sind vom alten Zeitschritt. Schreibt man direkt in `u`, ist `u_(i-1)` beim Erreichen von `i` bereits der neue Wert -- das ist dann das Gauss-Seidel-Verfahren, ein anderes Verfahren mit anderer Loesung, keine Ersparnis.",
+        "en": "The heat equation `∂u/∂t = D·∂²u/∂x²`.\n\nThe second derivative as a three-point stencil: `∂²u/∂x² ≈ (u_(i-1) - 2u_i + u_(i+1))/h²`, error `O(h²)`. Time explicitly: `u_i^(n+1) = u_i^n + r·(u_(i-1)^n - 2u_i^n + u_(i+1)^n)` with `r = D·dt/h²`.\n\nThe superscript `n` is on **every** term on the right: all three neighbours come from the old time level. Writing directly into `u` makes `u_(i-1)` already the new value by the time `i` is reached -- that is the Gauss-Seidel scheme, a different method with a different solution, not a saving."
+       },
        "options": [
         {
          "de": "Weil C das Überschreiben verbietet.",
@@ -1829,15 +2145,31 @@
          "en": "So every point is computed from the values of the same time step."
         }
        ],
+       "physikalisch": {
+        "de": "Waerme in einem duennen Stab: `u` ist die Temperatur, `D` die Temperaturleitfaehigkeit in m²/s. Keine Quellen, keine Strahlung, kein Waermestrom laengs der Zeit -- nur Diffusion.",
+        "en": "Heat in a thin rod: `u` is the temperature, `D` the thermal diffusivity in m²/s. No sources, no radiation, no transport along the rod -- diffusion only."
+       },
        "q": {
         "de": "Warum wird in ein zweites Feld `w` geschrieben statt direkt in `u`?",
         "en": "Why write into a second array `w` instead of straight into `u`?"
        },
-       "why": "Schreibt man direkt in `u`, ist `u[i-1]` beim Erreichen von `i` schon der neue Wert, `u[i+1]` aber noch der alte. Das ist das Gauß-Seidel-Verfahren statt des expliziten — es läuft, konvergiert sogar, löst aber eine andere Aufgabe.\n\nDer Unterschied fällt bei einem groben Gitter kaum auf und wird bei feinem systematisch: Das Ergebnis ist um einen halben Zeitschritt versetzt und nicht mehr zweiter Ordnung. Für **das Lösen eines Gleichungssystems** ist Gauß-Seidel dagegen genau richtig und schneller als Jacobi -- dieselbe Zeile, anderer Zweck. Der Fehler liegt nicht im Code, sondern darin, nicht zu wissen, welches Verfahren man gerade schreibt."
+       "why": "Schreibt man direkt in `u`, ist `u[i-1]` beim Erreichen von `i` schon der neue Wert, `u[i+1]` aber noch der alte. Das ist das Gauß-Seidel-Verfahren statt des expliziten — es läuft, konvergiert sogar, löst aber eine andere Aufgabe.\n\nDer Unterschied fällt bei einem groben Gitter kaum auf und wird bei feinem systematisch: Das Ergebnis ist um einen halben Zeitschritt versetzt und nicht mehr zweiter Ordnung. Für **das Lösen eines Gleichungssystems** ist Gauß-Seidel dagegen genau richtig und schneller als Jacobi -- dieselbe Zeile, anderer Zweck. Der Fehler liegt nicht im Code, sondern darin, nicht zu wissen, welches Verfahren man gerade schreibt.",
+       "ziel": {
+        "de": "Sehen, warum das zweite Feld kein Umweg ist, sondern zur Definition des Verfahrens gehoert.",
+        "en": "See why the second array is not a detour but part of the definition of the scheme."
+       }
       },
       {
        "expect": "0.031829 1.000000",
        "kind": "code",
+       "mathematisch": {
+        "de": "Die Erhaltung folgt aus der Gleichung: `d/dt ∫u dx = D·[∂u/∂x]` an den Raendern. Ohne Waermestrom ueber den Rand (`∂u/∂x = 0`, Neumann-Bedingung) bleibt `∫u dx` konstant.\n\nDiskret heisst das: Die Randzelle tauscht nur mit ihrem **einen** Nachbarn, `u_0^(n+1) = u_0^n + r·(u_1^n - u_0^n)`, ebenso am anderen Ende. Dann ist die Summe ueber alle Zellen ein Teleskop und bleibt exakt bei 1. Mit `u_0 = 0` (Dirichlet) statt dessen fliesst Waerme ab, und die Summe faellt.",
+        "en": "Conservation follows from the equation: `d/dt ∫u dx = D·[∂u/∂x]` at the boundaries. With no heat flux across the boundary (`∂u/∂x = 0`, a Neumann condition) `∫u dx` stays constant.\n\nDiscretely that means the boundary cell exchanges with its **one** neighbour, `u_0^(n+1) = u_0^n + r·(u_1^n - u_0^n)`, and likewise at the other end. The sum over all cells is then a telescope and stays exactly at 1. With `u_0 = 0` (Dirichlet) instead, heat flows out and the sum falls."
+       },
+       "physikalisch": {
+        "de": "Stab mit **isolierten** Enden statt festgehaltener Temperatur. Anfangszustand: alles kalt, eine Einheit Waerme in der Mittelzelle. `n = 41` Zellen, `r = 0,4`, 200 Schritte; erwartet `0,031829` in der Mitte und `1,000000` als Summe.",
+        "en": "A rod with **insulated** ends instead of held temperatures. Initially everything is cold with one unit of heat in the middle cell. `n = 41` cells, `r = 0.4`, 200 steps; expected are `0.031829` in the middle and `1.000000` as the sum."
+       },
        "plot": false,
        "q": {
         "de": "Die Summe über alle Zellen nimmt ab, weil an den Rändern Wärme abfließt. Ändere die Randbedingung so, dass **nichts abfließt**: Die Randzelle tauscht nur mit ihrem einen Nachbarn, also `w[0] = u[0] + r*(u[1] - u[0])` und entsprechend am anderen Ende. Gib danach Mitte und Summe mit sechs Stellen aus, durch Leerzeichen getrennt.",
@@ -1846,7 +2178,11 @@
        "seconds": 30,
        "solution": "#include <stdio.h>\n\nint main()\n{\n    int n = 41;\n    int schritte = 200;\n    double r = 0.4;\n    double u[41];\n    double w[41];\n    double summe = 0.0;\n    int i, s;\n\n    for (i = 0; i < n; i++) u[i] = 0.0;\n    u[n / 2] = 1.0;\n\n    for (s = 0; s < schritte; s++) {\n        for (i = 1; i < n - 1; i++)\n            w[i] = u[i] + r * (u[i-1] - 2 * u[i] + u[i+1]);\n        w[0] = u[0] + r * (u[1] - u[0]);\n        w[n-1] = u[n-1] + r * (u[n-2] - u[n-1]);\n        for (i = 0; i < n; i++) u[i] = w[i];\n    }\n\n    for (i = 0; i < n; i++) summe += u[i];\n    printf(\"%.6f %.6f\\n\", u[n/2], summe);\n    return 0;\n}\n",
        "starter": "#include <stdio.h>\n\nint main()\n{\n    int n = 41;\n    int schritte = 200;\n    double r = 0.4;\n    double u[41];\n    double w[41];\n    double summe = 0.0;\n    int i, s;\n\n    for (i = 0; i < n; i++) u[i] = 0.0;\n    u[n / 2] = 1.0;\n\n    for (s = 0; s < schritte; s++) {\n        for (i = 1; i < n - 1; i++)\n            w[i] = u[i] + r * (u[i-1] - 2 * u[i] + u[i+1]);\n        w[0] = 0.0;\n        w[n-1] = 0.0;\n        for (i = 0; i < n; i++) u[i] = w[i];\n    }\n\n    for (i = 0; i < n; i++) summe += u[i];\n    printf(\"%.6f %.6f\\n\", u[n/2], summe);\n    return 0;\n}\n",
-       "why": "Die Summe bleibt jetzt exakt bei 1: Was hineingesteckt wurde, bleibt drin. Wichtig ist die **Flussform**: Wer stattdessen einfach `w[0] = w[1]` setzt, kopiert einen Wert, statt eine Bilanz zu ziehen — dann wächst die Summe auf 1,0386, und das Verfahren erfindet Wärme. Dass eine Erhaltungsgröße erhalten bleibt, ist die beste Selbstprüfung, die ein Löser haben kann, und der erste Test, den man einbaut.\n\nDie Flussform macht das deutlich: Was eine Zelle verliert, gewinnt die Nachbarzelle -- der Austausch steht einmal da und wirkt auf beide. Löser, die so gebaut sind, heißen **konservativ**; bei Stoßwellen ist das nicht Kosmetik, sondern entscheidet über die richtige Ausbreitungsgeschwindigkeit."
+       "why": "Die Summe bleibt jetzt exakt bei 1: Was hineingesteckt wurde, bleibt drin. Wichtig ist die **Flussform**: Wer stattdessen einfach `w[0] = w[1]` setzt, kopiert einen Wert, statt eine Bilanz zu ziehen — dann wächst die Summe auf 1,0386, und das Verfahren erfindet Wärme. Dass eine Erhaltungsgröße erhalten bleibt, ist die beste Selbstprüfung, die ein Löser haben kann, und der erste Test, den man einbaut.\n\nDie Flussform macht das deutlich: Was eine Zelle verliert, gewinnt die Nachbarzelle -- der Austausch steht einmal da und wirkt auf beide. Löser, die so gebaut sind, heißen **konservativ**; bei Stoßwellen ist das nicht Kosmetik, sondern entscheidet über die richtige Ausbreitungsgeschwindigkeit.",
+       "ziel": {
+        "de": "Die Randbedingung so aendern, dass die Erhaltung, die in der Gleichung steht, auch im Programm gilt.",
+        "en": "Change the boundary condition so that the conservation which is in the equation also holds in the program."
+       }
       }
      ],
      "ausgabe": "Mitte 0.031086  Summe 0.771801\n",
@@ -1893,6 +2229,10 @@
        "answer": 0,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "Stabilitaet des expliziten Sterns, nach von Neumann: Der Ansatz `u_i^n = g^n·e^(i·k·h)` liefert den Verstaerkungsfaktor `g = 1 - 4r·sin²(k·h/2)`. `|g| ≤ 1` fuer alle `k` verlangt `r ≤ ½`.\n\nMit `r = D·dt/h²` heisst das `dt ≤ h²/(2D)`: **Halbiert man `h`, muss `dt` geviertelt werden.** Die Arbeit waechst dann um das Achtfache -- doppelt so viele Zellen, viermal so viele Schritte.",
+        "en": "Stability of the explicit stencil, by von Neumann: the ansatz `u_i^n = g^n·e^(i·k·h)` gives the amplification factor `g = 1 - 4r·sin²(k·h/2)`. Requiring `|g| ≤ 1` for every `k` gives `r ≤ ½`.\n\nWith `r = D·dt/h²` that reads `dt ≤ h²/(2D)`: **halve `h` and `dt` has to be quartered.** The work then grows eightfold -- twice as many cells, four times as many steps."
+       },
        "options": [
         {
          "de": "dt muss geviertelt werden.",
@@ -1911,15 +2251,31 @@
          "en": "dt must be halved."
         }
        ],
+       "physikalisch": {
+        "de": "`D` ist durch das Material gegeben und aendert sich nicht, wenn man das Gitter verfeinert. Frei ist nur `dt`.",
+        "en": "`D` is given by the material and does not change when the grid is refined. The only free quantity is `dt`."
+       },
        "q": {
         "de": "Du verdoppelst die Auflösung, halbierst also h. Was muss mit dt geschehen, damit das explizite Verfahren stabil bleibt?",
         "en": "You double the resolution, so you halve h. What must happen to dt for the explicit method to stay stable?"
        },
-       "why": "r = D·dt/h² hängt von h **im Quadrat** ab. Halbes h heißt viertel dt — und damit achtmal so viel Rechenaufwand für die doppelte Auflösung. Das ist der Grund, warum in der Praxis implizit gerechnet wird.\n\nIn zwei Dimensionen wird es schlimmer: doppelte Auflösung heißt viermal so viele Zellen und viermal so viele Schritte, also sechzehnmal. In drei Dimensionen zweiunddreißigmal. Diese Rechnung erklärt die Größe von Rechenzentren besser als jede andere."
+       "why": "r = D·dt/h² hängt von h **im Quadrat** ab. Halbes h heißt viertel dt — und damit achtmal so viel Rechenaufwand für die doppelte Auflösung. Das ist der Grund, warum in der Praxis implizit gerechnet wird.\n\nIn zwei Dimensionen wird es schlimmer: doppelte Auflösung heißt viermal so viele Zellen und viermal so viele Schritte, also sechzehnmal. In drei Dimensionen zweiunddreißigmal. Diese Rechnung erklärt die Größe von Rechenzentren besser als jede andere.",
+       "ziel": {
+        "de": "Den Preis eines feineren Gitters ablesen.",
+        "en": "Read off the price of a finer grid."
+       }
       },
       {
        "expect": "0.102578",
        "kind": "code",
+       "mathematisch": {
+        "de": "Bei `r = ½` ist `g = 1 - 2·sin²(k·h/2)`, also genau `|g| ≤ 1` -- gerade noch stabil, und die kuerzeste Welle (`k·h = π`) wird mit `g = -1` von Schritt zu Schritt gespiegelt statt gedaempft. Ueber der Grenze ist `|g| > 1`: Das Verfahren wird nicht ungenau, es schwingt sich mit wachsender Amplitude auf.",
+        "en": "At `r = ½` we get `g = 1 - 2·sin²(k·h/2)`, so exactly `|g| ≤ 1` -- just barely stable, and the shortest wave (`k·h = π`) is mirrored from step to step with `g = -1` instead of being damped. Above the limit `|g| > 1`: the scheme does not become inaccurate, it oscillates with growing amplitude."
+       },
+       "physikalisch": {
+        "de": "`n = 41` Zellen, festgehaltene Raender (Temperatur 0), eine Einheit Waerme in der Mitte, 60 Schritte. Groesster Wert im Feld danach: `0,102578`.",
+        "en": "`n = 41` cells, boundaries held at temperature 0, one unit of heat in the middle, 60 steps. The largest value in the field afterwards: `0.102578`."
+       },
        "plot": false,
        "q": {
         "de": "Setze r auf den größten Wert, bei dem das Verfahren noch stabil ist, lass 60 Schritte laufen und gib den größten Wert im Feld mit sechs Stellen aus. (Bei genau dieser Grenze ist das Verfahren gerade noch stabil.)",
@@ -1928,7 +2284,11 @@
        "seconds": 30,
        "solution": "#include <stdio.h>\n\nint main()\n{\n    int n = 41;\n    int schritte = 60;\n    double r = 0.5;\n    double u[41];\n    double w[41];\n    double gross = 0.0;\n    int i, s;\n\n    for (i = 0; i < n; i++) u[i] = 0.0;\n    u[n / 2] = 1.0;\n\n    for (s = 0; s < schritte; s++) {\n        for (i = 1; i < n - 1; i++)\n            w[i] = u[i] + r * (u[i-1] - 2 * u[i] + u[i+1]);\n        w[0] = 0.0;\n        w[n-1] = 0.0;\n        for (i = 0; i < n; i++) u[i] = w[i];\n    }\n\n    for (i = 0; i < n; i++)\n        if (u[i] > gross) gross = u[i];\n    printf(\"%.6f\\n\", gross);\n    return 0;\n}\n",
        "starter": "#include <stdio.h>\n\nint main()\n{\n    int n = 41;\n    int schritte = 60;\n    double r = 0.6;\n    double u[41];\n    double w[41];\n    double gross = 0.0;\n    int i, s;\n\n    for (i = 0; i < n; i++) u[i] = 0.0;\n    u[n / 2] = 1.0;\n\n    for (s = 0; s < schritte; s++) {\n        for (i = 1; i < n - 1; i++)\n            w[i] = u[i] + r * (u[i-1] - 2 * u[i] + u[i+1]);\n        w[0] = 0.0;\n        w[n-1] = 0.0;\n        for (i = 0; i < n; i++) u[i] = w[i];\n    }\n\n    for (i = 0; i < n; i++)\n        if (u[i] > gross) gross = u[i];\n    printf(\"%.6f\\n\", gross);\n    return 0;\n}\n",
-       "why": "Mit r = 0,5 bleibt der Ausschlag bei 0,10 und die Verteilung glatt; mit 0,6 stand dort eine Zahl in der Größenordnung 10⁷. Zwischen „rechnet\" und „explodiert\" liegt in diesem Verfahren ein Zehntel.\n\nGenau an der Grenze (r = 1/2) ist `g = -1`: die kürzeste Welle wechselt jeden Schritt das Vorzeichen, ohne zu wachsen. Stabil ist das, schön nicht. In der Praxis nimmt man deshalb Sicherheit mit -- 0,8 bis 0,9 der zulässigen Schrittweite ist üblich, weil variable Koeffizienten die Grenze örtlich verschieben."
+       "why": "Mit r = 0,5 bleibt der Ausschlag bei 0,10 und die Verteilung glatt; mit 0,6 stand dort eine Zahl in der Größenordnung 10⁷. Zwischen „rechnet\" und „explodiert\" liegt in diesem Verfahren ein Zehntel.\n\nGenau an der Grenze (r = 1/2) ist `g = -1`: die kürzeste Welle wechselt jeden Schritt das Vorzeichen, ohne zu wachsen. Stabil ist das, schön nicht. In der Praxis nimmt man deshalb Sicherheit mit -- 0,8 bis 0,9 der zulässigen Schrittweite ist üblich, weil variable Koeffizienten die Grenze örtlich verschieben.",
+       "ziel": {
+        "de": "Die Grenze von beiden Seiten sehen: bei 0,5 haelt es, ein wenig darueber nicht mehr.",
+        "en": "See the limit from both sides: at 0.5 it still holds, a little above it does not."
+       }
       }
      ],
      "ausgabe": "groesster Wert 3.246e+07\n",
@@ -1987,9 +2347,17 @@
     {
      "aufgaben": [
       {
+       "annahmen": {
+        "de": "Der Pfeil ist nicht nur kuerzer, er macht verkettete Zugriffe ueberhaupt lesbar: `zelle->nachbar->druck` gegen `(*(*zelle).nachbar).druck`.",
+        "en": "The arrow is not merely shorter, it is what makes chained access readable at all: `zelle->nachbar->druck` against `(*(*zelle).nachbar).druck`."
+       },
        "answer": 0,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "`p->x` ist die Kurzform fuer `(*p).x`. Die Klammern sind noetig, weil der Punkt staerker bindet als der Stern: `*p.x` hiesse „dereferenziere `p.x`“ und ist etwas anderes.",
+        "en": "`p->x` is the short form of `(*p).x`. The parentheses are needed because the dot binds more tightly than the star: `*p.x` would mean “dereference `p.x`” and is something else."
+       },
        "options": [
         {
          "de": "p->x",
@@ -2012,11 +2380,27 @@
         "de": "Wie greift man über den Zeiger `p` auf das Feld `x` einer Struktur zu?",
         "en": "How do you reach the field `x` of a struct through the pointer `p`?"
        },
-       "why": "`p->x` ist die Kurzform für `(*p).x`. Die Klammern sind nötig, weil der Punkt stärker bindet als der Stern — `*p.x` hieße „dereferenziere p.x\" und ist etwas ganz anderes.\n\nDer Pfeil ist nicht nur Abkürzung, sondern die Form, in der man verkettete Zugriffe überhaupt lesen kann: `zelle->nachbar->druck` gegenüber `(*(*zelle).nachbar).druck`. In Datenstrukturen mit Verweisen -- Listen, Bäumen, unstrukturierten Gittern -- steht deshalb fast nur der Pfeil."
+       "why": "`p->x` ist die Kurzform für `(*p).x`. Die Klammern sind nötig, weil der Punkt stärker bindet als der Stern — `*p.x` hieße „dereferenziere p.x\" und ist etwas ganz anderes.\n\nDer Pfeil ist nicht nur Abkürzung, sondern die Form, in der man verkettete Zugriffe überhaupt lesen kann: `zelle->nachbar->druck` gegenüber `(*(*zelle).nachbar).druck`. In Datenstrukturen mit Verweisen -- Listen, Bäumen, unstrukturierten Gittern -- steht deshalb fast nur der Pfeil.",
+       "ziel": {
+        "de": "Die Kurzform nennen, mit der man ueber einen Zeiger an ein Feld der Struktur kommt.",
+        "en": "Name the short form that reaches a member of the structure through a pointer."
+       }
       },
       {
+       "annahmen": {
+        "de": "Der Parameter ist ein Zeiger auf die erste Struktur -- das Feld wird nicht kopiert, und `t[i].x` funktioniert trotzdem wie gewohnt.",
+        "en": "The parameter is a pointer to the first structure -- the array is not copied, and `t[i].x` still works as usual."
+       },
        "expect": "6.0000",
        "kind": "code",
+       "mathematisch": {
+        "de": "Der Schwerpunkt ist `x_s = (Σ m_i·x_i)/(Σ m_i)`. Sind alle Massen gleich, kuerzt sich `m` heraus und es bleibt der gewoehnliche Mittelwert `x_s = (Σ x_i)/n`.\n\nHier sind die Orte `x_i = i²` fuer `i = 0..4`, also 0, 1, 4, 9, 16; Summe 30, geteilt durch 5 ergibt 6,0000.",
+        "en": "The centre of mass is `x_s = (Σ m_i·x_i)/(Σ m_i)`. If all masses are equal, `m` cancels and the ordinary mean `x_s = (Σ x_i)/n` remains.\n\nHere the positions are `x_i = i²` for `i = 0..4`, that is 0, 1, 4, 9, 16; the sum is 30, divided by 5 it gives 6.0000."
+       },
+       "physikalisch": {
+        "de": "Fuenf Teilchen auf einer Geraden, alle mit **derselben** Masse; deshalb faellt die Wichtung weg. Mit verschiedenen Massen waere der Mittelwert der Orte nicht der Schwerpunkt.",
+        "en": "Five particles on a line, all of **the same** mass; that is why the weighting drops out. With different masses the mean of the positions would not be the centre of mass."
+       },
        "plot": false,
        "q": {
         "de": "Schreibe `double schwerpunkt(struct Teilchen *t, int n)`, die den mit der Masse ungewichteten Mittelwert der Positionen liefert, und gib ihn mit vier Stellen aus.",
@@ -2025,7 +2409,11 @@
        "seconds": 10,
        "solution": "#include <stdio.h>\n\nstruct Teilchen {\n    double x;\n    double v;\n};\n\ndouble schwerpunkt(struct Teilchen *t, int n)\n{\n    double s = 0.0;\n    int i;\n\n    for (i = 0; i < n; i++) s += t[i].x;\n    return s / n;\n}\n\nint main()\n{\n    struct Teilchen feld[5];\n    int i;\n\n    for (i = 0; i < 5; i++) {\n        feld[i].x = i * i * 1.0;\n        feld[i].v = 0.0;\n    }\n    printf(\"%.4f\\n\", schwerpunkt(feld, 5));\n    return 0;\n}\n",
        "starter": "#include <stdio.h>\n\nstruct Teilchen {\n    double x;\n    double v;\n};\n\ndouble schwerpunkt(struct Teilchen *t, int n)\n{\n    \n    return 0.0;\n}\n\nint main()\n{\n    struct Teilchen feld[5];\n    int i;\n\n    for (i = 0; i < 5; i++) {\n        feld[i].x = i * i * 1.0;\n        feld[i].v = 0.0;\n    }\n    printf(\"%.4f\\n\", schwerpunkt(feld, 5));\n    return 0;\n}\n",
-       "why": "0+1+4+9+16 = 30, geteilt durch 5 ergibt 6. Beachte, dass der Parameter ein **Zeiger auf Struktur** ist — damit wird das Feld nicht kopiert, und `t[i].x` funktioniert trotzdem wie gewohnt.\n\nGenau diese Signatur -- Zeiger auf das erste Element plus Anzahl -- ist die übliche Form in C, von `qsort` bis zu jeder Gitterfunktion. Wer sie einmal liest wie „ein Feld von n Teilchen“, hat die halbe C-Standardbibliothek entschlüsselt."
+       "why": "0+1+4+9+16 = 30, geteilt durch 5 ergibt 6. Beachte, dass der Parameter ein **Zeiger auf Struktur** ist — damit wird das Feld nicht kopiert, und `t[i].x` funktioniert trotzdem wie gewohnt.\n\nGenau diese Signatur -- Zeiger auf das erste Element plus Anzahl -- ist die übliche Form in C, von `qsort` bis zu jeder Gitterfunktion. Wer sie einmal liest wie „ein Feld von n Teilchen“, hat die halbe C-Standardbibliothek entschlüsselt.",
+       "ziel": {
+        "de": "Den Schwerpunkt als Summe durch Anzahl rechnen und die uebliche C-Signatur lesen lernen: Zeiger auf das erste Element plus Anzahl.",
+        "en": "Compute the centre of mass as sum over count and learn to read the usual C signature: pointer to the first element plus a count."
+       }
       }
      ],
      "ausgabe": "Gesamtenergie 3.7500\n",
@@ -2051,6 +2439,10 @@
        "answer": 2,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "Ein zweidimensionales Gitter wird flach abgelegt, Zeile hinter Zeile: Die Zelle `(i, j)` liegt bei `j·nx + i`. Das ist eine Bijektion `[0, nx) × [0, ny) -> [0, nx·ny)` -- zeilenweise Anordnung, in C die uebliche.\n\nMerkhilfe: Der Index, der in der **inneren** Schleife laeuft, steht in der Formel ohne Faktor. `for (j...) for (i...)` mit `u[j*nx + i]` laeuft im Speicher hintereinander weg.",
+        "en": "A two-dimensional grid is stored flat, row after row: the cell `(i, j)` sits at `j·nx + i`. That is a bijection `[0, nx) × [0, ny) -> [0, nx·ny)` -- row-major order, the usual one in C.\n\nA mnemonic: the index that runs in the **inner** loop appears in the formula without a factor. `for (j...) for (i...)` with `u[j*nx + i]` runs straight through memory."
+       },
        "options": [
         {
          "de": "u[j][i] — flach geht das nicht",
@@ -2073,11 +2465,23 @@
         "de": "Ein Gitter hat `nx` Spalten. Wie erreicht man die Zelle in Zeile j, Spalte i?",
         "en": "A grid has `nx` columns. How do you reach the cell in row j, column i?"
        },
-       "why": "Zeile j beginnt bei `j * nx`; darin ist i der Versatz. Die Verwechslung der beiden Indizes ist der häufigste Fehler beim Umstieg auf flache Felder — und sie fällt bei einem quadratischen Gitter erst auf, wenn das Ergebnis gespiegelt aussieht.\n\nEine Merkhilfe: Der Index, der **zuletzt** in der Schleife läuft, gehört in die Formel ohne Faktor. Wer `for (j...) for (i...)` schreibt und `u[j*nx + i]` benutzt, läuft im Speicher hintereinander weg -- das ist die schnelle Reihenfolge, und die Formel passt dazu."
+       "why": "Zeile j beginnt bei `j * nx`; darin ist i der Versatz. Die Verwechslung der beiden Indizes ist der häufigste Fehler beim Umstieg auf flache Felder — und sie fällt bei einem quadratischen Gitter erst auf, wenn das Ergebnis gespiegelt aussieht.\n\nEine Merkhilfe: Der Index, der **zuletzt** in der Schleife läuft, gehört in die Formel ohne Faktor. Wer `for (j...) for (i...)` schreibt und `u[j*nx + i]` benutzt, läuft im Speicher hintereinander weg -- das ist die schnelle Reihenfolge, und die Formel passt dazu.",
+       "ziel": {
+        "de": "Die Indexformel nennen, bei der die innere Schleife im Speicher hintereinander weglaeuft.",
+        "en": "Name the index formula for which the inner loop runs straight through memory."
+       }
       },
       {
        "expect": "990.0",
        "kind": "code",
+       "mathematisch": {
+        "de": "Gitter `nx = 12` mal `ny = 10`, jede Zelle traegt `i·j`. Rand heisst `i = 0`, `i = nx-1`, `j = 0` oder `j = ny-1`.\n\nDie Zellen mit `i = 0` und die mit `j = 0` tragen null. Es bleiben die Kante `i = 11` mit `11·Σ_(j=0..9) j = 11·45 = 495` und die Kante `j = 9` mit `9·Σ_(i=0..11) i = 9·66 = 594`. Die Ecke `(11, 9) = 99` liegt in beiden Summen, also `495 + 594 - 99 = 990` -- wer die vier Kanten getrennt abgeht, zaehlt die Ecken doppelt.",
+        "en": "A grid `nx = 12` by `ny = 10`, every cell carrying `i·j`. Boundary means `i = 0`, `i = nx-1`, `j = 0` or `j = ny-1`.\n\nThe cells with `i = 0` and those with `j = 0` carry zero. What is left is the edge `i = 11` with `11·Σ_(j=0..9) j = 11·45 = 495` and the edge `j = 9` with `9·Σ_(i=0..11) i = 9·66 = 594`. The corner `(11, 9) = 99` lies in both sums, so `495 + 594 - 99 = 990` -- whoever walks the four edges separately counts the corners twice."
+       },
+       "physikalisch": {
+        "de": "In einem Loeser steht am Rand die Randbedingung, deshalb wird er getrennt behandelt. Ueblich ist eine **Geisterzellenschicht**: eine zusaetzliche Zelle ringsherum, vor jedem Schritt gefuellt -- danach ist das Innere ohne Sonderfall zu rechnen.",
+        "en": "In a solver the boundary carries the boundary condition, which is why it is treated separately. The usual device is a **ghost cell layer**: one extra cell all around, filled before every step -- after which the interior is computed with no special case at all."
+       },
        "plot": false,
        "q": {
         "de": "Lege ein Gitter mit nx = 12, ny = 10 flach an, setze jede Zelle auf `i * j`, und gib die Summe aller Randzellen mit einer Nachkommastelle aus. Rand heißt: i = 0, i = nx-1, j = 0 oder j = ny-1.",
@@ -2086,7 +2490,11 @@
        "seconds": 10,
        "solution": "#include <stdio.h>\n#include <stdlib.h>\n\nint main()\n{\n    int nx = 12;\n    int ny = 10;\n    double *u = malloc(nx * ny * sizeof(double));\n    double rand = 0.0;\n    int i, j;\n\n    for (j = 0; j < ny; j++)\n        for (i = 0; i < nx; i++)\n            u[j * nx + i] = i * j;\n    for (j = 0; j < ny; j++)\n        for (i = 0; i < nx; i++)\n            if (i == 0 || i == nx - 1 || j == 0 || j == ny - 1)\n                rand += u[j * nx + i];\n    printf(\"%.1f\\n\", rand);\n    free(u);\n    return 0;\n}\n",
        "starter": "#include <stdio.h>\n#include <stdlib.h>\n\nint main()\n{\n    int nx = 12;\n    int ny = 10;\n    double *u = malloc(nx * ny * sizeof(double));\n    double rand = 0.0;\n    int i, j;\n\n    \n    printf(\"%.1f\\n\", rand);\n    free(u);\n    return 0;\n}\n",
-       "why": "Die Ränder eines Gitters einzeln zu behandeln ist in jedem Löser Alltag — dort stehen die Randbedingungen. Wer die vier Kanten mit vier getrennten Schleifen abarbeitet, zählt leicht die Ecken doppelt; die Abfrage im Durchlauf vermeidet das.\n\nFür große Gitter dreht sich das um: die Abfrage in der inneren Schleife kostet bei jeder Zelle etwas, obwohl sie nur am Rand zutrifft. Dann trennt man die Ränder heraus und zählt die Ecken bewusst einmal. Der übliche Weg in Lösern ist eine **Geisterzellenschicht**: eine zusätzliche Zelle rings herum, die vor jedem Schritt gefüllt wird -- danach ist der innere Teil ohne jede Sonderbehandlung zu rechnen."
+       "why": "Die Ränder eines Gitters einzeln zu behandeln ist in jedem Löser Alltag — dort stehen die Randbedingungen. Wer die vier Kanten mit vier getrennten Schleifen abarbeitet, zählt leicht die Ecken doppelt; die Abfrage im Durchlauf vermeidet das.\n\nFür große Gitter dreht sich das um: die Abfrage in der inneren Schleife kostet bei jeder Zelle etwas, obwohl sie nur am Rand zutrifft. Dann trennt man die Ränder heraus und zählt die Ecken bewusst einmal. Der übliche Weg in Lösern ist eine **Geisterzellenschicht**: eine zusätzliche Zelle rings herum, die vor jedem Schritt gefüllt wird -- danach ist der innere Teil ohne jede Sonderbehandlung zu rechnen.",
+       "ziel": {
+        "de": "Ein flaches Gitter anlegen, es fuellen und den Rand genau einmal aufsummieren.",
+        "en": "Allocate a flat grid, fill it and sum the boundary exactly once."
+       }
       }
      ],
      "ausgabe": "48 Zellen, Summe 288.0\nZelle (3,2) = 5.0\n",
@@ -2127,6 +2535,10 @@
        "answer": 0,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "Eine Referenz ist ein zweiter Name fuer dasselbe Objekt: keine Kopie und keine eigene Adresse, die man sehen koennte. Die Funktion arbeitet damit am Original des Aufrufers -- an der Aufrufstelle steht trotzdem nur `schritt(f)`.",
+        "en": "A reference is a second name for the same object: no copy and no address of its own that you could look at. The function thereby works on the caller's original -- and the call site still reads just `schritt(f)`."
+       },
        "options": [
         {
          "de": "Es übergibt das Original; Änderungen bleiben erhalten.",
@@ -2149,12 +2561,24 @@
         "de": "Was bewirkt das `&` in `void schritt(Feld& f)`?",
         "en": "What does the `&` do in `void schritt(Feld& f)`?"
        },
-       "why": "Eine Referenz ist ein anderer Name für dasselbe Objekt — ohne Kopie und ohne Zeigersyntax. Ändert die Funktion `f`, ändert sie das Original des Aufrufers.\n\nIn der Aufrufstelle sieht man das übrigens **nicht**: `schritt(f)` sieht aus wie eine Übergabe per Wert. Deshalb die Gewohnheit, verändernde Parameter entweder als Referenz **ohne** `const` ganz vorn zu führen oder gleich einen Zeiger zu nehmen, wo die Aufrufstelle das `&` zeigen soll."
+       "why": "Eine Referenz ist ein anderer Name für dasselbe Objekt — ohne Kopie und ohne Zeigersyntax. Ändert die Funktion `f`, ändert sie das Original des Aufrufers.\n\nIn der Aufrufstelle sieht man das übrigens **nicht**: `schritt(f)` sieht aus wie eine Übergabe per Wert. Deshalb die Gewohnheit, verändernde Parameter entweder als Referenz **ohne** `const` ganz vorn zu führen oder gleich einen Zeiger zu nehmen, wo die Aufrufstelle das `&` zeigen soll.",
+       "ziel": {
+        "de": "Sagen, was mit dem Original des Aufrufers geschieht.",
+        "en": "Say what happens to the caller's original."
+       }
       },
       {
+       "annahmen": {
+        "de": "Die Faustregel in numerischem C++: alles, was groesser ist als ein paar Zahlen, per `const&`; kleine Werte wie `double` oder `int` als Kopie, die ist billiger als der Umweg ueber eine Adresse.",
+        "en": "The rule of thumb in numerical C++: anything bigger than a couple of numbers goes by `const&`; small values such as `double` or `int` go by copy, which is cheaper than the detour through an address."
+       },
        "answer": 3,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "Ein Gitterfeld mit `N = 10^6` Zellen zu je 8 Byte sind 8 MB. Ohne `&` entsteht je Aufruf eine vollstaendige Kopie, also Aufwand `O(N)` **zusaetzlich** zu dem, was die Funktion rechnet. In einer Zeitschleife mit `M` Schritten macht das `O(M·N)` sinnlos kopierte Zahlen.",
+        "en": "A grid field of `N = 10^6` cells at 8 bytes each is 8 MB. Without the `&` a complete copy is made per call, that is `O(N)` work **on top of** whatever the function computes. In a time loop of `M` steps that makes `O(M·N)` pointlessly copied numbers."
+       },
        "options": [
         {
          "de": "Damit der Vektor schneller wächst.",
@@ -2177,18 +2601,34 @@
         "de": "Warum nimmt man in einem Strömungslöser `const std::vector<double>&` statt `std::vector<double>`?",
         "en": "Why does a flow solver take `const std::vector<double>&` instead of `std::vector<double>`?"
        },
-       "why": "Bei einer Million Zellen sind das 8 MB je Aufruf. In einer Zeitschleife, die millionenfach aufruft, ist das der Unterschied zwischen Sekunden und Stunden.\n\nDie Kopie entsteht still: kein Stern, kein `copy`, nur ein fehlendes `&`. Genau deshalb steht in Regelwerken für numerischen Code, dass alles, was größer ist als ein paar Zahlen, per `const&` übergeben wird -- kleine Werte wie `double` oder `int` dagegen als Kopie, die ist billiger als der Umweg über eine Adresse."
+       "why": "Bei einer Million Zellen sind das 8 MB je Aufruf. In einer Zeitschleife, die millionenfach aufruft, ist das der Unterschied zwischen Sekunden und Stunden.\n\nDie Kopie entsteht still: kein Stern, kein `copy`, nur ein fehlendes `&`. Genau deshalb steht in Regelwerken für numerischen Code, dass alles, was größer ist als ein paar Zahlen, per `const&` übergeben wird -- kleine Werte wie `double` oder `int` dagegen als Kopie, die ist billiger als der Umweg über eine Adresse.",
+       "ziel": {
+        "de": "Erkennen, dass das fehlende `&` kein Stilfehler ist, sondern der Unterschied zwischen Sekunden und Stunden.",
+        "en": "Recognise that the missing `&` is not a matter of style but the difference between seconds and hours."
+       }
       },
       {
+       "annahmen": {
+        "de": "Beide Variablen starten bei 5.",
+        "en": "Both variables start at 5."
+       },
        "answer": "10 5",
        "code": "#include <iostream>\n\nvoid verdoppeln(int& x) { x = x * 2; }\nvoid nichts(int x)      { x = x * 2; }\n\nint main()\n{\n    int a = 5;\n    int b = 5;\n    verdoppeln(a);\n    nichts(b);\n    std::cout << a << \" \" << b << std::endl;\n}\n",
        "kind": "predict",
+       "mathematisch": {
+        "de": "Zwei Funktionen mit demselben Rumpf `x = x*2`, einmal auf einer Referenz (`int&`) und einmal auf einer Kopie (`int`). Der Unterschied ist genau der zwischen `f: Wert -> Wert` und einer Abbildung, die den Zustand des Aufrufers aendert.",
+        "en": "Two functions with the same body `x = x*2`, one on a reference (`int&`) and one on a copy (`int`). The difference is exactly that between `f: value -> value` and a map that changes the caller's state."
+       },
        "q": {
         "de": "Was schreibt dieses C++-Programm?",
         "en": "What does this C++ program print?"
        },
        "run": true,
-       "why": "`verdoppeln` bekommt eine Referenz und verändert das Original. `nichts` bekommt eine Kopie; die Änderung daran ist mit dem Funktionsende weg. Genau dieser Unterschied ist in C die Frage, ob man `int x` oder `int *x` schreibt.\n\nIn C schreibt der Aufrufer dann `verdoppeln(&x)` und die Funktion `*x = *x * 2;`. Dasselbe Ergebnis, zwei Stellen mehr, an denen ein Stern fehlen kann. Die Referenz nimmt einem beide ab -- und die Frage, was bei `NULL` passiert."
+       "why": "`verdoppeln` bekommt eine Referenz und verändert das Original. `nichts` bekommt eine Kopie; die Änderung daran ist mit dem Funktionsende weg. Genau dieser Unterschied ist in C die Frage, ob man `int x` oder `int *x` schreibt.\n\nIn C schreibt der Aufrufer dann `verdoppeln(&x)` und die Funktion `*x = *x * 2;`. Dasselbe Ergebnis, zwei Stellen mehr, an denen ein Stern fehlen kann. Die Referenz nimmt einem beide ab -- und die Frage, was bei `NULL` passiert.",
+       "ziel": {
+        "de": "An zwei Zahlen ablesen, was die Referenz gegenueber der Kopie aendert.",
+        "en": "Read off from two numbers what the reference changes compared to the copy."
+       }
       }
      ],
      "ausgabe": "",
@@ -2214,6 +2654,10 @@
        "answer": 3,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "Die Frage ist nach dem **Zeitpunkt**, nicht nach einem Aufruf: Der Destruktor laeuft, wenn der Block endet -- auch bei vorzeitigem `return` und wenn eine Ausnahme den Block verlaesst. In C steht am Ende jeder Funktion ein `free`, und jeder vorzeitige Ausgang braucht sein eigenes; fehlt eines, waechst der Verbrauch mit der Laufzeit.",
+        "en": "The question is about the **moment**, not about a call: the destructor runs when the block ends -- including on an early `return` and when an exception leaves the block. In C there is a `free` at the end of every function, and every early exit needs its own; miss one and consumption grows with the running time."
+       },
        "options": [
         {
          "de": "Wenn man delete aufruft.",
@@ -2236,7 +2680,11 @@
         "de": "Wann gibt ein `std::vector` seinen Speicher frei?",
         "en": "When does a `std::vector` release its memory?"
        },
-       "why": "Der Destruktor räumt auf, sobald der Block endet — auch bei vorzeitigem `return` und auch, wenn eine Ausnahme den Block verlässt. Das ist der ganze Punkt von RAII.\n\nDer Vergleich mit C ist lehrreich: dort steht am Ende jeder Funktion ein `free`, und jeder vorzeitige Ausgang braucht sein eigenes. Fehlt eines, wächst der Verbrauch mit der Laufzeit -- in einer Rechnung, die Tage läuft, ist das kein Schönheitsfehler."
+       "why": "Der Destruktor räumt auf, sobald der Block endet — auch bei vorzeitigem `return` und auch, wenn eine Ausnahme den Block verlässt. Das ist der ganze Punkt von RAII.\n\nDer Vergleich mit C ist lehrreich: dort steht am Ende jeder Funktion ein `free`, und jeder vorzeitige Ausgang braucht sein eigenes. Fehlt eines, wächst der Verbrauch mit der Laufzeit -- in einer Rechnung, die Tage läuft, ist das kein Schönheitsfehler.",
+       "ziel": {
+        "de": "Den Zeitpunkt der Freigabe nennen und ihn mit dem `free` von Hand in C vergleichen.",
+        "en": "Name the moment of release and compare it with the hand-written `free` in C."
+       }
       },
       {
        "distractors": [
@@ -2252,11 +2700,19 @@
         "}",
         "u.swap(w);"
        ],
+       "mathematisch": {
+        "de": "Derselbe explizite Schritt wie in C: `w_i = u_i + r·(u_(i-1) - 2u_i + u_(i+1))` fuer die inneren Zellen, die Raender bleiben stehen. `w` entsteht als **Kopie** von `u`, damit die Randwerte darin stehen und nicht Nullen.\n\n`u.swap(w)` tauscht nur die drei Zahlen, aus denen ein `vector` besteht (Zeiger, Laenge, Platz) -- Aufwand `O(1)`, unabhaengig von der Gittergroesse. In C ist das `double *t = u; u = w; w = t;`.",
+        "en": "The same explicit step as in C: `w_i = u_i + r·(u_(i-1) - 2u_i + u_(i+1))` for the interior cells, the boundaries staying as they are. `w` is created as a **copy** of `u` so that it carries the boundary values and not zeros.\n\n`u.swap(w)` exchanges only the three numbers a `vector` consists of (pointer, size, capacity) -- `O(1)` work, whatever the grid size. In C that is `double *t = u; u = w; w = t;`."
+       },
        "q": {
         "de": "Setze die Zeilen zu einem C++-Wärmeleitungsschritt zusammen.",
         "en": "Put the lines together into a C++ heat conduction step."
        },
-       "why": "`u.swap(w)` statt Kopieren: das tauscht nur die inneren Zeiger, kostet also nichts, egal wie groß das Gitter ist. In C schreibt man dafür `double *t = u; u = w; w = t;` — dasselbe, nur von Hand.\n\nDer Zeilenaufbau ist derselbe wie in C: zweites Feld anlegen, innere Zellen aus dem alten berechnen, dann tauschen. Wichtig bleibt, dass `w` aus `u` entsteht -- sonst stehen in `w` an den Rändern Nullen statt der Randwerte."
+       "why": "`u.swap(w)` statt Kopieren: das tauscht nur die inneren Zeiger, kostet also nichts, egal wie groß das Gitter ist. In C schreibt man dafür `double *t = u; u = w; w = t;` — dasselbe, nur von Hand.\n\nDer Zeilenaufbau ist derselbe wie in C: zweites Feld anlegen, innere Zellen aus dem alten berechnen, dann tauschen. Wichtig bleibt, dass `w` aus `u` entsteht -- sonst stehen in `w` an den Rändern Nullen statt der Randwerte.",
+       "ziel": {
+        "de": "Die Zeilen in die Reihenfolge bringen, die jeder Loeser hat: zweites Feld anlegen, innen rechnen, tauschen.",
+        "en": "Put the lines into the order every solver has: allocate the second field, compute inside, swap."
+       }
       }
      ],
      "ausgabe": "",
@@ -2294,19 +2750,39 @@
     {
      "aufgaben": [
       {
+       "annahmen": {
+        "de": "Die Ausgabe zeigt `[1. 2. 3.]` mit Punkten, weil `arange(5.0)` Kommazahlen erzeugt; `arange(5)` ergaebe `[1 2 3]`.",
+        "en": "The output shows `[1. 2. 3.]` with dots because `arange(5.0)` produces floating-point numbers; `arange(5)` would give `[1 2 3]`."
+       },
        "answer": "[1. 2. 3.]",
        "code": "import numpy as np\na = np.arange(5.0)\nprint(a[1:-1])\n",
        "kind": "predict",
+       "mathematisch": {
+        "de": "`np.arange(5.0)` ist `[0, 1, 2, 3, 4]`. Ein Schnitt `a[anfang:ende]` nimmt die Indizes `[anfang, ende)` -- halboffen wie die C-Schleife --, negative Zahlen zaehlen vom Ende her. `a[1:-1]` ist also `[1, n-1)`: genau die inneren Zellen, die der Stern rechnet.",
+        "en": "`np.arange(5.0)` is `[0, 1, 2, 3, 4]`. A slice `a[start:end]` takes the indices `[start, end)` -- half-open like the C loop -- and negative numbers count from the end. So `a[1:-1]` is `[1, n-1)`: exactly the interior cells the stencil computes."
+       },
        "q": {
         "de": "Was schreibt das Programm?",
         "en": "What does the program print?"
        },
        "run": true,
-       "why": "`[1:-1]` lässt das erste und das letzte Element weg — genau die Randzellen, die beim Stencil nicht mitgerechnet werden dürfen.\n\nZu lesen ist das so: `a[anfang:ende]` nimmt ab `anfang` bis **vor** `ende`; negative Zahlen zählen vom Ende her. `a[1:-1]` ist also „ohne das erste und ohne das letzte“. Die Ausgabe zeigt `[1. 2. 3.]` mit Punkten, weil `arange(5.0)` Fließkommazahlen erzeugt -- `arange(5)` ergäbe `[1 2 3]`."
+       "why": "`[1:-1]` lässt das erste und das letzte Element weg — genau die Randzellen, die beim Stencil nicht mitgerechnet werden dürfen.\n\nZu lesen ist das so: `a[anfang:ende]` nimmt ab `anfang` bis **vor** `ende`; negative Zahlen zählen vom Ende her. `a[1:-1]` ist also „ohne das erste und ohne das letzte“. Die Ausgabe zeigt `[1. 2. 3.]` mit Punkten, weil `arange(5.0)` Fließkommazahlen erzeugt -- `arange(5)` ergäbe `[1 2 3]`.",
+       "ziel": {
+        "de": "Den Schnitt lesen, der genau die inneren Zellen trifft -- die Raender fallen weg.",
+        "en": "Read the slice that hits exactly the interior cells -- the boundaries fall away."
+       }
       },
       {
        "expect": "0.989678",
        "kind": "code",
+       "mathematisch": {
+        "de": "Derselbe explizite Stern wie in C, nur als **ein** Feldausdruck: `u[1:-1] += r·(u[:-2] - 2·u[1:-1] + u[2:])`. Die drei Schnitte sind `u_(i-1)`, `u_i`, `u_(i+1)` fuer alle inneren `i` gleichzeitig.\n\n`r = D·dt/h² = 0,4` liegt unter der Stabilitaetsgrenze `½`. Die Raender bleiben auf null (Dirichlet), deshalb faellt die Summe von 1 auf `0,989678` in 400 Schritten -- Waerme fliesst ab. Mit `u[0] = u[1]` und `u[-1] = u[-2]` nach jedem Schritt (Neumann) bliebe sie stehen.",
+        "en": "The same explicit stencil as in C, only as **one** array expression: `u[1:-1] += r·(u[:-2] - 2·u[1:-1] + u[2:])`. The three slices are `u_(i-1)`, `u_i`, `u_(i+1)` for all interior `i` at once.\n\n`r = D·dt/h² = 0.4` is below the stability limit `½`. The boundaries stay at zero (Dirichlet), so the sum falls from 1 to `0.989678` in 400 steps -- heat flows out. With `u[0] = u[1]` and `u[-1] = u[-2]` after each step (Neumann) it would stay."
+       },
+       "physikalisch": {
+        "de": "Stab mit `n = 101` Zellen, anfangs kalt, eine Einheit Waerme in der Mittelzelle; die Enden auf fester Temperatur 0.",
+        "en": "A rod of `n = 101` cells, initially cold with one unit of heat in the middle cell; the ends held at temperature 0."
+       },
        "plot": false,
        "q": {
         "de": "Baue den Wärmeleitungsschritt als Feldausdruck. `u` und `r` sind vorgegeben; gib am Ende die Summe mit sechs Stellen aus.",
@@ -2315,12 +2791,20 @@
        "seconds": 40,
        "solution": "import numpy as np\n\nn = 101\nu = np.zeros(n)\nu[n // 2] = 1.0\nr = 0.4\n\nfor schritt in range(400):\n    u[1:-1] += r * (u[:-2] - 2*u[1:-1] + u[2:])\n\nprint('%.6f' % u.sum())\n",
        "starter": "import numpy as np\n\nn = 101\nu = np.zeros(n)\nu[n // 2] = 1.0\nr = 0.4\n\nfor schritt in range(400):\n    pass    # hier der Feldausdruck\n\nprint('%.6f' % u.sum())\n",
-       "why": "Die Summe bleibt nicht ganz bei 1, weil an den Rändern Wärme abfließt — die Randzellen bleiben auf null. Genau so verhält sich das explizite Verfahren auch in C.\n\nWer stattdessen die Summe erhalten will, braucht andere Randbedingungen: `u[0] = u[1]` und `u[-1] = u[-2]` nach jedem Schritt bedeutet „kein Wärmestrom über den Rand“, und dann bleibt die Summe bis auf Rundung stehen. Was am Rand steht, ist Teil des Modells, kein Detail."
+       "why": "Die Summe bleibt nicht ganz bei 1, weil an den Rändern Wärme abfließt — die Randzellen bleiben auf null. Genau so verhält sich das explizite Verfahren auch in C.\n\nWer stattdessen die Summe erhalten will, braucht andere Randbedingungen: `u[0] = u[1]` und `u[-1] = u[-2]` nach jedem Schritt bedeutet „kein Wärmestrom über den Rand“, und dann bleibt die Summe bis auf Rundung stehen. Was am Rand steht, ist Teil des Modells, kein Detail.",
+       "ziel": {
+        "de": "Die Schleife ueber die Zellen durch einen Feldausdruck ersetzen, der dieselben inneren Zellen trifft wie der C-Code.",
+        "en": "Replace the loop over the cells by one array expression that hits the same interior cells as the C code."
+       }
       },
       {
        "answer": 3,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "Verglichen werden **dieselben** Rechnungen ueber dieselben Zellen -- die Zahl der Gleitkommaoperationen ist gleich. Verschieden ist, was drumherum passiert: In Python kostet jeder Durchlauf Objektverwaltung, beim Feldausdruck laeuft die Schleife einmal in uebersetztem C.\n\nDazu der Speicherzugriff: Ein NumPy-Feld liegt zusammenhaengend, der Prozessor holt ganze Zeilen in den Zwischenspeicher; eine Python-Liste enthaelt Verweise auf Objekte, die irgendwo liegen. Deshalb bringt NumPy bei kleinen Feldern wenig und bei grossen sehr viel.",
+        "en": "What is compared are **the same** computations over the same cells -- the number of floating-point operations is equal. What differs is everything around them: in Python every iteration costs object management, whereas the array expression runs the loop once in compiled C.\n\nOn top of that comes memory access: a NumPy array lies contiguously and the processor fetches whole lines into cache; a Python list holds references to objects lying anywhere. That is why NumPy gains little on small arrays and a great deal on large ones."
+       },
        "options": [
         {
          "de": "Weil weniger Speicher gebraucht wird.",
@@ -2343,7 +2827,11 @@
         "de": "Warum ist der Feldausdruck schneller als eine Python-Schleife über dieselben Zellen?",
         "en": "Why is the array expression faster than a Python loop over the same cells?"
        },
-       "why": "Jeder Schleifendurchlauf in Python kostet Objektverwaltung. Beim Feldausdruck läuft die Schleife einmal in C durch den Speicher — auf diesem Telefon der Unterschied zwischen Sekunden und Minuten.\n\nDer zweite Gewinn ist der Speicherzugriff: die Zahlen liegen hintereinander, der Prozessor holt sie in ganzen Zeilen aus dem Zwischenspeicher. Eine Python-Liste enthält dagegen Verweise auf Objekte, die irgendwo liegen -- jeder Zugriff ein Sprung. Genau deshalb bringt NumPy bei kleinen Feldern wenig und bei großen sehr viel."
+       "why": "Jeder Schleifendurchlauf in Python kostet Objektverwaltung. Beim Feldausdruck läuft die Schleife einmal in C durch den Speicher — auf diesem Telefon der Unterschied zwischen Sekunden und Minuten.\n\nDer zweite Gewinn ist der Speicherzugriff: die Zahlen liegen hintereinander, der Prozessor holt sie in ganzen Zeilen aus dem Zwischenspeicher. Eine Python-Liste enthält dagegen Verweise auf Objekte, die irgendwo liegen -- jeder Zugriff ein Sprung. Genau deshalb bringt NumPy bei kleinen Feldern wenig und bei großen sehr viel.",
+       "ziel": {
+        "de": "Den Grund benennen -- und zwar den richtigen, nicht „NumPy ist eben schneller“.",
+        "en": "Name the reason -- the right one, not “NumPy is simply faster”."
+       }
       }
      ],
      "ausgabe": "Summe 0.989678\n",
@@ -2384,6 +2872,10 @@
        "answer": 2,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "Advektionsgleichung `∂a/∂t + v·∂a/∂x = 0` mit `v > 0`. Die Loesung ist `a(x, t) = a_0(x - v·t)`: Das Profil wird nur verschoben, nie gedaempft.\n\nZentrale Ableitung, `(a_(i+1) - a_(i-1))/(2h)`: von Neumann liefert `g = 1 - i·C·sin(k·h)`, also `|g|² = 1 + C²·sin²(k·h) > 1` fuer jedes `C > 0` -- **unbedingt instabil**, obwohl der Abbruchfehler `O(h²)` ist.\n\nAufwind, `(a_i - a_(i-1))/h`: `|g| ≤ 1` fuer `0 ≤ C ≤ 1`. Nur erste Ordnung, aber stabil -- und es nimmt die Information von dort, wo sie physikalisch herkommt.",
+        "en": "The advection equation `∂a/∂t + v·∂a/∂x = 0` with `v > 0`. Its solution is `a(x, t) = a_0(x - v·t)`: the profile is only shifted, never damped.\n\nCentral derivative, `(a_(i+1) - a_(i-1))/(2h)`: von Neumann gives `g = 1 - i·C·sin(k·h)`, so `|g|² = 1 + C²·sin²(k·h) > 1` for every `C > 0` -- **unconditionally unstable**, even though its truncation error is `O(h²)`.\n\nUpwind, `(a_i - a_(i-1))/h`: `|g| ≤ 1` for `0 ≤ C ≤ 1`. Only first order, but stable -- and it takes its information from where it physically comes from."
+       },
        "options": [
         {
          "de": "Sie braucht zwei Felder.",
@@ -2402,15 +2894,31 @@
          "en": "It is too slow to compute."
         }
        ],
+       "physikalisch": {
+        "de": "Reiner Transport mit fester Geschwindigkeit `v`: keine Diffusion, die etwas daempfen koennte, keine Quelle. Was stromabwaerts liegt, kann den Wert hier nicht beeinflussen -- genau das nimmt die zentrale Ableitung trotzdem an.",
+        "en": "Pure transport at a fixed speed `v`: no diffusion that could damp anything, no source. What lies downstream cannot influence the value here -- which is exactly what the central derivative assumes anyway."
+       },
        "q": {
         "de": "Warum ist die zentrale Ableitung für reine Advektion unbrauchbar, obwohl sie genauer ist?",
         "en": "Why is the central derivative useless for pure advection, although it is more accurate?"
        },
-       "why": "Genauigkeit und Stabilität sind zwei verschiedene Dinge. Das zentrale Schema ist zweiter Ordnung genau und für dieses Problem trotzdem unbedingt instabil — ein Lehrstück dafür, dass man beides getrennt prüfen muss.\n\nRettbar ist die zentrale Ableitung übrigens schon -- nur nicht mit Euler vorwärts: mit Leapfrog, Runge-Kutta oder einem Diffusionsanteil im Modell wird sie brauchbar. Die Aussage lautet also genau: **diese** Raumdiskretisierung mit **diesem** Zeitschritt ist instabil. Stabilität ist eine Eigenschaft der Kombination."
+       "why": "Genauigkeit und Stabilität sind zwei verschiedene Dinge. Das zentrale Schema ist zweiter Ordnung genau und für dieses Problem trotzdem unbedingt instabil — ein Lehrstück dafür, dass man beides getrennt prüfen muss.\n\nRettbar ist die zentrale Ableitung übrigens schon -- nur nicht mit Euler vorwärts: mit Leapfrog, Runge-Kutta oder einem Diffusionsanteil im Modell wird sie brauchbar. Die Aussage lautet also genau: **diese** Raumdiskretisierung mit **diesem** Zeitschritt ist instabil. Stabilität ist eine Eigenschaft der Kombination.",
+       "ziel": {
+        "de": "Sehen, dass Fehlerordnung und Stabilitaet zwei verschiedene Fragen sind: Das genauere Verfahren ist hier das unbrauchbare.",
+        "en": "See that order of accuracy and stability are two different questions: the more accurate scheme is the unusable one here."
+       }
       },
       {
        "expect": "7.789e+10",
        "kind": "code",
+       "mathematisch": {
+        "de": "Courant-Zahl `C = v·dt/h`. Das Aufwindverfahren ist stabil fuer `C ≤ 1`; anschaulich heisst das, die Stroemung darf in einem Schritt hoechstens eine Zelle weit tragen -- sonst holt sich der Stern seine Information aus einer Zelle, aus der sie noch nicht gekommen ist.\n\nBei `C = 1,5` ist `|g| > 1`, und der Fehler waechst geometrisch: nach 40 Schritten steht `7,789·10^10` im Feld. Das ist keine Ungenauigkeit mehr, sondern eine gesprengte Rechnung.",
+        "en": "The Courant number is `C = v·dt/h`. Upwind is stable for `C ≤ 1`; in plain terms, the flow may carry at most one cell per step -- otherwise the stencil fetches its information from a cell the information has not reached yet.\n\nAt `C = 1.5` we have `|g| > 1` and the error grows geometrically: after 40 steps the field holds `7.789·10^10`. That is no longer inaccuracy, it is a computation blown apart."
+       },
+       "physikalisch": {
+        "de": "41 Zellen, ein rechteckiger Block der Hoehe 1 auf dem Viertel bis zur Haelfte des Gebiets, Raender auf null. Physikalisch duerfte sich der Block nur verschieben.",
+        "en": "41 cells, a rectangular block of height 1 from a quarter to half of the domain, boundaries at zero. Physically the block should only shift."
+       },
        "plot": false,
        "q": {
         "de": "Lass nur das Aufwindverfahren laufen, aber mit C = 1,5 — also über der CFL-Grenze. Gib den größten Betrag im Feld nach 40 Schritten im Format %.3e aus.",
@@ -2419,7 +2927,11 @@
        "seconds": 25,
        "solution": "#include <stdio.h>\n#include <math.h>\n\nint main()\n{\n    int n = 41;\n    int schritte = 40;\n    double C = 1.5;\n    double a[41];\n    double b[41];\n    double gross = 0.0;\n    int i, s;\n\n    for (i = 0; i < n; i++) {\n        a[i] = 0.0;\n        if (i >= n / 4 && i < n / 2) a[i] = 1.0;\n    }\n    for (s = 0; s < schritte; s++) {\n        for (i = 1; i < n - 1; i++)\n            b[i] = a[i] - C * (a[i] - a[i-1]);\n        b[0] = 0.0; b[n-1] = 0.0;\n        for (i = 0; i < n; i++) a[i] = b[i];\n    }\n    for (i = 0; i < n; i++)\n        if (fabs(a[i]) > gross) gross = fabs(a[i]);\n    printf(\"%.3e\\n\", gross);\n    return 0;\n}\n",
        "starter": "#include <stdio.h>\n#include <math.h>\n\nint main()\n{\n    int n = 41;\n    int schritte = 40;\n    double C = 0.5;\n    double a[41];\n    double b[41];\n    double gross = 0.0;\n    int i, s;\n\n    for (i = 0; i < n; i++) {\n        a[i] = 0.0;\n        if (i >= n / 4 && i < n / 2) a[i] = 1.0;\n    }\n    for (s = 0; s < schritte; s++) {\n        for (i = 1; i < n - 1; i++)\n            b[i] = a[i] - C * (a[i] - a[i-1]);\n        b[0] = 0.0; b[n-1] = 0.0;\n        for (i = 0; i < n; i++) a[i] = b[i];\n    }\n    for (i = 0; i < n; i++)\n        if (fabs(a[i]) > gross) gross = fabs(a[i]);\n    printf(\"%.3e\\n\", gross);\n    return 0;\n}\n",
-       "why": "Aus Werten zwischen 0 und 1 werden 7,8·10¹⁰. Auch das richtige Verfahren hilft nichts, wenn der Zeitschritt zu groß ist — Stabilität ist immer eine Aussage über das Verfahren **und** seine Schrittweite.\n\nIn einem Löser schreibt man deshalb den Zeitschritt nicht fest, sondern rechnet ihn in jedem Schritt aus der aktuellen Geschwindigkeit: `dt = cfl_zahl * h / max|u|` mit einer Zahl unter eins. Wird die Strömung schneller, wird der Schritt von selbst kleiner."
+       "why": "Aus Werten zwischen 0 und 1 werden 7,8·10¹⁰. Auch das richtige Verfahren hilft nichts, wenn der Zeitschritt zu groß ist — Stabilität ist immer eine Aussage über das Verfahren **und** seine Schrittweite.\n\nIn einem Löser schreibt man deshalb den Zeitschritt nicht fest, sondern rechnet ihn in jedem Schritt aus der aktuellen Geschwindigkeit: `dt = cfl_zahl * h / max|u|` mit einer Zahl unter eins. Wird die Strömung schneller, wird der Schritt von selbst kleiner.",
+       "ziel": {
+        "de": "Sehen, was eine verletzte CFL-Bedingung anrichtet -- und dass es keine Frage der Genauigkeit ist.",
+        "en": "See what a violated CFL condition does -- and that it is not a matter of accuracy."
+       }
       }
      ],
      "ausgabe": "plot ... (2 Kurven zu je 41 Punkten)\n",
@@ -2501,6 +3013,10 @@
        "answer": 2,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "Inkompressible Stroemung: Die Dichte ist konstant, damit schrumpft die Kontinuitaetsgleichung `∂ρ/∂t + div(ρu) = 0` auf die **Zwangsbedingung** `div u = 0`.\n\nDer Druck ist der Lagrange-Multiplikator dazu. Im Zeitschritt (Chorin): erst ein Zwischenfeld `u*` ohne Druck, dann `∇²p = (ρ/dt)·div u*`, dann `u^(n+1) = u* - (dt/ρ)·∇p`. Nach dem Satz von Helmholtz und Hodge zerfaellt jedes Feld eindeutig in einen divergenzfreien Teil und einen Gradienten -- der Druckschritt zieht genau den Gradienten ab.",
+        "en": "Incompressible flow: the density is constant, which shrinks the continuity equation `∂ρ/∂t + div(ρu) = 0` to the **constraint** `div u = 0`.\n\nThe pressure is the Lagrange multiplier belonging to it. Within the time step (Chorin): first an intermediate field `u*` without pressure, then `∇²p = (ρ/dt)·div u*`, then `u^(n+1) = u* - (dt/ρ)·∇p`. By the Helmholtz-Hodge theorem every field splits uniquely into a divergence-free part and a gradient -- and the pressure step subtracts exactly the gradient."
+       },
        "options": [
         {
          "de": "Er erhöht die Genauigkeit der Zeitintegration.",
@@ -2519,16 +3035,32 @@
          "en": "It sets the temperature."
         }
        ],
+       "physikalisch": {
+        "de": "`p` ist hier **keine** thermodynamische Groesse: Es gibt keine Zustandsgleichung, die ihn mit Dichte und Temperatur verbindet. Er ist die Kraft, die noetig ist, damit nichts komprimiert wird. Bei kompressibler Stroemung ist es umgekehrt -- dort wird `p` mitgefuehrt, und der Zeitschritt muss die Schallgeschwindigkeit aufloesen.",
+        "en": "`p` here is **not** a thermodynamic quantity: there is no equation of state linking it to density and temperature. It is the force needed to keep anything from being compressed. In compressible flow it is the other way round -- there `p` is carried along, and the time step has to resolve the speed of sound."
+       },
        "q": {
         "de": "Wozu dient der Druckschritt bei inkompressibler Strömung?",
         "en": "What is the pressure step for in incompressible flow?"
        },
-       "why": "Der Druck ist hier keine thermodynamische Größe, sondern ein Lagrange-Multiplikator: genau die Kraft, die die Zwangsbedingung div u = 0 durchsetzt. Deshalb braucht jeder inkompressible Löser eine Poisson-Gleichung.\n\nBei **kompressibler** Strömung ist das anders: dort ist der Druck über eine Zustandsgleichung mit Dichte und Temperatur verbunden und wird mitgeführt wie jede andere Größe. Der Preis ist ein Zeitschritt, der die Schallgeschwindigkeit auflösen muss -- bei langsamen Strömungen ein schlechtes Geschäft, und genau deshalb gibt es beide Sorten Löser."
+       "why": "Der Druck ist hier keine thermodynamische Größe, sondern ein Lagrange-Multiplikator: genau die Kraft, die die Zwangsbedingung div u = 0 durchsetzt. Deshalb braucht jeder inkompressible Löser eine Poisson-Gleichung.\n\nBei **kompressibler** Strömung ist das anders: dort ist der Druck über eine Zustandsgleichung mit Dichte und Temperatur verbunden und wird mitgeführt wie jede andere Größe. Der Preis ist ein Zeitschritt, der die Schallgeschwindigkeit auflösen muss -- bei langsamen Strömungen ein schlechtes Geschäft, und genau deshalb gibt es beide Sorten Löser.",
+       "ziel": {
+        "de": "Sehen, wozu die Poisson-Gleichung im Zeitschritt ueberhaupt da ist.",
+        "en": "See what the Poisson equation inside the time step is there for."
+       }
       },
       {
+       "annahmen": {
+        "de": "Jacobi **konvergiert** -- die Frage ist nicht Stabilitaet, sondern Geschwindigkeit. Zum Lernen ist er trotzdem die richtige Wahl: fuenf Zeilen, keine Matrix, Zelle fuer Zelle nachrechenbar.",
+        "en": "Jacobi does **converge** -- the question is not stability but speed. For learning it is still the right choice: five lines, no matrix, checkable cell by cell."
+       },
        "answer": 3,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "Der Druckschritt loest `∇²p = div u*` auf dem ganzen Gitter, einmal je Zeitschritt. Der diskrete Laplace-Operator hat die Kondition `O(1/h²)`, und Jacobi braucht entsprechend viele Durchlaeufe: Bei `N` Zellen je Richtung sind es `O(N²)`, also `O(N^4)` Arbeit je Zeitschritt. Bei einer Million Zellen ist das aussichtslos -- daher Mehrgitter (`O(N²)` Arbeit, also linear in der Zellzahl), konjugierte Gradienten oder FFT.",
+        "en": "The pressure step solves `∇²p = div u*` over the whole grid, once per time step. The discrete Laplacian has condition number `O(1/h²)`, and Jacobi needs a correspondingly large number of sweeps: with `N` cells per direction that is `O(N²)`, so `O(N^4)` work per time step. At a million cells that is hopeless -- hence multigrid (`O(N²)` work, linear in the cell count), conjugate gradients or an FFT."
+       },
        "options": [
         {
          "de": "Weil Jacobi instabil ist.",
@@ -2551,7 +3083,11 @@
         "de": "Warum nimmt man in echten Lösern nicht Jacobi für den Druckschritt?",
         "en": "Why do real solvers not use Jacobi for the pressure step?"
        },
-       "why": "Jacobi konvergiert, aber die Zahl der nötigen Durchläufe wächst mit dem Quadrat der Gitterweite. Bei einer Million Zellen ist das aussichtslos — deshalb Mehrgitter, konjugierte Gradienten oder FFT.\n\nFür den Anfang ist Jacobi trotzdem die richtige Wahl: er ist in fünf Zeilen geschrieben, braucht keine Matrix und lässt sich Zelle für Zelle nachrechnen. Wer das Verfahren verstanden hat, kann den Löser später austauschen -- die Aufgabe bleibt dieselbe."
+       "why": "Jacobi konvergiert, aber die Zahl der nötigen Durchläufe wächst mit dem Quadrat der Gitterweite. Bei einer Million Zellen ist das aussichtslos — deshalb Mehrgitter, konjugierte Gradienten oder FFT.\n\nFür den Anfang ist Jacobi trotzdem die richtige Wahl: er ist in fünf Zeilen geschrieben, braucht keine Matrix und lässt sich Zelle für Zelle nachrechnen. Wer das Verfahren verstanden hat, kann den Löser später austauschen -- die Aufgabe bleibt dieselbe.",
+       "ziel": {
+        "de": "Erkennen, dass hier die Kosten entscheiden, und wissen, was stattdessen genommen wird.",
+        "en": "Recognise that cost decides here, and know what is used instead."
+       }
       }
      ],
      "ausgabe": "Divergenz vorher 0.125000 nachher 0.004342\n",
@@ -2592,17 +3128,29 @@
        "answer": "7 2.5",
        "code": "#include <iostream>\n\ntemplate <typename T>\nT groesser(T a, T b) { return a > b ? a : b; }\n\nint main()\n{\n    std::cout << groesser(3, 7) << \" \"\n              << groesser(2.5, 1.5) << std::endl;\n}\n",
        "kind": "predict",
+       "mathematisch": {
+        "de": "Eine Vorlage mit **einem** Typparameter `T` beschreibt eine Schar von Funktionen; der Uebersetzer erzeugt je benutztem Typ eine eigene. `groesser(3, 7)` bestimmt `T = int`, `groesser(2.5, 1.5)` bestimmt `T = double`. `groesser(3, 2.5)` haette zwei verschiedene Kandidaten fuer dasselbe `T` und ist ein Fehler; zu retten waere es mit zwei Typparametern oder mit `groesser<double>(3, 2.5)`.",
+        "en": "A template with **one** type parameter `T` describes a family of functions; the compiler generates one per type used. `groesser(3, 7)` fixes `T = int`, `groesser(2.5, 1.5)` fixes `T = double`. `groesser(3, 2.5)` would have two different candidates for the same `T` and is an error; it could be rescued with two type parameters or with `groesser<double>(3, 2.5)`."
+       },
        "q": {
         "de": "Was schreibt dieses Programm?",
         "en": "What does this program print?"
        },
        "run": true,
-       "why": "Der Übersetzer erzeugt zwei Fassungen: eine für `int` und eine für `double`. Hätte man `groesser(3, 2.5)` geschrieben, gäbe es einen Fehler — die Vorlage hat **einen** Typ T, und der kann nicht gleichzeitig int und double sein.\n\nZu retten wäre der Aufruf mit zwei Typparametern (`template <typename A, typename B>`) oder durch eine ausdrückliche Angabe: `groesser<double>(3, 2.5)`. Der Übersetzer wandelt dann die 3 in 3.0 um. Beides ist üblich; die erste Form braucht allerdings eine Antwort auf die Frage, welchen Typ das Ergebnis hat."
+       "why": "Der Übersetzer erzeugt zwei Fassungen: eine für `int` und eine für `double`. Hätte man `groesser(3, 2.5)` geschrieben, gäbe es einen Fehler — die Vorlage hat **einen** Typ T, und der kann nicht gleichzeitig int und double sein.\n\nZu retten wäre der Aufruf mit zwei Typparametern (`template <typename A, typename B>`) oder durch eine ausdrückliche Angabe: `groesser<double>(3, 2.5)`. Der Übersetzer wandelt dann die 3 in 3.0 um. Beides ist üblich; die erste Form braucht allerdings eine Antwort auf die Frage, welchen Typ das Ergebnis hat.",
+       "ziel": {
+        "de": "Vorhersagen, was zwei getrennte Aufrufe schreiben, und erkennen, warum ein gemischter nicht uebersetzt.",
+        "en": "Predict what two separate calls print, and see why a mixed one does not compile."
+       }
       },
       {
        "answer": 2,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "Verglichen wird mit einer von Hand je Typ geschriebenen Fassung, nicht mit Vererbung. Gefragt sind die Kosten zur **Laufzeit**, nicht beim Uebersetzen: Der Uebersetzer erzeugt denselben Code, also null.\n\nBei Vererbung kostet jeder Aufruf einen Sprung ueber eine Tabelle -- und schlimmer als der Sprung ist, dass er das Einsetzen an Ort und Stelle verhindert und damit das Vektorisieren der inneren Schleife.",
+        "en": "The comparison is against a version written out by hand per type, not against inheritance. What is asked is the cost at **run time**, not at compile time: the compiler produces the same code, so none.\n\nWith inheritance every call costs a jump through a table -- and worse than the jump is that it prevents inlining and with it the vectorisation of the inner loop."
+       },
        "options": [
         {
          "de": "Einen virtuellen Aufruf je Benutzung.",
@@ -2625,9 +3173,17 @@
         "de": "Was kostet ein Template zur Laufzeit gegenüber einer von Hand geschriebenen Fassung?",
         "en": "What does a template cost at run time compared with a hand-written version?"
        },
-       "why": "Das ist der Grund, warum numerischer C++-Code Templates benutzt und nicht Vererbung: Vererbung kostet bei jedem Aufruf einen Sprung über eine Tabelle, ein Template kostet nur Übersetzungszeit.\n\nDer Sprung selbst ist nicht das Schlimmste: Er verhindert, dass der Übersetzer die Funktion an Ort und Stelle einsetzt, und damit auch das Vektorisieren der inneren Schleife. In einem Stencil, der milliardenfach ausgeführt wird, ist das der Unterschied zwischen einem und acht Werten je Takt."
+       "why": "Das ist der Grund, warum numerischer C++-Code Templates benutzt und nicht Vererbung: Vererbung kostet bei jedem Aufruf einen Sprung über eine Tabelle, ein Template kostet nur Übersetzungszeit.\n\nDer Sprung selbst ist nicht das Schlimmste: Er verhindert, dass der Übersetzer die Funktion an Ort und Stelle einsetzt, und damit auch das Vektorisieren der inneren Schleife. In einem Stencil, der milliardenfach ausgeführt wird, ist das der Unterschied zwischen einem und acht Werten je Takt.",
+       "ziel": {
+        "de": "Sehen, warum numerischer C++-Code Templates nimmt und nicht virtuelle Aufrufe.",
+        "en": "See why numerical C++ uses templates and not virtual calls."
+       }
       },
       {
+       "annahmen": {
+        "de": "`const std::vector<T>&` uebergibt ohne Kopie und mit der Zusage, nichts zu aendern.",
+        "en": "`const std::vector<T>&` passes without a copy and with the promise to change nothing."
+       },
        "distractors": [
         "std::vector<T> v;",
         "for (int i = 0; i < v.size(); i++)"
@@ -2643,11 +3199,19 @@
         "    return m;",
         "}"
        ],
+       "mathematisch": {
+        "de": "Dasselbe Maximum wie in C, nur fuer jeden vergleichbaren Typ: `M_0 = v_0`, `M_k = max(M_(k-1), v_k)`, Start bei `v[0]`.\n\n`v.size()` liefert `std::size_t`, eine **vorzeichenlose** Zahl; der Zaehler braucht denselben Typ. Das hat eine eigene Falle: `for (std::size_t i = v.size()-1; i >= 0; --i)` endet nie, weil `i` nach null auf die groesste Zahl springt.",
+        "en": "The same maximum as in C, only for every comparable type: `M_0 = v_0`, `M_k = max(M_(k-1), v_k)`, starting at `v[0]`.\n\n`v.size()` returns `std::size_t`, an **unsigned** number; the counter needs the same type. That carries a trap of its own: `for (std::size_t i = v.size()-1; i >= 0; --i)` never ends, because `i` jumps to the largest number after zero."
+       },
        "q": {
         "de": "Setze eine Template-Funktion zusammen, die das Maximum eines Feldes liefert.",
         "en": "Assemble a template function that returns the maximum of an array."
        },
-       "why": "`const std::vector<T>&` statt `std::vector<T>`: kein Kopieren und die Zusage, nichts zu ändern. Und `v.size()` liefert `std::size_t`, weshalb der Zähler denselben Typ hat — ein `int` gäbe hier je nach Übersetzer eine Warnung.\n\n`std::size_t` ist vorzeichenlos -- was eine eigene Falle mitbringt: eine Rückwärtsschleife `for (std::size_t i = v.size() - 1; i >= 0; --i)` endet nie, weil `i` nach null auf die größte Zahl springt. Entweder rückwärts mit `i-- > 0` zählen oder den Index als vorzeichenbehaftete Zahl führen."
+       "why": "`const std::vector<T>&` statt `std::vector<T>`: kein Kopieren und die Zusage, nichts zu ändern. Und `v.size()` liefert `std::size_t`, weshalb der Zähler denselben Typ hat — ein `int` gäbe hier je nach Übersetzer eine Warnung.\n\n`std::size_t` ist vorzeichenlos -- was eine eigene Falle mitbringt: eine Rückwärtsschleife `for (std::size_t i = v.size() - 1; i >= 0; --i)` endet nie, weil `i` nach null auf die größte Zahl springt. Entweder rückwärts mit `i-- > 0` zählen oder den Index als vorzeichenbehaftete Zahl führen.",
+       "ziel": {
+        "de": "Eine Vorlage zusammensetzen, die fuer jeden vergleichbaren Typ gilt -- und dabei den richtigen Indextyp nehmen.",
+        "en": "Assemble a template that works for every comparable type -- and pick the right index type while doing so."
+       }
       }
      ],
      "ausgabe": "",
@@ -2685,6 +3249,10 @@
     {
      "aufgaben": [
       {
+       "annahmen": {
+        "de": "`print!` schreibt ohne Zeilenumbruch, `println!` mit -- der Unterschied steht im Namen und nicht in der Zeichenkette. Die Ausgabe wird zeilenweise wirklich hinausgeschrieben; wer den Fortschritt einer langen Rechnung ohne Umbruch ausgibt, sieht minutenlang nichts.",
+        "en": "`print!` writes without a line break, `println!` with one -- the difference is in the name and not in the string. Output is actually flushed line by line; print the progress of a long computation without a break and you see nothing for minutes."
+       },
        "answer": "ab",
        "code": "fn main() {\n    print!(\"a\");\n    println!(\"b\");\n}\n",
        "kind": "predict",
@@ -2699,6 +3267,10 @@
        "answer": 1,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "Gefragt ist die **Genauigkeit**, nicht die Breite: `{:.3}` sind drei Nachkommastellen, `{:3}` waeren drei Zeichen Feldbreite. Die C-Form `%.3f` geht nicht, weil `println!` seine Vorlage beim Uebersetzen liest und dabei jeden Platzhalter mit seinem Wert zusammenbringt.",
+        "en": "What is asked for is the **precision**, not the width: `{:.3}` is three decimals, `{:3}` would be three characters of field width. The C form `%.3f` does not work, because `println!` reads its template at compile time and pairs every placeholder with its value there."
+       },
        "options": [
         {
          "de": "println!(\"{}\", x.round(3))",
@@ -2721,9 +3293,17 @@
         "de": "Wie gibt man eine Kommazahl mit drei Nachkommastellen aus?",
         "en": "How do you print a float with three decimal places?"
        },
-       "why": "Die Form steht nach einem Doppelpunkt **im** Platzhalter. `{:3}` wäre etwas anderes: drei Zeichen breit, rechts ausgerichtet -- eine Breitenangabe, keine Genauigkeit.\n\n`%.3f` ist die C-Form; sie geht hier nicht, weil `println!` die Vorlage beim Übersetzen liest und dabei jeden Platzhalter mit seinem Wert zusammenbringt. Genau daher kommt auch die Fehlermeldung, wenn mehr `{}` dastehen als Werte dahinter."
+       "why": "Die Form steht nach einem Doppelpunkt **im** Platzhalter. `{:3}` wäre etwas anderes: drei Zeichen breit, rechts ausgerichtet -- eine Breitenangabe, keine Genauigkeit.\n\n`%.3f` ist die C-Form; sie geht hier nicht, weil `println!` die Vorlage beim Übersetzen liest und dabei jeden Platzhalter mit seinem Wert zusammenbringt. Genau daher kommt auch die Fehlermeldung, wenn mehr `{}` dastehen als Werte dahinter.",
+       "ziel": {
+        "de": "Den Platzhalter fuer drei Nachkommastellen nennen.",
+        "en": "Name the placeholder for three decimals."
+       }
       },
       {
+       "annahmen": {
+        "de": "Verglichen wird Zeichen fuer Zeichen, der Zeilenumbruch gehoert dazu. Kein `#include` noetig und kein `return 0;`.",
+        "en": "The comparison is character by character, and the line break counts. No `#include` is needed and no `return 0;`."
+       },
        "expect": "Hallo Simulation",
        "kind": "code",
        "plot": false,
@@ -2734,7 +3314,11 @@
        "seconds": 10,
        "solution": "fn main() {\n    println!(\"Hallo Simulation\");\n}\n",
        "starter": "fn main() {\n    \n}\n",
-       "why": "Ein `println!` mit dem Text -- der Umbruch steckt im Namen.\n\nAuffällig für Umsteiger: kein `#include`, kein `return 0;`. Was `println!` braucht, ist über das Vorspiel (`std::prelude`) schon da, und `main` ohne Rückgabetyp meldet dem Betriebssystem von selbst den Erfolg. Fehler meldet man in Rust nicht mit einer Zahl, sondern mit einem Rückgabewert, der den Fehler trägt."
+       "why": "Ein `println!` mit dem Text -- der Umbruch steckt im Namen.\n\nAuffällig für Umsteiger: kein `#include`, kein `return 0;`. Was `println!` braucht, ist über das Vorspiel (`std::prelude`) schon da, und `main` ohne Rückgabetyp meldet dem Betriebssystem von selbst den Erfolg. Fehler meldet man in Rust nicht mit einer Zahl, sondern mit einem Rückgabewert, der den Fehler trägt.",
+       "ziel": {
+        "de": "Den kleinsten Rust-Rumpf schreiben, der eine Zeile ausgibt.",
+        "en": "Write the smallest Rust skeleton that prints one line."
+       }
       }
      ],
      "ausgabe": "100 Schritte zu je 0.010 s\nGesamtzeit: 1.00 s\n",
@@ -2760,17 +3344,29 @@
        "answer": "3\n3.500",
        "code": "fn main() {\n    let a = 7;\n    let b = 2;\n    println!(\"{}\", a / b);\n    println!(\"{:.3}\", a as f64 / b as f64);\n}\n",
        "kind": "predict",
+       "mathematisch": {
+        "de": "Dieselben zwei Divisionen wie in C: `7/2 = 3` in den ganzen Zahlen, `3,5` in `F`. Der Unterschied ist, dass Rust **nicht befoerdert**: Es gibt keine stillschweigende Umwandlung des kleineren Typs, jede Umwandlung muss dastehen (`as f64`). `a as f64 / b` waere schon ein Fehler -- links `F`, rechts ganze Zahl.",
+        "en": "The same two divisions as in C: `7/2 = 3` in the integers, `3.5` in `F`. The difference is that Rust **does not promote**: there is no silent conversion of the smaller type, every conversion has to be written down (`as f64`). `a as f64 / b` would already be an error -- `F` on the left, an integer on the right."
+       },
        "q": {
         "de": "Was schreibt das Programm?",
         "en": "What does the program print?"
        },
        "run": true,
-       "why": "Zwei Ganzzahlen ergeben eine Ganzzahldivision, genau wie in C. Der Unterschied ist die zweite Zeile: Sie **muss** die Umwandlung hinschreiben.\n\n`a as f64 / b as f64` wandelt beide um; `a as f64 / b` wäre schon ein Fehler, weil links eine Kommazahl und rechts eine Ganzzahl stünde. Rust hat keine Beförderung des kleineren Typs -- die halbe Fehlerklasse aus C fällt damit weg."
+       "why": "Zwei Ganzzahlen ergeben eine Ganzzahldivision, genau wie in C. Der Unterschied ist die zweite Zeile: Sie **muss** die Umwandlung hinschreiben.\n\n`a as f64 / b as f64` wandelt beide um; `a as f64 / b` wäre schon ein Fehler, weil links eine Kommazahl und rechts eine Ganzzahl stünde. Rust hat keine Beförderung des kleineren Typs -- die halbe Fehlerklasse aus C fällt damit weg.",
+       "ziel": {
+        "de": "Beide Zeilen vorhersagen und den Unterschied benennen: dieselbe Falle wie in C, nur in einer Sprache, die das Schweigen nicht zulaesst.",
+        "en": "Predict both lines and name the difference: the same trap as in C, only in a language that does not let it pass silently."
+       }
       },
       {
        "answer": 1,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "Gebiet der Laenge 1 in `n = 10` Zellen, `h = 1/n = 0,1`. Zwei der falschen Zeilen sind Uebersetzungsfehler, weil `f64` und ganze Zahl sich nicht mischen. Eine uebersetzt und liefert trotzdem null: `(1 / n) as f64` rechnet erst in den ganzen Zahlen und wandelt dann die 0 um.\n\nMerksatz wie in C: **Der Typ des Ergebnisses entsteht im Ausdruck, nicht bei der Zuweisung.**",
+        "en": "A domain of length 1 in `n = 10` cells, `h = 1/n = 0.1`. Two of the wrong lines are compile errors, because `f64` and integers do not mix. One does compile and still gives zero: `(1 / n) as f64` computes in the integers first and then converts the 0.\n\nThe maxim is the same as in C: **the type of the result arises in the expression, not at the assignment.**"
+       },
        "options": [
         {
          "de": "let h = 1.0 / n;",
@@ -2793,11 +3389,23 @@
         "de": "Ein Gitter der Länge 1 hat `let n = 10;` Zellen. Welche Zeile berechnet den Zellabstand?",
         "en": "A grid of length 1 has `let n = 10;` cells. Which line computes the cell spacing?"
        },
-       "why": "Die zweite Zeile ist ein Übersetzungsfehler (`f64` und `i64` vertragen sich nicht), die dritte auch. Die vierte übersetzt sogar -- und ist die C-Falle in Rust-Kleidung: `1 / n` ist bereits `0`, die Umwandlung kommt zu spät.\n\nMerksatz wie in C: **der Typ des Ergebnisses entsteht im Ausdruck, nicht bei der Zuweisung.** Rust nimmt einem nur die Fälle ab, in denen man die Umwandlung ganz vergessen hat."
+       "why": "Die zweite Zeile ist ein Übersetzungsfehler (`f64` und `i64` vertragen sich nicht), die dritte auch. Die vierte übersetzt sogar -- und ist die C-Falle in Rust-Kleidung: `1 / n` ist bereits `0`, die Umwandlung kommt zu spät.\n\nMerksatz wie in C: **der Typ des Ergebnisses entsteht im Ausdruck, nicht bei der Zuweisung.** Rust nimmt einem nur die Fälle ab, in denen man die Umwandlung ganz vergessen hat.",
+       "ziel": {
+        "de": "Die Zeile finden, die wirklich 0,1 ergibt, und die Falle in Rust-Kleidung erkennen.",
+        "en": "Find the line that really gives 0.1, and recognise the trap in Rust clothing."
+       }
       },
       {
+       "annahmen": {
+        "de": "Die Vorlage gibt die Zahlen einzeln aus, damit sie ueberhaupt uebersetzt; gefragt ist eine einzige Zeile mit der Rechnung.",
+        "en": "The template prints the numbers separately so that it compiles at all; what is asked for is a single line with the computation."
+       },
        "expect": "3.500",
        "kind": "code",
+       "mathematisch": {
+        "de": "`summe/anzahl = 7/2`; das Ergebnis liegt nicht in den ganzen Zahlen, also muessen **beide** Seiten nach `f64`. Wer es ohne `as` haben will, schreibt die Werte gleich als Kommazahlen -- in einem Loeser ist das die uebliche Antwort: Zellzahlen bleiben `usize`, alles Gerechnete ist von Anfang an `f64`.",
+        "en": "`summe/anzahl = 7/2`; the result is not an integer, so **both** sides have to go to `f64`. If you would rather avoid `as`, write the values as floating-point numbers to begin with -- in a solver that is the usual answer: cell counts stay `usize`, everything computed is `f64` from the start."
+       },
        "plot": false,
        "q": {
         "de": "Das Programm soll den Mittelwert von `summe` und `anzahl` mit drei Nachkommastellen ausgeben. Repariere die Rechnung.",
@@ -2806,7 +3414,11 @@
        "seconds": 10,
        "solution": "fn main() {\n    let summe = 7;\n    let anzahl = 2;\n    println!(\"{:.3}\", summe as f64 / anzahl as f64);\n}\n",
        "starter": "fn main() {\n    let summe = 7;\n    let anzahl = 2;\n    println!(\"{}\", summe);\n    println!(\"{}\", anzahl);\n}\n",
-       "why": "Beide Seiten umwandeln, dann teilen. Die Vorlage gibt die Zahlen einzeln aus, damit sie überhaupt läuft -- gefragt ist eine einzige Zeile mit der Rechnung.\n\nWer es lieber ohne `as` hat, schreibt die Werte gleich als Kommazahlen: `let summe = 7.0;`. In einem Löser ist das die übliche Antwort -- Zellzahlen bleiben `usize`, alles Gerechnete ist von Anfang an `f64`, und Umwandlungen stehen genau an der Grenze dazwischen."
+       "why": "Beide Seiten umwandeln, dann teilen. Die Vorlage gibt die Zahlen einzeln aus, damit sie überhaupt läuft -- gefragt ist eine einzige Zeile mit der Rechnung.\n\nWer es lieber ohne `as` hat, schreibt die Werte gleich als Kommazahlen: `let summe = 7.0;`. In einem Löser ist das die übliche Antwort -- Zellzahlen bleiben `usize`, alles Gerechnete ist von Anfang an `f64`, und Umwandlungen stehen genau an der Grenze dazwischen.",
+       "ziel": {
+        "de": "Beide Seiten umwandeln und mit drei Nachkommastellen ausgeben.",
+        "en": "Convert both sides and print with three decimals."
+       }
       }
      ],
      "ausgabe": "h = 0.250\n7 / 2 = 3\n7.0 / 2.0 = 3.5\n",
@@ -2847,6 +3459,10 @@
        "answer": 0,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "Ein `Vec` ist nicht `Copy`: Die Zuweisung **verschiebt** ihn, danach gilt der alte Name nicht mehr. Dahinter steht die Freigabe -- gaebe es zwei gueltige Namen fuer denselben Speicherblock, muesste zur Laufzeit jemand mitzaehlen, wer als Letzter geht. Genau diese Zaehlung spart Rust, und dafuer braucht es eine Regel, die beim Uebersetzen greift.",
+        "en": "A `Vec` is not `Copy`: assignment **moves** it, and afterwards the old name is no longer valid. Behind that stands the release of memory -- if there were two valid names for the same block, someone would have to keep count at run time of who leaves last. Rust saves exactly that count, and for it needs a rule that bites at compile time."
+       },
        "options": [
         {
          "de": "Weil der Besitz an `b` übergegangen ist und `a` danach nicht mehr gilt.",
@@ -2869,22 +3485,42 @@
         "de": "Warum meldet `let b = a; println!(\"{}\", a.len());` einen Fehler, wenn `a` ein `Vec` ist?",
         "en": "Why does `let b = a; println!(\"{}\", a.len());` raise an error when `a` is a `Vec`?"
        },
-       "why": "Ein `Vec` ist nicht `Copy`: Die Zuweisung verschiebt ihn. Danach ist `a` leer im Sinne der Sprache -- der Übersetzer verbietet jeden weiteren Zugriff.\n\nDer Sinn dahinter ist die Freigabe: Gäbe es zwei gültige Namen für dasselbe Gitter, müsste zur Laufzeit jemand mitzählen, wer als Letzter geht. Genau diese Zählung spart Rust -- und genau deshalb braucht es hier eine Regel, die beim Übersetzen greift."
+       "why": "Ein `Vec` ist nicht `Copy`: Die Zuweisung verschiebt ihn. Danach ist `a` leer im Sinne der Sprache -- der Übersetzer verbietet jeden weiteren Zugriff.\n\nDer Sinn dahinter ist die Freigabe: Gäbe es zwei gültige Namen für dasselbe Gitter, müsste zur Laufzeit jemand mitzählen, wer als Letzter geht. Genau diese Zählung spart Rust -- und genau deshalb braucht es hier eine Regel, die beim Übersetzen greift.",
+       "ziel": {
+        "de": "Den Grund fuer den Uebersetzungsfehler nennen und ihn von den naheliegenden falschen Erklaerungen trennen.",
+        "en": "Name the reason for the compile error and separate it from the plausible wrong explanations."
+       }
       },
       {
+       "annahmen": {
+        "de": "`a` ist hier eine ganze Zahl, kein `Vec`.",
+        "en": "`a` is an integer here, not a `Vec`."
+       },
        "answer": "5 5",
        "code": "fn main() {\n    let a = 5;\n    let b = a;\n    println!(\"{} {}\", a, b);\n}\n",
        "kind": "predict",
+       "mathematisch": {
+        "de": "Die Grenze verlaeuft dort, wo eine Kopie teuer oder gefaehrlich wuerde: Zahlen sind `Copy`, sie liegen vollstaendig im Register. Ein `Vec` haette danach zwei Besitzer desselben Speicherblocks -- also wird er verschoben. Eigene Strukturen sind deshalb standardmaessig nicht `Copy`; man kann es anfordern, wenn alle Felder es sind.",
+        "en": "The line runs where a copy would become expensive or dangerous: numbers are `Copy`, they fit entirely into a register. A `Vec` would afterwards have two owners of the same memory block -- so it is moved. Structures of your own are therefore not `Copy` by default; you can ask for it when all their fields are."
+       },
        "q": {
         "de": "Was schreibt dieses Programm?",
         "en": "What does this program print?"
        },
        "run": true,
-       "why": "`i64` ist `Copy` -- hier wird kopiert, nicht verschoben, und `a` gilt weiter. Mit `Vec` an derselben Stelle wäre es ein Fehler.\n\nDie Grenze verläuft dort, wo eine Kopie teuer oder gefährlich würde: Zahlen liegen vollständig im Register, ein `Vec` hätte danach zwei Besitzer für denselben Speicherblock. Eigene Strukturen sind deshalb standardmäßig nicht `Copy`; man kann es anfordern, wenn alle Felder es sind."
+       "why": "`i64` ist `Copy` -- hier wird kopiert, nicht verschoben, und `a` gilt weiter. Mit `Vec` an derselben Stelle wäre es ein Fehler.\n\nDie Grenze verläuft dort, wo eine Kopie teuer oder gefährlich würde: Zahlen liegen vollständig im Register, ein `Vec` hätte danach zwei Besitzer für denselben Speicherblock. Eigene Strukturen sind deshalb standardmäßig nicht `Copy`; man kann es anfordern, wenn alle Felder es sind.",
+       "ziel": {
+        "de": "Sehen, wo die Grenze zwischen Kopieren und Verschieben verlaeuft.",
+        "en": "See where the line between copying and moving runs."
+       }
       },
       {
        "expect": "7 7",
        "kind": "code",
+       "mathematisch": {
+        "de": "Gebraucht werden wirklich **zwei** Gitter zu je sieben Zellen, also `clone()`: ein zweiter Wert, Aufwand `O(n)`. `&u` waere `O(1)` und gaebe nur einen zweiten Blick auf dasselbe. Die Frage an jeder solchen Stelle lautet: zweiter Wert oder zweiter Blick?",
+        "en": "What is really needed are **two** grids of seven cells each, so `clone()`: a second value, `O(n)` work. `&u` would be `O(1)` and would give only a second look at the same one. The question at every such place is: a second value, or a second look?"
+       },
        "plot": false,
        "q": {
         "de": "Das Programm soll die Länge **beider** Gitter ausgeben, des ursprünglichen und des zweiten. Ändere die mittlere Zeile so, dass `u` weiter benutzbar bleibt.",
@@ -2893,7 +3529,11 @@
        "seconds": 10,
        "solution": "fn main() {\n    let u = vec![0.0; 7];\n    let v = u.clone();\n    println!(\"{} {}\", u.len(), v.len());\n}\n",
        "starter": "fn main() {\n    let u = vec![0.0; 7];\n    let v = u.clone();\n    println!(\"{} {}\", u.len(), v.len());\n}\n",
-       "why": "`clone()` ist hier richtig, weil wirklich zwei Gitter gebraucht werden -- so wie der Löser aus Kapitel 6 zwei Felder braucht.\n\nWäre nur zu lesen, wäre `&u` das Mittel der Wahl und würde nichts kosten. Die Frage, die man sich an jeder solchen Stelle stellt, lautet deshalb: Brauche ich einen zweiten Wert -- oder nur einen zweiten Blick?"
+       "why": "`clone()` ist hier richtig, weil wirklich zwei Gitter gebraucht werden -- so wie der Löser aus Kapitel 6 zwei Felder braucht.\n\nWäre nur zu lesen, wäre `&u` das Mittel der Wahl und würde nichts kosten. Die Frage, die man sich an jeder solchen Stelle stellt, lautet deshalb: Brauche ich einen zweiten Wert -- oder nur einen zweiten Blick?",
+       "ziel": {
+        "de": "Die Entscheidung bewusst treffen statt sie vom Uebersetzer erzwingen zu lassen.",
+        "en": "Make the decision deliberately instead of having the compiler force it."
+       }
       }
      ],
      "ausgabe": "weitergegeben: 5 Zellen\nKopie:         5 Zellen\n",
@@ -2919,6 +3559,10 @@
        "answer": 3,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "Die Regel: beliebig viele `&` gleichzeitig, oder **ein** `&mut` und sonst nichts. Formal ist das die Bedingung, unter der kein Schreibzugriff mit einem anderen Zugriff ueberlappt.\n\nDieselbe Bedingung macht ein Programm auf mehreren Kernen richtig -- deshalb deckt die Pruefung, die hier einen Fehler im Einprozessorprogramm verhindert, auch Datenrennen mit ab.",
+        "en": "The rule: any number of `&` at once, or **one** `&mut` and nothing else. Formally that is the condition under which no write access overlaps with any other access.\n\nThe same condition makes a program correct on several cores -- which is why the check that prevents an error in the single-processor program covers data races as well."
+       },
        "options": [
         {
          "de": "Ein `&mut` und zwei `&` gleichzeitig.",
@@ -2941,22 +3585,46 @@
         "de": "Welche Kombination von Ausleihen auf dieselbe Variable ist erlaubt?",
         "en": "Which combination of borrows of the same variable is allowed?"
        },
-       "why": "Lesen schließt sich nicht gegenseitig aus -- beliebig viele `&` sind kein Problem. Sobald einer schreibt, darf sonst niemand hinsehen.\n\nDas ist genau die Bedingung, unter der ein Programm auch auf mehreren Kernen richtig bleibt: Die Regel, die hier einen Fehler im Einprozessorprogramm verhindert, ist dieselbe, die Datenrennen unmöglich macht. Deshalb sagt man in Rust „fearless concurrency“ -- nicht, weil Nebenläufigkeit einfach wäre, sondern weil dieselbe Prüfung sie mit abdeckt."
+       "why": "Lesen schließt sich nicht gegenseitig aus -- beliebig viele `&` sind kein Problem. Sobald einer schreibt, darf sonst niemand hinsehen.\n\nDas ist genau die Bedingung, unter der ein Programm auch auf mehreren Kernen richtig bleibt: Die Regel, die hier einen Fehler im Einprozessorprogramm verhindert, ist dieselbe, die Datenrennen unmöglich macht. Deshalb sagt man in Rust „fearless concurrency“ -- nicht, weil Nebenläufigkeit einfach wäre, sondern weil dieselbe Prüfung sie mit abdeckt.",
+       "ziel": {
+        "de": "Die erlaubte Kombination nennen und wissen, warum sie es ist.",
+        "en": "Name the permitted combination and know why it is the one."
+       }
       },
       {
+       "annahmen": {
+        "de": "`a` startet bei 2,5. Der Anzeigedruck `{}` schreibt die kuerzeste Form, die die Zahl zurueckliest -- also `5` und nicht `5.0`; `{:.1}` gaebe `5.0`.",
+        "en": "`a` starts at 2.5. The display format `{}` writes the shortest form that reads the number back -- so `5` and not `5.0`; `{:.1}` would give `5.0`."
+       },
        "answer": "5",
        "code": "fn verdoppeln(x: &mut f64) {\n    *x = *x * 2.0;\n}\n\nfn main() {\n    let mut a = 2.5;\n    verdoppeln(&mut a);\n    println!(\"{}\", a);\n}\n",
        "kind": "predict",
+       "mathematisch": {
+        "de": "`&mut f64` ist ein Verweis, den man beschreiben darf; `*x = *x * 2.0` schreibt in die Variable des Aufrufers -- derselbe Stern wie in C. Beim Lesen in Rechnungen darf er meist entfallen, beim Schreiben nie.",
+        "en": "`&mut f64` is a reference you are allowed to write to; `*x = *x * 2.0` writes into the caller's variable -- the same star as in C. Reading inside computations it may usually be omitted, writing never."
+       },
        "q": {
         "de": "Was schreibt dieses Programm?",
         "en": "What does this program print?"
        },
        "run": true,
-       "why": "Der Stern löst den Verweis auf, genau wie in C -- `*x = *x * 2.0` schreibt in die Variable des Aufrufers. Beim Lesen in Rechnungen darf er meist entfallen, beim Schreiben nie.\n\nAusgegeben wird `5` und nicht `5.0`: Der Anzeigedruck `{}` schreibt die kürzeste Form, die die Zahl zurückliest. Wer `5.0` sehen will, nimmt `{:.1}`."
+       "why": "Der Stern löst den Verweis auf, genau wie in C -- `*x = *x * 2.0` schreibt in die Variable des Aufrufers. Beim Lesen in Rechnungen darf er meist entfallen, beim Schreiben nie.\n\nAusgegeben wird `5` und nicht `5.0`: Der Anzeigedruck `{}` schreibt die kürzeste Form, die die Zahl zurückliest. Wer `5.0` sehen will, nimmt `{:.1}`.",
+       "ziel": {
+        "de": "Vorhersagen, was ankommt: der Wert **und** seine Schreibweise.",
+        "en": "Predict what comes out: the value **and** its spelling."
+       }
       },
       {
+       "annahmen": {
+        "de": "`v` wird nur gelesen, deshalb `&Vec<f64>`. Zwei Rust-Eigenheiten stecken in der Loesung: `m` braucht `mut`, und die letzte Zeile ohne Semikolon **ist** der Rueckgabewert -- ein Block ist in Rust ein Ausdruck.",
+        "en": "`v` is only read, hence `&Vec<f64>`. Two Rust peculiarities sit in the solution: `m` needs `mut`, and the last line without a semicolon **is** the return value -- a block is an expression in Rust."
+       },
        "expect": "9.0",
        "kind": "code",
+       "mathematisch": {
+        "de": "Dasselbe Maximum wie in C: `M_0 = v_0`, `M_k = max(M_(k-1), v_k)`. Der Startwert muss `v[0]` sein und nicht `0.0` -- sonst waere das Maximum eines Feldes aus lauter negativen Werten null. Vier Werte, das Maximum ist 9,0.",
+        "en": "The same maximum as in C: `M_0 = v_0`, `M_k = max(M_(k-1), v_k)`. The starting value has to be `v[0]` and not `0.0` -- otherwise the maximum of an array of nothing but negative values would be zero. Four values, the maximum is 9.0."
+       },
        "plot": false,
        "q": {
         "de": "Schreibe `fn groesster(v: &Vec<f64>) -> f64`, die den größten Wert liefert, und gib ihn mit einer Nachkommastelle aus. Fang beim ersten Element an, nicht bei null.",
@@ -2965,7 +3633,11 @@
        "seconds": 10,
        "solution": "fn groesster(v: &Vec<f64>) -> f64 {\n    let mut m = v[0];\n    for i in 1..v.len() {\n        if v[i] > m {\n            m = v[i];\n        }\n    }\n    m\n}\n\nfn main() {\n    let u = vec![3.0, 9.0, 2.0, 7.0];\n    println!(\"{:.1}\", groesster(&u));\n}\n",
        "starter": "fn groesster(v: &Vec<f64>) -> f64 {\n    let m = v[0];\n    m\n}\n\nfn main() {\n    let u = vec![3.0, 9.0, 2.0, 7.0];\n    println!(\"{:.1}\", groesster(&u));\n}\n",
-       "why": "Derselbe Anfangswert wie in C: `v[0]`, nicht `0.0` -- sonst wäre das Maximum eines Feldes aus lauter negativen Werten null.\n\nZwei Rust-Eigenheiten stecken darin: `m` braucht `mut`, weil es sich ändert, und die letzte Zeile hat kein Semikolon. Ein Block **ist** in Rust ein Ausdruck; sein Wert ist die letzte Zeile ohne Semikolon, und genau das wird zurückgegeben. `return m;` ginge auch und wird meist nur für den vorzeitigen Ausstieg benutzt."
+       "why": "Derselbe Anfangswert wie in C: `v[0]`, nicht `0.0` -- sonst wäre das Maximum eines Feldes aus lauter negativen Werten null.\n\nZwei Rust-Eigenheiten stecken darin: `m` braucht `mut`, weil es sich ändert, und die letzte Zeile hat kein Semikolon. Ein Block **ist** in Rust ein Ausdruck; sein Wert ist die letzte Zeile ohne Semikolon, und genau das wird zurückgegeben. `return m;` ginge auch und wird meist nur für den vorzeitigen Ausstieg benutzt.",
+       "ziel": {
+        "de": "Das Maximum ueber einen geliehenen Vektor finden.",
+        "en": "Find the maximum over a borrowed vector."
+       }
       }
      ],
      "ausgabe": "vorher  10.0\nnachher 25.0\n",
@@ -3006,6 +3678,10 @@
        "answer": 1,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "Der Schritt liest aus dem alten Feld und schreibt in das neue: `&Vec<f64>` und `&mut Vec<f64>`. Die Signatur ist damit die Dokumentation -- in C stuende dort zweimal `double *`.\n\nNebenbei faellt ein ganzer Fehler weg: `schritt(&u, &mut u, r)` wird abgelehnt, weil `&` und `&mut` auf dieselbe Variable nicht zusammengehen. Genau dieser Aufruf ist in C erlaubt und ergibt still das Gauss-Seidel-Verfahren statt des expliziten.",
+        "en": "The step reads from the old field and writes into the new one: `&Vec<f64>` and `&mut Vec<f64>`. The signature is thereby the documentation -- in C it would say `double *` twice.\n\nIncidentally a whole class of error falls away: `schritt(&u, &mut u, r)` is rejected, because `&` and `&mut` on the same variable do not go together. That very call is legal in C and silently gives the Gauss-Seidel scheme instead of the explicit one."
+       },
        "options": [
         {
          "de": "Weil sonst kopiert würde.",
@@ -3028,22 +3704,42 @@
         "de": "Warum nimmt `schritt` das alte Feld als `&Vec<f64>` und das neue als `&mut Vec<f64>`?",
         "en": "Why does `schritt` take the old array as `&Vec<f64>` and the new one as `&mut Vec<f64>`?"
        },
-       "why": "Die Signatur ist hier die Dokumentation: Wer sie liest, weiß, welches Feld der Schritt anfasst, ohne den Rumpf zu lesen. In C steht dort zweimal `double *`, und man muss nachsehen.\n\nNebenbei fällt damit ein ganzer Fehler weg: `schritt(&u, &mut u, r)` -- altes und neues Feld dasselbe -- wird abgelehnt, weil `&` und `&mut` auf dieselbe Variable nicht zusammen gehen. Genau dieser Aufruf ist in C erlaubt und ergibt still das Gauß-Seidel-Verfahren statt des expliziten."
+       "why": "Die Signatur ist hier die Dokumentation: Wer sie liest, weiß, welches Feld der Schritt anfasst, ohne den Rumpf zu lesen. In C steht dort zweimal `double *`, und man muss nachsehen.\n\nNebenbei fällt damit ein ganzer Fehler weg: `schritt(&u, &mut u, r)` -- altes und neues Feld dasselbe -- wird abgelehnt, weil `&` und `&mut` auf dieselbe Variable nicht zusammen gehen. Genau dieser Aufruf ist in C erlaubt und ergibt still das Gauß-Seidel-Verfahren statt des expliziten.",
+       "ziel": {
+        "de": "Lesen, was die Signatur ueber das Verfahren sagt -- und was sie ausschliesst.",
+        "en": "Read what the signature says about the method -- and what it rules out."
+       }
       },
       {
        "answer": "9 1",
        "code": "fn main() {\n    let mut a = vec![1.0, 2.0];\n    let mut b = vec![9.0, 9.0];\n    std::mem::swap(&mut a, &mut b);\n    println!(\"{} {}\", a[0], b[0]);\n}\n",
        "kind": "predict",
+       "mathematisch": {
+        "de": "Ein `Vec` besteht aus drei Zahlen: Zeiger, Laenge, Platz. `std::mem::swap` tauscht genau diese drei, Aufwand `O(1)` unabhaengig von der Zellzahl -- die Zellen selbst werden nicht angefasst. `u = w.clone()` waere dagegen `O(n)` je Zeitschritt.",
+        "en": "A `Vec` consists of three numbers: pointer, length, capacity. `std::mem::swap` exchanges exactly those three, `O(1)` work regardless of the cell count -- the cells themselves are not touched. `u = w.clone()` would be `O(n)` per time step."
+       },
        "q": {
         "de": "Was schreibt dieses Programm?",
         "en": "What does this program print?"
        },
        "run": true,
-       "why": "`swap` vertauscht die beiden Gitter vollständig -- danach steht in `a`, was in `b` war. Kopiert wird dabei nichts: Getauscht werden Zeiger, Länge und Platz, die drei Zahlen, aus denen ein `Vec` besteht.\n\nDeshalb ist der Tausch in einer Zeitschleife über Millionen Schritte kostenlos, während `u = w.clone()` das ganze Gitter jedes Mal kopieren würde."
+       "why": "`swap` vertauscht die beiden Gitter vollständig -- danach steht in `a`, was in `b` war. Kopiert wird dabei nichts: Getauscht werden Zeiger, Länge und Platz, die drei Zahlen, aus denen ein `Vec` besteht.\n\nDeshalb ist der Tausch in einer Zeitschleife über Millionen Schritte kostenlos, während `u = w.clone()` das ganze Gitter jedes Mal kopieren würde.",
+       "ziel": {
+        "de": "Vorhersagen, was nach dem Tausch in beiden Feldern steht, und sehen, warum der Tausch in einer Zeitschleife nichts kostet.",
+        "en": "Predict what stands in both fields after the swap, and see why the swap costs nothing inside a time loop."
+       }
       },
       {
        "expect": "0.031086 0.771801",
        "kind": "code",
+       "mathematisch": {
+        "de": "Derselbe explizite Drei-Punkt-Stern wie im C-Kapitel: `w_i = u_i + r·(u_(i-1) - 2u_i + u_(i+1))` fuer die inneren Zellen. `r = 0,4` liegt unter der Stabilitaetsgrenze `½`; die Raender bleiben auf null, deshalb faellt die Summe von 1 auf `0,771801`, und in der Mitte stehen `0,031086`.\n\nEs sind **dieselben Zahlen wie in C** -- dieselbe Arithmetik, dieselbe Rundung. Die Sprache aendert am Ergebnis nichts. Sie aendert die Fehlersuche davor: `2.0` muss `2.0` heissen und nicht `2`, und ein Index daneben bricht mit Meldung ab.",
+        "en": "The same explicit three-point stencil as in the C chapter: `w_i = u_i + r·(u_(i-1) - 2u_i + u_(i+1))` for the interior cells. `r = 0.4` is below the stability limit `½`; the boundaries stay at zero, so the sum falls from 1 to `0.771801` and `0.031086` stands in the middle.\n\nThese are **the same numbers as in C** -- the same arithmetic, the same rounding. The language changes nothing about the result. What it changes is the debugging before it: `2.0` has to be `2.0` and not `2`, and an index off the end stops with a message."
+       },
+       "physikalisch": {
+        "de": "Stab mit 41 Zellen, anfangs kalt, eine Einheit Waerme in der Mitte, Enden auf fester Temperatur 0. 200 Schritte.",
+        "en": "A rod of 41 cells, initially cold with one unit of heat in the middle, ends held at temperature 0. 200 steps."
+       },
        "plot": false,
        "q": {
         "de": "Baue den Wärmeleitungsschritt in `schritt` ein: die inneren Zellen aus dem Drei-Punkt-Stern, die Ränder bleiben. Dann läuft das Programm 200 Schritte und gibt Mitte und Summe mit sechs Stellen aus.",
@@ -3052,7 +3748,11 @@
        "seconds": 25,
        "solution": "fn schritt(u: &Vec<f64>, w: &mut Vec<f64>, r: f64) {\n    let n = u.len();\n    for i in 1..n - 1 {\n        w[i] = u[i] + r * (u[i - 1] - 2.0 * u[i] + u[i + 1]);\n    }\n}\n\nfn main() {\n    let n = 41;\n    let mut u = vec![0.0; n];\n    let mut w = vec![0.0; n];\n    u[n / 2] = 1.0;\n    for _s in 0..200 {\n        schritt(&u, &mut w, 0.4);\n        std::mem::swap(&mut u, &mut w);\n    }\n    let mut summe = 0.0;\n    for i in 0..n {\n        summe = summe + u[i];\n    }\n    println!(\"{:.6} {:.6}\", u[n / 2], summe);\n}\n",
        "starter": "fn schritt(u: &Vec<f64>, w: &mut Vec<f64>, r: f64) {\n    let n = u.len();\n    for i in 1..n - 1 {\n        w[i] = u[i];\n    }\n}\n\nfn main() {\n    let n = 41;\n    let mut u = vec![0.0; n];\n    let mut w = vec![0.0; n];\n    u[n / 2] = 1.0;\n    for _s in 0..200 {\n        schritt(&u, &mut w, 0.4);\n        std::mem::swap(&mut u, &mut w);\n    }\n    let mut summe = 0.0;\n    for i in 0..n {\n        summe = summe + u[i];\n    }\n    println!(\"{:.6} {:.6}\", u[n / 2], summe);\n}\n",
-       "why": "Dieselben Zahlen wie im C-Kapitel: 0.031086 und 0.771801. Dasselbe Verfahren, dieselbe Fließkommaarithmetik -- die Sprache ändert am Ergebnis nichts.\n\nWas sie ändert, ist die Fehlersuche davor: `2.0` muss `2.0` heißen und nicht `2`, das alte Feld ist als `&` erkennbar nur zum Lesen da, und ein Index daneben bricht mit Meldung ab, statt still eine fremde Variable zu beschreiben."
+       "why": "Dieselben Zahlen wie im C-Kapitel: 0.031086 und 0.771801. Dasselbe Verfahren, dieselbe Fließkommaarithmetik -- die Sprache ändert am Ergebnis nichts.\n\nWas sie ändert, ist die Fehlersuche davor: `2.0` muss `2.0` heißen und nicht `2`, das alte Feld ist als `&` erkennbar nur zum Lesen da, und ein Index daneben bricht mit Meldung ab, statt still eine fremde Variable zu beschreiben.",
+       "ziel": {
+        "de": "Den Stern in `schritt` einbauen und nachrechnen, dass C und Rust bis auf die letzte Stelle dasselbe liefern.",
+        "en": "Build the stencil into `schritt` and check that C and Rust give the same thing down to the last digit."
+       }
       }
      ],
      "ausgabe": "Mitte 0.031086  Summe 0.771801\n",
@@ -3078,6 +3778,10 @@
        "answer": 0,
        "code": "",
        "kind": "mc",
+       "mathematisch": {
+        "de": "Eine eigene Struktur ist nicht `Copy`. `energie(p)` wuerde sie verschieben, und die naechste Zeile in `main` waere ein Fehler; `&Teilchen` leiht nur. Der Nebeneffekt ist derselbe wie bei `const&` in C++: Es wird nichts kopiert -- und die Regel gilt unabhaengig davon, wie gross die Struktur ist.",
+        "en": "A structure of your own is not `Copy`. `energie(p)` would move it, and the next line in `main` would be an error; `&Teilchen` only borrows. The side effect is the same as with `const&` in C++: nothing is copied -- and the rule holds regardless of how big the structure is."
+       },
        "options": [
         {
          "de": "Weil sie nur liest -- mit `Teilchen` wäre der Besitz weg und `p` danach unbenutzbar.",
@@ -3100,9 +3804,17 @@
         "de": "Warum nimmt `energie` ein `&Teilchen` und nicht ein `Teilchen`?",
         "en": "Why does `energie` take a `&Teilchen` and not a `Teilchen`?"
        },
-       "why": "Eine eigene Struktur ist nicht `Copy`. `energie(p)` würde sie verschieben, und die nächste Zeile in `main` wäre ein Fehler.\n\nDer Nebeneffekt ist derselbe wie bei `const&` in C++: Es wird nichts kopiert. Bei zwei Kommazahlen wäre das egal, bei einer Struktur mit einem Gitter darin nicht -- und die Regel ist dieselbe, egal wie groß die Struktur ist."
+       "why": "Eine eigene Struktur ist nicht `Copy`. `energie(p)` würde sie verschieben, und die nächste Zeile in `main` wäre ein Fehler.\n\nDer Nebeneffekt ist derselbe wie bei `const&` in C++: Es wird nichts kopiert. Bei zwei Kommazahlen wäre das egal, bei einer Struktur mit einem Gitter darin nicht -- und die Regel ist dieselbe, egal wie groß die Struktur ist.",
+       "ziel": {
+        "de": "Den Grund fuer das `&` nennen: Besitz, nicht Geschwindigkeit.",
+        "en": "Name the reason for the `&`: ownership, not speed."
+       }
       },
       {
+       "annahmen": {
+        "de": "Rust hilft hier nicht -- es ist ein Fehler des Verfahrens, nicht der Sprache. Was es hilft: `p` ist als `&mut` gekennzeichnet, der Leser sieht also sofort, dass die Funktion den Zustand aendert.",
+        "en": "Rust does not help here -- it is an error of the method, not of the language. What it does help with: `p` is marked `&mut`, so the reader sees at once that the function changes the state."
+       },
        "distractors": [
         "    p.x = p.x + p.v * dt;  // vor v",
         "    let p = Teilchen { x: 0.0, v: 0.0 };"
@@ -3115,15 +3827,39 @@
         "    p.x = p.x + p.v * dt;",
         "}"
        ],
+       "mathematisch": {
+        "de": "Symplektischer Schritt, und die Reihenfolge **ist** das Verfahren: `a = -x/m`, dann `v := v + a·dt`, dann `x := x + v·dt` mit dem **neuen** `v`. Wer `x` zuerst fortschreibt, hat das explizite Euler-Verfahren und eine Energie, die mit `(1 + dt²)` je Schritt waechst.",
+        "en": "A symplectic step, and the order **is** the method: `a = -x/m`, then `v := v + a·dt`, then `x := x + v·dt` with the **new** `v`. Advance `x` first and you have explicit Euler and an energy that grows by `(1 + dt²)` per step."
+       },
+       "physikalisch": {
+        "de": "Dieselbe Feder wie in Kapitel 3: `k = 1 N/m`, `m = 1 kg`, also `a = -x`. Keine Reibung.",
+        "en": "The same spring as in chapter 3: `k = 1 N/m`, `m = 1 kg`, hence `a = -x`. No friction."
+       },
        "q": {
         "de": "Setze einen symplektischen Schritt zusammen: erst die Beschleunigung, dann die Geschwindigkeit, dann der Ort mit dem **neuen** v.",
         "en": "Assemble a symplectic step: first the acceleration, then the velocity, then the position using the **new** v."
        },
-       "why": "Genau die Reihenfolge aus Kapitel 3: Wer den Ort zuerst fortschreibt, hat das explizite Euler-Verfahren und eine Energie, die davonläuft.\n\nRust hilft hier nicht -- es ist kein Fehler der Sprache, sondern des Verfahrens. Was es hilft: `p` ist als `&mut` gekennzeichnet, also weiß der Leser sofort, dass diese Funktion den Zustand verändert, und muss nicht nach einer versteckten Zuweisung suchen."
+       "why": "Genau die Reihenfolge aus Kapitel 3: Wer den Ort zuerst fortschreibt, hat das explizite Euler-Verfahren und eine Energie, die davonläuft.\n\nRust hilft hier nicht -- es ist kein Fehler der Sprache, sondern des Verfahrens. Was es hilft: `p` ist als `&mut` gekennzeichnet, also weiß der Leser sofort, dass diese Funktion den Zustand verändert, und muss nicht nach einer versteckten Zuweisung suchen.",
+       "ziel": {
+        "de": "Den symplektischen Schritt in der richtigen Reihenfolge zusammensetzen.",
+        "en": "Assemble the symplectic step in the right order."
+       }
       },
       {
+       "annahmen": {
+        "de": "`m` steht in der Struktur und wird nicht als zweiter Parameter durchgereicht -- genau dafuer sind Strukturen da.",
+        "en": "`m` lives in the structure and is not passed as a second parameter -- that is exactly what structures are for."
+       },
        "expect": "0.5004",
        "kind": "code",
+       "mathematisch": {
+        "de": "Jetzt mit Masse in der Gleichung: `x'' = -(k/m)·x`, also `a = -x/m`. Die Kreisfrequenz ist `ω = √(k/m)`, die Schwingdauer `T = 2π/ω`.\n\nDie Energie ist `E = ½mv² + ½kx²`. Start bei `x = 1 m`, `v = 0`, also `E = ½·k·1² = 0,5 J` -- die Masse steht nicht darin, weil `v` null ist. Der symplektische Schritt haelt `E` in einem festen Band; `0,5004` ist kein Fehler, sondern dessen Breite.",
+        "en": "Now with the mass in the equation: `x'' = -(k/m)·x`, so `a = -x/m`. The angular frequency is `ω = √(k/m)`, the period `T = 2π/ω`.\n\nThe energy is `E = ½mv² + ½kx²`. Starting at `x = 1 m`, `v = 0`, so `E = ½·k·1² = 0.5 J` -- the mass does not appear because `v` is zero. The symplectic step keeps `E` inside a fixed band; `0.5004` is not an error but the width of that band."
+       },
+       "physikalisch": {
+        "de": "Feder mit `k = 1 N/m`, aber `m = 2 kg`: `ω = √(1/2) = 0,707 rad/s`, Schwingdauer `T = 8,9 s` -- die doppelte Masse schwingt langsamer. 400 Schritte zu `dt = 0,05 s` sind 20 s, also gut zwei Schwingungen.",
+        "en": "A spring with `k = 1 N/m` but `m = 2 kg`: `ω = √(1/2) = 0.707 rad/s`, period `T = 8.9 s` -- twice the mass oscillates more slowly. 400 steps of `dt = 0.05 s` are 20 s, a good two oscillations."
+       },
        "plot": false,
        "q": {
         "de": "Erweitere das Teilchen um ein Feld `m` für die Masse und rechne die Beschleunigung als `-p.x / p.m`. Nimm `m = 2.0`, 400 Schritte, `dt = 0.05`, und gib die Energie `0.5*m*v*v + 0.5*x*x` am Ende mit vier Stellen aus.",
@@ -3132,7 +3868,11 @@
        "seconds": 25,
        "solution": "struct Teilchen {\n    x: f64,\n    v: f64,\n    m: f64,\n}\n\nfn schritt(p: &mut Teilchen, dt: f64) {\n    let a = -p.x / p.m;\n    p.v = p.v + a * dt;\n    p.x = p.x + p.v * dt;\n}\n\nfn main() {\n    let mut p = Teilchen { x: 1.0, v: 0.0, m: 2.0 };\n    for _i in 0..400 {\n        schritt(&mut p, 0.05);\n    }\n    println!(\"{:.4}\", 0.5 * p.m * p.v * p.v + 0.5 * p.x * p.x);\n}\n",
        "starter": "struct Teilchen {\n    x: f64,\n    v: f64,\n    m: f64,\n}\n\nfn schritt(p: &mut Teilchen, dt: f64) {\n    let a = -p.x;\n    p.v = p.v + a * dt;\n    p.x = p.x + p.v * dt;\n}\n\nfn main() {\n    let mut p = Teilchen { x: 1.0, v: 0.0, m: 2.0 };\n    for _i in 0..400 {\n        schritt(&mut p, 0.05);\n    }\n    println!(\"{:.4}\", 0.5 * p.m * p.v * p.v + 0.5 * p.x * p.x);\n}\n",
-       "why": "Mit der doppelten Masse schwingt dieselbe Feder langsamer -- die Kreisfrequenz ist `sqrt(k/m)` --, und die Energie bleibt wieder nahe bei 0.5.\n\nBeachte, dass `p.m` in der Struktur steht und nicht als zweiter Parameter durchgereicht wird. Genau dafür sind Strukturen da: Was physikalisch zu einem Teilchen gehört, steht an einer Stelle, und die Signatur von `schritt` bleibt kurz, auch wenn später Ladung, Radius und Kraftgesetz dazukommen."
+       "why": "Mit der doppelten Masse schwingt dieselbe Feder langsamer -- die Kreisfrequenz ist `sqrt(k/m)` --, und die Energie bleibt wieder nahe bei 0.5.\n\nBeachte, dass `p.m` in der Struktur steht und nicht als zweiter Parameter durchgereicht wird. Genau dafür sind Strukturen da: Was physikalisch zu einem Teilchen gehört, steht an einer Stelle, und die Signatur von `schritt` bleibt kurz, auch wenn später Ladung, Radius und Kraftgesetz dazukommen.",
+       "ziel": {
+        "de": "Die Masse in die Struktur aufnehmen und sehen, dass die Energieerhaltung auch mit `m ≠ 1` haelt.",
+        "en": "Take the mass into the structure and see that energy conservation holds with `m ≠ 1` as well."
+       }
       }
      ],
      "ausgabe": "Energie am Anfang 0.5000\nEnergie am Ende   0.4912\n",
