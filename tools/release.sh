@@ -32,9 +32,11 @@ NOTIZ=$(mktemp)
 cat > "$NOTIZ" <<NOTE
 Lehrer $VERSION
 
-Drei Kurse, ein Programm: **C-Lehrer** (C, C++, Rust und Python mit Blick auf
-Simulation), **Segelschein** (Theorie für den Segelschein A) und **Segelflug**
-(Wolken lesen und Segelflugtheorie).
+Vier Kurse, ein Programm: **C-Lehrer** (C, C++, Rust und Python mit Blick auf
+Simulation), **Segelschein** (Theorie für den Segelschein A), **Segelflug**
+(Wolken lesen und Segelflugtheorie) und **Meteorologie** (für Physiker, jede
+Formel hergeleitet). Die Pakete der drei anderen Kurse liegen an den Releases
+ihrer eigenen Repos (segelschein, segelflug, meteorologie).
 
 Für jeden Kurs ein Paket, je für \`aarch64\` und \`armv7hl\`. Installiert wird
 mit \`pkcon install-local <datei>.rpm\` oder \`rpm -Uvh <datei>.rpm\`.
