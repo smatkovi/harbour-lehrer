@@ -1,0 +1,6302 @@
+{
+ "formel-000a429a-17": {
+  "breite": 285,
+  "groesse": 17,
+  "hoehe": 38,
+  "tex": "$v = \\sqrt{4\\,\\rho_{Eis}\\,g\\,D\\,/\\,(3\\,c_w\\,\\rho_{Luft})}$"
+ },
+ "formel-0027034d-17": {
+  "breite": 15,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\rho$"
+ },
+ "formel-00907270-17": {
+  "breite": 117,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$H = R_L T/g$"
+ },
+ "formel-00d0fb74-17": {
+  "breite": 132,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\ln 2/\\lambda = 0.77$"
+ },
+ "formel-00e7311f-17": {
+  "breite": 131,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$Ro = U/(fL)$"
+ },
+ "formel-00fc2983-17": {
+  "breite": 87,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$f = 10^{-4}$"
+ },
+ "formel-016ac31a-17": {
+  "breite": 74,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$Ro \\ll 1$"
+ },
+ "formel-019e9892-17": {
+  "breite": 20,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$A$"
+ },
+ "formel-01b406c8-17": {
+  "breite": 163,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$v = 2\\rho_w g r^2/(9\\eta)$"
+ },
+ "formel-01bac0c4-17": {
+  "breite": 33,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$1.4$"
+ },
+ "formel-0204aff1-17": {
+  "breite": 81,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$1.2\\cdot 10^{7}$"
+ },
+ "formel-021f16e6-20": {
+  "breite": 205,
+  "groesse": 20,
+  "hoehe": 50,
+  "tex": "$V = \\frac{\\ln(1/0.02)}{\\beta} = \\frac{3.91}{\\beta}$"
+ },
+ "formel-022f0081-17": {
+  "breite": 95,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$s_\\theta = 10^{-3}$"
+ },
+ "formel-0290d918-17": {
+  "breite": 91,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$i = 71{,}9^\\circ$"
+ },
+ "formel-02a942aa-17": {
+  "breite": 259,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$2\\arcsin(0.926) - 90 = 46^\\circ$"
+ },
+ "formel-02b8239b-17": {
+  "breite": 316,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$298{,}85\\cdot(1000/950)^{0{,}286} = 303{,}3$"
+ },
+ "formel-035204d4-17": {
+  "breite": 94,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r = 40.3^\\circ$"
+ },
+ "formel-037eae37-17": {
+  "breite": 191,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$S^* - 1 = 1{,}4\\cdot 10^{-3}$"
+ },
+ "formel-03e1b044-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 34,
+  "tex": "$\\sigma T_e^4 = \\frac{S_0\\,(1 - A)}{4} \\quad\\Rightarrow\\quad T_e = \\left(\\frac{1361\\cdot 0.70}{4\\cdot 5.67\\cdot 10^{-8}}\\right)^{1/4} = 255\\,\\mathrm{K}$"
+ },
+ "formel-0402a7da-17": {
+  "breite": 33,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$1{,}4$"
+ },
+ "formel-04037d73-17": {
+  "breite": 83,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\nabla_p p = 0$"
+ },
+ "formel-04058723-17": {
+  "breite": 82,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$A = 60^\\circ$"
+ },
+ "formel-04289647-17": {
+  "breite": 149,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$T(z) = T_0 - \\Gamma z$"
+ },
+ "formel-0434c25e-17": {
+  "breite": 400,
+  "groesse": 17,
+  "hoehe": 24,
+  "tex": "$\\Delta p = \\rho g h\\,\\Delta T/T = 1{,}2\\cdot 9{,}81\\cdot 1000\\cdot 5/290 \\approx 2$"
+ },
+ "formel-0474cc94-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 34,
+  "tex": "$\\frac{d\\vec v}{dt} = -\\frac{1}{\\rho}\\nabla p - 2\\vec\\Omega\\times\\vec v - \\vec\\Omega\\times(\\vec\\Omega\\times\\vec r) + \\vec g^* + \\vec F$"
+ },
+ "formel-0559ffc8-17": {
+  "breite": 24,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$u_1$"
+ },
+ "formel-05e56395-17": {
+  "breite": 179,
+  "groesse": 17,
+  "hoehe": 32,
+  "tex": "$c_g = U + \\beta/k^2 > c$"
+ },
+ "formel-060674a2": {
+  "breite": 400,
+  "groesse": 22,
+  "hoehe": 43,
+  "tex": "$r\\,\\frac{dr}{dt} = \\xi\\,S \\quad\\Rightarrow\\quad r^2 = r_0^2 + 2\\,\\xi\\,S\\,t$"
+ },
+ "formel-0611e423-17": {
+  "breite": 93,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$\\xi \\approx 10^{-10}$"
+ },
+ "formel-062f79a9-17": {
+  "breite": 80,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\alpha = 1/\\rho$"
+ },
+ "formel-063e88f5-17": {
+  "breite": 55,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$v^2/R$"
+ },
+ "formel-0641a468-17": {
+  "breite": 245,
+  "groesse": 17,
+  "hoehe": 68,
+  "tex": "$M_v = \\int_0^D v\\,dz = u_g D_E/2$"
+ },
+ "formel-066b4852-17": {
+  "breite": 128,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$g\\,(T' - T)/T$"
+ },
+ "formel-067f5ad6-17": {
+  "breite": 113,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$N = 0.0106$"
+ },
+ "formel-06854f43-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 37,
+  "tex": "$\\frac{dT_d}{dz} = -\\frac{g\\,R_v\\,T_d^2}{R_L\\,L_v\\,T} \\approx -\\frac{9{,}81\\cdot 461{,}5\\cdot 285}{287\\cdot 2{,}5\\cdot 10^6} = -1{,}8\\cdot 10^{-3}\\,\\mathrm{K/m}$"
+ },
+ "formel-0725e2d5-17": {
+  "breite": 24,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$u_2$"
+ },
+ "formel-073f958b-17": {
+  "breite": 185,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\zeta = \\partial v/\\partial x - \\partial u/\\partial y$"
+ },
+ "formel-0748c905-17": {
+  "breite": 72,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$k \\approx 0.7$"
+ },
+ "formel-07d040c8": {
+  "breite": 368,
+  "groesse": 22,
+  "hoehe": 47,
+  "tex": "$L_{max} \\approx 3{,}9\\,\\frac{N\\,H}{f}, \\qquad L_R = \\frac{N\\,H}{f}$"
+ },
+ "formel-092e364e-17": {
+  "breite": 15,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$y$"
+ },
+ "formel-097b8888-17": {
+  "breite": 72,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$k \\approx 0{,}7$"
+ },
+ "formel-0982ccd5-17": {
+  "breite": 103,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$K = 0.024$"
+ },
+ "formel-0a207655-17": {
+  "breite": 120,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\vec v = (u, v, w)$"
+ },
+ "formel-0a42a8b7-17": {
+  "breite": 14,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\delta$"
+ },
+ "formel-0a4e93fb-20": {
+  "breite": 174,
+  "groesse": 20,
+  "hoehe": 40,
+  "tex": "$\\frac{d\\theta}{dz} = \\frac{\\theta}{T}\\,(\\Gamma_d - \\Gamma)$"
+ },
+ "formel-0a8ebeb6-17": {
+  "breite": 392,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\Delta T = 60\\cdot 28\\,800/(1.2\\cdot 1004\\cdot 200) = 7.2$"
+ },
+ "formel-0aa89d8f-17": {
+  "breite": 103,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\beta = df/dy$"
+ },
+ "formel-0ab767e1-17": {
+  "breite": 93,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\varepsilon_a = 0{,}77$"
+ },
+ "formel-0abb7475-17": {
+  "breite": 41,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$f\\cdot v$"
+ },
+ "formel-0b2d40d0-17": {
+  "breite": 49,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$v(R)$"
+ },
+ "formel-0b511ac2-17": {
+  "breite": 153,
+  "groesse": 17,
+  "hoehe": 36,
+  "tex": "$L_s = 2\\pi\\sqrt{U/\\beta}$"
+ },
+ "formel-0b65be56-17": {
+  "breite": 14,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\vec r$"
+ },
+ "formel-0b9d8003-17": {
+  "breite": 137,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$p_0/g = 10\\,330$"
+ },
+ "formel-0c28ed08-17": {
+  "breite": 146,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$9.3 - 6.0 = 3.3$"
+ },
+ "formel-0c5d29a8-17": {
+  "breite": 400,
+  "groesse": 17,
+  "hoehe": 21,
+  "tex": "$0.78\\cdot 28.01 + 0.21\\cdot 32.00 + 0.0093\\cdot 39.95 = 28.96$"
+ },
+ "formel-0c800f21-17": {
+  "breite": 120,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T = T_0 - \\Gamma z$"
+ },
+ "formel-0c83808b": {
+  "breite": 400,
+  "groesse": 22,
+  "hoehe": 56,
+  "tex": "$\\mathrm{CAPE} = \\int_{LFC}^{EL} g\\,\\frac{T_v' - T_v}{T_v}\\,dz, \\qquad w_{max} = \\sqrt{2\\,\\mathrm{CAPE}}$"
+ },
+ "formel-0cdbcbd6-17": {
+  "breite": 107,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\rho = \\rho(p, T)$"
+ },
+ "formel-0ced7d34-17": {
+  "breite": 186,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$r = 0.622\\,e/(p - e)$"
+ },
+ "formel-0cf120c9-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 35,
+  "tex": "$c_p\\,dT = -g\\,dz \\quad\\Rightarrow\\quad \\frac{dT}{dz} = -\\frac{g}{c_p} = -9{,}8\\ \\frac{\\mathrm{K}}{\\mathrm{km}}$"
+ },
+ "formel-0d0654e1-17": {
+  "breite": 188,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$\\psi = \\psi_0\\,e^{i(kx + ly - \\omega t)}$"
+ },
+ "formel-0d509800-17": {
+  "breite": 65,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\pi - 2r$"
+ },
+ "formel-0d67cacc-17": {
+  "breite": 91,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$i = 59{,}4^\\circ$"
+ },
+ "formel-0dbd7782": {
+  "breite": 336,
+  "groesse": 22,
+  "hoehe": 71,
+  "tex": "$\\frac{dC}{dt} = -\\oint \\frac{dp}{\\rho}, \\qquad C = \\oint \\vec v\\cdot d\\vec l$"
+ },
+ "formel-0de134bb": {
+  "breite": 400,
+  "groesse": 22,
+  "hoehe": 48,
+  "tex": "$\\Delta F = 5{,}35\\,\\frac{\\mathrm{W}}{\\mathrm{m^2}}\\,\\ln\\frac{C}{C_0}, \\qquad \\Delta T_0 = \\frac{\\Delta F}{4\\sigma T_e^3}$"
+ },
+ "formel-0e2db5e6-17": {
+  "breite": 121,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$v(r) \\ll v(R)$"
+ },
+ "formel-0e954790-17": {
+  "breite": 57,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$uw/a$"
+ },
+ "formel-0eae3cb8-17": {
+  "breite": 86,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r^* = 0{,}2$"
+ },
+ "formel-0ec8f8d0-17": {
+  "breite": 78,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$L = 10^6$"
+ },
+ "formel-0ee10824-17": {
+  "breite": 105,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\delta = 230.4^\\circ$"
+ },
+ "formel-0eed4738-17": {
+  "breite": 400,
+  "groesse": 17,
+  "hoehe": 21,
+  "tex": "$0{,}78\\cdot 28{,}01 + 0{,}21\\cdot 32{,}00 + 0{,}0093\\cdot 39{,}95 = 28{,}96$"
+ },
+ "formel-0f68001a-17": {
+  "breite": 102,
+  "groesse": 17,
+  "hoehe": 34,
+  "tex": "$\\frac{\\pi}{6}D^3\\rho_{Eis}\\,g$"
+ },
+ "formel-0fbb692f-17": {
+  "breite": 89,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$A = 0{,}30$"
+ },
+ "formel-0fef4d70-17": {
+  "breite": 91,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$i = 59.4^\\circ$"
+ },
+ "formel-106f3d5a-17": {
+  "breite": 151,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$r_s \\approx 0{,}622\\,e_s/p$"
+ },
+ "formel-10c6fdb1-17": {
+  "breite": 51,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T_{LCL}$"
+ },
+ "formel-10f32377-17": {
+  "breite": 17,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\alpha$"
+ },
+ "formel-10fef076": {
+  "breite": 122,
+  "groesse": 22,
+  "hoehe": 48,
+  "tex": "$\\frac{dp}{dz} = -\\rho\\,g$"
+ },
+ "formel-1166ecc4-17": {
+  "breite": 65,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$a\\cos\\varphi$"
+ },
+ "formel-1183bc09-17": {
+  "breite": 194,
+  "groesse": 17,
+  "hoehe": 32,
+  "tex": "$\\Delta z = 20.3\\,\\mathrm{m/K}\\cdot\\overline{T_v}$"
+ },
+ "formel-11855966-17": {
+  "breite": 65,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$w \\ll u$"
+ },
+ "formel-118ce764-17": {
+  "breite": 25,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$S_0$"
+ },
+ "formel-11ea8a4b-17": {
+  "breite": 180,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$b = g\\,(T_v' - T_v)/T_v$"
+ },
+ "formel-12d2aa99-17": {
+  "breite": 271,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$\\beta = 2\\Omega\\cos\\varphi/a = 1{,}6\\cdot 10^{-11}$"
+ },
+ "formel-12ed8531-17": {
+  "breite": 55,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T = 7$"
+ },
+ "formel-13024be8-17": {
+  "breite": 85,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Gamma_d = 9.8$"
+ },
+ "formel-13924e8d-17": {
+  "breite": 157,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$dT_d/dz \\approx -1.7$"
+ },
+ "formel-139bda47-20": {
+  "breite": 330,
+  "groesse": 20,
+  "hoehe": 46,
+  "tex": "$\\frac{\\partial p_1}{\\partial y}dy + \\frac{\\partial p_1}{\\partial z}dz = \\frac{\\partial p_2}{\\partial y}dy + \\frac{\\partial p_2}{\\partial z}dz$"
+ },
+ "formel-13b0fe42-17": {
+  "breite": 374,
+  "groesse": 17,
+  "hoehe": 31,
+  "tex": "$L_v \\Delta r / c_p = 2.5\\cdot 10^{6}\\cdot 0.007/1004 \\approx 17$"
+ },
+ "formel-13d16b04-17": {
+  "breite": 376,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$T_v = T/[1 - 0.378\\,e/p] \\approx T\\,(1 + 0.61\\,r)$"
+ },
+ "formel-13e1959f-20": {
+  "breite": 141,
+  "groesse": 20,
+  "hoehe": 47,
+  "tex": "$\\left|\\frac{\\partial p}{\\partial n}\\right| > \\frac{\\rho\\,f^2\\,|R|}{4}$"
+ },
+ "formel-141aa650-17": {
+  "breite": 400,
+  "groesse": 17,
+  "hoehe": 19,
+  "tex": "$ds = \\delta q/T = c_p\\,dT/T - R_L\\,dp/p = c_p\\,d(\\ln T - \\kappa\\ln p) = c_p\\,d\\ln\\theta$"
+ },
+ "formel-144d30e0-17": {
+  "breite": 45,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\overline{v'T'}$"
+ },
+ "formel-1471280a-17": {
+  "breite": 272,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$i_1 = i_2 = \\arcsin(n\\sin(A/2))$"
+ },
+ "formel-1485fb97-17": {
+  "breite": 64,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$dT/dz$"
+ },
+ "formel-148a0aa7-17": {
+  "breite": 172,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\delta - 180^\\circ = 50{,}4^\\circ$"
+ },
+ "formel-14aadad9-17": {
+  "breite": 239,
+  "groesse": 17,
+  "hoehe": 32,
+  "tex": "$(1 - \\Gamma z/T_0)^{1/\\Gamma} \\to e^{-z/T_0}$"
+ },
+ "formel-1511d290-20": {
+  "breite": 115,
+  "groesse": 20,
+  "hoehe": 50,
+  "tex": "$v = \\frac{2\\,\\rho_w\\,g\\,r^2}{9\\,\\eta}$"
+ },
+ "formel-15495d12-17": {
+  "breite": 40,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$1/f$"
+ },
+ "formel-1580f1fd-17": {
+  "breite": 324,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$c_p = c_v + R_L = 717 + 287 = 1004$"
+ },
+ "formel-1589a2d7-17": {
+  "breite": 208,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$c_p\\,d\\ln\\theta = -L_v\\,dr_s/T$"
+ },
+ "formel-15c16740-17": {
+  "breite": 66,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\sigma = 10$"
+ },
+ "formel-15d7b6de-20": {
+  "breite": 267,
+  "groesse": 20,
+  "hoehe": 65,
+  "tex": "$\\frac{d\\Gamma_C}{dt} = -\\oint\\frac{\\nabla p}{\\rho}\\cdot d\\vec l = -\\oint\\frac{dp}{\\rho}$"
+ },
+ "formel-16740e8c-17": {
+  "breite": 50,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\tau > 1$"
+ },
+ "formel-167b4126-17": {
+  "breite": 64,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$-\\alpha\\,dp$"
+ },
+ "formel-16c56210-17": {
+  "breite": 46,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$s_\\theta/2$"
+ },
+ "formel-16caf4c2-17": {
+  "breite": 67,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$NH/f$"
+ },
+ "formel-16ecc740-20": {
+  "breite": 332,
+  "groesse": 20,
+  "hoehe": 46,
+  "tex": "$\\frac{d^2\\,\\delta z}{dt^2} = -N^2\\,\\delta z, \\qquad N^2 = \\frac{g}{\\theta}\\,\\frac{d\\theta}{dz}$"
+ },
+ "formel-16fea153-17": {
+  "breite": 193,
+  "groesse": 17,
+  "hoehe": 40,
+  "tex": "$\\mu_v(e) = \\mu_w + \\frac{dG_{Oberfl}}{dN}$"
+ },
+ "formel-17270943-17": {
+  "breite": 232,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\beta = df/dy = 2\\Omega\\cos\\varphi/a$"
+ },
+ "formel-174fadd0-17": {
+  "breite": 17,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$n$"
+ },
+ "formel-17792b93-20": {
+  "breite": 147,
+  "groesse": 20,
+  "hoehe": 40,
+  "tex": "$\\frac{d}{dt}(\\zeta + f) = 0$"
+ },
+ "formel-18109718-17": {
+  "breite": 69,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$U = 10$"
+ },
+ "formel-186778bf-17": {
+  "breite": 138,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$8 \\cdot 125 = 1000$"
+ },
+ "formel-186ddf6c-17": {
+  "breite": 259,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$9{,}81/(287\\cdot 0{,}0065) = 5{,}26$"
+ },
+ "formel-1899069f-17": {
+  "breite": 145,
+  "groesse": 17,
+  "hoehe": 34,
+  "tex": "$\\frac{1}{2}c_d\\,\\rho_{air}\\,v^2\\,\\frac{\\pi}{4}D^2$"
+ },
+ "formel-18e2d1e0-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 58,
+  "tex": "$-\\oint\\frac{dp}{\\rho} = -\\oint R_L T\\,\\frac{dp}{p} = R_L\\,(T_L - T_S)\\,\\ln\\frac{p_0}{p_h}$"
+ },
+ "formel-18ed4b15-17": {
+  "breite": 87,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$Ro = 0.1$"
+ },
+ "formel-19441948-17": {
+  "breite": 43,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\sin i$"
+ },
+ "formel-19f2b708-17": {
+  "breite": 15,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\vec g$"
+ },
+ "formel-1a074781-17": {
+  "breite": 260,
+  "groesse": 17,
+  "hoehe": 56,
+  "tex": "$-\\oint\\alpha\\,dp = \\int\\!\\!\\int\\nabla\\alpha\\times\\nabla p\\cdot d\\vec A$"
+ },
+ "formel-1a57f628-17": {
+  "breite": 31,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\vec v_{in}$"
+ },
+ "formel-1a927faf-17": {
+  "breite": 95,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\rho_{air} = 0.9$"
+ },
+ "formel-1ab06870-17": {
+  "breite": 261,
+  "groesse": 17,
+  "hoehe": 37,
+  "tex": "$v = \\sqrt{8\\rho_w g r/(3 c_w\\rho_L)} = 4$"
+ },
+ "formel-1adf6258-17": {
+  "breite": 90,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$M = \\sigma T^4$"
+ },
+ "formel-1b4ebf82-17": {
+  "breite": 68,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$d'\\vec v/dt$"
+ },
+ "formel-1b5d68f1-17": {
+  "breite": 207,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$u = u_g(1 + e^{-\\pi}) \\approx u_g$"
+ },
+ "formel-1b840c33-17": {
+  "breite": 172,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\tan\\alpha = 2{,}9\\cdot 10^{-3}$"
+ },
+ "formel-1b8b2f65-20": {
+  "breite": 225,
+  "groesse": 20,
+  "hoehe": 102,
+  "tex": "$\\Gamma_s = \\Gamma_d\\;\\frac{1 + \\dfrac{L_v\\,r_s}{R_L\\,T}}{1 + \\dfrac{0{,}622\\,L_v^2\\,r_s}{c_p\\,R_L\\,T^2}}$"
+ },
+ "formel-1b8e83f1-17": {
+  "breite": 167,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$= 1.2\\cdot 10^{-9}\\,\\mathrm{m}/r$"
+ },
+ "formel-1b92e2e3-17": {
+  "breite": 84,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$D = 450$"
+ },
+ "formel-1bd6fe73-17": {
+  "breite": 395,
+  "groesse": 17,
+  "hoehe": 31,
+  "tex": "$L_v\\,\\Delta r/c_p = 2{,}5\\cdot 10^6\\cdot 0{,}0033/1004 = 8{,}2$"
+ },
+ "formel-1c56ec17-17": {
+  "breite": 123,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$ds = c_p\\,d\\ln\\theta$"
+ },
+ "formel-1cae3877-17": {
+  "breite": 59,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\vec\\Omega\\times\\vec v$"
+ },
+ "formel-1cbc508f-17": {
+  "breite": 118,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$\\delta(t) = \\delta_0\\,e^{\\lambda t}$"
+ },
+ "formel-1ccd7a9f-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 32,
+  "tex": "$f\\,(v - v_g) + K\\frac{\\partial^2 u}{\\partial z^2} = 0, \\qquad -f\\,(u - u_g) + K\\frac{\\partial^2 v}{\\partial z^2} = 0$"
+ },
+ "formel-1dfd9a02-17": {
+  "breite": 101,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$1.6\\cdot 10^{-11}$"
+ },
+ "formel-1e0318ea-17": {
+  "breite": 185,
+  "groesse": 17,
+  "hoehe": 39,
+  "tex": "$\\sqrt{gH\\Delta\\theta/(\\theta\\,\\Omega^2 a^2)}$"
+ },
+ "formel-1e43d64d-17": {
+  "breite": 69,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Gamma < \\Gamma_d$"
+ },
+ "formel-201ff53e-17": {
+  "breite": 112,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\ln 2/\\sigma = 21$"
+ },
+ "formel-20509e09-17": {
+  "breite": 72,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\rho = 0.7$"
+ },
+ "formel-209a66ad-17": {
+  "breite": 90,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$0 \\leq \\nu \\leq 1$"
+ },
+ "formel-21151856-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 43,
+  "tex": "$r\\,\\frac{dr}{dt} = \\frac{D}{\\rho_w}\\,(\\rho_{v,\\infty} - \\rho_{v,r}) \\approx \\frac{D\\,\\rho_{v,s}}{\\rho_w}\\,S = \\xi\\,S$"
+ },
+ "formel-213af0a3-17": {
+  "breite": 400,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\sigma = 0{,}31\\cdot 10^{-4}\\cdot 30/(0{,}01\\cdot 10^4) = 9{,}3\\cdot 10^{-6}$"
+ },
+ "formel-2155e4c3-17": {
+  "breite": 217,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T_{crest} = 10.2 - 9 = 1.2$"
+ },
+ "formel-21cae69e-17": {
+  "breite": 63,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T_{Boden}$"
+ },
+ "formel-21d48668-20": {
+  "breite": 178,
+  "groesse": 20,
+  "hoehe": 47,
+  "tex": "$\\vec v_g = \\frac{1}{f}\\,\\hat k\\times\\nabla_p\\Phi$"
+ },
+ "formel-222c79bc-17": {
+  "breite": 58,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\theta \\approx T$"
+ },
+ "formel-2256f0a2-17": {
+  "breite": 199,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$3{,}7/(3{,}76 - 2{,}0) \\approx 2$"
+ },
+ "formel-22779de4-17": {
+  "breite": 79,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$c_d \\approx 0.6$"
+ },
+ "formel-228f09c0-17": {
+  "breite": 89,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$N = 0.01$"
+ },
+ "formel-22d88351-17": {
+  "breite": 50,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\partial/\\partial x$"
+ },
+ "formel-238b9b42-17": {
+  "breite": 57,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\partial p/\\partial t$"
+ },
+ "formel-23e4c342": {
+  "breite": 240,
+  "groesse": 22,
+  "hoehe": 56,
+  "tex": "$\\frac{\\partial \\vec v_g}{\\partial \\ln p} = -\\frac{R_L}{f}\\,\\hat k\\times\\nabla T$"
+ },
+ "formel-23e4c342-20": {
+  "breite": 219,
+  "groesse": 20,
+  "hoehe": 51,
+  "tex": "$\\frac{\\partial \\vec v_g}{\\partial \\ln p} = -\\frac{R_L}{f}\\,\\hat k\\times\\nabla T$"
+ },
+ "formel-2426f088-17": {
+  "breite": 380,
+  "groesse": 17,
+  "hoehe": 47,
+  "tex": "$\\frac{dG_{surf}}{dN} = \\sigma\\,\\frac{d(4\\pi r^2)}{dN} = \\sigma\\cdot 8\\pi r\\cdot\\frac{m_w}{\\rho_w 4\\pi r^2} = \\frac{2\\sigma m_w}{\\rho_w r}$"
+ },
+ "formel-242b382b-17": {
+  "breite": 400,
+  "groesse": 17,
+  "hoehe": 35,
+  "tex": "$\\frac{1}{\\theta}\\frac{d\\theta}{dz} = \\frac{1}{T}\\frac{dT}{dz} - \\frac{\\kappa}{p}\\frac{dp}{dz} = \\frac{1}{T}\\left(-\\Gamma + \\frac{\\kappa\\rho g T}{p}\\right) = \\frac{1}{T}\\left(\\Gamma_d - \\Gamma\\right)$"
+ },
+ "formel-2445c79f-17": {
+  "breite": 77,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$p \\approx 950$"
+ },
+ "formel-245e04ec-17": {
+  "breite": 201,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T_d = 12 - 1{,}8 = 10{,}2$"
+ },
+ "formel-25257d73-17": {
+  "breite": 95,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\rho = 1.225$"
+ },
+ "formel-2554b649-17": {
+  "breite": 20,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T$"
+ },
+ "formel-25a74938-17": {
+  "breite": 153,
+  "groesse": 17,
+  "hoehe": 33,
+  "tex": "$v^2/R = \\frac{1}{\\rho}\\partial p/\\partial n$"
+ },
+ "formel-25cfbe95-20": {
+  "breite": 151,
+  "groesse": 20,
+  "hoehe": 46,
+  "tex": "$\\frac{dp}{p} = -\\frac{g}{R_L T}\\,dz$"
+ },
+ "formel-262cc147-17": {
+  "breite": 116,
+  "groesse": 17,
+  "hoehe": 42,
+  "tex": "$\\frac{g}{R_L\\Gamma}\\,\\frac{d(T_0 - \\Gamma z)}{T_0 - \\Gamma z}$"
+ },
+ "formel-26915501-17": {
+  "breite": 200,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$z_{LCL} = (T - T_d)/8.0$"
+ },
+ "formel-2697de06-17": {
+  "breite": 316,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$298.85\\cdot(1000/950)^{0.286} = 303.3$"
+ },
+ "formel-269cd209-20": {
+  "breite": 366,
+  "groesse": 20,
+  "hoehe": 46,
+  "tex": "$\\frac{d^2\\delta z}{dt^2} = -\\frac{g}{T}\\,(\\Gamma_d - \\Gamma)\\,\\delta z = -N^2\\,\\delta z$"
+ },
+ "formel-26eeb525-17": {
+  "breite": 16,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$x$"
+ },
+ "formel-27293414-17": {
+  "breite": 88,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\beta = 10^{-5}$"
+ },
+ "formel-279c8980-17": {
+  "breite": 101,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$N = 0{,}011$"
+ },
+ "formel-27da549c-17": {
+  "breite": 107,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$|R| = 1000$"
+ },
+ "formel-281dba51-17": {
+  "breite": 108,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\sigma = 0.0756$"
+ },
+ "formel-282801b3-17": {
+  "breite": 172,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\tan\\alpha = 2.9\\cdot 10^{-3}$"
+ },
+ "formel-2869cc39-17": {
+  "breite": 376,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$T_v = T/[1 - 0{,}378\\,e/p] \\approx T\\,(1 + 0{,}61\\,r)$"
+ },
+ "formel-28930249-17": {
+  "breite": 212,
+  "groesse": 17,
+  "hoehe": 34,
+  "tex": "$d'(\\vec\\Omega\\times\\vec r)/dt = \\vec\\Omega\\times\\vec v$"
+ },
+ "formel-28984d08-20": {
+  "breite": 149,
+  "groesse": 20,
+  "hoehe": 43,
+  "tex": "$\\frac{v^2}{R} + f v = \\frac{1}{\\rho}\\frac{\\partial p}{\\partial n}$"
+ },
+ "formel-28e4dac8-17": {
+  "breite": 119,
+  "groesse": 17,
+  "hoehe": 31,
+  "tex": "$\\sigma T_s^4 = 2\\sigma T_a^4$"
+ },
+ "formel-28f63a3a-17": {
+  "breite": 154,
+  "groesse": 17,
+  "hoehe": 44,
+  "tex": "$de/e = \\frac{L_v}{R_v T_d^2}\\,dT_d$"
+ },
+ "formel-291cdd7b-17": {
+  "breite": 51,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\varepsilon < 1$"
+ },
+ "formel-292c0ff3-17": {
+  "breite": 97,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$n = 1.343$"
+ },
+ "formel-294ab607-17": {
+  "breite": 363,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$R_L = R^*/M = 8.314/0.02896 = 287$"
+ },
+ "formel-29577f39-17": {
+  "breite": 334,
+  "groesse": 17,
+  "hoehe": 31,
+  "tex": "$\\sigma T_s^4 = S_0(1-A)/4 + \\sigma T_a^4 = 2\\sigma T_a^4$"
+ },
+ "formel-295c1a21-20": {
+  "breite": 241,
+  "groesse": 20,
+  "hoehe": 44,
+  "tex": "$p = p_0\\left(1 - \\frac{\\Gamma z}{T_0}\\right)^{g/(R_L\\Gamma)}$"
+ },
+ "formel-296b1846-17": {
+  "breite": 59,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$R > 0$"
+ },
+ "formel-297cd848-17": {
+  "breite": 253,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$Q = (1-A)\\,S + L_\\downarrow - L_\\uparrow$"
+ },
+ "formel-298b83b0-17": {
+  "breite": 347,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\lambda = 2898\\ \\mathrm{\\mu m\\,K}/5772\\ \\mathrm{K} = 0.50\\ \\mathrm{\\mu m}$"
+ },
+ "formel-29e74cff-17": {
+  "breite": 64,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$4\\pi r^2\\sigma$"
+ },
+ "formel-29ff1735-17": {
+  "breite": 158,
+  "groesse": 17,
+  "hoehe": 35,
+  "tex": "$\\frac{d}{dT}(\\sigma T^4) = 4\\sigma T^3$"
+ },
+ "formel-2adc1c2b-17": {
+  "breite": 51,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\nu > 1$"
+ },
+ "formel-2adfc15e-17": {
+  "breite": 93,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$1.5\\cdot 10^{-3}$"
+ },
+ "formel-2af9e914-17": {
+  "breite": 379,
+  "groesse": 17,
+  "hoehe": 32,
+  "tex": "$v_g = 400/(1.2\\cdot 1.03\\cdot 10^{-4}\\cdot 4\\cdot 10^{5}) = 8$"
+ },
+ "formel-2b2fa104-17": {
+  "breite": 366,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$0.8\\cdot 3\\cdot 10^{-4}\\cdot 21\\cdot 3\\cdot 10^{-3} = 1.5\\cdot 10^{-5}$"
+ },
+ "formel-2b74bc2a-17": {
+  "breite": 169,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$-(\\sigma + 1 + \\beta) < 0$"
+ },
+ "formel-2c4c91f9-17": {
+  "breite": 55,
+  "groesse": 17,
+  "hoehe": 37,
+  "tex": "$\\sum t_n$"
+ },
+ "formel-2c77c793-17": {
+  "breite": 386,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$N^2 = 9{,}81/288\\cdot 3{,}3\\cdot 10^{-3} = 1{,}12\\cdot 10^{-4}$"
+ },
+ "formel-2cb1d4a5-17": {
+  "breite": 57,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$10^{-18}$"
+ },
+ "formel-2cd596ed-20": {
+  "breite": 108,
+  "groesse": 20,
+  "hoehe": 41,
+  "tex": "$N^2 = \\frac{g}{\\theta}\\,\\frac{d\\theta}{dz}$"
+ },
+ "formel-2cfeadab-17": {
+  "breite": 190,
+  "groesse": 17,
+  "hoehe": 34,
+  "tex": "$w_{max} = \\sqrt{2\\,\\mathrm{CAPE}}$"
+ },
+ "formel-2cfeadab-20": {
+  "breite": 222,
+  "groesse": 20,
+  "hoehe": 39,
+  "tex": "$w_{max} = \\sqrt{2\\,\\mathrm{CAPE}}$"
+ },
+ "formel-2e0f1816-17": {
+  "breite": 69,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$v \\propto R^2$"
+ },
+ "formel-2e2c9801-20": {
+  "breite": 298,
+  "groesse": 20,
+  "hoehe": 44,
+  "tex": "$\\left(\\frac{\\partial}{\\partial t} + U\\frac{\\partial}{\\partial x}\\right)\\nabla^2\\psi + \\beta\\,\\frac{\\partial\\psi}{\\partial x} = 0$"
+ },
+ "formel-2e653ba6-20": {
+  "breite": 188,
+  "groesse": 20,
+  "hoehe": 47,
+  "tex": "$\\tan\\alpha \\approx \\frac{f\\,T}{g}\\,\\frac{u_2 - u_1}{T_2 - T_1}$"
+ },
+ "formel-2ee251af-17": {
+  "breite": 203,
+  "groesse": 17,
+  "hoehe": 39,
+  "tex": "$\\cos i = \\sqrt{(n^2-1)/8}$"
+ },
+ "formel-2f3f2dad-17": {
+  "breite": 21,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$c_v$"
+ },
+ "formel-2fa9bdbc-17": {
+  "breite": 201,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T_d = 12 - 1.8 = 10.2$"
+ },
+ "formel-2fb40445-17": {
+  "breite": 137,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T\\,p^{-\\kappa} = \\mathrm{const}$"
+ },
+ "formel-30358feb-17": {
+  "breite": 69,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Gamma > \\Gamma_d$"
+ },
+ "formel-30375822-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 29,
+  "tex": "$S_0 = \\sigma T_\\odot^4\\left(\\frac{R_\\odot}{d}\\right)^2 = 5{,}67\\cdot 10^{-8}\\cdot 5772^4\\cdot\\left(\\frac{6{,}96\\cdot 10^8}{1{,}496\\cdot 10^{11}}\\right)^2 = 1361\\,\\mathrm{W/m^2}$"
+ },
+ "formel-3049f7e5-17": {
+  "breite": 99,
+  "groesse": 17,
+  "hoehe": 31,
+  "tex": "$L_\\uparrow = \\sigma T_s^4$"
+ },
+ "formel-304e664c": {
+  "breite": 252,
+  "groesse": 22,
+  "hoehe": 57,
+  "tex": "$\\frac{e_s(r)}{e_s(\\infty)} = \\exp\\!\\left(\\frac{2\\sigma}{\\rho_w\\,R_v\\,T\\,r}\\right)$"
+ },
+ "formel-304e664c-20": {
+  "breite": 229,
+  "groesse": 20,
+  "hoehe": 51,
+  "tex": "$\\frac{e_s(r)}{e_s(\\infty)} = \\exp\\!\\left(\\frac{2\\sigma}{\\rho_w\\,R_v\\,T\\,r}\\right)$"
+ },
+ "formel-30524001-17": {
+  "breite": 181,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$T_v = T\\,(1 + 0.61\\,r)$"
+ },
+ "formel-30a11d25-17": {
+  "breite": 107,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$+0{,}5\\pm 0{,}5$"
+ },
+ "formel-30ed46bb-17": {
+  "breite": 57,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$f \\to 0$"
+ },
+ "formel-310eb12f-17": {
+  "breite": 177,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$w = A\\,e^{-(1+i)z/D_E}$"
+ },
+ "formel-311cabda-17": {
+  "breite": 14,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$g$"
+ },
+ "formel-31406b02-17": {
+  "breite": 54,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\beta = 0$"
+ },
+ "formel-31a0e9b1-17": {
+  "breite": 242,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$M_{water}/M_{air} = 18/28.96$"
+ },
+ "formel-31f5e649-17": {
+  "breite": 70,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$v = 1{,}2$"
+ },
+ "formel-325aa6c3-17": {
+  "breite": 268,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$M_{Wasser}/M_{Luft} = 18/28{,}96$"
+ },
+ "formel-32723583-17": {
+  "breite": 194,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$287\\cdot 5\\cdot 0{,}105 = 151$"
+ },
+ "formel-3286a085-17": {
+  "breite": 69,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$Re \\approx 1$"
+ },
+ "formel-32a65a61-17": {
+  "breite": 161,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\delta = 2\\pi + 2i - 6r$"
+ },
+ "formel-32c6031b-17": {
+  "breite": 87,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$Ro = 0{,}1$"
+ },
+ "formel-32f300bf": {
+  "breite": 224,
+  "groesse": 22,
+  "hoehe": 112,
+  "tex": "$\\Gamma_s = \\Gamma_d\\;\\frac{1 + \\dfrac{L_v\\,r_s}{R_L\\,T}}{1 + \\dfrac{\\varepsilon\\,L_v^2\\,r_s}{c_p\\,R_L\\,T^2}}$"
+ },
+ "formel-332ce5e4-17": {
+  "breite": 240,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$\\kappa\\rho g T/p = \\kappa g/R_L = g/c_p$"
+ },
+ "formel-3372c1cb-17": {
+  "breite": 13,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$c$"
+ },
+ "formel-3376d920-17": {
+  "breite": 53,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\zeta + f$"
+ },
+ "formel-33b8f71e-17": {
+  "breite": 108,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T = 216{,}65$"
+ },
+ "formel-33ee9446-17": {
+  "breite": 87,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$C = 0{,}02$"
+ },
+ "formel-341e6391-20": {
+  "breite": 212,
+  "groesse": 20,
+  "hoehe": 53,
+  "tex": "$\\cos i_{min} = \\sqrt{\\frac{n^2 - 1}{3}}$"
+ },
+ "formel-344700a4-17": {
+  "breite": 51,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$+0{,}3$"
+ },
+ "formel-34857b3b-17": {
+  "breite": 10,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$i$"
+ },
+ "formel-34aea60f-17": {
+  "breite": 194,
+  "groesse": 17,
+  "hoehe": 32,
+  "tex": "$\\Delta z = 20{,}3\\,\\mathrm{m/K}\\cdot\\overline{T_v}$"
+ },
+ "formel-34c20cae-17": {
+  "breite": 91,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$i = 59.5^\\circ$"
+ },
+ "formel-34c931f8-17": {
+  "breite": 21,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$e_s$"
+ },
+ "formel-34d912c3-17": {
+  "breite": 90,
+  "groesse": 17,
+  "hoehe": 40,
+  "tex": "$\\frac{dT_e}{T_e} = \\frac{1}{4}\\frac{dF}{F}$"
+ },
+ "formel-351be18e-17": {
+  "breite": 25,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r^*$"
+ },
+ "formel-356080d2": {
+  "breite": 400,
+  "groesse": 22,
+  "hoehe": 39,
+  "tex": "$p(z) = p_0\\left(1 - \\frac{\\Gamma z}{T_0}\\right)^{g/(R_L\\Gamma)}, \\qquad \\frac{g}{R_L\\Gamma} = 5{,}26$"
+ },
+ "formel-35d32ffd-17": {
+  "breite": 123,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\Omega^2 a = 0{,}034$"
+ },
+ "formel-360e32e2-17": {
+  "breite": 123,
+  "groesse": 17,
+  "hoehe": 31,
+  "tex": "$p = p_0\\,e^{-z/H}$"
+ },
+ "formel-36404497-17": {
+  "breite": 400,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r_s(1{,}2^\\circ\\mathrm{C}, 700\\,\\mathrm{hPa}) = 0{,}622\\cdot 6{,}7/693 = 6{,}0$"
+ },
+ "formel-368d2856-17": {
+  "breite": 83,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$d = c\\,\\Delta t$"
+ },
+ "formel-36bd678c-17": {
+  "breite": 103,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$U(z) = \\Lambda z$"
+ },
+ "formel-36cc356c-17": {
+  "breite": 70,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$v = 1.2$"
+ },
+ "formel-36f73fc1-17": {
+  "breite": 16,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$p$"
+ },
+ "formel-370545cb-17": {
+  "breite": 67,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Omega\\sin\\alpha$"
+ },
+ "formel-37f7e6fb-17": {
+  "breite": 165,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$\\Delta p/(\\rho L) = 10^{-3}$"
+ },
+ "formel-3883a223-17": {
+  "breite": 188,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$Ro = U/(fL) = 0.1$"
+ },
+ "formel-38a57f20-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 31,
+  "tex": "$z = \\frac{T_0}{\\Gamma}\\left[1 - \\left(\\frac{p}{p_0}\\right)^{R_L\\Gamma/g}\\right] = 44\\,331\\,\\mathrm{m}\\cdot\\left[1 - \\left(\\frac{p}{p_0}\\right)^{0{,}1903}\\right]$"
+ },
+ "formel-38afe72b-17": {
+  "breite": 89,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$r < \\lambda/10$"
+ },
+ "formel-390d3058-17": {
+  "breite": 79,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r_s = 6{,}4$"
+ },
+ "formel-3918f99d-17": {
+  "breite": 302,
+  "groesse": 17,
+  "hoehe": 47,
+  "tex": "$\\frac{1}{e_s}\\frac{de_s}{dT} = \\frac{L_v}{R_v T^2} = \\frac{2{,}5\\cdot 10^6}{461{,}5\\cdot 288^2} = 0{,}065$"
+ },
+ "formel-39406012-17": {
+  "breite": 49,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$f|\\vec v_h|$"
+ },
+ "formel-3a544ad6-17": {
+  "breite": 70,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$g = 9{,}8$"
+ },
+ "formel-3a5c8488-17": {
+  "breite": 98,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$dg_w = dg_v$"
+ },
+ "formel-3adbc1db-17": {
+  "breite": 87,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$C = 0.02$"
+ },
+ "formel-3ae4920c-17": {
+  "breite": 244,
+  "groesse": 17,
+  "hoehe": 49,
+  "tex": "$v = -\\frac{fR}{2} + \\sqrt{\\frac{f^2R^2}{4} + \\frac{R}{\\rho}\\frac{\\partial p}{\\partial n}}$"
+ },
+ "formel-3af437dc-17": {
+  "breite": 52,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$w_{max}$"
+ },
+ "formel-3b43c3c5-17": {
+  "breite": 23,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$dt$"
+ },
+ "formel-3b634239-17": {
+  "breite": 157,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$dT_d/dz \\approx -1{,}7$"
+ },
+ "formel-3b79bf3c-17": {
+  "breite": 30,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$B_\\lambda$"
+ },
+ "formel-3b8ef95a-17": {
+  "breite": 32,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\vec a_{in}$"
+ },
+ "formel-3bc716d6-17": {
+  "breite": 114,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$k/m_w = R_v$"
+ },
+ "formel-3be8737e-17": {
+  "breite": 24,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T_r$"
+ },
+ "formel-3bf7ff88-17": {
+  "breite": 51,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\nu < 1$"
+ },
+ "formel-3c040492-17": {
+  "breite": 111,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\beta = 2\\pi r^2 N$"
+ },
+ "formel-3c212246-17": {
+  "breite": 126,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$L_{max} = 3900$"
+ },
+ "formel-3c5cd886-17": {
+  "breite": 26,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$z_w$"
+ },
+ "formel-3c86614d-17": {
+  "breite": 151,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$r_s \\approx 0.622\\,e_s/p$"
+ },
+ "formel-3c936844-17": {
+  "breite": 70,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\nu = 0.5$"
+ },
+ "formel-3c9e51ee-17": {
+  "breite": 74,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Delta T = 8$"
+ },
+ "formel-3cde4a3a-17": {
+  "breite": 39,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\nabla\\Phi$"
+ },
+ "formel-3ce5ddac-17": {
+  "breite": 87,
+  "groesse": 17,
+  "hoehe": 31,
+  "tex": "$\\sigma T_a^4 = F$"
+ },
+ "formel-3cef8024-17": {
+  "breite": 95,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\rho = 1{,}225$"
+ },
+ "formel-3cf28efa-17": {
+  "breite": 63,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r < 50$"
+ },
+ "formel-3d0597cb-17": {
+  "breite": 235,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$100/(1.225\\cdot 9.81) = 8.3$"
+ },
+ "formel-3d073e93-17": {
+  "breite": 204,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$e = e_s(12^\\circ\\mathrm{C}) = 14{,}0$"
+ },
+ "formel-3d1caa3f-17": {
+  "breite": 92,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\delta z \\propto e^{|N|t}$"
+ },
+ "formel-3d25389c-17": {
+  "breite": 92,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$T_{d,0} = 12$"
+ },
+ "formel-3d35e70b-17": {
+  "breite": 57,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$p_S(h)$"
+ },
+ "formel-3d8b1c1c": {
+  "breite": 400,
+  "groesse": 22,
+  "hoehe": 45,
+  "tex": "$S(r) = \\frac{e}{e_s} \\approx 1 + \\frac{a}{r} - \\frac{b}{r^3}, \\qquad S_{krit} = 1 + \\sqrt{\\frac{4a^3}{27b}}$"
+ },
+ "formel-3dab271d": {
+  "breite": 173,
+  "groesse": 22,
+  "hoehe": 47,
+  "tex": "$\\frac{v^2}{R} + f\\,v = \\frac{1}{\\rho}\\,\\frac{\\partial p}{\\partial n}$"
+ },
+ "formel-3dd4a9a8-17": {
+  "breite": 74,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\rho A\\,dz\\,g$"
+ },
+ "formel-3e25d25e-17": {
+  "breite": 128,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$n_{blau} = 1{,}343$"
+ },
+ "formel-3e2911cc-17": {
+  "breite": 146,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$9{,}8 - 1{,}8 = 8{,}0$"
+ },
+ "formel-3e3e8f0e": {
+  "breite": 400,
+  "groesse": 22,
+  "hoehe": 47,
+  "tex": "$\\delta = \\pi + 2i - 4r, \\qquad \\cos i_{min} = \\sqrt{\\frac{n^2 - 1}{3}}$"
+ },
+ "formel-3e7d9cbe-17": {
+  "breite": 266,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$(+2\\Omega\\sin\\varphi\\,v,\\; -2\\Omega\\sin\\varphi\\,u)$"
+ },
+ "formel-3f33a1b7-17": {
+  "breite": 52,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$f > 0$"
+ },
+ "formel-3f3f5011-17": {
+  "breite": 92,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$u = v = 0$"
+ },
+ "formel-3f616cae-20": {
+  "breite": 220,
+  "groesse": 20,
+  "hoehe": 51,
+  "tex": "$\\tan\\alpha = \\frac{f\\,(\\rho_2 u_2 - \\rho_1 u_1)}{g\\,(\\rho_1 - \\rho_2)}$"
+ },
+ "formel-3f8138cf-17": {
+  "breite": 26,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$\\overline{T_v}$"
+ },
+ "formel-3f9a3af7-17": {
+  "breite": 121,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$|\\nabla T| = 10^{-5}$"
+ },
+ "formel-3fa1a222-17": {
+  "breite": 35,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$10^{5}$"
+ },
+ "formel-3fa9e5ed-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 45,
+  "tex": "$\\frac{du}{dt} = -\\frac{1}{\\rho}\\frac{\\partial p}{\\partial x} + f v, \\qquad \\frac{dv}{dt} = -\\frac{1}{\\rho}\\frac{\\partial p}{\\partial y} - f u$"
+ },
+ "formel-3fd4f879-17": {
+  "breite": 217,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$e/e_s = n_w/(n_w + i\\,n_s)$"
+ },
+ "formel-3fee0167-20": {
+  "breite": 240,
+  "groesse": 20,
+  "hoehe": 34,
+  "tex": "$T_s = 2^{1/4}\\,T_e = 303\\ \\mathrm{K}$"
+ },
+ "formel-408efdf4-20": {
+  "breite": 311,
+  "groesse": 20,
+  "hoehe": 67,
+  "tex": "$p = \\rho\\,\\frac{R^*}{M}\\,T, \\qquad M = \\frac{\\sum n_i M_i}{\\sum n_i}$"
+ },
+ "formel-4093ba6b-17": {
+  "breite": 97,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$n = 1{,}333$"
+ },
+ "formel-40af2a91-17": {
+  "breite": 24,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$\\vec v_g$"
+ },
+ "formel-40c8d3a4-17": {
+  "breite": 79,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r_s = 3{,}8$"
+ },
+ "formel-40e5ad13-17": {
+  "breite": 71,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$Q = 60$"
+ },
+ "formel-41096963-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 27,
+  "tex": "$2\\,\\vec\\Omega\\times\\vec v = 2\\Omega\\left(w\\cos\\varphi - v\\sin\\varphi,\\;\\; u\\sin\\varphi,\\;\\; -u\\cos\\varphi\\right)$"
+ },
+ "formel-41514f6f-17": {
+  "breite": 251,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$\\sqrt{9.81\\cdot 1000\\cdot 0.027} = 16$"
+ },
+ "formel-41b158c2-17": {
+  "breite": 21,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\rho'$"
+ },
+ "formel-41dc3cfd-17": {
+  "breite": 78,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$V = 250$"
+ },
+ "formel-420553b9-17": {
+  "breite": 230,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$151/42\\,000 = 3{,}6\\cdot 10^{-3}$"
+ },
+ "formel-4276e135-17": {
+  "breite": 73,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$K = 10$"
+ },
+ "formel-427a49e2-17": {
+  "breite": 72,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\rho = 0{,}7$"
+ },
+ "formel-42a12dea-17": {
+  "breite": 400,
+  "groesse": 17,
+  "hoehe": 32,
+  "tex": "$\\xi = \\left[\\frac{\\rho_w R_v T}{D\\,e_s} + \\frac{\\rho_w L_v^2}{K\\,R_v T^2}\\right]^{-1} = \\left[9.4\\cdot 10^{9} + 7.6\\cdot 10^{9}\\right]^{-1} = 5.9\\cdot 10^{-11}$"
+ },
+ "formel-42cbacb1-17": {
+  "breite": 227,
+  "groesse": 17,
+  "hoehe": 33,
+  "tex": "$(f v, -f u) = -f\\,\\hat k\\times\\vec v_h$"
+ },
+ "formel-42ddabad-17": {
+  "breite": 128,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\delta q = -L_v\\,dr_s$"
+ },
+ "formel-43812d08": {
+  "breite": 395,
+  "groesse": 22,
+  "hoehe": 52,
+  "tex": "$z_{LCL} \\approx \\frac{T - T_d}{\\Gamma_d - \\Gamma_{T_d}} \\approx 125\\,\\frac{\\mathrm{m}}{\\mathrm{K}}\\,(T - T_d)$"
+ },
+ "formel-439ac4e8-17": {
+  "breite": 62,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$d\\theta/dz$"
+ },
+ "formel-43b59004": {
+  "breite": 400,
+  "groesse": 22,
+  "hoehe": 47,
+  "tex": "$\\sigma\\,T_e^4 = \\frac{S_0\\,(1 - A)}{4} \\quad\\Rightarrow\\quad T_e = 255\\,\\mathrm{K}$"
+ },
+ "formel-446a7006-17": {
+  "breite": 79,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r_s = 6.4$"
+ },
+ "formel-44b6fdbd-17": {
+  "breite": 127,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$n_{blue} = 1.343$"
+ },
+ "formel-44e79a92-17": {
+  "breite": 81,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$N = 10^8$"
+ },
+ "formel-4530a632-17": {
+  "breite": 69,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Phi = gz$"
+ },
+ "formel-45823128-17": {
+  "breite": 212,
+  "groesse": 17,
+  "hoehe": 31,
+  "tex": "$\\sigma T_s^4 = F + \\sigma T_a^4 - 100$"
+ },
+ "formel-45878c9c-17": {
+  "breite": 119,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$n_{rot} = 1{,}331$"
+ },
+ "formel-459274ae-17": {
+  "breite": 166,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\delta q = -L_v\\,dr_s \\ne 0$"
+ },
+ "formel-45f07804-17": {
+  "breite": 392,
+  "groesse": 17,
+  "hoehe": 32,
+  "tex": "$c_g = \\partial\\omega/\\partial k = U + \\beta(k^2 - l^2)/(k^2+l^2)^2$"
+ },
+ "formel-4651e830": {
+  "breite": 123,
+  "groesse": 22,
+  "hoehe": 54,
+  "tex": "$\\frac{de_s}{dT} = \\frac{L_v\\,e_s}{R_v\\,T^2}$"
+ },
+ "formel-4651e830-20": {
+  "breite": 112,
+  "groesse": 20,
+  "hoehe": 49,
+  "tex": "$\\frac{de_s}{dT} = \\frac{L_v\\,e_s}{R_v\\,T^2}$"
+ },
+ "formel-465de812-17": {
+  "breite": 217,
+  "groesse": 17,
+  "hoehe": 33,
+  "tex": "$\\vec a_{in} = -\\nabla p/\\rho + \\vec g + \\vec F$"
+ },
+ "formel-46724039-17": {
+  "breite": 146,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$2.5 \\cdot 9.8 = 24.5$"
+ },
+ "formel-46d2cf59-17": {
+  "breite": 217,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$\\theta_e \\approx \\theta\\,\\exp(L_v r/(c_p T))$"
+ },
+ "formel-4728596c-17": {
+  "breite": 99,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$S_0 = 1361$"
+ },
+ "formel-47aef839-17": {
+  "breite": 37,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$1/r$"
+ },
+ "formel-4807ab7d-17": {
+  "breite": 120,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$\\xi \\approx 6\\cdot 10^{-13}$"
+ },
+ "formel-480cfdaf-17": {
+  "breite": 96,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$L_\\downarrow = 349$"
+ },
+ "formel-48522fc8-17": {
+  "breite": 323,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$r = 0{,}622\\cdot 14{,}0/(950 - 14) = 9{,}3$"
+ },
+ "formel-48b0590d-17": {
+  "breite": 84,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$L_v = 2.5$"
+ },
+ "formel-48cc884c-17": {
+  "breite": 75,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$r_s(T, p)$"
+ },
+ "formel-4954ec4b": {
+  "breite": 380,
+  "groesse": 22,
+  "hoehe": 59,
+  "tex": "$D = \\pi\\sqrt{\\frac{2K}{f}}, \\qquad w_E \\approx \\zeta_g\\sqrt{\\frac{K}{2f}}$"
+ },
+ "formel-49b1b231-17": {
+  "breite": 121,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$n_{red} = 1.331$"
+ },
+ "formel-4a88cca8-17": {
+  "breite": 101,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\partial p/\\partial n > 0$"
+ },
+ "formel-4b163a42-17": {
+  "breite": 236,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$\\Delta T = \\Delta F/(4\\sigma T_e^3) = 1.0$"
+ },
+ "formel-4b3f0300-17": {
+  "breite": 296,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\sin r = 0{,}8616/1{,}333 = 0{,}6464$"
+ },
+ "formel-4b4cade9-17": {
+  "breite": 21,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$P$"
+ },
+ "formel-4b786843-17": {
+  "breite": 73,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$m_w/\\rho_w$"
+ },
+ "formel-4c179ec2-17": {
+  "breite": 145,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\delta q = du + p\\,d\\alpha$"
+ },
+ "formel-4c17e6a1-17": {
+  "breite": 106,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$L_R = 1000$"
+ },
+ "formel-4c9f4983-17": {
+  "breite": 69,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Gamma = \\Gamma_d$"
+ },
+ "formel-4cbe2c54-17": {
+  "breite": 134,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$N = 2.5\\cdot 10^{25}$"
+ },
+ "formel-4cdab31a-17": {
+  "breite": 109,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$p = \\rho\\,R_L\\,T$"
+ },
+ "formel-4ce8e1b7": {
+  "breite": 400,
+  "groesse": 22,
+  "hoehe": 34,
+  "tex": "$\\delta_{min} = 2\\arcsin\\!\\left(n\\sin\\frac{A}{2}\\right) - A, \\qquad A = 60^\\circ$"
+ },
+ "formel-4ced09c6-17": {
+  "breite": 70,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$R < 20$"
+ },
+ "formel-4cf2ac81-17": {
+  "breite": 32,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$L_R$"
+ },
+ "formel-4d02cb3b-17": {
+  "breite": 91,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r_s = 21{,}9$"
+ },
+ "formel-4d7137c9-17": {
+  "breite": 174,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$s = c_p\\ln\\theta + \\mathrm{const}$"
+ },
+ "formel-4dc9d119-17": {
+  "breite": 93,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\tan\\alpha > 0$"
+ },
+ "formel-4dedd985-17": {
+  "breite": 108,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\sigma = 0{,}0756$"
+ },
+ "formel-4e7daa34-17": {
+  "breite": 400,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r_s(1.2^\\circ\\mathrm{C}, 700\\,\\mathrm{hPa}) = 0.622\\cdot 6.7/693 = 6.0$"
+ },
+ "formel-4e845032-17": {
+  "breite": 331,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$\\rho_v(R) = \\rho_{v,\\infty} - (\\rho_{v,\\infty} - \\rho_{v,r})\\,r/R$"
+ },
+ "formel-4e8b2fa6-17": {
+  "breite": 276,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\mu_v(e) = \\mu_v(e_s) + kT\\ln(e/e_s)$"
+ },
+ "formel-4edc8aaf-20": {
+  "breite": 139,
+  "groesse": 20,
+  "hoehe": 46,
+  "tex": "$\\frac{d^2 z}{dt^2} = g\\,\\frac{T' - T}{T}$"
+ },
+ "formel-4f153a17-17": {
+  "breite": 272,
+  "groesse": 17,
+  "hoehe": 37,
+  "tex": "$v = \\sqrt{4\\,\\rho_{ice}\\,g\\,D\\,/\\,(3\\,c_d\\,\\rho_{air})}$"
+ },
+ "formel-4fac9844-17": {
+  "breite": 64,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$= 125$"
+ },
+ "formel-504532c9": {
+  "breite": 345,
+  "groesse": 22,
+  "hoehe": 39,
+  "tex": "$Q = (1 - A)\\,S + L_\\downarrow - \\sigma\\,T_s^4$"
+ },
+ "formel-505f2fb9-17": {
+  "breite": 38,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\ln p$"
+ },
+ "formel-50d79f67": {
+  "breite": 391,
+  "groesse": 22,
+  "hoehe": 48,
+  "tex": "$\\theta = T\\left(\\frac{p_0}{p}\\right)^{\\kappa}, \\qquad \\kappa = \\frac{R_L}{c_p} = 0{,}286$"
+ },
+ "formel-5106ac20-17": {
+  "breite": 111,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$v' = \\partial\\psi/\\partial x$"
+ },
+ "formel-51157605-17": {
+  "breite": 191,
+  "groesse": 17,
+  "hoehe": 31,
+  "tex": "$\\sigma T_a^4 = S_0(1-A)/4$"
+ },
+ "formel-514b3555-17": {
+  "breite": 331,
+  "groesse": 17,
+  "hoehe": 38,
+  "tex": "$4\\pi r^2\\,D\\,\\frac{d\\rho_v}{dR}|_r = 4\\pi r D\\,(\\rho_{v,\\infty} - \\rho_{v,r})$"
+ },
+ "formel-5250afd3-20": {
+  "breite": 175,
+  "groesse": 20,
+  "hoehe": 46,
+  "tex": "$\\frac{dp}{p} = -\\frac{g}{R_L}\\,\\frac{dz}{T_0 - \\Gamma z}$"
+ },
+ "formel-52866917-17": {
+  "breite": 62,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\delta q = 0$"
+ },
+ "formel-52e797cb-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 26,
+  "tex": "$(\\Omega a\\cos\\varphi + u)\\,a\\cos\\varphi = \\Omega a^2 \\quad\\Rightarrow\\quad u = \\Omega a\\,\\frac{1 - \\cos^2\\varphi}{\\cos\\varphi} = \\Omega a\\,\\frac{\\sin^2\\varphi}{\\cos\\varphi}$"
+ },
+ "formel-52e8ed7a-17": {
+  "breite": 14,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\theta$"
+ },
+ "formel-53410bd9-17": {
+  "breite": 73,
+  "groesse": 17,
+  "hoehe": 31,
+  "tex": "$\\hat k\\times\\nabla p$"
+ },
+ "formel-534468a7-17": {
+  "breite": 249,
+  "groesse": 17,
+  "hoehe": 71,
+  "tex": "$\\int_0^\\infty \\rho\\,dz = \\int_{p_0}^{0}\\frac{-dp}{g} = p_0/g$"
+ },
+ "formel-53865456": {
+  "breite": 199,
+  "groesse": 22,
+  "hoehe": 51,
+  "tex": "$u(\\varphi) = \\Omega\\,a\\,\\frac{\\sin^2\\varphi}{\\cos\\varphi}$"
+ },
+ "formel-5406b27c-17": {
+  "breite": 15,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\hat k$"
+ },
+ "formel-5410d6a7-17": {
+  "breite": 73,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Gamma = 6.5$"
+ },
+ "formel-548f5543-17": {
+  "breite": 145,
+  "groesse": 17,
+  "hoehe": 35,
+  "tex": "$\\frac{dm}{dt} = 4\\pi r^2\\rho_w\\frac{dr}{dt}$"
+ },
+ "formel-54aca09b-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 25,
+  "tex": "$S_0 = \\sigma T_\\odot^4\\left(\\frac{R_\\odot}{d}\\right)^2 = 5.67\\cdot 10^{-8}\\cdot 5772^4\\cdot\\left(\\frac{6.96\\cdot 10^8}{1.496\\cdot 10^{11}}\\right)^2 = 1361\\,\\mathrm{W/m^2}$"
+ },
+ "formel-54d180d2-17": {
+  "breite": 207,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$dz = -R_L T_v\\,dp/(g\\,p)$"
+ },
+ "formel-54d3e015-17": {
+  "breite": 96,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\lambda = 0.906$"
+ },
+ "formel-54d7d485-17": {
+  "breite": 17,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\omega$"
+ },
+ "formel-55570a45-17": {
+  "breite": 82,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$A = 90^\\circ$"
+ },
+ "formel-555c4351-17": {
+  "breite": 164,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\ln(p_1/p_2) = 1.39$"
+ },
+ "formel-566a6c0d-17": {
+  "breite": 87,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\rho \\propto 1/T_v$"
+ },
+ "formel-56870ae2-17": {
+  "breite": 82,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\rho = \\rho(p)$"
+ },
+ "formel-56bdb3f8-17": {
+  "breite": 129,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\partial p/\\partial z = -\\rho g$"
+ },
+ "formel-574142f7-17": {
+  "breite": 58,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$p_L(h)$"
+ },
+ "formel-575d3fd5-17": {
+  "breite": 188,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$2898/288 = 10\\ \\mathrm{\\mu m}$"
+ },
+ "formel-57700266-17": {
+  "breite": 142,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$(R_{sun}/1\\ \\mathrm{AU})^2$"
+ },
+ "formel-577fd7d8-17": {
+  "breite": 227,
+  "groesse": 17,
+  "hoehe": 40,
+  "tex": "$\\sigma = \\frac{2\\pi^5 k^4}{15\\,h^3 c^2} = 5.67\\cdot 10^{-8}$"
+ },
+ "formel-57d7cd00-17": {
+  "breite": 199,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$3.7/(3.76 - 2.0) \\approx 2$"
+ },
+ "formel-57e4b7ba-17": {
+  "breite": 138,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$b = 1.7\\cdot 10^{-22}$"
+ },
+ "formel-57ee10c4-17": {
+  "breite": 138,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T_a = T_e = 255$"
+ },
+ "formel-58086255-17": {
+  "breite": 78,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$h = 200$"
+ },
+ "formel-58337863-17": {
+  "breite": 134,
+  "groesse": 17,
+  "hoehe": 37,
+  "tex": "$m = \\sum n_i M_i$"
+ },
+ "formel-584543c5-17": {
+  "breite": 82,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\varepsilon = 0.99$"
+ },
+ "formel-586eba4e-17": {
+  "breite": 60,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$D = 2$"
+ },
+ "formel-58bf17f4-17": {
+  "breite": 136,
+  "groesse": 17,
+  "hoehe": 34,
+  "tex": "$-\\vec\\Omega\\times(\\vec\\Omega\\times\\vec r)$"
+ },
+ "formel-5927f3fb-17": {
+  "breite": 79,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$c_d = 0.6$"
+ },
+ "formel-593cebfe-17": {
+  "breite": 63,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r = 10$"
+ },
+ "formel-59a7176e-17": {
+  "breite": 347,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\lambda = 2898\\ \\mathrm{\\mu m\\,K}/5772\\ \\mathrm{K} = 0{,}50\\ \\mathrm{\\mu m}$"
+ },
+ "formel-59c41de4-17": {
+  "breite": 218,
+  "groesse": 17,
+  "hoehe": 34,
+  "tex": "$-\\vec\\Omega\\times(\\vec\\Omega\\times\\vec r) = \\Omega^2\\vec r_\\perp$"
+ },
+ "formel-59d49405-17": {
+  "breite": 195,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$180^\\circ - 138^\\circ = 42^\\circ$"
+ },
+ "formel-59d61191-17": {
+  "breite": 170,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$Re = 2rv\\rho/\\eta \\ll 1$"
+ },
+ "formel-5a722a5b-17": {
+  "breite": 129,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\alpha\\,dp = -g\\,dz$"
+ },
+ "formel-5b11e834-17": {
+  "breite": 145,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$r^2 = r_0^2 + 2\\xi S t$"
+ },
+ "formel-5b4d13b1-17": {
+  "breite": 99,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$p_0 = 1000$"
+ },
+ "formel-5b8a74f8-17": {
+  "breite": 134,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$N = 2{,}5\\cdot 10^{25}$"
+ },
+ "formel-5bac8db8-17": {
+  "breite": 225,
+  "groesse": 17,
+  "hoehe": 39,
+  "tex": "$S^* - 1 = \\sqrt{4a^3/(27b)}$"
+ },
+ "formel-5bc813c6": {
+  "breite": 400,
+  "groesse": 22,
+  "hoehe": 32,
+  "tex": "$r = 0{,}622\\,\\frac{e}{p - e}, \\qquad T_v = T\\,(1 + 0{,}61\\,r)$"
+ },
+ "formel-5bdd269f-20": {
+  "breite": 361,
+  "groesse": 20,
+  "hoehe": 75,
+  "tex": "$p(z) = p_0\\exp\\!\\left(-\\int_0^z \\frac{g}{R_L T(z')}\\,dz'\\right)$"
+ },
+ "formel-5c073a8a-17": {
+  "breite": 213,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$z_w \\approx z_i\\,(1 - \\Delta T/T_{std})$"
+ },
+ "formel-5c6b7276-17": {
+  "breite": 158,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$u, v, w, p, \\rho, T, q$"
+ },
+ "formel-5c9aa28e-17": {
+  "breite": 180,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$|\\partial p/\\partial n| < \\rho f^2 R/4$"
+ },
+ "formel-5ce090ef-17": {
+  "breite": 100,
+  "groesse": 17,
+  "hoehe": 46,
+  "tex": "$P = \\frac{\\omega^4|p|^2}{12\\pi\\varepsilon_0 c^3}$"
+ },
+ "formel-5d1e4485-17": {
+  "breite": 28,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$M$"
+ },
+ "formel-5dc2a457": {
+  "breite": 400,
+  "groesse": 22,
+  "hoehe": 30,
+  "tex": "$\\Delta T_{Foehn} = (\\Gamma_d - \\Gamma_s)\\,(z_{Kamm} - z_{LCL})$"
+ },
+ "formel-5e058cdd-17": {
+  "breite": 51,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\varepsilon = 1$"
+ },
+ "formel-5e0bb249-17": {
+  "breite": 101,
+  "groesse": 17,
+  "hoehe": 40,
+  "tex": "$b = \\frac{3\\,i\\,n_s\\,m_w}{4\\pi\\rho_w}$"
+ },
+ "formel-5e10e125-17": {
+  "breite": 83,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$1 - b/r^3$"
+ },
+ "formel-5e1359e2-17": {
+  "breite": 175,
+  "groesse": 17,
+  "hoehe": 32,
+  "tex": "$T_s = (n+1)^{1/4}\\,T_e$"
+ },
+ "formel-5e7c1d58-17": {
+  "breite": 363,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$R_L = R^*/M = 8{,}314/0{,}02896 = 287$"
+ },
+ "formel-5ef10eef-17": {
+  "breite": 146,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$9{,}3 - 6{,}0 = 3{,}3$"
+ },
+ "formel-5ef38243-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 51,
+  "tex": "$\\left.\\frac{d\\vec A}{dt}\\right|_{in} = \\sum_i\\frac{dA_i}{dt}\\,\\hat e_i + \\sum_i A_i\\,\\frac{d\\hat e_i}{dt} = \\frac{d'\\vec A}{dt} + \\vec\\Omega\\times\\vec A$"
+ },
+ "formel-5fac0ba0-17": {
+  "breite": 92,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\varepsilon_a = 0.70$"
+ },
+ "formel-5fd96ff0-17": {
+  "breite": 316,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$293{,}15\\cdot(1000/950)^{0{,}286} = 297{,}5$"
+ },
+ "formel-6056f078-17": {
+  "breite": 72,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$S_0\\,\\pi R^2$"
+ },
+ "formel-610d03ca-17": {
+  "breite": 114,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$(\\Gamma - \\Gamma_d)\\,\\delta z$"
+ },
+ "formel-61d9f0c9-17": {
+  "breite": 400,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\sigma = 0.31\\cdot 10^{-4}\\cdot 30/(0.01\\cdot 10^4) = 9.3\\cdot 10^{-6}$"
+ },
+ "formel-622cf7a1-17": {
+  "breite": 216,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$dp/p = -g\\,dz/(R_L T_v)$"
+ },
+ "formel-62a070a1-17": {
+  "breite": 97,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$n = 1.333$"
+ },
+ "formel-62a468e0-20": {
+  "breite": 179,
+  "groesse": 20,
+  "hoehe": 44,
+  "tex": "$V = \\frac{-\\ln 0.02}{\\beta} = \\frac{3.9}{\\beta}$"
+ },
+ "formel-630f232d-17": {
+  "breite": 21,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r_0$"
+ },
+ "formel-6327ab84-17": {
+  "breite": 84,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Gamma_s = 6.5$"
+ },
+ "formel-635af0b3-17": {
+  "breite": 125,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$g\\,(\\rho - \\rho')/\\rho'$"
+ },
+ "formel-639448ec-17": {
+  "breite": 269,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$R_L\\cdot 1\\cdot\\ln(1000/200) = 460$"
+ },
+ "formel-63e93c8c-17": {
+  "breite": 91,
+  "groesse": 17,
+  "hoehe": 35,
+  "tex": "$\\frac{dr}{di} = \\frac{\\cos i}{n\\cos r}$"
+ },
+ "formel-646b73d6-17": {
+  "breite": 51,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\nu \\leq 1$"
+ },
+ "formel-64d73726-17": {
+  "breite": 279,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\delta = 2\\arcsin(n\\sin 30^\\circ) - 60^\\circ$"
+ },
+ "formel-64dc0231-17": {
+  "breite": 56,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$-109$"
+ },
+ "formel-650656ff-17": {
+  "breite": 152,
+  "groesse": 17,
+  "hoehe": 33,
+  "tex": "$\\vec v_{in} = \\vec v + \\vec\\Omega\\times\\vec r$"
+ },
+ "formel-6573aed3-17": {
+  "breite": 137,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\cos i = 0{,}5075$"
+ },
+ "formel-66497777-17": {
+  "breite": 44,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Omega\\,dt$"
+ },
+ "formel-66767c88-17": {
+  "breite": 55,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$k^{-5/3}$"
+ },
+ "formel-66dde3bb-17": {
+  "breite": 171,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$Fr = U/(Nh) < 1$"
+ },
+ "formel-67092cd0-17": {
+  "breite": 138,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$b = 1{,}6\\cdot 10^{-20}$"
+ },
+ "formel-6759b570-17": {
+  "breite": 46,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$e^{-\\beta x}$"
+ },
+ "formel-67673a27-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 40,
+  "tex": "$S(r) = \\frac{e}{e_s(\\infty)} \\approx 1 + \\frac{a}{r} - \\frac{b}{r^3}, \\qquad a = \\frac{2\\sigma}{\\rho_w R_v T}$"
+ },
+ "formel-67a313e1-20": {
+  "breite": 164,
+  "groesse": 20,
+  "hoehe": 59,
+  "tex": "$v = \\sqrt{\\frac{4\\,\\rho_{Eis}\\,g\\,D}{3\\,c_w\\,\\rho_{Luft}}}$"
+ },
+ "formel-67e7ecc1-20": {
+  "breite": 217,
+  "groesse": 20,
+  "hoehe": 39,
+  "tex": "$\\theta = T\\left(\\frac{1000\\ \\mathrm{hPa}}{p}\\right)^{0{,}286}$"
+ },
+ "formel-67fb6d68-17": {
+  "breite": 85,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$v \\propto \\sqrt{R}$"
+ },
+ "formel-68791041-17": {
+  "breite": 101,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$k L_R = 1.6$"
+ },
+ "formel-69561088-17": {
+  "breite": 76,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$E \\approx 0{,}8$"
+ },
+ "formel-696ff15c-17": {
+  "breite": 89,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$A = 0.30$"
+ },
+ "formel-69821ed0-17": {
+  "breite": 84,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Delta p = 10$"
+ },
+ "formel-69ff38dc-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 35,
+  "tex": "$\\frac{dT_d}{dz} = -\\frac{g\\,R_v\\,T_d^2}{R_L\\,L_v\\,T} \\approx -\\frac{9.81\\cdot 461.5\\cdot 285}{287\\cdot 2.5\\cdot 10^6} = -1.8\\cdot 10^{-3}\\,\\mathrm{K/m}$"
+ },
+ "formel-6a16dc00-17": {
+  "breite": 27,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\omega^4$"
+ },
+ "formel-6ab883aa-20": {
+  "breite": 187,
+  "groesse": 20,
+  "hoehe": 49,
+  "tex": "$\\theta_e = \\theta\\,\\exp\\!\\left(\\frac{L_v\\,r_s}{c_p\\,T}\\right)$"
+ },
+ "formel-6b17ed1a-17": {
+  "breite": 72,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$H = 10$"
+ },
+ "formel-6bafdd6a-17": {
+  "breite": 65,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\rho = 28$"
+ },
+ "formel-6c5b19ba-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 31,
+  "tex": "$z = \\frac{T_0}{\\Gamma}\\left[1 - \\left(\\frac{p}{p_0}\\right)^{R_L\\Gamma/g}\\right] = 44\\,331\\,\\mathrm{m}\\cdot\\left[1 - \\left(\\frac{p}{p_0}\\right)^{0.1903}\\right]$"
+ },
+ "formel-6cb7ac78-17": {
+  "breite": 87,
+  "groesse": 17,
+  "hoehe": 34,
+  "tex": "$\\frac{4}{3}\\pi r^3\\rho_w g$"
+ },
+ "formel-6cc86b97-17": {
+  "breite": 123,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Omega^2 a = 0.034$"
+ },
+ "formel-6cdf6a4f-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 44,
+  "tex": "$\\omega = Uk - \\frac{\\beta k}{k^2 + l^2}, \\qquad c = \\frac{\\omega}{k} = U - \\frac{\\beta}{k^2 + l^2}$"
+ },
+ "formel-6d1a9bb3-17": {
+  "breite": 107,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$+0.5\\pm 0.5$"
+ },
+ "formel-6d3cc4e7-20": {
+  "breite": 129,
+  "groesse": 20,
+  "hoehe": 44,
+  "tex": "$L \\approx 3{,}9\\,\\frac{N\\,H}{f}$"
+ },
+ "formel-6d4814dd-17": {
+  "breite": 259,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$9.81/(287\\cdot 0.0065) = 5.26$"
+ },
+ "formel-6d4f38d1-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 31,
+  "tex": "$\\vec v_{g,2} - \\vec v_{g,1} = \\frac{1}{f}\\,\\hat k\\times\\nabla_p(\\Phi_2 - \\Phi_1) = \\frac{R_L}{f}\\,\\ln\\frac{p_1}{p_2}\\;\\hat k\\times\\nabla_p\\overline{T_v}$"
+ },
+ "formel-6db8a5cb-17": {
+  "breite": 125,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$-2\\Omega\\,dA_e/dt$"
+ },
+ "formel-6e618488-17": {
+  "breite": 82,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$c_w \\approx 0{,}6$"
+ },
+ "formel-6e6e4ff5-17": {
+  "breite": 86,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$c_p T + gz$"
+ },
+ "formel-6e7dd0c1-20": {
+  "breite": 377,
+  "groesse": 20,
+  "hoehe": 78,
+  "tex": "$z_2 - z_1 = \\frac{R_L}{g}\\int_{p_2}^{p_1} T_v\\,\\frac{dp}{p} = \\frac{R_L\\,\\overline{T_v}}{g}\\,\\ln\\frac{p_1}{p_2}$"
+ },
+ "formel-6e926f48-17": {
+  "breite": 172,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\delta - 180^\\circ = 50.4^\\circ$"
+ },
+ "formel-70b73cd2-17": {
+  "breite": 71,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\beta \\approx 0.1$"
+ },
+ "formel-70dfd2ac-17": {
+  "breite": 83,
+  "groesse": 17,
+  "hoehe": 35,
+  "tex": "$w\\,\\frac{dw}{dz} = b$"
+ },
+ "formel-70f7bab8-17": {
+  "breite": 28,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\vec r_\\perp$"
+ },
+ "formel-710009ca-17": {
+  "breite": 61,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$v_g = 0$"
+ },
+ "formel-7121a975-17": {
+  "breite": 209,
+  "groesse": 17,
+  "hoehe": 31,
+  "tex": "$\\xi = 1 - \\nu(1 - e^{-ik\\Delta x})$"
+ },
+ "formel-7168acc0-17": {
+  "breite": 101,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$e = e_s(T_d)$"
+ },
+ "formel-71693b37-20": {
+  "breite": 266,
+  "groesse": 20,
+  "hoehe": 39,
+  "tex": "$\\vec\\Omega = \\Omega\\,(0,\\;\\cos\\varphi,\\;\\sin\\varphi)$"
+ },
+ "formel-716b6c03-17": {
+  "breite": 99,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$Re = 0{,}01$"
+ },
+ "formel-71860ec4-17": {
+  "breite": 199,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\partial\\phi/\\partial t + c\\,\\partial\\phi/\\partial x = 0$"
+ },
+ "formel-71c1d0d8-17": {
+  "breite": 132,
+  "groesse": 17,
+  "hoehe": 34,
+  "tex": "$T_s^4 = T_e^4\\cdot\\frac{2}{2 - \\varepsilon}$"
+ },
+ "formel-7233796c-17": {
+  "breite": 21,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r_s$"
+ },
+ "formel-728111e5-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 30,
+  "tex": "$p(z)A - p(z+dz)A - \\rho g A\\,dz = 0 \\quad\\Rightarrow\\quad \\frac{dp}{dz} = -\\rho g$"
+ },
+ "formel-72bbbf7d-17": {
+  "breite": 191,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$S^* - 1 = 1.4\\cdot 10^{-3}$"
+ },
+ "formel-72ce00e7-17": {
+  "breite": 121,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\Delta t < \\Delta x/U$"
+ },
+ "formel-734299fb-17": {
+  "breite": 51,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$dp/\\rho$"
+ },
+ "formel-7387ec0f-17": {
+  "breite": 77,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$n_w \\propto r^3$"
+ },
+ "formel-7390af90-17": {
+  "breite": 89,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$N = 0{,}01$"
+ },
+ "formel-739dedee-17": {
+  "breite": 24,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$w_l$"
+ },
+ "formel-73ea6089-17": {
+  "breite": 235,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$100/(1{,}225\\cdot 9{,}81) = 8{,}3$"
+ },
+ "formel-740e6f25-17": {
+  "breite": 92,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$L \\approx 4000$"
+ },
+ "formel-7498609b-17": {
+  "breite": 81,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\varepsilon_a \\approx 0{,}7$"
+ },
+ "formel-74ce1fc4-17": {
+  "breite": 138,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$b = 1{,}7\\cdot 10^{-22}$"
+ },
+ "formel-75104a14-17": {
+  "breite": 179,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$f = 1{,}03\\cdot 10^{-4}\\,\\mathrm{s^{-1}}$"
+ },
+ "formel-752561c1-17": {
+  "breite": 55,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Gamma = 0$"
+ },
+ "formel-7532b41a-17": {
+  "breite": 19,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$z_i$"
+ },
+ "formel-759cab3f-17": {
+  "breite": 257,
+  "groesse": 17,
+  "hoehe": 37,
+  "tex": "$v = \\sqrt{8\\rho_w g r/(3 c_d\\rho_L)} = 4$"
+ },
+ "formel-75a05b86-17": {
+  "breite": 28,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$A_e$"
+ },
+ "formel-75cf797d-17": {
+  "breite": 107,
+  "groesse": 17,
+  "hoehe": 33,
+  "tex": "$w \\approx \\frac{1}{2}w_{max}$"
+ },
+ "formel-76020aac-17": {
+  "breite": 218,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$R_L/f\\cdot 10^{-5}\\cdot\\ln 2 = 19$"
+ },
+ "formel-764fa8e2-17": {
+  "breite": 328,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\delta = 180 + 119.0 - 161.2 = 137.8^\\circ$"
+ },
+ "formel-76606498-17": {
+  "breite": 379,
+  "groesse": 17,
+  "hoehe": 32,
+  "tex": "$v_g = 400/(1{,}2\\cdot 1{,}03\\cdot 10^{-4}\\cdot 4\\cdot 10^{5}) = 8$"
+ },
+ "formel-769a01a0-20": {
+  "breite": 283,
+  "groesse": 20,
+  "hoehe": 51,
+  "tex": "$\\ln\\frac{e_s(r)}{e_s(\\infty)} = \\frac{2\\sigma\\,m_w}{\\rho_w\\,k\\,T\\,r} = \\frac{2\\sigma}{\\rho_w\\,R_v\\,T\\,r}$"
+ },
+ "formel-77b1d52e-17": {
+  "breite": 60,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\rho A\\,dz$"
+ },
+ "formel-77ccb1b6-17": {
+  "breite": 105,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$uv\\tan\\varphi/a$"
+ },
+ "formel-785a46aa-17": {
+  "breite": 81,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$1{,}2\\cdot 10^{7}$"
+ },
+ "formel-78cd9675-17": {
+  "breite": 400,
+  "groesse": 17,
+  "hoehe": 41,
+  "tex": "$r = \\rho_v/\\rho_d = \\frac{e/(R_v T)}{(p-e)/(R_L T)} = \\frac{R_L}{R_v}\\,\\frac{e}{p-e} = 0.622\\,\\frac{e}{p-e}$"
+ },
+ "formel-79bab96c-17": {
+  "breite": 172,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$180^\\circ - \\delta = 42.2^\\circ$"
+ },
+ "formel-79d1a4f9-17": {
+  "breite": 280,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\kappa = 287/1004 = 0.286 = 2/7$"
+ },
+ "formel-79e9b4f2-17": {
+  "breite": 71,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\rho = 1{,}2$"
+ },
+ "formel-79f11319-17": {
+  "breite": 51,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r < 5$"
+ },
+ "formel-7a899a88-17": {
+  "breite": 124,
+  "groesse": 17,
+  "hoehe": 33,
+  "tex": "$\\frac{1}{2}c\\Delta x(1-\\nu)$"
+ },
+ "formel-7a9a96aa-17": {
+  "breite": 391,
+  "groesse": 17,
+  "hoehe": 47,
+  "tex": "$\\frac{dG_{Oberfl}}{dN} = \\sigma\\,\\frac{d(4\\pi r^2)}{dN} = \\sigma\\cdot 8\\pi r\\cdot\\frac{m_w}{\\rho_w 4\\pi r^2} = \\frac{2\\sigma m_w}{\\rho_w r}$"
+ },
+ "formel-7b1c7423-17": {
+  "breite": 44,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$-15$"
+ },
+ "formel-7b3b7b5b-17": {
+  "breite": 63,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$e = 15$"
+ },
+ "formel-7b3bd056-17": {
+  "breite": 70,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$g = 9.8$"
+ },
+ "formel-7b92667d": {
+  "breite": 400,
+  "groesse": 22,
+  "hoehe": 44,
+  "tex": "$p = \\rho\\,R_L\\,T, \\qquad R_L = \\frac{R^*}{M} = 287\\,\\frac{\\mathrm{J}}{\\mathrm{kg\\,K}}$"
+ },
+ "formel-7bba82bc-17": {
+  "breite": 102,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$fU = 10^{-3}$"
+ },
+ "formel-7bc9e327-17": {
+  "breite": 233,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T_{Kamm} = 10{,}2 - 9 = 1{,}2$"
+ },
+ "formel-7c196476-17": {
+  "breite": 172,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$180^\\circ - \\delta = 42{,}2^\\circ$"
+ },
+ "formel-7c3b78bb-17": {
+  "breite": 146,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\delta = i_1 + i_2 - A$"
+ },
+ "formel-7c41ceb2-17": {
+  "breite": 51,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$-0.6$"
+ },
+ "formel-7c791a13-17": {
+  "breite": 61,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Gamma \\to 0$"
+ },
+ "formel-7cb57612-17": {
+  "breite": 112,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$p(z+dz)A$"
+ },
+ "formel-7cb5b726-17": {
+  "breite": 140,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$R_L T\\ln(p_0/p_h)$"
+ },
+ "formel-7d43eae6-17": {
+  "breite": 54,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$u = 0$"
+ },
+ "formel-7d4a60a7-17": {
+  "breite": 212,
+  "groesse": 17,
+  "hoehe": 40,
+  "tex": "$\\frac{\\partial r_s}{\\partial p}dp = r_s\\,g\\,dz/(R_L T)$"
+ },
+ "formel-7dc0da44-17": {
+  "breite": 88,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Delta U = 30$"
+ },
+ "formel-7dd28396-20": {
+  "breite": 240,
+  "groesse": 20,
+  "hoehe": 54,
+  "tex": "$w_E = \\frac{D_E}{2}\\,\\zeta_g = \\zeta_g\\sqrt{\\frac{K}{2f}}$"
+ },
+ "formel-7e071327-17": {
+  "breite": 21,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$c_p$"
+ },
+ "formel-7e1e705b-17": {
+  "breite": 78,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T = 273$"
+ },
+ "formel-7ec198d6-20": {
+  "breite": 95,
+  "groesse": 20,
+  "hoehe": 36,
+  "tex": "$\\Delta t \\leq \\frac{\\Delta x}{c}$"
+ },
+ "formel-7ec596e8": {
+  "breite": 238,
+  "groesse": 22,
+  "hoehe": 65,
+  "tex": "$v_{Hagel} = \\sqrt{\\frac{4\\,\\rho_{Eis}\\,g\\,D}{3\\,c_w\\,\\rho_{Luft}}}$"
+ },
+ "formel-7efd86c3": {
+  "breite": 387,
+  "groesse": 22,
+  "hoehe": 52,
+  "tex": "$c = U - \\frac{\\beta}{k^2}, \\qquad \\beta = \\frac{df}{dy} = \\frac{2\\,\\Omega\\cos\\varphi}{a}$"
+ },
+ "formel-7f77bde8-17": {
+  "breite": 71,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$w_E = 2$"
+ },
+ "formel-7f790abd-17": {
+  "breite": 282,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$R_L = 8.314/0.02896 = 287.1$"
+ },
+ "formel-7f7a7e73-17": {
+  "breite": 52,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$e = 8$"
+ },
+ "formel-7ff85388-17": {
+  "breite": 22,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$v_g$"
+ },
+ "formel-801d477c-17": {
+  "breite": 147,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$dz = -dp/(\\rho g)$"
+ },
+ "formel-80b13a35-17": {
+  "breite": 177,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$w = (u - u_g) + i\\,v$"
+ },
+ "formel-81366638-17": {
+  "breite": 24,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T'$"
+ },
+ "formel-8136a7ef-17": {
+  "breite": 13,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$b$"
+ },
+ "formel-8138d2d3-17": {
+  "breite": 92,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\phi(x - ct)$"
+ },
+ "formel-817e01c8-20": {
+  "breite": 119,
+  "groesse": 20,
+  "hoehe": 65,
+  "tex": "$\\frac{dC}{dt} = -\\oint \\frac{dp}{\\rho}$"
+ },
+ "formel-8189a5b5-17": {
+  "breite": 16,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$h$"
+ },
+ "formel-8208dbf9-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 20,
+  "tex": "$c_p\\,dT - \\alpha\\,dp = -L_v\\,dr_s \\quad\\Rightarrow\\quad c_p\\,dT + g\\,dz = -L_v\\,dr_s$"
+ },
+ "formel-825494ca-17": {
+  "breite": 237,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\rho_1 - \\rho_2 \\approx \\rho\\,(T_2 - T_1)/T$"
+ },
+ "formel-825c0ae7-17": {
+  "breite": 75,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\approx 2\\pi r^2$"
+ },
+ "formel-82787f28-17": {
+  "breite": 107,
+  "groesse": 17,
+  "hoehe": 56,
+  "tex": "$C = \\oint \\vec v\\cdot d\\vec l$"
+ },
+ "formel-827af22a-17": {
+  "breite": 20,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$v'$"
+ },
+ "formel-82dfaf17-20": {
+  "breite": 205,
+  "groesse": 20,
+  "hoehe": 50,
+  "tex": "$V = \\frac{\\ln(1/0{,}02)}{\\beta} = \\frac{3{,}91}{\\beta}$"
+ },
+ "formel-8300819c-17": {
+  "breite": 231,
+  "groesse": 17,
+  "hoehe": 37,
+  "tex": "$\\Delta T = \\Delta F/(\\lambda_0 - \\sum\\lambda_i)$"
+ },
+ "formel-8350b5e1-17": {
+  "breite": 80,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$u = c_v T$"
+ },
+ "formel-8471fe86-17": {
+  "breite": 236,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$\\Delta T = \\Delta F/(4\\sigma T_e^3) = 1{,}0$"
+ },
+ "formel-84fa5e69-17": {
+  "breite": 282,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$\\Delta F = 5{,}35\\,\\mathrm{W/m^2}\\cdot\\ln(C/C_0)$"
+ },
+ "formel-8512b468-17": {
+  "breite": 131,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$dp/dz = -\\rho g$"
+ },
+ "formel-8528f377-17": {
+  "breite": 28,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Gamma_d$"
+ },
+ "formel-855b7245-17": {
+  "breite": 57,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$L_v/T$"
+ },
+ "formel-8592f282-17": {
+  "breite": 76,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T_0 = 20$"
+ },
+ "formel-85dff471-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 27,
+  "tex": "$T_s = 2^{1/4}\\,T_a = 2^{1/4}\\,T_e = 1.189\\cdot 255 = 303\\,\\mathrm{K}$"
+ },
+ "formel-864fecc5-17": {
+  "breite": 101,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$k L_R = 1{,}6$"
+ },
+ "formel-865497aa-17": {
+  "breite": 31,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$2\\vec\\Omega$"
+ },
+ "formel-86aa367f-17": {
+  "breite": 13,
+  "groesse": 17,
+  "hoehe": 31,
+  "tex": "$\\hat j$"
+ },
+ "formel-86b0d540-17": {
+  "breite": 55,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Gamma < 0$"
+ },
+ "formel-86d21ee9-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 34,
+  "tex": "$\\ln\\frac{p}{p_0} = \\frac{g}{R_L\\Gamma}\\,\\ln\\frac{T_0 - \\Gamma z}{T_0} \\quad\\Rightarrow\\quad p = p_0\\left(1 - \\frac{\\Gamma z}{T_0}\\right)^{g/(R_L\\Gamma)}$"
+ },
+ "formel-8755d7c9-17": {
+  "breite": 400,
+  "groesse": 17,
+  "hoehe": 24,
+  "tex": "$\\Delta p = \\rho g h\\,\\Delta T/T = 1.2\\cdot 9.81\\cdot 1000\\cdot 5/290 \\approx 2$"
+ },
+ "formel-8759c9c9-17": {
+  "breite": 345,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$\\Delta F = 5{,}35\\ \\mathrm{W/m^2}\\cdot\\ln(C/C_0) = 3{,}7$"
+ },
+ "formel-8762e894-17": {
+  "breite": 94,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r = 40{,}3^\\circ$"
+ },
+ "formel-878eb172-17": {
+  "breite": 86,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Delta T = 10$"
+ },
+ "formel-878f1879-17": {
+  "breite": 94,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\lambda_0 = 3{,}76$"
+ },
+ "formel-879ea3fe-17": {
+  "breite": 133,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\beta = 1{,}6\\cdot 10^{-2}$"
+ },
+ "formel-8858d227-17": {
+  "breite": 72,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$N^2 > 0$"
+ },
+ "formel-88a1f4e7-17": {
+  "breite": 93,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\varepsilon_a = 0.77$"
+ },
+ "formel-88c14079-17": {
+  "breite": 155,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$\\sigma_R = 4.5\\cdot 10^{-31}$"
+ },
+ "formel-88c19bb5-17": {
+  "breite": 91,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$M = \\Omega a^2$"
+ },
+ "formel-893e0334-17": {
+  "breite": 101,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$1{,}6\\cdot 10^{-11}$"
+ },
+ "formel-893e0ddc-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 22,
+  "tex": "$\\dot x = \\sigma(y - x), \\qquad \\dot y = x(\\rho - z) - y, \\qquad \\dot z = xy - \\beta z$"
+ },
+ "formel-895a8696": {
+  "breite": 114,
+  "groesse": 22,
+  "hoehe": 43,
+  "tex": "$\\Delta t < \\frac{\\Delta x}{c_{max}}$"
+ },
+ "formel-89c5cf0f-17": {
+  "breite": 185,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$\\kappa = R_L/c_p = 0.286$"
+ },
+ "formel-89f0091f-17": {
+  "breite": 97,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$f L \\sim N H$"
+ },
+ "formel-8a06b5db-20": {
+  "breite": 217,
+  "groesse": 20,
+  "hoehe": 39,
+  "tex": "$\\theta = T\\left(\\frac{1000\\ \\mathrm{hPa}}{p}\\right)^{0.286}$"
+ },
+ "formel-8a1090e4-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 23,
+  "tex": "$\\vec a_{in} = \\frac{d'}{dt}\\left(\\vec v + \\vec\\Omega\\times\\vec r\\right) + \\vec\\Omega\\times\\left(\\vec v + \\vec\\Omega\\times\\vec r\\right) = \\frac{d'\\vec v}{dt} + 2\\,\\vec\\Omega\\times\\vec v + \\vec\\Omega\\times(\\vec\\Omega\\times\\vec r)$"
+ },
+ "formel-8a53ac8d-17": {
+  "breite": 14,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\vec e$"
+ },
+ "formel-8a57c769-17": {
+  "breite": 213,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$\\zeta_g = \\partial v_g/\\partial x - \\partial u_g/\\partial y$"
+ },
+ "formel-8a5fa805-17": {
+  "breite": 66,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T - T_d$"
+ },
+ "formel-8ab189d1-17": {
+  "breite": 194,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$287\\cdot 5\\cdot 0.105 = 151$"
+ },
+ "formel-8ada7380-17": {
+  "breite": 18,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\psi$"
+ },
+ "formel-8afac2ff-17": {
+  "breite": 146,
+  "groesse": 17,
+  "hoehe": 33,
+  "tex": "$\\vec F = K\\,\\partial^2\\vec v/\\partial z^2$"
+ },
+ "formel-8b1c33eb-17": {
+  "breite": 101,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\partial p/\\partial n < 0$"
+ },
+ "formel-8b4af238-17": {
+  "breite": 86,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Delta u = 30$"
+ },
+ "formel-8b5d70e5-17": {
+  "breite": 26,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$L_s$"
+ },
+ "formel-8be27c40-17": {
+  "breite": 51,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$+0.3$"
+ },
+ "formel-8beb4a39-17": {
+  "breite": 41,
+  "groesse": 17,
+  "hoehe": 31,
+  "tex": "$\\sigma T_s^4$"
+ },
+ "formel-8bf6fce9-17": {
+  "breite": 32,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$R^4$"
+ },
+ "formel-8bfcc9bb-17": {
+  "breite": 113,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$N = 0{,}0106$"
+ },
+ "formel-8c325612-17": {
+  "breite": 15,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$k$"
+ },
+ "formel-8c3ac4a2-17": {
+  "breite": 222,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$T' - T = -(\\Gamma_d - \\Gamma)\\,\\delta z$"
+ },
+ "formel-8c797289-17": {
+  "breite": 90,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$h = 1000$"
+ },
+ "formel-8c872628-17": {
+  "breite": 88,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\hat e_1, \\hat e_2, \\hat e_3$"
+ },
+ "formel-8d700723-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 28,
+  "tex": "$\\delta(i) = 2(i - r) + (\\pi - 2r) = \\pi + 2i - 4r$"
+ },
+ "formel-8d8192ee-17": {
+  "breite": 212,
+  "groesse": 17,
+  "hoehe": 33,
+  "tex": "$\\frac{1}{\\rho}\\nabla_z p = g\\,\\nabla_p z = \\nabla_p\\Phi$"
+ },
+ "formel-8d98c852-17": {
+  "breite": 101,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$1 + \\cos^2\\vartheta$"
+ },
+ "formel-8dfe7fd1-17": {
+  "breite": 51,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$+1.8$"
+ },
+ "formel-8e23c727-17": {
+  "breite": 148,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$14{,}0/23{,}3 = 60$"
+ },
+ "formel-8e3e9153-17": {
+  "breite": 185,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$\\Omega = 7{,}29\\cdot 10^{-5}\\,\\mathrm{s^{-1}}$"
+ },
+ "formel-8e826937-17": {
+  "breite": 227,
+  "groesse": 17,
+  "hoehe": 40,
+  "tex": "$\\sigma = \\frac{2\\pi^5 k^4}{15\\,h^3 c^2} = 5{,}67\\cdot 10^{-8}$"
+ },
+ "formel-8e91732a-17": {
+  "breite": 94,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$\\zeta' = \\nabla^2\\psi$"
+ },
+ "formel-8f2b5b43-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 27,
+  "tex": "$T_s = 2^{1/4}\\,T_a = 2^{1/4}\\,T_e = 1{,}189\\cdot 255 = 303\\,\\mathrm{K}$"
+ },
+ "formel-8f456105-17": {
+  "breite": 102,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$\\vec v_{g,2} - \\vec v_{g,1}$"
+ },
+ "formel-9003ebca-17": {
+  "breite": 88,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Psi \\approx 10^{11}$"
+ },
+ "formel-902a4c5e": {
+  "breite": 260,
+  "groesse": 22,
+  "hoehe": 37,
+  "tex": "$T_s = 2^{1/4}\\,T_e = 303\\,\\mathrm{K}$"
+ },
+ "formel-9080eac2-17": {
+  "breite": 82,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$Ro = 10$"
+ },
+ "formel-90998209-20": {
+  "breite": 179,
+  "groesse": 20,
+  "hoehe": 48,
+  "tex": "$V = \\frac{-\\ln 0{,}02}{\\beta} = \\frac{3{,}9}{\\beta}$"
+ },
+ "formel-90d91ef3-17": {
+  "breite": 66,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$u = 10$"
+ },
+ "formel-913e49ea-17": {
+  "breite": 17,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Gamma$"
+ },
+ "formel-91eb9e88-17": {
+  "breite": 184,
+  "groesse": 17,
+  "hoehe": 34,
+  "tex": "$d\\theta/dz = \\frac{\\theta}{T}(\\Gamma_d - \\Gamma)$"
+ },
+ "formel-91ed8af8-17": {
+  "breite": 44,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$T(z)$"
+ },
+ "formel-921aade3-17": {
+  "breite": 18,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\varphi$"
+ },
+ "formel-9275b0ae-17": {
+  "breite": 51,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r = 5$"
+ },
+ "formel-92e8fba3-17": {
+  "breite": 239,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$n^2 - 1 + \\cos^2 i = 4\\cos^2 i$"
+ },
+ "formel-93037194-17": {
+  "breite": 100,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$2\\pi L_R/2.4$"
+ },
+ "formel-932b02a3-17": {
+  "breite": 299,
+  "groesse": 17,
+  "hoehe": 47,
+  "tex": "$\\xi = \\left[\\frac{\\rho_w R_v T}{D\\,e_s} + \\frac{\\rho_w L_v^2}{K\\,R_v T^2}\\right]^{-1} \\approx 10^{-10}$"
+ },
+ "formel-933674fe-17": {
+  "breite": 181,
+  "groesse": 17,
+  "hoehe": 42,
+  "tex": "$B_\\lambda = \\frac{2hc^2}{\\lambda^5}\\,\\frac{1}{e^{hc/(\\lambda kT)} - 1}$"
+ },
+ "formel-9351b066-17": {
+  "breite": 105,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\delta = 230{,}4^\\circ$"
+ },
+ "formel-93851e2b-17": {
+  "breite": 136,
+  "groesse": 17,
+  "hoehe": 31,
+  "tex": "$L_\\downarrow = \\varepsilon_a\\,\\sigma T_{2m}^4$"
+ },
+ "formel-941e1b52-17": {
+  "breite": 212,
+  "groesse": 17,
+  "hoehe": 56,
+  "tex": "$\\frac{1}{2}w^2 = \\int b\\,dz = \\mathrm{CAPE}$"
+ },
+ "formel-9431d22b-17": {
+  "breite": 56,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$4\\pi R^2$"
+ },
+ "formel-94605ced-17": {
+  "breite": 112,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$S_0/4 = 340$"
+ },
+ "formel-947e7138-17": {
+  "breite": 65,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$T/T_{std}$"
+ },
+ "formel-948bfbb6-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 35,
+  "tex": "$f v_g = \\frac{1}{\\rho}\\frac{\\partial p}{\\partial x}, \\qquad f u_g = -\\frac{1}{\\rho}\\frac{\\partial p}{\\partial y} \\quad\\Leftrightarrow\\quad \\vec v_g = \\frac{1}{\\rho f}\\,\\hat k\\times\\nabla p$"
+ },
+ "formel-955704dd-17": {
+  "breite": 121,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Gamma_s < \\Gamma < \\Gamma_d$"
+ },
+ "formel-959062b8-17": {
+  "breite": 141,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$|1 - \\nu| + \\nu > 1$"
+ },
+ "formel-95c644e5-17": {
+  "breite": 400,
+  "groesse": 17,
+  "hoehe": 41,
+  "tex": "$r = \\rho_v/\\rho_d = \\frac{e/(R_v T)}{(p-e)/(R_L T)} = \\frac{R_L}{R_v}\\,\\frac{e}{p-e} = 0{,}622\\,\\frac{e}{p-e}$"
+ },
+ "formel-95d18488-17": {
+  "breite": 119,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$|d(\\sin i)/d\\delta|$"
+ },
+ "formel-9641dbaa-17": {
+  "breite": 173,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$n - 1 = 2.9\\cdot 10^{-4}$"
+ },
+ "formel-968800f9-17": {
+  "breite": 84,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$L_v = 2{,}5$"
+ },
+ "formel-9717999f-17": {
+  "breite": 167,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$= 1{,}2\\cdot 10^{-9}\\,\\mathrm{m}/r$"
+ },
+ "formel-974f57e1-17": {
+  "breite": 56,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\alpha = 0$"
+ },
+ "formel-979f6d73-17": {
+  "breite": 149,
+  "groesse": 17,
+  "hoehe": 36,
+  "tex": "$D = \\pi\\sqrt{2K/f}$"
+ },
+ "formel-97d89dbd-17": {
+  "breite": 40,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\nabla T$"
+ },
+ "formel-9866e3a9-17": {
+  "breite": 21,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$Q$"
+ },
+ "formel-98ea1dbe-17": {
+  "breite": 81,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$Re = 10$"
+ },
+ "formel-99151c91": {
+  "breite": 197,
+  "groesse": 22,
+  "hoehe": 53,
+  "tex": "$\\theta_e \\approx \\theta\\,\\exp\\!\\left(\\frac{L_v\\,r}{c_p\\,T}\\right)$"
+ },
+ "formel-993b5dd5-17": {
+  "breite": 125,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$r\\,dr/dt = \\xi S$"
+ },
+ "formel-9a33a49f-17": {
+  "breite": 179,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$f = 1.03\\cdot 10^{-4}\\,\\mathrm{s^{-1}}$"
+ },
+ "formel-9a7b9220": {
+  "breite": 277,
+  "groesse": 22,
+  "hoehe": 45,
+  "tex": "$N^2 = \\frac{g}{\\theta}\\,\\frac{d\\theta}{dz} = \\frac{g}{T}\\left(\\Gamma_d - \\Gamma\\right)$"
+ },
+ "formel-9aa82340-17": {
+  "breite": 40,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Delta T$"
+ },
+ "formel-9ad99798-17": {
+  "breite": 16,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$u$"
+ },
+ "formel-9af7745c-17": {
+  "breite": 188,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$Ro = U/(fL) = 0{,}1$"
+ },
+ "formel-9b54a98c-17": {
+  "breite": 160,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$4\\pi r K\\,(T_r - T_\\infty)$"
+ },
+ "formel-9b98eb99-20": {
+  "breite": 271,
+  "groesse": 20,
+  "hoehe": 36,
+  "tex": "$z_{LCL} \\approx 125\\ \\frac{\\mathrm{m}}{\\mathrm{K}}\\cdot(T - T_d)$"
+ },
+ "formel-9bb7aebc-17": {
+  "breite": 392,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\Delta T = 60\\cdot 28\\,800/(1{,}2\\cdot 1004\\cdot 200) = 7{,}2$"
+ },
+ "formel-9c207c60-17": {
+  "breite": 35,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$m_w$"
+ },
+ "formel-9ca4b4f7-17": {
+  "breite": 82,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\varepsilon = 0{,}78$"
+ },
+ "formel-9d461b5f-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 40,
+  "tex": "$\\frac{d\\hat i}{dt} = \\dot\\lambda\\,\\hat k_{pol}\\times\\hat i = \\frac{u}{a\\cos\\varphi}\\left(\\sin\\varphi\\,\\hat j - \\cos\\varphi\\,\\hat k\\right)$"
+ },
+ "formel-9da297ac-17": {
+  "breite": 59,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$R < 0$"
+ },
+ "formel-9e56aec5-17": {
+  "breite": 102,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$dS/dr = 0$"
+ },
+ "formel-9e7f78c4-17": {
+  "breite": 91,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r_s = 21.9$"
+ },
+ "formel-9ea186e4-17": {
+  "breite": 78,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\beta = 8/3$"
+ },
+ "formel-9eaab7f6-17": {
+  "breite": 148,
+  "groesse": 17,
+  "hoehe": 32,
+  "tex": "$\\dot\\lambda = u/(a\\cos\\varphi)$"
+ },
+ "formel-9eb637cc-17": {
+  "breite": 112,
+  "groesse": 17,
+  "hoehe": 32,
+  "tex": "$4\\pi R_\\odot^2\\,\\sigma T_\\odot^4$"
+ },
+ "formel-9ee4b825-17": {
+  "breite": 19,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$w$"
+ },
+ "formel-9eea5982-17": {
+  "breite": 180,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$p_0/p_h = 1000/900$"
+ },
+ "formel-9f10fa4b-17": {
+  "breite": 96,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$n = 1{,}331$"
+ },
+ "formel-9f1b75de": {
+  "breite": 190,
+  "groesse": 22,
+  "hoehe": 55,
+  "tex": "$v_{Stokes} = \\frac{2\\,\\rho_w\\,g\\,r^2}{9\\,\\eta}$"
+ },
+ "formel-9fa65f2a-17": {
+  "breite": 124,
+  "groesse": 17,
+  "hoehe": 52,
+  "tex": "$\\vec A = \\sum_i A_i\\,\\hat e_i$"
+ },
+ "formel-9ffb4489-17": {
+  "breite": 22,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$D$"
+ },
+ "formel-9ffc9037-17": {
+  "breite": 133,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\beta = 1.6\\cdot 10^{-2}$"
+ },
+ "formel-a000ad6a-17": {
+  "breite": 87,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$A = -u_g$"
+ },
+ "formel-a00be190-17": {
+  "breite": 146,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$9.8 - 1.8 = 8.0$"
+ },
+ "formel-a0119ffc-17": {
+  "breite": 185,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Omega = 7.29\\cdot 10^{-5}\\,\\mathrm{s^{-1}}$"
+ },
+ "formel-a026baaf-17": {
+  "breite": 95,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$dp_1 = dp_2$"
+ },
+ "formel-a0312f2f-17": {
+  "breite": 239,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T_{Lee} = 1{,}2 + 24{,}5 = 25{,}7$"
+ },
+ "formel-a07dbb6d-17": {
+  "breite": 200,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$z_{LCL} = (T - T_d)/8{,}0$"
+ },
+ "formel-a098970f-20": {
+  "breite": 288,
+  "groesse": 20,
+  "hoehe": 44,
+  "tex": "$k\\,L_R < 2.4, \\qquad L_R = \\frac{N\\,H}{f}$"
+ },
+ "formel-a0bc3816-17": {
+  "breite": 75,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$3\\cdot 10^{-3}$"
+ },
+ "formel-a199a018": {
+  "breite": 329,
+  "groesse": 22,
+  "hoehe": 48,
+  "tex": "$f = 2\\,\\Omega\\,\\sin\\varphi, \\qquad Ro = \\frac{U}{f\\,L}$"
+ },
+ "formel-a2068709-17": {
+  "breite": 50,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\sin\\alpha$"
+ },
+ "formel-a2327ab5-17": {
+  "breite": 193,
+  "groesse": 17,
+  "hoehe": 35,
+  "tex": "$\\frac{dm}{dt} = \\pi R^2\\,v(R)\\,w\\,E$"
+ },
+ "formel-a2737a79-17": {
+  "breite": 88,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$L_\\downarrow - L_\\uparrow$"
+ },
+ "formel-a29a42cc-17": {
+  "breite": 85,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$z_0 = 500$"
+ },
+ "formel-a2ab5ae1-17": {
+  "breite": 115,
+  "groesse": 17,
+  "hoehe": 33,
+  "tex": "$\\frac{1}{2}c_d\\rho_L v^2\\pi r^2$"
+ },
+ "formel-a3568cfe-17": {
+  "breite": 32,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$0{,}8$"
+ },
+ "formel-a38bae80-17": {
+  "breite": 68,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$T_{ground}$"
+ },
+ "formel-a3a8a7bc-17": {
+  "breite": 119,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T_L - T_S = 5$"
+ },
+ "formel-a42d802d-17": {
+  "breite": 165,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$1000/(\\Gamma_d - \\Gamma_{T_d})$"
+ },
+ "formel-a45577ad-17": {
+  "breite": 147,
+  "groesse": 17,
+  "hoehe": 36,
+  "tex": "$\\frac{1}{\\rho}\\nabla p = f\\,\\hat k\\times\\vec v_g$"
+ },
+ "formel-a6146ad1-17": {
+  "breite": 73,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$g_w = g_v$"
+ },
+ "formel-a664a9f6-17": {
+  "breite": 71,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\beta \\approx 0{,}1$"
+ },
+ "formel-a6a36972-17": {
+  "breite": 169,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$|d\\vec e| = \\sin\\alpha\\cdot\\Omega\\,dt$"
+ },
+ "formel-a6c19e11-17": {
+  "breite": 371,
+  "groesse": 17,
+  "hoehe": 34,
+  "tex": "$c = \\sqrt{\\gamma R_L T} = \\sqrt{1.4\\cdot 287\\cdot 288} = 340$"
+ },
+ "formel-a72d46ec-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 35,
+  "tex": "$\\frac{d'\\vec v}{dt} = -\\frac{1}{\\rho}\\nabla p - 2\\,\\vec\\Omega\\times\\vec v - \\vec\\Omega\\times(\\vec\\Omega\\times\\vec r) + \\vec g + \\vec F$"
+ },
+ "formel-a7784a4f-17": {
+  "breite": 302,
+  "groesse": 17,
+  "hoehe": 44,
+  "tex": "$\\frac{1}{e_s}\\frac{de_s}{dT} = \\frac{L_v}{R_v T^2} = \\frac{2.5\\cdot 10^6}{461.5\\cdot 288^2} = 0.065$"
+ },
+ "formel-a80aed3c-17": {
+  "breite": 80,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$U = 100$"
+ },
+ "formel-a86ed144-17": {
+  "breite": 21,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\zeta_g$"
+ },
+ "formel-a898d60e-17": {
+  "breite": 374,
+  "groesse": 17,
+  "hoehe": 34,
+  "tex": "$c = \\sqrt{\\gamma R_L T} = \\sqrt{1{,}4\\cdot 287\\cdot 288} = 340$"
+ },
+ "formel-a8ec02a6-17": {
+  "breite": 44,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$-84$"
+ },
+ "formel-a8fbf7d9-17": {
+  "breite": 99,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$Re = 0.01$"
+ },
+ "formel-a924c03a-17": {
+  "breite": 131,
+  "groesse": 17,
+  "hoehe": 41,
+  "tex": "$\\frac{f^2R^2}{4} - \\frac{|R|}{\\rho}\\left|\\frac{\\partial p}{\\partial n}\\right|$"
+ },
+ "formel-a9520d22-17": {
+  "breite": 82,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$R = 500$"
+ },
+ "formel-a958c9f4-17": {
+  "breite": 374,
+  "groesse": 17,
+  "hoehe": 31,
+  "tex": "$L_v \\Delta r / c_p = 2{,}5\\cdot 10^{6}\\cdot 0{,}007/1004 \\approx 17$"
+ },
+ "formel-a9dedc6b-17": {
+  "breite": 72,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$N^2 < 0$"
+ },
+ "formel-a9f23bf1-17": {
+  "breite": 14,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$v$"
+ },
+ "formel-a9fffa42-17": {
+  "breite": 84,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Gamma_s = 6{,}5$"
+ },
+ "formel-aa92dd0d-17": {
+  "breite": 140,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$dz/dy = \\tan\\alpha$"
+ },
+ "formel-aa93814b-17": {
+  "breite": 93,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$1{,}5\\cdot 10^{-3}$"
+ },
+ "formel-aab226a7-17": {
+  "breite": 217,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$du/dt \\sim U^2/L = 10^{-4}$"
+ },
+ "formel-aac77320-17": {
+  "breite": 400,
+  "groesse": 17,
+  "hoehe": 25,
+  "tex": "$\\delta = 2\\arcsin(0.655) - 60^\\circ = 81.8 - 60 = 21.8^\\circ$"
+ },
+ "formel-ab07fac3-17": {
+  "breite": 53,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$2\\pi/f$"
+ },
+ "formel-ab475e99-17": {
+  "breite": 331,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$(-i\\omega + iUk)(-k^2 - l^2) + i\\beta k = 0$"
+ },
+ "formel-ab5e0245": {
+  "breite": 400,
+  "groesse": 22,
+  "hoehe": 40,
+  "tex": "$\\delta(t) = \\delta_0\\,e^{\\lambda t}, \\qquad t_{2} = \\frac{\\ln 2}{\\lambda} \\approx 2\\ \\mathrm{Tage}$"
+ },
+ "formel-ab64e7c0-17": {
+  "breite": 199,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$d\\vec v/dt = -\\nabla p/\\rho + \\vec g$"
+ },
+ "formel-ab68e7f3-17": {
+  "breite": 136,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$Fr = U/(N\\,h)$"
+ },
+ "formel-abeb1015-17": {
+  "breite": 138,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$b = 1.6\\cdot 10^{-20}$"
+ },
+ "formel-abedf53c-17": {
+  "breite": 161,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\tau = \\sigma_R N H = 0{,}1$"
+ },
+ "formel-ac635cfb-17": {
+  "breite": 82,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$c_w = 0{,}6$"
+ },
+ "formel-ac7500f9-17": {
+  "breite": 36,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\sqrt{t}$"
+ },
+ "formel-ad28c83c-17": {
+  "breite": 18,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$S$"
+ },
+ "formel-ad299097-17": {
+  "breite": 52,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$d = 1$"
+ },
+ "formel-ad5a1afe-17": {
+  "breite": 44,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$c\\,\\Delta t$"
+ },
+ "formel-ad9ccb59-17": {
+  "breite": 68,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$U = 15$"
+ },
+ "formel-ae055da1-17": {
+  "breite": 61,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$2\\pi/N$"
+ },
+ "formel-ae09d6e3-17": {
+  "breite": 282,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$\\Delta F = 5.35\\,\\mathrm{W/m^2}\\cdot\\ln(C/C_0)$"
+ },
+ "formel-ae53c79d-17": {
+  "breite": 53,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r \\geq \\lambda$"
+ },
+ "formel-ae87fa03-17": {
+  "breite": 139,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$D = 2.2\\cdot 10^{-5}$"
+ },
+ "formel-aeb31dcf-17": {
+  "breite": 280,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\kappa = 287/1004 = 0{,}286 = 2/7$"
+ },
+ "formel-af211a32-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 35,
+  "tex": "$c_p\\,dT = -g\\,dz \\quad\\Rightarrow\\quad \\frac{dT}{dz} = -\\frac{g}{c_p} = -9.8\\ \\frac{\\mathrm{K}}{\\mathrm{km}}$"
+ },
+ "formel-af3b6b47-17": {
+  "breite": 27,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$L_v$"
+ },
+ "formel-af812740-17": {
+  "breite": 25,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T_v$"
+ },
+ "formel-afcdadf3-17": {
+  "breite": 164,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\ln(p_1/p_2) = 1{,}39$"
+ },
+ "formel-afd9b203-17": {
+  "breite": 236,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T = 20 - 9{,}8\\cdot 1{,}0 = 10{,}2$"
+ },
+ "formel-b01b4cde-17": {
+  "breite": 108,
+  "groesse": 17,
+  "hoehe": 45,
+  "tex": "$s_\\theta = -\\frac{\\partial\\theta/\\partial y}{\\partial\\theta/\\partial z}$"
+ },
+ "formel-b023b7c3-17": {
+  "breite": 226,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\ln(p/p_0) = -gz/(R_L T)$"
+ },
+ "formel-b0392e88-17": {
+  "breite": 21,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\theta_e$"
+ },
+ "formel-b0b1c524-20": {
+  "breite": 117,
+  "groesse": 20,
+  "hoehe": 47,
+  "tex": "$c = U - \\frac{\\beta}{k^2}$"
+ },
+ "formel-b0db996b-17": {
+  "breite": 73,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Gamma = 6{,}5$"
+ },
+ "formel-b0f886d6-17": {
+  "breite": 91,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$i = 59{,}5^\\circ$"
+ },
+ "formel-b107a7d2-17": {
+  "breite": 94,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\lambda_0 = 3.76$"
+ },
+ "formel-b13f2141-17": {
+  "breite": 14,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$z$"
+ },
+ "formel-b14487bf-17": {
+  "breite": 154,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\log_2 10 \\cdot 2 = 6.6$"
+ },
+ "formel-b1902d27-17": {
+  "breite": 24,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$H$"
+ },
+ "formel-b1a3ac2a-17": {
+  "breite": 86,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r^* = 0.2$"
+ },
+ "formel-b20c6327-17": {
+  "breite": 155,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\sigma_R = 4{,}5\\cdot 10^{-31}$"
+ },
+ "formel-b2103e84-17": {
+  "breite": 260,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$M = (\\Omega\\,a\\cos\\varphi + u)\\,a\\cos\\varphi$"
+ },
+ "formel-b24a3acd-17": {
+  "breite": 105,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$u^2\\tan\\varphi/a$"
+ },
+ "formel-b258d1bd": {
+  "breite": 375,
+  "groesse": 22,
+  "hoehe": 52,
+  "tex": "$v_g = \\frac{1}{\\rho\\,f}\\,\\frac{\\partial p}{\\partial n}, \\qquad \\vec v_g = \\frac{1}{\\rho f}\\,\\hat k\\times\\nabla p$"
+ },
+ "formel-b2828055-17": {
+  "breite": 186,
+  "groesse": 17,
+  "hoehe": 37,
+  "tex": "$pV = (\\sum n_i)\\,R^* T$"
+ },
+ "formel-b2c46cfc-17": {
+  "breite": 100,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$2\\pi L_R/2{,}4$"
+ },
+ "formel-b31c61fd-17": {
+  "breite": 220,
+  "groesse": 17,
+  "hoehe": 40,
+  "tex": "$\\ln(e_s/e_0) = \\frac{L_v}{R_v}\\left(\\frac{1}{T_0} - \\frac{1}{T}\\right)$"
+ },
+ "formel-b324d6c4-17": {
+  "breite": 266,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$L_{max} = 2\\pi L_R/1{,}6 = 3{,}9\\,L_R$"
+ },
+ "formel-b3f7ba4d-17": {
+  "breite": 76,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$E \\approx 0.8$"
+ },
+ "formel-b42d62a8-17": {
+  "breite": 155,
+  "groesse": 17,
+  "hoehe": 35,
+  "tex": "$\\frac{d\\delta}{di} = 2 - 4\\frac{dr}{di} = 0$"
+ },
+ "formel-b4a51042-17": {
+  "breite": 146,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$2{,}5 \\cdot 9{,}8 = 24{,}5$"
+ },
+ "formel-b4ae403b-17": {
+  "breite": 53,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r \\to i$"
+ },
+ "formel-b4f7f563-17": {
+  "breite": 26,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$dz$"
+ },
+ "formel-b54d1fe8-17": {
+  "breite": 279,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$de/e = dp/p = -g\\,dz/(R_L T)$"
+ },
+ "formel-b55ca7a0-17": {
+  "breite": 13,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r$"
+ },
+ "formel-b6099be2-17": {
+  "breite": 217,
+  "groesse": 17,
+  "hoehe": 36,
+  "tex": "$L = 2\\pi\\sqrt{U/\\beta} = 6000$"
+ },
+ "formel-b60a83de-17": {
+  "breite": 82,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\rho \\propto 1/T$"
+ },
+ "formel-b6345a30-17": {
+  "breite": 204,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$e = e_s(12^\\circ\\mathrm{C}) = 14.0$"
+ },
+ "formel-b64d012d-17": {
+  "breite": 150,
+  "groesse": 17,
+  "hoehe": 36,
+  "tex": "$D_E = \\sqrt{2K/f}$"
+ },
+ "formel-b6a62048-17": {
+  "breite": 115,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$2\\pi/N \\approx 9.5$"
+ },
+ "formel-b6a73ad9-17": {
+  "breite": 119,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\nabla\\times\\nabla p = 0$"
+ },
+ "formel-b6c65be6-17": {
+  "breite": 71,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\rho_1 \\approx \\rho_2$"
+ },
+ "formel-b6e6e704-20": {
+  "breite": 129,
+  "groesse": 20,
+  "hoehe": 44,
+  "tex": "$L \\approx 3.9\\,\\frac{N\\,H}{f}$"
+ },
+ "formel-b763cbcc-17": {
+  "breite": 49,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$i = 2$"
+ },
+ "formel-b7a7b602-20": {
+  "breite": 241,
+  "groesse": 20,
+  "hoehe": 65,
+  "tex": "$\\mathrm{CAPE} = \\int g\\,\\frac{T_v' - T_v}{T_v}\\,dz$"
+ },
+ "formel-b7cb9ff8-17": {
+  "breite": 48,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$R^{5/2}$"
+ },
+ "formel-b7ce1f88-17": {
+  "breite": 83,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Phi_2 - \\Phi_1$"
+ },
+ "formel-b7dbfd7d-17": {
+  "breite": 148,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$14.0/23.3 = 60$"
+ },
+ "formel-b7f7a06f-17": {
+  "breite": 60,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$N = 0$"
+ },
+ "formel-b80fa92c-17": {
+  "breite": 62,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$p(z)A$"
+ },
+ "formel-b85c8a96-17": {
+  "breite": 120,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$2\\Omega\\sin\\varphi = f$"
+ },
+ "formel-b8bd4a45-17": {
+  "breite": 106,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$n_{ice} = 1.31$"
+ },
+ "formel-b8dfefc1-17": {
+  "breite": 161,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\tau = \\sigma_R N H = 0.1$"
+ },
+ "formel-b90609a8-17": {
+  "breite": 169,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\delta q = c_p\\,dT - \\alpha\\,dp$"
+ },
+ "formel-b917702e-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 22,
+  "tex": "$\\phi_j^{n+1} = \\phi_j^n - \\frac{c\\,\\Delta t}{\\Delta x}\\left(\\phi_j^n - \\phi_{j-1}^n\\right) = (1 - \\nu)\\,\\phi_j^n + \\nu\\,\\phi_{j-1}^n, \\qquad \\nu = \\frac{c\\,\\Delta t}{\\Delta x}$"
+ },
+ "formel-b94a6803-17": {
+  "breite": 22,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$c_d$"
+ },
+ "formel-b9bcbaa4-17": {
+  "breite": 113,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\Delta t < \\Delta x / c$"
+ },
+ "formel-ba10074e-17": {
+  "breite": 10,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\hat i$"
+ },
+ "formel-ba35b65c-17": {
+  "breite": 191,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$S^* - 1 = 1{,}2\\cdot 10^{-3}$"
+ },
+ "formel-ba3c1a7a-17": {
+  "breite": 93,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\rho = m/V$"
+ },
+ "formel-ba4c550e-17": {
+  "breite": 48,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$10^{-5}$"
+ },
+ "formel-ba6cb2e7-17": {
+  "breite": 22,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$s_\\theta$"
+ },
+ "formel-ba7f2c4b-17": {
+  "breite": 183,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\cos i\\,di = n\\cos r\\,dr$"
+ },
+ "formel-ba872d85-17": {
+  "breite": 138,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$p_i V = n_i R^* T$"
+ },
+ "formel-bab9abe9-17": {
+  "breite": 22,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$z_0$"
+ },
+ "formel-bb058101": {
+  "breite": 286,
+  "groesse": 22,
+  "hoehe": 45,
+  "tex": "$\\Gamma_d = -\\frac{dT}{dz} = \\frac{g}{c_p} = 9{,}8\\,\\frac{\\mathrm{K}}{\\mathrm{km}}$"
+ },
+ "formel-bb102be3-17": {
+  "breite": 82,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\varepsilon = 0.78$"
+ },
+ "formel-bb2c9373-17": {
+  "breite": 16,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$f$"
+ },
+ "formel-bb4a6b94-17": {
+  "breite": 43,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$1/T$"
+ },
+ "formel-bb81a30a-17": {
+  "breite": 62,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$6\\pi\\eta r v$"
+ },
+ "formel-bc0aee36-17": {
+  "breite": 57,
+  "groesse": 17,
+  "hoehe": 35,
+  "tex": "$\\frac{dr}{di} = \\frac{1}{2}$"
+ },
+ "formel-bc1fb858-17": {
+  "breite": 48,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$i - r$"
+ },
+ "formel-bc4ede08-17": {
+  "breite": 126,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\rho = p/(R_L T)$"
+ },
+ "formel-bc5c0a32-17": {
+  "breite": 163,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$K \\approx 1\\ldots 10\\,\\mathrm{m^2/s}$"
+ },
+ "formel-bc6ee6df-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 25,
+  "tex": "$c_p\\,dT + g\\,dz = 0 \\quad\\Rightarrow\\quad \\Gamma_d = -\\frac{dT}{dz} = \\frac{g}{c_p} = \\frac{9{,}81}{1004} = 9{,}77\\cdot 10^{-3}\\,\\mathrm{K/m}$"
+ },
+ "formel-bc7c2330-17": {
+  "breite": 94,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Omega a = 465$"
+ },
+ "formel-bcf3502d-17": {
+  "breite": 94,
+  "groesse": 17,
+  "hoehe": 32,
+  "tex": "$\\zeta_g = 10^{-5}$"
+ },
+ "formel-bd242779-17": {
+  "breite": 74,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$c = 340$"
+ },
+ "formel-bd6fa8bc-17": {
+  "breite": 400,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\Delta z = \\Delta p/(\\rho g) = 100/(1{,}225\\cdot 9{,}81) = 8{,}3$"
+ },
+ "formel-bdc55729-17": {
+  "breite": 149,
+  "groesse": 17,
+  "hoehe": 31,
+  "tex": "$\\sigma T_s^4 = F + \\sigma T_a^4$"
+ },
+ "formel-bdc5e8b2-17": {
+  "breite": 103,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$10^{-3}\\,\\mathrm{m/s^2}$"
+ },
+ "formel-beab3b5c-17": {
+  "breite": 51,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$b < 0$"
+ },
+ "formel-beebba0c-17": {
+  "breite": 95,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$p = 226.3$"
+ },
+ "formel-bf3a0bb4-17": {
+  "breite": 25,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$c_w$"
+ },
+ "formel-bfc40936-17": {
+  "breite": 113,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$+2\\Omega u\\cos\\varphi$"
+ },
+ "formel-bfc42ee7-17": {
+  "breite": 105,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\vec v = d'\\vec r/dt$"
+ },
+ "formel-bfef3eca-17": {
+  "breite": 181,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$T_v = T\\,(1 + 0{,}61\\,r)$"
+ },
+ "formel-c076be4d-17": {
+  "breite": 254,
+  "groesse": 17,
+  "hoehe": 34,
+  "tex": "$\\sqrt{9{,}81\\cdot 1000\\cdot 0{,}027} = 16$"
+ },
+ "formel-c0ae55db-17": {
+  "breite": 119,
+  "groesse": 17,
+  "hoehe": 33,
+  "tex": "$\\frac{1}{2}c_w\\rho_L v^2\\pi r^2$"
+ },
+ "formel-c1404a81-17": {
+  "breite": 48,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$l = 0$"
+ },
+ "formel-c15435ea-17": {
+  "breite": 191,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$S^* - 1 = 1.2\\cdot 10^{-3}$"
+ },
+ "formel-c16d0ca9-17": {
+  "breite": 259,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$2\\arcsin(0{,}926) - 90 = 46^\\circ$"
+ },
+ "formel-c1c3b9f6-17": {
+  "breite": 180,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$\\alpha = \\varepsilon_0(n^2-1)/N$"
+ },
+ "formel-c21b25ca-17": {
+  "breite": 297,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Psi\\,\\Delta h = 10^{11}\\cdot 3\\cdot 10^4 = 3\\cdot 10^{15}$"
+ },
+ "formel-c22f844f-17": {
+  "breite": 386,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$N^2 = 9.81/288\\cdot 3.3\\cdot 10^{-3} = 1.12\\cdot 10^{-4}$"
+ },
+ "formel-c2ae0447-17": {
+  "breite": 70,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$3\\cdot 10^{15}$"
+ },
+ "formel-c3355896-17": {
+  "breite": 21,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$C$"
+ },
+ "formel-c35f461b-17": {
+  "breite": 70,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\nu = 0{,}5$"
+ },
+ "formel-c38bee07-17": {
+  "breite": 96,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$d\\delta/di = 0$"
+ },
+ "formel-c3a4827f-17": {
+  "breite": 116,
+  "groesse": 17,
+  "hoehe": 40,
+  "tex": "$\\frac{\\partial r_s}{\\partial p} = -r_s/p$"
+ },
+ "formel-c3cf6223-20": {
+  "breite": 348,
+  "groesse": 20,
+  "hoehe": 50,
+  "tex": "$\\rho\\,c_p\\,h\\,\\frac{dT}{dt} = Q \\quad\\Rightarrow\\quad \\Delta T = \\frac{Q\\,\\Delta t}{\\rho\\,c_p\\,h}$"
+ },
+ "formel-c404942b-17": {
+  "breite": 122,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$K\\,w'' = i f\\,w$"
+ },
+ "formel-c4868086-17": {
+  "breite": 296,
+  "groesse": 17,
+  "hoehe": 36,
+  "tex": "$e_s = 6.112\\ \\mathrm{hPa}\\cdot\\exp\\!\\left(\\frac{17.62\\,t}{243.12 + t}\\right)$"
+ },
+ "formel-c4cd3128-20": {
+  "breite": 162,
+  "groesse": 20,
+  "hoehe": 50,
+  "tex": "$v \\approx k\\sqrt{g\\,h\\,\\frac{\\Delta T}{T}}$"
+ },
+ "formel-c4f3295a-17": {
+  "breite": 89,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$-2\\vec\\Omega\\times\\vec v$"
+ },
+ "formel-c5164a68-17": {
+  "breite": 42,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Omega a^2$"
+ },
+ "formel-c537dcdc-20": {
+  "breite": 288,
+  "groesse": 20,
+  "hoehe": 44,
+  "tex": "$k\\,L_R < 2{,}4, \\qquad L_R = \\frac{N\\,H}{f}$"
+ },
+ "formel-c575552b-17": {
+  "breite": 21,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\delta_0$"
+ },
+ "formel-c5a3f406-17": {
+  "breite": 108,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$RH = e/e_s$"
+ },
+ "formel-c5d21319-17": {
+  "breite": 51,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$+1{,}8$"
+ },
+ "formel-c5f061cb-17": {
+  "breite": 44,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\ln C$"
+ },
+ "formel-c5f49038-17": {
+  "breite": 52,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$v = 0$"
+ },
+ "formel-c61c5a1e-17": {
+  "breite": 48,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$10^{-6}$"
+ },
+ "formel-c690d378-17": {
+  "breite": 89,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$(\\lambda_1/\\lambda_2)^4$"
+ },
+ "formel-c6e5d67b-17": {
+  "breite": 266,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$L_{max} = 2\\pi L_R/1.6 = 3.9\\,L_R$"
+ },
+ "formel-c7b10383-17": {
+  "breite": 24,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T_e$"
+ },
+ "formel-c888fee7-17": {
+  "breite": 148,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$c_p T + g z + L_v r$"
+ },
+ "formel-c8f52de1-17": {
+  "breite": 69,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T' = T$"
+ },
+ "formel-c8fb1fc2-17": {
+  "breite": 201,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$L_s = L_v + L_f = 2.83$"
+ },
+ "formel-c9213230-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 25,
+  "tex": "$-s_w\\,dT + \\alpha_w\\,de_s = -s_v\\,dT + \\alpha_v\\,de_s \\quad\\Rightarrow\\quad \\frac{de_s}{dT} = \\frac{s_v - s_w}{\\alpha_v - \\alpha_w} = \\frac{L_v}{T\\,(\\alpha_v - \\alpha_w)}$"
+ },
+ "formel-c9585c1c-17": {
+  "breite": 366,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$0{,}8\\cdot 3\\cdot 10^{-4}\\cdot 21\\cdot 3\\cdot 10^{-3} = 1{,}5\\cdot 10^{-5}$"
+ },
+ "formel-c95df703-17": {
+  "breite": 62,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\partial u/\\partial z$"
+ },
+ "formel-c9bfbe35-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 31,
+  "tex": "$\\delta(i) = \\pi + 2i - 4r, \\qquad \\sin i = n\\,\\sin r$"
+ },
+ "formel-c9fdaa00-17": {
+  "breite": 25,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\delta z$"
+ },
+ "formel-ca011899-17": {
+  "breite": 171,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$(650/450)^4 = 4{,}4$"
+ },
+ "formel-caa6f695-17": {
+  "breite": 98,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$k_s^2 = \\beta/U$"
+ },
+ "formel-cb874fea-17": {
+  "breite": 198,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$n^2 - \\sin^2 i = 4\\cos^2 i$"
+ },
+ "formel-cb8835f7-17": {
+  "breite": 92,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$L = 1000$"
+ },
+ "formel-cc6df050-17": {
+  "breite": 81,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\varepsilon_a \\approx 0.7$"
+ },
+ "formel-cc93fe39-17": {
+  "breite": 30,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\alpha_w$"
+ },
+ "formel-ccab52f8-17": {
+  "breite": 188,
+  "groesse": 17,
+  "hoehe": 40,
+  "tex": "$dr_s = \\frac{\\partial r_s}{\\partial T}dT + \\frac{\\partial r_s}{\\partial p}dp$"
+ },
+ "formel-ccbf4f88-17": {
+  "breite": 117,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$d\\theta/dz = 3.3$"
+ },
+ "formel-cd004d18-17": {
+  "breite": 182,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$d\\zeta/dt = -f\\,w_E/H$"
+ },
+ "formel-cd16c2b7-17": {
+  "breite": 19,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\vec\\Omega$"
+ },
+ "formel-cd2b4069-17": {
+  "breite": 138,
+  "groesse": 17,
+  "hoehe": 35,
+  "tex": "$\\phi_j^n = \\xi^n e^{ikj\\Delta x}$"
+ },
+ "formel-cd5c294f-17": {
+  "breite": 32,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$0.8$"
+ },
+ "formel-cd76d47c-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 41,
+  "tex": "$\\frac{dT}{T} = \\frac{R_L}{c_p}\\,\\frac{dp}{p} = \\kappa\\,\\frac{dp}{p} \\quad\\Rightarrow\\quad T\\,p^{-\\kappa} = \\mathrm{const}$"
+ },
+ "formel-cd90d767-17": {
+  "breite": 48,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$10^{-2}$"
+ },
+ "formel-cdefb3d8-17": {
+  "breite": 26,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\vec g^*$"
+ },
+ "formel-cdf624d0-17": {
+  "breite": 105,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$p\\alpha = R_L T$"
+ },
+ "formel-ce03bfb6-17": {
+  "breite": 229,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$df/dt = v'\\,df/dy = \\beta\\,v'$"
+ },
+ "formel-ce4588fd-17": {
+  "breite": 16,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\lambda$"
+ },
+ "formel-ce5cebb8": {
+  "breite": 173,
+  "groesse": 22,
+  "hoehe": 49,
+  "tex": "$\\tan\\alpha = \\frac{f\\,T}{g}\\,\\frac{\\Delta u}{\\Delta T}$"
+ },
+ "formel-ce5cebb8-20": {
+  "breite": 158,
+  "groesse": 20,
+  "hoehe": 44,
+  "tex": "$\\tan\\alpha = \\frac{f\\,T}{g}\\,\\frac{\\Delta u}{\\Delta T}$"
+ },
+ "formel-ce6694fe-17": {
+  "breite": 59,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$t_2 = 2$"
+ },
+ "formel-ce8b19c9-17": {
+  "breite": 336,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$9{,}80665/(287{,}05\\cdot 0{,}0065) = 5{,}256$"
+ },
+ "formel-cf1e6d00-17": {
+  "breite": 269,
+  "groesse": 17,
+  "hoehe": 36,
+  "tex": "$\\varepsilon_a = 0.52 + 0.065\\sqrt{e/\\mathrm{hPa}}$"
+ },
+ "formel-cf7c3368-17": {
+  "breite": 344,
+  "groesse": 17,
+  "hoehe": 31,
+  "tex": "$L_\\downarrow = 0.70\\cdot 5.67\\cdot 10^{-8}\\cdot 283^4 = 255$"
+ },
+ "formel-cfc8438a-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 23,
+  "tex": "$c_p\\,dT + g\\,dz = 0 \\quad\\Rightarrow\\quad \\Gamma_d = -\\frac{dT}{dz} = \\frac{g}{c_p} = \\frac{9.81}{1004} = 9.77\\cdot 10^{-3}\\,\\mathrm{K/m}$"
+ },
+ "formel-cfe5e45a-17": {
+  "breite": 124,
+  "groesse": 17,
+  "hoehe": 33,
+  "tex": "$\\sqrt{gH} = 300$"
+ },
+ "formel-d043ffc9-17": {
+  "breite": 149,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$\\vec g^* = \\vec g + \\Omega^2\\vec r_\\perp$"
+ },
+ "formel-d09182f8-17": {
+  "breite": 189,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\alpha_v = R_v T/e_s \\approx 200$"
+ },
+ "formel-d13e1a09-17": {
+  "breite": 103,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$K = 0{,}024$"
+ },
+ "formel-d1401d91-17": {
+  "breite": 296,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\sin r = 0.8616/1.333 = 0.6464$"
+ },
+ "formel-d1fce8f5-17": {
+  "breite": 53,
+  "groesse": 17,
+  "hoehe": 31,
+  "tex": "$2\\sigma T_a^4$"
+ },
+ "formel-d212d945-20": {
+  "breite": 292,
+  "groesse": 20,
+  "hoehe": 102,
+  "tex": "$\\Gamma_s = -\\frac{dT}{dz} = \\frac{g}{c_p}\\;\\frac{1 + \\dfrac{L_v\\,r_s}{R_L\\,T}}{1 + \\dfrac{0{,}622\\,L_v^2\\,r_s}{c_p\\,R_L\\,T^2}}$"
+ },
+ "formel-d228c646-17": {
+  "breite": 220,
+  "groesse": 17,
+  "hoehe": 56,
+  "tex": "$\\oint\\vec v\\cdot d\\vec v = \\oint d(v^2/2) = 0$"
+ },
+ "formel-d2315e98-17": {
+  "breite": 236,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T = 20 - 9.8\\cdot 1.0 = 10.2$"
+ },
+ "formel-d2415a46-17": {
+  "breite": 271,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$\\beta = 2\\Omega\\cos\\varphi/a = 1.6\\cdot 10^{-11}$"
+ },
+ "formel-d25de59a-17": {
+  "breite": 335,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$\\Delta v = 287\\cdot 10^{-5}\\cdot 0{,}693/10^{-4} = 20$"
+ },
+ "formel-d2d8c043": {
+  "breite": 371,
+  "groesse": 22,
+  "hoehe": 45,
+  "tex": "$p(z) = p_0\\,e^{-z/H}, \\qquad H = \\frac{R_L\\,T}{g}$"
+ },
+ "formel-d3169fb5-17": {
+  "breite": 400,
+  "groesse": 17,
+  "hoehe": 32,
+  "tex": "$\\xi = \\left[\\frac{\\rho_w R_v T}{D\\,e_s} + \\frac{\\rho_w L_v^2}{K\\,R_v T^2}\\right]^{-1} = \\left[9{,}4\\cdot 10^{9} + 7{,}6\\cdot 10^{9}\\right]^{-1} = 5{,}9\\cdot 10^{-11}$"
+ },
+ "formel-d4284b01-17": {
+  "breite": 117,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$-2\\Omega w\\cos\\varphi$"
+ },
+ "formel-d4471d07-17": {
+  "breite": 268,
+  "groesse": 17,
+  "hoehe": 37,
+  "tex": "$\\sigma_{max} = 0{,}31\\,\\frac{f}{N}\\,\\Lambda = 0{,}31\\,\\frac{f\\,\\Delta U}{N\\,H}$"
+ },
+ "formel-d45d261e-17": {
+  "breite": 63,
+  "groesse": 17,
+  "hoehe": 35,
+  "tex": "$\\frac{dw}{dt} = b$"
+ },
+ "formel-d4ade784-17": {
+  "breite": 107,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\rho_{Luft} = 0{,}9$"
+ },
+ "formel-d50d93f0-20": {
+  "breite": 122,
+  "groesse": 20,
+  "hoehe": 38,
+  "tex": "$\\theta = T\\left(\\frac{p_0}{p}\\right)^{\\kappa}$"
+ },
+ "formel-d5152d7f-17": {
+  "breite": 95,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\vec g = -\\nabla\\Phi$"
+ },
+ "formel-d546335b-17": {
+  "breite": 136,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\rho = p/(R_L T_v)$"
+ },
+ "formel-d547706c-17": {
+  "breite": 117,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$d\\theta/dz = 3{,}3$"
+ },
+ "formel-d557ea7f-17": {
+  "breite": 171,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$(650/450)^4 = 4.4$"
+ },
+ "formel-d5d154db-17": {
+  "breite": 101,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$N = 0.011$"
+ },
+ "formel-d6dc9532-17": {
+  "breite": 44,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$0.36$"
+ },
+ "formel-d7129e91-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 77,
+  "tex": "$\\mathrm{CAPE} = \\int_{LFC}^{EL} b\\,dz = \\int_{LFC}^{EL} g\\,\\frac{T_v' - T_v}{T_v}\\,dz$"
+ },
+ "formel-d7257c97-17": {
+  "breite": 27,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T^4$"
+ },
+ "formel-d7477cb6-17": {
+  "breite": 26,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Gamma_s$"
+ },
+ "formel-d84d9688-17": {
+  "breite": 82,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\varepsilon = 0{,}99$"
+ },
+ "formel-d88cfb3d-17": {
+  "breite": 51,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$4\\pi d^2$"
+ },
+ "formel-d8ab2fd4-17": {
+  "breite": 323,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$r = 0.622\\cdot 14.0/(950 - 14) = 9.3$"
+ },
+ "formel-d8aca0bc": {
+  "breite": 362,
+  "groesse": 22,
+  "hoehe": 52,
+  "tex": "$\\sigma_{R} \\propto \\frac{1}{\\lambda^4}, \\qquad V = \\frac{-\\ln 0{,}02}{\\beta} = \\frac{3{,}9}{\\beta}$"
+ },
+ "formel-d8f8cd35-17": {
+  "breite": 349,
+  "groesse": 17,
+  "hoehe": 40,
+  "tex": "$\\rho = \\frac{p-e}{R_L T} + \\frac{e}{R_v T} = \\frac{p}{R_L T}\\left[1 - \\frac{e}{p}\\left(1 - \\frac{R_L}{R_v}\\right)\\right]$"
+ },
+ "formel-d9a3ce59-17": {
+  "breite": 345,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$\\Delta F = 5.35\\ \\mathrm{W/m^2}\\cdot\\ln(C/C_0) = 3.7$"
+ },
+ "formel-da157634-17": {
+  "breite": 296,
+  "groesse": 17,
+  "hoehe": 41,
+  "tex": "$e_s = 6{,}112\\ \\mathrm{hPa}\\cdot\\exp\\!\\left(\\frac{17{,}62\\,t}{243{,}12 + t}\\right)$"
+ },
+ "formel-da21f1ff-17": {
+  "breite": 63,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$|\\xi| \\leq 1$"
+ },
+ "formel-da3e5d74-17": {
+  "breite": 83,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$6\\cdot 10^{-13}$"
+ },
+ "formel-da5b2f10-17": {
+  "breite": 137,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$r_1 = r_2 = A/2$"
+ },
+ "formel-da61bb0f-17": {
+  "breite": 16,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\kappa$"
+ },
+ "formel-da826145-17": {
+  "breite": 138,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\lambda_{max} T = 2898$"
+ },
+ "formel-dadc522a-17": {
+  "breite": 57,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$z \\to 0$"
+ },
+ "formel-db498b88-17": {
+  "breite": 33,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$fU$"
+ },
+ "formel-db9af803-17": {
+  "breite": 85,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$90^\\circ - \\varphi$"
+ },
+ "formel-dc37a64e": {
+  "breite": 227,
+  "groesse": 22,
+  "hoehe": 50,
+  "tex": "$z_2 - z_1 = \\frac{R_L\\,\\overline{T}}{g}\\,\\ln\\frac{p_1}{p_2}$"
+ },
+ "formel-dc37a64e-20": {
+  "breite": 207,
+  "groesse": 20,
+  "hoehe": 46,
+  "tex": "$z_2 - z_1 = \\frac{R_L\\,\\overline{T}}{g}\\,\\ln\\frac{p_1}{p_2}$"
+ },
+ "formel-dc52201e-17": {
+  "breite": 136,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$dw/dt \\approx 10^{-2}$"
+ },
+ "formel-dc65c2a3-17": {
+  "breite": 64,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$g = 10$"
+ },
+ "formel-dcd88628-17": {
+  "breite": 316,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$293.15\\cdot(1000/950)^{0.286} = 297.5$"
+ },
+ "formel-dd32e9d9-17": {
+  "breite": 56,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$d'/dt$"
+ },
+ "formel-dd442a87-17": {
+  "breite": 230,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$151/42\\,000 = 3.6\\cdot 10^{-3}$"
+ },
+ "formel-dd499590-17": {
+  "breite": 112,
+  "groesse": 17,
+  "hoehe": 42,
+  "tex": "$\\frac{\\partial r_s}{\\partial T} = r_s\\frac{L_v}{R_v T^2}$"
+ },
+ "formel-ddcc63af-17": {
+  "breite": 85,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Gamma_d = 9{,}8$"
+ },
+ "formel-de68c32f-17": {
+  "breite": 177,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$\\partial\\theta/\\partial y = -3\\cdot 10^{-6}$"
+ },
+ "formel-df375417": {
+  "breite": 400,
+  "groesse": 22,
+  "hoehe": 35,
+  "tex": "$\\frac{d\\vec v}{dt} = -\\frac{1}{\\rho}\\nabla p - 2\\,\\vec\\Omega\\times\\vec v - \\vec\\Omega\\times(\\vec\\Omega\\times\\vec r) + \\vec g + \\vec F$"
+ },
+ "formel-df5c2f89-17": {
+  "breite": 115,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$2\\pi/N \\approx 9{,}5$"
+ },
+ "formel-dfb06411-17": {
+  "breite": 24,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$K$"
+ },
+ "formel-dfe5de88-17": {
+  "breite": 121,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$E = E_0 e^{-i\\omega t}$"
+ },
+ "formel-e0188c82-20": {
+  "breite": 225,
+  "groesse": 20,
+  "hoehe": 102,
+  "tex": "$\\Gamma_s = \\Gamma_d\\;\\frac{1 + \\dfrac{L_v\\,r_s}{R_L\\,T}}{1 + \\dfrac{0.622\\,L_v^2\\,r_s}{c_p\\,R_L\\,T^2}}$"
+ },
+ "formel-e032930a-17": {
+  "breite": 250,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$h = c_pT + gz + L_v r \\approx 340$"
+ },
+ "formel-e04bbc27-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 30,
+  "tex": "$u = u_g\\left(1 - e^{-z/D_E}\\cos\\frac{z}{D_E}\\right), \\qquad v = u_g\\,e^{-z/D_E}\\sin\\frac{z}{D_E}$"
+ },
+ "formel-e07161cc-17": {
+  "breite": 92,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\varepsilon_a = 0{,}70$"
+ },
+ "formel-e0c1692f-17": {
+  "breite": 197,
+  "groesse": 17,
+  "hoehe": 44,
+  "tex": "$\\frac{\\partial\\vec v_g}{\\partial\\ln p} = -\\frac{R_L}{f}\\,\\hat k\\times\\nabla_p T$"
+ },
+ "formel-e0d2bf36-17": {
+  "breite": 11,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$t$"
+ },
+ "formel-e0d7eb16-17": {
+  "breite": 173,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$n - 1 = 2{,}9\\cdot 10^{-4}$"
+ },
+ "formel-e0da0b1d-17": {
+  "breite": 74,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$u_2 > u_1$"
+ },
+ "formel-e17c2e00-17": {
+  "breite": 152,
+  "groesse": 17,
+  "hoehe": 31,
+  "tex": "$C(x) = C_0\\,e^{-\\beta x}$"
+ },
+ "formel-e1c366fe-17": {
+  "breite": 79,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r_s = 3.8$"
+ },
+ "formel-e1dfacd9-17": {
+  "breite": 206,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$dp/p = -g\\,dz/(R_L T)$"
+ },
+ "formel-e1fa6a26-17": {
+  "breite": 395,
+  "groesse": 17,
+  "hoehe": 31,
+  "tex": "$L_v\\,\\Delta r/c_p = 2.5\\cdot 10^6\\cdot 0.0033/1004 = 8.2$"
+ },
+ "formel-e2221c84-17": {
+  "breite": 23,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r^2$"
+ },
+ "formel-e27e4395-17": {
+  "breite": 127,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\sin i = n\\sin r$"
+ },
+ "formel-e2bbebb3-17": {
+  "breite": 21,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$U$"
+ },
+ "formel-e2bf3f32-17": {
+  "breite": 268,
+  "groesse": 17,
+  "hoehe": 37,
+  "tex": "$\\sigma_{max} = 0.31\\,\\frac{f}{N}\\,\\Lambda = 0.31\\,\\frac{f\\,\\Delta U}{N\\,H}$"
+ },
+ "formel-e2ddc737-17": {
+  "breite": 41,
+  "groesse": 17,
+  "hoehe": 31,
+  "tex": "$\\sigma T_e^4$"
+ },
+ "formel-e2eaa5f8-17": {
+  "breite": 26,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T_d$"
+ },
+ "formel-e2fefb22-17": {
+  "breite": 80,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\dot\\varphi = v/a$"
+ },
+ "formel-e329a6d0-20": {
+  "breite": 107,
+  "groesse": 20,
+  "hoehe": 48,
+  "tex": "$v_g = \\frac{1}{\\rho f}\\,\\frac{\\partial p}{\\partial n}$"
+ },
+ "formel-e3765974-17": {
+  "breite": 328,
+  "groesse": 17,
+  "hoehe": 67,
+  "tex": "$\\mathrm{CAPE} = R_L\\int_{p_{EL}}^{p_{LFC}}(T_v' - T_v)\\,d\\ln p$"
+ },
+ "formel-e3c6851a-17": {
+  "breite": 400,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\Delta z = \\Delta p/(\\rho g) = 100/(1.225\\cdot 9.81) = 8.3$"
+ },
+ "formel-e405a53f-17": {
+  "breite": 124,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$S = e/e_s - 1$"
+ },
+ "formel-e4092b23-17": {
+  "breite": 69,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r = 0.1$"
+ },
+ "formel-e4a490c1-17": {
+  "breite": 96,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$n = 1.331$"
+ },
+ "formel-e5000b0d-17": {
+  "breite": 219,
+  "groesse": 17,
+  "hoehe": 34,
+  "tex": "$\\hat k_{pol} = \\cos\\varphi\\,\\hat j + \\sin\\varphi\\,\\hat k$"
+ },
+ "formel-e555f100-17": {
+  "breite": 25,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$gz$"
+ },
+ "formel-e58864fe-17": {
+  "breite": 25,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T_a$"
+ },
+ "formel-e67d506d-17": {
+  "breite": 24,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$n_s$"
+ },
+ "formel-e6d87ae3-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 36,
+  "tex": "$\\sigma T_e^4 = \\frac{S_0\\,(1 - A)}{4} \\quad\\Rightarrow\\quad T_e = \\left(\\frac{1361\\cdot 0{,}70}{4\\cdot 5{,}67\\cdot 10^{-8}}\\right)^{1/4} = 255\\,\\mathrm{K}$"
+ },
+ "formel-e7235452-17": {
+  "breite": 96,
+  "groesse": 17,
+  "hoehe": 34,
+  "tex": "$\\frac{\\pi}{6}D^3\\rho_{ice}\\,g$"
+ },
+ "formel-e73fd260-17": {
+  "breite": 142,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\partial p/\\partial y = -\\rho f u$"
+ },
+ "formel-e78e3d35-20": {
+  "breite": 388,
+  "groesse": 20,
+  "hoehe": 45,
+  "tex": "$\\sigma\\,T_e^4 = \\frac{S_0\\,(1 - A)}{4} \\quad\\Rightarrow\\quad T_e = 255\\ \\mathrm{K}$"
+ },
+ "formel-e7a1e214-17": {
+  "breite": 143,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$n\\cos r = 2\\cos i$"
+ },
+ "formel-e7b40c51-17": {
+  "breite": 97,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$n = 1{,}343$"
+ },
+ "formel-e7f93ccc-17": {
+  "breite": 72,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$S > S^*$"
+ },
+ "formel-e883f0ec-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 29,
+  "tex": "$\\delta q = (c_v + R_L)\\,dT - \\alpha\\,dp = c_p\\,dT - \\alpha\\,dp$"
+ },
+ "formel-e899fe4b-17": {
+  "breite": 87,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$2^7 = 128$"
+ },
+ "formel-e8d72e27-17": {
+  "breite": 73,
+  "groesse": 17,
+  "hoehe": 33,
+  "tex": "$\\frac{1}{2}\\varepsilon_0 c E_0^2$"
+ },
+ "formel-e8e24c9c-17": {
+  "breite": 51,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$1/\\lambda^4$"
+ },
+ "formel-e9837f46-17": {
+  "breite": 344,
+  "groesse": 17,
+  "hoehe": 31,
+  "tex": "$L_\\downarrow = 0{,}70\\cdot 5{,}67\\cdot 10^{-8}\\cdot 283^4 = 255$"
+ },
+ "formel-e9944cca-20": {
+  "breite": 273,
+  "groesse": 20,
+  "hoehe": 55,
+  "tex": "$\\sigma_R = \\frac{\\omega^4\\alpha^2}{6\\pi\\varepsilon_0^2 c^4} = \\frac{8\\pi^3}{3}\\,\\frac{(n^2-1)^2}{N^2\\lambda^4}$"
+ },
+ "formel-e9b043cb-20": {
+  "breite": 313,
+  "groesse": 20,
+  "hoehe": 45,
+  "tex": "$\\frac{d\\hat e_i}{dt} = \\vec\\Omega\\times\\hat e_i \\qquad (i = 1, 2, 3)$"
+ },
+ "formel-e9c32b7b-17": {
+  "breite": 118,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\lambda = 2\\pi U/N$"
+ },
+ "formel-e9c4333f-17": {
+  "breite": 181,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$dg = -s\\,dT + \\alpha\\,dp$"
+ },
+ "formel-e9d2c61d-17": {
+  "breite": 161,
+  "groesse": 17,
+  "hoehe": 35,
+  "tex": "$\\frac{dm}{dt} = E\\,\\frac{\\pi}{4}D^2\\,v\\,w_l$"
+ },
+ "formel-eaae5c28-17": {
+  "breite": 91,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$i = 71.9^\\circ$"
+ },
+ "formel-eafdeec6-17": {
+  "breite": 130,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$u' = -\\partial\\psi/\\partial y$"
+ },
+ "formel-eb6ce135-17": {
+  "breite": 184,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$e/e_s \\approx 1 - i\\,n_s/n_w$"
+ },
+ "formel-ebafee57-17": {
+  "breite": 123,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$dp = -\\rho g\\,dz$"
+ },
+ "formel-ebb5fe0a-17": {
+  "breite": 139,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$D = 2{,}2\\cdot 10^{-5}$"
+ },
+ "formel-ecc75607-17": {
+  "breite": 132,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\ln 2/\\lambda = 0{,}77$"
+ },
+ "formel-ecf2f2f6-17": {
+  "breite": 49,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$\\partial/\\partial y$"
+ },
+ "formel-ed1dd849-17": {
+  "breite": 51,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$-0{,}6$"
+ },
+ "formel-ee437f46-17": {
+  "breite": 186,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$r = 0{,}622\\,e/(p - e)$"
+ },
+ "formel-ee4ac1b5-17": {
+  "breite": 98,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r^* = 0.65$"
+ },
+ "formel-eed937c9-17": {
+  "breite": 44,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$0{,}36$"
+ },
+ "formel-ef2c7d60-20": {
+  "breite": 137,
+  "groesse": 20,
+  "hoehe": 46,
+  "tex": "$u = \\Omega a\\,\\frac{\\sin^2\\varphi}{\\cos\\varphi}$"
+ },
+ "formel-eff43e84-17": {
+  "breite": 21,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$R$"
+ },
+ "formel-f076fd2d-17": {
+  "breite": 34,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\nabla p$"
+ },
+ "formel-f0a41c9f-17": {
+  "breite": 60,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$K = 1$"
+ },
+ "formel-f12843ea-17": {
+  "breite": 183,
+  "groesse": 17,
+  "hoehe": 40,
+  "tex": "$\\mu_v(e) = \\mu_w + \\frac{dG_{surf}}{dN}$"
+ },
+ "formel-f15967e0-17": {
+  "breite": 72,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$p_1 = p_2$"
+ },
+ "formel-f1f89fde-17": {
+  "breite": 135,
+  "groesse": 17,
+  "hoehe": 36,
+  "tex": "$r^* = \\sqrt{3b/a}$"
+ },
+ "formel-f1fc4e3c-20": {
+  "breite": 292,
+  "groesse": 20,
+  "hoehe": 102,
+  "tex": "$\\Gamma_s = -\\frac{dT}{dz} = \\frac{g}{c_p}\\;\\frac{1 + \\dfrac{L_v\\,r_s}{R_L\\,T}}{1 + \\dfrac{0.622\\,L_v^2\\,r_s}{c_p\\,R_L\\,T^2}}$"
+ },
+ "formel-f250b546-17": {
+  "breite": 232,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T_{lee} = 1.2 + 24.5 = 25.7$"
+ },
+ "formel-f2517b2c-17": {
+  "breite": 147,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$\\sigma T^4 = 6{,}3\\cdot 10^7$"
+ },
+ "formel-f252c1ac-17": {
+  "breite": 48,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$10^{-4}$"
+ },
+ "formel-f261702f-17": {
+  "breite": 69,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r = 0{,}1$"
+ },
+ "formel-f33d1c21-17": {
+  "breite": 76,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$p = \\alpha E$"
+ },
+ "formel-f34eab7b-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 49,
+  "tex": "$\\Delta T_0 = \\frac{\\Delta F}{4\\sigma T_e^3} = \\frac{3{,}7}{4\\cdot 5{,}67\\cdot 10^{-8}\\cdot 255^3} = 1{,}0\\,\\mathrm{K}$"
+ },
+ "formel-f3631049-17": {
+  "breite": 82,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$v/u \\to 1$"
+ },
+ "formel-f38b4a77-17": {
+  "breite": 336,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$9.80665/(287.05\\cdot 0.0065) = 5.256$"
+ },
+ "formel-f411d6b9-17": {
+  "breite": 86,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\Delta u = 10$"
+ },
+ "formel-f41e7029-17": {
+  "breite": 172,
+  "groesse": 17,
+  "hoehe": 38,
+  "tex": "$w \\approx \\zeta_g \\sqrt{K/(2f)}$"
+ },
+ "formel-f4224be9-17": {
+  "breite": 108,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T = 216.65$"
+ },
+ "formel-f4c4833c-17": {
+  "breite": 74,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$Ro \\gg 1$"
+ },
+ "formel-f4cdf7bc-17": {
+  "breite": 119,
+  "groesse": 17,
+  "hoehe": 56,
+  "tex": "$\\Gamma_C = \\oint\\vec v\\cdot d\\vec l$"
+ },
+ "formel-f5047d1e-17": {
+  "breite": 23,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$m$"
+ },
+ "formel-f5690e79-17": {
+  "breite": 400,
+  "groesse": 17,
+  "hoehe": 25,
+  "tex": "$\\delta = 2\\arcsin(0{,}655) - 60^\\circ = 81{,}8 - 60 = 21{,}8^\\circ$"
+ },
+ "formel-f5b820af-17": {
+  "breite": 78,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T = 280$"
+ },
+ "formel-f5c71fd8-17": {
+  "breite": 158,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$\\partial\\theta/\\partial z = 3\\cdot 10^{-3}$"
+ },
+ "formel-f5e4164d-17": {
+  "breite": 62,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$e_s(T_r)$"
+ },
+ "formel-f60d322d-17": {
+  "breite": 159,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$(R_{Sonne}/1\\ \\mathrm{AE})^2$"
+ },
+ "formel-f63c0984-17": {
+  "breite": 137,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\cos i = 0.5075$"
+ },
+ "formel-f6854806-17": {
+  "breite": 203,
+  "groesse": 17,
+  "hoehe": 39,
+  "tex": "$\\cos i = \\sqrt{(n^2-1)/3}$"
+ },
+ "formel-f6a66589-17": {
+  "breite": 96,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\lambda = 0{,}906$"
+ },
+ "formel-f6f16c40-17": {
+  "breite": 71,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\rho = 1.2$"
+ },
+ "formel-f719eecb-17": {
+  "breite": 147,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\sigma T^4 = 6.3\\cdot 10^7$"
+ },
+ "formel-f7cff8d6-17": {
+  "breite": 334,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$z_{LCL} - z_0 = 125\\,\\mathrm{m/K}\\cdot 8\\,\\mathrm{K} = 1000$"
+ },
+ "formel-f9092807-17": {
+  "breite": 22,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\lambda_i$"
+ },
+ "formel-f9634788-17": {
+  "breite": 52,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$f = 0$"
+ },
+ "formel-f96c9eb1-17": {
+  "breite": 154,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\log_2 10 \\cdot 2 = 6{,}6$"
+ },
+ "formel-f99d5c82-17": {
+  "breite": 98,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r^* = 0{,}65$"
+ },
+ "formel-f9a2b925-17": {
+  "breite": 211,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$\\cos^2 r = 1 - \\sin^2 i/n^2$"
+ },
+ "formel-f9b359fd-17": {
+  "breite": 157,
+  "groesse": 17,
+  "hoehe": 33,
+  "tex": "$N^2 = \\frac{g}{T}(\\Gamma_d - \\Gamma)$"
+ },
+ "formel-f9f56dab-17": {
+  "breite": 23,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r^4$"
+ },
+ "formel-f9f976d4-17": {
+  "breite": 335,
+  "groesse": 17,
+  "hoehe": 30,
+  "tex": "$\\Delta v = 287\\cdot 10^{-5}\\cdot 0.693/10^{-4} = 20$"
+ },
+ "formel-fa2fa899-17": {
+  "breite": 21,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$E$"
+ },
+ "formel-fa35d9fc-17": {
+  "breite": 17,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\sigma$"
+ },
+ "formel-faab658e-17": {
+  "breite": 203,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$p\\,d\\alpha = R_L\\,dT - \\alpha\\,dp$"
+ },
+ "formel-fb5c2f58-17": {
+  "breite": 228,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$F = S_0(1-A)/4 = 238$"
+ },
+ "formel-fbcbb2fc-17": {
+  "breite": 86,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$z = \\pi D_E$"
+ },
+ "formel-fbccbfc3-17": {
+  "breite": 95,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$p = 226{,}3$"
+ },
+ "formel-fbef59f6-17": {
+  "breite": 244,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$c_p\\,dT = \\alpha\\,dp = R_L T\\,dp/p$"
+ },
+ "formel-fc133a90-17": {
+  "breite": 264,
+  "groesse": 17,
+  "hoehe": 50,
+  "tex": "$\\tau = H/(f D_E/2) = \\frac{2H}{f}\\sqrt{\\frac{f}{2K}}$"
+ },
+ "formel-fc180208-20": {
+  "breite": 145,
+  "groesse": 20,
+  "hoehe": 30,
+  "tex": "$f = 2\\,\\Omega\\,\\sin\\varphi$"
+ },
+ "formel-fc239d3a-17": {
+  "breite": 328,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\delta = 180 + 119{,}0 - 161{,}2 = 137{,}8^\\circ$"
+ },
+ "formel-fc53e56a-17": {
+  "breite": 201,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$L_s = L_v + L_f = 2{,}83$"
+ },
+ "formel-fc6d6d8d-17": {
+  "breite": 111,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$n_{Eis} = 1{,}31$"
+ },
+ "formel-fc78d178-17": {
+  "breite": 161,
+  "groesse": 17,
+  "hoehe": 34,
+  "tex": "$\\frac{1}{2}c_w\\,\\rho_{Luft}\\,v^2\\,\\frac{\\pi}{4}D^2$"
+ },
+ "formel-fc97ef67-17": {
+  "breite": 24,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$N$"
+ },
+ "formel-fca370b5-17": {
+  "breite": 269,
+  "groesse": 17,
+  "hoehe": 36,
+  "tex": "$\\varepsilon_a = 0{,}52 + 0{,}065\\sqrt{e/\\mathrm{hPa}}$"
+ },
+ "formel-fd34b583-17": {
+  "breite": 38,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$364$"
+ },
+ "formel-fd3c137d-20": {
+  "breite": 400,
+  "groesse": 20,
+  "hoehe": 46,
+  "tex": "$\\Delta T_0 = \\frac{\\Delta F}{4\\sigma T_e^3} = \\frac{3.7}{4\\cdot 5.67\\cdot 10^{-8}\\cdot 255^3} = 1.0\\,\\mathrm{K}$"
+ },
+ "formel-fda38f45-17": {
+  "breite": 14,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\zeta$"
+ },
+ "formel-fdb63b9e-17": {
+  "breite": 17,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\beta$"
+ },
+ "formel-fdb959ce-17": {
+  "breite": 282,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$R_L = 8{,}314/0{,}02896 = 287{,}1$"
+ },
+ "formel-fee5eae0-17": {
+  "breite": 103,
+  "groesse": 17,
+  "hoehe": 28,
+  "tex": "$\\alpha_w = 10^{-3}$"
+ },
+ "formel-ff8f4c82-20": {
+  "breite": 269,
+  "groesse": 20,
+  "hoehe": 65,
+  "tex": "$\\frac{d\\Gamma_C}{dt} = \\oint\\frac{d\\vec v}{dt}\\cdot d\\vec l + \\oint\\vec v\\cdot\\frac{d(d\\vec l)}{dt}$"
+ },
+ "formel-ffa070f3-17": {
+  "breite": 121,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$D = 2\\cdot 10^{-5}$"
+ },
+ "formel-ffd73da5-17": {
+  "breite": 63,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$r \\approx 40$"
+ }
+}

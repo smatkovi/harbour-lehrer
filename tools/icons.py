@@ -21,6 +21,7 @@ QUELLEN = {
     "clehrer": os.path.join(PS, "c-lehrer", "icons", "icon-80.png"),
     "segelschein": os.path.join(PS, "segelschein", "icons", "icon-80.png"),
     "segelflug": os.path.join(PS, "segelflug", "icons", "icon-80.png"),
+    "meteorologie": os.path.join(PS, "meteorologie", "icons", "icon-80.png"),
 }
 GROESSEN = (86, 108, 128, 172)
 

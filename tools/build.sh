@@ -1,7 +1,7 @@
 #!/bin/sh
 # Baut die RPMs im Sailfish-SDK-Behaelter auf dem Arch-Rechner.
 #
-#   tools/build.sh                       # alle drei Kurse, beide Architekturen
+#   tools/build.sh                       # alle Kurse, beide Architekturen
 #   tools/build.sh clehrer               # nur einen Kurs
 #   ARCHES="aarch64" tools/build.sh      # nur eine Architektur
 #
@@ -10,7 +10,7 @@
 # die Vorgaben.
 set -e
 ROOT=$(CDPATH= cd -- "$(dirname "$0")/.." && pwd)
-KURSE=${*:-"clehrer segelschein segelflug"}
+KURSE=${*:-"clehrer segelschein segelflug meteorologie"}
 ARCHES=${ARCHES:-"aarch64 armv7hl"}
 
 if [ -n "$BUILD_HOST" ]; then
