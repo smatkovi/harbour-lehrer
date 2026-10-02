@@ -19,7 +19,6 @@ Page {
         delegate: Column {
             width: parent.width
             spacing: Theme.paddingSmall
-            bottomPadding: Theme.paddingLarge
 
             Label {
                 x: Theme.horizontalPageMargin
@@ -52,7 +51,8 @@ Page {
                 width: parent.width - 2 * Theme.horizontalPageMargin
                 text: W.w("Richtig: ", course.language) + modelData.optionen[modelData.richtig]
                       + (modelData.korrekt ? ""
-                         : "\nDeine Wahl: " + modelData.optionen[modelData.gewaehlt])
+                         : "\n" + W.w("Deine Wahl: ", course.language)
+                           + modelData.optionen[modelData.gewaehlt])
                 wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeExtraSmall
                 color: Theme.secondaryHighlightColor
@@ -67,6 +67,10 @@ Page {
                 font.pixelSize: Theme.fontSizeExtraSmall
                 color: Theme.secondaryColor
             }
+
+            // `bottomPadding` gibt es erst ab QtQuick 2.6, und mit ihm lud
+            // die ganze Seite nicht ("not available in QtQuick 2.0").
+            Item { width: 1; height: Theme.paddingLarge }
         }
 
         VerticalScrollDecorator { }

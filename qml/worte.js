@@ -102,6 +102,7 @@ var EN = {
     "Lösung anzeigen": "Show solution",
     "Richtig": "Correct",
     "Richtig: ": "Correct: ",
+    "Deine Wahl: ": "Your choice: ",
     "Richtig wäre etwa ": "It should be about ",
     "Daneben": "Not quite",
     "Deine Antwort: ": "Your answer: ",

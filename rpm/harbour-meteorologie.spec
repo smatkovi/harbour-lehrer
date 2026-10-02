@@ -1,5 +1,5 @@
 Name:       harbour-meteorologie
-Version:    1.0.0
+Version:    1.0.1
 Release:    1
 Summary:    Meteorology for physicists, every formula derived
 License:    GPLv3+
@@ -51,6 +51,10 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Fri Oct 02 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.0.1-1
+- Die Durchsicht nach dem Einstufungstest lud nicht (Column.bottomPadding
+  gibt es in QtQuick 2.0 nicht); "Deine Wahl" auch auf Englisch
+
 * Fri Oct 02 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.0.0-1
 - Erste Fassung: elf Kapitel, 30 Lektionen, 71 Aufgaben, alle Formeln
   hergeleitet und gesetzt, 30 gezeichnete Skizzen, deutsch und englisch.
