@@ -15,7 +15,8 @@ ApplicationWindow {
     // der Umgebung bekommt die Auszeichnungsbibliothek einmal, hier.
     Component.onCompleted: {
         Stil.bilderPfad = bilderPfad
-        Stil.skala = Theme.pixelRatio
+        Stil.skala = Stil.skalaFuer(Theme.fontSizeSmall)
+        Stil.breiteMax = Screen.width - 2 * Theme.horizontalPageMargin
         Stil.helleUmgebung = Theme.colorScheme === Theme.DarkOnLight
     }
 }

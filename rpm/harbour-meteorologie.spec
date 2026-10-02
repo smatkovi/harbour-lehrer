@@ -1,5 +1,5 @@
 Name:       harbour-meteorologie
-Version:    1.0.1
+Version:    1.0.2
 Release:    1
 Summary:    Meteorology for physicists, every formula derived
 License:    GPLv3+
@@ -51,6 +51,12 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Fri Oct 02 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.0.2-1
+- Formeln groesser: sie folgen jetzt der Schriftgroesse statt dem
+  Pixelverhaeltnis, und breite Formeln (74 Stueck, z. B. das Upwind-Schema
+  der CFL-Lektion) sind nicht mehr auf 400 Punkt gekappt -- verkleinert
+  wird erst, wenn die Seite zu schmal ist
+
 * Fri Oct 02 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.0.1-1
 - Die Durchsicht nach dem Einstufungstest lud nicht (Column.bottomPadding
   gibt es in QtQuick 2.0 nicht); "Deine Wahl" auch auf Englisch

@@ -13,6 +13,28 @@
 var bilderPfad = ""
 var skala = 1.0
 var helleUmgebung = false
+// Breiter als die Seite darf kein Bild werden; main.qml traegt die Breite
+// ein, die zwischen den Seitenraendern bleibt.
+var breiteMax = 0
+
+// Die Formeln sind fuer 17 Punkt bei 100 dpi gesetzt (tools/formeln.py),
+// ein Geviert misst also 23,6 Bildpunkte bei Skala 1. Sie stehen etwas
+// groesser als die Schrift daneben, weil Brueche, Indizes und Exponenten
+// im Bild kleiner ausfallen als die Grundlinie -- bei gleicher Hoehe
+// wirkte ein Bruch im Satz winzig.
+var GEVIERT = 17 * 100 / 72
+function skalaFuer(schriftgroesse) {
+    return 1.15 * schriftgroesse / GEVIERT
+}
+
+// Breite und Hoehe eines gesetzten Bildes auf diesem Geraet: skaliert,
+// und wenn es dann breiter waere als die Seite, auf die Seite verkleinert.
+function bildmasse(b, h) {
+    var f = skala
+    if (breiteMax > 0 && b * f > breiteMax)
+        f = breiteMax / b
+    return { breite: Math.round(b * f), hoehe: Math.round(h * f) }
+}
 
 function schuetzen(text) {
     return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
@@ -39,10 +61,10 @@ function reich(quelle) {
     // (<name>.dunkel.png), weil Rich Text nicht einfaerbt.
     aus = aus.replace(/\[\[formel:([A-Za-z0-9_-]+):(\d+):(\d+)\]\]/g,
                       function (ganz, name, b, h) {
+                          var m = bildmasse(b, h)
                           return "<img src='" + bilderPfad + name
                                  + (helleUmgebung ? ".dunkel" : "") + ".png' width='"
-                                 + Math.round(b * skala) + "' height='"
-                                 + Math.round(h * skala) + "'>"
+                                 + m.breite + "' height='" + m.hoehe + "'>"
                       })
     aus = aus.replace(/\n\n/g, "<br><br>")
     aus = aus.replace(/\n/g, "<br>")

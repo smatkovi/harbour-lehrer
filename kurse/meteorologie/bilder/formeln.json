@@ -102,9 +102,9 @@
   "tex": "$r = 40.3^\\circ$"
  },
  "formel-03e1b044-20": {
-  "breite": 400,
+  "breite": 580,
   "groesse": 20,
-  "hoehe": 34,
+  "hoehe": 49,
   "tex": "$\\sigma T_e^4 = \\frac{S_0\\,(1 - A)}{4} \\quad\\Rightarrow\\quad T_e = \\left(\\frac{1361\\cdot 0.70}{4\\cdot 5.67\\cdot 10^{-8}}\\right)^{1/4} = 255\\,\\mathrm{K}$"
  },
  "formel-0402a7da-17": {
@@ -132,15 +132,15 @@
   "tex": "$T(z) = T_0 - \\Gamma z$"
  },
  "formel-0434c25e-17": {
-  "breite": 400,
+  "breite": 448,
   "groesse": 17,
-  "hoehe": 24,
+  "hoehe": 27,
   "tex": "$\\Delta p = \\rho g h\\,\\Delta T/T = 1{,}2\\cdot 9{,}81\\cdot 1000\\cdot 5/290 \\approx 2$"
  },
  "formel-0474cc94-20": {
-  "breite": 400,
+  "breite": 524,
   "groesse": 20,
-  "hoehe": 34,
+  "hoehe": 45,
   "tex": "$\\frac{d\\vec v}{dt} = -\\frac{1}{\\rho}\\nabla p - 2\\vec\\Omega\\times\\vec v - \\vec\\Omega\\times(\\vec\\Omega\\times\\vec r) + \\vec g^* + \\vec F$"
  },
  "formel-0559ffc8-17": {
@@ -156,9 +156,9 @@
   "tex": "$c_g = U + \\beta/k^2 > c$"
  },
  "formel-060674a2": {
-  "breite": 400,
+  "breite": 409,
   "groesse": 22,
-  "hoehe": 43,
+  "hoehe": 44,
   "tex": "$r\\,\\frac{dr}{dt} = \\xi\\,S \\quad\\Rightarrow\\quad r^2 = r_0^2 + 2\\,\\xi\\,S\\,t$"
  },
  "formel-062f79a9-17": {
@@ -192,9 +192,9 @@
   "tex": "$N = 0.0106$"
  },
  "formel-06854f43-20": {
-  "breite": 400,
+  "breite": 578,
   "groesse": 20,
-  "hoehe": 37,
+  "hoehe": 54,
   "tex": "$\\frac{dT_d}{dz} = -\\frac{g\\,R_v\\,T_d^2}{R_L\\,L_v\\,T} \\approx -\\frac{9{,}81\\cdot 461{,}5\\cdot 285}{287\\cdot 2{,}5\\cdot 10^6} = -1{,}8\\cdot 10^{-3}\\,\\mathrm{K/m}$"
  },
  "formel-0725e2d5-17": {
@@ -318,9 +318,9 @@
   "tex": "$9.3 - 6.0 = 3.3$"
  },
  "formel-0c5d29a8-17": {
-  "breite": 400,
+  "breite": 491,
   "groesse": 17,
-  "hoehe": 21,
+  "hoehe": 26,
   "tex": "$0.78\\cdot 28.01 + 0.21\\cdot 32.00 + 0.0093\\cdot 39.95 = 28.96$"
  },
  "formel-0c800f21-17": {
@@ -330,9 +330,9 @@
   "tex": "$T = T_0 - \\Gamma z$"
  },
  "formel-0c83808b": {
-  "breite": 400,
+  "breite": 620,
   "groesse": 22,
-  "hoehe": 56,
+  "hoehe": 87,
   "tex": "$\\mathrm{CAPE} = \\int_{LFC}^{EL} g\\,\\frac{T_v' - T_v}{T_v}\\,dz, \\qquad w_{max} = \\sqrt{2\\,\\mathrm{CAPE}}$"
  },
  "formel-0cdbcbd6-17": {
@@ -348,9 +348,9 @@
   "tex": "$r = 0.622\\,e/(p - e)$"
  },
  "formel-0cf120c9-20": {
-  "breite": 400,
+  "breite": 466,
   "groesse": 20,
-  "hoehe": 35,
+  "hoehe": 41,
   "tex": "$c_p\\,dT = -g\\,dz \\quad\\Rightarrow\\quad \\frac{dT}{dz} = -\\frac{g}{c_p} = -9{,}8\\ \\frac{\\mathrm{K}}{\\mathrm{km}}$"
  },
  "formel-0d0654e1-17": {
@@ -378,9 +378,9 @@
   "tex": "$\\frac{dC}{dt} = -\\oint \\frac{dp}{\\rho}, \\qquad C = \\oint \\vec v\\cdot d\\vec l$"
  },
  "formel-0de134bb": {
-  "breite": 400,
+  "breite": 440,
   "groesse": 22,
-  "hoehe": 48,
+  "hoehe": 53,
   "tex": "$\\Delta F = 5{,}35\\,\\frac{\\mathrm{W}}{\\mathrm{m^2}}\\,\\ln\\frac{C}{C_0}, \\qquad \\Delta T_0 = \\frac{\\Delta F}{4\\sigma T_e^3}$"
  },
  "formel-0e2db5e6-17": {
@@ -408,9 +408,9 @@
   "tex": "$\\delta = 230.4^\\circ$"
  },
  "formel-0eed4738-17": {
-  "breite": 400,
+  "breite": 491,
   "groesse": 17,
-  "hoehe": 21,
+  "hoehe": 26,
   "tex": "$0{,}78\\cdot 28{,}01 + 0{,}21\\cdot 32{,}00 + 0{,}0093\\cdot 39{,}95 = 28{,}96$"
  },
  "formel-0f68001a-17": {
@@ -540,9 +540,9 @@
   "tex": "$\\left|\\frac{\\partial p}{\\partial n}\\right| > \\frac{\\rho\\,f^2\\,|R|}{4}$"
  },
  "formel-141aa650-17": {
-  "breite": 400,
+  "breite": 599,
   "groesse": 17,
-  "hoehe": 19,
+  "hoehe": 29,
   "tex": "$ds = \\delta q/T = c_p\\,dT/T - R_L\\,dp/p = c_p\\,d(\\ln T - \\kappa\\ln p) = c_p\\,d\\ln\\theta$"
  },
  "formel-144d30e0-17": {
@@ -690,9 +690,9 @@
   "tex": "$\\frac{1}{2}c_d\\,\\rho_{air}\\,v^2\\,\\frac{\\pi}{4}D^2$"
  },
  "formel-18e2d1e0-20": {
-  "breite": 400,
+  "breite": 447,
   "groesse": 20,
-  "hoehe": 58,
+  "hoehe": 65,
   "tex": "$-\\oint\\frac{dp}{\\rho} = -\\oint R_L T\\,\\frac{dp}{p} = R_L\\,(T_L - T_S)\\,\\ln\\frac{p_0}{p_h}$"
  },
  "formel-18ed4b15-17": {
@@ -804,9 +804,9 @@
   "tex": "$\\delta(t) = \\delta_0\\,e^{\\lambda t}$"
  },
  "formel-1ccd7a9f-20": {
-  "breite": 400,
+  "breite": 580,
   "groesse": 20,
-  "hoehe": 32,
+  "hoehe": 46,
   "tex": "$f\\,(v - v_g) + K\\frac{\\partial^2 u}{\\partial z^2} = 0, \\qquad -f\\,(u - u_g) + K\\frac{\\partial^2 v}{\\partial z^2} = 0$"
  },
  "formel-1dfd9a02-17": {
@@ -846,15 +846,15 @@
   "tex": "$0 \\leq \\nu \\leq 1$"
  },
  "formel-21151856-20": {
-  "breite": 400,
+  "breite": 423,
   "groesse": 20,
-  "hoehe": 43,
+  "hoehe": 46,
   "tex": "$r\\,\\frac{dr}{dt} = \\frac{D}{\\rho_w}\\,(\\rho_{v,\\infty} - \\rho_{v,r}) \\approx \\frac{D\\,\\rho_{v,s}}{\\rho_w}\\,S = \\xi\\,S$"
  },
  "formel-213af0a3-17": {
-  "breite": 400,
+  "breite": 424,
   "groesse": 17,
-  "hoehe": 28,
+  "hoehe": 30,
   "tex": "$\\sigma = 0{,}31\\cdot 10^{-4}\\cdot 30/(0{,}01\\cdot 10^4) = 9{,}3\\cdot 10^{-6}$"
  },
  "formel-2155e4c3-17": {
@@ -930,9 +930,9 @@
   "tex": "$\\frac{dG_{surf}}{dN} = \\sigma\\,\\frac{d(4\\pi r^2)}{dN} = \\sigma\\cdot 8\\pi r\\cdot\\frac{m_w}{\\rho_w 4\\pi r^2} = \\frac{2\\sigma m_w}{\\rho_w r}$"
  },
  "formel-242b382b-17": {
-  "breite": 400,
+  "breite": 433,
   "groesse": 17,
-  "hoehe": 35,
+  "hoehe": 38,
   "tex": "$\\frac{1}{\\theta}\\frac{d\\theta}{dz} = \\frac{1}{T}\\frac{dT}{dz} - \\frac{\\kappa}{p}\\frac{dp}{dz} = \\frac{1}{T}\\left(-\\Gamma + \\frac{\\kappa\\rho g T}{p}\\right) = \\frac{1}{T}\\left(\\Gamma_d - \\Gamma\\right)$"
  },
  "formel-2445c79f-17": {
@@ -1236,9 +1236,9 @@
   "tex": "$\\Gamma > \\Gamma_d$"
  },
  "formel-30375822-20": {
-  "breite": 400,
+  "breite": 757,
   "groesse": 20,
-  "hoehe": 29,
+  "hoehe": 54,
   "tex": "$S_0 = \\sigma T_\\odot^4\\left(\\frac{R_\\odot}{d}\\right)^2 = 5{,}67\\cdot 10^{-8}\\cdot 5772^4\\cdot\\left(\\frac{6{,}96\\cdot 10^8}{1{,}496\\cdot 10^{11}}\\right)^2 = 1361\\,\\mathrm{W/m^2}$"
  },
  "formel-3049f7e5-17": {
@@ -1422,9 +1422,9 @@
   "tex": "$r^*$"
  },
  "formel-356080d2": {
-  "breite": 400,
+  "breite": 507,
   "groesse": 22,
-  "hoehe": 39,
+  "hoehe": 49,
   "tex": "$p(z) = p_0\\left(1 - \\frac{\\Gamma z}{T_0}\\right)^{g/(R_L\\Gamma)}, \\qquad \\frac{g}{R_L\\Gamma} = 5{,}26$"
  },
  "formel-35d32ffd-17": {
@@ -1440,9 +1440,9 @@
   "tex": "$p = p_0\\,e^{-z/H}$"
  },
  "formel-36404497-17": {
-  "breite": 400,
+  "breite": 424,
   "groesse": 17,
-  "hoehe": 26,
+  "hoehe": 28,
   "tex": "$r_s(1{,}2^\\circ\\mathrm{C}, 700\\,\\mathrm{hPa}) = 0{,}622\\cdot 6{,}7/693 = 6{,}0$"
  },
  "formel-368d2856-17": {
@@ -1488,9 +1488,9 @@
   "tex": "$Ro = U/(fL) = 0.1$"
  },
  "formel-38a57f20-20": {
-  "breite": 400,
+  "breite": 563,
   "groesse": 20,
-  "hoehe": 31,
+  "hoehe": 43,
   "tex": "$z = \\frac{T_0}{\\Gamma}\\left[1 - \\left(\\frac{p}{p_0}\\right)^{R_L\\Gamma/g}\\right] = 44\\,331\\,\\mathrm{m}\\cdot\\left[1 - \\left(\\frac{p}{p_0}\\right)^{0{,}1903}\\right]$"
  },
  "formel-38afe72b-17": {
@@ -1680,9 +1680,9 @@
   "tex": "$p_S(h)$"
  },
  "formel-3d8b1c1c": {
-  "breite": 400,
+  "breite": 555,
   "groesse": 22,
-  "hoehe": 45,
+  "hoehe": 62,
   "tex": "$S(r) = \\frac{e}{e_s} \\approx 1 + \\frac{a}{r} - \\frac{b}{r^3}, \\qquad S_{krit} = 1 + \\sqrt{\\frac{4a^3}{27b}}$"
  },
  "formel-3dab271d": {
@@ -1710,9 +1710,9 @@
   "tex": "$9{,}8 - 1{,}8 = 8{,}0$"
  },
  "formel-3e3e8f0e": {
-  "breite": 400,
+  "breite": 489,
   "groesse": 22,
-  "hoehe": 47,
+  "hoehe": 58,
   "tex": "$\\delta = \\pi + 2i - 4r, \\qquad \\cos i_{min} = \\sqrt{\\frac{n^2 - 1}{3}}$"
  },
  "formel-3e7d9cbe-17": {
@@ -1758,9 +1758,9 @@
   "tex": "$10^{5}$"
  },
  "formel-3fa9e5ed-20": {
-  "breite": 400,
+  "breite": 410,
   "groesse": 20,
-  "hoehe": 45,
+  "hoehe": 46,
   "tex": "$\\frac{du}{dt} = -\\frac{1}{\\rho}\\frac{\\partial p}{\\partial x} + f v, \\qquad \\frac{dv}{dt} = -\\frac{1}{\\rho}\\frac{\\partial p}{\\partial y} - f u$"
  },
  "formel-3fd4f879-17": {
@@ -1806,9 +1806,9 @@
   "tex": "$Q = 60$"
  },
  "formel-41096963-20": {
-  "breite": 400,
+  "breite": 579,
   "groesse": 20,
-  "hoehe": 27,
+  "hoehe": 39,
   "tex": "$2\\,\\vec\\Omega\\times\\vec v = 2\\Omega\\left(w\\cos\\varphi - v\\sin\\varphi,\\;\\; u\\sin\\varphi,\\;\\; -u\\cos\\varphi\\right)$"
  },
  "formel-41514f6f-17": {
@@ -1848,9 +1848,9 @@
   "tex": "$\\rho = 0{,}7$"
  },
  "formel-42a12dea-17": {
-  "breite": 400,
+  "breite": 592,
   "groesse": 17,
-  "hoehe": 32,
+  "hoehe": 47,
   "tex": "$\\xi = \\left[\\frac{\\rho_w R_v T}{D\\,e_s} + \\frac{\\rho_w L_v^2}{K\\,R_v T^2}\\right]^{-1} = \\left[9.4\\cdot 10^{9} + 7.6\\cdot 10^{9}\\right]^{-1} = 5.9\\cdot 10^{-11}$"
  },
  "formel-42cbacb1-17": {
@@ -1878,9 +1878,9 @@
   "tex": "$d\\theta/dz$"
  },
  "formel-43b59004": {
-  "breite": 400,
+  "breite": 422,
   "groesse": 22,
-  "hoehe": 47,
+  "hoehe": 50,
   "tex": "$\\sigma\\,T_e^4 = \\frac{S_0\\,(1 - A)}{4} \\quad\\Rightarrow\\quad T_e = 255\\,\\mathrm{K}$"
  },
  "formel-446a7006-17": {
@@ -2076,9 +2076,9 @@
   "tex": "$p = \\rho\\,R_L\\,T$"
  },
  "formel-4ce8e1b7": {
-  "breite": 400,
+  "breite": 523,
   "groesse": 22,
-  "hoehe": 34,
+  "hoehe": 44,
   "tex": "$\\delta_{min} = 2\\arcsin\\!\\left(n\\sin\\frac{A}{2}\\right) - A, \\qquad A = 60^\\circ$"
  },
  "formel-4ced09c6-17": {
@@ -2118,9 +2118,9 @@
   "tex": "$\\sigma = 0{,}0756$"
  },
  "formel-4e7daa34-17": {
-  "breite": 400,
+  "breite": 424,
   "groesse": 17,
-  "hoehe": 26,
+  "hoehe": 28,
   "tex": "$r_s(1.2^\\circ\\mathrm{C}, 700\\,\\mathrm{hPa}) = 0.622\\cdot 6.7/693 = 6.0$"
  },
  "formel-4e845032-17": {
@@ -2202,9 +2202,9 @@
   "tex": "$\\delta q = 0$"
  },
  "formel-52e797cb-20": {
-  "breite": 400,
+  "breite": 700,
   "groesse": 20,
-  "hoehe": 26,
+  "hoehe": 46,
   "tex": "$(\\Omega a\\cos\\varphi + u)\\,a\\cos\\varphi = \\Omega a^2 \\quad\\Rightarrow\\quad u = \\Omega a\\,\\frac{1 - \\cos^2\\varphi}{\\cos\\varphi} = \\Omega a\\,\\frac{\\sin^2\\varphi}{\\cos\\varphi}$"
  },
  "formel-52e8ed7a-17": {
@@ -2250,9 +2250,9 @@
   "tex": "$\\frac{dm}{dt} = 4\\pi r^2\\rho_w\\frac{dr}{dt}$"
  },
  "formel-54aca09b-20": {
-  "breite": 400,
+  "breite": 752,
   "groesse": 20,
-  "hoehe": 25,
+  "hoehe": 47,
   "tex": "$S_0 = \\sigma T_\\odot^4\\left(\\frac{R_\\odot}{d}\\right)^2 = 5.67\\cdot 10^{-8}\\cdot 5772^4\\cdot\\left(\\frac{6.96\\cdot 10^8}{1.496\\cdot 10^{11}}\\right)^2 = 1361\\,\\mathrm{W/m^2}$"
  },
  "formel-54d180d2-17": {
@@ -2442,9 +2442,9 @@
   "tex": "$S^* - 1 = \\sqrt{4a^3/(27b)}$"
  },
  "formel-5bc813c6": {
-  "breite": 400,
+  "breite": 472,
   "groesse": 22,
-  "hoehe": 32,
+  "hoehe": 38,
   "tex": "$r = 0{,}622\\,\\frac{e}{p - e}, \\qquad T_v = T\\,(1 + 0{,}61\\,r)$"
  },
  "formel-5bdd269f-20": {
@@ -2484,9 +2484,9 @@
   "tex": "$M$"
  },
  "formel-5dc2a457": {
-  "breite": 400,
+  "breite": 470,
   "groesse": 22,
-  "hoehe": 30,
+  "hoehe": 35,
   "tex": "$\\Delta T_{Foehn} = (\\Gamma_d - \\Gamma_s)\\,(z_{Kamm} - z_{LCL})$"
  },
  "formel-5e058cdd-17": {
@@ -2526,9 +2526,9 @@
   "tex": "$9{,}3 - 6{,}0 = 3{,}3$"
  },
  "formel-5ef38243-20": {
-  "breite": 400,
+  "breite": 494,
   "groesse": 20,
-  "hoehe": 51,
+  "hoehe": 63,
   "tex": "$\\left.\\frac{d\\vec A}{dt}\\right|_{in} = \\sum_i\\frac{dA_i}{dt}\\,\\hat e_i + \\sum_i A_i\\,\\frac{d\\hat e_i}{dt} = \\frac{d'\\vec A}{dt} + \\vec\\Omega\\times\\vec A$"
  },
  "formel-5fac0ba0-17": {
@@ -2556,9 +2556,9 @@
   "tex": "$(\\Gamma - \\Gamma_d)\\,\\delta z$"
  },
  "formel-61d9f0c9-17": {
-  "breite": 400,
+  "breite": 424,
   "groesse": 17,
-  "hoehe": 28,
+  "hoehe": 30,
   "tex": "$\\sigma = 0.31\\cdot 10^{-4}\\cdot 30/(0.01\\cdot 10^4) = 9.3\\cdot 10^{-6}$"
  },
  "formel-622cf7a1-17": {
@@ -2664,9 +2664,9 @@
   "tex": "$e^{-\\beta x}$"
  },
  "formel-67673a27-20": {
-  "breite": 400,
+  "breite": 448,
   "groesse": 20,
-  "hoehe": 40,
+  "hoehe": 45,
   "tex": "$S(r) = \\frac{e}{e_s(\\infty)} \\approx 1 + \\frac{a}{r} - \\frac{b}{r^3}, \\qquad a = \\frac{2\\sigma}{\\rho_w R_v T}$"
  },
  "formel-67a313e1-20": {
@@ -2712,9 +2712,9 @@
   "tex": "$\\Delta p = 10$"
  },
  "formel-69ff38dc-20": {
-  "breite": 400,
+  "breite": 578,
   "groesse": 20,
-  "hoehe": 35,
+  "hoehe": 51,
   "tex": "$\\frac{dT_d}{dz} = -\\frac{g\\,R_v\\,T_d^2}{R_L\\,L_v\\,T} \\approx -\\frac{9.81\\cdot 461.5\\cdot 285}{287\\cdot 2.5\\cdot 10^6} = -1.8\\cdot 10^{-3}\\,\\mathrm{K/m}$"
  },
  "formel-6a16dc00-17": {
@@ -2742,9 +2742,9 @@
   "tex": "$\\rho = 28$"
  },
  "formel-6c5b19ba-20": {
-  "breite": 400,
+  "breite": 563,
   "groesse": 20,
-  "hoehe": 31,
+  "hoehe": 43,
   "tex": "$z = \\frac{T_0}{\\Gamma}\\left[1 - \\left(\\frac{p}{p_0}\\right)^{R_L\\Gamma/g}\\right] = 44\\,331\\,\\mathrm{m}\\cdot\\left[1 - \\left(\\frac{p}{p_0}\\right)^{0.1903}\\right]$"
  },
  "formel-6cb7ac78-17": {
@@ -2760,9 +2760,9 @@
   "tex": "$\\Omega^2 a = 0.034$"
  },
  "formel-6cdf6a4f-20": {
-  "breite": 400,
+  "breite": 439,
   "groesse": 20,
-  "hoehe": 44,
+  "hoehe": 48,
   "tex": "$\\omega = Uk - \\frac{\\beta k}{k^2 + l^2}, \\qquad c = \\frac{\\omega}{k} = U - \\frac{\\beta}{k^2 + l^2}$"
  },
  "formel-6d1a9bb3-17": {
@@ -2784,9 +2784,9 @@
   "tex": "$9.81/(287\\cdot 0.0065) = 5.26$"
  },
  "formel-6d4f38d1-20": {
-  "breite": 400,
+  "breite": 600,
   "groesse": 20,
-  "hoehe": 31,
+  "hoehe": 47,
   "tex": "$\\vec v_{g,2} - \\vec v_{g,1} = \\frac{1}{f}\\,\\hat k\\times\\nabla_p(\\Phi_2 - \\Phi_1) = \\frac{R_L}{f}\\,\\ln\\frac{p_1}{p_2}\\;\\hat k\\times\\nabla_p\\overline{T_v}$"
  },
  "formel-6db8a5cb-17": {
@@ -2886,9 +2886,9 @@
   "tex": "$r_s$"
  },
  "formel-728111e5-20": {
-  "breite": 400,
+  "breite": 579,
   "groesse": 20,
-  "hoehe": 30,
+  "hoehe": 44,
   "tex": "$p(z)A - p(z+dz)A - \\rho g A\\,dz = 0 \\quad\\Rightarrow\\quad \\frac{dp}{dz} = -\\rho g$"
  },
  "formel-72ce00e7-17": {
@@ -3024,9 +3024,9 @@
   "tex": "$1{,}2\\cdot 10^{7}$"
  },
  "formel-78cd9675-17": {
-  "breite": 400,
+  "breite": 436,
   "groesse": 17,
-  "hoehe": 41,
+  "hoehe": 45,
   "tex": "$r = \\rho_v/\\rho_d = \\frac{e/(R_v T)}{(p-e)/(R_L T)} = \\frac{R_L}{R_v}\\,\\frac{e}{p-e} = 0.622\\,\\frac{e}{p-e}$"
  },
  "formel-79bab96c-17": {
@@ -3084,9 +3084,9 @@
   "tex": "$g = 9.8$"
  },
  "formel-7b92667d": {
-  "breite": 400,
+  "breite": 441,
   "groesse": 22,
-  "hoehe": 44,
+  "hoehe": 49,
   "tex": "$p = \\rho\\,R_L\\,T, \\qquad R_L = \\frac{R^*}{M} = 287\\,\\frac{\\mathrm{J}}{\\mathrm{kg\\,K}}$"
  },
  "formel-7bba82bc-17": {
@@ -3264,9 +3264,9 @@
   "tex": "$h$"
  },
  "formel-8208dbf9-20": {
-  "breite": 400,
+  "breite": 611,
   "groesse": 20,
-  "hoehe": 20,
+  "hoehe": 31,
   "tex": "$c_p\\,dT - \\alpha\\,dp = -L_v\\,dr_s \\quad\\Rightarrow\\quad c_p\\,dT + g\\,dz = -L_v\\,dr_s$"
  },
  "formel-825494ca-17": {
@@ -3348,9 +3348,9 @@
   "tex": "$T_0 = 20$"
  },
  "formel-85dff471-20": {
-  "breite": 400,
+  "breite": 500,
   "groesse": 20,
-  "hoehe": 27,
+  "hoehe": 34,
   "tex": "$T_s = 2^{1/4}\\,T_a = 2^{1/4}\\,T_e = 1.189\\cdot 255 = 303\\,\\mathrm{K}$"
  },
  "formel-864fecc5-17": {
@@ -3378,15 +3378,15 @@
   "tex": "$\\Gamma < 0$"
  },
  "formel-86d21ee9-20": {
-  "breite": 400,
+  "breite": 545,
   "groesse": 20,
-  "hoehe": 34,
+  "hoehe": 46,
   "tex": "$\\ln\\frac{p}{p_0} = \\frac{g}{R_L\\Gamma}\\,\\ln\\frac{T_0 - \\Gamma z}{T_0} \\quad\\Rightarrow\\quad p = p_0\\left(1 - \\frac{\\Gamma z}{T_0}\\right)^{g/(R_L\\Gamma)}$"
  },
  "formel-8755d7c9-17": {
-  "breite": 400,
+  "breite": 448,
   "groesse": 17,
-  "hoehe": 24,
+  "hoehe": 27,
   "tex": "$\\Delta p = \\rho g h\\,\\Delta T/T = 1.2\\cdot 9.81\\cdot 1000\\cdot 5/290 \\approx 2$"
  },
  "formel-8759c9c9-17": {
@@ -3450,9 +3450,9 @@
   "tex": "$1{,}6\\cdot 10^{-11}$"
  },
  "formel-893e0ddc-20": {
-  "breite": 400,
+  "breite": 591,
   "groesse": 20,
-  "hoehe": 22,
+  "hoehe": 32,
   "tex": "$\\dot x = \\sigma(y - x), \\qquad \\dot y = x(\\rho - z) - y, \\qquad \\dot z = xy - \\beta z$"
  },
  "formel-895a8696": {
@@ -3480,9 +3480,9 @@
   "tex": "$\\theta = T\\left(\\frac{1000\\ \\mathrm{hPa}}{p}\\right)^{0.286}$"
  },
  "formel-8a1090e4-20": {
-  "breite": 400,
+  "breite": 781,
   "groesse": 20,
-  "hoehe": 23,
+  "hoehe": 45,
   "tex": "$\\vec a_{in} = \\frac{d'}{dt}\\left(\\vec v + \\vec\\Omega\\times\\vec r\\right) + \\vec\\Omega\\times\\left(\\vec v + \\vec\\Omega\\times\\vec r\\right) = \\frac{d'\\vec v}{dt} + 2\\,\\vec\\Omega\\times\\vec v + \\vec\\Omega\\times(\\vec\\Omega\\times\\vec r)$"
  },
  "formel-8a53ac8d-17": {
@@ -3588,9 +3588,9 @@
   "tex": "$\\hat e_1, \\hat e_2, \\hat e_3$"
  },
  "formel-8d700723-20": {
-  "breite": 400,
+  "breite": 453,
   "groesse": 20,
-  "hoehe": 28,
+  "hoehe": 32,
   "tex": "$\\delta(i) = 2(i - r) + (\\pi - 2r) = \\pi + 2i - 4r$"
  },
  "formel-8d8192ee-17": {
@@ -3636,9 +3636,9 @@
   "tex": "$\\zeta' = \\nabla^2\\psi$"
  },
  "formel-8f2b5b43-20": {
-  "breite": 400,
+  "breite": 500,
   "groesse": 20,
-  "hoehe": 27,
+  "hoehe": 34,
   "tex": "$T_s = 2^{1/4}\\,T_a = 2^{1/4}\\,T_e = 1{,}189\\cdot 255 = 303\\,\\mathrm{K}$"
  },
  "formel-8f456105-17": {
@@ -3762,9 +3762,9 @@
   "tex": "$T/T_{std}$"
  },
  "formel-948bfbb6-20": {
-  "breite": 400,
+  "breite": 554,
   "groesse": 20,
-  "hoehe": 35,
+  "hoehe": 48,
   "tex": "$f v_g = \\frac{1}{\\rho}\\frac{\\partial p}{\\partial x}, \\qquad f u_g = -\\frac{1}{\\rho}\\frac{\\partial p}{\\partial y} \\quad\\Leftrightarrow\\quad \\vec v_g = \\frac{1}{\\rho f}\\,\\hat k\\times\\nabla p$"
  },
  "formel-955704dd-17": {
@@ -3780,9 +3780,9 @@
   "tex": "$|1 - \\nu| + \\nu > 1$"
  },
  "formel-95c644e5-17": {
-  "breite": 400,
+  "breite": 436,
   "groesse": 17,
-  "hoehe": 41,
+  "hoehe": 45,
   "tex": "$r = \\rho_v/\\rho_d = \\frac{e/(R_v T)}{(p-e)/(R_L T)} = \\frac{R_L}{R_v}\\,\\frac{e}{p-e} = 0{,}622\\,\\frac{e}{p-e}$"
  },
  "formel-95d18488-17": {
@@ -3912,9 +3912,9 @@
   "tex": "$\\varepsilon = 0{,}78$"
  },
  "formel-9d461b5f-20": {
-  "breite": 400,
+  "breite": 448,
   "groesse": 20,
-  "hoehe": 40,
+  "hoehe": 45,
   "tex": "$\\frac{d\\hat i}{dt} = \\dot\\lambda\\,\\hat k_{pol}\\times\\hat i = \\frac{u}{a\\cos\\varphi}\\left(\\sin\\varphi\\,\\hat j - \\cos\\varphi\\,\\hat k\\right)$"
  },
  "formel-9da297ac-17": {
@@ -4134,9 +4134,9 @@
   "tex": "$c = \\sqrt{\\gamma R_L T} = \\sqrt{1.4\\cdot 287\\cdot 288} = 340$"
  },
  "formel-a72d46ec-20": {
-  "breite": 400,
+  "breite": 516,
   "groesse": 20,
-  "hoehe": 35,
+  "hoehe": 45,
   "tex": "$\\frac{d'\\vec v}{dt} = -\\frac{1}{\\rho}\\nabla p - 2\\,\\vec\\Omega\\times\\vec v - \\vec\\Omega\\times(\\vec\\Omega\\times\\vec r) + \\vec g + \\vec F$"
  },
  "formel-a7784a4f-17": {
@@ -4230,9 +4230,9 @@
   "tex": "$du/dt \\sim U^2/L = 10^{-4}$"
  },
  "formel-aac77320-17": {
-  "breite": 400,
+  "breite": 450,
   "groesse": 17,
-  "hoehe": 25,
+  "hoehe": 28,
   "tex": "$\\delta = 2\\arcsin(0.655) - 60^\\circ = 81.8 - 60 = 21.8^\\circ$"
  },
  "formel-ab07fac3-17": {
@@ -4248,9 +4248,9 @@
   "tex": "$(-i\\omega + iUk)(-k^2 - l^2) + i\\beta k = 0$"
  },
  "formel-ab5e0245": {
-  "breite": 400,
+  "breite": 440,
   "groesse": 22,
-  "hoehe": 40,
+  "hoehe": 44,
   "tex": "$\\delta(t) = \\delta_0\\,e^{\\lambda t}, \\qquad t_{2} = \\frac{\\ln 2}{\\lambda} \\approx 2\\ \\mathrm{Tage}$"
  },
  "formel-ab64e7c0-17": {
@@ -4338,9 +4338,9 @@
   "tex": "$\\kappa = 287/1004 = 0{,}286 = 2/7$"
  },
  "formel-af211a32-20": {
-  "breite": 400,
+  "breite": 466,
   "groesse": 20,
-  "hoehe": 35,
+  "hoehe": 41,
   "tex": "$c_p\\,dT = -g\\,dz \\quad\\Rightarrow\\quad \\frac{dT}{dz} = -\\frac{g}{c_p} = -9.8\\ \\frac{\\mathrm{K}}{\\mathrm{km}}$"
  },
  "formel-af3b6b47-17": {
@@ -4632,9 +4632,9 @@
   "tex": "$\\delta q = c_p\\,dT - \\alpha\\,dp$"
  },
  "formel-b917702e-20": {
-  "breite": 400,
+  "breite": 745,
   "groesse": 20,
-  "hoehe": 22,
+  "hoehe": 41,
   "tex": "$\\phi_j^{n+1} = \\phi_j^n - \\frac{c\\,\\Delta t}{\\Delta x}\\left(\\phi_j^n - \\phi_{j-1}^n\\right) = (1 - \\nu)\\,\\phi_j^n + \\nu\\,\\phi_{j-1}^n, \\qquad \\nu = \\frac{c\\,\\Delta t}{\\Delta x}$"
  },
  "formel-b94a6803-17": {
@@ -4752,9 +4752,9 @@
   "tex": "$K \\approx 1\\ldots 10\\,\\mathrm{m^2/s}$"
  },
  "formel-bc6ee6df-20": {
-  "breite": 400,
+  "breite": 718,
   "groesse": 20,
-  "hoehe": 25,
+  "hoehe": 44,
   "tex": "$c_p\\,dT + g\\,dz = 0 \\quad\\Rightarrow\\quad \\Gamma_d = -\\frac{dT}{dz} = \\frac{g}{c_p} = \\frac{9{,}81}{1004} = 9{,}77\\cdot 10^{-3}\\,\\mathrm{K/m}$"
  },
  "formel-bc7c2330-17": {
@@ -4776,7 +4776,7 @@
   "tex": "$c = 340$"
  },
  "formel-bd6fa8bc-17": {
-  "breite": 400,
+  "breite": 404,
   "groesse": 17,
   "hoehe": 28,
   "tex": "$\\Delta z = \\Delta p/(\\rho g) = 100/(1{,}225\\cdot 9{,}81) = 8{,}3$"
@@ -5022,9 +5022,9 @@
   "tex": "$L_s = L_v + L_f = 2.83$"
  },
  "formel-c9213230-20": {
-  "breite": 400,
+  "breite": 753,
   "groesse": 20,
-  "hoehe": 25,
+  "hoehe": 48,
   "tex": "$-s_w\\,dT + \\alpha_w\\,de_s = -s_v\\,dT + \\alpha_v\\,de_s \\quad\\Rightarrow\\quad \\frac{de_s}{dT} = \\frac{s_v - s_w}{\\alpha_v - \\alpha_w} = \\frac{L_v}{T\\,(\\alpha_v - \\alpha_w)}$"
  },
  "formel-c9585c1c-17": {
@@ -5040,9 +5040,9 @@
   "tex": "$\\partial u/\\partial z$"
  },
  "formel-c9bfbe35-20": {
-  "breite": 400,
+  "breite": 418,
   "groesse": 20,
-  "hoehe": 31,
+  "hoehe": 32,
   "tex": "$\\delta(i) = \\pi + 2i - 4r, \\qquad \\sin i = n\\,\\sin r$"
  },
  "formel-c9fdaa00-17": {
@@ -5124,9 +5124,9 @@
   "tex": "$0.8$"
  },
  "formel-cd76d47c-20": {
-  "breite": 400,
+  "breite": 434,
   "groesse": 20,
-  "hoehe": 41,
+  "hoehe": 44,
   "tex": "$\\frac{dT}{T} = \\frac{R_L}{c_p}\\,\\frac{dp}{p} = \\kappa\\,\\frac{dp}{p} \\quad\\Rightarrow\\quad T\\,p^{-\\kappa} = \\mathrm{const}$"
  },
  "formel-cd90d767-17": {
@@ -5196,9 +5196,9 @@
   "tex": "$L_\\downarrow = 0.70\\cdot 5.67\\cdot 10^{-8}\\cdot 283^4 = 255$"
  },
  "formel-cfc8438a-20": {
-  "breite": 400,
+  "breite": 718,
   "groesse": 20,
-  "hoehe": 23,
+  "hoehe": 41,
   "tex": "$c_p\\,dT + g\\,dz = 0 \\quad\\Rightarrow\\quad \\Gamma_d = -\\frac{dT}{dz} = \\frac{g}{c_p} = \\frac{9.81}{1004} = 9.77\\cdot 10^{-3}\\,\\mathrm{K/m}$"
  },
  "formel-cfe5e45a-17": {
@@ -5274,9 +5274,9 @@
   "tex": "$p(z) = p_0\\,e^{-z/H}, \\qquad H = \\frac{R_L\\,T}{g}$"
  },
  "formel-d3169fb5-17": {
-  "breite": 400,
+  "breite": 593,
   "groesse": 17,
-  "hoehe": 32,
+  "hoehe": 47,
   "tex": "$\\xi = \\left[\\frac{\\rho_w R_v T}{D\\,e_s} + \\frac{\\rho_w L_v^2}{K\\,R_v T^2}\\right]^{-1} = \\left[9{,}4\\cdot 10^{9} + 7{,}6\\cdot 10^{9}\\right]^{-1} = 5{,}9\\cdot 10^{-11}$"
  },
  "formel-d3195ed9-17": {
@@ -5352,9 +5352,9 @@
   "tex": "$0.36$"
  },
  "formel-d7129e91-20": {
-  "breite": 400,
+  "breite": 416,
   "groesse": 20,
-  "hoehe": 77,
+  "hoehe": 80,
   "tex": "$\\mathrm{CAPE} = \\int_{LFC}^{EL} b\\,dz = \\int_{LFC}^{EL} g\\,\\frac{T_v' - T_v}{T_v}\\,dz$"
  },
  "formel-d7257c97-17": {
@@ -5520,9 +5520,9 @@
   "tex": "$\\partial\\theta/\\partial y = -3\\cdot 10^{-6}$"
  },
  "formel-df375417": {
-  "breite": 400,
+  "breite": 559,
   "groesse": 22,
-  "hoehe": 35,
+  "hoehe": 49,
   "tex": "$\\frac{d\\vec v}{dt} = -\\frac{1}{\\rho}\\nabla p - 2\\,\\vec\\Omega\\times\\vec v - \\vec\\Omega\\times(\\vec\\Omega\\times\\vec r) + \\vec g + \\vec F$"
  },
  "formel-df5c2f89-17": {
@@ -5556,9 +5556,9 @@
   "tex": "$h = c_pT + gz + L_v r \\approx 340$"
  },
  "formel-e04bbc27-20": {
-  "breite": 400,
+  "breite": 579,
   "groesse": 20,
-  "hoehe": 30,
+  "hoehe": 44,
   "tex": "$u = u_g\\left(1 - e^{-z/D_E}\\cos\\frac{z}{D_E}\\right), \\qquad v = u_g\\,e^{-z/D_E}\\sin\\frac{z}{D_E}$"
  },
  "formel-e07161cc-17": {
@@ -5670,7 +5670,7 @@
   "tex": "$\\mathrm{CAPE} = R_L\\int_{p_{EL}}^{p_{LFC}}(T_v' - T_v)\\,d\\ln p$"
  },
  "formel-e3c6851a-17": {
-  "breite": 400,
+  "breite": 404,
   "groesse": 17,
   "hoehe": 28,
   "tex": "$\\Delta z = \\Delta p/(\\rho g) = 100/(1.225\\cdot 9.81) = 8.3$"
@@ -5718,9 +5718,9 @@
   "tex": "$n_s$"
  },
  "formel-e6d87ae3-20": {
-  "breite": 400,
+  "breite": 585,
   "groesse": 20,
-  "hoehe": 36,
+  "hoehe": 53,
   "tex": "$\\sigma T_e^4 = \\frac{S_0\\,(1 - A)}{4} \\quad\\Rightarrow\\quad T_e = \\left(\\frac{1361\\cdot 0{,}70}{4\\cdot 5{,}67\\cdot 10^{-8}}\\right)^{1/4} = 255\\,\\mathrm{K}$"
  },
  "formel-e7235452-17": {
@@ -5760,9 +5760,9 @@
   "tex": "$S > S^*$"
  },
  "formel-e883f0ec-20": {
-  "breite": 400,
+  "breite": 459,
   "groesse": 20,
-  "hoehe": 29,
+  "hoehe": 33,
   "tex": "$\\delta q = (c_v + R_L)\\,dT - \\alpha\\,dp = c_p\\,dT - \\alpha\\,dp$"
  },
  "formel-e899fe4b-17": {
@@ -5964,9 +5964,9 @@
   "tex": "$p = \\alpha E$"
  },
  "formel-f34eab7b-20": {
-  "breite": 400,
+  "breite": 415,
   "groesse": 20,
-  "hoehe": 49,
+  "hoehe": 51,
   "tex": "$\\Delta T_0 = \\frac{\\Delta F}{4\\sigma T_e^3} = \\frac{3{,}7}{4\\cdot 5{,}67\\cdot 10^{-8}\\cdot 255^3} = 1{,}0\\,\\mathrm{K}$"
  },
  "formel-f3631049-17": {
@@ -6018,9 +6018,9 @@
   "tex": "$m$"
  },
  "formel-f5690e79-17": {
-  "breite": 400,
+  "breite": 450,
   "groesse": 17,
-  "hoehe": 25,
+  "hoehe": 28,
   "tex": "$\\delta = 2\\arcsin(0{,}655) - 60^\\circ = 81{,}8 - 60 = 21{,}8^\\circ$"
  },
  "formel-f5b820af-17": {
@@ -6228,9 +6228,9 @@
   "tex": "$364$"
  },
  "formel-fd3c137d-20": {
-  "breite": 400,
+  "breite": 415,
   "groesse": 20,
-  "hoehe": 46,
+  "hoehe": 48,
   "tex": "$\\Delta T_0 = \\frac{\\Delta F}{4\\sigma T_e^3} = \\frac{3.7}{4\\cdot 5.67\\cdot 10^{-8}\\cdot 255^3} = 1.0\\,\\mathrm{K}$"
  },
  "formel-fda38f45-17": {

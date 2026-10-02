@@ -23,9 +23,10 @@ Rectangle {
     property var formel: undefined
     property real bildBreite: formel === undefined ? 0 : (formel.breite || 0)
     property real bildHoehe: formel === undefined ? 0 : (formel.hoehe || 0)
-    // Verkleinern, wenn zu breit; kleine Formeln bleiben klein.
+    // So gross wie die Formeln im Text (Stil.skala haengt an der Schrift),
+    // und verkleinert, wenn das zu breit fuer den Kasten waere.
     property real skala: bildBreite > 0
-                         ? Math.min(Theme.pixelRatio,
+                         ? Math.min(Stil.skala,
                                     (width - 2 * Theme.paddingMedium) / bildBreite)
                          : 1.0
 
