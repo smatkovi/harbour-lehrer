@@ -101,12 +101,6 @@
   "hoehe": 26,
   "tex": "$r = 40.3^\\circ$"
  },
- "formel-037eae37-17": {
-  "breite": 191,
-  "groesse": 17,
-  "hoehe": 28,
-  "tex": "$S^* - 1 = 1{,}4\\cdot 10^{-3}$"
- },
  "formel-03e1b044-20": {
   "breite": 400,
   "groesse": 20,
@@ -167,12 +161,6 @@
   "hoehe": 43,
   "tex": "$r\\,\\frac{dr}{dt} = \\xi\\,S \\quad\\Rightarrow\\quad r^2 = r_0^2 + 2\\,\\xi\\,S\\,t$"
  },
- "formel-0611e423-17": {
-  "breite": 93,
-  "groesse": 17,
-  "hoehe": 29,
-  "tex": "$\\xi \\approx 10^{-10}$"
- },
  "formel-062f79a9-17": {
   "breite": 80,
   "groesse": 17,
@@ -232,6 +220,12 @@
   "groesse": 22,
   "hoehe": 47,
   "tex": "$L_{max} \\approx 3{,}9\\,\\frac{N\\,H}{f}, \\qquad L_R = \\frac{N\\,H}{f}$"
+ },
+ "formel-08b73332-17": {
+  "breite": 234,
+  "groesse": 17,
+  "hoehe": 29,
+  "tex": "$c_p\\ln\\theta + L_v r_s/T = \\mathrm{const}$"
  },
  "formel-092e364e-17": {
   "breite": 15,
@@ -401,12 +395,6 @@
   "hoehe": 27,
   "tex": "$uw/a$"
  },
- "formel-0eae3cb8-17": {
-  "breite": 86,
-  "groesse": 17,
-  "hoehe": 26,
-  "tex": "$r^* = 0{,}2$"
- },
  "formel-0ec8f8d0-17": {
   "breite": 78,
   "groesse": 17,
@@ -526,6 +514,12 @@
   "groesse": 20,
   "hoehe": 46,
   "tex": "$\\frac{\\partial p_1}{\\partial y}dy + \\frac{\\partial p_1}{\\partial z}dz = \\frac{\\partial p_2}{\\partial y}dy + \\frac{\\partial p_2}{\\partial z}dz$"
+ },
+ "formel-13a25b66-17": {
+  "breite": 93,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$\\theta = \\mathrm{const}$"
  },
  "formel-13b0fe42-17": {
   "breite": 374,
@@ -2663,12 +2657,6 @@
   "hoehe": 28,
   "tex": "$Fr = U/(Nh) < 1$"
  },
- "formel-67092cd0-17": {
-  "breite": 138,
-  "groesse": 17,
-  "hoehe": 28,
-  "tex": "$b = 1{,}6\\cdot 10^{-20}$"
- },
  "formel-6759b570-17": {
   "breite": 46,
   "groesse": 17,
@@ -2903,12 +2891,6 @@
   "hoehe": 30,
   "tex": "$p(z)A - p(z+dz)A - \\rho g A\\,dz = 0 \\quad\\Rightarrow\\quad \\frac{dp}{dz} = -\\rho g$"
  },
- "formel-72bbbf7d-17": {
-  "breite": 191,
-  "groesse": 17,
-  "hoehe": 26,
-  "tex": "$S^* - 1 = 1.4\\cdot 10^{-3}$"
- },
  "formel-72ce00e7-17": {
   "breite": 121,
   "groesse": 17,
@@ -3118,6 +3100,12 @@
   "groesse": 17,
   "hoehe": 26,
   "tex": "$T_{Kamm} = 10{,}2 - 9 = 1{,}2$"
+ },
+ "formel-7bf50161-17": {
+  "breite": 117,
+  "groesse": 17,
+  "hoehe": 27,
+  "tex": "$e/p = \\mathrm{const}$"
  },
  "formel-7c196476-17": {
   "breite": 172,
@@ -3731,12 +3719,6 @@
   "hoehe": 27,
   "tex": "$2\\pi L_R/2.4$"
  },
- "formel-932b02a3-17": {
-  "breite": 299,
-  "groesse": 17,
-  "hoehe": 47,
-  "tex": "$\\xi = \\left[\\frac{\\rho_w R_v T}{D\\,e_s} + \\frac{\\rho_w L_v^2}{K\\,R_v T^2}\\right]^{-1} \\approx 10^{-10}$"
- },
  "formel-933674fe-17": {
   "breite": 181,
   "groesse": 17,
@@ -4283,12 +4265,6 @@
   "hoehe": 28,
   "tex": "$Fr = U/(N\\,h)$"
  },
- "formel-abeb1015-17": {
-  "breite": 138,
-  "groesse": 17,
-  "hoehe": 26,
-  "tex": "$b = 1.6\\cdot 10^{-20}$"
- },
  "formel-abedf53c-17": {
   "breite": 161,
   "groesse": 17,
@@ -4450,12 +4426,6 @@
   "groesse": 17,
   "hoehe": 26,
   "tex": "$H$"
- },
- "formel-b1a3ac2a-17": {
-  "breite": 86,
-  "groesse": 17,
-  "hoehe": 26,
-  "tex": "$r^* = 0.2$"
  },
  "formel-b20c6327-17": {
   "breite": 155,
@@ -5308,6 +5278,12 @@
   "groesse": 17,
   "hoehe": 32,
   "tex": "$\\xi = \\left[\\frac{\\rho_w R_v T}{D\\,e_s} + \\frac{\\rho_w L_v^2}{K\\,R_v T^2}\\right]^{-1} = \\left[9{,}4\\cdot 10^{9} + 7{,}6\\cdot 10^{9}\\right]^{-1} = 5{,}9\\cdot 10^{-11}$"
+ },
+ "formel-d3195ed9-17": {
+  "breite": 96,
+  "groesse": 17,
+  "hoehe": 26,
+  "tex": "$T = \\mathrm{const}$"
  },
  "formel-d4284b01-17": {
   "breite": 117,
@@ -6286,12 +6262,6 @@
   "groesse": 20,
   "hoehe": 65,
   "tex": "$\\frac{d\\Gamma_C}{dt} = \\oint\\frac{d\\vec v}{dt}\\cdot d\\vec l + \\oint\\vec v\\cdot\\frac{d(d\\vec l)}{dt}$"
- },
- "formel-ffa070f3-17": {
-  "breite": 121,
-  "groesse": 17,
-  "hoehe": 26,
-  "tex": "$D = 2\\cdot 10^{-5}$"
  },
  "formel-ffd73da5-17": {
   "breite": 63,
