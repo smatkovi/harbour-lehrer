@@ -84,6 +84,11 @@ install(TARGETS crun rrun RUNTIME DESTINATION libexec/${APP})
 install(PROGRAMS interp/crunxx DESTINATION libexec/${APP})
 install(DIRECTORY qml/ DESTINATION share/${APP}/qml)
 install(FILES kurse/${KURS}/kurs.json DESTINATION share/${APP}/data)
+# Wo die Fotos herkommen. CC BY und CC BY-SA verlangen die Nennung; in der
+# App steht sie unter jedem Bild, hier noch einmal zum Nachlesen.
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/kurse/${KURS}/CREDITS)
+    install(FILES kurse/${KURS}/CREDITS DESTINATION share/${APP})
+endif()
 install(FILES kurse/${KURS}/${APP}.desktop DESTINATION share/applications)
 
 # Die Bilder gibt es nur bei den Kursen, die welche haben.

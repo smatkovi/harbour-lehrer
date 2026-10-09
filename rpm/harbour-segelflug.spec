@@ -1,5 +1,5 @@
 Name:       harbour-segelflug
-Version:    1.11.2
+Version:    1.12.0
 Release:    1
 Summary:    Gliding theory with a focus on reading clouds
 License:    GPLv3+
@@ -50,6 +50,11 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Fri Oct 09 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.12.0-1
+- Zu jeder gezeichneten Wolke stehen jetzt zwei bis drei echte Fotos, jedes
+  mit einem Satz, der sagt, wohin zu schauen ist (Wikimedia Commons, frei
+  lizenziert; Urheber und Lizenz stehen unter dem Bild und in CREDITS)
+
 * Fri Oct 02 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.11.2-1
 - Die Durchsicht nach dem Einstufungstest lud nicht (Column.bottomPadding
   gibt es in QtQuick 2.0 nicht); "Deine Wahl" auch auf Englisch

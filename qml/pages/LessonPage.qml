@@ -50,6 +50,15 @@ Page {
                       ? "" : seite.lektion.bild
             }
 
+            // Und darunter dieselbe Wolke, wie sie wirklich aussieht.
+            Fotos {
+                x: Theme.horizontalPageMargin
+                width: parent.width - 2 * Theme.horizontalPageMargin
+                sprache: course.language
+                fotos: seite.lektion.leer || seite.lektion.fotos === undefined
+                       ? [] : seite.lektion.fotos
+            }
+
             // Die Formeln der Lektion, jede zweimal: als Codezeile und
             // gesetzt. Sie stehen vor dem Beispiel, damit man die Zeilen
             // gleich darunter wiederfindet.

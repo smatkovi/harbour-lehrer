@@ -54,6 +54,7 @@ var EN = {
     "English": "English",
 
     // -- Lektion
+    "So sieht es wirklich aus": "What it looks like in the sky",
     "Beispiel": "Example",
     "Ausgabe": "Output",
     "Ausführen": "Run",

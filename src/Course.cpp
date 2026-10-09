@@ -323,6 +323,20 @@ QVariantMap Course::lesson() const
         formeln.append(eintrag);
     }
     out.insert(QLatin1String("formeln"), formeln);
+
+    /* Die Fotos zur Zeichnung.  Dateiname und Masse sind in jeder Sprache
+       dieselben, der Hinweis -- der Satz, der sagt, wohin zu schauen ist --
+       steht zweisprachig im Kurs und wird hier uebersetzt.  Fehlt der Block
+       ganz, bleibt die Liste leer: Nur der Wolkenkurs hat Fotos, die
+       anderen Kurse teilen sich dieselbe Oberflaeche. */
+    QVariantList fotos;
+    for (const QVariant &value : source.value(QLatin1String("fotos")).toList()) {
+        QVariantMap eintrag = value.toMap();
+        eintrag.insert(QLatin1String("hinweis"),
+                       m_course->text(eintrag.value(QLatin1String("hinweis"))));
+        fotos.append(eintrag);
+    }
+    out.insert(QLatin1String("fotos"), fotos);
     out.insert(QLatin1String("beispiel"), source.value(QLatin1String("beispiel")));
     out.insert(QLatin1String("ausgabe"), source.value(QLatin1String("ausgabe")));
     out.insert(QLatin1String("aufgaben"),
