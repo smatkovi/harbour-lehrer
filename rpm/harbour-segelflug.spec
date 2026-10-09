@@ -1,5 +1,5 @@
 Name:       harbour-segelflug
-Version:    1.12.0
+Version:    1.13.0
 Release:    1
 Summary:    Gliding theory with a focus on reading clouds
 License:    GPLv3+
@@ -50,6 +50,10 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Fri Oct 09 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.13.0-1
+- Die Fotos stehen jetzt auch bei den Aufgaben und auf den Karteikarten:
+  ueber der Frage neben der Zeichnung und noch einmal in der Loesung
+
 * Fri Oct 09 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.12.0-1
 - Zu jeder gezeichneten Wolke stehen jetzt zwei bis drei echte Fotos, jedes
   mit einem Satz, der sagt, wohin zu schauen ist (Wikimedia Commons, frei

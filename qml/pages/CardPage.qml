@@ -82,6 +82,16 @@ Page {
                       ? "" : seite.karte.bild
             }
 
+            // Dieselbe Wolke echt, vorn neben der Zeichnung und hinten
+            // noch einmal bei der Begruendung.
+            Fotos {
+                x: Theme.horizontalPageMargin
+                width: parent.width - 2 * Theme.horizontalPageMargin
+                sprache: course.language
+                fotos: seite.karte.leer || seite.karte.fotos === undefined
+                       ? [] : seite.karte.fotos
+            }
+
             CodeBlock {
                 x: Theme.horizontalPageMargin
                 width: parent.width - 2 * Theme.horizontalPageMargin
@@ -141,6 +151,12 @@ Page {
                     width: parent.width
                     name: seite.karte.skizze === undefined
                           ? "" : seite.karte.skizze
+                }
+                Fotos {
+                    width: parent.width
+                    sprache: course.language
+                    fotos: seite.karte.fotos === undefined
+                           ? [] : seite.karte.fotos
                 }
 
                 Row {

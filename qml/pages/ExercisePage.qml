@@ -144,6 +144,17 @@ Page {
                       ? "" : seite.aufgabe.bild
             }
 
+            // Dieselbe Wolke echt. Sie steht hier neben der Zeichnung und
+            // weiter unten noch einmal in der Loesung -- dort hat man nach
+            // der Antwort Zeit, wirklich hinzusehen.
+            Fotos {
+                x: Theme.horizontalPageMargin
+                width: parent.width - 2 * Theme.horizontalPageMargin
+                sprache: course.language
+                fotos: seite.aufgabe.leer || seite.aufgabe.fotos === undefined
+                       ? [] : seite.aufgabe.fotos
+            }
+
             CodeBlock {
                 x: Theme.horizontalPageMargin
                 width: parent.width - 2 * Theme.horizontalPageMargin
@@ -565,6 +576,13 @@ Page {
                     name: (seite.aufgabe.leer
                            || seite.aufgabe.skizze === undefined)
                           ? "" : seite.aufgabe.skizze
+                }
+                Fotos {
+                    width: parent.width
+                    sprache: course.language
+                    fotos: (seite.aufgabe.leer
+                            || seite.aufgabe.fotos === undefined)
+                           ? [] : seite.aufgabe.fotos
                 }
 
                 // Die richtige Loesung steht nicht von selbst da: Wer sie

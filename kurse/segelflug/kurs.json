@@ -664,6 +664,41 @@
        "answer": 3,
        "bild": "cumulonimbus",
        "code": "",
+       "fotos": [
+        {
+         "autor": "Kamil Nowacki",
+         "breite": 640,
+         "datei": "foto-cumulonimbus-1.jpg",
+         "hinweis": {
+          "de": "Der Amboss (*incus*): oben läuft die Wolke flach aus und wird faserig statt knubbelig. Faserig heißt vereist — der Deckel ist drauf.",
+          "en": "The anvil (*incus*): the top spreads out flat and turns fibrous instead of lumpy. Fibrous means frozen — the lid is on."
+         },
+         "hoehe": 427,
+         "lizenz": "CC BY-SA 4.0"
+        },
+        {
+         "autor": "Jakub Hałun",
+         "breite": 640,
+         "datei": "foto-cumulonimbus-2.jpg",
+         "hinweis": {
+          "de": "Von weit weg ist die ganze Gestalt zu sehen: Fuß, Turm, Amboss. Aus der Nähe sieht man nur noch eine graue Wand — deshalb wird sie von unten so oft zu spät erkannt.",
+          "en": "From far away the whole shape is visible: foot, tower, anvil. Close up there is only a grey wall — which is why it is so often recognised too late from underneath."
+         },
+         "hoehe": 305,
+         "lizenz": "CC BY-SA 4.0"
+        },
+        {
+         "autor": "Kingshuk Mondal",
+         "breite": 640,
+         "datei": "foto-cumulonimbus-3.jpg",
+         "hinweis": {
+          "de": "Unter der Basis hängt der Schauer als graue Schliere bis zum Boden. Dort ist Abwind, keine Thermik, und die Böenfront läuft voraus.",
+          "en": "The shower hangs under the base as a grey streak down to the ground. That is downdraught, not lift — and the gust front runs out ahead of it."
+         },
+         "hoehe": 427,
+         "lizenz": "CC BY 4.0"
+        }
+       ],
        "kind": "mc",
        "options": [
         {
@@ -696,6 +731,41 @@
        "answer": 3,
        "bild": "ac-castellanus",
        "code": "",
+       "fotos": [
+        {
+         "autor": "Daniele.Brundu",
+         "breite": 640,
+         "datei": "foto-ac-castellanus-1.jpg",
+         "hinweis": {
+          "de": "Aus den Ballen wachsen kleine Türmchen nach oben — *castellum* ist die Burg. Türmchen in der Höhe heißen: dort oben ist die Luft labil.",
+          "en": "Little turrets grow upward out of the lumps — *castellum* is a castle. Turrets up there mean the air up there is unstable."
+         },
+         "hoehe": 467,
+         "lizenz": "CC BY 4.0"
+        },
+        {
+         "autor": "Bidgee",
+         "breite": 640,
+         "datei": "foto-ac-castellanus-2.jpg",
+         "hinweis": {
+          "de": "Hier sind die Türmchen am deutlichsten: Aus einer flachen Reihe wächst jeder Ballen einzeln nach oben. Darunter stehen gewöhnliche Cumuli — zwei Stockwerke, zwei Geschichten.",
+          "en": "Here the turrets are clearest: out of a flat row each lump grows upward on its own. Ordinary cumulus sit below — two levels, two different stories."
+         },
+         "hoehe": 480,
+         "lizenz": "CC BY-SA 3.0"
+        },
+        {
+         "autor": "Rollcloud",
+         "breite": 640,
+         "datei": "foto-ac-castellanus-3.jpg",
+         "hinweis": {
+          "de": "Drei Sorten auf einmal: feinkörniger Cirrocumulus, Zinnen und eine Linse. So viel Bewegung in der Höhe gehört zu keinem ruhigen Tag.",
+          "en": "Three kinds at once: fine-grained cirrocumulus, battlements and a lens. That much going on aloft belongs to no quiet day."
+         },
+         "hoehe": 480,
+         "lizenz": "CC BY 3.0"
+        }
+       ],
        "kind": "mc",
        "options": [
         {
@@ -728,6 +798,41 @@
        "answer": 3,
        "bild": "cu-zyklus",
        "code": "",
+       "fotos": [
+        {
+         "autor": "Andrew Smith",
+         "breite": 640,
+         "datei": "foto-cu-zyklus-1.jpg",
+         "hinweis": {
+          "de": "Wachsend: harte, scharf gezeichnete Ränder und ein praller Blumenkohl. Unter so einer Wolke steht der Bart noch.",
+          "en": "Growing: hard, sharply drawn edges and a firm cauliflower top. There is still lift under a cloud like this."
+         },
+         "hoehe": 480,
+         "lizenz": "CC BY-SA 2.0"
+        },
+        {
+         "autor": "GerritR",
+         "breite": 640,
+         "datei": "foto-cu-zyklus-2.jpg",
+         "hinweis": {
+          "de": "Zerfallend: die Ränder fasern aus, die flache Basis ist weg. *fractus* heißt zerbrochen — der Aufwind, der sie gebaut hat, ist schon aus.",
+          "en": "Decaying: the edges go fibrous, the flat base is gone. *fractus* means broken — the updraught that built it has already stopped."
+         },
+         "hoehe": 427,
+         "lizenz": "CC BY-SA 4.0"
+        },
+        {
+         "autor": "GerritR",
+         "breite": 640,
+         "datei": "foto-cu-zyklus-3.jpg",
+         "hinweis": {
+          "de": "Dasselbe ein paar Minuten später: nur noch Fetzen. Wer das für eine Wolke hält und hinfliegt, findet das Loch.",
+          "en": "The same a few minutes later: shreds. Mistake this for a cloud, fly to it, and what you find is the hole."
+         },
+         "hoehe": 427,
+         "lizenz": "CC BY-SA 4.0"
+        }
+       ],
        "kind": "mc",
        "options": [
         {
@@ -819,6 +924,7 @@
         "de": "m über Grund",
         "en": "m above ground"
        },
+       "fotos": [],
        "herleitung": {
         "de": "## Woher die 125 Meter je Grad kommen\n\n`θ` Temperatur am Boden, °C. `θ_d` Taupunkt am Boden, °C. `h` Höhe der Wolkenbasis über Grund, m. `Γ_d` Trockenadiabate, K/100 m. `Γ_t` Taupunktgradient, K/100 m.\n\nEin Luftpaket, das aufsteigt, kühlt sich ab, weil es sich gegen den fallenden Druck ausdehnt und dabei Arbeit leistet. Solange nichts kondensiert, ist das die **Trockenadiabate**: `Γ_d = g / c_p = 9,81 / 1005 ≈ 0,00976 K/m`, also rund **1 K je 100 m**.\n\nDer Taupunkt fällt beim Aufsteigen auch, aber viel langsamer: das Paket behält seinen Wasserdampf, nur die Dichte nimmt ab. Gemessen sind das rund **0,2 K je 100 m**.\n\nDie Wolke entsteht, wo sich beide treffen, also wo die anfängliche Spreizung `θ − θ_d` aufgebraucht ist. Je 100 m schliesst sich die Lücke um `1 − 0,2 = 0,8 K`:\n\n`h = (θ − θ_d) / 0,8 · 100 m = (θ − θ_d) · 125 m`\n\nDie 125 sind also nichts Gemessenes, sondern `100 / 0,8`. Mit 24 °C und 9 °C: `15 · 125 = 1875 m`.\n\nDie Annahme dahinter ist, dass die aufsteigende Luft dieselbe ist, die unten gemessen wurde. Bei Advektion, nach einem Schauer oder über nassem Boden stimmt das nicht — dann liegt die Basis tiefer als gerechnet.",
         "en": "## Where the 125 metres per degree come from\n\n`θ` temperature at the ground, °C. `θ_d` dew point at the ground, °C. `h` height of the cloud base above ground, m. `Γ_d` dry adiabatic lapse rate, K/100 m. `Γ_t` dew point lapse rate, K/100 m.\n\nA parcel of air that rises cools down, because it expands against the falling pressure and does work in doing so. As long as nothing condenses, that is the **dry adiabatic lapse rate**: `Γ_d = g / c_p = 9.81 / 1005 ≈ 0.00976 K/m`, so about **1 K per 100 m**.\n\nThe dew point falls as the parcel rises as well, but much more slowly: the parcel keeps its water vapour, only the density drops. Measurements give about **0.2 K per 100 m**.\n\nThe cloud forms where the two meet, that is where the initial spread `θ − θ_d` has been used up. Every 100 m the gap closes by `1 − 0.2 = 0.8 K`:\n\n`h = (θ − θ_d) / 0.8 · 100 m = (θ − θ_d) · 125 m`\n\nSo the 125 are not measured, they are `100 / 0.8`. With 24 °C and 9 °C: `15 · 125 = 1875 m`.\n\nThe assumption behind it is that the rising air is the same air that was measured at the ground. With advection, after a shower or over wet ground that does not hold — and then the base is lower than the sum says."
@@ -839,6 +945,41 @@
        "answer": 0,
        "bild": "cu-humilis",
        "code": "",
+       "fotos": [
+        {
+         "autor": "Toby Hudson",
+         "breite": 640,
+         "datei": "foto-cu-humilis-1.jpg",
+         "hinweis": {
+          "de": "Alle Basen liegen auf derselben Höhe. Das ist kein Zufall und kein Zeichenfehler: Dort kondensiert die Luft, und tiefer fängt keine Wolke an.",
+          "en": "Every base sits at the same height. That is neither chance nor a flaw in the drawing: that is where the air condenses, and no cloud starts any lower."
+         },
+         "hoehe": 455,
+         "lizenz": "CC BY-SA 3.0"
+        },
+        {
+         "autor": "Rasbak",
+         "breite": 640,
+         "datei": "foto-cu-humilis-2.jpg",
+         "hinweis": {
+          "de": "Breiter als hoch, mit viel Blau dazwischen — kleine Blasen, schwaches Steigen. Zum Vergleich: der Congestus in der Lektion „Wenn es zu gut läuft“ ist höher als breit.",
+          "en": "Wider than tall, with plenty of blue in between — small bubbles, weak lift. For contrast: the congestus in \"When it goes too well\" is taller than it is wide."
+         },
+         "hoehe": 480,
+         "lizenz": "CC BY-SA 3.0"
+        },
+        {
+         "autor": "Glg",
+         "breite": 640,
+         "datei": "foto-cu-humilis-3.jpg",
+         "hinweis": {
+          "de": "Eine einzelne Wolke von der Seite: oben Blumenkohl, unten wie mit dem Lineal gezogen. Genau diese Kante trägt die Rechnung zur Basishöhe.",
+          "en": "A single cloud from the side: cauliflower on top, ruler-straight underneath. That edge is what the cloud-base calculation is about."
+         },
+         "hoehe": 480,
+         "lizenz": "CC BY-SA 2.0 de"
+        }
+       ],
        "kind": "mc",
        "options": [
         {
@@ -949,6 +1090,41 @@
        "answer": 1,
        "bild": "cu-zyklus",
        "code": "",
+       "fotos": [
+        {
+         "autor": "Andrew Smith",
+         "breite": 640,
+         "datei": "foto-cu-zyklus-1.jpg",
+         "hinweis": {
+          "de": "Wachsend: harte, scharf gezeichnete Ränder und ein praller Blumenkohl. Unter so einer Wolke steht der Bart noch.",
+          "en": "Growing: hard, sharply drawn edges and a firm cauliflower top. There is still lift under a cloud like this."
+         },
+         "hoehe": 480,
+         "lizenz": "CC BY-SA 2.0"
+        },
+        {
+         "autor": "GerritR",
+         "breite": 640,
+         "datei": "foto-cu-zyklus-2.jpg",
+         "hinweis": {
+          "de": "Zerfallend: die Ränder fasern aus, die flache Basis ist weg. *fractus* heißt zerbrochen — der Aufwind, der sie gebaut hat, ist schon aus.",
+          "en": "Decaying: the edges go fibrous, the flat base is gone. *fractus* means broken — the updraught that built it has already stopped."
+         },
+         "hoehe": 427,
+         "lizenz": "CC BY-SA 4.0"
+        },
+        {
+         "autor": "GerritR",
+         "breite": 640,
+         "datei": "foto-cu-zyklus-3.jpg",
+         "hinweis": {
+          "de": "Dasselbe ein paar Minuten später: nur noch Fetzen. Wer das für eine Wolke hält und hinfliegt, findet das Loch.",
+          "en": "The same a few minutes later: shreds. Mistake this for a cloud, fly to it, and what you find is the hole."
+         },
+         "hoehe": 427,
+         "lizenz": "CC BY-SA 4.0"
+        }
+       ],
        "kind": "mc",
        "options": [
         {
@@ -981,6 +1157,7 @@
        "answer": 2,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -1069,6 +1246,41 @@
        "answer": 1,
        "bild": "cumulonimbus",
        "code": "",
+       "fotos": [
+        {
+         "autor": "Kamil Nowacki",
+         "breite": 640,
+         "datei": "foto-cumulonimbus-1.jpg",
+         "hinweis": {
+          "de": "Der Amboss (*incus*): oben läuft die Wolke flach aus und wird faserig statt knubbelig. Faserig heißt vereist — der Deckel ist drauf.",
+          "en": "The anvil (*incus*): the top spreads out flat and turns fibrous instead of lumpy. Fibrous means frozen — the lid is on."
+         },
+         "hoehe": 427,
+         "lizenz": "CC BY-SA 4.0"
+        },
+        {
+         "autor": "Jakub Hałun",
+         "breite": 640,
+         "datei": "foto-cumulonimbus-2.jpg",
+         "hinweis": {
+          "de": "Von weit weg ist die ganze Gestalt zu sehen: Fuß, Turm, Amboss. Aus der Nähe sieht man nur noch eine graue Wand — deshalb wird sie von unten so oft zu spät erkannt.",
+          "en": "From far away the whole shape is visible: foot, tower, anvil. Close up there is only a grey wall — which is why it is so often recognised too late from underneath."
+         },
+         "hoehe": 305,
+         "lizenz": "CC BY-SA 4.0"
+        },
+        {
+         "autor": "Kingshuk Mondal",
+         "breite": 640,
+         "datei": "foto-cumulonimbus-3.jpg",
+         "hinweis": {
+          "de": "Unter der Basis hängt der Schauer als graue Schliere bis zum Boden. Dort ist Abwind, keine Thermik, und die Böenfront läuft voraus.",
+          "en": "The shower hangs under the base as a grey streak down to the ground. That is downdraught, not lift — and the gust front runs out ahead of it."
+         },
+         "hoehe": 427,
+         "lizenz": "CC BY 4.0"
+        }
+       ],
        "kind": "mc",
        "options": [
         {
@@ -1101,6 +1313,41 @@
        "answer": 2,
        "bild": "cumulonimbus",
        "code": "",
+       "fotos": [
+        {
+         "autor": "Kamil Nowacki",
+         "breite": 640,
+         "datei": "foto-cumulonimbus-1.jpg",
+         "hinweis": {
+          "de": "Der Amboss (*incus*): oben läuft die Wolke flach aus und wird faserig statt knubbelig. Faserig heißt vereist — der Deckel ist drauf.",
+          "en": "The anvil (*incus*): the top spreads out flat and turns fibrous instead of lumpy. Fibrous means frozen — the lid is on."
+         },
+         "hoehe": 427,
+         "lizenz": "CC BY-SA 4.0"
+        },
+        {
+         "autor": "Jakub Hałun",
+         "breite": 640,
+         "datei": "foto-cumulonimbus-2.jpg",
+         "hinweis": {
+          "de": "Von weit weg ist die ganze Gestalt zu sehen: Fuß, Turm, Amboss. Aus der Nähe sieht man nur noch eine graue Wand — deshalb wird sie von unten so oft zu spät erkannt.",
+          "en": "From far away the whole shape is visible: foot, tower, anvil. Close up there is only a grey wall — which is why it is so often recognised too late from underneath."
+         },
+         "hoehe": 305,
+         "lizenz": "CC BY-SA 4.0"
+        },
+        {
+         "autor": "Kingshuk Mondal",
+         "breite": 640,
+         "datei": "foto-cumulonimbus-3.jpg",
+         "hinweis": {
+          "de": "Unter der Basis hängt der Schauer als graue Schliere bis zum Boden. Dort ist Abwind, keine Thermik, und die Böenfront läuft voraus.",
+          "en": "The shower hangs under the base as a grey streak down to the ground. That is downdraught, not lift — and the gust front runs out ahead of it."
+         },
+         "hoehe": 427,
+         "lizenz": "CC BY 4.0"
+        }
+       ],
        "kind": "mc",
        "options": [
         {
@@ -1223,6 +1470,41 @@
        "answer": 0,
        "bild": "stratocumulus",
        "code": "",
+       "fotos": [
+        {
+         "autor": "Jacek Halicki",
+         "breite": 640,
+         "datei": "foto-stratocumulus-1.jpg",
+         "hinweis": {
+          "de": "Die Quellwolken sind oben zusammengelaufen und zu einer Decke geworden. Am Rand sind die einzelnen Ballen noch zu erkennen — dort reißt es wieder auf.",
+          "en": "The heaps have run together into a sheet. At its edge the individual lumps are still visible — that is where it breaks up again."
+         },
+         "hoehe": 369,
+         "lizenz": "CC BY 3.0"
+        },
+        {
+         "autor": "Berrucomons",
+         "breite": 640,
+         "datei": "foto-stratocumulus-2.jpg",
+         "hinweis": {
+          "de": "Geschlossene graue Decke mit Löchern. Durch die Löcher kommt noch etwas Sonne an den Boden, sonst nirgends — die Thermik lebt nur noch dort.",
+          "en": "A closed grey sheet with holes in it. Sun reaches the ground through the holes and nowhere else — the thermals live only there."
+         },
+         "hoehe": 427,
+         "lizenz": "CC BY-SA 3.0"
+        },
+        {
+         "autor": "GerritR",
+         "breite": 640,
+         "datei": "foto-stratocumulus-3.jpg",
+         "hinweis": {
+          "de": "Flache, zerflossene Ballen ohne Quellung nach oben: aus Haufen ist Schicht geworden. Für heute war es das.",
+          "en": "Flat, smeared lumps with no upward growth: heap has become layer. That is the day finished."
+         },
+         "hoehe": 480,
+         "lizenz": "CC BY-SA 4.0"
+        }
+       ],
        "kind": "mc",
        "options": [
         {
@@ -1255,6 +1537,41 @@
        "answer": 1,
        "bild": "cirrus",
        "code": "",
+       "fotos": [
+        {
+         "autor": "Ximonic (Simo Räsänen)",
+         "breite": 640,
+         "datei": "foto-cirrus-1.jpg",
+         "hinweis": {
+          "de": "*cirrus* ist die Haarlocke. Die Haken hängen nach unten: Eiskristalle fallen aus der Wolke und werden vom langsameren Wind darunter nachgezogen.",
+          "en": "*cirrus* is a lock of hair. The hooks hang downward: ice crystals fall out of the cloud and are dragged back by the slower wind beneath."
+         },
+         "hoehe": 347,
+         "lizenz": "CC BY-SA 3.0"
+        },
+        {
+         "autor": "ADARSHluck",
+         "breite": 640,
+         "datei": "foto-cirrus-2.jpg",
+         "hinweis": {
+          "de": "Einzelne Haken am Morgen. Entscheidend ist, was daraus wird: Werden sie im Lauf des Tages mehr und dichter, kommt eine Warmfront.",
+          "en": "Scattered hooks in the morning. What matters is what becomes of them: if they thicken through the day, a warm front is on its way."
+         },
+         "hoehe": 427,
+         "lizenz": "CC BY-SA 4.0"
+        },
+        {
+         "autor": "GerritR",
+         "breite": 640,
+         "datei": "foto-cirrus-3.jpg",
+         "hinweis": {
+          "de": "Der Ring um die Sonne entsteht an Eiskristallen. Er heißt: Aus dem Cirrus ist eine geschlossene Schicht geworden — die Front ist nah, die Thermik geht aus.",
+          "en": "The ring around the sun forms on ice crystals. It says the cirrus has closed into a sheet — the front is near and the thermals are going."
+         },
+         "hoehe": 480,
+         "lizenz": "CC BY-SA 4.0"
+        }
+       ],
        "kind": "mc",
        "options": [
         {
@@ -1344,6 +1661,41 @@
        "answer": 3,
        "bild": "wolkenstrasse",
        "code": "",
+       "fotos": [
+        {
+         "autor": "Chris.sherlock2",
+         "breite": 640,
+         "datei": "foto-wolkenstrasse-1.jpg",
+         "hinweis": {
+          "de": "Die Wolken stehen in einer Reihe bis zum Horizont, längs des Windes. Darunter lässt sich geradeaus fliegen, ohne zu kreisen.",
+          "en": "The clouds line up to the horizon, along the wind. Under that line you can fly straight ahead without circling."
+         },
+         "hoehe": 480,
+         "lizenz": "CC BY-SA 4.0"
+        },
+        {
+         "autor": "Rollcloud",
+         "breite": 640,
+         "datei": "foto-wolkenstrasse-2.jpg",
+         "hinweis": {
+          "de": "Mehrere Reihen nebeneinander, dazwischen blaue Gassen. In den Gassen liegt der Abwind — querab der Straße wird es teuer.",
+          "en": "Several rows side by side with blue lanes between them. The lanes are the downdraught — crossing a street costs height."
+         },
+         "hoehe": 423,
+         "lizenz": "CC BY 2.5"
+        },
+        {
+         "autor": "NASA",
+         "breite": 460,
+         "datei": "foto-wolkenstrasse-3.jpg",
+         "hinweis": {
+          "de": "Von oben, aus dem Satelliten: dasselbe Muster, das vom Boden aus nur als Reihe zu ahnen ist. So weit reicht eine Straße wirklich.",
+          "en": "From above, by satellite: the same pattern that is only guessable as a line from the ground. That is how far a street really runs."
+         },
+         "hoehe": 520,
+         "lizenz": "Public domain"
+        }
+       ],
        "kind": "mc",
        "options": [
         {
@@ -1376,6 +1728,41 @@
        "answer": 3,
        "bild": "lenticularis",
        "code": "",
+       "fotos": [
+        {
+         "autor": "Veselin.dikov",
+         "breite": 640,
+         "datei": "foto-lenticularis-1.jpg",
+         "hinweis": {
+          "de": "Glatt wie geschliffen und ortsfest: die Wolke bleibt über dem Berg stehen, während die Luft durch sie hindurchzieht. Nur deshalb ist die Form so sauber.",
+          "en": "Smooth as if polished, and standing still: the cloud stays over the mountain while the air moves through it. That is the only reason the shape is so clean."
+         },
+         "hoehe": 480,
+         "lizenz": "CC BY-SA 4.0"
+        },
+        {
+         "autor": "Florian Pépellin",
+         "breite": 640,
+         "datei": "foto-lenticularis-2.jpg",
+         "hinweis": {
+          "de": "Dieselbe Welle als Kappe direkt über dem Gipfel. Wo die Kappe sitzt, steigt die Luft — und im Lee dahinter liegt der Rotor.",
+          "en": "The same wave as a cap right over the summit. Where the cap sits the air rises — and the rotor lies in the lee behind it."
+         },
+         "hoehe": 480,
+         "lizenz": "CC BY-SA 4.0"
+        },
+        {
+         "autor": "René Heise",
+         "breite": 500,
+         "datei": "foto-lenticularis-3.jpg",
+         "hinweis": {
+          "de": "Aus dem Segelflugzeug: so sieht die Linse aus, wenn man im Steigen davor steht. Angeflogen wird die Vorderkante, nicht die Wolke selbst.",
+          "en": "From a glider: this is the lens seen from the lift in front of it. You fly to the leading edge, not into the cloud."
+         },
+         "hoehe": 329,
+         "lizenz": "CC BY-SA 3.0"
+        }
+       ],
        "kind": "mc",
        "options": [
         {
@@ -1498,6 +1885,41 @@
        "answer": 2,
        "bild": "ac-castellanus",
        "code": "",
+       "fotos": [
+        {
+         "autor": "Daniele.Brundu",
+         "breite": 640,
+         "datei": "foto-ac-castellanus-1.jpg",
+         "hinweis": {
+          "de": "Aus den Ballen wachsen kleine Türmchen nach oben — *castellum* ist die Burg. Türmchen in der Höhe heißen: dort oben ist die Luft labil.",
+          "en": "Little turrets grow upward out of the lumps — *castellum* is a castle. Turrets up there mean the air up there is unstable."
+         },
+         "hoehe": 467,
+         "lizenz": "CC BY 4.0"
+        },
+        {
+         "autor": "Bidgee",
+         "breite": 640,
+         "datei": "foto-ac-castellanus-2.jpg",
+         "hinweis": {
+          "de": "Hier sind die Türmchen am deutlichsten: Aus einer flachen Reihe wächst jeder Ballen einzeln nach oben. Darunter stehen gewöhnliche Cumuli — zwei Stockwerke, zwei Geschichten.",
+          "en": "Here the turrets are clearest: out of a flat row each lump grows upward on its own. Ordinary cumulus sit below — two levels, two different stories."
+         },
+         "hoehe": 480,
+         "lizenz": "CC BY-SA 3.0"
+        },
+        {
+         "autor": "Rollcloud",
+         "breite": 640,
+         "datei": "foto-ac-castellanus-3.jpg",
+         "hinweis": {
+          "de": "Drei Sorten auf einmal: feinkörniger Cirrocumulus, Zinnen und eine Linse. So viel Bewegung in der Höhe gehört zu keinem ruhigen Tag.",
+          "en": "Three kinds at once: fine-grained cirrocumulus, battlements and a lens. That much going on aloft belongs to no quiet day."
+         },
+         "hoehe": 480,
+         "lizenz": "CC BY 3.0"
+        }
+       ],
        "kind": "mc",
        "options": [
         {
@@ -1601,6 +2023,7 @@
        "answer": 3,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -1633,6 +2056,41 @@
        "answer": 2,
        "bild": "stratocumulus",
        "code": "",
+       "fotos": [
+        {
+         "autor": "Jacek Halicki",
+         "breite": 640,
+         "datei": "foto-stratocumulus-1.jpg",
+         "hinweis": {
+          "de": "Die Quellwolken sind oben zusammengelaufen und zu einer Decke geworden. Am Rand sind die einzelnen Ballen noch zu erkennen — dort reißt es wieder auf.",
+          "en": "The heaps have run together into a sheet. At its edge the individual lumps are still visible — that is where it breaks up again."
+         },
+         "hoehe": 369,
+         "lizenz": "CC BY 3.0"
+        },
+        {
+         "autor": "Berrucomons",
+         "breite": 640,
+         "datei": "foto-stratocumulus-2.jpg",
+         "hinweis": {
+          "de": "Geschlossene graue Decke mit Löchern. Durch die Löcher kommt noch etwas Sonne an den Boden, sonst nirgends — die Thermik lebt nur noch dort.",
+          "en": "A closed grey sheet with holes in it. Sun reaches the ground through the holes and nowhere else — the thermals live only there."
+         },
+         "hoehe": 427,
+         "lizenz": "CC BY-SA 3.0"
+        },
+        {
+         "autor": "GerritR",
+         "breite": 640,
+         "datei": "foto-stratocumulus-3.jpg",
+         "hinweis": {
+          "de": "Flache, zerflossene Ballen ohne Quellung nach oben: aus Haufen ist Schicht geworden. Für heute war es das.",
+          "en": "Flat, smeared lumps with no upward growth: heap has become layer. That is the day finished."
+         },
+         "hoehe": 480,
+         "lizenz": "CC BY-SA 4.0"
+        }
+       ],
        "kind": "mc",
        "options": [
         {
@@ -1725,6 +2183,7 @@
         "de": "Uhr",
         "en": "o'clock"
        },
+       "fotos": [],
        "kind": "zahl",
        "q": {
         "de": "Sonnenaufgang war um 5:30. Wann ist mit der ersten nutzbaren Thermik zu rechnen? Gib die volle Stunde an (z. B. 9 für 9 Uhr).",
@@ -1740,6 +2199,7 @@
        "answer": 2,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -1828,6 +2288,7 @@
        "answer": 2,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -1860,6 +2321,41 @@
        "answer": 0,
        "bild": "cirrus",
        "code": "",
+       "fotos": [
+        {
+         "autor": "Ximonic (Simo Räsänen)",
+         "breite": 640,
+         "datei": "foto-cirrus-1.jpg",
+         "hinweis": {
+          "de": "*cirrus* ist die Haarlocke. Die Haken hängen nach unten: Eiskristalle fallen aus der Wolke und werden vom langsameren Wind darunter nachgezogen.",
+          "en": "*cirrus* is a lock of hair. The hooks hang downward: ice crystals fall out of the cloud and are dragged back by the slower wind beneath."
+         },
+         "hoehe": 347,
+         "lizenz": "CC BY-SA 3.0"
+        },
+        {
+         "autor": "ADARSHluck",
+         "breite": 640,
+         "datei": "foto-cirrus-2.jpg",
+         "hinweis": {
+          "de": "Einzelne Haken am Morgen. Entscheidend ist, was daraus wird: Werden sie im Lauf des Tages mehr und dichter, kommt eine Warmfront.",
+          "en": "Scattered hooks in the morning. What matters is what becomes of them: if they thicken through the day, a warm front is on its way."
+         },
+         "hoehe": 427,
+         "lizenz": "CC BY-SA 4.0"
+        },
+        {
+         "autor": "GerritR",
+         "breite": 640,
+         "datei": "foto-cirrus-3.jpg",
+         "hinweis": {
+          "de": "Der Ring um die Sonne entsteht an Eiskristallen. Er heißt: Aus dem Cirrus ist eine geschlossene Schicht geworden — die Front ist nah, die Thermik geht aus.",
+          "en": "The ring around the sun forms on ice crystals. It says the cirrus has closed into a sheet — the front is near and the thermals are going."
+         },
+         "hoehe": 480,
+         "lizenz": "CC BY-SA 4.0"
+        }
+       ],
        "kind": "mc",
        "options": [
         {
@@ -1964,6 +2460,7 @@
        "answer": 1,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -1996,6 +2493,7 @@
        "answer": 0,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -2031,6 +2529,7 @@
         "de": "km",
         "en": "km"
        },
+       "fotos": [],
        "herleitung": {
         "de": "## Was die Gleitzahl überhaupt ist\n\n`E` Gleitzahl, dimensionslos. `s` zurückgelegte Strecke über Grund, m. `h` dabei verlorene Höhe, m. `A` Auftrieb, N. `W` Widerstand, N.\n\nIm stationären Gleitflug hängt das Flugzeug an nichts als der Schwerkraft; sie zerlegt sich in eine Komponente, die den Widerstand überwindet, und eine, die den Auftrieb trägt. Aus dem ähnlichen Dreieck von Kräften und Wegen folgt unmittelbar\n\n`E = s / h = A / W`\n\nDie Gleitzahl ist also zweierlei in einem: das Verhältnis von Strecke zu Höhe **und** das Verhältnis von Auftrieb zu Widerstand. Deshalb steht sie im Handbuch und nicht der Gleitwinkel.\n\nUmgestellt: `s = E · h`. Nutzbar ist nur die Höhe über der Ankunftshöhe, also `1200 − 300 = 900 m`, und damit `s = 38 · 900 m = 34,2 km`.\n\nDie Annahme ist ruhige Luft und ein sauberes Flugzeug. Mücken, Regen und jedes Grad Abweichung von der besten Geschwindigkeit drücken `E`; Gegenwind auch, weil `s` über Grund zählt und die Höhe in der Zeit verbraucht wird. Deshalb rechnet man mit einer schlechteren Zahl als im Prospekt.",
         "en": "## What the glide ratio actually is\n\n`E` glide ratio, dimensionless. `s` distance covered over the ground, m. `h` height lost while doing so, m. `A` lift, N. `W` drag, N.\n\nIn a steady glide the aircraft hangs on nothing but gravity; that force splits into one component overcoming the drag and one carrying the lift. From the similar triangle of forces and distances it follows at once that\n\n`E = s / h = A / W`\n\nSo the glide ratio is two things at once: the ratio of distance to height **and** the ratio of lift to drag. That is why the handbook gives it rather than the glide angle.\n\nRearranged: `s = E · h`. Only the height above the arrival height is usable, so `1200 − 300 = 900 m`, and therefore `s = 38 · 900 m = 34.2 km`.\n\nThe assumption is still air and a clean aircraft. Flies, rain and every degree away from the best speed push `E` down; so does a headwind, because `s` counts over the ground while the height is spent in time. That is why you reckon with a worse number than the brochure's."
@@ -2095,6 +2594,7 @@
        "answer": 1,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -2127,6 +2627,7 @@
        "answer": 2,
        "bild": "",
        "code": "",
+       "fotos": [],
        "herleitung": {
         "de": "## Warum die Wurzel und nicht der Faktor selbst\n\n`n` Lastvielfaches, dimensionslos. `φ` Schräglage, Grad. `v_s` Überziehgeschwindigkeit, km/h. `A` Auftrieb, N. `m` Masse, kg. `g` Fallbeschleunigung, m/s². `ρ` Luftdichte, kg/m³. `S` Flügelfläche, m². `c_A` Auftriebsbeiwert, dimensionslos.\n\n**Erstens das Lastvielfache.** Im sauberen Kurvenflug steht der Auftrieb senkrecht auf den Flügeln, also um `φ` gekippt. Seine senkrechte Komponente `A · cos φ` muss das Gewicht `m · g` tragen, sonst sinkt das Flugzeug:\n\n`A · cos φ = m · g`  →  `n = A / (m · g) = 1 / cos φ`\n\nBei 45°: `1 / cos 45° = 1,41`. (Die bekannten 2,0 gehören zu 60°, denn `cos 60° = 0,5`.)\n\n**Zweitens die Geschwindigkeit.** Der Auftrieb wächst mit dem Quadrat der Geschwindigkeit: `A = c_A · ½ ρ v² · S`. Überzogen wird bei höchstem `c_A`; gebraucht wird jetzt der `n`-fache Auftrieb, also muss `v²` das `n`-fache sein und `v` selbst das `√n`-fache:\n\n`v_s(φ) = v_s · √n = v_s / √(cos φ)`\n\nBei 45°: `√1,41 ≈ 1,19`, also **rund 19 Prozent mehr**. Die 41 Prozent sind das Lastvielfache und nicht die Geschwindigkeit — wer beides verwechselt, rechnet sich in der Platzrunde eine Reserve herbei, die es nicht gibt.",
         "en": "## Why the square root and not the factor itself\n\n`n` load factor, dimensionless. `φ` angle of bank, degrees. `v_s` stall speed, km/h. `A` lift, N. `m` mass, kg. `g` acceleration of gravity, m/s². `ρ` air density, kg/m³. `S` wing area, m². `c_A` lift coefficient, dimensionless.\n\n**First the load factor.** In a clean turn the lift stands square to the wings, so it is tilted by `φ`. Its vertical component `A · cos φ` has to carry the weight `m · g`, otherwise the aircraft descends:\n\n`A · cos φ = m · g`  →  `n = A / (m · g) = 1 / cos φ`\n\nAt 45°: `1 / cos 45° = 1.41`. (The familiar 2.0 belongs to 60°, because `cos 60° = 0.5`.)\n\n**Then the speed.** Lift grows with the square of the speed: `A = c_A · ½ ρ v² · S`. You stall at the highest `c_A`; what is needed now is `n` times the lift, so `v²` must be `n` times as big and `v` itself `√n` times:\n\n`v_s(φ) = v_s · √n = v_s / √(cos φ)`\n\nAt 45°: `√1.41 ≈ 1.19`, so **about 19 per cent more**. The 41 per cent are the load factor and not the speed — confuse the two and you talk yourself into a margin in the circuit that is not there."
@@ -2164,6 +2665,7 @@
        "answer": 0,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -2295,6 +2797,7 @@
        "answer": 0,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -2330,6 +2833,7 @@
         "de": "mm",
         "en": "mm"
        },
+       "fotos": [],
        "herleitung": {
         "de": "## Warum man Momente addiert und nicht Massen\n\n`mᵢ` Einzelmasse, kg. `xᵢ` Hebelarm dieser Masse hinter dem Bezugspunkt, mm. `Mᵢ = mᵢ · xᵢ` ihr Moment, kg·mm. `x_S` Lage des Gesamtschwerpunkts hinter dem Bezugspunkt, mm.\n\nDer Schwerpunkt ist der Punkt, um den sich alle Drehwirkungen aufheben. Ein Gewicht `mᵢ` im Abstand `xᵢ` dreht mit dem Moment `mᵢ · xᵢ`; ersetzt man alle Gewichte durch ein einziges im Schwerpunkt, muss dieselbe Drehwirkung herauskommen:\n\n`(Σ mᵢ) · x_S = Σ (mᵢ · xᵢ)`  →  `x_S = Σ Mᵢ / Σ mᵢ`\n\nDer Schwerpunkt ist also ein **mit den Massen gewichteter Mittelwert der Hebelarme** — und deshalb darf man Momente addieren, Hebelarme aber nicht: der Mittelwert zweier Arme wäre nur dann richtig, wenn beide Massen gleich gross wären.\n\n`x_S = (75 000 + 70 · 100) / (250 + 70) = 82 000 / 320 = 256,25 mm`\n\nDie Zahl allein sagt noch nichts. Sie muss gegen die Grenzen im Handbuch geprüft werden, und die gelten fuer die Gesamtmasse, die dabei herauskommt — zu weit hinten heisst träges Abfangen und schlechtes Trudelverhalten, zu weit vorn heisst Ruderweg, der nicht reicht.",
         "en": "## Why you add moments and not masses\n\n`mᵢ` individual mass, kg. `xᵢ` arm of that mass behind the datum, mm. `Mᵢ = mᵢ · xᵢ` its moment, kg·mm. `x_S` position of the overall centre of gravity behind the datum, mm.\n\nThe centre of gravity is the point about which all turning effects cancel. A weight `mᵢ` at a distance `xᵢ` turns with the moment `mᵢ · xᵢ`; replace all the weights by a single one at the centre of gravity and the same turning effect must come out:\n\n`(Σ mᵢ) · x_S = Σ (mᵢ · xᵢ)`  →  `x_S = Σ Mᵢ / Σ mᵢ`\n\nSo the centre of gravity is a **mass-weighted mean of the arms** — and that is why moments may be added but arms may not: the mean of two arms would only be right if both masses were equal.\n\n`x_S = (75,000 + 70 · 100) / (250 + 70) = 82,000 / 320 = 256.25 mm`\n\nThe number by itself says nothing yet. It has to be checked against the limits in the handbook, and those apply to the total mass that comes out with it — too far aft means sluggish recovery and poor spin behaviour, too far forward means running out of elevator."
@@ -2393,6 +2897,7 @@
        "answer": 2,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -2425,6 +2930,7 @@
        "answer": 3,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -2516,6 +3022,7 @@
        "answer": 0,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -2548,6 +3055,7 @@
        "answer": 2,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -2636,6 +3144,7 @@
        "answer": 0,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -2668,6 +3177,7 @@
        "answer": 1,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -2762,6 +3272,7 @@
         "de": "Grad",
         "en": "degrees"
        },
+       "fotos": [],
        "herleitung": {
         "de": "## Warum West addiert wird\n\n`rwK` rechtweisender Kurs (gegen geografisch Nord), Grad. `mωK` missweisender Kurs (gegen magnetisch Nord), Grad. `MW` Missweisung (Ortsmissweisung), Grad, West positiv gezählt.\n\nDas ist keine Formel aus der Physik, sondern eine **Buchhaltung mit zwei Nordrichtungen**, und man kann sie sich herleiten statt sie zu merken.\n\nBei westlicher Missweisung zeigt der Kompass nach **links** von geografisch Nord, also auf eine kleinere Gradzahl. Alle Kurse werden dann von dieser verdrehten Skala aus gemessen, und ein Kurs, der gegenüber Nord gleich bleibt, bekommt deshalb eine **grössere** Zahl — die Skala ist ja nach links gerutscht.\n\n`mωK = rwK + MW`  (West), `mωK = rwK − MW`  (Ost)\n\n`120° + 4° = 124°`\n\nKurz: **West dazu, Ost weg** — und das gilt nur in dieser Richtung: **vom rechtweisenden zum missweisenden Kurs**. Rückwärts, von der Karte zur Nadel, kehren sich die Vorzeichen um. Wer nicht mehr weiss, in welche Richtung er gerade rechnet, zeichnet die beiden Nordpfeile hin — das dauert fünf Sekunden und ist nie falsch.",
         "en": "## Why westerly variation is added\n\n`rwK` true course (against geographic north), degrees. `mωK` magnetic course (against magnetic north), degrees. `MW` magnetic variation, degrees, counted positive west.\n\nThis is not a law of physics but **bookkeeping with two norths**, and you can derive it instead of memorising it.\n\nWith westerly variation the compass points to the **left** of geographic north, that is at a smaller number of degrees. All courses are then measured from this rotated scale, and a course that stays the same relative to north therefore gets a **larger** number — the scale has slid to the left.\n\n`mωK = rwK + MW`  (west), `mωK = rwK − MW`  (east)\n\n`120° + 4° = 124°`\n\nShort: **west added, east taken off** — and that holds in this direction only: **from the true to the magnetic course**. The other way round, from the chart to the needle, the signs reverse. If you lose track of which way you are working, draw the two north arrows — it takes five seconds and is never wrong."
@@ -2785,6 +3296,7 @@
         "de": "Grad",
         "en": "degrees"
        },
+       "fotos": [],
        "herleitung": {
         "de": "## Woher die Sechzig in der 1-in-60-Regel kommt\n\n`α` Vorhaltewinkel, Grad. `v_q` Querwindanteil, km/h. `v_e` Eigengeschwindigkeit, km/h.\n\nDer Vorhaltewinkel ist der Winkel, dessen Sinus das Verhältnis von Querwind zu Eigengeschwindigkeit ist: `sin α = v_q / v_e`. Das ist exakt — aber im Cockpit unbrauchbar.\n\nFür kleine Winkel gilt `sin α ≈ α` **im Bogenmass**, und ein Bogenmass sind `180° / π ≈ 57,3°`. Auf 60 gerundet:\n\n`α [°] ≈ (v_q / v_e) · 57,3 ≈ (v_q / v_e) · 60`\n\nDie Sechzig ist also nichts weiter als ein gerundetes Bogenmass — dieselbe Sechzig wie in der 1-in-60-Regel der Navigation, wo eine Seemeile Versatz auf 60 Seemeilen einem Grad entspricht.\n\n`(15 / 90) · 60 = 10°`\n\nDie Rundung von 57,3 auf 60 macht den Winkel rund 5 % zu gross; die Näherung `sin α ≈ α` macht ihn zu klein, und die beiden heben sich eine Weile gegenseitig auf. Bei `v_q / v_e = 0,5` ist das Ergebnis sogar zufällig genau richtig: Regel 30°, gerechnet 30,0°. Danach läuft die Regel weg, und zwar nach unten — bei `v_q / v_e = 0,9` sagt sie 54°, gebraucht werden 64°. Bis etwa 20° Vorhalt ist sie gut, darüber verlässt man sich besser auf den Rechner.",
         "en": "## Where the sixty in the 1-in-60 rule comes from\n\n`α` wind correction angle, degrees. `v_q` crosswind component, km/h. `v_e` airspeed, km/h.\n\nThe wind correction angle is the angle whose sine is the ratio of crosswind to airspeed: `sin α = v_q / v_e`. That is exact — and useless in the cockpit.\n\nFor small angles `sin α ≈ α` **in radians**, and one radian is `180° / π ≈ 57.3°`. Rounded to 60:\n\n`α [°] ≈ (v_q / v_e) · 57.3 ≈ (v_q / v_e) · 60`\n\nSo the sixty is nothing but a rounded radian — the same sixty as in the 1-in-60 rule of navigation, where one nautical mile off track in sixty corresponds to one degree.\n\n`(15 / 90) · 60 = 10°`\n\nRounding 57.3 up to 60 makes the angle about 5 % too large; the approximation `sin α ≈ α` makes it too small, and for a while the two cancel. At `v_q / v_e = 0.5` the result is even exactly right by coincidence: rule 30°, worked out 30.0°. After that the rule drifts, and downwards — at `v_q / v_e = 0.9` it says 54° where 64° are needed. Up to about 20° of correction it is good; beyond that you are better off trusting the computer."
@@ -2848,6 +3360,7 @@
        "answer": 3,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -2880,6 +3393,7 @@
        "answer": 3,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -2949,6 +3463,7 @@
        "answer": 2,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -2981,6 +3496,7 @@
        "answer": 3,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -3036,6 +3552,7 @@
        "answer": 1,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -3068,6 +3585,7 @@
        "answer": 0,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -3137,6 +3655,7 @@
        "answer": 3,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -3169,6 +3688,7 @@
        "answer": 2,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -3239,6 +3759,7 @@
        "answer": 1,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -3271,6 +3792,7 @@
        "answer": 3,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -3340,6 +3862,7 @@
        "answer": 0,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -3372,6 +3895,7 @@
        "answer": 3,
        "bild": "",
        "code": "",
+       "fotos": [],
        "kind": "mc",
        "options": [
         {
@@ -3407,6 +3931,7 @@
         "de": "MHz",
         "en": "MHz"
        },
+       "fotos": [],
        "kind": "zahl",
        "q": {
         "de": "Auf welcher Frequenz in MHz sendet man einen Notruf, wenn keine andere erreichbar ist?",
