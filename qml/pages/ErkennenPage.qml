@@ -256,7 +256,7 @@ Page {
 
                 Button {
                     text: W.w("Noch einmal", course.language)
-                    onClicked: course.startRecognition(0)
+                    onClicked: course.startRecognition(seite.ergebnis.gesamt)
                 }
             }
         }

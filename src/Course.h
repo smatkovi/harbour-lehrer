@@ -41,6 +41,7 @@ class Course : public QObject
     Q_PROPERTY(bool hasRecognition READ hasRecognition NOTIFY changed)
     Q_PROPERTY(QString recognitionTitle READ recognitionTitle NOTIFY changed)
     Q_PROPERTY(QString recognitionSubtitle READ recognitionSubtitle NOTIFY changed)
+    Q_PROPERTY(int recognitionCount READ recognitionCount NOTIFY changed)
     Q_PROPERTY(QVariantMap recognitionQuestion READ recognitionQuestion NOTIFY recognitionChanged)
     Q_PROPERTY(bool recognitionDone READ recognitionDone NOTIFY recognitionChanged)
     Q_PROPERTY(QVariantMap recognitionResult READ recognitionResult NOTIFY recognitionChanged)
@@ -77,6 +78,7 @@ public:
     bool hasRecognition() const { return m_course->hasRecognition(); }
     QString recognitionTitle() const { return m_course->recognitionTitle(); }
     QString recognitionSubtitle() const { return m_course->recognitionSubtitle(); }
+    int recognitionCount() const { return m_course->recognitionPhotos().size(); }
     QVariantMap recognitionQuestion() const;
     bool recognitionDone() const { return m_erkennen.done(); }
     QVariantMap recognitionResult() const;

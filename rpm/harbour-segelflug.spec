@@ -1,5 +1,5 @@
 Name:       harbour-segelflug
-Version:    1.14.0
+Version:    1.15.0
 Release:    1
 Summary:    Gliding theory with a focus on reading clouds
 License:    GPLv3+
@@ -50,6 +50,10 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Sat Oct 17 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.15.0-1
+- Der Erkennungsmodus hat jetzt 153 statt 81 Fotos
+- Eine Runde sind zwanzig Bilder; der ganze Stapel steht im Menue
+
 * Sat Oct 17 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.14.0-1
 - Neuer Modus "Wolken erkennen": 81 Fotos einzeln, zu jedem zwei Fragen --
   was fuer eine Wolke das ist und was sie fuers Segelfliegen heisst

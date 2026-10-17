@@ -51,7 +51,9 @@ Page {
             // Der Erkennungsmodus, wo der Kurs einen hat -- nur der
             // Wolkenkurs fuehrt Bilder, die sich erkennen lassen.
             MenuItem {
-                text: course.recognitionTitle
+                text: course.recognitionTitle + " — "
+                      + W.w("Alle Bilder", course.language)
+                      + " (" + course.recognitionCount + ")"
                 visible: course.hasRecognition
                 onClicked: {
                     course.startRecognition(0)
@@ -171,8 +173,11 @@ Page {
                 width: parent.width - 2 * Theme.horizontalPageMargin
                 visible: course.hasRecognition
                 text: course.recognitionTitle
+                // Eine Runde von zwanzig Bildern; der ganze Stapel steht
+                // im Menue. Zweihundert Bilder mal zwei Fragen waeren
+                // vierhundert Antworten am Stueck.
                 onClicked: {
-                    course.startRecognition(0)
+                    course.startRecognition(20)
                     pageStack.push(Qt.resolvedUrl("ErkennenPage.qml"))
                 }
             }

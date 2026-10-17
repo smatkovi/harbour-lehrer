@@ -19,6 +19,7 @@
 
 var EN = {
     // -- Erkennungsmodus
+    "Alle Bilder": "All images",
     "Bild ": "Image ",
     " von ": " of ",
     "Was für eine Wolke ist das?": "What cloud is that?",
