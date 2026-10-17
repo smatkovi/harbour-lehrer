@@ -8,6 +8,7 @@
 
 #include "Curriculum.h"
 #include "Engine.h"
+#include "Erkennen.h"
 #include "Placement.h"
 
 class Plotter;
@@ -36,6 +37,13 @@ class Course : public QObject
     Q_PROPERTY(QVariantMap placementQuestion READ placementQuestion NOTIFY placementChanged)
     Q_PROPERTY(bool placementDone READ placementDone NOTIFY placementChanged)
     Q_PROPERTY(QVariantMap placementResult READ placementResult NOTIFY placementChanged)
+
+    Q_PROPERTY(bool hasRecognition READ hasRecognition NOTIFY changed)
+    Q_PROPERTY(QString recognitionTitle READ recognitionTitle NOTIFY changed)
+    Q_PROPERTY(QString recognitionSubtitle READ recognitionSubtitle NOTIFY changed)
+    Q_PROPERTY(QVariantMap recognitionQuestion READ recognitionQuestion NOTIFY recognitionChanged)
+    Q_PROPERTY(bool recognitionDone READ recognitionDone NOTIFY recognitionChanged)
+    Q_PROPERTY(QVariantMap recognitionResult READ recognitionResult NOTIFY recognitionChanged)
 
     Q_PROPERTY(QVariantMap lesson READ lesson NOTIFY lessonChanged)
     Q_PROPERTY(QVariantMap exercise READ exercise NOTIFY lessonChanged)
@@ -66,6 +74,13 @@ public:
     bool placementDone() const { return !m_placementResult.isEmpty(); }
     QVariantMap placementResult() const { return m_placementResult; }
 
+    bool hasRecognition() const { return m_course->hasRecognition(); }
+    QString recognitionTitle() const { return m_course->recognitionTitle(); }
+    QString recognitionSubtitle() const { return m_course->recognitionSubtitle(); }
+    QVariantMap recognitionQuestion() const;
+    bool recognitionDone() const { return m_erkennen.done(); }
+    QVariantMap recognitionResult() const;
+
     QVariantMap lesson() const;
     QVariantMap exercise() const;
 
@@ -84,6 +99,11 @@ public:
 
     Q_INVOKABLE void startPlacement();
     Q_INVOKABLE void answerPlacement(int chosen);
+
+    // Der Erkennungsmodus. `wieviele` <= 0 heisst: alle Fotos.
+    Q_INVOKABLE void startRecognition(int wieviele = 0);
+    Q_INVOKABLE void answerRecognition(int chosen);
+    Q_INVOKABLE void nextRecognition();
 
     Q_INVOKABLE void startLesson(const QString &lessonId);
     Q_INVOKABLE void toExercises();
@@ -130,6 +150,7 @@ public:
 signals:
     void changed();
     void placementChanged();
+    void recognitionChanged();
     void lessonChanged();
     void runChanged();
     void cardChanged();
@@ -150,6 +171,7 @@ private:
     mutable int m_numpy = -1;      // -1 = noch nicht gefragt
     Engine m_engine;
     Placement m_placement;
+    Erkennen m_erkennen;
 
     QVariantMap m_placementResult;
 

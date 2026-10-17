@@ -48,6 +48,16 @@ Page {
                     pageStack.push(Qt.resolvedUrl("CardPage.qml"))
                 }
             }
+            // Der Erkennungsmodus, wo der Kurs einen hat -- nur der
+            // Wolkenkurs fuehrt Bilder, die sich erkennen lassen.
+            MenuItem {
+                text: course.recognitionTitle
+                visible: course.hasRecognition
+                onClicked: {
+                    course.startRecognition(0)
+                    pageStack.push(Qt.resolvedUrl("ErkennenPage.qml"))
+                }
+            }
         }
 
         Column {
@@ -149,6 +159,31 @@ Page {
                       : seite.weiter.kapitel + " · " + seite.weiter.titel
                 font.pixelSize: Theme.fontSizeSmall
                 color: Theme.secondaryHighlightColor
+                wrapMode: Text.WordWrap
+                horizontalAlignment: Text.AlignHCenter
+            }
+
+            // Im Menue steht die Uebung auch; hier steht sie sichtbar,
+            // weil ein Modus, den man erst herunterziehen muss, nicht
+            // geuebt wird.
+            Button {
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width - 2 * Theme.horizontalPageMargin
+                visible: course.hasRecognition
+                text: course.recognitionTitle
+                onClicked: {
+                    course.startRecognition(0)
+                    pageStack.push(Qt.resolvedUrl("ErkennenPage.qml"))
+                }
+            }
+
+            Label {
+                x: Theme.horizontalPageMargin
+                width: parent.width - 2 * Theme.horizontalPageMargin
+                visible: course.hasRecognition
+                text: course.recognitionSubtitle
+                font.pixelSize: Theme.fontSizeExtraSmall
+                color: Theme.secondaryColor
                 wrapMode: Text.WordWrap
                 horizontalAlignment: Text.AlignHCenter
             }

@@ -4,6 +4,7 @@
 #include "Runner.h"
 
 #include <QCoreApplication>
+#include <QDateTime>
 #include <QDir>
 #include <QFileInfo>
 #include <QProcess>
@@ -193,6 +194,105 @@ QVariantMap Course::placementQuestion() const
     out.insert(QLatin1String("optionen"),
                m_course->textList(item.value(QLatin1String("optionen"))));
     out.insert(QLatin1String("nummer"), m_placement.asked() + 1);
+    return out;
+}
+
+/* ---- Der Erkennungsmodus --------------------------------------------------
+
+   Alles, was die Oberflaeche braucht, steckt in einer Karte: das Foto mit
+   seinen Massen und seiner Herkunft, die Frage, die Auswahl und -- erst
+   nachdem geantwortet wurde -- was richtig gewesen waere und warum. Vor
+   der Antwort steht dort absichtlich nichts davon.
+
+   Uebersetzt wird hier, nicht beim Erzeugen des Kurses: dann stimmt die
+   Sprache auch, wenn sie mitten im Durchlauf gewechselt wird. */
+void Course::startRecognition(int wieviele)
+{
+    m_erkennen.begin(m_course->recognitionPhotos(), m_course->recognitionClasses(),
+                     m_course->recognitionMeanings(), wieviele,
+                     (unsigned int)(QDateTime::currentMSecsSinceEpoch() & 0x7fffffff));
+    emit recognitionChanged();
+}
+
+void Course::answerRecognition(int chosen)
+{
+    m_erkennen.answer(chosen);
+    emit recognitionChanged();
+}
+
+void Course::nextRecognition()
+{
+    m_erkennen.next();
+    emit recognitionChanged();
+}
+
+QVariantMap Course::recognitionQuestion() const
+{
+    QVariantMap out;
+    if (!m_erkennen.isRunning()) {
+        out.insert(QLatin1String("leer"), true);
+        return out;
+    }
+    const QVariantMap klasse = m_erkennen.klasse();
+    const int stufe = m_erkennen.phase();
+    out.insert(QLatin1String("leer"), false);
+    out.insert(QLatin1String("stufe"), stufe);
+    /* Das Foto ohne seine Klasse: die ist die Loesung der ersten Frage,
+       und was nicht hinausgeht, kann auch nicht versehentlich angezeigt
+       werden. */
+    QVariantMap foto = m_erkennen.foto();
+    foto.remove(QLatin1String("klasse"));
+    out.insert(QLatin1String("foto"), foto);
+    out.insert(QLatin1String("nummer"), m_erkennen.asked() + 1);
+    out.insert(QLatin1String("gesamt"), m_erkennen.total());
+
+    QVariantList optionen;
+    for (const QVariant &value : m_erkennen.options()) {
+        const QVariantMap eintrag = value.toMap();
+        optionen.append(m_course->text(eintrag.value(
+                stufe == 0 ? QLatin1String("name") : QLatin1String("text"))));
+    }
+    out.insert(QLatin1String("optionen"), optionen);
+
+    out.insert(QLatin1String("geprueft"), m_erkennen.checked());
+    out.insert(QLatin1String("gewaehlt"), m_erkennen.chosen());
+    // Vor der Antwort verraet die Karte die Loesung nicht.
+    out.insert(QLatin1String("antwort"),
+               m_erkennen.checked() ? m_erkennen.answerIndex() : -1);
+    out.insert(QLatin1String("richtig"),
+               m_erkennen.checked() && m_erkennen.wasRight());
+    if (m_erkennen.checked()) {
+        out.insert(QLatin1String("name"),
+                   m_course->text(klasse.value(QLatin1String("name"))));
+        out.insert(QLatin1String("erklaerung"),
+                   m_course->text(klasse.value(stufe == 0
+                           ? QLatin1String("erkennen")
+                           : QLatin1String("bedeutet"))));
+    }
+    return out;
+}
+
+QVariantMap Course::recognitionResult() const
+{
+    QVariantMap out = m_erkennen.result();
+    /* Die schwachen Klassen kommen als Kennung heraus; angezeigt wird ein
+       Name, und der steht zweisprachig im Kurs. */
+    QVariantList schwach;
+    for (const QVariant &value : out.value(QLatin1String("schwach")).toList()) {
+        QVariantMap eintrag = value.toMap();
+        const QString id = eintrag.value(QLatin1String("klasse")).toString();
+        for (const QVariant &kvalue : m_course->recognitionClasses()) {
+            const QVariantMap k = kvalue.toMap();
+            if (k.value(QLatin1String("id")).toString() != id)
+                continue;
+            eintrag.insert(QLatin1String("name"),
+                           m_course->text(k.value(QLatin1String("name"))));
+            eintrag.insert(QLatin1String("erkennen"),
+                           m_course->text(k.value(QLatin1String("erkennen"))));
+        }
+        schwach.append(eintrag);
+    }
+    out.insert(QLatin1String("schwach"), schwach);
     return out;
 }
 

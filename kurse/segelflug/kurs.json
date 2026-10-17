@@ -654,6 +654,985 @@
    }
   }
  },
+ "erkennen": {
+  "bedeutungen": [
+   {
+    "id": "thermik-schwach",
+    "text": {
+     "de": "Schwache Thermik, niedrige Basis",
+     "en": "Weak lift, low cloud base"
+    }
+   },
+   {
+    "id": "thermik-gut",
+    "text": {
+     "de": "Gute Thermik — der Tag trägt",
+     "en": "Good lift — the day works"
+    }
+   },
+   {
+    "id": "strasse",
+    "text": {
+     "de": "Aufwind in Reihen — Strecke geradeaus",
+     "en": "Lift in rows — straight-line cross-country"
+    }
+   },
+   {
+    "id": "welle",
+    "text": {
+     "de": "Welle: ortsfestes Steigen, viel Wind",
+     "en": "Wave: steady lift fixed in place, strong wind"
+    }
+   },
+   {
+    "id": "ueberentwicklung",
+    "text": {
+     "de": "Überentwicklung — es schießt durch",
+     "en": "Overdevelopment — it is shooting through"
+    }
+   },
+   {
+    "id": "gewitter",
+    "text": {
+     "de": "Gewitter: Böen und Hagel, Abstand halten",
+     "en": "Thunderstorm: gusts and hail, keep away"
+    }
+   },
+   {
+    "id": "abschirmung",
+    "text": {
+     "de": "Schirmt ab — die Thermik stirbt",
+     "en": "Shades the ground — the lift dies"
+    }
+   },
+   {
+    "id": "front",
+    "text": {
+     "de": "Warmfront zieht auf — Wetterwechsel",
+     "en": "Warm front moving in — weather is changing"
+    }
+   },
+   {
+    "id": "kein-flug",
+    "text": {
+     "de": "Tief und nass — nichts zu holen",
+     "en": "Low and wet — nothing to be had"
+    }
+   }
+  ],
+  "fotos": [
+   {
+    "autor": "Toby Hudson",
+    "breite": 640,
+    "datei": "foto-cu-humilis-1.jpg",
+    "hoehe": 455,
+    "klasse": "cu-humilis",
+    "lizenz": "CC BY-SA 3.0"
+   },
+   {
+    "autor": "Rasbak",
+    "breite": 640,
+    "datei": "foto-cu-humilis-2.jpg",
+    "hoehe": 480,
+    "klasse": "cu-humilis",
+    "lizenz": "CC BY-SA 3.0"
+   },
+   {
+    "autor": "Glg",
+    "breite": 640,
+    "datei": "foto-cu-humilis-3.jpg",
+    "hoehe": 480,
+    "klasse": "cu-humilis",
+    "lizenz": "CC BY-SA 2.0 de"
+   },
+   {
+    "autor": "Toronto_guy",
+    "breite": 640,
+    "datei": "erk-cu-humilis-4.jpg",
+    "hoehe": 480,
+    "klasse": "cu-humilis",
+    "lizenz": "CC BY 3.0"
+   },
+   {
+    "autor": "AmanovDmitry",
+    "breite": 640,
+    "datei": "erk-cu-humilis-5.jpg",
+    "hoehe": 239,
+    "klasse": "cu-humilis",
+    "lizenz": "CC BY 3.0"
+   },
+   {
+    "autor": "Derek Wolfgram from San Jose, CA",
+    "breite": 640,
+    "datei": "erk-cu-humilis-6.jpg",
+    "hoehe": 360,
+    "klasse": "cu-humilis",
+    "lizenz": "CC BY 2.0"
+   },
+   {
+    "autor": "Thomas Bresson",
+    "breite": 640,
+    "datei": "erk-cu-humilis-7.jpg",
+    "hoehe": 494,
+    "klasse": "cu-humilis",
+    "lizenz": "CC BY 3.0"
+   },
+   {
+    "autor": "Thomas Bresson",
+    "breite": 640,
+    "datei": "erk-cu-humilis-8.jpg",
+    "hoehe": 480,
+    "klasse": "cu-humilis",
+    "lizenz": "CC BY 3.0"
+   },
+   {
+    "autor": "Thomas Bresson",
+    "breite": 640,
+    "datei": "erk-cu-humilis-9.jpg",
+    "hoehe": 480,
+    "klasse": "cu-humilis",
+    "lizenz": "CC BY 3.0"
+   },
+   {
+    "autor": "Lll manel",
+    "breite": 640,
+    "datei": "erk-cu-humilis-10.jpg",
+    "hoehe": 360,
+    "klasse": "cu-humilis",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Thomas Woodtli from Zürich, Switzerland",
+    "breite": 640,
+    "datei": "erk-cu-mediocris-1.jpg",
+    "hoehe": 480,
+    "klasse": "cu-mediocris",
+    "lizenz": "CC BY-SA 2.0"
+   },
+   {
+    "autor": "Thomas Bresson",
+    "breite": 640,
+    "datei": "erk-cu-mediocris-2.jpg",
+    "hoehe": 480,
+    "klasse": "cu-mediocris",
+    "lizenz": "CC BY 3.0"
+   },
+   {
+    "autor": "Thomas Bresson",
+    "breite": 640,
+    "datei": "erk-cu-mediocris-3.jpg",
+    "hoehe": 427,
+    "klasse": "cu-mediocris",
+    "lizenz": "CC BY 3.0"
+   },
+   {
+    "autor": "Mạnh Hà Nguyễn",
+    "breite": 640,
+    "datei": "erk-cu-mediocris-4.jpg",
+    "hoehe": 426,
+    "klasse": "cu-mediocris",
+    "lizenz": "CC BY 3.0"
+   },
+   {
+    "autor": "Nuno Morão from Lisboa, Portugal",
+    "breite": 640,
+    "datei": "erk-cu-mediocris-5.jpg",
+    "hoehe": 425,
+    "klasse": "cu-mediocris",
+    "lizenz": "CC BY-SA 2.0"
+   },
+   {
+    "autor": "Rodnib",
+    "breite": 640,
+    "datei": "erk-cu-mediocris-6.jpg",
+    "hoehe": 480,
+    "klasse": "cu-mediocris",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Jacek Halicki",
+    "breite": 640,
+    "datei": "foto-cu-congestus-1.jpg",
+    "hoehe": 437,
+    "klasse": "cu-congestus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Bidgee",
+    "breite": 559,
+    "datei": "foto-cu-congestus-2.jpg",
+    "hoehe": 520,
+    "klasse": "cu-congestus",
+    "lizenz": "CC BY-SA 3.0"
+   },
+   {
+    "autor": "GerritR",
+    "breite": 640,
+    "datei": "foto-cu-congestus-3.jpg",
+    "hoehe": 427,
+    "klasse": "cu-congestus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Thomas Bresson",
+    "breite": 640,
+    "datei": "erk-cu-congestus-4.jpg",
+    "hoehe": 480,
+    "klasse": "cu-congestus",
+    "lizenz": "CC BY 3.0"
+   },
+   {
+    "autor": "Jacek Halicki",
+    "breite": 640,
+    "datei": "erk-cu-congestus-5.jpg",
+    "hoehe": 468,
+    "klasse": "cu-congestus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Thomas Bresson",
+    "breite": 640,
+    "datei": "erk-cu-congestus-6.jpg",
+    "hoehe": 318,
+    "klasse": "cu-congestus",
+    "lizenz": "CC BY 4.0"
+   },
+   {
+    "autor": "Famartin",
+    "breite": 640,
+    "datei": "erk-cu-congestus-7.jpg",
+    "hoehe": 480,
+    "klasse": "cu-congestus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Famartin",
+    "breite": 640,
+    "datei": "erk-cu-congestus-8.jpg",
+    "hoehe": 480,
+    "klasse": "cu-congestus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Kamil Nowacki",
+    "breite": 640,
+    "datei": "foto-cumulonimbus-1.jpg",
+    "hoehe": 427,
+    "klasse": "cumulonimbus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Jakub Hałun",
+    "breite": 640,
+    "datei": "foto-cumulonimbus-2.jpg",
+    "hoehe": 305,
+    "klasse": "cumulonimbus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Kingshuk Mondal",
+    "breite": 640,
+    "datei": "foto-cumulonimbus-3.jpg",
+    "hoehe": 427,
+    "klasse": "cumulonimbus",
+    "lizenz": "CC BY 4.0"
+   },
+   {
+    "autor": "Shellparakeet",
+    "breite": 640,
+    "datei": "erk-cumulonimbus-4.jpg",
+    "hoehe": 424,
+    "klasse": "cumulonimbus",
+    "lizenz": "CC0"
+   },
+   {
+    "autor": "Famartin",
+    "breite": 640,
+    "datei": "erk-cumulonimbus-5.jpg",
+    "hoehe": 261,
+    "klasse": "cumulonimbus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Famartin",
+    "breite": 640,
+    "datei": "erk-cumulonimbus-6.jpg",
+    "hoehe": 480,
+    "klasse": "cumulonimbus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Famartin",
+    "breite": 640,
+    "datei": "erk-cumulonimbus-7.jpg",
+    "hoehe": 348,
+    "klasse": "cumulonimbus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Rollcloud",
+    "breite": 640,
+    "datei": "foto-wolkenstrasse-2.jpg",
+    "hoehe": 423,
+    "klasse": "wolkenstrasse",
+    "lizenz": "CC BY 2.5"
+   },
+   {
+    "autor": "Doggo19292",
+    "breite": 640,
+    "datei": "foto-wolkenstrasse-1.jpg",
+    "hoehe": 480,
+    "klasse": "wolkenstrasse",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "P K",
+    "breite": 640,
+    "datei": "erk-wolkenstrasse-3.jpg",
+    "hoehe": 320,
+    "klasse": "wolkenstrasse",
+    "lizenz": "CC BY 2.0"
+   },
+   {
+    "autor": "Doggo19292",
+    "breite": 640,
+    "datei": "erk-wolkenstrasse-4.jpg",
+    "hoehe": 405,
+    "klasse": "wolkenstrasse",
+    "lizenz": "CC BY 3.0"
+   },
+   {
+    "autor": "Jacek Halicki",
+    "breite": 640,
+    "datei": "foto-stratocumulus-1.jpg",
+    "hoehe": 369,
+    "klasse": "stratocumulus",
+    "lizenz": "CC BY 3.0"
+   },
+   {
+    "autor": "Berrucomons",
+    "breite": 640,
+    "datei": "foto-stratocumulus-2.jpg",
+    "hoehe": 427,
+    "klasse": "stratocumulus",
+    "lizenz": "CC BY-SA 3.0"
+   },
+   {
+    "autor": "GerritR",
+    "breite": 640,
+    "datei": "foto-stratocumulus-3.jpg",
+    "hoehe": 480,
+    "klasse": "stratocumulus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Acabashi",
+    "breite": 640,
+    "datei": "erk-stratocumulus-4.jpg",
+    "hoehe": 427,
+    "klasse": "stratocumulus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Ivtorov",
+    "breite": 390,
+    "datei": "erk-stratocumulus-5.jpg",
+    "hoehe": 520,
+    "klasse": "stratocumulus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Jacek Halicki",
+    "breite": 640,
+    "datei": "erk-stratocumulus-6.jpg",
+    "hoehe": 340,
+    "klasse": "stratocumulus",
+    "lizenz": "CC BY 3.0"
+   },
+   {
+    "autor": "Thomas Bresson",
+    "breite": 640,
+    "datei": "erk-stratocumulus-7.jpg",
+    "hoehe": 427,
+    "klasse": "stratocumulus",
+    "lizenz": "CC BY 4.0"
+   },
+   {
+    "autor": "Daniele.Brundu",
+    "breite": 640,
+    "datei": "foto-ac-castellanus-1.jpg",
+    "hoehe": 467,
+    "klasse": "ac-castellanus",
+    "lizenz": "CC BY 4.0"
+   },
+   {
+    "autor": "Bidgee",
+    "breite": 640,
+    "datei": "foto-ac-castellanus-2.jpg",
+    "hoehe": 480,
+    "klasse": "ac-castellanus",
+    "lizenz": "CC BY-SA 3.0"
+   },
+   {
+    "autor": "Acabashi",
+    "breite": 640,
+    "datei": "erk-ac-castellanus-3.jpg",
+    "hoehe": 427,
+    "klasse": "ac-castellanus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Veselin.dikov",
+    "breite": 640,
+    "datei": "foto-lenticularis-1.jpg",
+    "hoehe": 480,
+    "klasse": "ac-lenticularis",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Florian Pépellin",
+    "breite": 640,
+    "datei": "foto-lenticularis-2.jpg",
+    "hoehe": 480,
+    "klasse": "ac-lenticularis",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "René Heise",
+    "breite": 500,
+    "datei": "foto-lenticularis-3.jpg",
+    "hoehe": 329,
+    "klasse": "ac-lenticularis",
+    "lizenz": "CC BY-SA 3.0"
+   },
+   {
+    "autor": "sylvboisse",
+    "breite": 640,
+    "datei": "erk-ac-lenticularis-4.jpg",
+    "hoehe": 480,
+    "klasse": "ac-lenticularis",
+    "lizenz": "CC BY 2.0"
+   },
+   {
+    "autor": "Murray Foubister",
+    "breite": 640,
+    "datei": "erk-ac-lenticularis-5.jpg",
+    "hoehe": 427,
+    "klasse": "ac-lenticularis",
+    "lizenz": "CC BY-SA 2.0"
+   },
+   {
+    "autor": "Tom Ackroyd",
+    "breite": 640,
+    "datei": "erk-ac-lenticularis-6.jpg",
+    "hoehe": 289,
+    "klasse": "ac-lenticularis",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Nicopedia",
+    "breite": 640,
+    "datei": "erk-ac-lenticularis-7.jpg",
+    "hoehe": 480,
+    "klasse": "ac-lenticularis",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Ryan Hodnett",
+    "breite": 640,
+    "datei": "erk-ac-lenticularis-8.jpg",
+    "hoehe": 359,
+    "klasse": "ac-lenticularis",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Acaro",
+    "breite": 640,
+    "datei": "erk-ac-lenticularis-9.jpg",
+    "hoehe": 480,
+    "klasse": "ac-lenticularis",
+    "lizenz": "CC BY-SA 3.0"
+   },
+   {
+    "autor": "Hons084",
+    "breite": 640,
+    "datei": "erk-altocumulus-1.jpg",
+    "hoehe": 467,
+    "klasse": "altocumulus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Famartin",
+    "breite": 640,
+    "datei": "erk-altocumulus-2.jpg",
+    "hoehe": 480,
+    "klasse": "altocumulus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Acabashi",
+    "breite": 640,
+    "datei": "erk-altocumulus-3.jpg",
+    "hoehe": 427,
+    "klasse": "altocumulus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Famartin",
+    "breite": 640,
+    "datei": "erk-altocumulus-4.jpg",
+    "hoehe": 480,
+    "klasse": "altocumulus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Alexkom000",
+    "breite": 640,
+    "datei": "erk-altocumulus-5.jpg",
+    "hoehe": 427,
+    "klasse": "altocumulus",
+    "lizenz": "CC BY 4.0"
+   },
+   {
+    "autor": "Famartin",
+    "breite": 640,
+    "datei": "erk-altocumulus-6.jpg",
+    "hoehe": 480,
+    "klasse": "altocumulus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Famartin",
+    "breite": 640,
+    "datei": "erk-altocumulus-7.jpg",
+    "hoehe": 480,
+    "klasse": "altocumulus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Ximonic (Simo Räsänen)",
+    "breite": 640,
+    "datei": "foto-cirrus-1.jpg",
+    "hoehe": 347,
+    "klasse": "cirrus",
+    "lizenz": "CC BY-SA 3.0"
+   },
+   {
+    "autor": "ADARSHluck",
+    "breite": 640,
+    "datei": "foto-cirrus-2.jpg",
+    "hoehe": 427,
+    "klasse": "cirrus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "josefstuefer",
+    "breite": 640,
+    "datei": "erk-cirrus-3.jpg",
+    "hoehe": 414,
+    "klasse": "cirrus",
+    "lizenz": "CC BY-SA 3.0"
+   },
+   {
+    "autor": "Famartin",
+    "breite": 640,
+    "datei": "erk-cirrus-4.jpg",
+    "hoehe": 480,
+    "klasse": "cirrus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Famartin",
+    "breite": 640,
+    "datei": "erk-cirrus-5.jpg",
+    "hoehe": 480,
+    "klasse": "cirrus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Famartin",
+    "breite": 640,
+    "datei": "erk-cirrus-6.jpg",
+    "hoehe": 480,
+    "klasse": "cirrus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Famartin",
+    "breite": 640,
+    "datei": "erk-cirrus-7.jpg",
+    "hoehe": 480,
+    "klasse": "cirrus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Famartin",
+    "breite": 640,
+    "datei": "erk-cirrus-8.jpg",
+    "hoehe": 480,
+    "klasse": "cirrus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "GerritR",
+    "breite": 640,
+    "datei": "foto-cirrus-3.jpg",
+    "hoehe": 480,
+    "klasse": "cirrostratus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Fir0002 ( talk ) ( Uploads )",
+    "breite": 640,
+    "datei": "erk-cirrostratus-2.jpg",
+    "hoehe": 480,
+    "klasse": "cirrostratus",
+    "lizenz": "CC BY-SA 3.0"
+   },
+   {
+    "autor": "DR04",
+    "breite": 640,
+    "datei": "erk-cirrostratus-3.jpg",
+    "hoehe": 429,
+    "klasse": "cirrostratus",
+    "lizenz": "CC BY 3.0"
+   },
+   {
+    "autor": "Cristian Martín",
+    "breite": 640,
+    "datei": "erk-cirrostratus-4.jpg",
+    "hoehe": 424,
+    "klasse": "cirrostratus",
+    "lizenz": "CC BY 3.0"
+   },
+   {
+    "autor": "Famartin",
+    "breite": 640,
+    "datei": "erk-cirrostratus-5.jpg",
+    "hoehe": 480,
+    "klasse": "cirrostratus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Famartin",
+    "breite": 640,
+    "datei": "erk-cirrostratus-6.jpg",
+    "hoehe": 480,
+    "klasse": "cirrostratus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Vasupanwar",
+    "breite": 640,
+    "datei": "erk-stratus-1.jpg",
+    "hoehe": 480,
+    "klasse": "stratus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Vasupanwar",
+    "breite": 640,
+    "datei": "erk-stratus-2.jpg",
+    "hoehe": 480,
+    "klasse": "stratus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Famartin",
+    "breite": 640,
+    "datei": "erk-stratus-3.jpg",
+    "hoehe": 480,
+    "klasse": "stratus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Famartin",
+    "breite": 640,
+    "datei": "erk-stratus-4.jpg",
+    "hoehe": 480,
+    "klasse": "stratus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Famartin",
+    "breite": 640,
+    "datei": "erk-stratus-5.jpg",
+    "hoehe": 480,
+    "klasse": "stratus",
+    "lizenz": "CC BY-SA 4.0"
+   },
+   {
+    "autor": "Famartin",
+    "breite": 640,
+    "datei": "erk-stratus-6.jpg",
+    "hoehe": 480,
+    "klasse": "stratus",
+    "lizenz": "CC BY-SA 4.0"
+   }
+  ],
+  "klassen": [
+   {
+    "bedeutet": {
+     "de": "Die Blasen reichen nur knapp über die Kondensationshöhe: Thermik ja, aber schwach, und die Basis bleibt niedrig.",
+     "en": "The bubbles barely reach above the condensation level: there is lift, but weak, and the base stays low."
+    },
+    "bedeutung": "thermik-schwach",
+    "erkennen": {
+     "de": "Flach, breiter als hoch — und alle Basen liegen auf derselben Höhe. Dazwischen steht viel Blau.",
+     "en": "Flat, wider than tall — and every base sits at the same height, with plenty of blue in between."
+    },
+    "id": "cu-humilis",
+    "name": {
+     "de": "Cumulus humilis (Schönwetterwolke)",
+     "en": "Cumulus humilis (fair-weather cumulus)"
+    },
+    "verwechselt": [
+     "cu-mediocris",
+     "stratocumulus",
+     "wolkenstrasse"
+    ]
+   },
+   {
+    "bedeutet": {
+     "de": "Die Wolke wächst, ohne durchzuschießen — der Normalfall eines brauchbaren Streckentags.",
+     "en": "The cloud is growing without shooting through — an ordinary workable cross-country day."
+    },
+    "bedeutung": "thermik-gut",
+    "erkennen": {
+     "de": "Etwa so hoch wie breit: oben schon Blumenkohl, unten noch die scharfe flache Basis.",
+     "en": "About as tall as it is wide: cauliflower on top, still a sharp flat base underneath."
+    },
+    "id": "cu-mediocris",
+    "name": {
+     "de": "Cumulus mediocris",
+     "en": "Cumulus mediocris"
+    },
+    "verwechselt": [
+     "cu-humilis",
+     "cu-congestus",
+     "stratocumulus"
+    ]
+   },
+   {
+    "bedeutet": {
+     "de": "So viel Steigen, dass es gleich zu viel wird: Unter dem Congestus regnet es bald, und der nächste Schritt ist der Cumulonimbus.",
+     "en": "So much lift that it is about to become too much: rain starts under a congestus soon, and the next step is a cumulonimbus."
+    },
+    "bedeutung": "ueberentwicklung",
+    "erkennen": {
+     "de": "Deutlich höher als breit, die Türme noch scharf umrissen — der Kopf ist weiß und hart, nicht faserig.",
+     "en": "Clearly taller than wide, the towers still sharply outlined — the top is white and hard, not fibrous."
+    },
+    "id": "cu-congestus",
+    "name": {
+     "de": "Cumulus congestus (Blumenkohl)",
+     "en": "Cumulus congestus (towering cumulus)"
+    },
+    "verwechselt": [
+     "cu-mediocris",
+     "cumulonimbus",
+     "stratocumulus"
+    ]
+   },
+   {
+    "bedeutet": {
+     "de": "Böenfront, Hagel, Abwind, und unter der Basis Regen. Auch der harmlos aussehende Rand gehört noch dazu.",
+     "en": "Gust front, hail, sink, and rain under the base. The harmless-looking edge is part of it too."
+    },
+    "bedeutung": "gewitter",
+    "erkennen": {
+     "de": "Der Kopf ist nicht mehr scharf, sondern faserig — das ist Eis — und oben läuft er flach aus wie ein Amboss.",
+     "en": "The top is no longer sharp but fibrous — that is ice — and it spreads out flat like an anvil."
+    },
+    "id": "cumulonimbus",
+    "name": {
+     "de": "Cumulonimbus (Gewitterwolke)",
+     "en": "Cumulonimbus (thunderstorm cloud)"
+    },
+    "verwechselt": [
+     "cu-congestus",
+     "stratocumulus",
+     "cirrostratus"
+    ]
+   },
+   {
+    "bedeutet": {
+     "de": "Unter der Reihe steigt es fast durchgehend: geradeaus fliegen statt kreisen. Schneller geht Strecke nicht.",
+     "en": "Under the row it goes up almost continuously: fly straight instead of circling. Cross-country gets no faster than this."
+    },
+    "bedeutung": "strasse",
+    "erkennen": {
+     "de": "Die Wolken stehen nicht verstreut, sondern in Reihen, die zum Horizont zusammenlaufen — immer längs des Windes.",
+     "en": "The clouds are not scattered but lined up in rows converging towards the horizon — always along the wind."
+    },
+    "id": "wolkenstrasse",
+    "name": {
+     "de": "Wolkenstraße",
+     "en": "Cloud street"
+    },
+    "verwechselt": [
+     "cu-humilis",
+     "altocumulus",
+     "stratocumulus"
+    ]
+   },
+   {
+    "bedeutet": {
+     "de": "Wo die Sonne nicht mehr auf den Boden kommt, entsteht keine Thermik mehr — der Tag macht zu.",
+     "en": "Where the sun no longer reaches the ground, no new thermals form — the day is closing down."
+    },
+    "bedeutung": "abschirmung",
+    "erkennen": {
+     "de": "Eine zusammenhängende tiefe Schicht aus Ballen und Walzen, zwischen denen kaum noch Blau steht.",
+     "en": "A connected low layer of rolls and lumps with hardly any blue left between them."
+    },
+    "id": "stratocumulus",
+    "name": {
+     "de": "Stratocumulus (Haufenschichtwolke)",
+     "en": "Stratocumulus"
+    },
+    "verwechselt": [
+     "altocumulus",
+     "stratus",
+     "cu-humilis"
+    ]
+   },
+   {
+    "bedeutet": {
+     "de": "Schon in der Höhe ist die Luft labil. Am Morgen gesehen heißt das: am Nachmittag Gewitter.",
+     "en": "The air is already unstable aloft. Seen in the morning this means thunderstorms in the afternoon."
+    },
+    "bedeutung": "ueberentwicklung",
+    "erkennen": {
+     "de": "Mittelhoch, und auf einer gemeinsamen Grundlinie sitzen kleine Türmchen wie Zinnen auf einer Mauer.",
+     "en": "At middle level, with small turrets sitting on a common base line like battlements on a wall."
+    },
+    "id": "ac-castellanus",
+    "name": {
+     "de": "Altocumulus castellanus (Zinnenwolke)",
+     "en": "Altocumulus castellanus"
+    },
+    "verwechselt": [
+     "altocumulus",
+     "cu-humilis",
+     "cirrus"
+    ]
+   },
+   {
+    "bedeutet": {
+     "de": "Im Lee eines Berges steht eine Welle. Vor der Linse trägt es gleichmäßig und sehr hoch, dahinter sinkt es ebenso.",
+     "en": "There is a wave in the lee of a mountain. Ahead of the lens the lift is smooth and goes very high; behind it the sink is just as steady."
+    },
+    "bedeutung": "welle",
+    "erkennen": {
+     "de": "Glatt, linsenförmig, mit scharfem Rand, oft gestapelt — und sie steht still, während der Wind durch sie hindurchzieht.",
+     "en": "Smooth, lens-shaped, sharp-edged, often stacked — and it stands still while the wind blows through it."
+    },
+    "id": "ac-lenticularis",
+    "name": {
+     "de": "Lenticularis (Linsenwolke)",
+     "en": "Lenticularis (lens cloud)"
+    },
+    "verwechselt": [
+     "altocumulus",
+     "cirrus",
+     "stratocumulus"
+    ]
+   },
+   {
+    "bedeutet": {
+     "de": "Allein ist es harmlos. Dichter werdend legt es sich als Schirm über die Thermik, lange bevor etwas davon unten ankommt.",
+     "en": "On its own it is harmless. As it thickens it screens off the thermals, long before anything of it reaches the ground."
+    },
+    "bedeutung": "abschirmung",
+    "erkennen": {
+     "de": "Mittelhoch: viele kleine Ballen, fast gleich groß, in Reihen geordnet — und jeder davon hat noch einen Schatten.",
+     "en": "Middle level: many small lumps of nearly equal size, arranged in rows — and each one still has a shadow."
+    },
+    "id": "altocumulus",
+    "name": {
+     "de": "Altocumulus (Schäfchenwolken)",
+     "en": "Altocumulus"
+    },
+    "verwechselt": [
+     "ac-castellanus",
+     "stratocumulus",
+     "cirrus"
+    ]
+   },
+   {
+    "bedeutet": {
+     "de": "Der Vorbote einer Warmfront. Heute ist der Tag noch gut, in zwölf bis vierundzwanzig Stunden ist er vorbei.",
+     "en": "The herald of a warm front. Today is still good; in twelve to twenty-four hours it is over."
+    },
+    "bedeutung": "front",
+    "erkennen": {
+     "de": "Ganz oben, dünn und faserig, ohne eigenen Schatten; die Haken zeigen, woher der Wind in der Höhe kommt.",
+     "en": "Highest of all, thin and fibrous, casting no shadow of its own; the hooks show where the wind up there comes from."
+    },
+    "id": "cirrus",
+    "name": {
+     "de": "Cirrus (Federwolke)",
+     "en": "Cirrus"
+    },
+    "verwechselt": [
+     "cirrostratus",
+     "altocumulus",
+     "ac-lenticularis"
+    ]
+   },
+   {
+    "bedeutet": {
+     "de": "Aus dem Cirrus ist eine Schicht geworden: Die Front ist näher, die Einstrahlung geht zurück, die Thermik wird flau.",
+     "en": "The cirrus has become a layer: the front is closer, the sunshine is cut back, and the lift goes soft."
+    },
+    "bedeutung": "front",
+    "erkennen": {
+     "de": "Ein milchiger Schleier über dem ganzen Himmel. Die Sonne bleibt sichtbar, bekommt aber einen Ring im Abstand von 22°.",
+     "en": "A milky veil over the whole sky. The sun stays visible but picks up a ring at 22° from it."
+    },
+    "id": "cirrostratus",
+    "name": {
+     "de": "Cirrostratus (Schleier mit Halo)",
+     "en": "Cirrostratus (veil with halo)"
+    },
+    "verwechselt": [
+     "cirrus",
+     "altocumulus",
+     "stratus"
+    ]
+   },
+   {
+    "bedeutet": {
+     "de": "Keine Sonne, kein Steigen, dazu schlechte Sicht und eine Basis, unter der nichts mehr geht.",
+     "en": "No sun, no lift, poor visibility and a base below which nothing works any more."
+    },
+    "bedeutung": "kein-flug",
+    "erkennen": {
+     "de": "Eine tiefe, strukturlose graue Decke ohne erkennbare Ballen — Nebel, der nicht ganz am Boden liegt, oft an Hängen klebend.",
+     "en": "A low, featureless grey blanket with no discernible lumps — fog that is not quite on the ground, often clinging to slopes."
+    },
+    "id": "stratus",
+    "name": {
+     "de": "Stratus (Hochnebel)",
+     "en": "Stratus"
+    },
+    "verwechselt": [
+     "stratocumulus",
+     "cirrostratus",
+     "cumulonimbus"
+    ]
+   }
+  ],
+  "titel": {
+   "de": "Wolken erkennen",
+   "en": "Recognise clouds"
+  },
+  "unterzeile": {
+   "de": "Ein Foto nach dem anderen. Zu jedem zwei Fragen: Was für eine Wolke ist das — und was heißt sie fürs Fliegen?",
+   "en": "One photo after another. Two questions about each: what cloud is that — and what does it mean for flying?"
+  }
+ },
  "kapitel": [
   {
    "id": "wolken",
@@ -1663,12 +2642,12 @@
        "code": "",
        "fotos": [
         {
-         "autor": "Chris.sherlock2",
+         "autor": "Doggo19292",
          "breite": 640,
          "datei": "foto-wolkenstrasse-1.jpg",
          "hinweis": {
-          "de": "Die Wolken stehen in einer Reihe bis zum Horizont, längs des Windes. Darunter lässt sich geradeaus fliegen, ohne zu kreisen.",
-          "en": "The clouds line up to the horizon, along the wind. Under that line you can fly straight ahead without circling."
+          "de": "Die Wolken stehen in Reihen, die zum Horizont zusammenlaufen, längs des Windes. Darunter lässt sich geradeaus fliegen, ohne zu kreisen.",
+          "en": "The clouds stand in rows converging towards the horizon, along the wind. Under them you can fly straight ahead without circling."
          },
          "hoehe": 480,
          "lizenz": "CC BY-SA 4.0"
@@ -1803,12 +2782,12 @@
      "formeln": [],
      "fotos": [
       {
-       "autor": "Chris.sherlock2",
+       "autor": "Doggo19292",
        "breite": 640,
        "datei": "foto-wolkenstrasse-1.jpg",
        "hinweis": {
-        "de": "Die Wolken stehen in einer Reihe bis zum Horizont, längs des Windes. Darunter lässt sich geradeaus fliegen, ohne zu kreisen.",
-        "en": "The clouds line up to the horizon, along the wind. Under that line you can fly straight ahead without circling."
+        "de": "Die Wolken stehen in Reihen, die zum Horizont zusammenlaufen, längs des Windes. Darunter lässt sich geradeaus fliegen, ohne zu kreisen.",
+        "en": "The clouds stand in rows converging towards the horizon, along the wind. Under them you can fly straight ahead without circling."
        },
        "hoehe": 480,
        "lizenz": "CC BY-SA 4.0"
@@ -2239,12 +3218,12 @@
      "formeln": [],
      "fotos": [
       {
-       "autor": "Chris.sherlock2",
+       "autor": "Doggo19292",
        "breite": 640,
        "datei": "foto-wolkenstrasse-1.jpg",
        "hinweis": {
-        "de": "Die Wolken stehen in einer Reihe bis zum Horizont, längs des Windes. Darunter lässt sich geradeaus fliegen, ohne zu kreisen.",
-        "en": "The clouds line up to the horizon, along the wind. Under that line you can fly straight ahead without circling."
+        "de": "Die Wolken stehen in Reihen, die zum Horizont zusammenlaufen, längs des Windes. Darunter lässt sich geradeaus fliegen, ohne zu kreisen.",
+        "en": "The clouds stand in rows converging towards the horizon, along the wind. Under them you can fly straight ahead without circling."
        },
        "hoehe": 480,
        "lizenz": "CC BY-SA 4.0"

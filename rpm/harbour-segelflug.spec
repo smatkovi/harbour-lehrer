@@ -1,5 +1,5 @@
 Name:       harbour-segelflug
-Version:    1.13.0
+Version:    1.14.0
 Release:    1
 Summary:    Gliding theory with a focus on reading clouds
 License:    GPLv3+
@@ -50,6 +50,12 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Sat Oct 17 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.14.0-1
+- Neuer Modus "Wolken erkennen": 81 Fotos einzeln, zu jedem zwei Fragen --
+  was fuer eine Wolke das ist und was sie fuers Segelfliegen heisst
+- Das Foto unter "Wolkenstrassen" zeigte eine Vorstadtstrasse namens
+  Cloud Street; ersetzt
+
 * Fri Oct 09 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.13.0-1
 - Die Fotos stehen jetzt auch bei den Aufgaben und auf den Karteikarten:
   ueber der Frage neben der Zeichnung und noch einmal in der Loesung
@@ -64,11 +70,11 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
   gibt es in QtQuick 2.0 nicht); "Deine Wahl" auch auf Englisch
 - Herleitungen: ϑ durch θ ersetzt, damit keine Kästchen erscheinen
 
-* Wed Sep 24 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.11.0-1
+* Thu Sep 24 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.11.0-1
 - Die Formeln auf den Karteikarten sind hergeleitet: Wolkenbasis (woher die
   125 m je Grad kommen), Gleitzahl, Lastvielfaches und Überziehgeschwindigkeit
   in der Kurve, Schwerpunktrechnung, 1-in-60-Regel und die Missweisung. Jede
   mit der Skizze, die dazugehört, und jede in der Lösung — vor der Antwort
   wäre sie die Antwort.
-* Tue Sep 23 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.0.0-1
+* Wed Sep 23 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.0.0-1
 - Erste Sailfish-Fassung, portiert von der Harmattan-Ausgabe

@@ -32,6 +32,16 @@ public:
     QVariantList plan() const { return m_plan; }
     QVariantList placementItems() const { return m_items; }
     QVariantMap topics() const { return m_topics; }
+
+    /* Der Erkennungsmodus -- viele Fotos, zwei Fragen je Foto. Nicht jeder
+       Kurs hat ihn; wo der Schluessel fehlt, bleibt die Taste weg, statt
+       eine leere Seite anzubieten. */
+    bool hasRecognition() const { return !m_fotos.isEmpty(); }
+    QVariantList recognitionPhotos() const { return m_fotos; }
+    QVariantList recognitionClasses() const { return m_klassen; }
+    QVariantList recognitionMeanings() const { return m_bedeutungen; }
+    QString recognitionTitle() const { return text(m_erkTitel); }
+    QString recognitionSubtitle() const { return text(m_erkUnter); }
     QString title() const { return text(m_title); }
     QString subtitle() const { return text(m_subtitle); }
     bool canRun() const { return m_canRun; }
@@ -46,6 +56,11 @@ private:
     QVariantList m_plan;
     QVariantList m_items;
     QVariantMap m_topics;
+    QVariantList m_fotos;
+    QVariantList m_klassen;
+    QVariantList m_bedeutungen;
+    QVariant m_erkTitel;
+    QVariant m_erkUnter;
     QVariant m_title;
     QVariant m_subtitle;
     bool m_canRun = false;

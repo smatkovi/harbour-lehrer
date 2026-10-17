@@ -18,6 +18,19 @@
 .pragma library
 
 var EN = {
+    // -- Erkennungsmodus
+    "Bild ": "Image ",
+    " von ": " of ",
+    "Was für eine Wolke ist das?": "What cloud is that?",
+    "Und was heißt sie fürs Segelfliegen?": "And what does it mean for soaring?",
+    "Und was heißt das?": "And what does that mean?",
+    "Nächstes Bild": "Next image",
+    "Durch": "Done",
+    "Wolke erkannt: ": "Cloud recognised: ",
+    "Bedeutung gewusst: ": "Meaning known: ",
+    "Das sieh dir noch einmal an:": "Have another look at these:",
+    "Noch einmal": "Once more",
+
     "von": "of",
     "erledigt": "done",
     "Erwartet:": "Expected:",

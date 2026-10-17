@@ -1,0 +1,47 @@
+{
+ "formel-2d7b771f": {
+  "breite": 108,
+  "hoehe": 42,
+  "tex": "$q = \\frac{1}{2}\\rho v^{2}$"
+ },
+ "formel-49db849e": {
+  "breite": 145,
+  "hoehe": 73,
+  "tex": "$x_S = \\frac{\\sum m_i x_i}{\\sum m_i}$"
+ },
+ "formel-4cd70bf0": {
+  "breite": 131,
+  "hoehe": 43,
+  "tex": "$E = \\frac{L}{D} = \\frac{v}{w}$"
+ },
+ "formel-6b47cc74": {
+  "breite": 289,
+  "hoehe": 47,
+  "tex": "$\\Delta h = \\frac{\\Delta p}{\\rho\\,g} \\approx 8{,}3\\ \\mathrm{m/hPa}$"
+ },
+ "formel-873288ed": {
+  "breite": 102,
+  "hoehe": 42,
+  "tex": "$n = \\frac{1}{\\cos\\varphi}$"
+ },
+ "formel-9ac445f8": {
+  "breite": 164,
+  "hoehe": 40,
+  "tex": "$\\alpha \\approx \\frac{v_q}{v}\\cdot 57{,}3^{\\circ}$"
+ },
+ "formel-b05c3a09": {
+  "breite": 249,
+  "hoehe": 39,
+  "tex": "$h \\approx (T - T_d)\\cdot 125\\,\\frac{\\mathrm{m}}{\\mathrm{K}}$"
+ },
+ "formel-d336ac9a": {
+  "breite": 147,
+  "hoehe": 61,
+  "tex": "$v = \\sqrt{\\frac{2G}{\\rho\\,S\\,c_A}}$"
+ },
+ "formel-edb52b6c": {
+  "breite": 270,
+  "hoehe": 49,
+  "tex": "$v_{S,\\varphi} = v_S\\sqrt{n} = \\frac{v_S}{\\sqrt{\\cos\\varphi}}$"
+ }
+}

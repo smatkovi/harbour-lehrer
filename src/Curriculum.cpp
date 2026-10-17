@@ -12,6 +12,12 @@ bool Curriculum::load(const QString &path, QString *error)
     const QVariantMap placement = root.value(QLatin1String("einstufung")).toMap();
     m_items = placement.value(QLatin1String("fragen")).toList();
     m_topics = placement.value(QLatin1String("themen")).toMap();
+    const QVariantMap erkennen = root.value(QLatin1String("erkennen")).toMap();
+    m_fotos = erkennen.value(QLatin1String("fotos")).toList();
+    m_klassen = erkennen.value(QLatin1String("klassen")).toList();
+    m_bedeutungen = erkennen.value(QLatin1String("bedeutungen")).toList();
+    m_erkTitel = erkennen.value(QLatin1String("titel"));
+    m_erkUnter = erkennen.value(QLatin1String("unterzeile"));
     m_title = root.value(QLatin1String("titel"));
     m_subtitle = root.value(QLatin1String("untertitel"));
     // Only a course that carries runnable code gets a Run button and a
