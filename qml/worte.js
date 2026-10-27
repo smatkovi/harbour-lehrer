@@ -284,6 +284,8 @@ var EN = {
     "Belichtung auf der Wolke, Schärfe im Unendlichen — jetzt aufnehmen.": "Exposure on the cloud, focus at infinity — capture now.",
     "Die Aufnahme ist fehlgeschlagen — noch einmal versuchen.": "The capture failed — try again.",
     "Die Kamera startet …": "The camera is starting …",
+    "Aufnahme …": "Capturing …",
+    "Scharfstellen …": "Focusing …",
     "Fokus: unendlich": "Focus: infinity",
     "Fokus: Auto": "Focus: auto",
     "Fokus: laufend": "Focus: continuous",

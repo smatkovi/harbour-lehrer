@@ -70,6 +70,21 @@ Page {
     property bool aufnahmeWartet: false
     readonly property bool unendlich: kamera.cameraStatus === Camera.ActiveStatus
                                       && kamera.focus.focusMode === Camera.FocusInfinity
+    // Eine Aufnahme laeuft; ein zweiter Druck darf keinen zweiten capture()
+    // ausloesen (der meldete "nicht bereit" als Fehlschlag).
+    property bool aufnahmeLaeuft: false
+
+    /* isFocusModeSupported bekommt ein Camera.-Enum, erwartet aber das der
+       CameraFocus-Klasse (gleiche Zahlen). Wirft der Aufruf doch, soll
+       nicht die ganze Bindung sterben -- dann eben Auto, der Weg der
+       Jolla-Kamera. */
+    function kann(modus) {
+        try {
+            return kamera.focus.isFocusModeSupported(modus) === true
+        } catch (e) {
+            return false
+        }
+    }
 
     Camera {
         id: kamera
@@ -87,11 +102,11 @@ Page {
             focusMode: {
                 if (kamera.cameraStatus !== Camera.ActiveStatus)
                     return Camera.FocusContinuous
-                if (kamera.focus.isFocusModeSupported(Camera.FocusInfinity))
+                if (seite.kann(Camera.FocusInfinity))
                     return Camera.FocusInfinity
                 if (seite.tippFokus)
                     return Camera.FocusAuto
-                return kamera.focus.isFocusModeSupported(Camera.FocusContinuous)
+                return seite.kann(Camera.FocusContinuous)
                         ? Camera.FocusContinuous : Camera.FocusAuto
             }
             focusPointMode: seite.tippFokus ? Camera.FocusPointCustom : Camera.FocusPointAuto
@@ -109,17 +124,19 @@ Page {
             if (seite.aufnahmeWartet && kamera.cameraStatus === Camera.ActiveStatus) {
                 seite.aufnahmeWartet = false
                 aufnahmeFrist.stop()
+                seite.aufnahmeLaeuft = true
                 kamera.imageCapture.capture()
             }
         }
 
         imageCapture {
             onImageSaved: {
+                seite.aufnahmeLaeuft = false
                 course.classifyPhoto(path)
                 if (seite.status === PageStatus.Active)
                     pageStack.pop()
             }
-            onCaptureFailed: seite.aufnahmeFehler = true
+            onCaptureFailed: { seite.aufnahmeLaeuft = false; seite.aufnahmeFehler = true }
         }
         onErrorStringChanged: if (errorString !== "") seite.fehler = true
     }
@@ -141,13 +158,13 @@ Page {
        Netz sieht nichts mehr. Der Hinweis auf der Fotoseite sagt "auf die
        Wolke tippen"; hier geschieht es. */
     function scharfstellen(x, y) {
-        if (seite.aufnahmeWartet)
-            return
         /* Der Ring zuerst, und zwar immer: Wer tippt, muss sehen, dass der
            Tipp angekommen ist. */
         seite.zielX = x
         seite.zielY = y
         ringAus.restart()
+        if (seite.aufnahmeWartet || seite.aufnahmeLaeuft)
+            return      // die Aufnahme geht vor
         if (kamera.cameraStatus !== Camera.ActiveStatus)
             return      // noch nicht bereit; der Ring bleibt als Antwort
 
@@ -168,7 +185,10 @@ Page {
         default:  p = n
         }
 
-        // Genau die Reihenfolge von CaptureView.setFocusPoint().
+        // Genau die Reihenfolge von CaptureView.setFocusPoint(). Das eigene
+        // unlock() meldet "Unlocked" -- das ist kein Ergebnis, darum das
+        // Tor vorher schliessen.
+        seite.suche = false
         kamera.unlock()
         seite.tippFokus = true
         kamera.focus.customFocusPoint = p
@@ -188,9 +208,12 @@ Page {
         /* Wie die Jolla-Kamera: Ohne Tipp-Fokus wird vor der Aufnahme
            einmal scharfgestellt und gewartet, bis die Suche vorbei ist --
            ausser die Schaerfe liegt ohnehin fest (Unendlich). */
+        if (seite.aufnahmeLaeuft)
+            return
         seite.aufnahmeFehler = false
         if (kamera.lockStatus === Camera.Searching) {
             seite.aufnahmeWartet = true
+            seite.suche = true
             aufnahmeFrist.restart()
             return
         }
@@ -203,6 +226,7 @@ Page {
             kamera.searchAndLock()
             return
         }
+        seite.aufnahmeLaeuft = true
         kamera.imageCapture.capture()
     }
 
@@ -222,6 +246,12 @@ Page {
             if (seite.suche && seite.tippFokus && seite.ergebnis === "") {
                 seite.ergebnis = "nicht"
                 ringAus.restart()
+                /* Der Fork kennt keinen Fokus-Timeout: Ohne Rueckruf bliebe
+                   lockStatus ewig "Searching". unlock() beendet den Lauf;
+                   die Messflaeche bleibt (resetFocusPoint laeuft nur beim
+                   Wechsel des Punktmodus und beim Kamerastopp). */
+                seite.suche = false
+                kamera.unlock()
             }
         }
     }
@@ -234,8 +264,11 @@ Page {
             if (seite.aufnahmeWartet) {
                 seite.aufnahmeWartet = false
                 seite.suche = false
-                if (kamera.cameraStatus === Camera.ActiveStatus)
+                kamera.unlock()     // sonst schoesse capture() in den laufenden Suchlauf
+                if (kamera.cameraStatus === Camera.ActiveStatus) {
+                    seite.aufnahmeLaeuft = true
                     kamera.imageCapture.capture()
+                }
             }
         }
     }
@@ -301,6 +334,10 @@ Page {
                     return W.w("Die Aufnahme ist fehlgeschlagen — noch einmal versuchen.", course.language)
                 if (kamera.cameraStatus !== Camera.ActiveStatus)
                     return W.w("Die Kamera startet …", course.language)
+                if (seite.aufnahmeLaeuft)
+                    return W.w("Aufnahme …", course.language)
+                if (seite.aufnahmeWartet || kamera.lockStatus === Camera.Searching)
+                    return W.w("Scharfstellen …", course.language)
                 if (seite.ergebnis === "nicht")
                     return W.w("An dieser Stelle fand die Kamera keinen Kontrast — auf eine Kante der Wolke tippen; die Messstelle gilt trotzdem.", course.language)
                 if (seite.ergebnis === "scharf")
@@ -313,7 +350,8 @@ Page {
             color: seite.ergebnis === "nicht" || seite.aufnahmeFehler ? "#ffb14e" : Theme.secondaryColor
         }
         /* Was die Kamera gerade tut, in Worten -- damit ein Fehlschlag
-           benennbar ist. Dazu Sucherquelle und Sensorlage, weil davon die
+           benennbar ist. Dazu das Sensorbild (die Aufloesung, mit der die
+           Fokusregion gerechnet wird) und die Sensorlage, weil davon die
            Drehung des Tipps abhaengt. */
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
@@ -334,7 +372,8 @@ Page {
                      ? W.w(", gesperrt", course.language)
                      : (kamera.lockStatus === Camera.Searching
                         ? W.w(", sucht", course.language) : W.w(", frei", course.language)))
-                  + " · " + sucher.sourceRect.width + "×" + sucher.sourceRect.height
+                  + " · " + kamera.viewfinder.resolution.width + "×"
+                  + kamera.viewfinder.resolution.height
                   + " · " + kamera.orientation + "°"
             font.pixelSize: Theme.fontSizeTiny
             color: Theme.secondaryColor
@@ -342,7 +381,7 @@ Page {
         Button {
             anchors.horizontalCenter: parent.horizontalCenter
             enabled: !seite.fehler && kamera.imageCapture.ready && !seite.aufnahmeWartet
-                     && kamera.cameraStatus === Camera.ActiveStatus
+                     && !seite.aufnahmeLaeuft && kamera.cameraStatus === Camera.ActiveStatus
             text: W.w("Aufnehmen", course.language)
             onClicked: seite.aufnehmen()
         }
