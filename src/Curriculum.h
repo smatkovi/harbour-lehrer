@@ -42,6 +42,24 @@ public:
     QVariantList recognitionMeanings() const { return m_bedeutungen; }
     QString recognitionTitle() const { return text(m_erkTitel); }
     QString recognitionSubtitle() const { return text(m_erkUnter); }
+
+    /* Foto deuten: die Klassen, die das Netz in data/modell.bin kennt --
+       Kennung, Name, Bedeutung fuers Fliegen, die beiden Erklaerungen.
+       Nur der Wolkenkurs fuehrt den Block; wo er fehlt, bleibt die Taste
+       weg. */
+    bool hasClassifier() const { return !m_klfKlassen.isEmpty(); }
+    QVariantList classifierClasses() const { return m_klfKlassen; }
+    QVariantList classifierMeanings() const { return m_klfBedeutungen; }
+    QString classifierTitle() const { return text(m_klfTitel); }
+    QString classifierSubtitle() const { return text(m_klfUnter); }
+    QStringList classifierTips() const;     // wie das Foto gelingt, uebersetzt
+
+    /* Das Glossar: jedes Fachwort mit Definition, Zeichnung und Verweisen,
+       zweisprachig, unuebersetzt wie es im Kurs steht.  Die Kennungen sind
+       dieselben wie in den `begriffe` der Lektionen. */
+    bool hasGlossary() const { return !m_begriffe.isEmpty(); }
+    QVariantList glossary() const { return m_begriffe; }
+    QVariantMap glossaryEntry(const QString &id) const;
     QString title() const { return text(m_title); }
     QString subtitle() const { return text(m_subtitle); }
     bool canRun() const { return m_canRun; }
@@ -61,6 +79,12 @@ private:
     QVariantList m_bedeutungen;
     QVariant m_erkTitel;
     QVariant m_erkUnter;
+    QVariantList m_klfKlassen;
+    QVariantList m_klfBedeutungen;
+    QVariant m_klfTitel;
+    QVariant m_klfUnter;
+    QVariantList m_klfTipps;
+    QVariantList m_begriffe;
     QVariant m_title;
     QVariant m_subtitle;
     bool m_canRun = false;

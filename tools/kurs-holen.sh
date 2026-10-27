@@ -17,5 +17,6 @@ ZIEL=$ROOT/kurse/$KURS
 mkdir -p "$ZIEL/bilder"
 cp "$QUELLE/data/kurs.json" "$ZIEL/kurs.json"
 [ -f "$QUELLE/CREDITS" ] && cp "$QUELLE/CREDITS" "$ZIEL/CREDITS"
+[ -f "$QUELLE/data/modell.bin" ] && cp "$QUELLE/data/modell.bin" "$ZIEL/modell.bin"
 rsync -a --delete "$QUELLE/bilder/" "$ZIEL/bilder/"
 echo "$KURS: $(ls "$ZIEL/bilder" | wc -l) Bilder, kurs.json $(stat -c %s "$ZIEL/kurs.json") B"

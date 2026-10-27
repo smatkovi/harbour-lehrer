@@ -65,8 +65,11 @@ public:
 
     QVariantMap stats() const;
 
-private:
+    /* Wo der Fortschritt liegt.  Course legt den Schluessel fuer den
+       Online-Blick daneben -- derselbe Ordner, dieselbe Lebensdauer. */
     QString path() const;
+
+private:
 
     const Curriculum *m_course;
     QVariantMap m_data;

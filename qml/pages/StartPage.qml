@@ -193,6 +193,27 @@ Page {
                 horizontalAlignment: Text.AlignHCenter
             }
 
+            // Foto deuten, wo der Kurs ein Netz mitbringt: das eigene
+            // Himmelsfoto statt eines aus dem Stapel.
+            Button {
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width - 2 * Theme.horizontalPageMargin
+                visible: course.hasClassifier
+                text: course.classifierTitle
+                onClicked: pageStack.push(Qt.resolvedUrl("FotoPage.qml"))
+            }
+
+            Label {
+                x: Theme.horizontalPageMargin
+                width: parent.width - 2 * Theme.horizontalPageMargin
+                visible: course.hasClassifier
+                text: course.classifierSubtitle
+                font.pixelSize: Theme.fontSizeExtraSmall
+                color: Theme.secondaryColor
+                wrapMode: Text.WordWrap
+                horizontalAlignment: Text.AlignHCenter
+            }
+
             SectionHeader { text: W.w("Kurs", course.language) }
 
             Repeater {

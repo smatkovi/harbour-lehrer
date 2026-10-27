@@ -18,6 +18,13 @@ bool Curriculum::load(const QString &path, QString *error)
     m_bedeutungen = erkennen.value(QLatin1String("bedeutungen")).toList();
     m_erkTitel = erkennen.value(QLatin1String("titel"));
     m_erkUnter = erkennen.value(QLatin1String("unterzeile"));
+    const QVariantMap klf = root.value(QLatin1String("klassifizierer")).toMap();
+    m_klfKlassen = klf.value(QLatin1String("klassen")).toList();
+    m_klfBedeutungen = klf.value(QLatin1String("bedeutungen")).toList();
+    m_klfTitel = klf.value(QLatin1String("titel"));
+    m_klfUnter = klf.value(QLatin1String("unterzeile"));
+    m_klfTipps = klf.value(QLatin1String("tipps")).toList();
+    m_begriffe = root.value(QLatin1String("begriffe")).toList();
     m_title = root.value(QLatin1String("titel"));
     m_subtitle = root.value(QLatin1String("untertitel"));
     // Only a course that carries runnable code gets a Run button and a
@@ -115,4 +122,22 @@ int Curriculum::highestChapterLevel() const
     for (const QVariant &chapterValue : m_chapters)
         highest = qMax(highest, chapterValue.toMap().value(QLatin1String("stufe")).toInt());
     return highest;
+}
+
+QStringList Curriculum::classifierTips() const
+{
+    QStringList out;
+    for (int i = 0; i < m_klfTipps.size(); ++i)
+        out << text(m_klfTipps.at(i));
+    return out;
+}
+
+QVariantMap Curriculum::glossaryEntry(const QString &id) const
+{
+    for (int i = 0; i < m_begriffe.size(); ++i) {
+        const QVariantMap eintrag = m_begriffe.at(i).toMap();
+        if (eintrag.value(QLatin1String("id")).toString() == id)
+            return eintrag;
+    }
+    return QVariantMap();
 }

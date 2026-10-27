@@ -46,6 +46,7 @@ int main(int argc, char **argv)
 
     Plotter *plotter = new Plotter();          // die Ansicht uebernimmt ihn
     Course course(&curriculum, plotter);
+    course.loadClassifier(QLatin1String(APP_SHARE_DIR) + QLatin1String("/data/modell.bin"));
 
     QScopedPointer<QQuickView> view(SailfishApp::createView());
     view->engine()->addImageProvider(QLatin1String("plot"), plotter);

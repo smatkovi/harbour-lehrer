@@ -1,5 +1,5 @@
 Name:       harbour-segelflug
-Version:    1.16.0
+Version:    1.17.0
 Release:    1
 Summary:    Gliding theory with a focus on reading clouds
 License:    GPLv3+
@@ -13,6 +13,7 @@ BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Gui)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
+BuildRequires:  pkgconfig(Qt5Network)
 
 %description
 Segelflug ist ein Kurs zum Mitmachen: kurze Lektionen, ein Beispiel, das
@@ -50,6 +51,19 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Tue Oct 27 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.17.0-1
+- Foto deuten: ein eigenes Himmelsfoto (Galerie oder Kamera) wird im
+  Geraet von einem kleinen Faltungsnetz (MobileNetV2, 160 px, 14 Klassen)
+  eingeordnet, mit Bedeutung fuers Segelfliegen; erst der eigene Tipp,
+  dann die drei wahrscheinlichsten Klassen
+- Dazu auf Wunsch der zweite Blick von Claude (Anthropic-API, eigener
+  Schluessel); beide Urteile bleiben nebeneinander sichtbar
+- Sechs Hinweise, wie das Foto gelingt (Sonne im Ruecken, Basis im Bild)
+- Neue Lektion: Tagesverlaeufe -- wie ein Flugtag laufen kann und woran
+  man es am Morgen an den Wolken sieht
+- Vier weitere Klassen mit Bedeutung: Altostratus, Nimbostratus,
+  Cirrocumulus, Kondensstreifen
+
 * Tue Oct 27 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.16.0-1
 - Erkennungsmodus noch einmal Bild fuer Bild durchgesehen: 19 Bilder
   raus, drei in die richtige Klasse, 134 bleiben

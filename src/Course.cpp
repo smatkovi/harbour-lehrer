@@ -8,6 +8,9 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QProcess>
+#include <QPair>
+#include <QThread>
+#include <QUrl>
 #include <QStandardPaths>
 
 namespace {
@@ -56,8 +59,18 @@ Course::Course(Curriculum *course, Plotter *plotter, QObject *parent)
     , m_plotter(plotter)
     , m_runner(new Runner(this))
     , m_engine(course)
+    , m_online(new OnlineDeuter(this))
 {
     m_engine.load();
+    connect(m_online, SIGNAL(fertig(QVariantMap)), this, SLOT(onOnlineDone(QVariantMap)));
+    /* Der Schluessel fuer den Online-Blick: aus der eigenen Datei neben dem
+       Fortschritt, sonst aus ~/.profile, wo er auf den Nokias schon steht.
+       Er wird nie protokolliert und geht nur in die eine Anfrage. */
+    QFile schluessel(schluesselPfad());
+    if (schluessel.open(QIODevice::ReadOnly))
+        m_schluessel = QString::fromUtf8(schluessel.readAll()).trimmed();
+    if (m_schluessel.isEmpty())
+        m_schluessel = OnlineDeuter::schluesselAusProfil();
     // Die Sprache aus dem Fortschritt zurueckholen - sonst faengt jeder Start
     // wieder auf Deutsch an, auch wenn der Leser umgestellt hat.
     const QString gemerkt = m_engine.savedLanguage();
@@ -422,6 +435,22 @@ QVariantMap Course::lesson() const
     out.insert(QLatin1String("text"),
                m_course->text(source.value(QLatin1String("text"))));
     out.insert(QLatin1String("bild"), source.value(QLatin1String("bild")));
+
+    /* Die Fachwoerter der Lektion, soweit das Glossar sie kennt: [{id,
+       wort}], damit die Seite sie unten als Verweise anbieten kann.  Die
+       Kennungen ohne Glossareintrag bleiben dem Wiederholungsplan (Engine)
+       vorbehalten und tauchen hier nicht auf. */
+    QVariantList begriffe;
+    for (const QVariant &kennung : source.value(QLatin1String("begriffe")).toList()) {
+        const QVariantMap eintrag = m_course->glossaryEntry(kennung.toString());
+        if (eintrag.isEmpty())
+            continue;
+        QVariantMap b;
+        b.insert(QLatin1String("id"), kennung.toString());
+        b.insert(QLatin1String("wort"), m_course->text(eintrag.value(QLatin1String("wort"))));
+        begriffe.append(b);
+    }
+    out.insert(QLatin1String("begriffe"), begriffe);
 
     /* Die Formeln einer Lektion: die Codezeile, wie sie im Beispiel steht,
        und daneben dieselbe Sache gesetzt.  Code, TeX und Bildname sind in
@@ -966,4 +995,364 @@ void Course::keepCode(const QString &text)
 {
     if (!m_lessonId.isEmpty() && m_index >= 0)
         m_engine.saveSolution(m_lessonId, m_index, text);
+}
+
+namespace {
+
+/* Das Netz rechnet eine Sekunde oder laenger (auf der N950 mehrere); das
+   gehoert nicht in den Oberflaechenfaden.  QtConcurrent gaebe es auf beiden
+   Plattformen, aber als eigenes Modul -- ein QThread tut es auch.  Der
+   Faden haelt nur einen Zeiger auf das Netz, das nach dem Laden
+   unveraenderlich ist. */
+class BewertungsFaden : public QThread
+{
+public:
+    BewertungsFaden(const Klassifizierer *netz, const QString &pfad, int lauf,
+                    QObject *parent)
+        : QThread(parent), lauf(lauf), m_netz(netz), m_pfad(pfad) {}
+
+    void run()
+    {
+        const QImage bild = Klassifizierer::bildLaden(m_pfad, 640);
+        if (bild.isNull()) {
+            fehler = QLatin1String("laden");
+            return;
+        }
+        anteile = m_netz->bewerten(bild);
+        if (anteile.isEmpty())
+            fehler = QLatin1String("rechnen");
+    }
+
+    const int lauf;
+    QVector<float> anteile;
+    QString fehler;
+
+private:
+    const Klassifizierer *m_netz;
+    const QString m_pfad;
+};
+
+}
+
+Course::~Course()
+{
+    /* Ein noch rechnender Faden darf nicht unter dem Netz weg sterben. */
+    const QObjectList kinder = children();
+    for (int i = 0; i < kinder.size(); ++i) {
+        QThread *faden = qobject_cast<QThread *>(kinder.at(i));
+        if (faden)
+            faden->wait();
+    }
+}
+
+void Course::loadClassifier(const QString &pfad)
+{
+    QString fehler;
+    if (!m_klassifizierer.laden(pfad, &fehler)) {
+        qWarning("Kein Wolkennetz: %s", qPrintable(fehler));
+        return;
+    }
+    /* Jede Kennung des Netzes braucht ihren Kurs-Eintrag, sonst stuende
+       im Ergebnis eine Kennung ohne Namen und Bedeutung. */
+    const QStringList klassen = m_klassifizierer.klassen();
+    for (int i = 0; i < klassen.size(); ++i)
+        if (classEntry(klassen.at(i)).isEmpty())
+            qWarning("Netzklasse ohne Kurs-Eintrag: %s", qPrintable(klassen.at(i)));
+    emit changed();
+}
+
+bool Course::hasClassifier() const
+{
+    return m_klassifizierer.bereit() && m_course->hasClassifier();
+}
+
+bool Course::onlineAvailable() const
+{
+    return OnlineDeuter::verfuegbar();
+}
+
+QString Course::zweisprachig(const char *de, const char *en) const
+{
+    return QString::fromUtf8(m_course->language() == QLatin1String("en") ? en : de);
+}
+
+QString Course::schluesselPfad() const
+{
+    return QFileInfo(m_engine.path()).absolutePath() + QLatin1String("/schluessel");
+}
+
+/* Der Kurs-Eintrag einer Netzklasse, uebersetzt und um den Bedeutungstext
+   ergaenzt; leer, wenn der Kurs die Kennung nicht kennt. */
+QVariantMap Course::classEntry(const QString &id) const
+{
+    if (id.isEmpty())
+        return QVariantMap();
+    for (const QVariant &value : m_course->classifierClasses()) {
+        const QVariantMap k = value.toMap();
+        if (k.value(QLatin1String("id")).toString() != id)
+            continue;
+        QVariantMap out;
+        out.insert(QLatin1String("id"), id);
+        out.insert(QLatin1String("name"), m_course->text(k.value(QLatin1String("name"))));
+        out.insert(QLatin1String("erkennen"), m_course->text(k.value(QLatin1String("erkennen"))));
+        out.insert(QLatin1String("bedeutet"), m_course->text(k.value(QLatin1String("bedeutet"))));
+        const QString bedeutung = k.value(QLatin1String("bedeutung")).toString();
+        out.insert(QLatin1String("bedeutung"), bedeutung);
+        out.insert(QLatin1String("sinn"), QString());
+        for (const QVariant &bvalue : m_course->classifierMeanings()) {
+            const QVariantMap b = bvalue.toMap();
+            if (b.value(QLatin1String("id")).toString() == bedeutung)
+                out.insert(QLatin1String("sinn"), m_course->text(b.value(QLatin1String("text"))));
+        }
+        return out;
+    }
+    return QVariantMap();
+}
+
+QVariantList Course::classifierClasses() const
+{
+    QVariantList out;
+    for (const QVariant &value : m_course->classifierClasses()) {
+        const QVariantMap k = value.toMap();
+        QVariantMap eintrag;
+        eintrag.insert(QLatin1String("id"), k.value(QLatin1String("id")));
+        eintrag.insert(QLatin1String("name"), m_course->text(k.value(QLatin1String("name"))));
+        out.append(eintrag);
+    }
+    return out;
+}
+
+QVariantMap Course::photo() const
+{
+    QVariantMap out;
+    out.insert(QLatin1String("leer"), m_fotoPfad.isEmpty());
+    out.insert(QLatin1String("pfad"), m_fotoPfad);
+    out.insert(QLatin1String("laeuft"), m_fotoLaeuft);
+    out.insert(QLatin1String("fertig"), m_fotoFertig);
+    QString fehler;
+    if (m_fotoFehler == QLatin1String("laden"))
+        fehler = zweisprachig("Das Bild ließ sich nicht laden.",
+                              "The picture could not be loaded.");
+    else if (m_fotoFehler == QLatin1String("rechnen"))
+        fehler = zweisprachig("Das Netz konnte das Bild nicht bewerten.",
+                              "The network could not rate the picture.");
+    out.insert(QLatin1String("fehler"), fehler);
+    out.insert(QLatin1String("geraten"), m_fotoGeraten);
+    out.insert(QLatin1String("geratenName"),
+               m_fotoGeraten == QLatin1String("?")
+               ? zweisprachig("Weiß nicht", "Don't know")
+               : classEntry(m_fotoGeraten).value(QLatin1String("name")).toString());
+
+    /* Die drei wahrscheinlichsten Klassen, mit allem, was die Seite dazu
+       sagen will.  Vierzehn Zahlen: Auswahlsortierung reicht. */
+    const QStringList klassen = m_klassifizierer.klassen();
+    QVector<int> reihe;
+    for (int i = 0; i < m_fotoAnteile.size() && i < klassen.size(); ++i)
+        reihe.append(i);
+    for (int i = 0; i < reihe.size(); ++i)
+        for (int j = i + 1; j < reihe.size(); ++j)
+            if (m_fotoAnteile.at(reihe.at(j)) > m_fotoAnteile.at(reihe.at(i)))
+                qSwap(reihe[i], reihe[j]);
+    QVariantList ergebnis;
+    for (int n = 0; n < reihe.size() && n < 3; ++n) {
+        const int i = reihe.at(n);
+        QVariantMap eintrag = classEntry(klassen.at(i));
+        if (eintrag.isEmpty()) {
+            eintrag.insert(QLatin1String("id"), klassen.at(i));
+            eintrag.insert(QLatin1String("name"), klassen.at(i));
+        }
+        eintrag.insert(QLatin1String("anteil"), double(m_fotoAnteile.at(i)));
+        eintrag.insert(QLatin1String("prozent"), int(m_fotoAnteile.at(i) * 100 + 0.5f));
+        ergebnis.append(eintrag);
+    }
+    out.insert(QLatin1String("ergebnis"), ergebnis);
+    const QString erste = ergebnis.isEmpty()
+            ? QString() : ergebnis.first().toMap().value(QLatin1String("id")).toString();
+    out.insert(QLatin1String("treffer"),
+               !erste.isEmpty() && erste == m_fotoGeraten);
+
+    /* Der Online-Blick, ergaenzt um Name und Bedeutung aus dem Kurs. */
+    QVariantMap online = m_fotoOnline;
+    const QString oklasse = online.value(QLatin1String("klasse")).toString();
+    const QVariantMap oeintrag = classEntry(oklasse);
+    if (!oeintrag.isEmpty()) {
+        online.insert(QLatin1String("name"), oeintrag.value(QLatin1String("name")));
+        online.insert(QLatin1String("sinn"), oeintrag.value(QLatin1String("sinn")));
+        online.insert(QLatin1String("bedeutet"), oeintrag.value(QLatin1String("bedeutet")));
+    }
+    online.insert(QLatin1String("einig"), !oeintrag.isEmpty() && oklasse == erste);
+    if (!online.contains(QLatin1String("laeuft")))
+        online.insert(QLatin1String("laeuft"), false);
+    if (!online.contains(QLatin1String("fertig")))
+        online.insert(QLatin1String("fertig"), false);
+    out.insert(QLatin1String("online"), online);
+    return out;
+}
+
+void Course::classifyPhoto(const QString &pfadRoh)
+{
+    QString pfad = pfadRoh;
+    if (pfad.startsWith(QLatin1String("file://")))
+        pfad = QUrl(pfad).toLocalFile();
+    m_online->abbrechen();
+    ++m_fotoLauf;
+    m_fotoPfad = pfad;
+    m_fotoLaeuft = true;
+    m_fotoFertig = false;
+    m_fotoFehler.clear();
+    m_fotoGeraten.clear();
+    m_fotoAnteile.clear();
+    m_fotoOnline.clear();
+    if (!m_klassifizierer.bereit()) {
+        m_fotoLaeuft = false;
+        m_fotoFehler = QLatin1String("rechnen");
+        emit photoChanged();
+        return;
+    }
+    BewertungsFaden *faden = new BewertungsFaden(&m_klassifizierer, pfad, m_fotoLauf, this);
+    connect(faden, SIGNAL(finished()), this, SLOT(onPhotoClassified()));
+    faden->start();
+    emit photoChanged();
+}
+
+void Course::onPhotoClassified()
+{
+    /* Nur ein BewertungsFaden ist mit diesem Slot verbunden; qobject_cast
+       geht nicht, die Klasse hat kein Q_OBJECT. */
+    BewertungsFaden *faden = static_cast<BewertungsFaden *>(sender());
+    if (!faden)
+        return;
+    faden->deleteLater();
+    if (faden->lauf != m_fotoLauf)
+        return;                 // ein aelteres Foto, laengst ersetzt
+    m_fotoLaeuft = false;
+    m_fotoFertig = faden->fehler.isEmpty();
+    m_fotoFehler = faden->fehler;
+    m_fotoAnteile = faden->anteile;
+    emit photoChanged();
+}
+
+void Course::guessPhoto(const QString &klasseId)
+{
+    if (m_fotoPfad.isEmpty())
+        return;
+    m_fotoGeraten = klasseId.isEmpty() ? QString(QLatin1String("?")) : klasseId;
+    emit photoChanged();
+}
+
+void Course::askOnline()
+{
+    if (m_fotoPfad.isEmpty() || m_online->laeuft())
+        return;
+    m_fotoOnline.clear();
+    if (m_schluessel.isEmpty()) {
+        m_fotoOnline.insert(QLatin1String("ok"), false);
+        m_fotoOnline.insert(QLatin1String("fertig"), true);
+        m_fotoOnline.insert(QLatin1String("fehler"),
+                            zweisprachig("Kein Schlüssel eingetragen.", "No key entered."));
+        emit photoChanged();
+        return;
+    }
+    m_fotoOnline.insert(QLatin1String("laeuft"), true);
+    m_online->anfragen(m_fotoPfad, classifierClasses(), m_course->language(), m_schluessel);
+    emit photoChanged();
+}
+
+void Course::onOnlineDone(const QVariantMap &antwort)
+{
+    m_fotoOnline = antwort;
+    m_fotoOnline.insert(QLatin1String("laeuft"), false);
+    m_fotoOnline.insert(QLatin1String("fertig"), true);
+    emit photoChanged();
+}
+
+void Course::setApiKey(const QString &schluesselRoh)
+{
+    const QString schluessel = schluesselRoh.trimmed();
+    m_schluessel = schluessel;
+    const QString pfad = schluesselPfad();
+    if (schluessel.isEmpty()) {
+        QFile::remove(pfad);
+    } else {
+        QDir().mkpath(QFileInfo(pfad).absolutePath());
+        QFile datei(pfad);
+        if (datei.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
+            datei.write(schluessel.toUtf8());
+            datei.write("\n");
+            datei.close();
+            datei.setPermissions(QFile::ReadOwner | QFile::WriteOwner);
+        }
+    }
+    emit photoChanged();
+}
+
+void Course::clearPhoto()
+{
+    m_online->abbrechen();
+    ++m_fotoLauf;
+    m_fotoPfad.clear();
+    m_fotoLaeuft = false;
+    m_fotoFertig = false;
+    m_fotoFehler.clear();
+    m_fotoGeraten.clear();
+    m_fotoAnteile.clear();
+    m_fotoOnline.clear();
+    emit photoChanged();
+}
+
+/* Das Glossar fuer die Liste: nur Kennung und Wort, nach dem uebersetzten
+   Wort sortiert (Umlaute wie ihre Grundbuchstaben, damit "Überentwicklung"
+   bei U steht und nicht hinter Z). */
+QVariantList Course::glossary() const
+{
+    QList<QPair<QString, QVariantMap> > sortiert;
+    for (const QVariant &value : m_course->glossary()) {
+        const QVariantMap eintrag = value.toMap();
+        QVariantMap b;
+        b.insert(QLatin1String("id"), eintrag.value(QLatin1String("id")));
+        const QString wort = m_course->text(eintrag.value(QLatin1String("wort")));
+        b.insert(QLatin1String("wort"), wort);
+        QString schluessel = wort.toLower();
+        schluessel.replace(QString::fromUtf8("\u00e4"), QLatin1String("a"));
+        schluessel.replace(QString::fromUtf8("\u00f6"), QLatin1String("o"));
+        schluessel.replace(QString::fromUtf8("\u00fc"), QLatin1String("u"));
+        schluessel.replace(QString::fromUtf8("\u00df"), QLatin1String("ss"));
+        sortiert.append(qMakePair(schluessel, b));
+    }
+    for (int i = 0; i < sortiert.size(); ++i)
+        for (int j = i + 1; j < sortiert.size(); ++j)
+            if (sortiert.at(j).first < sortiert.at(i).first)
+                sortiert.swap(i, j);
+    QVariantList out;
+    for (int i = 0; i < sortiert.size(); ++i)
+        out.append(sortiert.at(i).second);
+    return out;
+}
+
+QVariantMap Course::glossaryEntry(const QString &id) const
+{
+    QVariantMap out;
+    const QVariantMap eintrag = m_course->glossaryEntry(id);
+    if (eintrag.isEmpty()) {
+        out.insert(QLatin1String("leer"), true);
+        return out;
+    }
+    out.insert(QLatin1String("leer"), false);
+    out.insert(QLatin1String("id"), id);
+    out.insert(QLatin1String("wort"), m_course->text(eintrag.value(QLatin1String("wort"))));
+    out.insert(QLatin1String("definition"),
+               m_course->text(eintrag.value(QLatin1String("definition"))));
+    out.insert(QLatin1String("bild"), eintrag.value(QLatin1String("bild")));
+    QVariantList siehe;
+    for (const QVariant &value : eintrag.value(QLatin1String("siehe")).toList()) {
+        const QVariantMap ziel = m_course->glossaryEntry(value.toString());
+        if (ziel.isEmpty())
+            continue;
+        QVariantMap s;
+        s.insert(QLatin1String("id"), value.toString());
+        s.insert(QLatin1String("wort"), m_course->text(ziel.value(QLatin1String("wort"))));
+        siehe.append(s);
+    }
+    out.insert(QLatin1String("siehe"), siehe);
+    return out;
 }

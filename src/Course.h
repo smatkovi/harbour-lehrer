@@ -5,10 +5,13 @@
 #include <QStringList>
 #include <QVariantList>
 #include <QVariantMap>
+#include <QVector>
 
 #include "Curriculum.h"
 #include "Engine.h"
 #include "Erkennen.h"
+#include "Klassifizierer.h"
+#include "OnlineDeuter.h"
 #include "Placement.h"
 
 class Plotter;
@@ -46,6 +49,22 @@ class Course : public QObject
     Q_PROPERTY(bool recognitionDone READ recognitionDone NOTIFY recognitionChanged)
     Q_PROPERTY(QVariantMap recognitionResult READ recognitionResult NOTIFY recognitionChanged)
 
+    /* Foto deuten: das eigene Netz (data/modell.bin) immer, Claude dazu,
+       wenn ein Weg ins Netz und ein Schluessel da sind. */
+    Q_PROPERTY(bool hasClassifier READ hasClassifier NOTIFY changed)
+    Q_PROPERTY(QString classifierTitle READ classifierTitle NOTIFY changed)
+    Q_PROPERTY(QString classifierSubtitle READ classifierSubtitle NOTIFY changed)
+    Q_PROPERTY(QStringList classifierTips READ classifierTips NOTIFY changed)
+    Q_PROPERTY(QVariantList classifierClasses READ classifierClasses NOTIFY changed)
+    Q_PROPERTY(bool onlineAvailable READ onlineAvailable NOTIFY changed)
+    Q_PROPERTY(bool hasApiKey READ hasApiKey NOTIFY photoChanged)
+    Q_PROPERTY(QVariantMap photo READ photo NOTIFY photoChanged)
+
+    /* Das Glossar, uebersetzt und nach Wort sortiert: [{id, wort}].  Den
+       ganzen Eintrag holt glossaryEntry(id). */
+    Q_PROPERTY(bool hasGlossary READ hasGlossary NOTIFY changed)
+    Q_PROPERTY(QVariantList glossary READ glossary NOTIFY changed)
+
     Q_PROPERTY(QVariantMap lesson READ lesson NOTIFY lessonChanged)
     Q_PROPERTY(QVariantMap exercise READ exercise NOTIFY lessonChanged)
 
@@ -59,6 +78,7 @@ class Course : public QObject
 
 public:
     Course(Curriculum *course, Plotter *plotter, QObject *parent = nullptr);
+    ~Course();
 
     int level() const { return m_engine.level(); }
     bool needsPlacement() const { return m_engine.needsPlacement(); }
@@ -107,6 +127,44 @@ public:
     Q_INVOKABLE void answerRecognition(int chosen);
     Q_INVOKABLE void nextRecognition();
 
+    /* Foto deuten.  loadClassifier() ruft main.cpp einmal mit dem Pfad
+       der Modelldatei; ohne Datei oder ohne Klassentafel im Kurs bleibt
+       hasClassifier falsch und die Taste weg.
+
+       Ablauf auf der Seite: classifyPhoto(pfad) gibt das Foto in einen
+       Arbeitsfaden (photo.laeuft), der Leser tippt derweil seinen eigenen
+       Tipp (guessPhoto), und erst mit Tipp UND fertigem Netz zeigt die
+       Seite photo.ergebnis -- die drei wahrscheinlichsten Klassen mit
+       Anteil, Name, Bedeutung fuers Fliegen.  askOnline() holt dazu den
+       zweiten Blick von Claude in photo.online; beide bleiben sichtbar.
+
+       `photo`: leer, pfad, laeuft, fertig, fehler, geraten ("" = noch
+       nicht, "?" = weiss nicht), geratenName, ergebnis [{id, name,
+       anteil, prozent, bedeutung, sinn, erkennen, bedeutet}], treffer,
+       online {laeuft, fertig, ok, klasse, name, sinn, bedeutet,
+       sicherheit, begruendung, fehler, einig}. */
+    void loadClassifier(const QString &pfad);
+    bool hasClassifier() const;
+    QString classifierTitle() const { return m_course->classifierTitle(); }
+    QString classifierSubtitle() const { return m_course->classifierSubtitle(); }
+    QStringList classifierTips() const { return m_course->classifierTips(); }
+    QVariantList classifierClasses() const;
+    bool onlineAvailable() const;
+    bool hasApiKey() const { return !m_schluessel.isEmpty(); }
+    QVariantMap photo() const;
+    Q_INVOKABLE void classifyPhoto(const QString &pfad);
+    Q_INVOKABLE void guessPhoto(const QString &klasseId);
+    Q_INVOKABLE void askOnline();
+    Q_INVOKABLE void setApiKey(const QString &schluessel);
+    Q_INVOKABLE void clearPhoto();
+
+    /* Ein Glossareintrag: {leer, id, wort, definition, bild, siehe:[{id,
+       wort}]}; definition im selben Markdown wie die Lektionstexte
+       (Style.rich in QML setzt es). */
+    bool hasGlossary() const { return m_course->hasGlossary(); }
+    QVariantList glossary() const;
+    Q_INVOKABLE QVariantMap glossaryEntry(const QString &id) const;
+
     Q_INVOKABLE void startLesson(const QString &lessonId);
     Q_INVOKABLE void toExercises();
     Q_INVOKABLE void nextExercise();
@@ -153,12 +211,15 @@ signals:
     void changed();
     void placementChanged();
     void recognitionChanged();
+    void photoChanged();
     void lessonChanged();
     void runChanged();
     void cardChanged();
 
 private slots:
     void onRunFinished();
+    void onPhotoClassified();
+    void onOnlineDone(const QVariantMap &antwort);
 
 private:
     void resetExercise();
@@ -174,6 +235,23 @@ private:
     Engine m_engine;
     Placement m_placement;
     Erkennen m_erkennen;
+
+    QVariantMap classEntry(const QString &id) const;
+    QString schluesselPfad() const;
+    QString zweisprachig(const char *de, const char *en) const;
+
+    Klassifizierer m_klassifizierer;
+    OnlineDeuter *m_online;
+    int m_fotoLauf = 0;            // zaehlt die Fotos, damit ein spaeter
+                                   // fertiger Faden kein neueres ueberschreibt
+    QString m_fotoPfad;
+    bool m_fotoLaeuft = false;
+    bool m_fotoFertig = false;
+    QString m_fotoFehler;          // "" | "laden" | "rechnen"
+    QString m_fotoGeraten;
+    QVector<float> m_fotoAnteile;
+    QVariantMap m_fotoOnline;
+    QString m_schluessel;
 
     QVariantMap m_placementResult;
 

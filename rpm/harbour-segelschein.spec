@@ -13,6 +13,7 @@ BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Gui)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
+BuildRequires:  pkgconfig(Qt5Network)
 
 %description
 Segelschein ist ein Kurs zum Mitmachen: kurze Lektionen, ein Beispiel, das

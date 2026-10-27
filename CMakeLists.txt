@@ -18,7 +18,7 @@ set(APP harbour-${KURS})
 set(SHAREDIR ${CMAKE_INSTALL_PREFIX}/share/${APP})
 set(LIBEXECDIR ${CMAKE_INSTALL_PREFIX}/libexec/${APP})
 
-find_package(Qt5 REQUIRED COMPONENTS Core Gui Qml Quick)
+find_package(Qt5 REQUIRED COMPONENTS Core Gui Qml Quick Network)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(SAILFISHAPP REQUIRED sailfishapp)
 
@@ -41,7 +41,7 @@ target_compile_definitions(${APP} PRIVATE
 )
 
 target_link_libraries(${APP}
-    Qt5::Core Qt5::Gui Qt5::Qml Qt5::Quick ${SAILFISHAPP_LIBRARIES}
+    Qt5::Core Qt5::Gui Qt5::Qml Qt5::Quick Qt5::Network ${SAILFISHAPP_LIBRARIES}
 )
 
 # --- crun: der C-Deuter ----------------------------------------------------
@@ -84,6 +84,11 @@ install(TARGETS crun rrun RUNTIME DESTINATION libexec/${APP})
 install(PROGRAMS interp/crunxx DESTINATION libexec/${APP})
 install(DIRECTORY qml/ DESTINATION share/${APP}/qml)
 install(FILES kurse/${KURS}/kurs.json DESTINATION share/${APP}/data)
+# Das Wolkennetz fuer "Foto deuten" (segelflug/tools/MODELL.md); nur der
+# Wolkenkurs hat eines.
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/kurse/${KURS}/modell.bin)
+    install(FILES kurse/${KURS}/modell.bin DESTINATION share/${APP}/data)
+endif()
 # Wo die Fotos herkommen. CC BY und CC BY-SA verlangen die Nennung; in der
 # App steht sie unter jedem Bild, hier noch einmal zum Nachlesen.
 if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/kurse/${KURS}/CREDITS)
