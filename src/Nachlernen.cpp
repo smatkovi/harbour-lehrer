@@ -416,40 +416,62 @@ bool Nachlernen::kopfAktiv() const
    Laenge der gemerkten skaliert, dann stimmen die Logits am Anfang, und die
    Lernrate passt fuer jedes Bild gleich.  Start bei der ausgelieferten
    Schicht, Zug zurueck zu ihr -- beides gegen das Auswendiglernen weniger
-   Beispiele.  Liest nur; darf in einem Arbeitsfaden laufen. */
-bool Nachlernen::kopfNachtrainieren(QVector<float> *gewichte, QVector<float> *bias) const
+   Beispiele.  Rechnet nur auf dem Lernstoff, der eine Abschrift ist --
+   darf also in einem Arbeitsfaden laufen, waehrend das Gedaechtnis sich
+   aendert. */
+Nachlernen::Lernstoff Nachlernen::lernstoff() const
 {
+    Lernstoff s;
     if (!kopfLohnt())
-        return false;
-    const int aus = d->klassen.size();
-    const int ein = d->abdruckGroesse;
-
-    std::vector<const float *> x;
-    std::vector<int> y;
+        return s;
+    s.aus = d->klassen.size();
+    s.ein = d->abdruckGroesse;
+    s.stand = d->stand;
     double laengen = 0.0;
     for (int i = 0; i < d->eintraege.size(); ++i) {
         const Eintrag &e = d->eintraege.at(i);
         const int k = d->klassen.indexOf(e.klasse);
-        if (k < 0 || e.abdruck.size() != ein)
+        if (k < 0 || e.abdruck.size() != s.ein)
             continue;
-        x.push_back(e.abdruck.constData());
-        y.push_back(k);
+        s.x += e.abdruck;
+        s.y.append(k);
         laengen += e.laenge;
     }
-    const int n = (int)x.size();
-    if (n < 2)
+    s.n = s.y.size();
+    s.skala = s.n > 0 ? (float)(laengen / s.n) : 0.f;
+    s.kopf0 = d->kopf0;
+    s.bias0 = d->bias0;
+    return s;
+}
+
+bool Nachlernen::kopfNachtrainieren(QVector<float> *gewichte, QVector<float> *bias) const
+{
+    return kopfNachtrainieren(lernstoff(), gewichte, bias);
+}
+
+bool Nachlernen::kopfNachtrainieren(const Lernstoff &s, QVector<float> *gewichte, QVector<float> *bias)
+{
+    const int aus = s.aus;
+    const int ein = s.ein;
+    const int n = s.n;
+    if (n < 2 || aus <= 0 || ein <= 0 || !(s.skala > 0.f))
         return false;
-    const float skala = (float)(laengen / n);
-    if (!(skala > 0.f))
+    if (s.x.size() != n * ein || s.y.size() != n
+            || s.kopf0.size() != aus * ein || s.bias0.size() != aus)
         return false;
+    const float skala = s.skala;
+    std::vector<const float *> x((size_t)n);
+    for (int i = 0; i < n; ++i)
+        x[(size_t)i] = s.x.constData() + (size_t)i * ein;
+    const QVector<int> &y = s.y;
 
     std::vector<float> w0((size_t)aus * ein), w((size_t)aus * ein);
     for (size_t j = 0; j < w0.size(); ++j)
-        w0[j] = d->kopf0.at((int)j) * skala;
+        w0[j] = s.kopf0.at((int)j) * skala;
     w = w0;
     std::vector<float> b0(aus), b(aus);
     for (int o = 0; o < aus; ++o)
-        b0[(size_t)o] = b[(size_t)o] = d->bias0.at(o);
+        b0[(size_t)o] = b[(size_t)o] = s.bias0.at(o);
 
     std::vector<float> p((size_t)n * aus);
     std::vector<float> gw((size_t)aus * ein), gb((size_t)aus);
@@ -484,7 +506,7 @@ bool Nachlernen::kopfNachtrainieren(QVector<float> *gewichte, QVector<float> *bi
         for (int i = 0; i < n; ++i) {
             const float *pi = &p[(size_t)i * aus];
             for (int o = 0; o < aus; ++o) {
-                const float f = (pi[o] - (y[(size_t)i] == o ? 1.f : 0.f)) / (float)n;
+                const float f = (pi[o] - (y.at(i) == o ? 1.f : 0.f)) / (float)n;
                 if (f == 0.f)
                     continue;
                 gb[(size_t)o] += f;
@@ -530,7 +552,7 @@ namespace {
 /* Ein Eintrag aus dem Strom.  Gibt false, wenn der Strom nicht mehr
    hergibt, was das Format verspricht -- dann ist die Datei kaputt und wird
    nicht zur Haelfte uebernommen. */
-bool eintragLesen(QDataStream &strom, Eintrag *e, int abdruckGroesse)
+bool eintragLesen(QDataStream &strom, Eintrag *e, int abdruckGroesse, int fassung)
 {
     quint16 kennungLaenge = 0;
     strom >> kennungLaenge;
@@ -562,9 +584,17 @@ bool eintragLesen(QDataStream &strom, Eintrag *e, int abdruckGroesse)
     if (strom.readRawData(roh.data(), abdruckGroesse) != abdruckGroesse)
         return false;
     float massstab = 0.f;
-    strom >> massstab >> e->laenge;
+    strom >> massstab;
+    if (fassung >= 2)
+        strom >> e->laenge;
     if (strom.status() != QDataStream::Ok)
         return false;
+    /* Fassung 1 (Segelflug 2.11, Sailfish 1.18.x) kannte die Laenge noch
+       nicht, und ohne sie taugt der Abdruck nicht zum Nachtrainieren.
+       Also keinen uebernehmen: brauchtNeurechnung() holt beides aus dem
+       gespeicherten Bild nach, wie bei einem neuen Netz. */
+    if (fassung < 2)
+        return true;
     e->abdruck.resize(abdruckGroesse);
     const signed char *q = reinterpret_cast<const signed char *>(roh.constData());
     for (int j = 0; j < abdruckGroesse; ++j)
@@ -651,7 +681,8 @@ bool Nachlernen::datenLesen(const QString &pfad, QList<Eintrag> *ziel,
     if (!kopfWert.isValid())
         return fehlschlag(fehler, QString::fromUtf8("Kopf unlesbar: ") + jsonFehler);
     const QVariantMap kopf = kopfWert.toMap();
-    if (kopf.value(QLatin1String("format")).toInt() != 1)
+    const int fassung = kopf.value(QLatin1String("format")).toInt();
+    if (fassung != 1 && fassung != 2)
         return fehlschlag(fehler, QString::fromUtf8("unbekannte Fassung des Formats"));
     *fingerabdruck = kopf.value(QLatin1String("modell")).toString();
     *abdruckGroesse = kopf.value(QLatin1String("abdruck")).toInt();
@@ -660,7 +691,7 @@ bool Nachlernen::datenLesen(const QString &pfad, QList<Eintrag> *ziel,
     ziel->clear();
     for (int i = 0; i < erwartet; ++i) {
         Eintrag e;
-        if (!eintragLesen(strom, &e, *abdruckGroesse))
+        if (!eintragLesen(strom, &e, *abdruckGroesse, fassung))
             return fehlschlag(fehler, QString::fromUtf8("Eintrag %1 von %2 ist kaputt")
                               .arg(i + 1).arg(erwartet));
         ziel->append(e);
@@ -679,7 +710,7 @@ bool Nachlernen::speichern(const QString &pfad, QString *fehler) const
                           .arg(QFileInfo(zwischen).fileName()));
 
     QVariantMap kopf;
-    kopf.insert(QLatin1String("format"), 1);
+    kopf.insert(QLatin1String("format"), 2);
     kopf.insert(QLatin1String("klassen"), QVariant(d->klassen));
     kopf.insert(QLatin1String("modell"), d->fingerabdruck);
     kopf.insert(QLatin1String("abdruck"), d->abdruckGroesse);

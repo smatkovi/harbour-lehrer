@@ -1048,26 +1048,32 @@ private:
 /* Die letzte Schicht nachtrainieren (GELERNTES.md): ein paar hundert
    Matrixprodukte ueber alle gemerkten Abdruecke -- auf dem Jolla eine
    Sekunde, auf der N950 mehrere.  Also nicht im Oberflaechenfaden.  Der
-   Faden bekommt eine Abschrift des Gedaechtnisses mit; was er zurueckbringt,
-   gilt nur, wenn sich seither nichts geaendert hat (stand). */
+   Faden bekommt eine Abschrift des Lernstoffs mit (keinen Zeiger ins
+   Gedaechtnis); was er zurueckbringt, gilt nur, wenn sich seither nichts
+   geaendert hat (stand). */
 class LernFaden : public QThread
 {
 public:
-    LernFaden(const Nachlernen *gelerntes, QObject *parent)
-        : QThread(parent), stand(gelerntes->stand()), m_gelerntes(gelerntes) {}
+    LernFaden(const Nachlernen &gelerntes, QObject *parent)
+        : QThread(parent), m_stoff(gelerntes.lernstoff()), stand(m_stoff.stand) {}
 
     void run()
     {
-        gelungen = m_gelerntes->kopfNachtrainieren(&gewichte, &bias);
+        gelungen = Nachlernen::kopfNachtrainieren(m_stoff, &gewichte, &bias);
     }
 
+private:
+    /* Die Abschrift zuerst: Sie wird im Oberflaechenfaden gezogen, bevor
+       der Faden laeuft, und der Faden fasst danach nichts mehr an, was
+       der Oberflaeche gehoert -- Vergessen und Merken waehrend der
+       Rechnung sind so ungefaehrlich. */
+    const Nachlernen::Lernstoff m_stoff;
+
+public:
     const int stand;
     bool gelungen = false;
     QVector<float> gewichte;
     QVector<float> bias;
-
-private:
-    const Nachlernen *m_gelerntes;
 };
 
 Course::~Course()
@@ -1563,7 +1569,7 @@ void Course::kopfNachtrainieren()
     if (m_lernFadenLaeuft || !m_gelerntes.kopfLohnt())
         return;
     m_lernFadenLaeuft = true;
-    LernFaden *faden = new LernFaden(&m_gelerntes, this);
+    LernFaden *faden = new LernFaden(m_gelerntes, this);
     connect(faden, SIGNAL(finished()), this, SLOT(onKopfNachtrainiert()));
     faden->start();
 }

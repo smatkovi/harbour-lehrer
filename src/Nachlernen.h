@@ -79,6 +79,27 @@ public:
     void kopfSetzen(const QVector<float> &gewichte, const QVector<float> &bias);
     bool kopfLohnt() const;             // genug Eintraege dafuer?
     int stand() const;                  // zaehlt jede Aenderung
+    /* Der Lernstoff: eine Abschrift von allem, was das Nachtrainieren
+       braucht -- Abdruecke, Klassennummern, ausgelieferte Schicht, Stand.
+       Im Oberflaechenfaden ziehen, dann rechnet der Arbeitsfaden damit,
+       ohne einen Zeiger ins Gedaechtnis zu halten: Waehrend er rechnet,
+       darf hier vergessen und gemerkt werden. */
+    struct Lernstoff
+    {
+        int aus;                // Klassen
+        int ein;                // Laenge eines Abdrucks
+        int n;                  // Beispiele
+        QVector<float> x;       // n x ein, normierte Abdruecke
+        QVector<int> y;         // n Klassennummern
+        float skala;            // mittlere Laenge vor dem Normieren
+        QVector<float> kopf0;   // ausgelieferte Schicht, aus x ein
+        QVector<float> bias0;   // aus
+        int stand;
+        Lernstoff() : aus(0), ein(0), n(0), skala(0.f), stand(0) {}
+    };
+    Lernstoff lernstoff() const;
+    static bool kopfNachtrainieren(const Lernstoff &stoff,
+                                   QVector<float> *gewichte, QVector<float> *bias);
     bool kopfNachtrainieren(QVector<float> *gewichte, QVector<float> *bias) const;
     void kopfUebernehmen(const QVector<float> &gewichte, const QVector<float> &bias, int stand);
     bool kopfAktiv() const;             // rechnet die Korrektur mit der neuen Schicht?

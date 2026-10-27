@@ -1,5 +1,5 @@
 Name:       harbour-segelflug
-Version:    1.19.0
+Version:    1.19.1
 Release:    1
 Summary:    Gliding theory with a focus on reading clouds
 License:    GPLv3+
@@ -51,6 +51,15 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Tue Oct 27 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.19.1-1
+- Gelerntes aus 1.18.x bleibt erhalten: die Datei wird als Fassung 1 gelesen,
+  ihre Abdruecke werden aus den Bildern nachgerechnet, geschrieben wird
+  Fassung 2 (1.19.0 haette sie verworfen)
+- "Sichern" auf der Gelerntes-Seite erreicht jetzt ~/Documents (Sailjail-Recht
+  Documents fehlte)
+- Der Lernfaden rechnet auf einer Abschrift statt im lebenden Gedaechtnis
+  (Vergessen waehrend der Rechnung war ein Wettlauf)
+
 * Tue Oct 27 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.19.0-1
 - Dazulernen trainiert jetzt die letzte Schicht des Netzes wirklich nach
   (ab 40 gemerkten Fotos, im Arbeitsfaden); im Versuch verdoppelt das den
