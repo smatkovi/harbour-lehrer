@@ -1159,7 +1159,7 @@
    }
   },
   {
-   "bild": "",
+   "bild": "begriff-isa",
    "definition": {
     "de": "Die vereinbarte Mittelatmosphäre: 15 °C und 1013,25 hPa in Meereshöhe, Abnahme um 2 °C je 300 m (0,65 °C je 100 m) und etwa 1 hPa je 8 m in Bodennähe. Auf ihr beruhen Höhenmesser, Flugflächen und Leistungstabellen.\n\nDie wirkliche Atmosphäre weicht davon ab — daraus folgen Dichtehöhe und Höhenmesserfehler.",
     "en": "The agreed mean atmosphere: 15 °C and 1013.25 hPa at sea level, falling 2 °C per 1,000 ft (0.65 °C per 100 m) and about 1 hPa per 8 m near the ground. Altimeters, flight levels and performance tables are based on it.\n\nThe real atmosphere departs from it — hence density altitude and altimeter errors."
@@ -1294,7 +1294,7 @@
    }
   },
   {
-   "bild": "",
+   "bild": "begriff-luftraum",
    "definition": {
     "de": "Der Himmel ist in **Klassen** geteilt: Im Luftraum C und D (um Verkehrsflughäfen) braucht ein Segelflugzeug eine Freigabe und Funk, im Luftraum E darf es ohne fliegen, solange es Sichtflugbedingungen einhält, im Luftraum G ebenso. Dazu **Gebiete mit Beschränkungen**: Sperrgebiete, Gefahrengebiete, Segelflugsektoren, die nur auf Anfrage offen sind.\n\nDie Grenzen stehen in der Karte und im Rechner — und sie gelten auch in der Thermik.",
     "en": "The sky is divided into **classes**: in airspace C and D (around airports) a glider needs a clearance and radio, in airspace E it may fly without as long as it keeps visual flight rules, in airspace G likewise. Plus **areas with restrictions**: prohibited and danger areas, gliding sectors open only on request.\n\nThe boundaries are on the chart and in the computer — and they apply in a thermal too."
@@ -1378,7 +1378,7 @@
    }
   },
   {
-   "bild": "",
+   "bild": "begriff-ausweichen",
    "definition": {
     "de": "Wer wem ausweicht: Bei **Gegenkurs** beide nach rechts; wer den anderen **rechts** hat, weicht aus; **Überholen** nur rechts; wer tiefer ist, hat beim Landen Vorrang; am Hang hat Vorrang, wer den Hang rechts hat, und im Aufwind drehen alle wie der Erste.\n\nDie Regel gilt — aber das Segelflugzeug, das nicht weicht, wird vom anderen vielleicht nicht gesehen.",
     "en": "Who gives way to whom: **head-on**, both turn right; the one who has the other on the **right** gives way; **overtaking** only on the right; the lower aircraft has priority when landing; on a ridge the one with the slope on its right has priority, and in a thermal everyone turns like the first.\n\nThe rule applies — but the glider that does not give way may not be seen by the other."
@@ -1395,7 +1395,7 @@
    }
   },
   {
-   "bild": "",
+   "bild": "begriff-missweisung",
    "definition": {
     "de": "Der Winkel zwischen geographisch Nord und magnetisch Nord am jeweiligen Ort — in Mitteleuropa derzeit 2–5 Grad Ost. **Rechtweisend** (Karte) plus westliche Missweisung = **missweisend** (Kompass); östliche wird abgezogen. Dazu kommt die **Deviation**, der Fehler des eingebauten Kompasses.\n\nFür den Segelflug mit GPS fast vergessen — bis das GPS ausfällt.",
     "en": "The angle between true north and magnetic north at a place — in central Europe currently 2–5 degrees east. **True** (chart) plus westerly variation = **magnetic** (compass); easterly is subtracted. Add **deviation**, the error of the installed compass.\n\nNearly forgotten in gliding with GPS — until the GPS fails."

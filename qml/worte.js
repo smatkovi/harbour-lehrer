@@ -277,10 +277,22 @@ var EN = {
     "Sichern": "Save",
     "Vergessen": "Forget",
     "von mir richtiggestellt": "corrected by me",
-    " und nimmt auch keine Belichtungsstelle an.": " and does not take an exposure point either.",
-    " — die Belichtung ist gesetzt (": " — the exposure point is set (",
     "Auf die Wolke tippen, dann aufnehmen.": "Tap the cloud, then capture.",
-    "Diese Kamera stellt auf Tippen nicht scharf": "This camera does not focus on tap",
+    "An dieser Stelle fand die Kamera keinen Kontrast — auf eine Kante der Wolke tippen; die Messstelle gilt trotzdem.":
+        "The camera found no contrast there — tap an edge of the cloud; the metering point still applies.",
+    "Scharf, Belichtung auf der Wolke — jetzt aufnehmen.": "In focus, exposure on the cloud — capture now.",
+    "Belichtung auf der Wolke, Schärfe im Unendlichen — jetzt aufnehmen.": "Exposure on the cloud, focus at infinity — capture now.",
+    "Die Aufnahme ist fehlgeschlagen — noch einmal versuchen.": "The capture failed — try again.",
+    "Die Kamera startet …": "The camera is starting …",
+    "Fokus: unendlich": "Focus: infinity",
+    "Fokus: Auto": "Focus: auto",
+    "Fokus: laufend": "Focus: continuous",
+    "Fokus: anderer Modus": "Focus: other mode",
+    ", Punkt": ", point",
+    ", Mitte": ", centre",
+    ", gesperrt": ", locked",
+    ", sucht": ", searching",
+    ", frei": ", free",
 };
 
 function w(text, sprache) {

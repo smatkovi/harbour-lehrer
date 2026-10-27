@@ -59,6 +59,11 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
   Documents fehlte)
 - Der Lernfaden rechnet auf einer Abschrift statt im lebenden Gedaechtnis
   (Vergessen waehrend der Rechnung war ein Wettlauf)
+- Kamera: Tippen stellt jetzt wirklich scharf und belichtet. Die alte Seite
+  rief eine Methode auf, die es im QML-Typ nicht gibt, und brach vor dem
+  Fokusbefehl ab; der Tipp-Punkt wird jetzt wie in der Jolla-Kamera in die
+  Sensorlage gedreht; kann die Kamera Unendlich-Fokus, bleibt die Schaerfe
+  dort und der Tipp setzt die Messflaeche auf die Wolke
 
 * Tue Oct 27 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.19.0-1
 - Dazulernen trainiert jetzt die letzte Schicht des Netzes wirklich nach
