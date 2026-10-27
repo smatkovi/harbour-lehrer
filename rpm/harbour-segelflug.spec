@@ -1,5 +1,5 @@
 Name:       harbour-segelflug
-Version:    1.15.0
+Version:    1.16.0
 Release:    1
 Summary:    Gliding theory with a focus on reading clouds
 License:    GPLv3+
@@ -50,6 +50,12 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Tue Oct 27 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.16.0-1
+- Erkennungsmodus noch einmal Bild fuer Bild durchgesehen: 19 Bilder
+  raus, drei in die richtige Klasse, 134 bleiben
+- Das Lektionsfoto der Wolkenstrasse zeigt jetzt Cumulus-Reihen, nicht
+  Cirrus-Baender
+
 * Sat Oct 17 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.15.0-1
 - Der Erkennungsmodus hat jetzt 153 statt 81 Fotos
 - Eine Runde sind zwanzig Bilder; der ganze Stapel steht im Menue

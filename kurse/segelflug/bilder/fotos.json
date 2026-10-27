@@ -353,18 +353,18 @@
  ],
  "wolkenstrasse": [
   {
-   "autor": "Doggo19292",
+   "autor": "Skyofcolorado",
    "breite": 640,
    "datei": "foto-wolkenstrasse-1.jpg",
    "hinweis": {
     "de": "Die Wolken stehen in Reihen, die zum Horizont zusammenlaufen, längs des Windes. Darunter lässt sich geradeaus fliegen, ohne zu kreisen.",
     "en": "The clouds stand in rows converging towards the horizon, along the wind. Under them you can fly straight ahead without circling."
    },
-   "hoehe": 480,
-   "lizenz": "CC BY-SA 4.0",
-   "lizenzurl": "https://creativecommons.org/licenses/by-sa/4.0",
-   "seite": "https://commons.wikimedia.org/wiki/File:Apodaca_Cloud_Streets.jpg",
-   "titel": "Apodaca Cloud Streets.jpg"
+   "hoehe": 360,
+   "lizenz": "CC0",
+   "lizenzurl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "seite": "https://commons.wikimedia.org/wiki/File:Roll_clouds,_grand_junction,_co_20250710.jpg",
+   "titel": "Roll clouds, grand junction, co 20250710.jpg"
   },
   {
    "autor": "Rollcloud",
