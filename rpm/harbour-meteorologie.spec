@@ -1,5 +1,5 @@
 Name:       harbour-meteorologie
-Version:    1.0.2
+Version:    1.1.0
 Release:    1
 Summary:    Meteorology for physicists, every formula derived
 License:    GPLv3+
@@ -52,6 +52,12 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Tue Oct 27 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.1.0-1
+- Fuenf neue Kapitel vom Hinsehen her: Spuren am Boden, das Wolkenbuch,
+  Wolken lesen, den Himmel lesen, selbst beobachten und messen -- 18
+  Lektionen, 54 Aufgaben, vier neue Formelkaesten mit Herleitung
+- Dieselbe App wie Segelflug 1.19.0 (Glossar-Geruest, Pruefbefunde)
+
 * Fri Oct 02 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.0.2-1
 - Formeln groesser: sie folgen jetzt der Schriftgroesse statt dem
   Pixelverhaeltnis, und breite Formeln (74 Stueck, z. B. das Upwind-Schema
