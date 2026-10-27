@@ -214,6 +214,16 @@ Page {
                 horizontalAlignment: Text.AlignHCenter
             }
 
+            // Das Glossar, wo der Kurs eines mitbringt. Erreichbar auch
+            // ohne Lektion: Nachschlagen ist kein Lernschritt.
+            Button {
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width - 2 * Theme.horizontalPageMargin
+                visible: course.hasGlossary
+                text: W.w("Glossar", course.language)
+                onClicked: pageStack.push(Qt.resolvedUrl("GlossarPage.qml"))
+            }
+
             SectionHeader { text: W.w("Kurs", course.language) }
 
             Repeater {

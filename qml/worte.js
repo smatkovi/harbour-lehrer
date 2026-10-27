@@ -99,6 +99,14 @@ var EN = {
     "Deutsch": "Deutsch",
     "English": "English",
 
+    // -- Glossar
+    "Glossar": "Glossary",
+    "Begriffe": "terms",
+    "Wort suchen": "Search a word",
+    "Nichts gefunden": "Nothing found",
+    "Siehe auch": "See also",
+    "Begriffe in dieser Lektion": "Terms in this lesson",
+
     // -- Lektion
     "So sieht es wirklich aus": "What it looks like in the sky",
     "Beispiel": "Example",
@@ -241,6 +249,38 @@ var EN = {
         "What do interpreted and compiled mean?",
     "**Gedeutet** heißt: ein Programm liest deinen Text und tut Zeile für Zeile, was dort steht. Es gibt nichts zu übersetzen, also fängt es sofort an — dafür ist der Deuter beim Laufen die ganze Zeit dabei und kostet Zeit an jeder Zeile.\n\n**Übersetzt** heißt: ein Übersetzer macht aus deinem Text einmal Maschinencode, den der Prozessor unmittelbar ausführt. Die Arbeit fällt **vorher** an, dafür läuft das Ergebnis danach schnell.\n\nBei kurzen Programmen sieht man deshalb fast nur das Übersetzen und kaum das Laufen. Bei C++ kommt dazu, dass eine einzige Zeile wie `#include <iostream>` rund 37 000 Zeilen Schablonen hereinholt, die der Übersetzer jedes Mal neu liest — das ist der größte Teil der Wartezeit, nicht dein Programm.\n\nUnd das sagt nichts darüber, welche Sprache schnell ist: C ist hier nur deshalb sofort da, weil diese App einen kleinen C-Deuter mitbringt. Richtig übersetztes C läuft schneller als alles andere hier — man wartet nur vorher.":
         "**Interpreted** means: a program reads your text and does, line by line, what it says. There is nothing to compile, so it starts at once — but the interpreter stays there while it runs and costs time on every line.\n\n**Compiled** means: a compiler turns your text into machine code once, and the processor runs that directly. The work is done **beforehand**; afterwards the result runs fast.\n\nWith short programs you therefore see almost nothing but the compiling and hardly any of the running. With C++ there is more to it: a single line such as `#include <iostream>` pulls in about 37,000 lines of templates that the compiler reads afresh every time — that is the greater part of the wait, not your program.\n\nAnd none of this says which language is fast: C is instant here only because this app carries a small C interpreter. Properly compiled C runs faster than anything else here — you just wait for it first.",
+    // -- Dazulernen, Gelerntes, Kamera
+    " Fotos — das Netz zieht sie mit ein.": " photos — the network takes them into account.",
+    " Fotos. Ab ": " photos. From ",
+    " zieht das Netz sie mit ein.": " on, the network takes them into account.",
+    "Claude": "Claude",
+    "Das Gelernte hat dieses Urteil geändert.": "What was learned changed this verdict.",
+    "Dazulernen": "Learning",
+    "Es ist etwas anderes": "It is something else",
+    "Gelernt: ": "Learned: ",
+    "Gelerntes ansehen": "See what was learned",
+    "Gemerkt als ": "Remembered as ",
+    "Mein Tipp": "My guess",
+    "Wessen Urteil soll das Netz lernen?": "Whose verdict should the network learn?",
+    " Fotos wird auch die letzte Schicht des Netzes nachtrainiert.": " photos on, the network's last layer is retrained as well.",
+    " Fotos, die das Netz mit einbezieht.": " photos the network takes into account.",
+    "Ab ": "From ",
+    "Alles vergessen": "Forget everything",
+    "Alles vergessen.": "Everything forgotten.",
+    "Claude und ich": "Claude and me",
+    "Die letzte Schicht des Netzes ist nachtrainiert.": "The network's last layer has been retrained.",
+    "Diese Klasse kennt das Netz nicht.": "The network does not know this class.",
+    "Eintrag gelöscht.": "Entry deleted.",
+    "Gelerntes": "Learned",
+    "Laden": "Load",
+    "Noch nichts gelernt. Lass ein Foto von Claude deuten; stimmt sein Urteil mit deinem Tipp überein, merkt es die App.": "Nothing learned yet. Have Claude read a photo; if his verdict matches your guess, the app remembers it.",
+    "Sichern": "Save",
+    "Vergessen": "Forget",
+    "von mir richtiggestellt": "corrected by me",
+    " und nimmt auch keine Belichtungsstelle an.": " and does not take an exposure point either.",
+    " — die Belichtung ist gesetzt (": " — the exposure point is set (",
+    "Auf die Wolke tippen, dann aufnehmen.": "Tap the cloud, then capture.",
+    "Diese Kamera stellt auf Tippen nicht scharf": "This camera does not focus on tap",
 };
 
 function w(text, sprache) {

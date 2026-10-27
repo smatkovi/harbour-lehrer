@@ -2,7 +2,9 @@
 
 #include "Json.h"
 
+#include <QCryptographicHash>
 #include <QFile>
+#include <QImageIOHandler>
 #include <QImageReader>
 #include <QTransform>
 #include <QVariantList>
@@ -33,7 +35,14 @@ struct Form {
     int c, h, w;                    // h == w == 0: flacher Vektor [c]
     Form() : c(0), h(0), w(0) {}
     Form(int c_, int h_, int w_) : c(c_), h(h_), w(w_) {}
-    int groesse() const { return (h == 0 && w == 0) ? c : c * h * w; }
+    qint64 groesse() const
+    {
+        /* In qint64 rechnen: Ein formal gueltiger, nur unsinniger Kopf
+           (aus=200000 bei 160x160) laesst die Rechnung in int sonst
+           ueberlaufen, und die App stirbt, statt einen Fehlertext zu
+           liefern. */
+        return (h == 0 && w == 0) ? (qint64)c : (qint64)c * h * w;
+    }
     bool operator==(const Form &o) const { return c == o.c && h == o.h && w == o.w; }
 };
 
@@ -187,8 +196,12 @@ struct Klassifizierer::Daten
     std::vector<Schicht> schichten;
     std::vector<Form> formen;       // je Tensor, Index 0 = Eingabe
     std::vector<int> letzteNutzung; // je Tensor: Index der letzten Schicht, die ihn liest
+    /* Der Tensor, der das globale Mittel enthaelt -- der Merkmalsvektor
+       (GELERNTES.md). -1, solange keiner gelesen wurde. */
+    int abdruckTensor;
+    QString fingerabdruck;
 
-    Daten() : bereit(false), eingabe(0)
+    Daten() : bereit(false), eingabe(0), abdruckTensor(-1)
     {
         for (int c = 0; c < 3; ++c) { faktor[c] = 0.f; versatz[c] = 0.f; }
     }
@@ -201,6 +214,8 @@ struct Klassifizierer::Daten
         std::vector<Schicht>().swap(schichten);
         std::vector<Form>().swap(formen);
         std::vector<int>().swap(letzteNutzung);
+        abdruckTensor = -1;
+        fingerabdruck.clear();
     }
 
     bool kopfLesen(const QVariantMap &kopf, const unsigned char *blob,
@@ -209,7 +224,13 @@ struct Klassifizierer::Daten
                      const unsigned char *blob, qint64 blobLaenge,
                      qint64 laenge, const unsigned char **ziel,
                      QString *fehler, int schicht) const;
-    QVector<float> rechnen(const std::vector<float> &eingabeTensor) const;
+    /* Groesser als das ist kein Netz mehr, das auf ein Telefon gehoert --
+       und jeder Wert darueber kommt aus einem kaputten oder boeswilligen
+       Kopf. */
+    static const qint64 kGrenzeTensor = 64LL * 1024 * 1024;
+
+    QVector<float> rechnen(const std::vector<float> &eingabeTensor,
+                           QVector<float> *abdruck = 0, float *laenge = 0) const;
 };
 
 namespace {
@@ -311,6 +332,8 @@ bool Klassifizierer::Daten::kopfLesen(const QVariantMap &kopf, const unsigned ch
                 if (q.h == 0)
                     return fehlschlag(fehler, schichtText(i, QString::fromUtf8("mittel braucht eine Flaeche")));
                 ergebnis = Form(q.c, 0, 0);
+                /* Dieser Tensor ist der Merkmalsvektor (GELERNTES.md). */
+                abdruckTensor = (int)i + 1;
             } else if (art == QLatin1String("conv") || art == QLatin1String("linear")) {
                 s.ein = m.value(QLatin1String("ein")).toInt();
                 s.aus = m.value(QLatin1String("aus")).toInt();
@@ -367,6 +390,11 @@ bool Klassifizierer::Daten::kopfLesen(const QVariantMap &kopf, const unsigned ch
                 return fehlschlag(fehler, schichtText(i, QString::fromUtf8("unbekannte Art \"%1\"").arg(art)));
             }
         }
+        /* Die Form muss zu rechnen sein, bevor gerechnet wird: Sonst
+           stirbt die App an einem unsinnigen Kopf, statt ihn abzulehnen. */
+        if (ergebnis.groesse() <= 0 || ergebnis.groesse() > kGrenzeTensor)
+            return fehlschlag(fehler, schichtText(i, QString::fromUtf8(
+                "Ergebnis waere %1 Werte gross").arg(ergebnis.groesse())));
         schichten.push_back(s);
         formen.push_back(ergebnis);
     }
@@ -386,7 +414,8 @@ bool Klassifizierer::Daten::kopfLesen(const QVariantMap &kopf, const unsigned ch
     return true;
 }
 
-QVector<float> Klassifizierer::Daten::rechnen(const std::vector<float> &eingabeTensor) const
+QVector<float> Klassifizierer::Daten::rechnen(const std::vector<float> &eingabeTensor,
+                                              QVector<float> *abdruck, float *laenge) const
 {
     std::vector< std::vector<float> > tensoren(formen.size());
     tensoren[0] = eingabeTensor;
@@ -436,6 +465,20 @@ QVector<float> Klassifizierer::Daten::rechnen(const std::vector<float> &eingabeT
                 z[o] = summe;
             }
             break;
+        }
+
+        /* Den Merkmalsvektor mitnehmen, bevor er freigegeben wird. */
+        if (abdruck && (int)(i + 1) == abdruckTensor) {
+            const std::vector<float> &m = tensoren[i + 1];
+            abdruck->resize((int)m.size());
+            double quadrat = 0.0;
+            for (size_t k = 0; k < m.size(); ++k)
+                quadrat += (double)m[k] * m[k];
+            const float norm = quadrat > 1e-12 ? (float)(1.0 / std::sqrt(quadrat)) : 1.f;
+            for (int k = 0; k < abdruck->size(); ++k)
+                (*abdruck)[k] = m[(size_t)k] * norm;
+            if (laenge)
+                *laenge = (float)std::sqrt(quadrat);
         }
 
         /* Was keine spaetere Schicht mehr liest, geht sofort weg. */
@@ -495,6 +538,14 @@ bool Klassifizierer::laden(const QString &pfad, QString *fehler)
         d->leeren();
         return false;
     }
+    /* Fingerabdruck der Gewichte -- gelerntes.bin nennt ihn im Kopf, damit
+       Abdruecke aus einer anderen Fassung nicht stillschweigend
+       weiterverwendet werden (GELERNTES.md). */
+    d->fingerabdruck = QString::fromLatin1(
+        QCryptographicHash::hash(
+            QByteArray::fromRawData(reinterpret_cast<const char *>(roh + 12 + kopfLaenge),
+                                    (int)blobLaenge),
+            QCryptographicHash::Sha1).toHex());
     d->bereit = true;
     return true;
 }
@@ -514,7 +565,36 @@ int Klassifizierer::eingabeGroesse() const
     return d->eingabe;
 }
 
+namespace {
+
+/* Softmax, numerisch stabil: das Maximum abziehen, sonst laeuft exp() bei
+   grossen Logits ueber. */
+QVector<float> weichmachen(QVector<float> l)
+{
+    if (l.isEmpty())
+        return l;
+    float groesstes = l[0];
+    for (int i = 1; i < l.size(); ++i)
+        if (l[i] > groesstes) groesstes = l[i];
+    double summe = 0.0;
+    for (int i = 0; i < l.size(); ++i) {
+        l[i] = (float)std::exp((double)(l[i] - groesstes));
+        summe += l[i];
+    }
+    for (int i = 0; i < l.size(); ++i)
+        l[i] = (float)(l[i] / summe);
+    return l;
+}
+
+}
+
 QVector<float> Klassifizierer::logits(const unsigned char *rgb) const
+{
+    return logits(rgb, 0);
+}
+
+QVector<float> Klassifizierer::logits(const unsigned char *rgb, QVector<float> *abdruck,
+                                      float *laenge) const
 {
     if (!d->bereit || !rgb)
         return QVector<float>();
@@ -529,20 +609,72 @@ QVector<float> Klassifizierer::logits(const unsigned char *rgb) const
         for (size_t p = 0; p < flaeche; ++p)
             ziel[p] = (float)quelle[p * 3] * f + v;
     }
-    return d->rechnen(tensor);
+    return d->rechnen(tensor, abdruck, laenge);
+}
+
+QImage Klassifizierer::netzBild(const QImage &bild) const
+{
+    if (!d->bereit || bild.isNull())
+        return QImage();
+    const int e = d->eingabe;
+    /* Stauchen, nicht beschneiden -- so hat es auch das Training gesehen
+       (MODELL.md, Vorverarbeitung). */
+    const QImage klein = bild.convertToFormat(QImage::Format_RGB32)
+                             .scaled(e, e, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+    if (klein.isNull() || klein.width() != e || klein.height() != e)
+        return QImage();
+    return klein;
+}
+
+int Klassifizierer::abdruckGroesse() const
+{
+    if (!d->bereit || d->abdruckTensor < 0
+            || d->abdruckTensor >= (int)d->formen.size())
+        return 0;
+    return d->formen[(size_t)d->abdruckTensor].groesse();
+}
+
+QString Klassifizierer::fingerabdruck() const
+{
+    return d->fingerabdruck;
+}
+
+QVector<float> Klassifizierer::kopfGewichte() const
+{
+    QVector<float> aus;
+    if (!d->bereit || d->schichten.empty() || d->schichten.back().art != ArtLinear)
+        return aus;
+    const Schicht &s = d->schichten.back();
+    aus.resize((int)s.gewichte.size());
+    for (int i = 0; i < aus.size(); ++i)
+        aus[i] = s.gewichte[(size_t)i];
+    return aus;
+}
+
+QVector<float> Klassifizierer::kopfBias() const
+{
+    QVector<float> aus;
+    if (!d->bereit || d->schichten.empty() || d->schichten.back().art != ArtLinear)
+        return aus;
+    const Schicht &s = d->schichten.back();
+    aus.resize((int)s.bias.size());
+    for (int i = 0; i < aus.size(); ++i)
+        aus[i] = s.bias[(size_t)i];
+    return aus;
 }
 
 QVector<float> Klassifizierer::bewerten(const QImage &bild) const
 {
-    if (!d->bereit || bild.isNull())
+    return bewerten(bild, 0);
+}
+
+QVector<float> Klassifizierer::bewerten(const QImage &bild, QVector<float> *abdruck,
+                                        float *laenge) const
+{
+    const QImage klein = netzBild(bild);
+    if (klein.isNull())
         return QVector<float>();
     const int e = d->eingabe;
-    /* Stauchen, nicht beschneiden -- so hat es auch das Training gesehen
-       (MODELL.md, Vorverarbeitung). */
-    QImage klein = bild.convertToFormat(QImage::Format_RGB32)
-                       .scaled(e, e, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
-    if (klein.isNull() || klein.width() != e || klein.height() != e)
-        return QVector<float>();
 
     std::vector<unsigned char> rgb((size_t)e * e * 3);
     for (int y = 0; y < e; ++y) {
@@ -555,23 +687,7 @@ QVector<float> Klassifizierer::bewerten(const QImage &bild) const
             ziel[3 * x + 2] = (unsigned char)qBlue(p);
         }
     }
-
-    QVector<float> l = logits(&rgb[0]);
-    if (l.isEmpty())
-        return l;
-    /* Softmax, numerisch stabil: das Maximum abziehen, sonst laeuft exp()
-       bei grossen Logits ueber. */
-    float groesstes = l[0];
-    for (int i = 1; i < l.size(); ++i)
-        if (l[i] > groesstes) groesstes = l[i];
-    double summe = 0.0;
-    for (int i = 0; i < l.size(); ++i) {
-        l[i] = (float)std::exp((double)(l[i] - groesstes));
-        summe += l[i];
-    }
-    for (int i = 0; i < l.size(); ++i)
-        l[i] = (float)(l[i] / summe);
-    return l;
+    return weichmachen(logits(&rgb[0], abdruck, laenge));
 }
 
 namespace {
@@ -620,12 +736,15 @@ int exifOrientierung(const QString &pfad)
             if (EXIF16(t + 2) != 0x2A)
                 return 0;
             const unsigned ifd = EXIF32(t + 4);
-            if (ifd + 2 > (unsigned)tn)
+            /* Nicht "ifd + 2 > tn" rechnen: Bei einem Versatz nahe
+               0xFFFFFFFF laeuft die Summe ueber, die Pruefung geht durch,
+               und gelesen wird weit hinter dem Puffer. */
+            if (tn < 2 || ifd > (unsigned)(tn - 2))
                 return 0;
             const int eintraege = EXIF16(t + ifd);
             for (int i = 0; i < eintraege; ++i) {
                 const unsigned e = ifd + 2 + 12 * (unsigned)i;
-                if (e + 12 > (unsigned)tn)
+                if (tn < 12 || e > (unsigned)(tn - 12))
                     return 0;
                 if (EXIF16(t + e) == 0x0112) {
                     if (EXIF16(t + e + 2) != 3)       // SHORT
@@ -645,6 +764,19 @@ int exifOrientierung(const QString &pfad)
 
 }
 
+/* Wie weit ein Foto nach EXIF zu drehen ist, in Grad (0, 90, 180, 270).
+   bildLaden() tut es selbst; die Oberflaeche braucht die Zahl, weil Qt 4
+   QML-Bilder nicht dreht. */
+int Klassifizierer::exifDrehung(const QString &pfad)
+{
+    switch (exifOrientierung(pfad)) {
+    case 3: case 4: return 180;
+    case 5: case 6: return 90;
+    case 7: case 8: return 270;
+    default: return 0;
+    }
+}
+
 QImage Klassifizierer::bildLaden(const QString &pfad, int kante, QString *fehler)
 {
     QImageReader leser(pfad);
@@ -656,7 +788,19 @@ QImage Klassifizierer::bildLaden(const QString &pfad, int kante, QString *fehler
         ziel.scale(kante, kante, Qt::KeepAspectRatio);
         if (ziel.width() < 1) ziel.setWidth(1);
         if (ziel.height() < 1) ziel.setHeight(1);
-        leser.setScaledSize(ziel);
+        /* Kann der Leser beim Entpacken schon verkleinern?  Fuer JPEG ja; fuer
+       PNG kann es Qt 4.7 nicht, und dann liegt ein 8-MP-Bild erst einmal
+       vollstaendig im Speicher (32 MB) -- auf der N950 mit ihren 50 MB
+       freien das Ende. Lieber ein sauberer Satz als ein toter Prozess. */
+    if (!leser.supportsOption(QImageIOHandler::ScaledSize)) {
+        const QSize voll = leser.size();
+        if (voll.isValid() && (qint64)voll.width() * voll.height() > 4000000LL) {
+            if (fehler)
+                *fehler = QString::fromUtf8("Das Bild ist zu gross fuer dieses Format");
+            return QImage();
+        }
+    }
+    leser.setScaledSize(ziel);
     }
     QImage bild = leser.read();
     if (bild.isNull()) {

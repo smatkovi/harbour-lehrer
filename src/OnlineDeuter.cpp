@@ -17,7 +17,6 @@
 #include <QUrl>
 #else
 #include <QProcess>
-#include <QTemporaryFile>
 #endif
 
 /* Der gemeinsame Teil -- Bild packen, Anfrage bauen, Antwort deuten --
@@ -38,11 +37,16 @@ QString zweisprachig(const QString &sprache, const char *de, const char *en)
 
 QString apiUrl()
 {
-    /* Nur der Pruefstand setzt die Variable, um auf einen Scheinserver zu
-       zeigen; im Betrieb bleibt es die echte Adresse. */
+#ifdef SEGELFLUG_PRUEFSTAND
+    /* Nur der Pruefstand zeigt auf einen Scheinserver.  In der
+       ausgelieferten App gibt es diesen Weg nicht: Wer die Umgebung der App
+       setzen kann (auf Harmattan eine Zeile in ~/.profile), lenkte sonst
+       Schluessel und Foto auf einen beliebigen Rechner, und das auch noch
+       im Klartext. */
     const QByteArray gesetzt = qgetenv("SEGELFLUG_API_URL");
     if (!gesetzt.isEmpty())
         return QString::fromLocal8Bit(gesetzt);
+#endif
     return QLatin1String("https://api.anthropic.com/v1/messages");
 }
 
@@ -222,14 +226,24 @@ QVariantMap antwortDeuten(const QByteArray &rumpf, bool httpOk, int status,
 }
 
 #if QT_VERSION < 0x050000
+
+/* Wo Rumpf und wgetrc liegen: im eigenen Ordner unter den
+   Einstellungen, nicht in /tmp.  Dort sind sie nur fuer den Benutzer
+   lesbar, und ein Absturz laesst hoechstens eine Leiche liegen, die der
+   naechste Lauf ueberschreibt. */
+QString anfrageOrdner()
+{
+    return QDir::homePath() + QLatin1String("/.config/segelflug");
+}
 QString helfer()
 {
     /* Dieselbe Kruecke wie bei Lichess im Schachlehrer: ein wget, das TLS
-       1.2 kann.  Die Umgebungsvariable ist fuer den Fall, dass es woanders
-       liegt. */
+       1.2 kann. */
+#ifdef SEGELFLUG_PRUEFSTAND
     const QByteArray gesetzt = qgetenv("SEGELFLUG_HTTPS_HELPER");
     if (!gesetzt.isEmpty() && QFile::exists(QString::fromLocal8Bit(gesetzt)))
         return QString::fromLocal8Bit(gesetzt);
+#endif
     static const char *kOrte[] = {
         "/opt/wunderw/bin/wget",
         "/usr/local/bin/wget",
@@ -248,7 +262,6 @@ struct OnlineDeuter::Daten
 {
     Daten()
         : laeuft(false)
-        , lauf(0)
 #if QT_VERSION >= 0x050000
         , netz(0)
         , antwort(0)
@@ -261,7 +274,6 @@ struct OnlineDeuter::Daten
     }
 
     bool laeuft;
-    int lauf;                   // zaehlt Anfragen, damit Spaetes verfaellt
     QVariantList klassen;
     QString sprache;
     QString schluessel;         // nur, um ihn aus Fehlertexten zu tilgen
@@ -272,8 +284,8 @@ struct OnlineDeuter::Daten
     QNetworkReply *antwort;
 #else
     QProcess *prozess;
-    QTemporaryFile *rumpfDatei;
-    QTemporaryFile *schluesselDatei;
+    QFile *rumpfDatei;
+    QFile *schluesselDatei;
 #endif
 };
 
@@ -361,7 +373,6 @@ void OnlineDeuter::anfragen(const QString &bildPfad, const QVariantList &klassen
                             const QString &sprache, const QString &schluessel)
 {
     abbrechen();
-    ++d->lauf;
     d->laeuft = true;
     d->klassen = klassen;
     d->sprache = sprache;
@@ -459,7 +470,6 @@ void OnlineDeuter::anfragen(const QString &bildPfad, const QVariantList &klassen
                             const QString &sprache, const QString &schluessel)
 {
     abbrechen();
-    ++d->lauf;
     d->laeuft = true;
     d->klassen = klassen;
     d->sprache = sprache;
@@ -482,13 +492,20 @@ void OnlineDeuter::anfragen(const QString &bildPfad, const QVariantList &klassen
     }
 
     /* Rumpf und Schluessel gehen je ueber eine eigene Datei mit Rechten
-       0600 -- QTemporaryFile legt sie so an und raeumt sie beim Loeschen
-       des Objekts wieder weg.  Der Schluessel steht damit nie in argv, wo
-       ps ihn laese, sondern nur in einer wgetrc, die WGETRC benennt. */
-    const QString vorlage = QDir::tempPath() + QLatin1String("/segelflug-XXXXXX");
-    d->rumpfDatei = new QTemporaryFile(vorlage);
-    d->schluesselDatei = new QTemporaryFile(vorlage);
-    if (!d->rumpfDatei->open() || !d->schluesselDatei->open()) {
+       0600.  Der Schluessel steht damit nie in argv, wo ps ihn laese,
+       sondern nur in einer wgetrc, die WGETRC benennt.
+
+       Feste Namen in einem eigenen Ordner, nicht QTemporaryFile in /tmp:
+       Stirbt die App mitten in der Anfrage (am N950 holt der Kernel sich
+       bei Speichernot gern einen Prozess), raeumt kein Destruktor mehr auf
+       -- mit festen Namen ueberschreibt der naechste Lauf die Leiche des
+       vorigen, statt eine zweite dazuzulegen. */
+    const QString ordner = anfrageOrdner();
+    QDir().mkpath(ordner);
+    d->rumpfDatei = new QFile(ordner + QLatin1String("/anfrage-rumpf"));
+    d->schluesselDatei = new QFile(ordner + QLatin1String("/anfrage-kopf"));
+    if (!d->rumpfDatei->open(QIODevice::WriteOnly | QIODevice::Truncate)
+            || !d->schluesselDatei->open(QIODevice::WriteOnly | QIODevice::Truncate)) {
         aufraeumen();
         d->verzoegert = fehlerKarte(zweisprachig(sprache, "Kein Platz für die Anfrage",
                                                  "No room for the request"));
@@ -497,16 +514,26 @@ void OnlineDeuter::anfragen(const QString &bildPfad, const QVariantList &klassen
     }
     d->rumpfDatei->setPermissions(QFile::ReadOwner | QFile::WriteOwner);
     d->schluesselDatei->setPermissions(QFile::ReadOwner | QFile::WriteOwner);
-    d->rumpfDatei->write(Json::stringify(anfrageRumpf(base64, klassen, sprache)).toUtf8());
-    d->rumpfDatei->flush();
-    d->schluesselDatei->write("header = x-api-key: " + schluessel.toUtf8() + "\n");
-    d->schluesselDatei->flush();
+    /* Ob das Schreiben gelang, muss gefragt werden: /tmp ist auf Harmattan
+       ein tmpfs mit vier Megabyte, und eine halb geschriebene Anfrage
+       brachte sonst eine 400-Meldung der API zurueck statt des Satzes, der
+       zwei Zeilen darueber schon bereitsteht. */
+    const QByteArray rumpfRoh = Json::stringify(anfrageRumpf(base64, klassen, sprache)).toUtf8();
+    const QByteArray kopfRoh = "header = x-api-key: " + schluessel.toUtf8() + "\n";
+    if (d->rumpfDatei->write(rumpfRoh) != rumpfRoh.size() || !d->rumpfDatei->flush()
+            || d->schluesselDatei->write(kopfRoh) != kopfRoh.size()
+            || !d->schluesselDatei->flush()) {
+        aufraeumen();
+        d->verzoegert = fehlerKarte(zweisprachig(sprache, "Kein Platz für die Anfrage",
+                                                 "No room for the request"));
+        QTimer::singleShot(0, this, SLOT(fehlerMelden()));
+        return;
+    }
 
     QStringList argumente;
     argumente << QLatin1String("--quiet")
               << QLatin1String("--tries=1")
               << QLatin1String("--timeout=90")
-              << QLatin1String("--content-on-error")
               << QLatin1String("--header=Content-Type: application/json")
               << QString::fromLatin1("--header=anthropic-version: %1").arg(QLatin1String(kVersion))
               << QLatin1String("--post-file=") + d->rumpfDatei->fileName()
@@ -515,6 +542,10 @@ void OnlineDeuter::anfragen(const QString &bildPfad, const QVariantList &klassen
 
     d->prozess = new QProcess(this);
     QProcessEnvironment umgebung = QProcessEnvironment::systemEnvironment();
+    /* Stand der Schluessel beim Start in der Umgebung (auf den Nokias in
+       ~/.profile), erbte ihn das Kind und jeder koennte ihn in
+       /proc/<pid>/environ lesen -- obwohl wget ihn aus der wgetrc nimmt. */
+    umgebung.remove(QLatin1String("ANTHROPIC_API_KEY"));
     umgebung.insert(QLatin1String("WGETRC"), d->schluesselDatei->fileName());
     d->prozess->setProcessEnvironment(umgebung);
     d->prozess->setStandardErrorFile(QLatin1String("/dev/null"));
@@ -536,9 +567,19 @@ void OnlineDeuter::anfragen(const QString &bildPfad, const QVariantList &klassen
 
 void OnlineDeuter::aufraeumen()
 {
-    delete d->rumpfDatei;
+    /* QFile raeumt nicht von selbst weg -- der Schluessel darf nicht
+       liegenbleiben. */
+    for (int i = 0; i < 2; ++i) {
+        QFile *datei = i == 0 ? d->rumpfDatei : d->schluesselDatei;
+        if (!datei)
+            continue;
+        const QString name = datei->fileName();
+        datei->close();
+        delete datei;
+        if (!name.isEmpty())
+            QFile::remove(name);
+    }
     d->rumpfDatei = 0;
-    delete d->schluesselDatei;
     d->schluesselDatei = 0;
 }
 
@@ -571,12 +612,22 @@ void OnlineDeuter::prozessFertig(int code)
     prozess->deleteLater();
     aufraeumen();
 
-    /* wget nennt den HTTP-Status nicht; 8 heisst "Server hat abgelehnt",
-       und dank --content-on-error liegt der Rumpf mit der Meldung der API
-       trotzdem vor.  Alles andere als 0 und 8 ist kein Netz. */
-    if (abgestuerzt || (code != 0 && code != 8)) {
+    /* wget nennt den HTTP-Status nicht, nur seinen eigenen Rueckgabewert:
+       6 heisst "Beglaubigung abgelehnt" (das sieht wget bei 401), 8 "Server
+       hat abgelehnt" (alles andere ab 400).  Ohne --content-on-error (das
+       kennt erst wget 1.14, und welches wget wunderw mitbringt, ist nicht
+       geprueft -- die Lichess-Anbindung des Schachlehrers kommt ohne aus)
+       bleibt der Rumpf dann meist leer; dann sagt die Karte nur, woran es
+       lag.  Alles andere ist kein Netz. */
+    if (abgestuerzt || (code != 0 && code != 6 && code != 8)) {
         melden(fehlerKarte(zweisprachig(d->sprache, "Keine Verbindung", "No connection")
                            + QString::fromLatin1(" (%1)").arg(code)));
+        return;
+    }
+    if (code == 6 || (code == 8 && rumpf.trimmed().isEmpty())) {
+        melden(fehlerKarte(zweisprachig(d->sprache,
+                                        "Der Server hat die Anfrage abgelehnt (Schlüssel?).",
+                                        "The server rejected the request (key?).")));
         return;
     }
     melden(antwortDeuten(rumpf, code == 0, 0, d->klassen, d->sprache));

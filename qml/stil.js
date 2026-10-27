@@ -66,6 +66,13 @@ function reich(quelle) {
                                  + (helleUmgebung ? ".dunkel" : "") + ".png' width='"
                                  + m.breite + "' height='" + m.hoehe + "'>"
                       })
+    // Verweise ins Glossar. make-kurs.py hat die Fachwoerter im Text durch
+    // [[begriff:<id>|<Wortform>]] ersetzt; hier wird daraus ein Link, den
+    // LessonPage und BegriffPage in onLinkActivated auffangen. Die Farbe
+    // kommt aus linkColor am Label -- eine Bibliothek kommt an Theme nicht
+    // heran, und ausgezeichnet wird hier nur.
+    aus = aus.replace(/\[\[begriff:([A-Za-z0-9_-]+)\|([^\]]+)\]\]/g,
+                      "<a href='begriff:$1'>$2</a>")
     aus = aus.replace(/\n\n/g, "<br><br>")
     aus = aus.replace(/\n/g, "<br>")
     return aus

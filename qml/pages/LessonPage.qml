@@ -18,6 +18,12 @@ Page {
         onLessonChanged: seite.lektion = course.lesson
     }
 
+    // Ein Fachwort aufschlagen -- aus einem Verweis im Text oder aus der
+    // Liste darunter.
+    function begriffOeffnen(id) {
+        pageStack.push(Qt.resolvedUrl("BegriffPage.qml"), {kennung: id})
+    }
+
     SilicaFlickable {
         anchors.fill: parent
         contentHeight: spalte.height + Theme.paddingLarge
@@ -41,6 +47,15 @@ Page {
                 color: Theme.primaryColor
                 font.pixelSize: Theme.fontSizeSmall
                 linkColor: Theme.highlightColor
+                // Die Fachwoerter im Text sind Verweise ins Glossar
+                // (Stil.reich macht aus [[begriff:...]] ein <a href>).
+                // Alles andere wird nicht angefasst: der Kurs setzt keine
+                // weiteren Links, und ein unbekanntes Schema soll hier
+                // nichts aufmachen.
+                onLinkActivated: {
+                    if (link.indexOf("begriff:") === 0)
+                        seite.begriffOeffnen(link.substring(8))
+                }
             }
 
             Bild {
@@ -140,6 +155,27 @@ Page {
                 font.pixelSize: Theme.fontSizeExtraSmall
                 color: Theme.secondaryColor
                 wrapMode: Text.Wrap
+            }
+
+            // Die Fachwoerter der Lektion zum Nachschlagen. Sie stehen
+            // unten und nicht oben: wer liest, soll den Text lesen, und
+            // erst wer hinterher stockt, schlaegt nach.
+            SectionHeader {
+                text: W.w("Begriffe in dieser Lektion", course.language)
+                visible: !seite.lektion.leer
+                         && seite.lektion.begriffe !== undefined
+                         && seite.lektion.begriffe.length > 0
+            }
+
+            Repeater {
+                model: seite.lektion.leer || seite.lektion.begriffe === undefined
+                       ? [] : seite.lektion.begriffe
+                Button {
+                    x: Theme.horizontalPageMargin
+                    width: spalte.width - 2 * Theme.horizontalPageMargin
+                    text: modelData.wort
+                    onClicked: seite.begriffOeffnen(modelData.id)
+                }
             }
 
             Item { width: 1; height: Theme.paddingMedium }

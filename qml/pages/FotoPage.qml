@@ -32,6 +32,8 @@ Page {
     property bool kameraDa: false
     // Woran man es sieht, aufgeklappt?
     property bool mehr: false
+    // Die Tafel zum Richtigstellen, aufgeklappt?
+    property bool richtig: false
 
     Connections {
         target: course
@@ -354,6 +356,18 @@ Page {
                         color: Theme.secondaryColor
                     }
 
+                    // Das Gelernte hat die Reihenfolge gedreht -- sonst
+                    // waere nicht zu sehen, dass es etwas tut.
+                    Label {
+                        width: parent.width
+                        wrapMode: Text.WordWrap
+                        visible: seite.foto.gelernt !== undefined
+                                 && seite.foto.gelernt.korrigiert === true
+                        text: W.w("Das Gelernte hat dieses Urteil geändert.", course.language)
+                        font.pixelSize: Theme.fontSizeSmall
+                        color: Theme.highlightColor
+                    }
+
                     // Rueckmeldung zum eigenen Tipp. Bei "weiss nicht"
                     // gibt es nichts zu bewerten.
                     Label {
@@ -485,6 +499,10 @@ Page {
                                  && seite.foto.online.ok === true
                         text: seite.foto.online.begruendung === undefined
                               ? "" : seite.foto.online.begruendung
+                        /* Der Text kommt vom Server: als PlainText, nicht als
+                           AutoText -- sonst deutet Qt ein <img src="http://...">
+                           darin als Auszeichnung und holt das Bild wirklich ab. */
+                        textFormat: Text.PlainText
                         color: Theme.primaryColor
                     }
                     Label {
@@ -517,7 +535,140 @@ Page {
                                  && seite.foto.online.ok !== true
                         text: seite.foto.online.fehler === undefined
                               ? "" : seite.foto.online.fehler
+                        /* Der Text kommt vom Server: als PlainText, nicht als
+                           AutoText -- sonst deutet Qt ein <img src="http://...">
+                           darin als Auszeichnung und holt das Bild wirklich ab. */
+                        textFormat: Text.PlainText
                         color: "#ff6b6b"
+                    }
+                }
+
+                // --- Dazulernen ---------------------------------------
+                // Stimmen Claudes Urteil und der eigene Tipp ueberein, hat
+                // Course das Foto schon gemerkt (GELERNTES.md). Gehen sie
+                // auseinander, entscheidet hier der Leser.
+                Column {
+                    width: parent.width
+                    spacing: Theme.paddingSmall
+                    visible: seite.foto.gelernt !== undefined
+                             && seite.foto.gelernt.merkbar === true
+                             && seite.foto.geraten !== ""
+
+                    SectionHeader { text: W.w("Dazulernen", course.language) }
+
+                    Label {
+                        width: parent.width
+                        wrapMode: Text.WordWrap
+                        visible: seite.foto.gelernt.gemerkt !== ""
+                        text: W.w("Gemerkt als ", course.language)
+                              + seite.foto.gelernt.gemerktName + "."
+                        color: "#7ee787"
+                    }
+
+                    Label {
+                        width: parent.width
+                        wrapMode: Text.WordWrap
+                        visible: zweiTasten.visible
+                        text: W.w("Wessen Urteil soll das Netz lernen?", course.language)
+                        color: Theme.primaryColor
+                    }
+                    Row {
+                        id: zweiTasten
+                        width: parent.width
+                        spacing: Theme.paddingMedium
+                        visible: seite.foto.gelernt.gemerkt === ""
+                                 && seite.foto.online.fertig === true
+                                 && seite.foto.online.ok === true
+                                 && seite.foto.online.einig !== true
+                                 && seite.foto.online.klasse !== undefined
+                                 && seite.foto.online.klasse !== ""
+                        Button {
+                            width: (parent.width - Theme.paddingMedium) / 2
+                            text: W.w("Claude", course.language)
+                            onClicked: course.rememberPhoto(seite.foto.online.klasse, 1)
+                        }
+                        Button {
+                            width: (parent.width - Theme.paddingMedium) / 2
+                            visible: seite.foto.geraten !== "?"
+                            text: W.w("Mein Tipp", course.language)
+                            onClicked: course.rememberPhoto(seite.foto.geraten, 2)
+                        }
+                    }
+
+                    // Richtigstellen, auch ohne Claude.
+                    BackgroundItem {
+                        width: parent.width
+                        height: Theme.itemSizeExtraSmall
+                        onClicked: seite.richtig = !seite.richtig
+                        Label {
+                            anchors.verticalCenter: parent.verticalCenter
+                            text: seite.richtig
+                                  ? W.w("Weniger", course.language)
+                                  : W.w("Es ist etwas anderes", course.language)
+                            font.pixelSize: Theme.fontSizeSmall
+                            color: Theme.highlightColor
+                        }
+                    }
+                    Grid {
+                        id: richtigTafel
+                        width: parent.width
+                        columns: 2
+                        spacing: Theme.paddingSmall
+                        visible: seite.richtig
+
+                        Repeater {
+                            model: seite.richtig ? course.classifierClasses : []
+                            Rectangle {
+                                width: (richtigTafel.width - Theme.paddingSmall) / 2
+                                height: richtigWahl.height + 2 * Theme.paddingMedium
+                                radius: Theme.paddingSmall
+                                color: richtigDruck.pressed
+                                       ? Theme.rgba(Theme.highlightBackgroundColor, 0.3)
+                                       : Theme.rgba(Theme.highlightBackgroundColor, 0.08)
+                                border.width: 1
+                                border.color: Theme.rgba(Theme.highlightColor, 0.2)
+                                Label {
+                                    id: richtigWahl
+                                    x: Theme.paddingMedium
+                                    y: Theme.paddingMedium
+                                    width: parent.width - 2 * Theme.paddingMedium
+                                    wrapMode: Text.WordWrap
+                                    text: modelData.name
+                                    font.pixelSize: Theme.fontSizeSmall
+                                    color: Theme.primaryColor
+                                }
+                                MouseArea {
+                                    id: richtigDruck
+                                    anchors.fill: parent
+                                    onClicked: {
+                                        course.rememberPhoto(modelData.id, 2)
+                                        seite.richtig = false
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    Label {
+                        width: parent.width
+                        wrapMode: Text.WordWrap
+                        text: seite.foto.gelernt.wirksam === true
+                              ? W.w("Gelernt: ", course.language)
+                                + seite.foto.gelernt.anzahl
+                                + W.w(" Fotos — das Netz zieht sie mit ein.", course.language)
+                              : W.w("Gelernt: ", course.language)
+                                + seite.foto.gelernt.anzahl
+                                + W.w(" Fotos. Ab ", course.language)
+                                + (seite.foto.gelernt.anzahl + seite.foto.gelernt.fehlende)
+                                + W.w(" zieht das Netz sie mit ein.", course.language)
+                        font.pixelSize: Theme.fontSizeExtraSmall
+                        color: Theme.secondaryColor
+                    }
+                    Button {
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        visible: seite.foto.gelernt.anzahl > 0
+                        text: W.w("Gelerntes ansehen", course.language)
+                        onClicked: pageStack.push(Qt.resolvedUrl("GelerntesPage.qml"))
                     }
                 }
             }

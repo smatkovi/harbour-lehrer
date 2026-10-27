@@ -1,5 +1,5 @@
 Name:       harbour-segelflug
-Version:    1.17.0
+Version:    1.19.0
 Release:    1
 Summary:    Gliding theory with a focus on reading clouds
 License:    GPLv3+
@@ -51,6 +51,26 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Tue Oct 27 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.19.0-1
+- Dazulernen trainiert jetzt die letzte Schicht des Netzes wirklich nach
+  (ab 40 gemerkten Fotos, im Arbeitsfaden); im Versuch verdoppelt das den
+  Gewinn des Gedaechtnisses
+- Die Fotoseite sagt, wenn das Gelernte ein Urteil geaendert hat
+
+* Tue Oct 27 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.18.1-1
+- Kamera: Der Ring erscheint jetzt immer beim Tippen, und wenn die Kamera
+  auf Tippen nicht scharfstellt, steht es da, statt dass man wartet
+
+* Tue Oct 27 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.18.0-1
+- Dazulernen: Was Claude und der eigene Tipp uebereinstimmend sagen, merkt
+  sich die App und bezieht es beim naechsten Foto mit ein -- uebertragbar
+  als gelerntes.bin, einsehbar und einzeln loeschbar
+- Kamera: Tippen stellt scharf und belichtet auf die Wolke
+- Glossar: 98 Fachwoerter mit Definition, Verweisen und Zeichnungen
+- Netz neu trainiert; App und Training stauchen jetzt gleich (64 % statt
+  60 % Top-1 in der Kreuzprobe)
+- Servergelieferter Text wird als Klartext gezeigt, nicht als Auszeichnung
+
 * Tue Oct 27 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.17.0-1
 - Foto deuten: ein eigenes Himmelsfoto (Galerie oder Kamera) wird im
   Geraet von einem kleinen Faltungsnetz (MobileNetV2, 160 px, 14 Klassen)

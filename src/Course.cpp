@@ -8,6 +8,8 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QProcess>
+#include <QTimer>
+#include <QCryptographicHash>
 #include <QPair>
 #include <QThread>
 #include <QUrl>
@@ -1018,13 +1020,22 @@ public:
             fehler = QLatin1String("laden");
             return;
         }
-        anteile = m_netz->bewerten(bild);
+        /* Das Netzbild und den Abdruck gleich mitnehmen: Beides braucht das
+           Gedaechtnis, wenn der Leser dieses Foto merken laesst
+           (GELERNTES.md), und beides faellt hier ohnehin an. */
+        netzBild = m_netz->netzBild(bild);
+        drehung = Klassifizierer::exifDrehung(m_pfad);
+        anteile = m_netz->bewerten(bild, &abdruck, &laenge);
         if (anteile.isEmpty())
             fehler = QLatin1String("rechnen");
     }
 
     const int lauf;
     QVector<float> anteile;
+    QVector<float> abdruck;
+    float laenge = 0.f;
+    QImage netzBild;
+    int drehung = 0;
     QString fehler;
 
 private:
@@ -1033,6 +1044,31 @@ private:
 };
 
 }
+
+/* Die letzte Schicht nachtrainieren (GELERNTES.md): ein paar hundert
+   Matrixprodukte ueber alle gemerkten Abdruecke -- auf dem Jolla eine
+   Sekunde, auf der N950 mehrere.  Also nicht im Oberflaechenfaden.  Der
+   Faden bekommt eine Abschrift des Gedaechtnisses mit; was er zurueckbringt,
+   gilt nur, wenn sich seither nichts geaendert hat (stand). */
+class LernFaden : public QThread
+{
+public:
+    LernFaden(const Nachlernen *gelerntes, QObject *parent)
+        : QThread(parent), stand(gelerntes->stand()), m_gelerntes(gelerntes) {}
+
+    void run()
+    {
+        gelungen = m_gelerntes->kopfNachtrainieren(&gewichte, &bias);
+    }
+
+    const int stand;
+    bool gelungen = false;
+    QVector<float> gewichte;
+    QVector<float> bias;
+
+private:
+    const Nachlernen *m_gelerntes;
+};
 
 Course::~Course()
 {
@@ -1045,25 +1081,21 @@ Course::~Course()
     }
 }
 
+/* Beim Start nur nachsehen, ob die Datei da ist.  Geladen -- und dabei auf
+   neun Megabyte float32 dequantisiert -- wird erst beim ersten Foto: Die
+   N950 hat oft nur 50 MB frei, und wer nur eine Lektion lesen will, soll
+   das Netz nicht mittragen. */
 void Course::loadClassifier(const QString &pfad)
 {
-    QString fehler;
-    if (!m_klassifizierer.laden(pfad, &fehler)) {
-        qWarning("Kein Wolkennetz: %s", qPrintable(fehler));
-        return;
-    }
-    /* Jede Kennung des Netzes braucht ihren Kurs-Eintrag, sonst stuende
-       im Ergebnis eine Kennung ohne Namen und Bedeutung. */
-    const QStringList klassen = m_klassifizierer.klassen();
-    for (int i = 0; i < klassen.size(); ++i)
-        if (classEntry(klassen.at(i)).isEmpty())
-            qWarning("Netzklasse ohne Kurs-Eintrag: %s", qPrintable(klassen.at(i)));
+    m_modellPfad = QFile::exists(pfad) ? pfad : QString();
+    if (m_modellPfad.isEmpty())
+        qWarning("Kein Wolkennetz: %s fehlt", qPrintable(pfad));
     emit changed();
 }
 
 bool Course::hasClassifier() const
 {
-    return m_klassifizierer.bereit() && m_course->hasClassifier();
+    return !m_modellPfad.isEmpty() && m_course->hasClassifier();
 }
 
 bool Course::onlineAvailable() const
@@ -1127,6 +1159,9 @@ QVariantMap Course::photo() const
     QVariantMap out;
     out.insert(QLatin1String("leer"), m_fotoPfad.isEmpty());
     out.insert(QLatin1String("pfad"), m_fotoPfad);
+    /* Qt 4 dreht QML-Bilder nicht nach EXIF; die Seite tut es selbst, damit
+       das angezeigte Foto so steht wie das bewertete. */
+    out.insert(QLatin1String("drehung"), m_fotoDrehung);
     out.insert(QLatin1String("laeuft"), m_fotoLaeuft);
     out.insert(QLatin1String("fertig"), m_fotoFertig);
     QString fehler;
@@ -1186,6 +1221,23 @@ QVariantMap Course::photo() const
     if (!online.contains(QLatin1String("fertig")))
         online.insert(QLatin1String("fertig"), false);
     out.insert(QLatin1String("online"), online);
+
+    /* Was das Gelernte mit diesem Foto gemacht hat, und was sich daran noch
+       lernen laesst (GELERNTES.md).  `gemerkt` ist die Klasse, die fuer
+       dieses Foto schon im Gedaechtnis steht -- leer, solange nichts
+       gemerkt wurde. */
+    QVariantMap gelernt;
+    gelernt.insert(QLatin1String("korrigiert"), m_fotoKorrigiert);
+    gelernt.insert(QLatin1String("anzahl"), m_gelerntes.anzahl());
+    gelernt.insert(QLatin1String("wirksam"), m_gelerntes.wirksam());
+    gelernt.insert(QLatin1String("fehlende"), m_gelerntes.fehlende());
+    gelernt.insert(QLatin1String("merkbar"),
+                   !m_fotoNetzBild.isNull() && !m_fotoAbdruck.isEmpty());
+    gelernt.insert(QLatin1String("kopf"), m_gelerntes.kopfAktiv());
+    gelernt.insert(QLatin1String("gemerkt"), m_fotoGemerkt);
+    gelernt.insert(QLatin1String("gemerktName"),
+                   classEntry(m_fotoGemerkt).value(QLatin1String("name")));
+    out.insert(QLatin1String("gelernt"), gelernt);
     return out;
 }
 
@@ -1203,12 +1255,39 @@ void Course::classifyPhoto(const QString &pfadRoh)
     m_fotoGeraten.clear();
     m_fotoAnteile.clear();
     m_fotoOnline.clear();
+    /* Das Netz beim ersten Foto laden -- hier im Oberflaechenfaden, nicht
+       im Arbeitsfaden: ein zweites Foto waehrend des Ladens duerfte sonst
+       auf ein halbes Modell treffen.  Einmal etwa 100 ms auf dem Jolla. */
+    if (!m_klassifizierer.bereit() && !m_modellPfad.isEmpty()) {
+        QString fehler;
+        if (!m_klassifizierer.laden(m_modellPfad, &fehler)) {
+            qWarning("Wolkennetz nicht ladbar: %s", qPrintable(fehler));
+        } else {
+            gelerntesLaden();
+            /* Jede Kennung des Netzes braucht ihren Kurs-Eintrag, sonst
+               stuende im Ergebnis eine Kennung ohne Namen und Bedeutung. */
+            const QStringList klassen = m_klassifizierer.klassen();
+            for (int i = 0; i < klassen.size(); ++i)
+                if (classEntry(klassen.at(i)).isEmpty())
+                    qWarning("Netzklasse ohne Kurs-Eintrag: %s", qPrintable(klassen.at(i)));
+        }
+    }
     if (!m_klassifizierer.bereit()) {
         m_fotoLaeuft = false;
         m_fotoFehler = QLatin1String("rechnen");
         emit photoChanged();
         return;
     }
+    /* Laeuft noch einer, wird dieses Foto nur gemerkt und nach dem
+       Umschalten gestartet: Auf der N950 teilen sich zwei Netzdurchlaeufe
+       einen Kern und halten beide ihre Zwischentensoren -- das reicht fuer
+       einen Speichertod. */
+    if (m_fadenLaeuft) {
+        m_fotoWartend = pfad;
+        emit photoChanged();
+        return;
+    }
+    m_fadenLaeuft = true;
     BewertungsFaden *faden = new BewertungsFaden(&m_klassifizierer, pfad, m_fotoLauf, this);
     connect(faden, SIGNAL(finished()), this, SLOT(onPhotoClassified()));
     faden->start();
@@ -1223,12 +1302,41 @@ void Course::onPhotoClassified()
     if (!faden)
         return;
     faden->deleteLater();
+    m_fadenLaeuft = false;
+    if (!m_fotoWartend.isEmpty()) {
+        const QString naechstes = m_fotoWartend;
+        m_fotoWartend.clear();
+        classifyPhoto(naechstes);
+        return;
+    }
     if (faden->lauf != m_fotoLauf)
         return;                 // ein aelteres Foto, laengst ersetzt
     m_fotoLaeuft = false;
     m_fotoFertig = faden->fehler.isEmpty();
     m_fotoFehler = faden->fehler;
+    m_fotoNetzBild = faden->netzBild;
+    m_fotoAbdruck = faden->abdruck;
+    m_fotoLaenge = faden->laenge;
+    m_fotoDrehung = faden->drehung;
+
+    /* Das Urteil des Netzes, und darueber die Korrektur aus dem Gelernten.
+       Ob sie etwas geaendert hat, sagt die Seite dem Leser -- sonst waere
+       nicht zu sehen, dass das Nachlernen etwas tut. */
     m_fotoAnteile = faden->anteile;
+    m_fotoKorrigiert = false;
+    if (!m_fotoAnteile.isEmpty() && !m_fotoAbdruck.isEmpty()) {
+        const QVector<float> korrigiert =
+                m_gelerntes.korrigieren(m_fotoAnteile, m_fotoAbdruck);
+        if (korrigiert.size() == m_fotoAnteile.size()) {
+            int vorher = 0, nachher = 0;
+            for (int i = 1; i < m_fotoAnteile.size(); ++i) {
+                if (m_fotoAnteile.at(i) > m_fotoAnteile.at(vorher)) vorher = i;
+                if (korrigiert.at(i) > korrigiert.at(nachher)) nachher = i;
+            }
+            m_fotoKorrigiert = (vorher != nachher);
+            m_fotoAnteile = korrigiert;
+        }
+    }
     emit photoChanged();
 }
 
@@ -1253,9 +1361,27 @@ void Course::askOnline()
         emit photoChanged();
         return;
     }
+    /* Erst die Anzeige, dann die Arbeit: Auf dem Qt-4-Weg laufen Bild
+       laden, JPEG packen und der Start des Hilfsprozesses im
+       Oberflaechenfaden -- ohne diesen Umweg stuende sekundenlang nichts
+       auf dem Bildschirm, nicht einmal "Claude schaut ...". */
     m_fotoOnline.insert(QLatin1String("laeuft"), true);
-    m_online->anfragen(m_fotoPfad, classifierClasses(), m_course->language(), m_schluessel);
+    m_onlineWartend = true;
+    QTimer::singleShot(0, this, SLOT(onlineStarten()));
     emit photoChanged();
+}
+
+void Course::onlineStarten()
+{
+    if (!m_onlineWartend || m_fotoPfad.isEmpty())
+        return;
+    m_onlineWartend = false;
+    m_online->anfragen(m_fotoPfad, classifierClasses(), m_course->language(), m_schluessel);
+}
+
+bool Course::pathExists(const QString &pfad) const
+{
+    return QFileInfo(pfad).isDir();
 }
 
 void Course::onOnlineDone(const QVariantMap &antwort)
@@ -1263,6 +1389,17 @@ void Course::onOnlineDone(const QVariantMap &antwort)
     m_fotoOnline = antwort;
     m_fotoOnline.insert(QLatin1String("laeuft"), false);
     m_fotoOnline.insert(QLatin1String("fertig"), true);
+
+    /* Zwei Stimmen, eine Meinung: Nur wenn Claudes Urteil und der eigene
+       Tipp dieselbe Klasse nennen, merkt die App das Foto von selbst.  Das
+       halbiert die Zahl der Eintraege und verdoppelt ihren Wert -- gemessen
+       in training/nachlernen_versuch.py, nachzulesen in GELERNTES.md.
+       Gehen die beiden auseinander, entscheidet der Leser auf der Seite. */
+    const QString gesagt = antwort.value(QLatin1String("klasse")).toString();
+    if (antwort.value(QLatin1String("ok")).toBool()
+            && !gesagt.isEmpty() && gesagt == m_fotoGeraten)
+        rememberPhoto(gesagt, Nachlernen::Einig);
+
     emit photoChanged();
 }
 
@@ -1277,10 +1414,13 @@ void Course::setApiKey(const QString &schluesselRoh)
         QDir().mkpath(QFileInfo(pfad).absolutePath());
         QFile datei(pfad);
         if (datei.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
+            /* Die Rechte zuerst: zwischen open() und setPermissions() laege
+               die Datei sonst einen Augenblick mit 0644 da -- mit dem
+               Schluessel darin. */
+            datei.setPermissions(QFile::ReadOwner | QFile::WriteOwner);
             datei.write(schluessel.toUtf8());
             datei.write("\n");
             datei.close();
-            datei.setPermissions(QFile::ReadOwner | QFile::WriteOwner);
         }
     }
     emit photoChanged();
@@ -1297,6 +1437,10 @@ void Course::clearPhoto()
     m_fotoGeraten.clear();
     m_fotoAnteile.clear();
     m_fotoOnline.clear();
+    m_fotoGemerkt.clear();
+    m_fotoNetzBild = QImage();
+    m_fotoAbdruck.clear();
+    m_fotoKorrigiert = false;
     emit photoChanged();
 }
 
@@ -1355,4 +1499,255 @@ QVariantMap Course::glossaryEntry(const QString &id) const
     }
     out.insert(QLatin1String("siehe"), siehe);
     return out;
+}
+
+/* --- Was die App dazugelernt hat (GELERNTES.md) ------------------------- */
+
+QString Course::gelerntesPfad() const
+{
+    return QFileInfo(m_engine.path()).absolutePath() + QLatin1String("/gelerntes.bin");
+}
+
+QString Course::learnedFilePath() const
+{
+    return gelerntesPfad();
+}
+
+/* Beim ersten Foto, gleich nach dem Netz: Das Gedaechtnis haengt am Netz --
+   es braucht dessen Klassenliste und seinen Fingerabdruck, und Abdruecke
+   aus einer anderen Fassung muessen neu gerechnet werden. */
+void Course::gelerntesLaden()
+{
+    if (m_gelerntesGeladen || !m_klassifizierer.bereit())
+        return;
+    m_gelerntesGeladen = true;
+    QString fehler;
+    if (!m_gelerntes.laden(gelerntesPfad(), &fehler)) {
+        qWarning("Gelerntes nicht lesbar: %s", qPrintable(fehler));
+        m_gelerntes.alleVergessen();
+    }
+    m_gelerntes.netzSetzen(m_klassifizierer.fingerabdruck(),
+                           m_klassifizierer.klassen());
+    m_gelerntes.kopfSetzen(m_klassifizierer.kopfGewichte(),
+                           m_klassifizierer.kopfBias());
+
+    /* Nach einem Wechsel des Netzes sind die Abdruecke wertlos, die Bilder
+       aber nicht: einmal nachrechnen, dann zurueckschreiben.  Das kostet
+       pro Eintrag so viel wie ein Foto (auf dem Jolla 100 ms), laeuft aber
+       nur einmal nach einer neuen Fassung. */
+    const QStringList offen = m_gelerntes.brauchtNeurechnung();
+    if (!offen.isEmpty()) {
+        int gerechnet = 0;
+        for (int i = 0; i < offen.size(); ++i) {
+            const int nummer = offen.at(i).toInt();
+            QImage bild;
+            if (!bild.loadFromData(m_gelerntes.bildDaten(nummer), "JPEG"))
+                continue;
+            QVector<float> abdruck;
+            float laenge = 0.f;
+            m_klassifizierer.bewerten(bild, &abdruck, &laenge);
+            if (abdruck.isEmpty())
+                continue;
+            m_gelerntes.abdruckSetzen(nummer, abdruck, laenge);
+            ++gerechnet;
+        }
+        if (gerechnet > 0)
+            m_gelerntes.speichern(gelerntesPfad());
+    }
+    kopfNachtrainieren();
+    emit learnedChanged();
+}
+
+void Course::kopfNachtrainieren()
+{
+    if (m_lernFadenLaeuft || !m_gelerntes.kopfLohnt())
+        return;
+    m_lernFadenLaeuft = true;
+    LernFaden *faden = new LernFaden(&m_gelerntes, this);
+    connect(faden, SIGNAL(finished()), this, SLOT(onKopfNachtrainiert()));
+    faden->start();
+}
+
+void Course::onKopfNachtrainiert()
+{
+    LernFaden *faden = static_cast<LernFaden *>(sender());
+    if (!faden)
+        return;
+    faden->deleteLater();
+    m_lernFadenLaeuft = false;
+    if (faden->gelungen)
+        m_gelerntes.kopfUebernehmen(faden->gewichte, faden->bias, faden->stand);
+    /* Hat sich das Gedaechtnis waehrenddessen geaendert, gilt das Ergebnis
+       nicht -- dann gleich noch einmal, mit dem neuen Stand. */
+    if (faden->stand != m_gelerntes.stand())
+        kopfNachtrainieren();
+    emit learnedChanged();
+}
+
+/* Nach jeder Aenderung am Gedaechtnis dasselbe: speichern, der Oberflaeche
+   Bescheid geben, die letzte Schicht nachziehen. */
+void Course::gelerntesGeaendert()
+{
+    QString fehler;
+    if (!m_gelerntes.speichern(gelerntesPfad(), &fehler))
+        qWarning("Gelerntes nicht schreibbar: %s", qPrintable(fehler));
+    kopfNachtrainieren();
+    emit learnedChanged();
+}
+
+QVariantMap Course::learned() const
+{
+    QVariantMap out;
+    out.insert(QLatin1String("anzahl"), m_gelerntes.anzahl());
+    out.insert(QLatin1String("nutzbare"), m_gelerntes.nutzbare());
+    out.insert(QLatin1String("wirksam"), m_gelerntes.wirksam());
+    out.insert(QLatin1String("fehlende"), m_gelerntes.fehlende());
+    out.insert(QLatin1String("kopf"), m_gelerntes.kopfAktiv());
+    out.insert(QLatin1String("kopfAb"), 40);
+    QVariantList liste;
+    for (const QVariant &value : m_gelerntes.eintraege()) {
+        QVariantMap e = value.toMap();
+        const QVariantMap k = classEntry(e.value(QLatin1String("klasse")).toString());
+        e.insert(QLatin1String("name"), k.isEmpty()
+                 ? e.value(QLatin1String("klasse"))
+                 : k.value(QLatin1String("name")));
+        liste.append(e);
+    }
+    out.insert(QLatin1String("eintraege"), liste);
+    return out;
+}
+
+void Course::rememberPhoto(const QString &klasseId, int quelle)
+{
+    if (m_fotoNetzBild.isNull() || m_fotoAbdruck.isEmpty())
+        return;
+    if (classEntry(klasseId).isEmpty())
+        return;                 // keine Klasse, die der Kurs kennt
+    int sicherheit = 0;
+    const QString wort = m_fotoOnline.value(QLatin1String("sicherheit")).toString();
+    if (wort == QLatin1String("hoch")) sicherheit = 3;
+    else if (wort == QLatin1String("mittel")) sicherheit = 2;
+    else if (wort == QLatin1String("niedrig")) sicherheit = 1;
+
+    m_gelerntes.merken(klasseId, (Nachlernen::Quelle)quelle, sicherheit,
+                       m_fotoNetzBild, m_fotoAbdruck, m_fotoLaenge);
+    m_fotoGemerkt = klasseId;
+    gelerntesGeaendert();
+    emit photoChanged();
+}
+
+void Course::forgetLearned(int nummer)
+{
+    if (!m_gelerntes.vergessen(nummer))
+        return;
+    gelerntesGeaendert();
+}
+
+void Course::forgetAllLearned()
+{
+    m_gelerntes.alleVergessen();
+    gelerntesGeaendert();
+}
+
+/* Die Oberflaeche kann ein JPEG aus dem Speicher nicht anzeigen -- Qt 4.7
+   kennt keine data:-Adressen.  Also einmal in den Zwischenspeicher
+   schreiben und den Pfad zurueckgeben; beim naechsten Mal liegt es da. */
+QString Course::learnedImage(int nummer)
+{
+    const QByteArray jpeg = m_gelerntes.bildDaten(nummer);
+    if (jpeg.isEmpty())
+        return QString();
+    const QString ordner = QFileInfo(m_engine.path()).absolutePath()
+            + QLatin1String("/gelerntes");
+    QDir().mkpath(ordner);
+    const QString pfad = ordner + QLatin1String("/")
+            + QString::fromLatin1(QCryptographicHash::hash(jpeg, QCryptographicHash::Md5)
+                                  .toHex().left(16)) + QLatin1String(".jpg");
+    if (!QFile::exists(pfad)) {
+        QFile datei(pfad);
+        if (!datei.open(QIODevice::WriteOnly))
+            return QString();
+        datei.write(jpeg);
+        datei.close();
+    }
+    return pfad;
+}
+
+QString Course::exportLearned()
+{
+    if (m_gelerntes.anzahl() == 0)
+        return zweisprachig("Es ist noch nichts gelernt.", "Nothing has been learned yet.");
+    /* Dorthin, wo der Leser Dateien findet: auf Harmattan MyDocs, auf
+       Sailfish die Dokumente.  Gibt es den Ordner nicht, bleibt die Datei
+       neben dem Fortschritt und der Satz nennt den Pfad. */
+    QString ziel;
+    const QStringList orte = QStringList()
+            << QDir::homePath() + QLatin1String("/MyDocs")
+            << QDir::homePath() + QLatin1String("/Documents")
+            << QDir::homePath() + QLatin1String("/Dokumente");
+    for (int i = 0; i < orte.size(); ++i)
+        if (QDir(orte.at(i)).exists()) {
+            ziel = orte.at(i) + QLatin1String("/segelflug-gelerntes.bin");
+            break;
+        }
+    if (ziel.isEmpty())
+        ziel = QDir::homePath() + QLatin1String("/segelflug-gelerntes.bin");
+
+    QString fehler;
+    if (!m_gelerntes.speichern(ziel, &fehler))
+        return zweisprachig("Das Sichern ging nicht: ", "Saving failed: ") + fehler;
+    return zweisprachig("Gesichert nach ", "Saved to ") + ziel
+            + zweisprachig(". Die Datei enthält die gemerkten Fotos (160 Pixel) --"
+                           " wer sie weitergibt, gibt sie mit.",
+                           ". The file contains the remembered photos (160 pixels) --"
+                           " passing it on passes them on too.");
+}
+
+QString Course::importLearned(const QString &pfadRoh)
+{
+    QString pfad = pfadRoh;
+    if (pfad.startsWith(QLatin1String("file://")))
+        pfad = QUrl(pfad).toLocalFile();
+    if (pfad.isEmpty()) {
+        /* Ohne Angabe: dort nachsehen, wohin exportLearned schreibt. */
+        const QStringList orte = QStringList()
+                << QDir::homePath() + QLatin1String("/MyDocs/segelflug-gelerntes.bin")
+                << QDir::homePath() + QLatin1String("/Documents/segelflug-gelerntes.bin")
+                << QDir::homePath() + QLatin1String("/Dokumente/segelflug-gelerntes.bin")
+                << QDir::homePath() + QLatin1String("/segelflug-gelerntes.bin");
+        for (int i = 0; i < orte.size() && pfad.isEmpty(); ++i)
+            if (QFile::exists(orte.at(i)))
+                pfad = orte.at(i);
+    }
+    if (pfad.isEmpty() || !QFile::exists(pfad))
+        return zweisprachig("Keine Datei gefunden.", "No file found.");
+
+    gelerntesLaden();
+    QString fehler;
+    const int neu = m_gelerntes.dazuladen(pfad, &fehler);
+    if (neu < 0)
+        return zweisprachig("Die Datei ist nicht lesbar: ", "The file cannot be read: ") + fehler;
+    if (neu == 0)
+        return zweisprachig("Nichts Neues darin.", "Nothing new in it.");
+
+    /* Was aus einer anderen Fassung kommt, braucht neue Abdruecke -- das
+       macht gelerntesLaden, also noch einmal durch. */
+    m_gelerntesGeladen = false;
+    const QStringList offen = m_gelerntes.brauchtNeurechnung();
+    for (int i = 0; i < offen.size(); ++i) {
+        const int nummer = offen.at(i).toInt();
+        QImage bild;
+        if (!bild.loadFromData(m_gelerntes.bildDaten(nummer), "JPEG"))
+            continue;
+        QVector<float> abdruck;
+        float laenge = 0.f;
+        m_klassifizierer.bewerten(bild, &abdruck, &laenge);
+        if (!abdruck.isEmpty())
+            m_gelerntes.abdruckSetzen(nummer, abdruck, laenge);
+    }
+    m_gelerntesGeladen = true;
+    gelerntesGeaendert();
+    emit photoChanged();
+    return zweisprachig("Dazugelernt: ", "Added: ") + QString::number(neu)
+            + zweisprachig(" Fotos.", " photos.");
 }

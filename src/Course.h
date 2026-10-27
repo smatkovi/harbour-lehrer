@@ -5,12 +5,14 @@
 #include <QStringList>
 #include <QVariantList>
 #include <QVariantMap>
+#include <QImage>
 #include <QVector>
 
 #include "Curriculum.h"
 #include "Engine.h"
 #include "Erkennen.h"
 #include "Klassifizierer.h"
+#include "Nachlernen.h"
 #include "OnlineDeuter.h"
 #include "Placement.h"
 
@@ -59,6 +61,11 @@ class Course : public QObject
     Q_PROPERTY(bool onlineAvailable READ onlineAvailable NOTIFY changed)
     Q_PROPERTY(bool hasApiKey READ hasApiKey NOTIFY photoChanged)
     Q_PROPERTY(QVariantMap photo READ photo NOTIFY photoChanged)
+
+    /* Was die App dazugelernt hat (GELERNTES.md): {anzahl, nutzbare,
+       wirksam, fehlende, eintraege:[{nummer, klasse, name, quelle, zeit,
+       bekannt}]}.  Die Liste ist das Neueste zuerst. */
+    Q_PROPERTY(QVariantMap learned READ learned NOTIFY learnedChanged)
 
     /* Das Glossar, uebersetzt und nach Wort sortiert: [{id, wort}].  Den
        ganzen Eintrag holt glossaryEntry(id). */
@@ -157,6 +164,28 @@ public:
     Q_INVOKABLE void askOnline();
     Q_INVOKABLE void setApiKey(const QString &schluessel);
     Q_INVOKABLE void clearPhoto();
+    /* Gibt es den Ordner?  Die eigene Galerie auf Harmattan zeigt nur die
+       Ordner als Umschalter an, die es auf diesem Geraet wirklich gibt. */
+    Q_INVOKABLE bool pathExists(const QString &pfad) const;
+
+    /* Merken: `klasseId` ist die Klasse, die gelernt werden soll, `quelle`
+       0 = beide einig, 1 = Claude allein, 2 = der Leser stellt richtig.
+       Ohne Foto oder ohne Abdruck tut es nichts.  Nach einer Antwort von
+       Claude, die mit dem eigenen Tipp uebereinstimmt, merkt askOnline das
+       von selbst -- die Taste ist fuer die Faelle, in denen die beiden
+       auseinandergehen. */
+    Q_INVOKABLE void rememberPhoto(const QString &klasseId, int quelle);
+    Q_INVOKABLE void forgetLearned(int nummer);
+    Q_INVOKABLE void forgetAllLearned();
+    /* Das gemerkte Bild als Datei im Zwischenspeicher, fuer die Anzeige;
+       leer, wenn es die Nummer nicht gibt. */
+    Q_INVOKABLE QString learnedImage(int nummer);
+    /* Sichern und Laden: die Datei ist uebertragbar, und Laden fuehrt
+       zusammen statt zu ersetzen.  Rueckgabe ist ein Satz fuer die
+       Oberflaeche -- was passiert ist oder was schiefging. */
+    Q_INVOKABLE QString exportLearned();
+    Q_INVOKABLE QString importLearned(const QString &pfad);
+    Q_INVOKABLE QString learnedFilePath() const;
 
     /* Ein Glossareintrag: {leer, id, wort, definition, bild, siehe:[{id,
        wort}]}; definition im selben Markdown wie die Lektionstexte
@@ -212,12 +241,15 @@ signals:
     void placementChanged();
     void recognitionChanged();
     void photoChanged();
+    void learnedChanged();
     void lessonChanged();
     void runChanged();
     void cardChanged();
 
 private slots:
     void onRunFinished();
+    void onlineStarten();
+    void onKopfNachtrainiert();
     void onPhotoClassified();
     void onOnlineDone(const QVariantMap &antwort);
 
@@ -241,6 +273,25 @@ private:
     QString zweisprachig(const char *de, const char *en) const;
 
     Klassifizierer m_klassifizierer;
+    QString m_modellPfad;          // geladen wird erst beim ersten Foto
+    Nachlernen m_gelerntes;
+    bool m_gelerntesGeladen = false;
+    QImage m_fotoNetzBild;         // das Bild, wie das Netz es sah
+    QVector<float> m_fotoAbdruck;  // sein Merkmalsvektor
+    bool m_fotoKorrigiert = false; // hat das Gelernte die Reihenfolge geaendert?
+    QString m_fotoGemerkt;         // was zu diesem Foto gemerkt wurde
+    int m_fotoDrehung = 0;         // EXIF-Drehung in Grad, fuer die Anzeige
+    QString m_fotoWartend;         // Foto, das auf den laufenden Faden wartet
+    bool m_fadenLaeuft = false;    // rechnet gerade ein BewertungsFaden?
+    bool m_onlineWartend = false;  // Anfrage, die im naechsten Umlauf startet
+
+    QVariantMap learned() const;
+    void gelerntesLaden();
+    QString gelerntesPfad() const;
+    void gelerntesGeaendert();     // speichern, melden, Kopf nachtrainieren
+    void kopfNachtrainieren();     // im Arbeitsfaden, wenn es sich lohnt
+    bool m_lernFadenLaeuft = false;
+    float m_fotoLaenge = 0.f;      // Laenge des Abdrucks vor dem Normieren
     OnlineDeuter *m_online;
     int m_fotoLauf = 0;            // zaehlt die Fotos, damit ein spaeter
                                    // fertiger Faden kein neueres ueberschreibt
