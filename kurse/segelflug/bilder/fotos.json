@@ -351,14 +351,72 @@
    "titel": "Stratocumulus stratiformis asperitas am Rand eines Regengebiets V.jpg"
   }
  ],
+ "tagesverlaeufe": [
+  {
+   "autor": "Toby Hudson",
+   "breite": 640,
+   "datei": "foto-tagesverlaeufe-1.jpg",
+   "hinweis": {
+    "de": "Kleine, flache Humilis mit viel Blau dazwischen, alle auf einer Basis: so sieht der klassische Cumulus-Tag am Vormittag aus. Die Basis steigt noch, der Tag wird lang.",
+    "en": "Small flat humilis with plenty of blue between them, all on one base: this is the classic cumulus day in late morning. The base is still rising; the day will be long."
+   },
+   "hoehe": 455,
+   "lizenz": "CC BY-SA 3.0",
+   "lizenzurl": "https://creativecommons.org/licenses/by-sa/3.0",
+   "seite": "https://commons.wikimedia.org/wiki/File:Cumulus_humilis_clouds.jpg",
+   "titel": "Cumulus humilis clouds.jpg"
+  },
+  {
+   "autor": "Thomas Bresson",
+   "breite": 640,
+   "datei": "foto-tagesverlaeufe-2.jpg",
+   "hinweis": {
+    "de": "Aufgenommen um 9:51 Uhr — und schon ein Turm, höher als breit. Das ist kein Humilis-Vormittag, das ist Überentwicklung im Anmarsch: früh starten, mittags Abstand.",
+    "en": "Taken at 09:51 — and already a tower, taller than wide. This is no humilis morning, this is overdevelopment on its way: start early, keep your distance at noon."
+   },
+   "hoehe": 318,
+   "lizenz": "CC BY 4.0",
+   "lizenzurl": "https://creativecommons.org/licenses/by/4.0",
+   "seite": "https://commons.wikimedia.org/wiki/File:2019-05-25_09-51-19_cumulus.jpg",
+   "titel": "2019-05-25 09-51-19 cumulus.jpg"
+  },
+  {
+   "autor": "Famartin",
+   "breite": 640,
+   "datei": "foto-tagesverlaeufe-3.jpg",
+   "hinweis": {
+    "de": "9 Uhr, die Sonne nur noch als matte Scheibe hinter Cirrostratus. Der Boden bekommt keine Kraft mehr: Abschirmung, der Tag bringt keine Thermik, egal wie es am Horizont aussieht.",
+    "en": "09:00, the sun only a dull disc behind cirrostratus. The ground gets no strength any more: shaded out, the day will bring no thermals whatever the horizon looks like."
+   },
+   "hoehe": 480,
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzurl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "seite": "https://commons.wikimedia.org/wiki/File:2020-02-20_09_12_22_Sun_dimly_visible_through_cirrostratus_along_Old_Ox_Road_in_the_Dulles_section_of_Sterling,_Loudoun_County,_Virginia.jpg",
+   "titel": "2020-02-20 09 12 22 Sun dimly visible through cirrostratus along Old Ox Road in the Dulles section of Sterling, Loudoun County, Virginia.jpg"
+  },
+  {
+   "autor": "Veselin.dikov",
+   "breite": 640,
+   "datei": "foto-tagesverlaeufe-4.jpg",
+   "hinweis": {
+    "de": "Linsen über dem Kamm, glatt und ortsfest: Wellentag. Wenig Thermik, dafür Steigen an derselben Stelle über Stunden — und darunter der Rotor.",
+    "en": "Lenses over the ridge, smooth and stationary: a wave day. Little thermal lift, but lift in the same place for hours — and the rotor underneath."
+   },
+   "hoehe": 480,
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzurl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "seite": "https://commons.wikimedia.org/wiki/File:PXL_20211221_223638171.jpg",
+   "titel": "PXL 20211221 223638171.jpg"
+  }
+ ],
  "wolkenstrasse": [
   {
    "autor": "Skyofcolorado",
    "breite": 640,
    "datei": "foto-wolkenstrasse-1.jpg",
    "hinweis": {
-    "de": "Die Wolken stehen in Reihen, die zum Horizont zusammenlaufen, längs des Windes. Darunter lässt sich geradeaus fliegen, ohne zu kreisen.",
-    "en": "The clouds stand in rows converging towards the horizon, along the wind. Under them you can fly straight ahead without circling."
+    "de": "Die Wolken stehen nicht verstreut, sondern in parallelen Reihen, längs des Windes. Unter einer Reihe lässt sich geradeaus fliegen, ohne zu kreisen.",
+    "en": "The clouds are not scattered but lined up in parallel rows, along the wind. Under a row you can fly straight ahead without circling."
    },
    "hoehe": 360,
    "lizenz": "CC0",
