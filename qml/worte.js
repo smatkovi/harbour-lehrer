@@ -277,8 +277,8 @@ var EN = {
     "Sichern": "Save",
     "Vergessen": "Forget",
     "Von Claude lernen, unabhängig von meinem Tipp": "Learn from Claude regardless of my guess",
-    "Dann merkt die App Claudes Klasse von selbst, sobald Fable seine Sicherheit mit „hoch“ angibt — auch wenn du etwas anderes getippt hast. Antwortet Opus, bleibt es beim Knopf.":
-        "The app then remembers Claude's class on its own as soon as Fable rates its confidence \"high\" — even if you guessed something else. When Opus answers, it stays with the button.",
+    "Die App merkt Fables Klasse von selbst, bei Sicherheit „hoch“ und „mittel“ — auch wenn du etwas anderes getippt hast. Antwortet Opus, bleibt es beim Knopf.":
+        "The app remembers Fable's class on its own at confidence \"high\" and \"medium\" — even if you guessed something else. When Opus answers, it stays with the button.",
     "von mir richtiggestellt": "corrected by me",
     "Auf die Wolke tippen, dann aufnehmen.": "Tap the cloud, then capture.",
     "An dieser Stelle fand die Kamera keinen Kontrast — auf eine Kante der Wolke tippen; die Messstelle gilt trotzdem.":

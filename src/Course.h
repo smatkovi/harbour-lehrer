@@ -66,9 +66,9 @@ class Course : public QObject
        wirksam, fehlende, eintraege:[{nummer, klasse, name, quelle, zeit,
        bekannt}]}.  Die Liste ist das Neueste zuerst. */
     Q_PROPERTY(QVariantMap learned READ learned NOTIFY learnedChanged)
-    /* Von Claude lernen, unabhaengig vom eigenen Tipp: Dann merkt die App
-       Claudes Klasse von selbst, sobald er seine Sicherheit mit "hoch"
-       angibt (GELERNTES.md, "Was gemerkt wird"). */
+    /* Von Fable lernen, unabhaengig vom eigenen Tipp (Normalfall an): Dann
+       merkt die App Fables Klasse von selbst bei Sicherheit "hoch" oder
+       "mittel" (GELERNTES.md, "Was gemerkt wird"). */
     Q_PROPERTY(bool learnFromClaude READ learnFromClaude WRITE setLearnFromClaude NOTIFY learnedChanged)
 
     /* Das Glossar, uebersetzt und nach Wort sortiert: [{id, wort}].  Den
@@ -179,6 +179,12 @@ public:
        von selbst -- die Taste ist fuer die Faelle, in denen die beiden
        auseinandergehen. */
     Q_INVOKABLE void rememberPhoto(const QString &klasseId, int quelle);
+    /* Der gemeinsame Kern von rememberPhoto() und dem Lernen aus der Antwort:
+       merkt Bild und Abdruck unter der Klasse; `aktuell` sagt, ob es das
+       Foto auf der Seite ist (dann steht es dort als gemerkt). */
+    void merken(const QString &klasseId, int quelle, const QString &sicherheitWort,
+                const QImage &netzBild, const QVector<float> &abdruck, float laenge,
+                bool aktuell);
     bool learnFromClaude() const;
     void setLearnFromClaude(bool an);
     Q_INVOKABLE void forgetLearned(int nummer);
@@ -304,6 +310,14 @@ private:
     int m_fotoLauf = 0;            // zaehlt die Fotos, damit ein spaeter
                                    // fertiger Faden kein neueres ueberschreibt
     QString m_fotoPfad;
+    /* Das Foto, fuer das die laufende Claude-Anfrage gestellt wurde -- als
+       Abschrift, damit das Urteil auch dann gelernt wird, wenn der Leser
+       laengst das naechste Foto gewaehlt hat (GELERNTES.md). */
+    QString m_anfragePfad;
+    QImage m_anfrageNetzBild;
+    QVector<float> m_anfrageAbdruck;
+    float m_anfrageLaenge = 0.f;
+    QString m_anfrageGeraten;
     bool m_fotoLaeuft = false;
     bool m_fotoFertig = false;
     QString m_fotoFehler;          // "" | "laden" | "rechnen"

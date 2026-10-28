@@ -68,7 +68,7 @@ Course::Course(Curriculum *course, Plotter *plotter, QObject *parent)
     OnlineDeuter::protokollSetzen(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/letzte-antwort.json"));
     m_engine.load();
     connect(m_online, SIGNAL(fertig(QVariantMap)), this, SLOT(onOnlineDone(QVariantMap)));
-    m_vonClaudeLernen = QFile::exists(vonClaudePfad());
+    m_vonClaudeLernen = !QFile::exists(vonClaudePfad());   // an, solange niemand es ausschaltet
     /* Der Schluessel fuer den Online-Blick: aus der eigenen Datei neben dem
        Fortschritt, sonst aus ~/.profile, wo er auf den Nokias schon steht.
        Er wird nie protokolliert und geht nur in die eine Anfrage. */
@@ -1256,7 +1256,9 @@ void Course::classifyPhoto(const QString &pfadRoh)
     QString pfad = pfadRoh;
     if (pfad.startsWith(QLatin1String("file://")))
         pfad = QUrl(pfad).toLocalFile();
-    m_online->abbrechen();
+    /* Eine laufende Claude-Anfrage bleibt am Leben: Ihr Urteil gehoert zum
+       vorigen Foto und wird aus der Abschrift (m_anfrage*) gelernt, auch
+       wenn der Leser hier schon das naechste waehlt. */
     ++m_fotoLauf;
     m_fotoPfad = pfad;
     m_fotoLaeuft = true;
@@ -1360,8 +1362,11 @@ void Course::guessPhoto(const QString &klasseId)
 
 void Course::askOnline()
 {
-    if (m_fotoPfad.isEmpty() || m_online->laeuft())
+    if (m_fotoPfad.isEmpty())
         return;
+    /* Laeuft noch die Anfrage fuers vorige Foto, weicht sie: anfragen()
+       bricht sie ab.  Ihr Urteil geht dann verloren -- das ist der eine
+       Fall, in dem schnelles Weiterklicken etwas kostet. */
     m_fotoOnline.clear();
     if (m_schluessel.isEmpty()) {
         m_fotoOnline.insert(QLatin1String("ok"), false);
@@ -1386,6 +1391,11 @@ void Course::onlineStarten()
     if (!m_onlineWartend || m_fotoPfad.isEmpty())
         return;
     m_onlineWartend = false;
+    m_anfragePfad = m_fotoPfad;
+    m_anfrageNetzBild = m_fotoNetzBild;
+    m_anfrageAbdruck = m_fotoAbdruck;
+    m_anfrageLaenge = m_fotoLaenge;
+    m_anfrageGeraten = m_fotoGeraten;
     m_online->anfragen(m_fotoPfad, classifierClasses(), m_course->language(), m_schluessel);
 }
 
@@ -1396,9 +1406,26 @@ bool Course::pathExists(const QString &pfad) const
 
 void Course::onOnlineDone(const QVariantMap &antwort)
 {
-    m_fotoOnline = antwort;
-    m_fotoOnline.insert(QLatin1String("laeuft"), false);
-    m_fotoOnline.insert(QLatin1String("fertig"), true);
+    /* Gehoert die Antwort noch zum Foto auf der Seite?  Sonst wird sie nur
+       gelernt, nicht angezeigt -- die Seite zeigt schon das naechste. */
+    const bool aktuell = !m_fotoPfad.isEmpty() && m_fotoPfad == m_anfragePfad;
+    if (aktuell) {
+        m_fotoOnline = antwort;
+        m_fotoOnline.insert(QLatin1String("laeuft"), false);
+        m_fotoOnline.insert(QLatin1String("fertig"), true);
+    }
+    /* Die Abschrift vom Zeitpunkt der Anfrage; war das Netz damals noch
+       nicht fertig, dann das, was jetzt da ist (dasselbe Foto). */
+    QImage netzBild = m_anfrageNetzBild;
+    QVector<float> abdruck = m_anfrageAbdruck;
+    float laenge = m_anfrageLaenge;
+    if (aktuell && (netzBild.isNull() || abdruck.isEmpty())) {
+        netzBild = m_fotoNetzBild;
+        abdruck = m_fotoAbdruck;
+        laenge = m_fotoLaenge;
+    }
+    const QString geraten = m_anfrageGeraten;
+    const QString sicherheitWort = antwort.value(QLatin1String("sicherheit")).toString();
 
     /* Zwei Stimmen, eine Meinung: Nur wenn Claudes Urteil und der eigene
        Tipp dieselbe Klasse nennen, merkt die App das Foto von selbst.  Das
@@ -1412,18 +1439,22 @@ void Course::onOnlineDone(const QVariantMap &antwort)
     const bool vonFable = antwort.value(QLatin1String("modell")).toString()
             .startsWith(QLatin1String("Fable"));
     if (antwort.value(QLatin1String("ok")).toBool() && !gesagt.isEmpty() && vonFable) {
-        if (gesagt == m_fotoGeraten)
-            rememberPhoto(gesagt, Nachlernen::Einig);
-        else if (m_vonClaudeLernen
-                 && antwort.value(QLatin1String("sicherheit")).toString() == QLatin1String("hoch"))
-            /* Auf Wunsch zaehlt Claudes Urteil allein, unabhaengig vom
-               eigenen Tipp -- aber nur, wenn Claude sich sicher ist: Ein
-               Lehrer mit 80 % Trefferquote hat dem Netz im Versuch kaum
-               noch geholfen (GELERNTES.md). */
-            rememberPhoto(gesagt, Nachlernen::Claude);
+        if (gesagt == geraten)
+            merken(gesagt, Nachlernen::Einig, sicherheitWort, netzBild, abdruck, laenge, aktuell);
+        else if (m_vonClaudeLernen && (sicherheitWort == QLatin1String("hoch")
+                                       || sicherheitWort == QLatin1String("mittel")))
+            /* Fables Urteil zaehlt allein, unabhaengig vom eigenen Tipp --
+               bei "hoch" und "mittel"; "niedrig" bleibt draussen, weil ein
+               unsicherer Lehrer dem Netz im Versuch kaum geholfen hat
+               (GELERNTES.md). */
+            merken(gesagt, Nachlernen::Claude, sicherheitWort, netzBild, abdruck, laenge, aktuell);
     }
+    m_anfragePfad.clear();
+    m_anfrageNetzBild = QImage();
+    m_anfrageAbdruck.clear();
 
-    emit photoChanged();
+    if (aktuell)
+        emit photoChanged();
 }
 
 void Course::setApiKey(const QString &schluesselRoh)
@@ -1451,7 +1482,6 @@ void Course::setApiKey(const QString &schluesselRoh)
 
 void Course::clearPhoto()
 {
-    m_online->abbrechen();
     ++m_fotoLauf;
     m_fotoPfad.clear();
     m_fotoLaeuft = false;
@@ -1531,7 +1561,9 @@ QVariantMap Course::glossaryEntry(const QString &id) const
    die Kennung der Desktop-Datei). */
 QString Course::vonClaudePfad() const
 {
-    return QFileInfo(m_engine.path()).absolutePath() + QLatin1String("/von-claude-lernen");
+    /* Die Datei heisst "aus": Lernen von Claude ist der Normalfall, nur das
+       Abschalten wird festgehalten. */
+    return QFileInfo(m_engine.path()).absolutePath() + QLatin1String("/von-claude-lernen-aus");
 }
 
 bool Course::learnFromClaude() const
@@ -1544,7 +1576,7 @@ void Course::setLearnFromClaude(bool an)
     if (an == m_vonClaudeLernen)
         return;
     m_vonClaudeLernen = an;
-    if (an) {
+    if (!an) {
         QFile datei(vonClaudePfad());
         if (datei.open(QIODevice::WriteOnly | QIODevice::Truncate))
             datei.write("1\n");
@@ -1670,21 +1702,30 @@ QVariantMap Course::learned() const
 
 void Course::rememberPhoto(const QString &klasseId, int quelle)
 {
-    if (m_fotoNetzBild.isNull() || m_fotoAbdruck.isEmpty())
+    merken(klasseId, quelle, m_fotoOnline.value(QLatin1String("sicherheit")).toString(),
+           m_fotoNetzBild, m_fotoAbdruck, m_fotoLaenge, true);
+}
+
+void Course::merken(const QString &klasseId, int quelle, const QString &sicherheitWort,
+                    const QImage &netzBild, const QVector<float> &abdruck, float laenge,
+                    bool aktuell)
+{
+    if (netzBild.isNull() || abdruck.isEmpty())
         return;
     if (classEntry(klasseId).isEmpty())
         return;                 // keine Klasse, die der Kurs kennt
     int sicherheit = 0;
-    const QString wort = m_fotoOnline.value(QLatin1String("sicherheit")).toString();
-    if (wort == QLatin1String("hoch")) sicherheit = 3;
-    else if (wort == QLatin1String("mittel")) sicherheit = 2;
-    else if (wort == QLatin1String("niedrig")) sicherheit = 1;
+    if (sicherheitWort == QLatin1String("hoch")) sicherheit = 3;
+    else if (sicherheitWort == QLatin1String("mittel")) sicherheit = 2;
+    else if (sicherheitWort == QLatin1String("niedrig")) sicherheit = 1;
 
     m_gelerntes.merken(klasseId, (Nachlernen::Quelle)quelle, sicherheit,
-                       m_fotoNetzBild, m_fotoAbdruck, m_fotoLaenge);
-    m_fotoGemerkt = klasseId;
+                       netzBild, abdruck, laenge);
+    if (aktuell)
+        m_fotoGemerkt = klasseId;
     gelerntesGeaendert();
-    emit photoChanged();
+    if (aktuell)
+        emit photoChanged();
 }
 
 void Course::forgetLearned(int nummer)
