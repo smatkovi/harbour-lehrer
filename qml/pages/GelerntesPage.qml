@@ -68,7 +68,7 @@ Page {
             }
             TextSwitch {
                 text: W.w("Von Claude lernen, unabhängig von meinem Tipp", course.language)
-                description: W.w("Dann merkt die App Claudes Klasse von selbst, sobald er seine Sicherheit mit „hoch“ angibt — auch wenn du etwas anderes getippt hast. Dein Tipp zählt nur noch für die Statistik.", course.language)
+                description: W.w("Dann merkt die App Claudes Klasse von selbst, sobald Fable seine Sicherheit mit „hoch“ angibt — auch wenn du etwas anderes getippt hast. Antwortet Opus, bleibt es beim Knopf.", course.language)
                 checked: course.learnFromClaude
                 automaticCheck: false
                 onClicked: course.learnFromClaude = !checked

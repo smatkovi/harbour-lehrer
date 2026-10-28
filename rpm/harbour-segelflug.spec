@@ -53,7 +53,8 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
 %changelog
 * Wed Oct 28 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.19.4-1
 - Claude fragen: zuerst Fable (claude-fable-5-1), bei Ablehnung dieselbe
-  Anfrage mit Opus (claude-opus-5); die Antwort nennt das Modell
+  Anfrage mit Opus (claude-opus-5); die Antwort nennt das Modell; von
+  selbst gemerkt wird nur, was Fable sagt, bei Opus nur per Knopf
 - Schalter "Von Claude lernen, unabhaengig von meinem Tipp": Claudes Klasse
   wird bei Sicherheit "hoch" gemerkt, auch gegen den eigenen Tipp
 

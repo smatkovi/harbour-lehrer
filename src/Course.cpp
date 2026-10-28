@@ -1406,7 +1406,12 @@ void Course::onOnlineDone(const QVariantMap &antwort)
        in training/nachlernen_versuch.py, nachzulesen in GELERNTES.md.
        Gehen die beiden auseinander, entscheidet der Leser auf der Seite. */
     const QString gesagt = antwort.value(QLatin1String("klasse")).toString();
-    if (antwort.value(QLatin1String("ok")).toBool() && !gesagt.isEmpty()) {
+    /* Von selbst gemerkt wird nur, was Fable gesagt hat.  Antwortet Opus
+       (der Rueckfall, wenn Fable nicht zu haben ist), bleibt es beim Knopf
+       "Claude glauben" -- so will es der Leser. */
+    const bool vonFable = antwort.value(QLatin1String("modell")).toString()
+            .startsWith(QLatin1String("Fable"));
+    if (antwort.value(QLatin1String("ok")).toBool() && !gesagt.isEmpty() && vonFable) {
         if (gesagt == m_fotoGeraten)
             rememberPhoto(gesagt, Nachlernen::Einig);
         else if (m_vonClaudeLernen
