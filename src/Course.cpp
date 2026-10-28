@@ -1267,6 +1267,14 @@ void Course::classifyPhoto(const QString &pfadRoh)
     m_fotoGeraten.clear();
     m_fotoAnteile.clear();
     m_fotoOnline.clear();
+    /* Alles, was zum vorigen Foto gehoerte, muss weg -- sonst stuende unter
+       dem neuen Foto "gemerkt als …" vom alten (so gesehen am 28.10.2026:
+       "Claude meint Altostratus", "gemerkt als Altocumulus"), und ein
+       fruehes "Claude glauben" naehme das alte Netzbild. */
+    m_fotoGemerkt.clear();
+    m_fotoKorrigiert = false;
+    m_fotoNetzBild = QImage();
+    m_fotoAbdruck.clear();
     /* Das Netz beim ersten Foto laden -- hier im Oberflaechenfaden, nicht
        im Arbeitsfaden: ein zweites Foto waehrend des Ladens duerfte sonst
        auf ein halbes Modell treffen.  Einmal etwa 100 ms auf dem Jolla. */

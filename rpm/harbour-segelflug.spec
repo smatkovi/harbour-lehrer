@@ -1,5 +1,5 @@
 Name:       harbour-segelflug
-Version:    1.19.6
+Version:    1.19.7
 Release:    1
 Summary:    Gliding theory with a focus on reading clouds
 License:    GPLv3+
@@ -51,6 +51,10 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Wed Oct 28 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.19.7-1
+- "gemerkt als …" blieb vom vorigen Foto stehen; beim Fotowechsel wird es
+  jetzt mit Netzbild und Abdruck zurueckgesetzt
+
 * Wed Oct 28 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.19.6-1
 - Das naechste Foto waehlen bricht die laufende Claude-Anfrage nicht mehr
   ab: ihr Urteil wird aus einer Abschrift des vorigen Fotos gelernt
