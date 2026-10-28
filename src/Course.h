@@ -66,9 +66,9 @@ class Course : public QObject
        wirksam, fehlende, eintraege:[{nummer, klasse, name, quelle, zeit,
        bekannt}]}.  Die Liste ist das Neueste zuerst. */
     Q_PROPERTY(QVariantMap learned READ learned NOTIFY learnedChanged)
-    /* Auch ohne eigenen Tipp von Claude lernen: Dann merkt die App ein
-       Foto von selbst, wenn Claude seine Sicherheit mit "hoch" angibt und
-       der Leser nichts geraten hat (GELERNTES.md, "Was gemerkt wird"). */
+    /* Von Claude lernen, unabhaengig vom eigenen Tipp: Dann merkt die App
+       Claudes Klasse von selbst, sobald er seine Sicherheit mit "hoch"
+       angibt (GELERNTES.md, "Was gemerkt wird"). */
     Q_PROPERTY(bool learnFromClaude READ learnFromClaude WRITE setLearnFromClaude NOTIFY learnedChanged)
 
     /* Das Glossar, uebersetzt und nach Wort sortiert: [{id, wort}].  Den

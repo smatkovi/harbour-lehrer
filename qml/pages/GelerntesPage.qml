@@ -67,8 +67,8 @@ Page {
                 color: seite.gelernt.kopf === true ? "#7ee787" : Theme.secondaryColor
             }
             TextSwitch {
-                text: W.w("Auch ohne meinen Tipp von Claude lernen", course.language)
-                description: W.w("Dann merkt die App ein Foto von selbst, wenn Claude seine Sicherheit mit „hoch“ angibt und du nichts geraten hast. Gehen dein Tipp und Claude auseinander, entscheidest weiter du.", course.language)
+                text: W.w("Von Claude lernen, unabhängig von meinem Tipp", course.language)
+                description: W.w("Dann merkt die App Claudes Klasse von selbst, sobald er seine Sicherheit mit „hoch“ angibt — auch wenn du etwas anderes getippt hast. Dein Tipp zählt nur noch für die Statistik.", course.language)
                 checked: course.learnFromClaude
                 automaticCheck: false
                 onClicked: course.learnFromClaude = !checked

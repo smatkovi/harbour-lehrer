@@ -25,7 +25,12 @@
    damit Harmattan und Sailfish dieselbe Antwort lesen. */
 namespace {
 
-const char kModell[] = "claude-sonnet-5";
+/* Zuerst Fable, und wenn Fable nicht zu haben ist (Modell dem Konto nicht
+   freigegeben, Kontingent aufgebraucht, ueberlastet), dieselbe Anfrage noch
+   einmal mit Opus.  Nur ein falscher Schluessel wird nicht wiederholt --
+   den lehnt Opus genauso ab. */
+const char *kModelle[] = { "claude-fable-5-1", "claude-opus-5" };
+const char *kModellNamen[] = { "Fable", "Opus" };
 const char kVersion[] = "2023-06-01";
 /* Platz fuer das Urteil: Das Modell antwortet ueber ein Werkzeug (unten),
    dessen Eingabe die API als gueltiges JSON liefert; 400 waren knapp, wenn
@@ -106,7 +111,7 @@ QString systemText(const QVariantList &klassen, const QString &sprache)
 }
 
 QVariantMap anfrageRumpf(const QByteArray &base64, const QVariantList &klassen,
-                         const QString &sprache)
+                         const QString &sprache, const char *modell)
 {
     QVariantMap quelle;
     quelle.insert(QLatin1String("type"), QLatin1String("base64"));
@@ -175,7 +180,7 @@ QVariantMap anfrageRumpf(const QByteArray &base64, const QVariantList &klassen,
     wahl.insert(QLatin1String("name"), QLatin1String("urteil"));
 
     QVariantMap rumpf;
-    rumpf.insert(QLatin1String("model"), QLatin1String(kModell));
+    rumpf.insert(QLatin1String("model"), QLatin1String(modell));
     rumpf.insert(QLatin1String("max_tokens"), kAntwortTokens);
     rumpf.insert(QLatin1String("thinking"), denken);
     rumpf.insert(QLatin1String("system"), systemText(klassen, sprache));
@@ -344,6 +349,7 @@ struct OnlineDeuter::Daten
 {
     Daten()
         : laeuft(false)
+        , modellNr(0)
 #if QT_VERSION >= 0x050000
         , netz(0)
         , antwort(0)
@@ -359,6 +365,9 @@ struct OnlineDeuter::Daten
     QVariantList klassen;
     QString sprache;
     QString schluessel;         // nur, um ihn aus Fehlertexten zu tilgen
+    QString bildPfad;           // fuer den zweiten Versuch mit Opus
+    int modellNr;               // 0 Fable, 1 Opus
+    QString modellWort;         // was in der Karte steht: "Fable" oder "Opus (…)"
     QVariantMap verzoegert;     // Fehler, der im naechsten Umlauf gemeldet wird
     QTimer uhr;
 #if QT_VERSION >= 0x050000
@@ -437,9 +446,34 @@ void OnlineDeuter::fehlerMelden()
     emit fertig(karte);
 }
 
+/* Erster Versuch gescheitert, aber nicht am Schluessel: noch einmal mit
+   Opus.  `rumpf` ist die Antwort der API (leer, wenn wget sie verschluckt
+   hat).  Gibt true, wenn der zweite Versuch laeuft. */
+bool OnlineDeuter::rueckfall(const QByteArray &rumpf)
+{
+    if (d->modellNr != 0)
+        return false;
+    QString grund;
+    const QVariantMap antwort = Json::parse(QString::fromUtf8(rumpf)).toMap();
+    if (antwort.value(QLatin1String("type")).toString() == QLatin1String("error")) {
+        const QVariantMap fehler = antwort.value(QLatin1String("error")).toMap();
+        if (fehler.value(QLatin1String("type")).toString() == QLatin1String("authentication_error"))
+            return false;
+        grund = fehler.value(QLatin1String("message")).toString().left(80);
+    }
+    d->modellNr = 1;
+    d->modellWort = QLatin1String(kModellNamen[1])
+            + zweisprachig(d->sprache, " (Fable nicht verfügbar", " (Fable unavailable")
+            + (grund.isEmpty() ? QString() : QLatin1String(": ") + grund) + QLatin1Char(')');
+    senden();
+    return true;
+}
+
 void OnlineDeuter::melden(QVariantMap karte)
 {
     d->laeuft = false;
+    if (!d->modellWort.isEmpty())
+        karte.insert(QLatin1String("modell"), d->modellWort);
     QString fehler = karte.value(QLatin1String("fehler")).toString();
     if (!d->schluessel.isEmpty() && fehler.contains(d->schluessel)) {
         fehler.replace(d->schluessel, QLatin1String("***"));
@@ -447,13 +481,6 @@ void OnlineDeuter::melden(QVariantMap karte)
     }
     d->schluessel.clear();
     emit fertig(karte);
-}
-
-#if QT_VERSION >= 0x050000
-
-bool OnlineDeuter::verfuegbar()
-{
-    return true;
 }
 
 void OnlineDeuter::anfragen(const QString &bildPfad, const QVariantList &klassen,
@@ -464,11 +491,25 @@ void OnlineDeuter::anfragen(const QString &bildPfad, const QVariantList &klassen
     d->klassen = klassen;
     d->sprache = sprache;
     d->schluessel = schluessel;
+    d->bildPfad = bildPfad;
+    d->modellNr = 0;
+    d->modellWort = QLatin1String(kModellNamen[0]);
+    senden();
+}
 
+#if QT_VERSION >= 0x050000
+
+bool OnlineDeuter::verfuegbar()
+{
+    return true;
+}
+
+void OnlineDeuter::senden()
+{
     QString bildFehler;
-    const QByteArray base64 = bildAlsBase64(bildPfad, &bildFehler);
+    const QByteArray base64 = bildAlsBase64(d->bildPfad, &bildFehler);
     if (base64.isEmpty()) {
-        d->verzoegert = fehlerKarte(zweisprachig(sprache, "Foto nicht lesbar",
+        d->verzoegert = fehlerKarte(zweisprachig(d->sprache, "Foto nicht lesbar",
                                                  "Photo not readable"));
         QTimer::singleShot(0, this, SLOT(fehlerMelden()));
         return;
@@ -480,11 +521,12 @@ void OnlineDeuter::anfragen(const QString &bildPfad, const QVariantList &klassen
        Funktionsdeklaration (most vexing parse). */
     const QUrl ziel(apiUrl());
     QNetworkRequest anfrage(ziel);
-    anfrage.setRawHeader("x-api-key", schluessel.toUtf8());
+    anfrage.setRawHeader("x-api-key", d->schluessel.toUtf8());
     anfrage.setRawHeader("anthropic-version", kVersion);
     anfrage.setHeader(QNetworkRequest::ContentTypeHeader,
                       QLatin1String("application/json"));
-    const QByteArray rumpf = Json::stringify(anfrageRumpf(base64, klassen, sprache)).toUtf8();
+    const QByteArray rumpf = Json::stringify(anfrageRumpf(base64, d->klassen, d->sprache,
+                                                          kModelle[d->modellNr])).toUtf8();
     d->antwort = d->netz->post(anfrage, rumpf);
     connect(d->antwort, SIGNAL(finished()), this, SLOT(antwortFertig()));
     d->uhr.start(kZeitlimitMs);
@@ -525,6 +567,8 @@ void OnlineDeuter::antwortFertig()
                                         "No connection: ") + fehlerText));
         return;
     }
+    if (!(status >= 200 && status < 300) && rueckfall(rumpf))
+        return;
     melden(antwortDeuten(rumpf, status >= 200 && status < 300, status,
                          d->klassen, d->sprache));
 }
@@ -553,26 +597,19 @@ bool OnlineDeuter::verfuegbar()
     return !helfer().isEmpty();
 }
 
-void OnlineDeuter::anfragen(const QString &bildPfad, const QVariantList &klassen,
-                            const QString &sprache, const QString &schluessel)
+void OnlineDeuter::senden()
 {
-    abbrechen();
-    d->laeuft = true;
-    d->klassen = klassen;
-    d->sprache = sprache;
-    d->schluessel = schluessel;
-
     const QString programm = helfer();
     if (programm.isEmpty()) {
-        d->verzoegert = fehlerKarte(zweisprachig(sprache, "Kein Hilfsprogramm fürs Netz",
+        d->verzoegert = fehlerKarte(zweisprachig(d->sprache, "Kein Hilfsprogramm fürs Netz",
                                                  "No network helper installed"));
         QTimer::singleShot(0, this, SLOT(fehlerMelden()));
         return;
     }
     QString bildFehler;
-    const QByteArray base64 = bildAlsBase64(bildPfad, &bildFehler);
+    const QByteArray base64 = bildAlsBase64(d->bildPfad, &bildFehler);
     if (base64.isEmpty()) {
-        d->verzoegert = fehlerKarte(zweisprachig(sprache, "Foto nicht lesbar",
+        d->verzoegert = fehlerKarte(zweisprachig(d->sprache, "Foto nicht lesbar",
                                                  "Photo not readable"));
         QTimer::singleShot(0, this, SLOT(fehlerMelden()));
         return;
@@ -594,7 +631,7 @@ void OnlineDeuter::anfragen(const QString &bildPfad, const QVariantList &klassen
     if (!d->rumpfDatei->open(QIODevice::WriteOnly | QIODevice::Truncate)
             || !d->schluesselDatei->open(QIODevice::WriteOnly | QIODevice::Truncate)) {
         aufraeumen();
-        d->verzoegert = fehlerKarte(zweisprachig(sprache, "Kein Platz für die Anfrage",
+        d->verzoegert = fehlerKarte(zweisprachig(d->sprache, "Kein Platz für die Anfrage",
                                                  "No room for the request"));
         QTimer::singleShot(0, this, SLOT(fehlerMelden()));
         return;
@@ -605,13 +642,13 @@ void OnlineDeuter::anfragen(const QString &bildPfad, const QVariantList &klassen
        ein tmpfs mit vier Megabyte, und eine halb geschriebene Anfrage
        brachte sonst eine 400-Meldung der API zurueck statt des Satzes, der
        zwei Zeilen darueber schon bereitsteht. */
-    const QByteArray rumpfRoh = Json::stringify(anfrageRumpf(base64, klassen, sprache)).toUtf8();
-    const QByteArray kopfRoh = "header = x-api-key: " + schluessel.toUtf8() + "\n";
+    const QByteArray rumpfRoh = Json::stringify(anfrageRumpf(base64, d->klassen, d->sprache, kModelle[d->modellNr])).toUtf8();
+    const QByteArray kopfRoh = "header = x-api-key: " + d->schluessel.toUtf8() + "\n";
     if (d->rumpfDatei->write(rumpfRoh) != rumpfRoh.size() || !d->rumpfDatei->flush()
             || d->schluesselDatei->write(kopfRoh) != kopfRoh.size()
             || !d->schluesselDatei->flush()) {
         aufraeumen();
-        d->verzoegert = fehlerKarte(zweisprachig(sprache, "Kein Platz für die Anfrage",
+        d->verzoegert = fehlerKarte(zweisprachig(d->sprache, "Kein Platz für die Anfrage",
                                                  "No room for the request"));
         QTimer::singleShot(0, this, SLOT(fehlerMelden()));
         return;
@@ -644,7 +681,7 @@ void OnlineDeuter::anfragen(const QString &bildPfad, const QVariantList &klassen
         d->prozess = 0;
         alt->deleteLater();
         aufraeumen();
-        d->verzoegert = fehlerKarte(zweisprachig(sprache, "Hilfsprogramm startet nicht",
+        d->verzoegert = fehlerKarte(zweisprachig(d->sprache, "Hilfsprogramm startet nicht",
                                                  "Network helper does not start"));
         QTimer::singleShot(0, this, SLOT(fehlerMelden()));
         return;
@@ -711,6 +748,8 @@ void OnlineDeuter::prozessFertig(int code)
                            + QString::fromLatin1(" (%1)").arg(code)));
         return;
     }
+    if (code == 8 && rueckfall(rumpf))
+        return;
     if (code == 6 || (code == 8 && rumpf.trimmed().isEmpty())) {
         melden(fehlerKarte(zweisprachig(d->sprache,
                                         "Der Server hat die Anfrage abgelehnt (Schlüssel?).",

@@ -66,6 +66,8 @@ private:
 
     void melden(QVariantMap karte);
     void aufraeumen();
+    void senden();              // die Anfrage mit dem aktuellen Modell losschicken
+    bool rueckfall(const QByteArray &rumpf);
 };
 
 #endif

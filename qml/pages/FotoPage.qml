@@ -489,6 +489,8 @@ Page {
                                  && seite.foto.online.ok === true
                         text: W.w("Sicherheit: ", course.language)
                               + seite.sicherheitsWort(seite.foto.online.sicherheit)
+                              + (seite.foto.online.modell === undefined || seite.foto.online.modell === ""
+                                 ? "" : " · " + seite.foto.online.modell)
                         font.pixelSize: Theme.fontSizeSmall
                         color: Theme.secondaryColor
                     }

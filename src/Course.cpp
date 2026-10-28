@@ -1407,14 +1407,14 @@ void Course::onOnlineDone(const QVariantMap &antwort)
        Gehen die beiden auseinander, entscheidet der Leser auf der Seite. */
     const QString gesagt = antwort.value(QLatin1String("klasse")).toString();
     if (antwort.value(QLatin1String("ok")).toBool() && !gesagt.isEmpty()) {
-        const bool ohneTipp = m_fotoGeraten.isEmpty() || m_fotoGeraten == QLatin1String("?");
         if (gesagt == m_fotoGeraten)
             rememberPhoto(gesagt, Nachlernen::Einig);
-        else if (m_vonClaudeLernen && ohneTipp
+        else if (m_vonClaudeLernen
                  && antwort.value(QLatin1String("sicherheit")).toString() == QLatin1String("hoch"))
-            /* Auf Wunsch auch ohne zweite Stimme -- aber nur, wenn Claude
-               sich sicher ist: Ein Lehrer mit 80 % Trefferquote hat dem
-               Netz im Versuch kaum noch geholfen (GELERNTES.md). */
+            /* Auf Wunsch zaehlt Claudes Urteil allein, unabhaengig vom
+               eigenen Tipp -- aber nur, wenn Claude sich sicher ist: Ein
+               Lehrer mit 80 % Trefferquote hat dem Netz im Versuch kaum
+               noch geholfen (GELERNTES.md). */
             rememberPhoto(gesagt, Nachlernen::Claude);
     }
 

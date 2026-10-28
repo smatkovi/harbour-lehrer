@@ -276,9 +276,9 @@ var EN = {
     "Noch nichts gelernt. Lass ein Foto von Claude deuten; stimmt sein Urteil mit deinem Tipp überein, merkt es die App.": "Nothing learned yet. Have Claude read a photo; if his verdict matches your guess, the app remembers it.",
     "Sichern": "Save",
     "Vergessen": "Forget",
-    "Auch ohne meinen Tipp von Claude lernen": "Learn from Claude even without my guess",
-    "Dann merkt die App ein Foto von selbst, wenn Claude seine Sicherheit mit „hoch“ angibt und du nichts geraten hast. Gehen dein Tipp und Claude auseinander, entscheidest weiter du.":
-        "The app then remembers a photo on its own when Claude rates its confidence \"high\" and you made no guess. When your guess and Claude disagree, you still decide.",
+    "Von Claude lernen, unabhängig von meinem Tipp": "Learn from Claude regardless of my guess",
+    "Dann merkt die App Claudes Klasse von selbst, sobald er seine Sicherheit mit „hoch“ angibt — auch wenn du etwas anderes getippt hast. Dein Tipp zählt nur noch für die Statistik.":
+        "The app then remembers Claude's class on its own as soon as he rates his confidence \"high\" — even if you guessed something else. Your guess then only counts for the statistics.",
     "von mir richtiggestellt": "corrected by me",
     "Auf die Wolke tippen, dann aufnehmen.": "Tap the cloud, then capture.",
     "An dieser Stelle fand die Kamera keinen Kontrast — auf eine Kante der Wolke tippen; die Messstelle gilt trotzdem.":
