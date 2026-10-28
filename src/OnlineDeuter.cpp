@@ -32,11 +32,11 @@ namespace {
 const char *kModelle[] = { "claude-fable-5-1", "claude-opus-5" };
 const char *kModellNamen[] = { "Fable", "Opus" };
 const char kVersion[] = "2023-06-01";
-/* Platz fuer das Urteil: Das Modell antwortet ueber ein Werkzeug (unten),
-   dessen Eingabe die API als gueltiges JSON liefert; 400 waren knapp, wenn
-   die Begruendung laenger geriet -- dann kam ein abgeschnittener Text und
-   "Antwort nicht lesbar". */
-const int kAntwortTokens = 800;
+/* Platz fuer das Urteil.  Fable und Opus denken vor der Antwort nach, und
+   das Nachdenken zaehlt gegen max_tokens -- darum grosszuegig, auch wenn
+   das JSON selbst nur ein paar Dutzend Token hat.  (Mit 400 kam frueher ein
+   abgeschnittener Text und "Antwort nicht lesbar".) */
+const int kAntwortTokens = 4000;
 /* Wohin der rohe Antwortrumpf geschrieben wird, wenn er sich nicht deuten
    laesst (Course setzt den Pfad): So laesst sich ein "nicht lesbar" am
    Geraet nachlesen, statt zu raten.  Der Rumpf enthaelt keinen
@@ -100,8 +100,8 @@ QString systemText(const QVariantList &klassen, const QString &sprache)
     }
     text += QLatin1String(
         "If none of them fits, use an empty string as the id.\n"
-        "Answer through the tool \"urteil\": klasse = the id, sicherheit = "
-        "hoch, mittel or niedrig, begruendung = one or two sentences in ");
+        "Answer with one JSON object: klasse = the id, sicherheit = hoch, "
+        "mittel or niedrig, begruendung = one or two sentences in ");
     text += sprache == QLatin1String("en") ? QLatin1String("English")
                                            : QLatin1String("German");
     text += QLatin1String(
@@ -132,15 +132,12 @@ QVariantMap anfrageRumpf(const QByteArray &base64, const QVariantList &klassen,
     QVariantList nachrichten;
     nachrichten << nachricht;
 
-    /* Ohne diese Zeile denkt das Modell erst lange nach, und das Nachdenken
-       zaehlt gegen max_tokens -- bei 400 bliebe fuer das JSON nichts. */
-    QVariantMap denken;
-    denken.insert(QLatin1String("type"), QLatin1String("disabled"));
-
-    /* Das Urteil als Werkzeugaufruf: Die API prueft die Eingabe gegen das
-       Schema und liefert sie als JSON-Objekt -- kein Suchen nach Klammern
-       in Prosa mehr, keine halben Objekte, keine erfundenen Woerter fuer
-       die Sicherheit.  tool_choice erzwingt den Aufruf. */
+    /* Das Urteil als "structured output": Die API haelt die Antwort an das
+       Schema (output_config.format), der erste Textblock ist gueltiges JSON.
+       Das ist der Weg, der auf Fable UND Opus geht: Fable 5.1 lehnt
+       erzwungene Werkzeugwahl (tool_choice tool/any) ab, und beide lehnen
+       thinking "disabled" ab -- also kein thinking-Feld (beide denken dann
+       von sich aus, knapp gehalten mit effort "low"). */
     QVariantList kennungen;
     for (int i = 0; i < klassen.size(); ++i)
         kennungen << klassen.at(i).toMap().value(QLatin1String("id")).toString();
@@ -170,22 +167,19 @@ QVariantMap anfrageRumpf(const QByteArray &base64, const QVariantList &klassen,
     schema.insert(QLatin1String("required"), QVariantList()
                   << QLatin1String("klasse") << QLatin1String("sicherheit")
                   << QLatin1String("begruendung"));
-    QVariantMap werkzeug;
-    werkzeug.insert(QLatin1String("name"), QLatin1String("urteil"));
-    werkzeug.insert(QLatin1String("description"),
-                    QLatin1String("Deliver the verdict on the sky photo."));
-    werkzeug.insert(QLatin1String("input_schema"), schema);
-    QVariantMap wahl;
-    wahl.insert(QLatin1String("type"), QLatin1String("tool"));
-    wahl.insert(QLatin1String("name"), QLatin1String("urteil"));
+    schema.insert(QLatin1String("additionalProperties"), false);
+    QVariantMap form;
+    form.insert(QLatin1String("type"), QLatin1String("json_schema"));
+    form.insert(QLatin1String("schema"), schema);
+    QVariantMap ausgabe;
+    ausgabe.insert(QLatin1String("format"), form);
+    ausgabe.insert(QLatin1String("effort"), QLatin1String("low"));
 
     QVariantMap rumpf;
     rumpf.insert(QLatin1String("model"), QLatin1String(modell));
     rumpf.insert(QLatin1String("max_tokens"), kAntwortTokens);
-    rumpf.insert(QLatin1String("thinking"), denken);
     rumpf.insert(QLatin1String("system"), systemText(klassen, sprache));
-    rumpf.insert(QLatin1String("tools"), QVariantList() << werkzeug);
-    rumpf.insert(QLatin1String("tool_choice"), wahl);
+    rumpf.insert(QLatin1String("output_config"), ausgabe);
     rumpf.insert(QLatin1String("messages"), nachrichten);
     return rumpf;
 }
@@ -261,9 +255,17 @@ QVariantMap antwortDeuten(const QByteArray &rumpf, bool httpOk, int status,
         return fehlerKarte(text);
     }
 
-    /* Zuerst der Werkzeugaufruf (so ist die Anfrage gestellt); zur
-       Sicherheit auch noch der alte Weg, JSON im Text -- der Text kann
-       hinter einem Nachdenk-Block stehen, alle Textbloecke zusammen. */
+    if (antwort.value(QLatin1String("stop_reason")).toString() == QLatin1String("refusal")) {
+        const QString art = antwort.value(QLatin1String("stop_details")).toMap()
+                .value(QLatin1String("category")).toString();
+        return fehlerKarte(zweisprachig(sprache, "Claude hat das Foto abgelehnt",
+                                        "Claude declined the photo")
+                           + (art.isEmpty() ? QString() : QLatin1String(" (") + art + QLatin1Char(')')));
+    }
+
+    /* Der erste Textblock ist bei structured output das JSON; der Text
+       kann hinter einem Nachdenk-Block stehen, alle Textbloecke zusammen.
+       Ein Werkzeugaufruf wird zur Sicherheit auch noch verstanden. */
     QString text;
     QVariantMap urteil;
     const QVariantList inhalt = antwort.value(QLatin1String("content")).toList();
@@ -455,7 +457,9 @@ bool OnlineDeuter::rueckfall(const QByteArray &rumpf)
         return false;
     QString grund;
     const QVariantMap antwort = Json::parse(QString::fromUtf8(rumpf)).toMap();
-    if (antwort.value(QLatin1String("type")).toString() == QLatin1String("error")) {
+    if (antwort.value(QLatin1String("stop_reason")).toString() == QLatin1String("refusal")) {
+        grund = zweisprachig(d->sprache, "abgelehnt", "declined");
+    } else if (antwort.value(QLatin1String("type")).toString() == QLatin1String("error")) {
         const QVariantMap fehler = antwort.value(QLatin1String("error")).toMap();
         if (fehler.value(QLatin1String("type")).toString() == QLatin1String("authentication_error"))
             return false;
@@ -467,6 +471,12 @@ bool OnlineDeuter::rueckfall(const QByteArray &rumpf)
             + (grund.isEmpty() ? QString() : QLatin1String(": ") + grund) + QLatin1Char(')');
     senden();
     return true;
+}
+
+bool verweigert(const QByteArray &rumpf)
+{
+    return Json::parse(QString::fromUtf8(rumpf)).toMap()
+            .value(QLatin1String("stop_reason")).toString() == QLatin1String("refusal");
 }
 
 void OnlineDeuter::melden(QVariantMap karte)
@@ -567,7 +577,7 @@ void OnlineDeuter::antwortFertig()
                                         "No connection: ") + fehlerText));
         return;
     }
-    if (!(status >= 200 && status < 300) && rueckfall(rumpf))
+    if ((!(status >= 200 && status < 300) || verweigert(rumpf)) && rueckfall(rumpf))
         return;
     melden(antwortDeuten(rumpf, status >= 200 && status < 300, status,
                          d->klassen, d->sprache));
@@ -748,7 +758,7 @@ void OnlineDeuter::prozessFertig(int code)
                            + QString::fromLatin1(" (%1)").arg(code)));
         return;
     }
-    if (code == 8 && rueckfall(rumpf))
+    if ((code == 8 || (code == 0 && verweigert(rumpf))) && rueckfall(rumpf))
         return;
     if (code == 6 || (code == 8 && rumpf.trimmed().isEmpty())) {
         melden(fehlerKarte(zweisprachig(d->sprache,
