@@ -1,5 +1,5 @@
 Name:       harbour-segelflug
-Version:    1.19.1
+Version:    1.19.2
 Release:    1
 Summary:    Gliding theory with a focus on reading clouds
 License:    GPLv3+
@@ -51,6 +51,12 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Wed Oct 28 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.19.2-1
+- Claude fragen: das Urteil kommt als Werkzeugaufruf mit Schema zurueck
+  (statt JSON im Text, das manchmal "Antwort nicht lesbar" ergab); Platz
+  fuer die Antwort verdoppelt; eine unlesbare Antwort wird mit ihrem Anfang
+  benannt und zum Nachlesen abgelegt
+
 * Tue Oct 27 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.19.1-1
 - Gelerntes aus 1.18.x bleibt erhalten: die Datei wird als Fassung 1 gelesen,
   ihre Abdruecke werden aus den Bildern nachgerechnet, geschrieben wird

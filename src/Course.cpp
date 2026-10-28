@@ -63,6 +63,9 @@ Course::Course(Curriculum *course, Plotter *plotter, QObject *parent)
     , m_engine(course)
     , m_online(new OnlineDeuter(this))
 {
+    /* Laesst sich eine Antwort von Claude nicht deuten, liegt ihr Rumpf
+       hier zum Nachlesen (ohne Schluessel). */
+    OnlineDeuter::protokollSetzen(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/letzte-antwort.json"));
     m_engine.load();
     connect(m_online, SIGNAL(fertig(QVariantMap)), this, SLOT(onOnlineDone(QVariantMap)));
     /* Der Schluessel fuer den Online-Blick: aus der eigenen Datei neben dem

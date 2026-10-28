@@ -40,6 +40,9 @@ public:
     /* Der Schluessel aus ~/.profile ("export ANTHROPIC_API_KEY=..."), fuer
        Geraete, auf denen er dort schon steht; "" wenn nicht. */
     static QString schluesselAusProfil();
+    /* Wohin der rohe Antwortrumpf kommt, wenn er sich nicht deuten laesst
+       (leer: nirgendwohin).  Der Rumpf enthaelt keinen Schluessel. */
+    static void protokollSetzen(const QString &pfad);
 
     bool laeuft() const;
 

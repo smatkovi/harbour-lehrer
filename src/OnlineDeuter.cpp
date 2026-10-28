@@ -27,7 +27,16 @@ namespace {
 
 const char kModell[] = "claude-sonnet-5";
 const char kVersion[] = "2023-06-01";
-const int kAntwortTokens = 400;
+/* Platz fuer das Urteil: Das Modell antwortet ueber ein Werkzeug (unten),
+   dessen Eingabe die API als gueltiges JSON liefert; 400 waren knapp, wenn
+   die Begruendung laenger geriet -- dann kam ein abgeschnittener Text und
+   "Antwort nicht lesbar". */
+const int kAntwortTokens = 800;
+/* Wohin der rohe Antwortrumpf geschrieben wird, wenn er sich nicht deuten
+   laesst (Course setzt den Pfad): So laesst sich ein "nicht lesbar" am
+   Geraet nachlesen, statt zu raten.  Der Rumpf enthaelt keinen
+   Schluessel. */
+QString g_protokoll;
 const int kZeitlimitMs = 90 * 1000;
 
 QString zweisprachig(const QString &sprache, const char *de, const char *en)
@@ -86,14 +95,13 @@ QString systemText(const QVariantList &klassen, const QString &sprache)
     }
     text += QLatin1String(
         "If none of them fits, use an empty string as the id.\n"
-        "Reply with JSON only, no prose before or after, exactly in this form:\n"
-        "{\"klasse\": \"<id>\", \"sicherheit\": \"hoch|mittel|niedrig\", "
-        "\"begruendung\": \"<one or two sentences in ");
+        "Answer through the tool \"urteil\": klasse = the id, sicherheit = "
+        "hoch, mittel or niedrig, begruendung = one or two sentences in ");
     text += sprache == QLatin1String("en") ? QLatin1String("English")
                                            : QLatin1String("German");
     text += QLatin1String(
         ": what gives the class away in this photo, and what it means for "
-        "gliding on this day>\"}");
+        "gliding on this day.");
     return text;
 }
 
@@ -110,7 +118,7 @@ QVariantMap anfrageRumpf(const QByteArray &base64, const QVariantList &klassen,
     QVariantMap frage;
     frage.insert(QLatin1String("type"), QLatin1String("text"));
     frage.insert(QLatin1String("text"),
-                 QLatin1String("Which class is this sky? JSON only."));
+                 QLatin1String("Which class is this sky?"));
     QVariantList inhalt;
     inhalt << bild << frage;
     QVariantMap nachricht;
@@ -124,11 +132,55 @@ QVariantMap anfrageRumpf(const QByteArray &base64, const QVariantList &klassen,
     QVariantMap denken;
     denken.insert(QLatin1String("type"), QLatin1String("disabled"));
 
+    /* Das Urteil als Werkzeugaufruf: Die API prueft die Eingabe gegen das
+       Schema und liefert sie als JSON-Objekt -- kein Suchen nach Klammern
+       in Prosa mehr, keine halben Objekte, keine erfundenen Woerter fuer
+       die Sicherheit.  tool_choice erzwingt den Aufruf. */
+    QVariantList kennungen;
+    for (int i = 0; i < klassen.size(); ++i)
+        kennungen << klassen.at(i).toMap().value(QLatin1String("id")).toString();
+    kennungen << QString();
+    QVariantMap klasseFeld;
+    klasseFeld.insert(QLatin1String("type"), QLatin1String("string"));
+    klasseFeld.insert(QLatin1String("enum"), kennungen);
+    klasseFeld.insert(QLatin1String("description"),
+                      QLatin1String("the id of the class, or an empty string if none fits"));
+    QVariantMap sicherheitFeld;
+    sicherheitFeld.insert(QLatin1String("type"), QLatin1String("string"));
+    sicherheitFeld.insert(QLatin1String("enum"), QVariantList()
+                          << QLatin1String("hoch") << QLatin1String("mittel")
+                          << QLatin1String("niedrig"));
+    QVariantMap begruendungFeld;
+    begruendungFeld.insert(QLatin1String("type"), QLatin1String("string"));
+    begruendungFeld.insert(QLatin1String("description"),
+                           QLatin1String("one or two sentences: what gives the class away, "
+                                         "and what it means for gliding today"));
+    QVariantMap felder;
+    felder.insert(QLatin1String("klasse"), klasseFeld);
+    felder.insert(QLatin1String("sicherheit"), sicherheitFeld);
+    felder.insert(QLatin1String("begruendung"), begruendungFeld);
+    QVariantMap schema;
+    schema.insert(QLatin1String("type"), QLatin1String("object"));
+    schema.insert(QLatin1String("properties"), felder);
+    schema.insert(QLatin1String("required"), QVariantList()
+                  << QLatin1String("klasse") << QLatin1String("sicherheit")
+                  << QLatin1String("begruendung"));
+    QVariantMap werkzeug;
+    werkzeug.insert(QLatin1String("name"), QLatin1String("urteil"));
+    werkzeug.insert(QLatin1String("description"),
+                    QLatin1String("Deliver the verdict on the sky photo."));
+    werkzeug.insert(QLatin1String("input_schema"), schema);
+    QVariantMap wahl;
+    wahl.insert(QLatin1String("type"), QLatin1String("tool"));
+    wahl.insert(QLatin1String("name"), QLatin1String("urteil"));
+
     QVariantMap rumpf;
     rumpf.insert(QLatin1String("model"), QLatin1String(kModell));
     rumpf.insert(QLatin1String("max_tokens"), kAntwortTokens);
     rumpf.insert(QLatin1String("thinking"), denken);
     rumpf.insert(QLatin1String("system"), systemText(klassen, sprache));
+    rumpf.insert(QLatin1String("tools"), QVariantList() << werkzeug);
+    rumpf.insert(QLatin1String("tool_choice"), wahl);
     rumpf.insert(QLatin1String("messages"), nachrichten);
     return rumpf;
 }
@@ -166,6 +218,18 @@ bool klasseBekannt(const QString &id, const QVariantList &klassen)
     return false;
 }
 
+void protokollSchreiben(const QByteArray &rumpf)
+{
+    if (g_protokoll.isEmpty())
+        return;
+    QFile datei(g_protokoll);
+    if (!datei.open(QIODevice::WriteOnly | QIODevice::Truncate))
+        return;
+    datei.setPermissions(QFile::ReadOwner | QFile::WriteOwner);
+    datei.write(rumpf.left(256 * 1024));
+    datei.close();
+}
+
 /* Aus dem Antwortrumpf der API eine Karte fuer fertig().  `httpOk` sagt,
    ob der Transport einen 2xx gemeldet hat; bei allem anderen steht im
    Rumpf meist ein Fehlerobjekt der API, dessen message hilfreicher ist
@@ -192,23 +256,41 @@ QVariantMap antwortDeuten(const QByteArray &rumpf, bool httpOk, int status,
         return fehlerKarte(text);
     }
 
-    /* Der Text kann hinter einem Nachdenk-Block stehen; alle Textbloecke
-       zusammen, nicht nur der erste. */
+    /* Zuerst der Werkzeugaufruf (so ist die Anfrage gestellt); zur
+       Sicherheit auch noch der alte Weg, JSON im Text -- der Text kann
+       hinter einem Nachdenk-Block stehen, alle Textbloecke zusammen. */
     QString text;
+    QVariantMap urteil;
     const QVariantList inhalt = antwort.value(QLatin1String("content")).toList();
     for (int i = 0; i < inhalt.size(); ++i) {
         const QVariantMap block = inhalt.at(i).toMap();
-        if (block.value(QLatin1String("type")).toString() == QLatin1String("text"))
+        const QString art = block.value(QLatin1String("type")).toString();
+        if (art == QLatin1String("tool_use")
+                && block.value(QLatin1String("name")).toString() == QLatin1String("urteil")
+                && urteil.isEmpty())
+            urteil = block.value(QLatin1String("input")).toMap();
+        else if (art == QLatin1String("text"))
             text += block.value(QLatin1String("text")).toString();
     }
-    const int auf = text.indexOf(QLatin1Char('{'));
-    const int zu = text.lastIndexOf(QLatin1Char('}'));
-    QVariantMap urteil;
-    if (auf >= 0 && zu > auf)
-        urteil = Json::parse(text.mid(auf, zu - auf + 1)).toMap();
     if (urteil.isEmpty()) {
-        return fehlerKarte(zweisprachig(sprache, "Antwort nicht lesbar",
-                                        "Reply not readable"));
+        const int auf = text.indexOf(QLatin1Char('{'));
+        const int zu = text.lastIndexOf(QLatin1Char('}'));
+        if (auf >= 0 && zu > auf)
+            urteil = Json::parse(text.mid(auf, zu - auf + 1)).toMap();
+    }
+    if (urteil.isEmpty()) {
+        /* Den Rumpf aufheben und sagen, woran es lag: abgeschnitten, leer,
+           oder der Anfang dessen, was statt des Urteils kam. */
+        protokollSchreiben(rumpf);
+        QString grund;
+        if (antwort.value(QLatin1String("stop_reason")).toString() == QLatin1String("max_tokens"))
+            grund = zweisprachig(sprache, "abgeschnitten", "cut off");
+        else if (text.trimmed().isEmpty())
+            grund = zweisprachig(sprache, "leer", "empty");
+        else
+            grund = text.trimmed().left(80).simplified() + QString::fromUtf8("\xe2\x80\xa6");
+        return fehlerKarte(zweisprachig(sprache, "Antwort nicht lesbar: ",
+                                        "Reply not readable: ") + grund);
     }
 
     QString klasse = urteil.value(QLatin1String("klasse")).toString().trimmed();
@@ -334,6 +416,11 @@ QString OnlineDeuter::schluesselAusProfil()
             return wert;
     }
     return QString();
+}
+
+void OnlineDeuter::protokollSetzen(const QString &pfad)
+{
+    g_protokoll = pfad;
 }
 
 void OnlineDeuter::fehlerMelden()
