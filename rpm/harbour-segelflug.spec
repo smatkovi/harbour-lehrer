@@ -56,6 +56,9 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
   (statt JSON im Text, das manchmal "Antwort nicht lesbar" ergab); Platz
   fuer die Antwort verdoppelt; eine unlesbare Antwort wird mit ihrem Anfang
   benannt und zum Nachlesen abgelegt
+- "Foto waehlen" zeigt wieder die Bilder: der Bildwaehler liest den
+  Tracker-Index und braucht dafuer das Sailjail-Recht MediaIndexing; dazu
+  RemovableMedia fuer Fotos auf der Speicherkarte
 
 * Tue Oct 27 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.19.1-1
 - Gelerntes aus 1.18.x bleibt erhalten: die Datei wird als Fassung 1 gelesen,

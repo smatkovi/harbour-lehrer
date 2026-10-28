@@ -15,4 +15,4 @@ OrganizationName=harbour-segelflug
 ApplicationName=harbour-segelflug
 # Foto deuten: Galerie und Kamera fuer das eigene Himmelsfoto, Netz fuer
 # den zweiten Blick von Claude.
-Permissions=Internet;Pictures;Camera;Documents
+Permissions=Internet;Pictures;MediaIndexing;RemovableMedia;Camera;Documents
