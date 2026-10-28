@@ -68,6 +68,7 @@ Course::Course(Curriculum *course, Plotter *plotter, QObject *parent)
     OnlineDeuter::protokollSetzen(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/letzte-antwort.json"));
     m_engine.load();
     connect(m_online, SIGNAL(fertig(QVariantMap)), this, SLOT(onOnlineDone(QVariantMap)));
+    m_vonClaudeLernen = QFile::exists(vonClaudePfad());
     /* Der Schluessel fuer den Online-Blick: aus der eigenen Datei neben dem
        Fortschritt, sonst aus ~/.profile, wo er auf den Nokias schon steht.
        Er wird nie protokolliert und geht nur in die eine Anfrage. */
@@ -1405,9 +1406,17 @@ void Course::onOnlineDone(const QVariantMap &antwort)
        in training/nachlernen_versuch.py, nachzulesen in GELERNTES.md.
        Gehen die beiden auseinander, entscheidet der Leser auf der Seite. */
     const QString gesagt = antwort.value(QLatin1String("klasse")).toString();
-    if (antwort.value(QLatin1String("ok")).toBool()
-            && !gesagt.isEmpty() && gesagt == m_fotoGeraten)
-        rememberPhoto(gesagt, Nachlernen::Einig);
+    if (antwort.value(QLatin1String("ok")).toBool() && !gesagt.isEmpty()) {
+        const bool ohneTipp = m_fotoGeraten.isEmpty() || m_fotoGeraten == QLatin1String("?");
+        if (gesagt == m_fotoGeraten)
+            rememberPhoto(gesagt, Nachlernen::Einig);
+        else if (m_vonClaudeLernen && ohneTipp
+                 && antwort.value(QLatin1String("sicherheit")).toString() == QLatin1String("hoch"))
+            /* Auf Wunsch auch ohne zweite Stimme -- aber nur, wenn Claude
+               sich sicher ist: Ein Lehrer mit 80 % Trefferquote hat dem
+               Netz im Versuch kaum noch geholfen (GELERNTES.md). */
+            rememberPhoto(gesagt, Nachlernen::Claude);
+    }
 
     emit photoChanged();
 }
@@ -1511,6 +1520,34 @@ QVariantMap Course::glossaryEntry(const QString &id) const
 }
 
 /* --- Was die App dazugelernt hat (GELERNTES.md) ------------------------- */
+
+/* Die Einstellung ist eine Datei, die da ist oder nicht -- wie der
+   Schluessel neben dem Fortschritt, ohne QSettings (Sailjail bindet die an
+   die Kennung der Desktop-Datei). */
+QString Course::vonClaudePfad() const
+{
+    return QFileInfo(m_engine.path()).absolutePath() + QLatin1String("/von-claude-lernen");
+}
+
+bool Course::learnFromClaude() const
+{
+    return m_vonClaudeLernen;
+}
+
+void Course::setLearnFromClaude(bool an)
+{
+    if (an == m_vonClaudeLernen)
+        return;
+    m_vonClaudeLernen = an;
+    if (an) {
+        QFile datei(vonClaudePfad());
+        if (datei.open(QIODevice::WriteOnly | QIODevice::Truncate))
+            datei.write("1\n");
+    } else {
+        QFile::remove(vonClaudePfad());
+    }
+    emit learnedChanged();
+}
 
 QString Course::gelerntesPfad() const
 {

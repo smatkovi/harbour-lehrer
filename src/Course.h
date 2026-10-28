@@ -66,6 +66,10 @@ class Course : public QObject
        wirksam, fehlende, eintraege:[{nummer, klasse, name, quelle, zeit,
        bekannt}]}.  Die Liste ist das Neueste zuerst. */
     Q_PROPERTY(QVariantMap learned READ learned NOTIFY learnedChanged)
+    /* Auch ohne eigenen Tipp von Claude lernen: Dann merkt die App ein
+       Foto von selbst, wenn Claude seine Sicherheit mit "hoch" angibt und
+       der Leser nichts geraten hat (GELERNTES.md, "Was gemerkt wird"). */
+    Q_PROPERTY(bool learnFromClaude READ learnFromClaude WRITE setLearnFromClaude NOTIFY learnedChanged)
 
     /* Das Glossar, uebersetzt und nach Wort sortiert: [{id, wort}].  Den
        ganzen Eintrag holt glossaryEntry(id). */
@@ -175,6 +179,8 @@ public:
        von selbst -- die Taste ist fuer die Faelle, in denen die beiden
        auseinandergehen. */
     Q_INVOKABLE void rememberPhoto(const QString &klasseId, int quelle);
+    bool learnFromClaude() const;
+    void setLearnFromClaude(bool an);
     Q_INVOKABLE void forgetLearned(int nummer);
     Q_INVOKABLE void forgetAllLearned();
     /* Das gemerkte Bild als Datei im Zwischenspeicher, fuer die Anzeige;
@@ -280,6 +286,7 @@ private:
     QVector<float> m_fotoAbdruck;  // sein Merkmalsvektor
     bool m_fotoKorrigiert = false; // hat das Gelernte die Reihenfolge geaendert?
     QString m_fotoGemerkt;         // was zu diesem Foto gemerkt wurde
+    bool m_vonClaudeLernen = false; // auch ohne eigenen Tipp merken (Datei im Datenordner)
     int m_fotoDrehung = 0;         // EXIF-Drehung in Grad, fuer die Anzeige
     QString m_fotoWartend;         // Foto, das auf den laufenden Faden wartet
     bool m_fadenLaeuft = false;    // rechnet gerade ein BewertungsFaden?
@@ -288,6 +295,7 @@ private:
     QVariantMap learned() const;
     void gelerntesLaden();
     QString gelerntesPfad() const;
+    QString vonClaudePfad() const;
     void gelerntesGeaendert();     // speichern, melden, Kopf nachtrainieren
     void kopfNachtrainieren();     // im Arbeitsfaden, wenn es sich lohnt
     bool m_lernFadenLaeuft = false;

@@ -1,5 +1,5 @@
 Name:       harbour-segelflug
-Version:    1.19.2
+Version:    1.19.3
 Release:    1
 Summary:    Gliding theory with a focus on reading clouds
 License:    GPLv3+
@@ -51,6 +51,12 @@ strip %{buildroot}%{_bindir}/%{name} %{buildroot}%{_libexecdir}/%{name}/crun \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Wed Oct 28 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.19.3-1
+- Neue Lektion "Wie und wann Wolken entstehen": Blase, Rampe, Welle, Nacht --
+  und was davon im Namen steht; Skizze dazu in der Loesung
+- Schalter "Auch ohne meinen Tipp von Claude lernen" (nur bei Sicherheit
+  "hoch", auf der Gelerntes-Seite)
+
 * Wed Oct 28 2026 smatkovi <smatkovi@users.noreply.github.com> - 1.19.2-1
 - Claude fragen: das Urteil kommt als Werkzeugaufruf mit Schema zurueck
   (statt JSON im Text, das manchmal "Antwort nicht lesbar" ergab); Platz

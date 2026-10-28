@@ -66,6 +66,13 @@ Page {
                 font.pixelSize: Theme.fontSizeSmall
                 color: seite.gelernt.kopf === true ? "#7ee787" : Theme.secondaryColor
             }
+            TextSwitch {
+                text: W.w("Auch ohne meinen Tipp von Claude lernen", course.language)
+                description: W.w("Dann merkt die App ein Foto von selbst, wenn Claude seine Sicherheit mit „hoch“ angibt und du nichts geraten hast. Gehen dein Tipp und Claude auseinander, entscheidest weiter du.", course.language)
+                checked: course.learnFromClaude
+                automaticCheck: false
+                onClicked: course.learnFromClaude = !checked
+            }
             Label {
                 x: Theme.horizontalPageMargin
                 width: parent.width - 2 * Theme.horizontalPageMargin
