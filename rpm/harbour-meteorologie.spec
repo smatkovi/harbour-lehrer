@@ -1,5 +1,5 @@
 Name:       harbour-meteorologie
-Version:    1.1.0
+Version:    1.1.1
 Release:    1
 Summary:    Meteorology for physicists, every formula derived
 License:    GPLv3+
